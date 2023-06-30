@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@r7-front-monorepo": ["dist/libs/ui-components-admin"],
+      "@r7-front-monorepo/*": ["dist/libs/ui-components-admin/dist/components/*"],
+      "@r7-front-monorepo/cypress": [
+        "dist/libs/ui-components-admin/www/build/ui-components-admin.esm.js"
+      ],
+      "@r7-front-monorepo/loader": ["dist/libs/ui-components-admin/loader"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

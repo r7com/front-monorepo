@@ -1,0 +1,78 @@
+{
+  "name": "ui-components-admin",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ui-components-admin/src",
+  "projectType": "library",
+  "generators": {
+    "@nxext/stencil:component": {
+      "style": "css"
+    }
+  },
+  "tags": [],
+  "targets": {
+    "test": {
+      "executor": "@nxext/stencil:test",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "libs/ui-components-admin/tsconfig.lib.json",
+        "configPath": "libs/ui-components-admin/stencil.config.ts",
+        "outputPath": "dist/libs/ui-components-admin"
+      }
+    },
+    "build": {
+      "executor": "@nxext/stencil:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "libs/ui-components-admin/tsconfig.lib.json",
+        "configPath": "libs/ui-components-admin/stencil.config.ts",
+        "outputPath": "dist/libs/ui-components-admin"
+      },
+      "configurations": {
+        "production": {
+          "dev": false,
+          "prod": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nxext/stencil:serve",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "libs/ui-components-admin/tsconfig.lib.json",
+        "configPath": "libs/ui-components-admin/stencil.config.ts",
+        "outputPath": "dist/libs/ui-components-admin"
+      }
+    },
+    "e2e": {
+      "executor": "@nxext/stencil:e2e",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "libs/ui-components-admin/tsconfig.lib.json",
+        "configPath": "libs/ui-components-admin/stencil.config.ts",
+        "outputPath": "dist/libs/ui-components-admin"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/ui-components-admin/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "component-test": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "libs/ui-components-admin/cypress.config.ts",
+        "testingType": "component",
+        "devServerTarget": "admin:build",
+        "skipServe": true,
+        "watch": true,
+        "browser": "chrome"
+      }
+    }
+  }
+}
