@@ -16,7 +16,7 @@
 
 // Import commands.ts using ES2015 syntax:
 import './commands'
-import '@r7-front-monorepo/cypress'
+import '@r7-front-monorepo/ui-components-admin/cypress'
 import { setupHooks, getContainerEl } from '@cypress/mount-utils'
 
 function mount(html) {

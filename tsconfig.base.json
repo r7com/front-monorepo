@@ -15,12 +15,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@r7-front-monorepo": ["dist/libs/ui-components-admin"],
-      "@r7-front-monorepo/*": ["dist/libs/ui-components-admin/dist/components/*"],
-      "@r7-front-monorepo/cypress": [
+      "@r7-front-monorepo/ui-components-admin": ["dist/libs/ui-components-admin"],
+      "@r7-front-monorepo/ui-components-admin/*": [
+        "dist/libs/ui-components-admin/dist/components/*"
+      ],
+      "@r7-front-monorepo/ui-components-admin/cypress": [
         "dist/libs/ui-components-admin/www/build/ui-components-admin.esm.js"
       ],
-      "@r7-front-monorepo/loader": ["dist/libs/ui-components-admin/loader"]
+      "@r7-front-monorepo/ui-components-admin/loader": ["dist/libs/ui-components-admin/loader"]
     }
   },
   "exclude": ["node_modules", "tmp"]
