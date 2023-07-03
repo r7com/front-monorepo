@@ -19,10 +19,10 @@
       "@r7-front-monorepo/ui-components-admin/*": [
         "dist/libs/ui-components-admin/dist/components/*"
       ],
-      "@r7-front-monorepo/ui-components-admin/cypress": [
+      "@r7-front-monorepo/ui-components-admin/loader": ["dist/libs/ui-components-admin/loader"],
+      "@r7-front-monorepo/ui-components-admin/module": [
         "dist/libs/ui-components-admin/www/build/ui-components-admin.esm.js"
-      ],
-      "@r7-front-monorepo/ui-components-admin/loader": ["dist/libs/ui-components-admin/loader"]
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

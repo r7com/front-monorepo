@@ -5,7 +5,7 @@
     "outDir": "../../dist/out-tsc",
     "module": "commonjs",
     "target": "esnext",
-    "types": ["cypress", "node"],
+    "types": ["cypress", "node", "@testing-library/cypress"],
     "sourceMap": false
   },
   "include": [

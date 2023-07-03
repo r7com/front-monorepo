@@ -68,7 +68,7 @@
       "options": {
         "cypressConfig": "libs/ui-components-admin/cypress.config.ts",
         "testingType": "component",
-        "devServerTarget": "admin:build",
+        "devServerTarget": "__cypress__:build",
         "skipServe": true,
         "watch": true,
         "browser": "chrome"

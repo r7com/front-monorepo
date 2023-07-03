@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core'
+import { Component, Prop, State, h } from '@stencil/core'
 import { format } from '../../utils/utils'
 
 @Component({
@@ -7,6 +7,8 @@ import { format } from '../../utils/utils'
   shadow: true,
 })
 export class MyComponent {
+  @State() isVisible = false
+
   /**
    * The first name
    */
@@ -26,7 +28,18 @@ export class MyComponent {
     return format(this.first, this.middle, this.last)
   }
 
+  private onToggleShowName = () => {
+    this.isVisible = !this.isVisible
+  }
+
   render() {
-    return <div>Hello, World! I'm {this.getText()}</div>
+    return (
+      <div>
+        <button type="button" onClick={this.onToggleShowName}>
+          Mostrar bem vindo
+        </button>
+        {this.isVisible && <p>Hello, World! I'm {this.getText()}</p>}
+      </div>
+    )
   }
 }
