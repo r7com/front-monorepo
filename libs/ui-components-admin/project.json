@@ -46,6 +46,9 @@
         "outputPath": "dist/libs/ui-components-admin"
       }
     },
+    "compile-css": {
+      "command": "npx tailwindcss -c libs/ui-components-admin/tailwind.config.js -i libs/ui-components-admin/src/style.css -o libs/ui-components-admin/www/tailwind.css --watch"
+    },
     "e2e": {
       "executor": "@nxext/stencil:e2e",
       "outputs": ["{options.outputPath}"],
@@ -65,6 +68,7 @@
     },
     "component-test": {
       "executor": "@nx/cypress:cypress",
+      "dependsOn": ["ui-components-admin:build"],
       "options": {
         "cypressConfig": "libs/ui-components-admin/cypress.config.ts",
         "testingType": "component",

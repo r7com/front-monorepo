@@ -3,8 +3,6 @@ import { format } from '../../utils/utils'
 
 @Component({
   tag: 'my-component',
-  styleUrl: 'my-component.css',
-  shadow: true,
 })
 export class MyComponent {
   @State() isVisible = false
@@ -35,10 +33,14 @@ export class MyComponent {
   render() {
     return (
       <div>
-        <button type="button" onClick={this.onToggleShowName}>
+        <button
+          class="bg-gray-800 flex h-8 w-full text-white"
+          type="button"
+          onClick={this.onToggleShowName}
+        >
           Mostrar bem vindo
         </button>
-        {this.isVisible && <p>Hello, World! I'm {this.getText()}</p>}
+        {this.isVisible && <p class="text-lg">Hello, World! I'm {this.getText()}</p>}
       </div>
     )
   }
