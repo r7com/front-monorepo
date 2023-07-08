@@ -1,16 +1,12 @@
 {
-  "name": "@r7-front-monorepo",
+  "name": "@r7-front-monorepo/ui-components-admin",
   "version": "0.0.1",
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.js",
-  "es2015": "./dist/esm/index.mjs",
-  "es2017": "./dist/esm/index.mjs",
-  "types": "./dist/types/index.d.ts",
-  "collection": "./dist/collection/collection-manifest.json",
-  "collection:main": "./dist/collection/index.js",
-  "unpkg": "./dist/ui-components-admin/ui-components-admin.js",
-  "files": [
-    "dist/",
-    "loader/"
-  ]
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  }
 }

@@ -1,4 +1,4 @@
-// import { mount } from 'cypress/react18'
+import { mount } from 'cypress/react18'
 // ***********************************************************
 // This example support/component.ts is processed and
 // loaded automatically before your test files.
@@ -15,19 +15,10 @@
 // ***********************************************************
 
 // Import commands.ts using ES2015 syntax:
+import '@frsource/cypress-plugin-visual-regression-diff'
 import './commands'
 import '@testing-library/cypress/add-commands'
-import '@r7-front-monorepo/ui-components-admin/module'
-import '@frsource/cypress-plugin-visual-regression-diff'
-import { setupHooks, getContainerEl } from '@cypress/mount-utils'
-
-function mount(html) {
-  const container = getContainerEl()
-
-  container.innerHTML = html
-  setupHooks()
-}
-
+import '../../src/style.css'
 // add component testing only related command here, such as mount
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace

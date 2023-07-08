@@ -3,16 +3,10 @@ import { defineConfig } from 'cypress'
 import { initPlugin } from '@frsource/cypress-plugin-visual-regression-diff/plugins'
 
 export default defineConfig({
-  includeShadowDom: true,
   component: {
-    ...nxComponentTestingPreset(__filename),
+    ...nxComponentTestingPreset(__filename, { bundler: 'vite' }),
     setupNodeEvents(on, config) {
       initPlugin(on, config)
     },
-  },
-  env: {
-    pluginVisualRegressionUpdateImages: true,
-    pluginVisualRegressionDiffConfig: { threshold: 0.01 },
-    pluginVisualRegressionCleanupUnusedImages: true,
   },
 })

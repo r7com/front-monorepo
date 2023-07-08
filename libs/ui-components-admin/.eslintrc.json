@@ -1,17 +1,10 @@
 {
-  "extends": ["plugin:@stencil-community/recommended", "../../.eslintrc.json"],
+  "extends": ["plugin:@nx/react", "../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {
-        "@typescript-eslint/no-unused-vars": [
-          "error",
-          {
-            "varsIgnorePattern": "^h$"
-          }
-        ]
-      }
+      "rules": {}
     },
     {
       "files": ["*.ts", "*.tsx"],

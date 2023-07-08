@@ -110,6 +110,5 @@
       }
     }
   },
-  "tags": [],
-  "implicitDependencies": ["ui-components-admin"]
+  "tags": []
 }

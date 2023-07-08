@@ -7,6 +7,5 @@
     "source.fixAll.eslint": true
   },
   "eslint.alwaysShowStatus": true,
-  "css.lint.unknownAtRules": "ignore",
-  "tailwindCSS.experimental.classRegex": [":(?:.|\n)*?[\"'`]([^\"'`]*).*?,"]
+  "css.lint.unknownAtRules": "ignore"
 }

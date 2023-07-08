@@ -15,17 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@r7-front-monorepo/ui-components-admin": ["dist/libs/ui-components-admin"],
-      "@r7-front-monorepo/ui-components-admin/*": [
-        "dist/libs/ui-components-admin/dist/components/*"
-      ],
-      "@r7-front-monorepo/ui-components-admin/loader": ["dist/libs/ui-components-admin/loader"],
-      "@r7-front-monorepo/ui-components-admin/module": [
-        "dist/libs/ui-components-admin/www/build/ui-components-admin.esm.js"
-      ],
-      "@r7-front-monorepo/ui-components-admin/react": [
-        "libs/ui-components-admin-react/src/generated/components.ts"
-      ]
+      "@r7-front-monorepo/ui-components-admin": ["libs/ui-components-admin/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
