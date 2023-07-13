@@ -17,7 +17,6 @@
     "../src/**/*.stories.tsx",
     "../src/**/*.stories.mdx",
     "*.ts",
-    "*.js",
-    "../src/stories/Button.stories.tsx"
+    "*.js"
   ]
 }
