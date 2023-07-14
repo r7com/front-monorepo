@@ -3,7 +3,7 @@ import { Button } from './button'
 describe(Button.name, () => {
   it('renders as button', () => {
     cy.mount(<Button as="button">click button</Button>)
-    cy.findByRole('button')
+    cy.findByRole('button', { name: /click button/i })
     cy.matchImage()
   })
 
@@ -13,7 +13,7 @@ describe(Button.name, () => {
         click link
       </Button>,
     )
-    cy.findByRole('link')
+    cy.findByRole('link', { name: /click link/i })
     cy.matchImage()
   })
 })
