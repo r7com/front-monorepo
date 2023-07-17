@@ -45,9 +45,9 @@ module.exports = {
         600: '#00786D',
       },
       'feedback-warning': {
-        400: '#bd1a1a',
-        500: '#b60001',
-        600: '#920001',
+        400: '#fb424f ',
+        500: '#fb2c3b',
+        600: '#e12835',
       },
       'feedback-helper': {
         400: '#ed7e1a',
