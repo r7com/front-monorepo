@@ -8,7 +8,7 @@ build-job:
   stage: build
   script:
     - yarn global add nx
-    - yarn nx build ui-components-admin
+    - nx build ui-components-admin
 
 
 test-job1:
