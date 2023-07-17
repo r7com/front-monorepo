@@ -7,6 +7,7 @@ default:
 stages:
   - build
   - test
+  - e2e
 
 # ui-components-admin jobs
 ui-components-admin build:
@@ -30,6 +31,10 @@ admin test:
   script:
     - yarn install && yarn nx test admin
 
+admin-e2e e2e:
+  stage: e2e
+  script:
+    - yarn install && yarn nx e2e admin-e2e
 
 # voting jobs
 voting build:
@@ -42,5 +47,9 @@ voting test:
   script:
     - yarn install && yarn nx test voting
 
+voting-e2e e2e:
+  stage: e2e
+  script:
+    - yarn install && yarn nx e2e voting-e2e
 
   environment: production
