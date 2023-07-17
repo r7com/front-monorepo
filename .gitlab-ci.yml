@@ -7,8 +7,7 @@ default:
 build-job:
   stage: build
   script:
-    - yarn global add nx
-    - nx build ui-components-admin
+    - yarn install && yarn nx build ui-components-admin
 
 
 test-job1:
