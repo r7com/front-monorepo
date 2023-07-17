@@ -23,6 +23,7 @@ ui-components-admin test:
 # admin jobs
 admin build:
   stage: build
+  needs: ["ui-components-admin build"]
   script:
     - yarn install && yarn nx build admin
 
@@ -39,6 +40,7 @@ admin-e2e e2e:
 # voting jobs
 voting build:
   stage: build
+  needs: ["ui-components-admin build"]
   script:
     - yarn install && yarn nx build voting
 
