@@ -17,30 +17,30 @@ ui-components-admin build:
 ui-components-admin test:
   stage: test
   script:
-    - yarn installl && yarn nx test ui-components-admin
+    - yarn install && yarn nx test ui-components-admin
 
 # admin jobs
 admin build:
   stage: build
   script:
-    - yarn installl && yarn nx build admin
+    - yarn install && yarn nx build admin
 
 admin test:
   stage: test
   script:
-    - yarn installl && yarn nx test admin
+    - yarn install && yarn nx test admin
 
 
 # voting jobs
 voting build:
   stage: build
   script:
-    - yarn installl && yarn nx build voting
+    - yarn install && yarn nx build voting
 
 voting test:
   stage: test
   script:
-    - yarn installl && yarn nx test voting
+    - yarn install && yarn nx test voting
 
 
   environment: production
