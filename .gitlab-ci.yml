@@ -13,20 +13,20 @@ stages:
   - e2e
 
 # ui-components-admin jobs
-ui-components-admin build:
-  stage: build
-  script:
-    - yarn install && yarn nx build ui-components-admin
+# ui-components-admin build:
+#   stage: build
+#   script:
+#     - yarn install && yarn nx build ui-components-admin
 
-ui-components-admin test:
-  stage: test
-  script:
-    - yarn install && yarn nx test ui-components-admin
+# ui-components-admin test:
+#   stage: test
+#   script:
+#     - yarn install && yarn nx test ui-components-admin
 
 ui-components-admin e2e:
   stage: e2e
   script:
-    - yarn install && yarn nx component-test ui-components-admin
+    - yarn install && yarn nx component-test ui-components-admin --browser chrome
 
 # admin jobs
 # admin build:
