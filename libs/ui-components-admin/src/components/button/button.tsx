@@ -1,18 +1,18 @@
 export type ButtonProps<C extends React.ElementType> = {
   as?: C
   className?: string
-  size?: 'small' | 'mid' | 'large'
+  size?: 'default' | 'medium' | 'small'
   color?: 'primary' | 'secondary' | 'tertiary'
-  shape?: 'circle' | 'square'
+  borders?: boolean
   children: React.ReactNode
 } & React.ComponentPropsWithoutRef<C>
 
 export function Button<C extends React.ElementType = 'button'>({
   as,
   className = '',
-  size = 'mid',
+  size = 'default',
   color = 'primary',
-  shape = 'square',
+  borders = true,
   children,
   ...rest
 }: ButtonProps<C>) {
@@ -24,28 +24,29 @@ export function Button<C extends React.ElementType = 'button'>({
 
   const DynamicTag = as || 'button'
 
-  const sizes = {
-    small: '',
-    mid: '',
-    large: '',
-  }
+  const sizesVariant = {
+    default: 'size-default ',
+    medium: 'size-medium',
+    small: 'size-small',
+  }[size]
 
-  const colors = {
-    primary: '',
-    secondary: '',
-    tertiary: '',
-  }
+  const colorsVariant = {
+    primary: 'color-primary',
+    secondary: 'color-secondary',
+    tertiary: 'color-tertiary',
+  }[color]
 
-  const shapes = {
-    circle: '',
-    square: '',
-  }
+  const borderVariant = ''
+
+  const styles = Object.values({
+    className,
+    sizesVariant,
+    colorsVariant,
+    borderVariant: borders ? borderVariant : '',
+  }).join(' ')
 
   return (
-    <DynamicTag
-      className={`${className} ${sizes[size]} ${colors[color]} ${shapes[shape]}`.trim()}
-      {...rest}
-    >
+    <DynamicTag className={styles.trim()} {...rest}>
       {children}
     </DynamicTag>
   )
