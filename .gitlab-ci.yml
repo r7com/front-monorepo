@@ -25,8 +25,6 @@ stages:
 
 ui-components-admin e2e:
   stage: e2e
-  variables:
-    NO_GPU: "1"
   image: cypress/browsers:node18.12.0-chrome107
   script:
     - apt-get update && apt-get install -y xvfb
