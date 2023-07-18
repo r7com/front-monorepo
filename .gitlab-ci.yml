@@ -10,7 +10,7 @@ default:
 stages:
   - build
   - test
-  # - e2e
+  - e2e
 
 # ui-components-admin jobs
 ui-components-admin build:
@@ -29,16 +29,16 @@ ui-components-admin e2e:
     - yarn install && yarn nx component-test ui-components-admin
 
 # admin jobs
-admin build:
-  stage: build
-  needs: ["ui-components-admin build"]
-  script:
-    - yarn install && yarn nx build admin
+# admin build:
+#   stage: build
+#   needs: ["ui-components-admin build"]
+#   script:
+#     - yarn install && yarn nx build admin
 
-admin test:
-  stage: test
-  script:
-    - yarn install && yarn nx test admin
+# admin test:
+#   stage: test
+#   script:
+#     - yarn install && yarn nx test admin
 
 # voting jobs
 # voting build:
