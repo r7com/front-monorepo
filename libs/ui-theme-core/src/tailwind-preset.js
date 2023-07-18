@@ -154,7 +154,6 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/container-queries'),
     plugin(function ({ addUtilities, theme }) {
       addUtilities(
         {
