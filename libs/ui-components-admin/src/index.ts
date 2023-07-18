@@ -1,1 +1,2 @@
-export * from './components/ui-test'
+export * from './components/button'
+export * from './components/svg-icon'
