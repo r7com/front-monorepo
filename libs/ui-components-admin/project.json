@@ -78,5 +78,6 @@
         }
       }
     }
-  }
+  },
+  "implicitDependencies": ["ui-theme-core"]
 }
