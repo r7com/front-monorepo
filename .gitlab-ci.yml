@@ -25,15 +25,9 @@ stages:
 
 ui-components-admin e2e:
   stage: e2e
-  image: cypress/browsers:node18.12.0-chrome107
+  image: cypress/browsers:node16.16.0-chrome107-ff107-edge
   script:
-    - yarn install && yarn nx component-test ui-components-admin --browser electron
-  artifacts:
-    when: always
-    paths:
-      - test-results.xml
-    reports:
-      junit: test-results.xml
+    - yarn install && yarn nx component-test ui-components-admin --browser chrome
 
 # admin jobs
 # admin build:
