@@ -31,6 +31,13 @@ ui-components-admin:
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
     - export DISPLAY=:99
     - yarn install && yarn nx component-test ui-components-admin --exit
+    
+  artifacts:
+    when: always
+    paths:
+      - cypress/videos/**/*.mp4
+      - cypress/screenshots/**/*.png
+    expire_in: 1 day
 
 # admin jobs
 # admin build:
@@ -55,5 +62,6 @@ ui-components-admin:
 #   stage: test
 #   script:
 #     - yarn install && yarn nx test voting
+
 
   environment: production
