@@ -30,8 +30,14 @@ ui-components-admin e2e:
     - yarn global add serve
     - yarn global add wait-on
     - serve -s build &
-    - wait-on http://localhost:3000
-    - yarn install && yarn nx component-test ui-components-admin --browser chrome
+    - wait-on http://localhost:5173
+    - yarn install && yarn nx component-test ui-components-admin --browser chrome --headless --reporter junit
+  artifacts:
+    when: always
+    paths:
+      - test-results.xml
+    reports:
+      junit: test-results.xml
 
 # admin jobs
 # admin build:
