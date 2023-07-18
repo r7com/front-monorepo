@@ -27,6 +27,10 @@ ui-components-admin e2e:
   stage: e2e
   image: cypress/browsers:node18.12.0-chrome107
   script:
+    - yarn install -g serve
+    - yarn install -g wait-on
+    - serve -s build &
+    - wait-on http://localhost:3000
     - yarn install && yarn nx component-test ui-components-admin --browser chrome
 
 # admin jobs
