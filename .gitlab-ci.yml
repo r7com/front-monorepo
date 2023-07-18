@@ -27,7 +27,7 @@ ui-components-admin e2e:
   stage: e2e
   image: cypress/browsers:node16.16.0-chrome107-ff107-edge
   script:
-    - yarn install && yarn nx component-test ui-components-admin
+    - yarn install && yarn nx component-test ui-components-admin --headless
 
 # admin jobs
 # admin build:
