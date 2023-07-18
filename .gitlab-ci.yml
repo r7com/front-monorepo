@@ -30,7 +30,7 @@ ui-components-admin:
     - apt-get update && apt-get install -y xvfb
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
     - export DISPLAY=:99
-    - yarn install && yarn nx component-test ui-components-admin
+    - yarn install && yarn nx component-test ui-components-admin --exit
 
 # admin jobs
 # admin build:
