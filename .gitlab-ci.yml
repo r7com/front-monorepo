@@ -23,7 +23,7 @@ stages:
 #   script:
 #     - yarn install && yarn nx test ui-components-admin
 
-ui-components-admin e2e:
+ui-components-admin:
   stage: e2e
   image: cypress/browsers:node18.12.0-chrome107
   script:
@@ -31,8 +31,6 @@ ui-components-admin e2e:
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
     - export DISPLAY=:99
     - yarn install && yarn nx component-test ui-components-admin
-  title: "job 1"
-
 
 # admin jobs
 # admin build:
