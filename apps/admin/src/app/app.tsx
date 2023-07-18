@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
-import { UiTest } from '@r7-front-monorepo/ui-components-admin'
+import { Button, SvgIcon } from '@r7-front-monorepo/ui-components-admin'
 
 const Voting = React.lazy(() => import('voting/Module'))
 
@@ -8,17 +8,18 @@ export function App() {
   return (
     <React.Suspense fallback={null}>
       <header>
-        <UiTest />
-
+        <SvgIcon iconName="github" />
         <ul>
           <li className="bg-slate-300">
             <Link className="no-underline text-slate-700" to="/">
-              Home
+              <Button type="button">Home</Button>
             </Link>
           </li>
 
           <li>
-            <Link to="/voting">Voting</Link>
+            <Link to="/voting">
+              <Button type="button">Voting</Button>
+            </Link>
           </li>
         </ul>
       </header>
