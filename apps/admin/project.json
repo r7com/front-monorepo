@@ -110,5 +110,6 @@
       }
     }
   },
-  "tags": []
+  "tags": [],
+  "implicitDependencies": ["ui-theme-core"]
 }
