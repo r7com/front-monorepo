@@ -6,22 +6,24 @@ image: $NODE_VERSION
 default:
   tags:
     - gitlab-runner-ec2
+  before_script:
+    - yarn install 
 
 stages:
   - build
   - test
   - e2e
 
-# ui-components-admin jobs
-# ui-components-admin build:
-#   stage: build
-#   script:
-#     - yarn install && yarn nx build ui-components-admin
+#ui-components-admin jobs
+ui-components-admin build:
+  stage: build
+  script:
+    - yarn nx build ui-components-admin
 
-# ui-components-admin test:
-#   stage: test
-#   script:
-#     - yarn install && yarn nx test ui-components-admin
+ui-components-admin test:
+  stage: test
+  script:
+    - yarn nx test ui-components-admin
 
 ui-components-admin:
   stage: e2e
@@ -30,7 +32,7 @@ ui-components-admin:
     - apt-get update && apt-get install -y xvfb
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
     - export DISPLAY=:99
-    - yarn install && yarn nx component-test ui-components-admin --graph=test.html
+    - yarn nx component-test ui-components-admin --graph=output.html
 
   artifacts:
     when: always
@@ -39,29 +41,28 @@ ui-components-admin:
       - cypress/screenshots/**/*.png
     expire_in: 1 day
 
-# admin jobs
-# admin build:
-#   stage: build
-#   needs: ["ui-components-admin build"]
-#   script:
-#     - yarn install && yarn nx build admin
+#admin jobs
+admin build:
+  stage: build
+  needs: ["ui-components-admin build"]
+  script:
+    - yarn nx build admin
 
-# admin test:
-#   stage: test
-#   script:
-#     - yarn install && yarn nx test admin
+admin test:
+  stage: test
+  script:
+    - yarn nx test admin
 
 # voting jobs
-# voting build:
-#   stage: build
-#   needs: ["ui-components-admin build"]
-#   script:
-#     - yarn install && yarn nx build voting
+voting build:
+  stage: build
+  needs: ["ui-components-admin build"]
+  script:
+    - yarn nx build voting
 
-# voting test:
-#   stage: test
-#   script:
-#     - yarn install && yarn nx test voting
-
+voting test:
+  stage: test
+  script:
+    - yarn nx test voting
 
   environment: production
