@@ -27,10 +27,6 @@ ui-components-admin e2e:
   stage: e2e
   image: cypress/browsers:node18.12.0-chrome107
   script:
-    - yarn global add serve
-    - yarn global add wait-on
-    - serve -s build &
-    - wait-on http://localhost:5173
     - yarn install && yarn nx component-test ui-components-admin --browser chrome --headless --reporter junit
   artifacts:
     when: always
