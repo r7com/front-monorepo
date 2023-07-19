@@ -1,5 +1,6 @@
 variables:
   NODE_VERSION: node:16.14-alpine
+  CI: 'true'
 
 image: $NODE_VERSION
 
@@ -10,6 +11,8 @@ default:
     - yarn install --cache-folder .yarn-cache --immutable --immutable-cache --check-cache
     - NX_HEAD=$CI_COMMIT_SHA
     - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
+    - NX_BRANCH=pipeline  # Defina a variável NX_BRANCH com o nome da branch atual
+    - NX_CI_EXECUTION_ID=$CI_PIPELINE_ID  # Defina a variável NX_CI_EXECUTION_ID com o ID do pipeline atual
     - yarn nx affected --base=$NX_BASE --head=$NX_HEAD --target=test --parallel=3 --ci --code-coverage
 
 stages:
