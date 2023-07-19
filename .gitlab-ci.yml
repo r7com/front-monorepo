@@ -8,9 +8,6 @@ default:
     - gitlab-runner-ec2
   before_script:
     - yarn install
-    - yarn ci --cache .yarn --prefer-offline
-    - NX_HEAD=$CI_COMMIT_SHA
-    - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
 
 stages:
   - build
