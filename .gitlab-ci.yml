@@ -18,10 +18,10 @@ stages:
 #ui-components-admin jobs
 ui-components-admin build:
   stage: build
-  only:
-  - main
-  - marge_requests
-  - qa
+  # only:
+  # - main
+  # - marge_requests
+  # - qa
   script:
     - yarn nx build ui-components-admin
 
@@ -44,17 +44,16 @@ ui-components-admin:
     paths:
       - cypress/videos/**/*.mp4
       - cypress/screenshots/**/*.png
-      - node_modules
     expire_in: 1 day
 
 #admin jobs
 admin build:
   stage: build
   needs: ["ui-components-admin build"]
-  only:
-  - main
-  - marge_requests
-  - qa
+  # only:
+  # - main
+  # - marge_requests
+  # - qa
   script:
     - yarn nx build admin
 
@@ -67,10 +66,10 @@ admin test:
 voting build:
   stage: build
   needs: ["ui-components-admin build"]
-  only:
-  - main
-  - marge_requests
-  - qa
+  # only:
+  # - main
+  # - marge_requests
+  # - qa
   script:
     - yarn nx build voting
 
