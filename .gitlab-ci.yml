@@ -7,7 +7,10 @@ default:
   tags:
     - gitlab-runner-ec2
   before_script:
-    - yarn install
+    - yarn install --cache-folder .yarn-cache --immutable --immutable-cache --check-cache
+    - NX_HEAD=$CI_COMMIT_SHA
+    - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
+    - yarn nx affected --base=$NX_BASE --head=$NX_HEAD --target=test --parallel=3 --ci --code-coverage
 
 stages:
   - build
@@ -43,6 +46,7 @@ ui-components-admin:
     paths:
       - cypress/videos/**/*.mp4
       - cypress/screenshots/**/*.png
+      - node_modules
     expire_in: 1 day
 
 #admin jobs
