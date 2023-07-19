@@ -7,7 +7,10 @@ default:
   tags:
     - gitlab-runner-ec2
   before_script:
-    - yarn install 
+    - yarn install
+    - yarn ci --cache .yarn --prefer-offline
+    - NX_HEAD=$CI_COMMIT_SHA
+    - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
 
 stages:
   - build
@@ -17,6 +20,10 @@ stages:
 #ui-components-admin jobs
 ui-components-admin build:
   stage: build
+  only:
+  - main
+  - marge_requests
+  - qa
   script:
     - yarn nx build ui-components-admin
 
@@ -45,6 +52,10 @@ ui-components-admin:
 admin build:
   stage: build
   needs: ["ui-components-admin build"]
+  only:
+  - main
+  - marge_requests
+  - qa
   script:
     - yarn nx build admin
 
@@ -57,6 +68,10 @@ admin test:
 voting build:
   stage: build
   needs: ["ui-components-admin build"]
+  only:
+  - main
+  - marge_requests
+  - qa
   script:
     - yarn nx build voting
 
