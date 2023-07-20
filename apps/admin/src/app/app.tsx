@@ -5,6 +5,7 @@ import { Button, SvgIcon } from '@r7-front-monorepo/ui-components-admin'
 const Voting = React.lazy(() => import('voting/Module'))
 
 export function App() {
+  const TESTE = 'teste'
   return (
     <React.Suspense fallback={null}>
       <header>
