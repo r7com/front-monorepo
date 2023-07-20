@@ -36,6 +36,7 @@ ui-components-admin test:
   stage: test
   only:
     refs:
+      - main
       - marge_requests
     changes:
       - libs/ui-components-admin/**/*
@@ -52,6 +53,7 @@ ui-components-admin e2e:
   image: cypress/browsers:node18.12.0-chrome107
   only:
     refs:
+      - main
       - marge_requests
     changes:
       - libs/ui-components-admin/**/*
@@ -95,6 +97,7 @@ admin test:
   stage: test
   only:
     refs:
+      - main
       - marge_requests
     changes:
       - apps/admin/**/*
