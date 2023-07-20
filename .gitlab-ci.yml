@@ -35,7 +35,7 @@ ui-components-admin build:
       - libs/ui-components-admin/**/*
   except:
     changes:
-      - libs/ui-components-admin/**/*.{json,md}
+      - libs/ui-components-admin/**/*.{json,md,css,scss,sass}
       - libs/ui-components-admin/**/*.test.{js,ts,jsx,tsx}
       - libs/ui-components-admin/**/*.spec.{js,ts,jsx,tsx}
 
@@ -92,7 +92,7 @@ admin build:
       - apps/admin/**/*
   except:
     changes:
-      - apps/admin/**/*.{json,md}
+      - apps/admin/**/*.{json,md,css,scss,sass}
       - apps/admin/**/*.test.{js,ts,jsx,tsx}
       - apps/admin/**/*.spec.{js,ts,jsx,tsx}
 
@@ -124,7 +124,7 @@ voting build:
       - apps/voting/**/*
   except:
     changes:
-      - apps/voting/**/*.{json,md}
+      - apps/voting/**/*.{json,md,css,scss,sass}
       - apps/voting/**/*.test.{js,ts,jsx,tsx}
       - apps/voting/**/*.spec.{js,ts,jsx,tsx}
 
