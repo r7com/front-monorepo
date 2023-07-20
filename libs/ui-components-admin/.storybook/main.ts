@@ -22,7 +22,7 @@ const config: StorybookConfig = {
     return config
   },
 }
-
+const teste = ''
 export default config
 
 // To customize your Vite configuration you can use the viteFinal field.
