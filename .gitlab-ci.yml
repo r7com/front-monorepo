@@ -96,7 +96,6 @@ admin build:
       - apps/admin/**/*.test.{js,ts,jsx,tsx}
       - apps/admin/**/*.spec.{js,ts,jsx,tsx}
 
-
 admin test:
   stage: test
   script:
@@ -128,7 +127,6 @@ voting build:
       - apps/voting/**/*.{json,md}
       - apps/voting/**/*.test.{js,ts,jsx,tsx}
       - apps/voting/**/*.spec.{js,ts,jsx,tsx}
-
 
 voting test:
   stage: test
