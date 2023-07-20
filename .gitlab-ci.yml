@@ -21,7 +21,7 @@ ui-components-admin build:
   only:
     refs:
       - main
-      - marge_requests
+      - merge_requests
     changes:
       - libs/ui-components-admin/**/*
   except:
@@ -37,7 +37,7 @@ ui-components-admin test:
   only:
     refs:
       - main
-      - marge_requests
+      - merge_requests
     changes:
       - libs/ui-components-admin/**/*
   except:
@@ -54,7 +54,7 @@ ui-components-admin e2e:
   only:
     refs:
       - main
-      - marge_requests
+      - merge_requests
     changes:
       - libs/ui-components-admin/**/*
   except:
@@ -82,7 +82,7 @@ admin build:
   only:
     refs:
       - main
-      - marge_requests
+      - merge_requests
     changes:
       - apps/admin/**/*
   except:
@@ -98,7 +98,7 @@ admin test:
   only:
     refs:
       - main
-      - marge_requests
+      - merge_requests
     changes:
       - apps/admin/**/*
   except:
@@ -116,7 +116,7 @@ voting build:
   only:
     refs:
       - main
-      - marge_requests
+      - merge_requests
     changes:
       - apps/voting/**/*
   except:
@@ -131,7 +131,7 @@ voting test:
   stage: test
   only:
     refs:
-      - marge_requests
+      - merge_requests
     changes:
       - apps/voting/**/*
   except:
