@@ -18,10 +18,12 @@ stages:
 #ui-components-admin jobs
 ui-components-admin build:
   stage: build
+  script:
+    - yarn nx build ui-components-admin
   only:
     refs:
       - main
-      - marge_requests
+      - merge_requests
     changes:
       - libs/ui-components-admin/**/*
   except:
@@ -29,14 +31,15 @@ ui-components-admin build:
       - libs/ui-components-admin/**/*.{json,md}
       - libs/ui-components-admin/**/*.test.{js,ts,jsx,tsx}
       - libs/ui-components-admin/**/*.spec.{js,ts,jsx,tsx}
-  script:
-    - yarn nx build ui-components-admin
 
 ui-components-admin test:
   stage: test
+  script:
+    - yarn nx test ui-components-admin
   only:
     refs:
-      - marge_requests
+      - main
+      - merge_requests
     changes:
       - libs/ui-components-admin/**/*
   except:
@@ -44,27 +47,26 @@ ui-components-admin test:
       - libs/ui-components-admin/**/*.{json,md}
       - libs/ui-components-admin/**/*.test.{js,ts,jsx,tsx}
       - libs/ui-components-admin/**/*.spec.{js,ts,jsx,tsx}
-  script:
-    - yarn nx test ui-components-admin
 
 ui-components-admin e2e:
   stage: e2e
   image: cypress/browsers:node18.12.0-chrome107
-  only:
-    refs:
-      - marge_requests
-    changes:
-      - libs/ui-components-admin/**/*
-  except:
-    changes:
-      - libs/ui-components-admin/**/*.{json,md}
-      - libs/ui-components-admin/**/*.test.{js,ts,jsx,tsx}
-      - libs/ui-components-admin/**/*.spec.{js,ts,jsx,tsx}
   script:
     - apt-get update && apt-get install -y xvfb
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
     - export DISPLAY=:99
     - yarn nx component-test ui-components-admin --graph=output.html
+  only:
+    refs:
+      - main
+      - merge_requests
+    changes:
+      - libs/ui-components-admin/**/*
+  except:
+    changes:
+      - libs/ui-components-admin/**/*.{json,md}
+      - libs/ui-components-admin/**/*.test.{js,ts,jsx,tsx}
+      - libs/ui-components-admin/**/*.spec.{js,ts,jsx,tsx}
 
   artifacts:
     when: always
@@ -77,10 +79,12 @@ ui-components-admin e2e:
 admin build:
   stage: build
   needs: ["ui-components-admin build"]
+  script:
+    - yarn nx build admin
   only:
     refs:
       - main
-      - marge_requests
+      - merge_requests
     changes:
       - apps/admin/**/*
   except:
@@ -88,14 +92,16 @@ admin build:
       - apps/admin/**/*.{json,md}
       - apps/admin/**/*.test.{js,ts,jsx,tsx}
       - apps/admin/**/*.spec.{js,ts,jsx,tsx}
-  script:
-    - yarn nx build admin
+
 
 admin test:
   stage: test
+  script:
+    - yarn nx test admin
   only:
     refs:
-      - marge_requests
+      - main
+      - merge_requests
     changes:
       - apps/admin/**/*
   except:
@@ -103,17 +109,18 @@ admin test:
       - apps/admin/**/*.{json,md}
       - apps/admin/**/*.test.{js,ts,jsx,tsx}
       - apps/admin/**/*.spec.{js,ts,jsx,tsx}
-  script:
-    - yarn nx test admin
+
 
 # voting jobs
 voting build:
   stage: build
   needs: ["ui-components-admin build"]
+  script:
+    - yarn nx build voting
   only:
     refs:
       - main
-      - marge_requests
+      - merge_requests
     changes:
       - apps/voting/**/*
   except:
@@ -121,14 +128,15 @@ voting build:
       - apps/voting/**/*.{json,md}
       - apps/voting/**/*.test.{js,ts,jsx,tsx}
       - apps/voting/**/*.spec.{js,ts,jsx,tsx}
-  script:
-    - yarn nx build voting
+
 
 voting test:
   stage: test
+  script:
+    - yarn nx test voting
   only:
     refs:
-      - marge_requests
+      - merge_requests
     changes:
       - apps/voting/**/*
   except:
@@ -136,7 +144,5 @@ voting test:
       - apps/voting/**/*.{json,md}
       - apps/voting/**/*.test.{js,ts,jsx,tsx}
       - apps/voting/**/*.spec.{js,ts,jsx,tsx}
-  script:
-    - yarn nx test voting
 
   environment: production
