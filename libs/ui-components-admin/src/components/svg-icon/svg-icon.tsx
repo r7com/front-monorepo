@@ -3,10 +3,11 @@ import { useDynamicSvgImport } from '../../hooks/use-dynamic-svg-import'
 export type IconProps = {
   iconName: string
   size?: 'default' | 'medium' | 'small'
+  className?: string
   svgProp?: React.SVGProps<SVGAElement>
 }
 
-export function SvgIcon({ iconName, size = 'default', svgProp }: IconProps) {
+export function SvgIcon({ iconName, size = 'default', className = '', svgProp }: IconProps) {
   const { loading, error, SvgIconEl } = useDynamicSvgImport(iconName)
 
   const sizesVariant = {
@@ -24,7 +25,7 @@ export function SvgIcon({ iconName, size = 'default', svgProp }: IconProps) {
           width={sizesVariant.width}
           height={sizesVariant.height}
           {...svgProp}
-          className={`pointer-events-none ${svgProp?.className}`.trim()}
+          className={`${className} pointer-events-none ${svgProp?.className ?? ''}`.trim()}
           viewBox="0 0 50 50"
         />
       )}
