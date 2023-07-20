@@ -16,6 +16,8 @@ export function SvgIcon({ iconName, size = 'default', className = '', svgProp }:
     small: { width: 16, height: 16 },
   }[size]
 
+  const defaultClasses = 'pointer-events-none'
+
   return (
     <>
       {loading && <div>...</div>} {/** componente loading */}
@@ -25,7 +27,7 @@ export function SvgIcon({ iconName, size = 'default', className = '', svgProp }:
           width={sizesVariant.width}
           height={sizesVariant.height}
           {...svgProp}
-          className={`${className} pointer-events-none ${svgProp?.className ?? ''}`.trim()}
+          className={`${defaultClasses} ${className} ${svgProp?.className ?? ''}`.trim()}
           viewBox="0 0 50 50"
         />
       )}
