@@ -157,9 +157,6 @@ module.exports = {
     plugin(function ({ addUtilities, theme }) {
       addUtilities(
         {
-          '.border-thin': {
-            'box-shadow': '0px 0px 0 1px #cecece',
-          },
           '.content-container': {
             width: '100%',
             '@media (min-width: 768px)': {
