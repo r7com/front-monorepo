@@ -7,6 +7,7 @@ image: $NODE_VERSION
 default:
   tags:
     - gitlab-runner-ec2
+  interruptible: true
   cache:
     key:
       files:
@@ -142,6 +143,7 @@ voting test:
     - yarn nx test voting
   only:
     refs:
+      - main
       - merge_requests
     changes:
       - apps/voting/**/*
