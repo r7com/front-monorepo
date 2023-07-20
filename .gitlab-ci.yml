@@ -51,9 +51,7 @@ ui-components-admin test:
       - libs/ui-components-admin/**/*
   except:
     changes:
-      - libs/ui-components-admin/**/*.{json,md}
-      - libs/ui-components-admin/**/*.test.{js,ts,jsx,tsx}
-      - libs/ui-components-admin/**/*.spec.{js,ts,jsx,tsx}
+      - libs/ui-components-admin/**/*.{json,md,css,scss,sass}
 
 ui-components-admin e2e:
   stage: e2e
@@ -71,9 +69,7 @@ ui-components-admin e2e:
       - libs/ui-components-admin/**/*
   except:
     changes:
-      - libs/ui-components-admin/**/*.{json,md}
-      - libs/ui-components-admin/**/*.test.{js,ts,jsx,tsx}
-      - libs/ui-components-admin/**/*.spec.{js,ts,jsx,tsx}
+      - libs/ui-components-admin/**/*.{json,md,css,scss,sass}
 
   artifacts:
     when: always
@@ -113,10 +109,7 @@ admin test:
       - apps/admin/**/*
   except:
     changes:
-      - apps/admin/**/*.{json,md}
-      - apps/admin/**/*.test.{js,ts,jsx,tsx}
-      - apps/admin/**/*.spec.{js,ts,jsx,tsx}
-
+      - apps/admin/**/*.{json,md,css,scss,sass}
 
 # voting jobs
 voting build:
@@ -149,8 +142,6 @@ voting test:
       - apps/voting/**/*
   except:
     changes:
-      - apps/voting/**/*.{json,md}
-      - apps/voting/**/*.test.{js,ts,jsx,tsx}
-      - apps/voting/**/*.spec.{js,ts,jsx,tsx}
+      - apps/voting/**/*.{json,md,css,scss,sass}
 
   environment: production
