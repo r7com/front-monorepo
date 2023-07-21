@@ -8,18 +8,22 @@ export function App() {
   return (
     <React.Suspense fallback={null}>
       <header>
-        <SvgIcon iconName="github" />
+        <Button type="button" size="content" color="transparent">
+          <SvgIcon iconName="github" />
+        </Button>
+
+        <Button type="button">botao</Button>
+
+        <Button as="a">link</Button>
         <ul>
-          <li className="bg-slate-300">
-            <Link className="no-underline text-slate-700" to="/">
-              <Button type="button">Home</Button>
+          <li>
+            <Link className="no-underline" to="/">
+              Home
             </Link>
           </li>
 
           <li>
-            <Link to="/voting">
-              <Button type="button">Voting</Button>
-            </Link>
+            <Link to="/voting">Voting</Link>
           </li>
         </ul>
       </header>
