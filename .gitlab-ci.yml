@@ -7,8 +7,15 @@ image: $NODE_VERSION
 default:
   tags:
     - gitlab-runner-ec2
+  interruptible: true
+  cache:
+    key:
+      files:
+        - yarn.lock
+    paths:
+      - '.yarn-cache/'
   before_script:
-    - yarn install
+    - yarn install --cache-folder .yarn-cache --prefer-offline --frozen-lockfile
 
 stages:
   - build
@@ -44,9 +51,7 @@ ui-components-admin test:
       - libs/ui-components-admin/**/*
   except:
     changes:
-      - libs/ui-components-admin/**/*.{json,md}
-      - libs/ui-components-admin/**/*.test.{js,ts,jsx,tsx}
-      - libs/ui-components-admin/**/*.spec.{js,ts,jsx,tsx}
+      - libs/ui-components-admin/**/*.{json,md,css,scss,sass}
 
 ui-components-admin e2e:
   stage: e2e
@@ -64,9 +69,7 @@ ui-components-admin e2e:
       - libs/ui-components-admin/**/*
   except:
     changes:
-      - libs/ui-components-admin/**/*.{json,md}
-      - libs/ui-components-admin/**/*.test.{js,ts,jsx,tsx}
-      - libs/ui-components-admin/**/*.spec.{js,ts,jsx,tsx}
+      - libs/ui-components-admin/**/*.{json,md,css,scss,sass}
 
   artifacts:
     when: always
@@ -78,7 +81,7 @@ ui-components-admin e2e:
 #admin jobs
 admin build:
   stage: build
-  needs: ["ui-components-admin build"]
+  needs: ['ui-components-admin build']
   script:
     - yarn nx build admin
   only:
@@ -93,7 +96,6 @@ admin build:
       - apps/admin/**/*.test.{js,ts,jsx,tsx}
       - apps/admin/**/*.spec.{js,ts,jsx,tsx}
 
-
 admin test:
   stage: test
   script:
@@ -106,15 +108,12 @@ admin test:
       - apps/admin/**/*
   except:
     changes:
-      - apps/admin/**/*.{json,md}
-      - apps/admin/**/*.test.{js,ts,jsx,tsx}
-      - apps/admin/**/*.spec.{js,ts,jsx,tsx}
-
+      - apps/admin/**/*.{json,md,css,scss,sass}
 
 # voting jobs
 voting build:
   stage: build
-  needs: ["ui-components-admin build"]
+  needs: ['ui-components-admin build']
   script:
     - yarn nx build voting
   only:
@@ -129,20 +128,18 @@ voting build:
       - apps/voting/**/*.test.{js,ts,jsx,tsx}
       - apps/voting/**/*.spec.{js,ts,jsx,tsx}
 
-
 voting test:
   stage: test
   script:
     - yarn nx test voting
   only:
     refs:
+      - main
       - merge_requests
     changes:
       - apps/voting/**/*
   except:
     changes:
-      - apps/voting/**/*.{json,md}
-      - apps/voting/**/*.test.{js,ts,jsx,tsx}
-      - apps/voting/**/*.spec.{js,ts,jsx,tsx}
+      - apps/voting/**/*.{json,md,css,scss,sass}
 
   environment: production
