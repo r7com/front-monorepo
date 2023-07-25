@@ -9,8 +9,15 @@ module.exports = composePlugins(withNx(), withReact(), withModuleFederation(base
   // Further customize webpack config
   config.module.rules.push({
     test: /\.svg$/i,
-    // issuer: /\.[jt]sx?$/,
-    use: ['@svgr/webpack', 'url-loader'],
+    use: [
+      {
+        loader: '@svgr/webpack',
+        options: {
+          dimensions: false,
+        },
+      },
+      'url-loader',
+    ],
   })
 
   return config
