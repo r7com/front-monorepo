@@ -24,11 +24,10 @@ export function SvgIcon({ iconName, size = 'default', className = '', svgProp }:
       {error && <div>Erro ao carregar icone</div>} {/** componente error */}
       {SvgIconEl && (
         <SvgIconEl
-          width={sizesVariant.width}
-          height={sizesVariant.height}
           {...svgProp}
+          width={svgProp?.width ?? sizesVariant.width}
+          height={svgProp?.height ?? sizesVariant.height}
           className={`${defaultClasses} ${className} ${svgProp?.className ?? ''}`.trim()}
-          viewBox="0 0 50 50"
         />
       )}
     </>
