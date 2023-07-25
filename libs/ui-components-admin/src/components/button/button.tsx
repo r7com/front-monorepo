@@ -22,7 +22,7 @@ export function Button<C extends React.ElementType = 'button'>({
 }: ButtonProps<C>) {
   const DynamicTag = as || 'button'
 
-  const defaultClasses = 'box-border cursor-pointer'
+  const defaultVariant = 'block box-border cursor-pointer'
 
   const sizesVariant = {
     default: 'py-[16px] px-[12px]',
@@ -58,7 +58,7 @@ export function Button<C extends React.ElementType = 'button'>({
   }[textCase]
 
   const compiledClasses = [
-    defaultClasses,
+    defaultVariant,
     className,
     sizesVariant,
     colorsVariant,

@@ -73,7 +73,7 @@
     "jsdom": "~22.1.0",
     "lint-staged": "^13.2.3",
     "nx": "16.4.1",
-    "nx-cloud": "latest",
+    "nx-cloud": "^16.0.5",
     "postcss": "8.4.21",
     "prettier": "^2.6.2",
     "react-refresh": "^0.10.0",
