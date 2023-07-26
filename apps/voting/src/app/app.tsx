@@ -6,8 +6,8 @@ export function App() {
     <div>
       <h2 className="text-gray-600 text-lg">Welcome voting</h2>
       <div className="flex justify-center h-screen items-center">
-        <Tooltip content={<Teste />} position="left">
-          <button>andi</button>
+        <Tooltip content={<Teste />} position="right">
+          <button>anderson batists</button>
         </Tooltip>
       </div>
     </div>
@@ -15,7 +15,13 @@ export function App() {
 }
 
 function Teste() {
-  return <div>ancxxzcxzs</div>
+  return (
+    <div>
+      <h1>asnjsda</h1>
+      <p> anc odb dobdfs pfdns;l pfds pdf pfdsol xxzcxzs</p>
+      <p> anc odb dobdfs pfdns;l pfds pdf pfdsol xxzcxzs</p>
+    </div>
+  )
 }
 
 export default App
