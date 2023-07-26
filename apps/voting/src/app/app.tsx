@@ -5,9 +5,11 @@ export function App() {
   return (
     <div>
       <h2 className="text-gray-600 text-lg">Welcome voting</h2>
-      <Tooltip content={<Teste />} position="left">
-        <button>andi</button>
-      </Tooltip>
+      <div className="flex justify-center h-screen items-center">
+        <Tooltip content={<Teste />} position="left">
+          <button>andi</button>
+        </Tooltip>
+      </div>
     </div>
   )
 }
