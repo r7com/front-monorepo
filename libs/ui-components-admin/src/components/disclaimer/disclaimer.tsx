@@ -1,9 +1,13 @@
 import { SvgIcon } from '../svg-icon'
 
-export function Disclaimer({ text }: { text: string }) {
+export type DisclaimerProps = {
+  text: string
+}
+
+export function Disclaimer({ text }: DisclaimerProps) {
   return (
-    <div className="flex items-center p-nano gap-nano" data-cy="disclaimer">
-      <SvgIcon iconName="disclaimer" size="medium" />
+    <div className="flex items-center p-nano gap-nano">
+      <SvgIcon iconName="circle-info" size="medium" className="fill-feedback-success-500" />
       <p className="text-xxxs font-open-sans text-dark-high-500">{text}</p>
     </div>
   )

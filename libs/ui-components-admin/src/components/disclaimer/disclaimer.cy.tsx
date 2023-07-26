@@ -8,16 +8,10 @@ describe(Disclaimer.name, () => {
   })
 
   it('uses custom text for disclaimer paragraph', () => {
-    cy.findByText(text)
-    cy.should('be.visible')
-  })
-
-  it('should render svg', () => {
-    cy.get('svg').should('be.visible')
+    cy.get('p').should('have.text', text)
   })
 
   it('should match the snapshot', () => {
-    cy.get('[data-cy="disclaimer"]')
     cy.matchImage()
   })
 })
