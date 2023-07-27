@@ -15,7 +15,8 @@ export function Tooltip<C extends React.ElementType>({
     right:
       '-right-[15px] top-1/2 translate-x-[100%] -translate-y-1/2 ---  after:border-[15px] after:border-solid after:border-transparent after:border-l-[0px] after:border-r-[15px] after:border-r-solid after:border-r-neutral-low-600 ---- after:top-1/2 after:left-0 after:-translate-x-full after:-translate-y-1/2',
     left: 'after:right-[1px] after:border-[15px] after:border-solid after:border-transparent after:left-1/2 after:border-r-[0px] after:border-l-[15px] after:border-l-neutral-low-600 right-full mr-xxxs top-1/2 -translate-y-1/2 after:translate-x-full after:-translate-y-1/2 after:top-1/2',
-    bottom: '',
+    bottom:
+      'top-full translate-y-[10%] translate-x-1/2 right-1/2 after:border-[15px] after:border-solid after:border-transparent after:border-t-[0px] after:border-b-[15px] after:border-b-solid after:border-b-neutral-low-600 after:left-1/2 after:bottom-full after:-translate-x-1/2',
   }[position]
 
   return (
