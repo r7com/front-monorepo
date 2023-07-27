@@ -1,4 +1,4 @@
-import { Tooltip } from '@r7-front-monorepo/ui-components-admin'
+import { Button, Tooltip } from '@r7-front-monorepo/ui-components-admin'
 import '../style.css'
 
 export function App() {
@@ -7,7 +7,7 @@ export function App() {
       <h2 className="text-gray-600 text-lg">Welcome voting</h2>
       <div className="flex justify-center h-screen items-center">
         <Tooltip content={<Teste />} position="bottom">
-          <button>anderson batists</button>
+          <Button>anderson batists</Button>
         </Tooltip>
       </div>
     </div>
