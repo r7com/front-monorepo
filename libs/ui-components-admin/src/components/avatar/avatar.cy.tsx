@@ -3,13 +3,13 @@ import { Avatar } from './avatar'
 describe(Avatar.name, () => {
   it('should renders avatar with image variant with fallback image', () => {
     cy.mount(<Avatar></Avatar>)
-    cy.get('img').should('have.attr', 'src')
+    cy.get('img').should('be.visible')
     cy.matchImage()
   })
 
   it('should renders avatar with image variant', () => {
     cy.mount(<Avatar type="default"></Avatar>)
-    cy.get('img').should('have.attr', 'src')
+    cy.get('img').should('be.visible')
     cy.matchImage()
   })
 
