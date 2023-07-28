@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
-import { Avatar, Button, Disclaimer, SvgIcon } from '@r7-front-monorepo/ui-components-admin'
 
 const Voting = React.lazy(() => import('voting/Module'))
 
