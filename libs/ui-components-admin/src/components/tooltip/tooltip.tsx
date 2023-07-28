@@ -35,18 +35,25 @@ export function Tooltip<C extends React.ElementType>({
     .trim()
 
   return (
-    <div className="group inline relative">
+    <div className="inline relative">
       <span
+        data-testid="tooltip"
         role="tooltip"
         id="tooltip"
-        onMouseEnter={() => setHover(false)}
-        onMouseLeave={() => setHover(true)}
-        aria-hidden={isHover}
-        className={`bg-dark-low-400 opacity-[0] -z-10 w-max group-hover:opacity-[1] group-hover:z-10 rounded-md transition-opacity ease-out duration-300 text-neutral-high-400 absolute px-xxxs py-xxs ${compiledClasses}`}
+        aria-hidden={!isHover}
+        className={`bg-dark-low-400 w-max ${
+          isHover ? 'visible z-10' : 'invisible -z-10'
+        } rounded-md transition-all ease-out duration-300 text-neutral-high-400 absolute px-xxxs py-xxs ${compiledClasses}`}
       >
         {content}
       </span>
-      <div aria-describedby="tooltip">{children}</div>
+      <div
+        aria-describedby="tooltip"
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
+        {children}
+      </div>
     </div>
   )
 }

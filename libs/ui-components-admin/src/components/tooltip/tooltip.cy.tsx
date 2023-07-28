@@ -1,13 +1,20 @@
+import { Button } from '../button'
 import { Tooltip } from './tooltip'
 
 describe(Tooltip.name, () => {
-  it('render Tooltip', () => {
+  beforeEach(() => {
     cy.mount(
-      <Tooltip content="conteudo do tooltip">
-        <button>anderson</button>
-      </Tooltip>,
+      <div className="flex justify-center items-center h-screen">
+        <Tooltip content="conteudo do tooltip" position="bottom">
+          <Button>teste</Button>
+        </Tooltip>
+      </div>,
     )
-    cy.findByRole('button', { name: /anderson/i }).trigger('mouseenter')
-    // cy.matchImage()
+  })
+
+  it('render Tooltip', () => {
+    cy.findByRole('button', { name: 'teste' }).trigger('mouseover')
+    cy.get('[data-testid="tooltip"]').should('be.visible')
+    cy.matchImage()
   })
 })
