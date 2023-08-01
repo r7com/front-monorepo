@@ -2,7 +2,7 @@ import { SvgIcon } from '../svg-icon'
 
 export type CardStatusProps = {
   text: string
-  variant: 'success' | 'error' | 'helper' | 'info' | 'waiting'
+  variant?: 'success' | 'error' | 'helper' | 'info' | 'waiting'
 }
 
 export function CardStatus({ text, variant = 'info' }: CardStatusProps) {
