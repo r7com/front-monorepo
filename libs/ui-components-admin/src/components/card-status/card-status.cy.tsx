@@ -1,4 +1,4 @@
-import { CardStatus, CardStatusProps } from './card-status'
+import { CardStatus } from './card-status'
 
 describe(CardStatus.name, () => {
   const text = 'Card Status'
