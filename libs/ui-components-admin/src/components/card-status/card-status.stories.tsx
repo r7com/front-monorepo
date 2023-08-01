@@ -14,9 +14,9 @@ export default meta
 type Story = StoryObj<typeof CardStatus>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
+export const Status: Story = {
   args: {
-    text: 'Pergunta Publicada',
+    text: 'Card status',
     variant: 'success',
   },
   parameters: {
