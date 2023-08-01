@@ -1,4 +1,3 @@
-import { Button } from '@r7-front-monorepo/ui-components-admin'
 import * as React from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 
@@ -7,8 +6,6 @@ const Voting = React.lazy(() => import('voting/Module'))
 export function App() {
   return (
     <React.Suspense fallback={null}>
-      <Button>click 1</Button>
-
       <header>
         <ul>
           <li>
