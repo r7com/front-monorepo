@@ -24,7 +24,7 @@ export function CardStatus({ text, variant }: CardStatusProps) {
   const compiledClasses = [statusIconVariant, statusTextVariant].join(' ').trim()
 
   return (
-    <div className="flex items-center p-nano">
+    <div data-test="card-status" className="flex items-center p-nano">
       <SvgIcon
         iconName={variant}
         className={`${compiledClasses} w-xxxs h-xxxs min-w-max min-h-max m-nano`}
