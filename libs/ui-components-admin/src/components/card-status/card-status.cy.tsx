@@ -1,29 +1,15 @@
-import { CardStatus } from './card-status'
+import { CardStatus, CardStatusProps } from './card-status'
 
 describe(CardStatus.name, () => {
-  const texto = 'Card Status'
+  const text = 'Card Status'
+  const status = ['success', 'error', 'helper', 'info'] satisfies CardStatusProps['variant'][]
 
-  it('Check status of success', () => {
-    cy.mount(<CardStatus text={texto} variant="success" />)
-    cy.get('[data-test="card-status"] > svg').should('exist')
-    cy.get('[data-test="card-status"] > p').should('have.text', texto)
-  })
-
-  it('Check status of error', () => {
-    cy.mount(<CardStatus text={texto} variant="error" />)
-    cy.get('[data-test="card-status"] > svg').should('exist')
-    cy.get('[data-test="card-status"] > p').should('have.text', texto)
-  })
-
-  it('Check status of helper', () => {
-    cy.mount(<CardStatus text={texto} variant="helper" />)
-    cy.get('[data-test="card-status"] > svg').should('exist')
-    cy.get('[data-test="card-status"] > p').should('have.text', texto)
-  })
-
-  it('Check status of info', () => {
-    cy.mount(<CardStatus text={texto} variant="info" />)
-    cy.get('[data-test="card-status"] > svg').should('exist')
-    cy.get('[data-test="card-status"] > p').should('have.text', texto)
+  status.forEach(res => {
+    it(`Check status of ${res}`, () => {
+      cy.mount(<CardStatus text={text} variant={res} />)
+      cy.get('div').should('be.visible')
+      cy.get('div > p').should('have.text', text)
+      cy.matchImage()
+    })
   })
 })
