@@ -8,4 +8,10 @@ describe(SvgIcon.name, () => {
     cy.get(svgIconSelector).should('be.visible')
     cy.matchImage()
   })
+
+  it('render non-existent icon should render error message', () => {
+    cy.mount(<SvgIcon iconName="non-existent" />)
+    cy.get(svgIconSelector).should('have.text', 'Erro ao carregar icone')
+    cy.matchImage()
+  })
 })
