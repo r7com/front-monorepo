@@ -42,8 +42,8 @@ export function Tooltip<C extends React.ElementType>({
         id="tooltip"
         aria-hidden={!isHover}
         className={`bg-dark-low-400 w-max ${
-          isHover ? 'visible z-10' : 'invisible -z-10'
-        } rounded-md transition-all ease-out duration-300 text-neutral-high-400 absolute px-xxxs py-xxs ${compiledClasses}`}
+          isHover ? 'opacity-[1] z-10' : 'opacity-[0] -z-10'
+        } rounded-md transition-opacity ease-in-out duration-150 text-neutral-high-400 absolute px-xxxs py-xxs ${compiledClasses}`}
       >
         {content}
       </span>

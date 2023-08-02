@@ -12,7 +12,7 @@ describe(Tooltip.name, () => {
     )
   })
 
-  it('render Tooltip', () => {
+  it('renders Tooltip', () => {
     cy.findByRole('button', { name: 'teste' }).trigger('mouseover')
     cy.get('[data-testid="tooltip"]').should('be.visible')
     cy.matchImage()
