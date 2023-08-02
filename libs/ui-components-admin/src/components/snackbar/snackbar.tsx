@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Button } from '../button'
 import { SvgIcon } from '../svg-icon'
 
@@ -5,15 +6,19 @@ export type SnackbarProps = {
   message: string
   position?: 'top-left' | 'top-right' | 'bottom-right' | 'bottom-left'
   type?: 'default' | 'alert' | 'warning' | 'success'
-  onDismiss?: () => void
+  dismiss?: number
 }
 
 export function Snackbar({
   message,
   position = 'bottom-left',
   type = 'default',
-  onDismiss,
+  dismiss = 5000,
 }: SnackbarProps) {
+  const [isActive, setActive] = useState(true)
+
+  const onDismiss = () => setActive(false)
+
   const positionsVariant = {
     'top-right': 'sm:top-xxs sm:right-xxs sm:left-auto left-nano right-nano top-nano',
     'bottom-right': 'sm:bottom-xxs sm:right-xxs sm:left-auto left-nano right-nano bottom-nano',
@@ -28,9 +33,20 @@ export function Snackbar({
     success: { color: 'bg-feedback-success-500', icon: 'snackbar-success' },
   }[type]
 
+  const fadeInOutVariant = {
+    show: 'visible opacity-[1] motion-safe:transition-all',
+    hide: 'invisible opacity-[0] motion-safe:transition-all',
+  }[isActive ? 'show' : 'hide']
+
+  useEffect(() => {
+    const timer = setTimeout(() => onDismiss(), dismiss)
+
+    return () => clearTimeout(timer)
+  }, [dismiss])
+
   return (
     <div
-      className={`fixed flex justify-start items-center z-50 cursor-pointer sm:min-w-[388px] sm:min-h-[56px] ${positionsVariant}`.trim()}
+      className={`fixed flex justify-start items-center z-50 cursor-pointer sm:min-w-[388px] sm:min-h-[56px] ${positionsVariant} ${fadeInOutVariant}`.trim()}
       role="presentation"
       data-testid="snackbar"
     >
