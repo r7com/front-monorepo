@@ -1,22 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Bullet } from '.'
+import { CardStatus } from '.'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const meta: Meta<typeof Bullet> = {
-  title: 'Example/Bullet',
-  component: Bullet,
+const meta: Meta<typeof CardStatus> = {
+  title: 'Example/CardStatus',
+  component: CardStatus,
   tags: ['autodocs'],
   argTypes: {},
 }
 
 export default meta
-type Story = StoryObj<typeof Bullet>
+type Story = StoryObj<typeof CardStatus>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
+export const Status: Story = {
   args: {
-    text: 'primary',
+    text: 'Card status',
+    variant: 'success',
   },
   parameters: {
     design: {
