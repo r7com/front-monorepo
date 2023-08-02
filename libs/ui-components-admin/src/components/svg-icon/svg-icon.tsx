@@ -24,6 +24,7 @@ export function SvgIcon({ iconName, size = 'default', className = '', svgProp }:
       {error && <div>Erro ao carregar icone</div>} {/** componente error */}
       {SvgIconEl && (
         <SvgIconEl
+          data-testid="svg-icon"
           {...svgProp}
           width={svgProp?.width ?? sizesVariant.width}
           height={svgProp?.height ?? sizesVariant.height}

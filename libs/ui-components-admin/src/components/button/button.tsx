@@ -70,7 +70,7 @@ export function Button<C extends React.ElementType = 'button'>({
     .trim()
 
   return (
-    <DynamicTag className={compiledClasses} {...rest}>
+    <DynamicTag data-testid="button" className={compiledClasses} {...rest}>
       {children}
     </DynamicTag>
   )

@@ -1,5 +1,7 @@
 import { Disclaimer } from './disclaimer'
 
+const disclaimerSelector = '[data-testid="disclaimer"]'
+
 describe(Disclaimer.name, () => {
   const text = 'Testando disclaimer'
 
@@ -8,7 +10,7 @@ describe(Disclaimer.name, () => {
   })
 
   it('uses custom text for disclaimer paragraph', () => {
-    cy.get('p').should('have.text', text)
+    cy.get(`${disclaimerSelector} > p`).should('have.text', text)
   })
 
   it('should match the snapshot', () => {
