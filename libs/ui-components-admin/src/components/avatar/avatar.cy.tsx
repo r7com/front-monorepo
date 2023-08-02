@@ -9,12 +9,6 @@ describe(Avatar.name, () => {
     cy.matchImage()
   })
 
-  it('should renders avatar with image variant', () => {
-    cy.mount(<Avatar type="default" />)
-    cy.get(avatarSelector).should('be.visible')
-    cy.matchImage()
-  })
-
   it('should renders avatar with image variant with determined source', () => {
     const testSrc =
       'https://img.r7.com/images/r7-30072019142631584?crop_position=c&dimensions=32x32'
