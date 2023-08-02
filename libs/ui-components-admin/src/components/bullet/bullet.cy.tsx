@@ -1,7 +1,7 @@
 import { Bullet } from './bullet'
 
 describe(Bullet.name, () => {
-  const text = 'testando o componente bullet'
+  const text = 'Bullet'
   it(`check status published`, () => {
     cy.mount(<Bullet text={text} variant="published" />)
     cy.get('[data-testid="bullet"]').should('be.visible')
