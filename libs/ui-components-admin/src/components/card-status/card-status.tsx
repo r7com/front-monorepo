@@ -21,6 +21,7 @@ export function CardStatus({ text, variant = 'info' }: CardStatusProps) {
     info: 'text-brand-primary-400',
     waiting: 'text-brand-primary-400',
   }[variant]
+
   return (
     <div className="flex items-center p-nano">
       <SvgIcon
