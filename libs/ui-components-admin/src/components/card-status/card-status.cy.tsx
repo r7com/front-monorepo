@@ -3,7 +3,7 @@ import { CardStatus } from './card-status'
 describe(CardStatus.name, () => {
   const text = 'Card Status'
 
-  it(`Check status of published`, () => {
+  it(`Check status of success`, () => {
     cy.mount(<CardStatus text={text} variant="success" />)
     cy.get('[data-testid="card-status"]').should('be.visible')
     cy.get('[data-testid="card-status"] > p').should('have.text', text)
