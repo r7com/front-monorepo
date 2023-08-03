@@ -39,8 +39,7 @@ export function Snackbar({
   }[isActive ? 'show' : 'hide']
 
   useEffect(() => {
-    const timer = setTimeout(() => onDismiss(), dismiss)
-
+    const timer = setTimeout(onDismiss, dismiss)
     return () => clearTimeout(timer)
   }, [dismiss])
 
