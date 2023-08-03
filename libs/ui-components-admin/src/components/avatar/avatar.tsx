@@ -10,12 +10,18 @@ export function Avatar({ type = 'default', sourceUrl = '', enumValue = 1 }: Avat
 
   const avatarVariant = {
     default: (
-      <picture className="flex w-xs h-xs bg-brand-primary-600 border-solid border-thin border-neutral-high-500 rounded-circular overflow-hidden">
+      <picture
+        data-testid="avatar"
+        className="flex w-xs h-xs bg-brand-primary-600 border-solid border-thin border-neutral-high-500 rounded-circular overflow-hidden"
+      >
         <img src={defaultImageFallback} alt="avatar" />
       </picture>
     ),
     enumerator: (
-      <div className="flex w-xs h-xs bg-neutral-high-500 border-solid border-thin border-neutral-high-500 rounded-circular items-center justify-center text-brand-primary-500">
+      <div
+        data-testid="avatar"
+        className="flex w-xs h-xs bg-neutral-high-500 border-solid border-thin border-neutral-high-500 rounded-circular items-center justify-center text-brand-primary-500"
+      >
         +{enumValue}
       </div>
     ),
