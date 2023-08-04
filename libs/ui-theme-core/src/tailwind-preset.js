@@ -17,6 +17,7 @@ module.exports = {
       circular: '50%',
     },
     boxShadow: {
+      drop: '0px 0px 0.2rem 0.1rem rgba(51, 51, 51, 8%)',
       level1: '0px 0.5rem 1rem -0.25rem rgba(51, 51, 51, 8%)',
       level2: '0px 1rem 1.5rem -0.25rem rgba(51, 51, 51, 8%)',
       level3: '0px 1rem 2rem -0.25rem rgba(51, 51, 51, 16%)',

@@ -20,7 +20,9 @@ export function App() {
           </li>
         </ul>
       </header>
-      <Toggle></Toggle>
+      <Toggle size="large"></Toggle>
+      <Toggle size="medium" disabled></Toggle>
+      <Toggle size="small"></Toggle>
       <Routes>
         <Route path="/" element={<h1>Hello Dashboard</h1>} />
         <Route path="/voting" element={<Voting />} />
