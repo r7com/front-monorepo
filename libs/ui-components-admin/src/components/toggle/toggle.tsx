@@ -1,13 +1,19 @@
+import { useState } from 'react'
 import { SvgIcon } from '../svg-icon'
 
 export type ToggleProps = {
-  status?: boolean
+  checked?: boolean
   size?: 'large' | 'medium' | 'small'
   disabled?: boolean
   children?: React.ReactNode
 }
 
-export function Toggle({ status, size = 'large', disabled = false, children }: ToggleProps) {
+export function Toggle({ checked, size = 'large', disabled = false, children }: ToggleProps) {
+  const defaultChecked = checked ? checked : false
+
+  const [isChecked, setIsChecked] = useState(defaultChecked)
+  const handleToggle = () => setIsChecked(!isChecked)
+
   const sizeVariant = {
     large: 'w-xxxl h-sm after:w-xs after:h-xs peer-checked:after:translate-x-sm',
     medium: 'w-xl h-xs after:w-xxs after:h-xxs peer-checked:after:translate-x-xs',
@@ -33,6 +39,8 @@ export function Toggle({ status, size = 'large', disabled = false, children }: T
   return (
     <label className="relative flex items-center group p-2 text-xl m-quark">
       <input
+        onChange={handleToggle}
+        checked={isChecked}
         type="checkbox"
         className="absolute -translate-x-1/2 w-full h-full peer appearance-none rounded-md focus:outline-none cursor-pointer"
         disabled={disabled}
