@@ -1,11 +1,9 @@
 import type { StorybookConfig } from '@storybook/react-vite'
-
 const config: StorybookConfig = {
   stories: ['../**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-links',
-    '@storybook/addon-interactions',
     '@storybook/addon-mdx-gfm',
     '@storybook/addon-designs',
   ],
@@ -17,6 +15,7 @@ const config: StorybookConfig = {
       },
     },
   },
+
   async viteFinal(config, options) {
     // Add your configuration here
     return config
