@@ -1,20 +1,20 @@
 import { useState } from 'react'
 
-export type TooltipProps<C extends React.ElementType> = {
+export type TooltipProps = {
   content: string | React.ReactNode
   children: React.ReactNode
   position?: 'right' | 'left' | 'bottom' | 'top'
   className?: string
   arrow?: boolean
-} & React.ComponentPropsWithoutRef<C>
+}
 
-export function Tooltip<C extends React.ElementType>({
+export function Tooltip({
   content,
   children,
   position = 'top',
   className = '',
   arrow = true,
-}: TooltipProps<C>) {
+}: TooltipProps) {
   const [isHover, setHover] = useState(false)
 
   const variant = {
