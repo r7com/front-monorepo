@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export type ToggleProps = {
   checked?: boolean
@@ -8,7 +8,12 @@ export type ToggleProps = {
 
 export function Toggle({ checked = false, size = 'large', disabled = false }: ToggleProps) {
   const [isChecked, setIsChecked] = useState(checked)
-  const handleToggle = () => setIsChecked(!isChecked)
+  const handleToggle = () => {
+    setIsChecked(prev => {
+      return !prev
+    })
+    console.log('Is-CHECKED: ', isChecked)
+  }
 
   const sizeVariant = {
     large: 'w-xxxl h-sm after:w-xs after:h-xs peer-checked:after:translate-x-sm',
@@ -31,6 +36,10 @@ export function Toggle({ checked = false, size = 'large', disabled = false }: To
   const focusState = disabled
     ? ''
     : 'shadow-drop peer-focus:outline peer-focus:outline-1 peer-focus:outline-light-high-500 peer-focus:shadow-neutral-low-400 peer-checked:peer-focus:shadow-brand-primary-500'
+
+  useEffect(() => {
+    setIsChecked(checked)
+  }, [checked])
 
   return (
     <label className="relative flex items-center group p-2 text-xl m-quark" data-testid="toggle">
