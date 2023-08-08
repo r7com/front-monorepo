@@ -14,7 +14,7 @@ describe(Tooltip.name, () => {
 
   it('Visible', () => {
     cy.findByRole('button', { name: 'teste' }).trigger('mouseover')
-    cy.findByRole('tooltip').should('be.visible')
+    cy.findByRole('tooltip', { hidden: false }).should('be.visible')
     cy.matchImage()
   })
 
