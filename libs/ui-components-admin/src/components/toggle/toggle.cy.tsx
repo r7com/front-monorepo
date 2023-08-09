@@ -51,4 +51,11 @@ describe(Toggle.name, () => {
     cy.get(toggleSelector).should('be.visible')
     cy.matchImage()
   })
+
+  it('render toggle without icon', () => {
+    cy.mount(<Toggle icon={false}></Toggle>)
+
+    cy.get(toggleSelector).should('be.visible')
+    cy.matchImage()
+  })
 })
