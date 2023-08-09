@@ -23,6 +23,7 @@ export const Primary: Story = {
     size: 'large',
     checked: false,
     disabled: false,
+    icon: true,
   },
   parameters: {
     design: {
