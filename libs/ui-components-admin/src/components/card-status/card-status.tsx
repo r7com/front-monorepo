@@ -6,7 +6,7 @@ export type CardStatusProps = {
 }
 
 export function CardStatus({ text, variant = 'info' }: CardStatusProps) {
-  const statusIconVariant = {
+  const statusIconColor = {
     success: 'fill-feedback-success-400',
     error: 'fill-feedback-warning-400',
     helper: 'fill-feedback-helper-400',
@@ -14,7 +14,7 @@ export function CardStatus({ text, variant = 'info' }: CardStatusProps) {
     waiting: 'fill-brand-primary-400',
   }[variant]
 
-  const statusTextVariant = {
+  const statusTextColor = {
     success: 'text-feedback-success-400',
     error: 'text-feedback-warning-400',
     helper: 'text-feedback-helper-400',
@@ -22,13 +22,21 @@ export function CardStatus({ text, variant = 'info' }: CardStatusProps) {
     waiting: 'text-brand-primary-400',
   }[variant]
 
+  const statusIconVariant = {
+    success: 'circle-check',
+    error: 'circle-error',
+    helper: 'circle-info',
+    info: 'check',
+    waiting: 'waiting',
+  }[variant]
+
   return (
     <div data-testid="card-status" className="flex items-center p-nano">
       <SvgIcon
-        iconName={variant}
-        className={`${statusIconVariant} w-xxxs h-xxxs min-w-max min-h-max m-nano`}
+        iconName={statusIconVariant}
+        className={`${statusIconColor} w-xxxs h-xxxs min-w-max min-h-max m-nano`}
       />
-      <p className={`text-xxxs ${statusTextVariant}`}>{text}</p>
+      <p className={`text-xxxs ${statusTextColor}`}>{text}</p>
     </div>
   )
 }
