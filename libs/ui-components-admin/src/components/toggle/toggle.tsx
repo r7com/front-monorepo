@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { ChangeEventHandler } from 'react'
 import { SvgIcon } from '../svg-icon'
 
 export type ToggleProps = {
@@ -6,19 +6,18 @@ export type ToggleProps = {
   size?: 'large' | 'medium' | 'small'
   disabled?: boolean
   hasIcon?: boolean
+  name: string
+  onChange: ChangeEventHandler<HTMLInputElement>
 }
 
 export function Toggle({
-  checked = false,
   size = 'large',
   disabled = false,
   hasIcon = true,
+  name,
+  checked,
+  onChange,
 }: ToggleProps) {
-  const [isChecked, setIsChecked] = useState(checked)
-  const handleToggle = () => {
-    setIsChecked(prev => !prev)
-  }
-
   const sizeVariant = {
     large: {
       toggle: 'w-xxxl h-sm',
@@ -56,7 +55,7 @@ export function Toggle({
     icon: disabled ? 'fill-dark-high-500' : 'fill-light-high-500',
   }
 
-  const iconVariant = hasIcon ? (
+  const iconVariant = hasIcon && (
     <div className={`absolute flex items-center ${sizeVariant.toggle}`}>
       <SvgIcon
         iconName="check"
@@ -67,8 +66,6 @@ export function Toggle({
         className={`${iconSizeVariant.error} ${enabledVariant.icon} absolute min-w-max min-h-max m-nano`}
       />
     </div>
-  ) : (
-    ''
   )
 
   const hoverState = disabled
@@ -83,25 +80,23 @@ export function Toggle({
     ? ''
     : 'shadow-drop peer-focus:outline peer-focus:outline-1 peer-focus:outline-light-high-500 peer-focus:shadow-neutral-low-400 peer-checked:peer-focus:shadow-brand-primary-500'
 
-  useEffect(() => {
-    setIsChecked(checked)
-  }, [checked])
-
   return (
-    <label htmlFor="toggle-check" className="relative flex items-center group p-2 text-xl m-quark">
+    <label
+      htmlFor={name}
+      className="relative flex items-center group p-2 text-xl m-quark cursor-pointer w-full h-full"
+    >
       <input
-        name="toggle-check"
-        onChange={handleToggle}
-        checked={isChecked}
+        name={name}
+        id={name}
+        onChange={onChange}
         type="checkbox"
-        className="absolute -translate-x-1/2 w-full h-full peer appearance-none rounded-md focus:outline-none cursor-pointer"
+        className="sr-only peer rounded-md focus:outline-none"
         disabled={disabled}
-        aria-hidden="true"
+        checked={checked}
       />
       <span
-        role="checkbox"
-        aria-checked={isChecked}
-        className={`flex items-center flex-shrink-0 p-1 rounded-pill p-quark ease-in-out after:rounded-circular after:duration-300 ${sizeVariant.toggle} ${sizeVariant.dot} ${enabledVariant.toggle} ${hoverState} ${pressedState} ${focusState}`.trim()}
+        aria-hidden="true"
+        className={`flex items-center flex-shrink-0 p-1 rounded-pill p-quark ease-in-out after:rounded-circular after:duration-300 transition-colors ${sizeVariant.toggle} ${sizeVariant.dot} ${enabledVariant.toggle} ${hoverState} ${pressedState} ${focusState}`.trim()}
       ></span>
       {iconVariant}
     </label>
