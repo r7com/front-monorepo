@@ -90,15 +90,18 @@ export function Toggle({
   }, [checked])
 
   return (
-    <label className="relative flex items-center group p-2 text-xl m-quark" data-testid="toggle">
+    <label className="relative flex items-center group p-2 text-xl m-quark">
       <input
         onChange={handleToggle}
         checked={isChecked}
         type="checkbox"
         className="absolute -translate-x-1/2 w-full h-full peer appearance-none rounded-md focus:outline-none cursor-pointer"
         disabled={disabled}
+        aria-hidden="true"
       />
       <span
+        role="checkbox"
+        aria-checked={isChecked}
         className={`flex items-center flex-shrink-0 p-1 rounded-pill p-quark ease-in-out after:rounded-circular after:duration-300 ${sizeVariant.toggle} ${sizeVariant.dot} ${enabledVariant.toggle} ${hoverState} ${pressedState} ${focusState}`.trim()}
       ></span>
       {iconVariant}
