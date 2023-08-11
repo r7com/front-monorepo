@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Disclaimer } from '.'
+import { Disclaimer } from './disclaimer'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Disclaimer> = {
@@ -14,9 +14,14 @@ export default meta
 type Story = StoryObj<typeof Disclaimer>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
+export const Default: Story = {
+  render: ({ ...args }) => (
+    <div>
+      <Disclaimer {...args} />
+    </div>
+  ),
   args: {
-    text: 'primary',
+    text: 'Componente Disclaimer',
   },
   parameters: {
     design: {

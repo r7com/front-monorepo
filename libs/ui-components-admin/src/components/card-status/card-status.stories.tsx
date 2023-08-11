@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { CardStatus } from '.'
+import { CardStatus } from './card-status'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof CardStatus> = {
@@ -14,10 +14,14 @@ export default meta
 type Story = StoryObj<typeof CardStatus>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Status: Story = {
+export const Default: Story = {
+  render: ({ ...args }) => (
+    <div>
+      <CardStatus {...args} />
+    </div>
+  ),
   args: {
     text: 'Card status',
-    variant: 'success',
   },
   parameters: {
     design: {
