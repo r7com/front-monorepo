@@ -15,10 +15,6 @@ const meta: Meta<ChipsProps<'span'>> = {
       options: ['medium', 'small', 'large'],
       control: { type: 'radio' },
     },
-    variant: {
-      options: ['active', 'disabled'],
-      control: { type: 'radio' },
-    },
   },
 }
 

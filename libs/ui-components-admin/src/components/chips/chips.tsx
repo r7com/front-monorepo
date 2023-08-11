@@ -17,31 +17,31 @@ export function Chips<C extends React.ElementType = 'span'>({
   const DynamicTag = as || 'span'
 
   const sizes = {
-    large: 'p-xxxs h-[40px]',
-    medium: 'p-xxxs h-[32px]',
-    small: 'p-xxxs h-[24px]',
-    default: 'p-xxxs h-[56px]',
+    large: 'p-xxxs h-sm',
+    medium: 'p-xxxs h-xs',
+    small: 'p-xxxs h-xxs',
+    default: 'p-xxxs h-lg',
   }[size]
 
   const colors = {
     primary:
       variant === 'active'
-        ? 'bg-brand-primary-500 text-brand-primary-600 border-[1px] border-brand-primary-600'
+        ? 'bg-brand-primary-500 text-brand-primary-600 border-hairline border-brand-primary-600'
         : variant === 'disabled'
         ? 'bg-dark-high-600 text-dark-high-500'
         : 'bg-[#218EE1] text-neutral-high-500',
     secondary:
       variant === 'active'
-        ? 'bg-[#1AA194] text-highlight-600 border-[#00786D] border-[1px]'
+        ? 'bg-[#1AA194] text-highlight-600 border-highlight-600 border-hairline'
         : variant === 'disabled'
         ? 'bg-dark-high-600 text-dark-high-500'
-        : 'bg-[#00877A] text-neutral-high-500',
+        : 'bg-highlight-500 text-neutral-high-500',
     tertiary:
       variant === 'active'
-        ? 'bg-neutral-high-400 text-light-low-500 border-[1px] border-light-low-500'
+        ? 'bg-neutral-high-400 text-light-low-500 border-hairline border-light-low-500'
         : variant === 'disabled'
-        ? 'text-dark-high-500 border-[1px] border-dark-high-500'
-        : 'text-[#218EE1] border-[1px] border-[#218EE1]',
+        ? 'text-dark-high-500 border-hairline border-dark-high-500'
+        : 'text-[#218EE1] border-hairline border-[#218EE1]',
   }[color]
 
   const hover = {
@@ -58,7 +58,7 @@ export function Chips<C extends React.ElementType = 'span'>({
 
   const pressed = {
     primary: 'active:bg-brand-primary-600 active:shadow-inner',
-    secondary: 'active:bg-[#00877A] active:shadow-inner',
+    secondary: 'active:bg-highlight-400 active:shadow-inner',
     tertiary: 'active:shadow-[4px_4px_4px_0px_rgba(33,142,225,0.32)] active:shadow-inner',
   }[color]
 
