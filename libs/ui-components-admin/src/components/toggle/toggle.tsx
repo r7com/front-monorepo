@@ -16,9 +16,7 @@ export function Toggle({
 }: ToggleProps) {
   const [isChecked, setIsChecked] = useState(checked)
   const handleToggle = () => {
-    setIsChecked(prev => {
-      return !prev
-    })
+    setIsChecked(prev => !prev)
   }
 
   const sizeVariant = {
