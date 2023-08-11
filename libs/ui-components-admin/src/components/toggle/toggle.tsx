@@ -88,8 +88,9 @@ export function Toggle({
   }, [checked])
 
   return (
-    <label className="relative flex items-center group p-2 text-xl m-quark">
+    <label htmlFor="toggle-check" className="relative flex items-center group p-2 text-xl m-quark">
       <input
+        name="toggle-check"
         onChange={handleToggle}
         checked={isChecked}
         type="checkbox"
