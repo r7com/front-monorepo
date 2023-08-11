@@ -124,7 +124,8 @@ module.exports = {
       intense: 0.64,
       medium: 0.32,
       light: 0.16,
-      'semi-transparent': 0.8,
+      'semi-transparent': 0.08,
+      transparent: 0,
     },
     spacing: {
       0: '0',
