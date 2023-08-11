@@ -1,20 +1,21 @@
-export type ChipsProps = {
-  title: string
-  href: string
+export type ChipsProps<C extends React.ElementType> = {
+  as?: C
   size: 'medium' | 'small' | 'large' | 'default'
   color?: 'primary' | 'secondary' | 'tertiary'
   children: React.ReactNode
-  variant?: 'disabled' | 'active' | ''
-}
+  variant?: 'disabled' | 'active'
+} & React.ComponentPropsWithoutRef<C>
 
-export function Chips({
+export function Chips<C extends React.ElementType = 'span'>({
+  as,
+  size = 'default',
   color = 'primary',
-  size,
+  variant,
   children,
-  variant = '',
-  title,
-  href,
-}: ChipsProps) {
+  ...rest
+}: ChipsProps<C>) {
+  const DynamicTag = as || 'span'
+
   const sizes = {
     large: 'p-xxxs h-[40px]',
     medium: 'p-xxxs h-[32px]',
@@ -62,13 +63,11 @@ export function Chips({
   }[color]
 
   return (
-    <a
-      title={title}
-      href={href}
-      data-testid="chips"
+    <DynamicTag
       className={`${sizes} ${hover} ${focus} ${pressed} ${colors} font-[400] cursor-pointer flex w-[fit-content] items-center justify-center rounded-[100px] text-little`}
+      {...rest}
     >
       {children}
-    </a>
+    </DynamicTag>
   )
 }

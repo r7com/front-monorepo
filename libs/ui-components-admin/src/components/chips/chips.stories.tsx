@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { Chips, ChipsProps } from './chips'
 
-const meta: Meta<ChipsProps> = {
+const meta: Meta<ChipsProps<'span'>> = {
   title: 'Example/Chips',
   component: Chips,
   tags: ['autodocs'],
@@ -23,13 +23,18 @@ const meta: Meta<ChipsProps> = {
 }
 
 export default meta
-type Story = StoryObj<ChipsProps>
+type Story = StoryObj<ChipsProps<'span'>>
 
 export const Primary: Story = {
-  render: ({ ...args }) => <Chips {...args}>nome tag</Chips>,
+  render: ({ ...args }) => (
+    <Chips as="span" {...args}>
+      nome tag
+    </Chips>
+  ),
   args: {
     color: 'primary',
     size: 'small',
+    as: 'span',
   },
   parameters: {
     design: {
