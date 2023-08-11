@@ -13,7 +13,7 @@ export default meta
 
 type Story = StoryObj<typeof Toggle>
 
-export const Primary: Story = {
+export const Default: Story = {
   render: ({ ...args }) => (
     <div>
       <Toggle {...args} />
