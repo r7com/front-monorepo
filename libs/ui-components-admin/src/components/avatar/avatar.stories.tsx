@@ -14,7 +14,7 @@ export default meta
 type Story = StoryObj<typeof Avatar>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
+export const Default: Story = {
   render: ({ ...args }) => (
     <div>
       <Avatar {...args} />
