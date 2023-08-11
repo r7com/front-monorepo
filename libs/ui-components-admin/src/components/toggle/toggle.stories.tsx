@@ -23,7 +23,7 @@ export const Default: Story = {
     size: 'large',
     checked: false,
     disabled: false,
-    icon: true,
+    hasIcon: true,
   },
   parameters: {
     design: {

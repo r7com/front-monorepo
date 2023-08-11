@@ -5,14 +5,14 @@ export type ToggleProps = {
   checked?: boolean
   size?: 'large' | 'medium' | 'small'
   disabled?: boolean
-  icon?: boolean
+  hasIcon?: boolean
 }
 
 export function Toggle({
   checked = false,
   size = 'large',
   disabled = false,
-  icon = true,
+  hasIcon = true,
 }: ToggleProps) {
   const [isChecked, setIsChecked] = useState(checked)
   const handleToggle = () => {
@@ -56,7 +56,7 @@ export function Toggle({
     icon: disabled ? 'fill-dark-high-500' : 'fill-light-high-500',
   }
 
-  const iconVariant = icon ? (
+  const iconVariant = hasIcon ? (
     <div className={`absolute flex items-center ${sizeVariant.toggle}`}>
       <SvgIcon
         iconName="check"
