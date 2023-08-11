@@ -31,7 +31,7 @@ export function CardStatus({ text, variant = 'info' }: CardStatusProps) {
   }[variant]
 
   return (
-    <div data-testid="card-status" className="flex items-center p-nano">
+    <div className="flex items-center p-nano">
       <SvgIcon
         iconName={statusIconVariant}
         className={`${statusIconColor} w-xxxs h-xxxs min-w-max min-h-max m-nano`}
