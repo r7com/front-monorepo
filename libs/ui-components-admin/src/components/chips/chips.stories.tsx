@@ -1,31 +1,35 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Tags } from './tags'
+import { Chips, ChipsProps } from './chips'
 
-const meta: Meta<typeof Tags> = {
-  title: 'Example/Tags',
-  component: Tags,
+const meta: Meta<ChipsProps> = {
+  title: 'Example/Chips',
+  component: Chips,
   tags: ['autodocs'],
   argTypes: {
     color: {
-      options: ['primary', 'secondary', 'tertiary', 'neutral'],
+      options: ['primary', 'secondary', 'tertiary', 'default'],
       control: { type: 'radio' },
     },
     size: {
       options: ['medium', 'small', 'large'],
       control: { type: 'radio' },
     },
+    variant: {
+      options: ['active', 'disabled'],
+      control: { type: 'radio' },
+    },
   },
 }
 
 export default meta
-type Story = StoryObj<typeof Tags>
+type Story = StoryObj<ChipsProps>
 
 export const Primary: Story = {
+  render: ({ ...args }) => <Chips {...args}>nome tag</Chips>,
   args: {
     color: 'primary',
     size: 'small',
-    children: 'Nome tag',
   },
   parameters: {
     design: {
