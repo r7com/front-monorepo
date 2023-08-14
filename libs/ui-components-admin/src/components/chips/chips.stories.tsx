@@ -22,11 +22,7 @@ export default meta
 type Story = StoryObj<ChipsProps<'span'>>
 
 export const Primary: Story = {
-  render: ({ ...args }) => (
-    <Chips as="span" {...args}>
-      nome tag
-    </Chips>
-  ),
+  render: ({ ...args }) => <Chips {...args}>nome tag</Chips>,
   args: {
     color: 'primary',
     size: 'small',

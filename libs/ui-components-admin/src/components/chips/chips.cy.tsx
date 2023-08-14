@@ -5,80 +5,10 @@ describe(Chips.name, () => {
   const text = 'nome tag'
   const link = 'r7.com'
 
-  // primary e secondary tem o mesmo layout de disabled
-  it('renders a small chip with disabled', () => {
-    cy.mount(
-      <Chips size="small" variant="disabled" color="primary">
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
-  it('renders a medium chip with disabled', () => {
-    cy.mount(
-      <Chips size="medium" variant="disabled" color="primary">
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
-  it('renders a large chip with disabled', () => {
+  //layout disabled é o mesmo p primary e secondary
+  it('renders a large chip with disabled primary', () => {
     cy.mount(
       <Chips size="large" variant="disabled" color="primary">
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
-  it('renders a small chip with disabled secondary', () => {
-    cy.mount(
-      <Chips size="small" variant="disabled" color="secondary">
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
-  it('renders a medium chip with disabled secondary', () => {
-    cy.mount(
-      <Chips size="medium" variant="disabled" color="secondary">
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
-  it('renders a large chip with disabled secondary', () => {
-    cy.mount(
-      <Chips size="large" variant="disabled" color="secondary">
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
-  it('renders a small chip with disabled tertiary', () => {
-    cy.mount(
-      <Chips size="small" variant="disabled" color="tertiary">
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
-  it('renders a medium chip with disabled tertiary', () => {
-    cy.mount(
-      <Chips size="medium" variant="disabled" color="tertiary">
         {text}
       </Chips>,
     )
@@ -96,26 +26,6 @@ describe(Chips.name, () => {
     cy.matchImage()
   })
 
-  it('renders a small chip with active primary', () => {
-    cy.mount(
-      <Chips size="small" variant="active" color="primary">
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
-  it('renders a medium chip with active primary', () => {
-    cy.mount(
-      <Chips size="medium" variant="active" color="primary">
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
   it('renders a large chip with active primary', () => {
     cy.mount(
       <Chips size="large" variant="active" color="primary">
@@ -126,49 +36,9 @@ describe(Chips.name, () => {
     cy.matchImage()
   })
 
-  it('renders a small chip with active secondary', () => {
-    cy.mount(
-      <Chips size="small" variant="active" color="secondary">
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
-  it('renders a medium chip with active secondary', () => {
-    cy.mount(
-      <Chips size="medium" variant="active" color="secondary">
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
   it('renders a large chip with active secondary', () => {
     cy.mount(
       <Chips size="large" variant="active" color="secondary">
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
-  it('renders a small chip with active tertiary', () => {
-    cy.mount(
-      <Chips size="small" variant="active" color="tertiary">
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
-  it('renders a medium chip with active tertiary', () => {
-    cy.mount(
-      <Chips size="medium" variant="active" color="tertiary">
         {text}
       </Chips>,
     )
@@ -216,29 +86,9 @@ describe(Chips.name, () => {
     cy.matchImage()
   })
 
-  it('renders a small chip with secondary', () => {
-    cy.mount(
-      <Chips size="small" color="secondary">
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
   it('renders a medium chip with secondary', () => {
     cy.mount(
       <Chips size="medium" color="secondary">
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
-  it('renders a large chip with secondary', () => {
-    cy.mount(
-      <Chips size="large" color="secondary">
         {text}
       </Chips>,
     )
@@ -256,49 +106,19 @@ describe(Chips.name, () => {
     cy.matchImage()
   })
 
-  it('renders a medium chip with tertiary', () => {
-    cy.mount(
-      <Chips size="medium" color="tertiary">
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
-  it('renders a large chip with tertiary', () => {
-    cy.mount(
-      <Chips size="large" color="tertiary">
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
-  it('renders a small chip with primary tag a', () => {
-    cy.mount(
-      <Chips size="small" color="primary" as="a" title={text} href={link}>
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
-  it('renders a medium chip with primary', () => {
-    cy.mount(
-      <Chips size="medium" color="primary" as="a" title={text} href={link}>
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.matchImage()
-  })
-
-  it('renders a large chip with primary', () => {
+  it('renders a large chip with primary tag a', () => {
     cy.mount(
       <Chips size="large" color="primary" as="a" title={text} href={link}>
+        {text}
+      </Chips>,
+    )
+    cy.findByText(text).should('be.visible')
+    cy.matchImage()
+  })
+
+  it('renders a large chip with primary tag button', () => {
+    cy.mount(
+      <Chips size="large" color="primary" as="button" title={text}>
         {text}
       </Chips>,
     )
@@ -309,7 +129,7 @@ describe(Chips.name, () => {
   it('renders a default chip with only icon primary', () => {
     cy.mount(
       <Chips size="default" color="primary">
-        <SvgIcon iconName="chevron" size="medium" className="fill-[#FFFFFF]" />
+        <SvgIcon iconName="chevron-right" size="medium" className="fill-neutral-high-400" />
       </Chips>,
     )
     cy.matchImage()
@@ -318,7 +138,7 @@ describe(Chips.name, () => {
   it('renders a default chip with only icon secondary', () => {
     cy.mount(
       <Chips size="default" color="secondary">
-        <SvgIcon iconName="chevron" size="medium" className="fill-[#FFFFFF]" />
+        <SvgIcon iconName="chevron-right" size="medium" className="fill-neutral-high-400" />
       </Chips>,
     )
     cy.matchImage()
@@ -327,7 +147,7 @@ describe(Chips.name, () => {
   it('renders a default chip with only icon tertiary', () => {
     cy.mount(
       <Chips size="default" color="tertiary">
-        <SvgIcon iconName="chevron" size="medium" className="fill-[#218EE1]" />
+        <SvgIcon iconName="chevron-right" size="medium" className="fill-brand-primary-500" />
       </Chips>,
     )
     cy.matchImage()

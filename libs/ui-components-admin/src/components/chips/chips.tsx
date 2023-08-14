@@ -17,10 +17,10 @@ export function Chips<C extends React.ElementType = 'span'>({
   const DynamicTag = as || 'span'
 
   const sizes = {
-    large: 'p-xxxs h-sm',
-    medium: 'p-xxxs h-xs',
-    small: 'p-xxxs h-xxs',
-    default: 'p-xxxs h-lg',
+    large: 'h-sm',
+    medium: 'h-xs',
+    small: 'hxxs',
+    default: 'h-lg',
   }[size]
 
   const colors = {
@@ -51,20 +51,21 @@ export function Chips<C extends React.ElementType = 'span'>({
   }[color]
 
   const focus = {
-    primary: 'focus:outline-none focus:ring focus:ring-brand-primary-600',
+    primary:
+      'focus:outline-none focus:ring focus:ring-brand-primary-600 focus:shadow-highlight-500',
     secondary: '',
-    tertiary: 'focus:shadow-level5',
+    tertiary: 'focus:shadow-level5 focus:shadow-brand-primary-500',
   }[color]
 
   const pressed = {
     primary: 'active:bg-brand-primary-600 active:shadow-inner-level5',
     secondary: 'active:border-highlight-400 active:shadow-inner-level5',
-    tertiary: 'active:shadow-inner-level6',
+    tertiary: 'active:shadow-brand-primary-500 active:shadow-inner-level0',
   }[color]
 
   return (
     <DynamicTag
-      className={`${sizes} ${hover} ${focus} ${pressed} ${colors} font-semibold cursor-pointer flex items-center justify-center rounded-full text-little w-fit`}
+      className={`${sizes} ${hover} ${focus} ${pressed} ${colors} px-xxxs font-semibold cursor-pointer flex items-center justify-center rounded-full w-fit text-xs`}
       {...rest}
     >
       {children}
