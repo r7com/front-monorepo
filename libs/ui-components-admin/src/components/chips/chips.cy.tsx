@@ -309,7 +309,7 @@ describe(Chips.name, () => {
   it('renders a default chip with only icon primary', () => {
     cy.mount(
       <Chips size="default" color="primary">
-        <SvgIcon iconName="arrow" size="medium" className="fill-[#FFFFFF]" />
+        <SvgIcon iconName="chevron" size="medium" className="fill-[#FFFFFF]" />
       </Chips>,
     )
     cy.matchImage()
@@ -318,7 +318,7 @@ describe(Chips.name, () => {
   it('renders a default chip with only icon secondary', () => {
     cy.mount(
       <Chips size="default" color="secondary">
-        <SvgIcon iconName="arrow" size="medium" className="fill-[#FFFFFF]" />
+        <SvgIcon iconName="chevron" size="medium" className="fill-[#FFFFFF]" />
       </Chips>,
     )
     cy.matchImage()
@@ -327,7 +327,7 @@ describe(Chips.name, () => {
   it('renders a default chip with only icon tertiary', () => {
     cy.mount(
       <Chips size="default" color="tertiary">
-        <SvgIcon iconName="arrow" size="medium" className="fill-[#218EE1]" />
+        <SvgIcon iconName="chevron" size="medium" className="fill-[#218EE1]" />
       </Chips>,
     )
     cy.matchImage()

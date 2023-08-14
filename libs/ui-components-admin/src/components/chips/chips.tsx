@@ -29,10 +29,10 @@ export function Chips<C extends React.ElementType = 'span'>({
         ? 'bg-brand-primary-500 text-brand-primary-600 border-hairline border-brand-primary-600'
         : variant === 'disabled'
         ? 'bg-dark-high-600 text-dark-high-500'
-        : 'bg-[#218EE1] text-neutral-high-500',
+        : 'bg-brand-primary-500 text-neutral-high-500',
     secondary:
       variant === 'active'
-        ? 'bg-[#1AA194] text-highlight-600 border-highlight-600 border-hairline'
+        ? 'bg-highlight-400 text-highlight-600 border-highlight-600 border-hairline'
         : variant === 'disabled'
         ? 'bg-dark-high-600 text-dark-high-500'
         : 'bg-highlight-500 text-neutral-high-500',
@@ -41,7 +41,7 @@ export function Chips<C extends React.ElementType = 'span'>({
         ? 'bg-neutral-high-400 text-light-low-500 border-hairline border-light-low-500'
         : variant === 'disabled'
         ? 'text-dark-high-500 border-hairline border-dark-high-500'
-        : 'text-[#218EE1] border-hairline border-[#218EE1]',
+        : 'text-brand-primary-500 border-hairline border-brand-primary-500',
   }[color]
 
   const hover = {
@@ -51,20 +51,20 @@ export function Chips<C extends React.ElementType = 'span'>({
   }[color]
 
   const focus = {
-    primary: 'focus:outline-none focus:ring focus:ring-[#218EE1]',
+    primary: 'focus:outline-none focus:ring focus:ring-brand-primary-600',
     secondary: '',
-    tertiary: 'focus:shadow-[0_0_4px_0_rgba(33,142,225,1)]',
+    tertiary: 'focus:shadow-level5',
   }[color]
 
   const pressed = {
-    primary: 'active:bg-brand-primary-600 active:shadow-inner',
-    secondary: 'active:bg-highlight-400 active:shadow-inner',
-    tertiary: 'active:shadow-[4px_4px_4px_0px_rgba(33,142,225,0.32)] active:shadow-inner',
+    primary: 'active:bg-brand-primary-600 active:shadow-inner-level5',
+    secondary: 'active:border-highlight-400 active:shadow-inner-level5',
+    tertiary: 'active:shadow-inner-level6',
   }[color]
 
   return (
     <DynamicTag
-      className={`${sizes} ${hover} ${focus} ${pressed} ${colors} font-[400] cursor-pointer flex w-[fit-content] items-center justify-center rounded-[100px] text-little`}
+      className={`${sizes} ${hover} ${focus} ${pressed} ${colors} font-semibold cursor-pointer flex items-center justify-center rounded-full text-little w-fit`}
       {...rest}
     >
       {children}

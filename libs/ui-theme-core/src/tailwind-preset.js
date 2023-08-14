@@ -14,14 +14,26 @@ module.exports = {
       md: '0.25rem',
       lg: '0.5rem',
       pill: '1.25rem',
+      full: '6.25rem',
       circular: '50%',
     },
+
     boxShadow: {
+      drop: '0px 0px 0.2rem 0.1rem rgba(51, 51, 51, 8%)',
       level1: '0px 0.5rem 1rem -0.25rem rgba(51, 51, 51, 8%)',
       level2: '0px 1rem 1.5rem -0.25rem rgba(51, 51, 51, 8%)',
       level3: '0px 1rem 2rem -0.25rem rgba(51, 51, 51, 16%)',
       level4: '0px 1rem 4rem -0.25rem rgba(51, 51, 51, 24%)',
+      level5: '0px 0px 0.25rem 0px rgba(12.94%, 55.69%, 88.24%, 100%)',
+      inner: 'inset 0px 0.25rem 1rem -0.25rem rgba(51, 51, 51, 8%)',
+      'inner-level1': 'inset 0px 0.5rem 1rem -0.25rem rgba(51, 51, 51, 8%)',
+      'inner-level2': 'inset 0px 1rem 1.5rem -0.25rem rgba(51, 51, 51, 8%)',
+      'inner-level3': 'inset 0px 1rem 2rem -0.25rem rgba(51, 51, 51, 16%)',
+      'inner-level4': 'inset 0px 1rem 4rem -0.25rem rgba(51, 51, 51, 24%)',
+      'inner-level5': 'inset 0px 0.25rem 0.25rem 0px rgba(0, 0, 0, 32%)',
+      'inner-level6': 'inset 0.25rem 0.25rem 0.25rem 0px rgba(12.94%, 55.69%, 88.24%, 32%)',
     },
+
     colors: {
       transparent: 'transparent',
       'neutral-low': {
