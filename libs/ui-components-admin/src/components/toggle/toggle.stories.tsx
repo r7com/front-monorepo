@@ -17,10 +17,21 @@ type Story = StoryObj<typeof Toggle>
 function Render({ ...args }) {
   const [{ checked }, updateArgs] = useArgs()
   const handleToggle = () => updateArgs({ checked: !checked })
+  const handleKeypress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      updateArgs({ checked: !checked })
+    }
+  }
 
   return (
     <div>
-      <Toggle {...args} name="teste" checked={checked} onChange={handleToggle} />
+      <Toggle
+        {...args}
+        name="teste"
+        checked={checked}
+        onChange={handleToggle}
+        onKeyUp={event => handleKeypress(event)}
+      />
     </div>
   )
 }
