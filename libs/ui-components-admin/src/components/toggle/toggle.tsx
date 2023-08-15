@@ -1,4 +1,4 @@
-import { ChangeEventHandler, KeyboardEventHandler } from 'react'
+import { ChangeEventHandler } from 'react'
 import { SvgIcon } from '../svg-icon'
 
 export type ToggleProps = {
@@ -7,8 +7,7 @@ export type ToggleProps = {
   disabled?: boolean
   hasIcon?: boolean
   name: string
-  onChange: ChangeEventHandler<HTMLInputElement>
-  onKeyUp: KeyboardEventHandler<HTMLInputElement>
+  onChange?: ChangeEventHandler<HTMLInputElement>
 }
 
 export function Toggle({
@@ -18,7 +17,6 @@ export function Toggle({
   name,
   checked,
   onChange,
-  onKeyUp,
 }: ToggleProps) {
   const sizeVariant = {
     large: {
@@ -95,7 +93,6 @@ export function Toggle({
         className="sr-only peer rounded-md focus:outline-none"
         disabled={disabled}
         checked={checked}
-        onKeyUp={event => onKeyUp(event)}
       />
       <span
         aria-hidden="true"
