@@ -26,9 +26,9 @@ describe(Chips.name, () => {
     cy.matchImage()
   })
 
-  it('renders a large chip with active primary', () => {
+  it('renders a large chip with selected primary', () => {
     cy.mount(
-      <Chips size="large" active color="primary">
+      <Chips size="large" selected color="primary">
         {text}
       </Chips>,
     )
@@ -36,9 +36,9 @@ describe(Chips.name, () => {
     cy.matchImage()
   })
 
-  it('renders a large chip with active secondary', () => {
+  it('renders a large chip with selected secondary', () => {
     cy.mount(
-      <Chips size="large" active color="secondary">
+      <Chips size="large" selected color="secondary">
         {text}
       </Chips>,
     )
@@ -46,9 +46,9 @@ describe(Chips.name, () => {
     cy.matchImage()
   })
 
-  it('renders a large chip with active tertiary', () => {
+  it('renders a large chip with selected tertiary', () => {
     cy.mount(
-      <Chips size="large" active color="tertiary">
+      <Chips size="large" selected color="tertiary">
         {text}
       </Chips>,
     )

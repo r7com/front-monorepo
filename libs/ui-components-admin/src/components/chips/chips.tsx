@@ -4,14 +4,14 @@ export type ChipsProps<C extends React.ElementType> = {
   color?: 'primary' | 'secondary' | 'tertiary'
   children: React.ReactNode
   disabled?: boolean
-  active?: boolean
+  selected?: boolean
 } & React.ComponentPropsWithoutRef<C>
 
 export function Chips<C extends React.ElementType = 'span'>({
   as,
   size = 'default',
   color = 'primary',
-  active = false,
+  selected = false,
   disabled = false,
   variant,
   children,
@@ -27,17 +27,17 @@ export function Chips<C extends React.ElementType = 'span'>({
   }[size]
 
   const colors = {
-    primary: active
+    primary: selected
       ? 'bg-brand-primary-500 text-brand-primary-600 border-hairline border-brand-primary-600'
       : disabled
       ? 'bg-dark-high-600 text-dark-high-500 cursor-not-allowed'
       : 'bg-brand-primary-500 text-neutral-high-500',
-    secondary: active
+    secondary: selected
       ? 'bg-highlight-400 text-highlight-600 border-highlight-600 border-hairline'
       : disabled
       ? 'bg-dark-high-600 text-dark-high-500 cursor-not-allowed'
       : 'bg-highlight-500 text-neutral-high-500',
-    tertiary: active
+    tertiary: selected
       ? 'bg-neutral-high-400 text-light-low-500 border-hairline border-light-low-500'
       : disabled
       ? 'text-dark-high-500 border-hairline border-dark-high-500 cursor-not-allowed'

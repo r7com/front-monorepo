@@ -27,7 +27,7 @@ export const Primary: Story = {
     color: 'primary',
     size: 'small',
     disabled: false,
-    active: false,
+    selected: false,
     as: 'span',
   },
   parameters: {
