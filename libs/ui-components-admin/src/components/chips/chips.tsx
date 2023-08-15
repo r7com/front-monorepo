@@ -1,12 +1,10 @@
-import React from 'react'
-
 export type ChipsProps<C extends React.ElementType> = {
   as?: C
   size: 'medium' | 'small' | 'large' | 'default'
   color?: 'primary' | 'secondary' | 'tertiary'
   children: React.ReactNode
-  active?: boolean
   disabled?: boolean
+  active?: boolean
 } & React.ComponentPropsWithoutRef<C>
 
 export function Chips<C extends React.ElementType = 'span'>({
@@ -15,6 +13,7 @@ export function Chips<C extends React.ElementType = 'span'>({
   color = 'primary',
   active = false,
   disabled = false,
+  variant,
   children,
   ...rest
 }: ChipsProps<C>) {
@@ -29,12 +28,12 @@ export function Chips<C extends React.ElementType = 'span'>({
 
   const colors = {
     primary: active
-      ? 'bg-brand-primary-600 text-brand-primary-600 border-hairline border-brand-primary-600'
+      ? 'bg-brand-primary-500 text-brand-primary-600 border-hairline border-brand-primary-600'
       : disabled
       ? 'bg-dark-high-600 text-dark-high-500 cursor-not-allowed'
       : 'bg-brand-primary-500 text-neutral-high-500',
     secondary: active
-      ? 'bg-highlight-600 text-highlight-600 border-highlight-600 border-hairline'
+      ? 'bg-highlight-400 text-highlight-600 border-highlight-600 border-hairline'
       : disabled
       ? 'bg-dark-high-600 text-dark-high-500 cursor-not-allowed'
       : 'bg-highlight-500 text-neutral-high-500',
