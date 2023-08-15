@@ -3020,10 +3020,37 @@
     telejson "^7.0.3"
     tiny-invariant "^1.3.1"
 
+"@storybook/channels@7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-7.3.0.tgz#c8c07e702ad7573314cd59c515e1d4ff234e0ba5"
+  integrity sha512-j4b5u8VSt+3975zawh6FbPS+gjQfRkPCIGV+Cd6RUrwVZnwJfr+1FeTjweyMpQaQGChtiOqx/W91TH8q2yODog==
+  dependencies:
+    "@storybook/client-logger" "7.3.0"
+    "@storybook/core-events" "7.3.0"
+    "@storybook/global" "^5.0.0"
+    qs "^6.10.0"
+    telejson "^7.0.3"
+    tiny-invariant "^1.3.1"
+
+"@storybook/client-api@^7.2.3":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@storybook/client-api/-/client-api-7.3.0.tgz#c2b073461e10038b6b4283e3ef0b8c2789868e3d"
+  integrity sha512-ksreSmghTWXZTEC9kpGm3ZOSfYm4L4u65RoyNOgxmAT4TVd8oN/dnTfPdbWePGV21gWByRW/+JebOKmrwOyg2w==
+  dependencies:
+    "@storybook/client-logger" "7.3.0"
+    "@storybook/preview-api" "7.3.0"
+
 "@storybook/client-logger@7.2.2":
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-7.2.2.tgz#650689fbe266bf550cb552f077219cf7631d285b"
   integrity sha512-ULqPNTJsJdlWTQt5V/hEv4CUq7GgrLzLvcjhKB9IYbp4a0gjhinfq7jBFIcXRE8BSOQLui2PDGE3SzElzOp5/g==
+  dependencies:
+    "@storybook/global" "^5.0.0"
+
+"@storybook/client-logger@7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-7.3.0.tgz#5d03f4093e57e1aac4d31b3826b9258d603b264d"
+  integrity sha512-93Nf4DOgg8HwEX/n+JKB/el5MNl8v4vNfDO+5cqoKqS5b3yETDG6spKOA6GciNYBJWIKMkEg/WNPFG2N9cvhTA==
   dependencies:
     "@storybook/global" "^5.0.0"
 
@@ -3083,6 +3110,11 @@
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-7.2.2.tgz#e94337c8e6dcd2ba94d0dee19ac4cbfe780d7709"
   integrity sha512-0MUsOygFSyYRIWHrVAA7Y7zBoehdILgK2AbnV42qescmPD48YyovkSRiGq0BwSWvuvMRq+094dp7sh2tkfSGHg==
+
+"@storybook/core-events@7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-7.3.0.tgz#e5ddfec39f676d20cb6e6c7b357335207cec4876"
+  integrity sha512-Ke3gjjJDMbihAVzgLUfXoZ3FHLLP22/TSBtytayztC0zAzEGeg6j4UUWzEKYggKIGJNIJ16GQfaGlcVLxHhSKw==
 
 "@storybook/core-server@^7.0.24":
   version "7.2.2"
@@ -3250,6 +3282,26 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
+"@storybook/preview-api@7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@storybook/preview-api/-/preview-api-7.3.0.tgz#0765889af7a0ada618b7a353544a7223dea526bf"
+  integrity sha512-nGf7/Ra5HmecblohdQnwfVWP+Eb+g0hUldcPWkJOaC2jsCqUOagGG+zbdi7PtXHJOU0RZsuGphnwVMznPMqPcw==
+  dependencies:
+    "@storybook/channels" "7.3.0"
+    "@storybook/client-logger" "7.3.0"
+    "@storybook/core-events" "7.3.0"
+    "@storybook/csf" "^0.1.0"
+    "@storybook/global" "^5.0.0"
+    "@storybook/types" "7.3.0"
+    "@types/qs" "^6.9.5"
+    dequal "^2.0.2"
+    lodash "^4.17.21"
+    memoizerific "^1.11.3"
+    qs "^6.10.0"
+    synchronous-promise "^2.0.15"
+    ts-dedent "^2.0.0"
+    util-deprecate "^1.0.2"
+
 "@storybook/preview@7.2.2":
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/@storybook/preview/-/preview-7.2.2.tgz#1baabcbcc57c05260158bcb819d96157553ccba1"
@@ -3340,6 +3392,16 @@
   integrity sha512-yrL0+KD+dsusQvDmNKQGv36WjvdhoiUxMDEBgsZkP047kRc3b8/zEbD3Tu7iMDsWnpgwip1Frgy29Ro3UtK57Q==
   dependencies:
     "@storybook/channels" "7.2.2"
+    "@types/babel__core" "^7.0.0"
+    "@types/express" "^4.7.0"
+    file-system-cache "2.3.0"
+
+"@storybook/types@7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@storybook/types/-/types-7.3.0.tgz#88e2141e31407b2dc864f9f364376c7b6e25a76b"
+  integrity sha512-NpemDA3hwK+jVTfPc1u1wQwu7DXqpatEtmAQUzEerx5lwoMvj3lGSk30xrOCpNvvpZz2P97FDScVsmzGlXwncA==
+  dependencies:
+    "@storybook/channels" "7.3.0"
     "@types/babel__core" "^7.0.0"
     "@types/express" "^4.7.0"
     file-system-cache "2.3.0"
@@ -8127,6 +8189,7 @@ html-tags@^3.1.0:
     util.promisify "1.0.0"
 
 "html-webpack-plugin-5@npm:html-webpack-plugin@^5", html-webpack-plugin@^5.5.0:
+  name html-webpack-plugin-5
   version "5.5.3"
   resolved "https://registry.yarnpkg.com/html-webpack-plugin/-/html-webpack-plugin-5.5.3.tgz#72270f4a78e222b5825b296e5e3e1328ad525a3e"
   integrity sha512-6YrDKTuqaP/TquFH7h4srYWsZx+x6k6+FbsTm0ziCwGHDP78Unr1r9F/H4+sGmMbX08GQcJ+K64x55b+7VM/jg==
