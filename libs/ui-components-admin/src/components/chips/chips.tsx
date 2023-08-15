@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
-
 export type ChipsProps<C extends React.ElementType> = {
   as?: C
   size: 'medium' | 'small' | 'large' | 'default'
   color?: 'primary' | 'secondary' | 'tertiary'
   children: React.ReactNode
   disabled?: boolean
+  selected?: boolean
 } & React.ComponentPropsWithoutRef<C>
 
 export function Chips<C extends React.ElementType = 'span'>({
@@ -13,32 +12,31 @@ export function Chips<C extends React.ElementType = 'span'>({
   size = 'default',
   color = 'primary',
   disabled = false,
+  selected,
   children,
   ...rest
 }: ChipsProps<C>) {
   const DynamicTag = as || 'span'
 
-  const [isSelected, setIsSelected] = useState(false)
-
   const sizes = {
-    large: 'h-sm',
-    medium: 'h-xs',
-    small: 'h-xxs',
-    default: 'h-lg',
+    large: 'h-sm text-xs',
+    medium: 'h-xs text-xs',
+    small: 'h-xxs text-xxxs',
+    default: 'h-lg text-xs',
   }[size]
 
   const colors = {
-    primary: isSelected
+    primary: selected
       ? 'bg-brand-primary-500 text-brand-primary-600 border-hairline border-brand-primary-600'
       : disabled
       ? 'bg-dark-high-600 text-dark-high-500'
       : 'bg-brand-primary-500 text-neutral-high-500',
-    secondary: isSelected
+    secondary: selected
       ? 'bg-highlight-400 text-highlight-600 border-highlight-600 border-hairline'
       : disabled
       ? 'bg-dark-high-600 text-dark-high-500'
       : 'bg-highlight-500 text-neutral-high-500',
-    tertiary: isSelected
+    tertiary: selected
       ? 'bg-neutral-high-400 text-light-low-500 border-hairline border-light-low-500'
       : disabled
       ? 'text-dark-high-500 border-hairline border-dark-high-500'
@@ -64,18 +62,9 @@ export function Chips<C extends React.ElementType = 'span'>({
     tertiary: 'active:shadow-brand-primary-500 active:shadow-inner-level0',
   }[color]
 
-  const handleClick = () => {
-    if (!disabled) {
-      setIsSelected(!isSelected)
-    }
-  }
-
   return (
     <DynamicTag
-      className={`${sizes} ${hover} ${focus} ${pressed} ${
-        isSelected ? 'selected' : ''
-      } ${colors} px-xxxs font-semibold cursor-pointer flex items-center justify-center rounded-full w-fit text-xs`}
-      onClick={handleClick}
+      className={`${sizes} ${hover} ${focus} ${pressed} ${colors} px-xxxs font-semibold cursor-pointer flex items-center justify-center rounded-full w-fit`}
       {...rest}
     >
       {children}

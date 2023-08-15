@@ -3,7 +3,7 @@ import { SvgIcon } from '../svg-icon'
 
 describe(Chips.name, () => {
   const text = 'nome tag'
-  const link = 'r7.com'
+  const link = '#'
 
   //layout disabled é o mesmo p primary e secondary
   it('renders a large chip with disabled primary', () => {
@@ -27,38 +27,41 @@ describe(Chips.name, () => {
   })
 
   it('renders a large chip with selected primary', () => {
+    const handleClick = cy.stub()
     cy.mount(
-      <Chips size="large" color="primary">
+      <Chips size="large" color="primary" onClick={handleClick}>
         {text}
       </Chips>,
     )
 
     cy.findByText(text).should('be.visible')
     cy.get('span').click()
+    cy.wrap(handleClick).should('have.been.calledOnce')
     cy.matchImage()
   })
 
   it('renders a large chip with selected tertiary', () => {
     cy.mount(
-      <Chips size="large" color="tertiary">
+      <Chips size="large" color="tertiary" selected>
         {text}
       </Chips>,
     )
 
     cy.findByText(text).should('be.visible')
-    cy.get('span').click()
     cy.matchImage()
   })
 
   it('renders a large chip with selected secondary', () => {
+    const handleClick = cy.stub()
     cy.mount(
-      <Chips size="large" color="secondary">
+      <Chips size="large" color="secondary" onClick={handleClick}>
         {text}
       </Chips>,
     )
 
     cy.findByText(text).should('be.visible')
     cy.get('span').click()
+    cy.wrap(handleClick).should('have.been.calledOnce')
     cy.matchImage()
   })
 
@@ -122,15 +125,17 @@ describe(Chips.name, () => {
     cy.matchImage()
   })
 
-  it('renders a small chip with selected primary with tag a', () => {
+  it('renders a large chip with selected primary', () => {
+    const handleClick = cy.stub()
     cy.mount(
-      <Chips size="small" color="primary" as="a">
+      <Chips size="large" color="primary" onClick={handleClick} as="a">
         {text}
       </Chips>,
     )
 
     cy.findByText(text).should('be.visible')
     cy.get('a').click()
+    cy.wrap(handleClick).should('have.been.calledOnce')
     cy.matchImage()
   })
 
@@ -144,15 +149,17 @@ describe(Chips.name, () => {
     cy.matchImage()
   })
 
-  it('renders a medium chip with selected primary with tag button', () => {
+  it('renders a large chip with selected primary', () => {
+    const handleClick = cy.stub()
     cy.mount(
-      <Chips size="medium" color="primary" as="button">
+      <Chips size="large" color="primary" onClick={handleClick} as="button">
         {text}
       </Chips>,
     )
 
     cy.findByText(text).should('be.visible')
     cy.get('button').click()
+    cy.wrap(handleClick).should('have.been.calledOnce')
     cy.matchImage()
   })
 

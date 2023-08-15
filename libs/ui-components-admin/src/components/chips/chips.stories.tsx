@@ -1,5 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
-
+import { Meta, StoryObj } from '@storybook/react'
 import { Chips, ChipsProps } from './chips'
 
 const meta: Meta<ChipsProps<'span'>> = {
@@ -19,10 +18,23 @@ const meta: Meta<ChipsProps<'span'>> = {
 }
 
 export default meta
+
 type Story = StoryObj<ChipsProps<'span'>>
 
+let selected = false
+
 export const Primary: Story = {
-  render: ({ ...args }) => <Chips {...args}>nome tag</Chips>,
+  render: ({ ...args }) => {
+    const handleChipsClick = () => {
+      selected = !selected
+    }
+
+    return (
+      <Chips selected={selected} onClick={handleChipsClick} {...args}>
+        nome tag
+      </Chips>
+    )
+  },
   args: {
     color: 'primary',
     size: 'small',
