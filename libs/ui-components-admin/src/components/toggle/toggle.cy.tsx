@@ -1,7 +1,7 @@
 import { Toggle } from './toggle'
 
 describe(Toggle.name, () => {
-  it.only('check and uncheck toggle', () => {
+  it('check and uncheck toggle', () => {
     cy.mount(<Toggle name="teste" />)
 
     cy.findByRole('checkbox').check({ force: true })
