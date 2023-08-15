@@ -8,7 +8,7 @@ describe(Chips.name, () => {
   //layout disabled é o mesmo p primary e secondary
   it('renders a large chip with disabled primary', () => {
     cy.mount(
-      <Chips size="large" variant="disabled" color="primary">
+      <Chips size="large" disabled color="primary">
         {text}
       </Chips>,
     )
@@ -18,7 +18,7 @@ describe(Chips.name, () => {
 
   it('renders a large chip with disabled tertiary', () => {
     cy.mount(
-      <Chips size="large" variant="disabled" color="tertiary">
+      <Chips size="large" disabled color="tertiary">
         {text}
       </Chips>,
     )
@@ -28,7 +28,7 @@ describe(Chips.name, () => {
 
   it('renders a large chip with active primary', () => {
     cy.mount(
-      <Chips size="large" variant="active" color="primary">
+      <Chips size="large" active color="primary">
         {text}
       </Chips>,
     )
@@ -38,7 +38,7 @@ describe(Chips.name, () => {
 
   it('renders a large chip with active secondary', () => {
     cy.mount(
-      <Chips size="large" variant="active" color="secondary">
+      <Chips size="large" active color="secondary">
         {text}
       </Chips>,
     )
@@ -48,7 +48,7 @@ describe(Chips.name, () => {
 
   it('renders a large chip with active tertiary', () => {
     cy.mount(
-      <Chips size="large" variant="active" color="tertiary">
+      <Chips size="large" active color="tertiary">
         {text}
       </Chips>,
     )

@@ -1,16 +1,20 @@
+import React from 'react'
+
 export type ChipsProps<C extends React.ElementType> = {
   as?: C
   size: 'medium' | 'small' | 'large' | 'default'
   color?: 'primary' | 'secondary' | 'tertiary'
   children: React.ReactNode
-  variant?: 'disabled' | 'active'
+  active?: boolean
+  disabled?: boolean
 } & React.ComponentPropsWithoutRef<C>
 
 export function Chips<C extends React.ElementType = 'span'>({
   as,
   size = 'default',
   color = 'primary',
-  variant,
+  active = false,
+  disabled = false,
   children,
   ...rest
 }: ChipsProps<C>) {
@@ -24,24 +28,21 @@ export function Chips<C extends React.ElementType = 'span'>({
   }[size]
 
   const colors = {
-    primary:
-      variant === 'active'
-        ? 'bg-brand-primary-500 text-brand-primary-600 border-hairline border-brand-primary-600'
-        : variant === 'disabled'
-        ? 'bg-dark-high-600 text-dark-high-500'
-        : 'bg-brand-primary-500 text-neutral-high-500',
-    secondary:
-      variant === 'active'
-        ? 'bg-highlight-400 text-highlight-600 border-highlight-600 border-hairline'
-        : variant === 'disabled'
-        ? 'bg-dark-high-600 text-dark-high-500'
-        : 'bg-highlight-500 text-neutral-high-500',
-    tertiary:
-      variant === 'active'
-        ? 'bg-neutral-high-400 text-light-low-500 border-hairline border-light-low-500'
-        : variant === 'disabled'
-        ? 'text-dark-high-500 border-hairline border-dark-high-500'
-        : 'text-brand-primary-500 border-hairline border-brand-primary-500',
+    primary: active
+      ? 'bg-brand-primary-600 text-brand-primary-600 border-hairline border-brand-primary-600'
+      : disabled
+      ? 'bg-dark-high-600 text-dark-high-500 cursor-not-allowed'
+      : 'bg-brand-primary-500 text-neutral-high-500',
+    secondary: active
+      ? 'bg-highlight-600 text-highlight-600 border-highlight-600 border-hairline'
+      : disabled
+      ? 'bg-dark-high-600 text-dark-high-500 cursor-not-allowed'
+      : 'bg-highlight-500 text-neutral-high-500',
+    tertiary: active
+      ? 'bg-neutral-high-400 text-light-low-500 border-hairline border-light-low-500'
+      : disabled
+      ? 'text-dark-high-500 border-hairline border-dark-high-500 cursor-not-allowed'
+      : 'text-brand-primary-500 border-hairline border-brand-primary-500',
   }[color]
 
   const hover = {
