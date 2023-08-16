@@ -23,7 +23,7 @@ export function Button<C extends React.ElementType = 'button'>({
   const DynamicTag = as || 'button'
 
   const defaultVariant = `
-    flex
+    inline-flex
     items-center
     box-border
     cursor-pointer
