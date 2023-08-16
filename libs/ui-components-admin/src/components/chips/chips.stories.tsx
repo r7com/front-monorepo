@@ -38,7 +38,6 @@ export const Primary: Story = {
   render: Render,
   args: {
     color: 'primary',
-    size: 'large',
     disabled: false,
     as: 'span',
   },
