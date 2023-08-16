@@ -30,7 +30,7 @@ export const Default: Story = {
   args: {
     size: 'large',
     disabled: false,
-    hasIcon: true,
+    disableIcon: false,
     checked: true,
   },
   parameters: {

@@ -5,7 +5,7 @@ export type ToggleProps = {
   checked?: boolean
   size?: 'large' | 'medium' | 'small'
   disabled?: boolean
-  hasIcon?: boolean
+  disableIcon?: boolean
   name: string
   onChange?: ChangeEventHandler<HTMLInputElement>
 }
@@ -13,7 +13,7 @@ export type ToggleProps = {
 export function Toggle({
   size = 'large',
   disabled = false,
-  hasIcon = true,
+  disableIcon = false,
   name,
   checked,
   onChange,
@@ -55,7 +55,7 @@ export function Toggle({
     icon: disabled ? 'fill-dark-high-500' : 'fill-light-high-500',
   }
 
-  const iconVariant = hasIcon && (
+  const iconElements = !disableIcon && (
     <div className={`absolute flex items-center ${sizeVariant.toggle}`}>
       <SvgIcon
         iconName="check"
@@ -98,7 +98,7 @@ export function Toggle({
         aria-hidden="true"
         className={`flex items-center flex-shrink-0 p-1 rounded-pill p-quark ease-in-out after:rounded-circular after:duration-300 transition-colors ${sizeVariant.toggle} ${sizeVariant.dot} ${enabledVariant.toggle} ${hoverState} ${pressedState} ${focusState}`.trim()}
       ></span>
-      {iconVariant}
+      {iconElements}
     </label>
   )
 }

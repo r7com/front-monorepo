@@ -62,7 +62,7 @@ describe(Toggle.name, () => {
   })
 
   it('render toggle without icon', () => {
-    cy.mount(<Toggle name="teste" hasIcon={false} />)
+    cy.mount(<Toggle name="teste" disableIcon />)
 
     cy.findByRole('checkbox').should('be.visible')
     cy.matchImage()
