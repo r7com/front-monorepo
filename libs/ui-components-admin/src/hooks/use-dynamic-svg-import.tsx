@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
 
 export function useDynamicSvgImport(iconName: string) {
-  const importedIconRef = useRef<React.FC<React.SVGProps<SVGAElement>>>()
+  console.log('trocar "iconName" por tipagem dinamica quando disponivel')
+  const importedIconRef = useRef<React.FC<React.SVGProps<SVGAElement> & { title?: string }>>()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<unknown>()
 
   useEffect(() => {
     setLoading(true)
 
-    const importSvgIcon = async (): Promise<void> => {
+    async function importSvgIcon() {
       try {
         importedIconRef.current = (await import(`../svg/${iconName}.svg`)).ReactComponent
       } catch (error) {
