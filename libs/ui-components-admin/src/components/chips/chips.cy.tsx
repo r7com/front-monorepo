@@ -51,10 +51,10 @@ describe(Chips.name, () => {
     cy.matchImage()
   })
 
-  it('renders a large chip with selected secondary', () => {
+  it('renders a small chip with selected secondary', () => {
     const handleClick = cy.stub()
     cy.mount(
-      <Chips size="large" color="secondary" onClick={handleClick} selected>
+      <Chips size="small" color="secondary" onClick={handleClick} selected>
         {text}
       </Chips>,
     )
