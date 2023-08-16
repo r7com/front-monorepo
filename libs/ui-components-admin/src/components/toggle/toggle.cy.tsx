@@ -12,6 +12,16 @@ describe(Toggle.name, () => {
     cy.matchImage()
   })
 
+  it('on change', () => {
+    const onChange = cy.stub().as('callback')
+    cy.mount(<Toggle name="teste" onChange={onChange} />)
+
+    cy.findByRole('checkbox').should('not.be.checked')
+    cy.findByRole('checkbox').check({ force: true })
+
+    cy.get('@callback').should('have.been.calledOnce')
+  })
+
   it('render default toggle', () => {
     cy.mount(<Toggle name="teste" />)
 
