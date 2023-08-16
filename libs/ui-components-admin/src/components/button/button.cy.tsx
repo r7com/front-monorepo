@@ -16,4 +16,12 @@ describe(Button.name, () => {
     cy.findByRole('link', { name: /click link/i })
     cy.matchImage()
   })
+
+  it('on click', () => {
+    const onClick = cy.stub().as('callback')
+    cy.mount(<Button onClick={onClick}>click button</Button>)
+
+    cy.findByRole('button', { name: /click button/i }).click()
+    cy.get('@callback').should('have.been.calledOnce')
+  })
 })

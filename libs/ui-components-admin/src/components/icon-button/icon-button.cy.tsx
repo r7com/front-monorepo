@@ -13,4 +13,17 @@ describe(IconButton.name, () => {
     cy.findByTitle('error').should('exist')
     cy.matchImage()
   })
+
+  it('on click', () => {
+    const onClick = cy.stub().as('callback')
+
+    cy.mount(
+      <IconButton onClick={onClick}>
+        <SvgIcon iconName="error" color="primary" title="error" />
+      </IconButton>,
+    )
+
+    cy.findByRole('button').click()
+    cy.get('@callback').should('have.been.calledOnce')
+  })
 })
