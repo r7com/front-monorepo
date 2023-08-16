@@ -1,6 +1,6 @@
 export type ChipsProps<C extends React.ElementType> = {
   as?: C
-  size: 'medium' | 'small' | 'large' | 'default'
+  size: 'medium' | 'small' | 'large' | 'icon'
   color?: 'primary' | 'secondary' | 'tertiary'
   children: React.ReactNode
   disabled?: boolean
@@ -9,7 +9,7 @@ export type ChipsProps<C extends React.ElementType> = {
 
 export function Chips<C extends React.ElementType = 'span'>({
   as,
-  size = 'default',
+  size = 'large',
   color = 'primary',
   disabled = false,
   selected,
@@ -19,10 +19,10 @@ export function Chips<C extends React.ElementType = 'span'>({
   const DynamicTag = as || 'span'
 
   const sizes = {
-    large: 'h-sm text-xs',
-    medium: 'h-xs text-xs',
-    small: 'h-xxs text-xxxs',
-    default: 'h-lg text-xs',
+    large: 'h-sm text-xs rounded-pill',
+    medium: 'h-xs text-xs rounded-pill',
+    small: 'h-xxs text-xxxs rounded-pill',
+    icon: 'h-lg text-xs rounded-circular',
   }[size]
 
   const colors = {
@@ -64,7 +64,7 @@ export function Chips<C extends React.ElementType = 'span'>({
 
   return (
     <DynamicTag
-      className={`${sizes} ${hover} ${focus} ${pressed} ${colors} px-xxxs font-semibold cursor-pointer flex items-center justify-center rounded-full w-fit`}
+      className={`${sizes} ${hover} ${focus} ${pressed} ${colors} px-xxxs font-semibold cursor-pointer flex items-center justify-center w-fit`}
       {...rest}
     >
       {children}

@@ -9,11 +9,11 @@ const meta: Meta<ChipsProps<'span'>> = {
   tags: ['autodocs'],
   argTypes: {
     color: {
-      options: ['primary', 'secondary', 'tertiary', 'default'],
+      options: ['primary', 'secondary', 'tertiary'],
       control: { type: 'radio' },
     },
     size: {
-      options: ['medium', 'small', 'large'],
+      options: ['medium', 'small', 'large', 'icon'],
       control: { type: 'radio' },
     },
   },

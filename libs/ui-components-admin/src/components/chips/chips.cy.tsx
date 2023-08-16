@@ -125,7 +125,7 @@ describe(Chips.name, () => {
     cy.matchImage()
   })
 
-  it('renders a large chip with selected primary', () => {
+  it('renders a large chip with selected primary tag a', () => {
     const handleClick = cy.stub()
     cy.mount(
       <Chips size="large" color="primary" onClick={handleClick} as="a">
@@ -149,7 +149,7 @@ describe(Chips.name, () => {
     cy.matchImage()
   })
 
-  it('renders a large chip with selected primary', () => {
+  it('renders a large chip with selected primary tag button', () => {
     const handleClick = cy.stub()
     cy.mount(
       <Chips size="large" color="primary" onClick={handleClick} as="button">
@@ -165,25 +165,25 @@ describe(Chips.name, () => {
 
   it('renders a default chip with only icon primary', () => {
     cy.mount(
-      <Chips size="default" color="primary">
+      <Chips size="icon" color="primary">
         <SvgIcon iconName="chevron-right" size="medium" className="fill-neutral-high-400" />
       </Chips>,
     )
     cy.matchImage()
   })
 
-  it('renders a default chip with only icon secondary', () => {
+  it('renders a icon chip with only icon secondary', () => {
     cy.mount(
-      <Chips size="default" color="secondary">
+      <Chips size="icon" color="secondary">
         <SvgIcon iconName="chevron-right" size="medium" className="fill-neutral-high-400" />
       </Chips>,
     )
     cy.matchImage()
   })
 
-  it('renders a default chip with only icon tertiary', () => {
+  it('renders a icon chip with only icon tertiary', () => {
     cy.mount(
-      <Chips size="default" color="tertiary">
+      <Chips size="icon" color="tertiary">
         <SvgIcon iconName="chevron-right" size="medium" className="fill-brand-primary-500" />
       </Chips>,
     )
