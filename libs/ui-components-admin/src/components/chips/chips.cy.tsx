@@ -163,7 +163,7 @@ describe(Chips.name, () => {
     cy.matchImage()
   })
 
-  it('renders a default chip with only icon primary', () => {
+  it('renders a icon chip with only icon primary', () => {
     cy.mount(
       <Chips size="icon" color="primary">
         <SvgIcon iconName="chevron-right" size="medium" className="fill-neutral-high-400" />
