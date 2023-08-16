@@ -29,7 +29,7 @@ describe(Chips.name, () => {
   it('renders a large chip with selected primary', () => {
     const handleClick = cy.stub()
     cy.mount(
-      <Chips size="large" color="primary" onClick={handleClick}>
+      <Chips size="large" color="primary" onClick={handleClick} selected>
         {text}
       </Chips>,
     )
@@ -54,7 +54,7 @@ describe(Chips.name, () => {
   it('renders a large chip with selected secondary', () => {
     const handleClick = cy.stub()
     cy.mount(
-      <Chips size="large" color="secondary" onClick={handleClick}>
+      <Chips size="large" color="secondary" onClick={handleClick} selected>
         {text}
       </Chips>,
     )
@@ -128,7 +128,7 @@ describe(Chips.name, () => {
   it('renders a large chip with selected primary tag a', () => {
     const handleClick = cy.stub()
     cy.mount(
-      <Chips size="large" color="primary" onClick={handleClick} as="a">
+      <Chips size="large" color="primary" onClick={handleClick} selected as="a">
         {text}
       </Chips>,
     )
@@ -149,10 +149,10 @@ describe(Chips.name, () => {
     cy.matchImage()
   })
 
-  it('renders a large chip with selected primary tag button', () => {
+  it('renders a medium chip with selected primary tag button', () => {
     const handleClick = cy.stub()
     cy.mount(
-      <Chips size="large" color="primary" onClick={handleClick} as="button">
+      <Chips size="medium" color="primary" onClick={handleClick} selected as="button">
         {text}
       </Chips>,
     )
