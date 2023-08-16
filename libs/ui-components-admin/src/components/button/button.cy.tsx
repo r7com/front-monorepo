@@ -1,3 +1,4 @@
+import { SvgIcon } from '../svg-icon'
 import { Button } from './button'
 
 describe(Button.name, () => {
@@ -14,6 +15,29 @@ describe(Button.name, () => {
       </Button>,
     )
     cy.findByRole('link', { name: /click link/i })
+    cy.matchImage()
+  })
+
+  it('on click', () => {
+    const onClick = cy.stub().as('callback')
+    cy.mount(<Button onClick={onClick}>click button</Button>)
+
+    cy.findByRole('button', { name: /click button/i }).click()
+    cy.get('@callback').should('have.been.calledOnce')
+  })
+
+  it('with icon', () => {
+    cy.mount(
+      <Button
+        color="primary"
+        startIcon={<SvgIcon iconName="check" />}
+        endIcon={<SvgIcon iconName="check" />}
+      >
+        Button With Icon
+      </Button>,
+    )
+
+    cy.findByRole('button', { name: /button with icon/i }).should('be.visible')
     cy.matchImage()
   })
 })

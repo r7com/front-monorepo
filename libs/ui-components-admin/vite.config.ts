@@ -8,9 +8,12 @@ import * as path from 'path'
 
 export default defineConfig({
   cacheDir: '../../node_modules/.vite/ui-test',
-
   plugins: [
-    svgr(),
+    svgr({
+      svgrOptions: {
+        titleProp: true,
+      },
+    }),
     dts({
       entryRoot: 'src',
       tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),

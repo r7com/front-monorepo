@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Button } from '../button'
 import { SvgIcon } from '../svg-icon'
+import { IconButton } from '../icon-button'
 
 export type SnackbarProps = {
   message: string
@@ -55,16 +55,16 @@ export function Snackbar({
       >
         {typeVariant?.icon && (
           <div className="flex items-center">
-            <SvgIcon iconName={typeVariant.icon} svgProp={{ width: 20, height: 20 }} />
+            <SvgIcon iconName={typeVariant.icon} width={20} height={20} />
           </div>
         )}
         <span className="text-[#f5f6fa] text-xxxs leading-6 font-semibold items-center">
           {message}
         </span>
         <div className="ml-auto flex items-center">
-          <Button size="content" color="transparent" onClick={onDismiss}>
+          <IconButton onClick={onDismiss}>
             <SvgIcon iconName="snackbar-close" size="medium" />
-          </Button>
+          </IconButton>
         </div>
       </div>
     </div>
