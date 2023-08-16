@@ -14,7 +14,6 @@ module.exports = {
       md: '0.25rem',
       lg: '0.5rem',
       pill: '1.25rem',
-      full: '6.25rem',
       circular: '50%',
     },
 
