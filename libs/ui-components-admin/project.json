@@ -47,9 +47,20 @@
       "options": {
         "cypressConfig": "libs/ui-components-admin/cypress.config.ts",
         "testingType": "component",
-        "devServerTarget": "__cypress__:build",
+        "devServerTarget": "ui-components-admin:build",
         "skipServe": true,
         "watch": true,
+        "browser": "chrome"
+      }
+    },
+    "component-test:ci": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "libs/ui-components-admin/cypress.config.ts",
+        "testingType": "component",
+        "devServerTarget": "ui-components-admin:build",
+        "skipServe": true,
+        "watch": false,
         "browser": "chrome"
       }
     },
