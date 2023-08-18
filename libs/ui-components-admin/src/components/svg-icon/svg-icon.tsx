@@ -43,7 +43,7 @@ export function SvgIcon({
     `,
   }[color]
 
-  if (error) return null
+  if (!SvgIconEl || error) return null
 
   if (loading) {
     /** componente loading */
@@ -51,15 +51,13 @@ export function SvgIcon({
   }
 
   return (
-    SvgIconEl && (
-      <SvgIconEl
-        data-testid="svg-icon"
-        width={sizesVariant.width}
-        height={sizesVariant.height}
-        title={title}
-        className={`transition-all rounded-sm border-hairline ${className} ${colorsVariant}`.trim()}
-        {...rest}
-      />
-    )
+    <SvgIconEl
+      data-testid="svg-icon"
+      width={sizesVariant.width}
+      height={sizesVariant.height}
+      title={title}
+      className={`transition-all rounded-sm border-hairline ${className} ${colorsVariant}`.trim()}
+      {...rest}
+    />
   )
 }
