@@ -1,24 +1,27 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Button } from './button'
+import { IconButton, IconButtonProps } from './icon-button'
+import { SvgIcon } from '../svg-icon'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const meta: Meta<typeof Button> = {
-  title: 'Example/Button',
-  component: Button,
+const meta: Meta<IconButtonProps> = {
+  title: 'Example/IconButton',
+  component: IconButton,
   tags: ['autodocs'],
   argTypes: {},
 }
 
 export default meta
-type Story = StoryObj<typeof Button>
+type Story = StoryObj<IconButtonProps>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
-  args: {
-    color: 'primary',
-    children: 'Click me',
-  },
+  render: ({ ...args }) => (
+    <IconButton {...args}>
+      <SvgIcon iconName="error" title="error" />
+    </IconButton>
+  ),
+  args: {},
   parameters: {
     design: {
       type: 'figma',
