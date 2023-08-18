@@ -160,47 +160,117 @@ describe(Chips.name, () => {
   it('renders a large chip with icon right primary', () => {
     cy.mount(
       <Chips size="large" color="primary">
-        nome tag
-        <SvgIcon iconName="clock" size="medium" className="fill-neutral-high-400 ml-nano" />
+        {text}
+        <SvgIcon iconName="clock" size="medium" className="ml-quark" />
       </Chips>,
     )
+    cy.get('svg').should('be.visible')
+    cy.findByText(text).should('be.visible')
     cy.matchImage()
   })
 
   it('renders a large chip with icon left primary', () => {
     cy.mount(
       <Chips size="large" color="primary">
-        <SvgIcon iconName="chevron-right" size="medium" className="fill-neutral-high-400 mr-nano" />
-        nome tag
+        <SvgIcon iconName="chevron-right" size="medium" className=" mr-quark" />
+        {text}
       </Chips>,
     )
+    cy.findByText(text).should('be.visible')
+    cy.get('svg').should('be.visible')
     cy.matchImage()
   })
 
   it('renders a large chip with only icon primary', () => {
     cy.mount(
       <Chips size="large" color="primary">
-        <SvgIcon iconName="clock" size="medium" className="fill-neutral-high-400" />
+        <SvgIcon iconName="clock" size="medium" />
       </Chips>,
     )
+    cy.get('svg').should('be.visible')
     cy.matchImage()
   })
 
   it('renders a large chip with only icon secondary', () => {
     cy.mount(
       <Chips size="large" color="secondary">
-        <SvgIcon iconName="clock" size="medium" className="fill-neutral-high-400" />
+        <SvgIcon iconName="clock" size="medium" />
       </Chips>,
     )
+    cy.get('svg').should('be.visible')
     cy.matchImage()
   })
 
   it('renders a icon chip with only icon tertiary', () => {
     cy.mount(
       <Chips size="large" color="tertiary">
-        <SvgIcon iconName="clock" size="medium" className="fill-brand-primary-500" />
+        <SvgIcon iconName="clock" size="medium" />
       </Chips>,
     )
+    cy.get('svg').should('be.visible')
+    cy.matchImage()
+  })
+
+  it('renders a large selected chip with only icon primary', () => {
+    const handleClick = cy.stub()
+    cy.mount(
+      <Chips size="large" color="primary" onClick={handleClick} selected>
+        <SvgIcon iconName="clock" size="medium" />
+      </Chips>,
+    )
+    cy.get('svg').should('be.visible')
+    cy.get('span').click()
+    cy.wrap(handleClick).should('have.been.calledOnce')
+    cy.matchImage()
+  })
+
+  it('renders a large selected chip with only icon secondary', () => {
+    const handleClick = cy.stub()
+    cy.mount(
+      <Chips size="large" color="secondary" onClick={handleClick} selected>
+        <SvgIcon iconName="clock" size="medium" />
+      </Chips>,
+    )
+    cy.get('svg').should('be.visible')
+    cy.get('span').click()
+    cy.wrap(handleClick).should('have.been.calledOnce')
+    cy.matchImage()
+  })
+
+  it('renders a icon selected chip with only icon tertiary', () => {
+    const handleClick = cy.stub()
+    cy.mount(
+      <Chips size="large" color="tertiary" onClick={handleClick} selected>
+        <SvgIcon iconName="clock" size="medium" />
+      </Chips>,
+    )
+    cy.get('svg').should('be.visible')
+    cy.get('span').click()
+    cy.wrap(handleClick).should('have.been.calledOnce')
+    cy.matchImage()
+  })
+
+  it('renders a large chip disabled with icon right primary', () => {
+    cy.mount(
+      <Chips size="large" color="primary" disabled>
+        {text}
+        <SvgIcon iconName="clock" size="medium" className="ml-quark" />
+      </Chips>,
+    )
+    cy.get('svg').should('be.visible')
+    cy.findByText(text).should('be.visible')
+    cy.matchImage()
+  })
+
+  it('renders a large chip disabled with icon left primary', () => {
+    cy.mount(
+      <Chips size="large" color="primary" disabled>
+        <SvgIcon iconName="chevron-right" size="medium" className=" mr-quark" />
+        {text}
+      </Chips>,
+    )
+    cy.findByText(text).should('be.visible')
+    cy.get('svg').should('be.visible')
     cy.matchImage()
   })
 })
