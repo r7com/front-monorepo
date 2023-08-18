@@ -54,7 +54,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/__cypress__"],
+      "outputs": ["{workspaceRoot}/coverage/apps/__cypress__"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/apps/__cypress__"
