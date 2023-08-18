@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { useArgs } from '@storybook/client-api'
-
 import { Chips, ChipsProps } from './chips'
 
 const meta: Meta<ChipsProps<'span'>> = {
@@ -13,7 +12,7 @@ const meta: Meta<ChipsProps<'span'>> = {
       control: { type: 'radio' },
     },
     size: {
-      options: ['medium', 'small', 'large', 'icon'],
+      options: ['medium', 'small', 'large'],
       control: { type: 'radio' },
     },
   },

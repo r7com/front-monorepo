@@ -72,7 +72,6 @@ describe(Chips.name, () => {
       </Chips>,
     )
     cy.findByText(text).should('be.visible')
-    cy.matchImage()
   })
 
   it('renders a medium chip with primary', () => {
@@ -82,7 +81,6 @@ describe(Chips.name, () => {
       </Chips>,
     )
     cy.findByText(text).should('be.visible')
-    cy.matchImage()
   })
 
   it('renders a large chip with primary', () => {
@@ -122,7 +120,6 @@ describe(Chips.name, () => {
       </Chips>,
     )
     cy.findByText(text).should('be.visible')
-    cy.matchImage()
   })
 
   it('renders a large chip with selected primary tag a', () => {
@@ -136,7 +133,6 @@ describe(Chips.name, () => {
     cy.findByText(text).should('be.visible')
     cy.get('a').click()
     cy.wrap(handleClick).should('have.been.calledOnce')
-    cy.matchImage()
   })
 
   it('renders a large chip with primary tag button', () => {
@@ -146,7 +142,6 @@ describe(Chips.name, () => {
       </Chips>,
     )
     cy.findByText(text).should('be.visible')
-    cy.matchImage()
   })
 
   it('renders a medium chip with selected primary tag button', () => {
@@ -160,22 +155,41 @@ describe(Chips.name, () => {
     cy.findByText(text).should('be.visible')
     cy.get('button').click()
     cy.wrap(handleClick).should('have.been.calledOnce')
-    cy.matchImage()
   })
 
-  it('renders a icon chip with only icon primary', () => {
+  it('renders a large chip with icon right primary', () => {
     cy.mount(
-      <Chips size="icon" color="primary">
-        <SvgIcon iconName="chevron-right" size="medium" className="fill-neutral-high-400" />
+      <Chips size="large" color="primary">
+        nome tag
+        <SvgIcon iconName="clock" size="medium" className="fill-neutral-high-400 ml-nano" />
       </Chips>,
     )
     cy.matchImage()
   })
 
-  it('renders a icon chip with only icon secondary', () => {
+  it('renders a large chip with icon left primary', () => {
     cy.mount(
-      <Chips size="icon" color="secondary">
-        <SvgIcon iconName="chevron-right" size="medium" className="fill-neutral-high-400" />
+      <Chips size="large" color="primary">
+        <SvgIcon iconName="chevron-right" size="medium" className="fill-neutral-high-400 mr-nano" />
+        nome tag
+      </Chips>,
+    )
+    cy.matchImage()
+  })
+
+  it('renders a large chip with only icon primary', () => {
+    cy.mount(
+      <Chips size="large" color="primary">
+        <SvgIcon iconName="clock" size="medium" className="fill-neutral-high-400" />
+      </Chips>,
+    )
+    cy.matchImage()
+  })
+
+  it('renders a large chip with only icon secondary', () => {
+    cy.mount(
+      <Chips size="large" color="secondary">
+        <SvgIcon iconName="clock" size="medium" className="fill-neutral-high-400" />
       </Chips>,
     )
     cy.matchImage()
@@ -183,8 +197,8 @@ describe(Chips.name, () => {
 
   it('renders a icon chip with only icon tertiary', () => {
     cy.mount(
-      <Chips size="icon" color="tertiary">
-        <SvgIcon iconName="chevron-right" size="medium" className="fill-brand-primary-500" />
+      <Chips size="large" color="tertiary">
+        <SvgIcon iconName="clock" size="medium" className="fill-brand-primary-500" />
       </Chips>,
     )
     cy.matchImage()

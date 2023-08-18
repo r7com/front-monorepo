@@ -1,6 +1,6 @@
 export type ChipsProps<C extends React.ElementType> = {
   as?: C
-  size: 'medium' | 'small' | 'large' | 'icon'
+  size: 'medium' | 'small' | 'large'
   color?: 'primary' | 'secondary' | 'tertiary'
   children: React.ReactNode
   disabled?: boolean
@@ -19,10 +19,9 @@ export function Chips<C extends React.ElementType = 'span'>({
   const DynamicTag = as || 'span'
 
   const sizes = {
-    large: 'h-sm text-xs rounded-pill',
-    medium: 'h-xs text-xs rounded-pill',
-    small: 'h-xxs text-xxxs rounded-pill',
-    icon: 'h-lg text-xs rounded-circular',
+    large: 'h-sm text-xs',
+    medium: 'h-xs text-xs',
+    small: 'h-xxs text-xxxs',
   }[size]
 
   const colors = {
@@ -37,7 +36,7 @@ export function Chips<C extends React.ElementType = 'span'>({
       ? 'bg-dark-high-600 text-dark-high-500'
       : 'bg-highlight-500 text-neutral-high-500',
     tertiary: selected
-      ? 'bg-neutral-high-400 text-light-low-500 border-hairline border-light-low-500'
+      ? 'bg-brand-primary-500/medium text-brand-primary-600 border-hairline border-brand-primary-600'
       : disabled
       ? 'text-dark-high-500 border-hairline border-dark-high-500'
       : 'text-brand-primary-500 border-hairline border-brand-primary-500',
@@ -50,9 +49,8 @@ export function Chips<C extends React.ElementType = 'span'>({
   }[color]
 
   const focus = {
-    primary:
-      'focus:outline-none focus:ring focus:ring-brand-primary-600 focus:shadow-highlight-500',
-    secondary: '',
+    primary: 'focus:border-light-low-500 focus:border-thin',
+    secondary: 'focus:border-light-low-500 focus:border-thin',
     tertiary: 'focus:shadow-level5 focus:shadow-brand-primary-500',
   }[color]
 
@@ -64,7 +62,7 @@ export function Chips<C extends React.ElementType = 'span'>({
 
   return (
     <DynamicTag
-      className={`${sizes} ${hover} ${focus} ${pressed} ${colors} px-xxxs font-semibold cursor-pointer flex items-center justify-center w-fit`}
+      className={`${sizes} ${hover} ${focus} ${pressed} ${colors} px-xxxs rounded-pill font-semibold cursor-pointer flex items-center justify-center w-fit`}
       {...rest}
     >
       {children}
