@@ -43,10 +43,11 @@ export function SvgIcon({
     `,
   }[color]
 
+  if (error) return null
+
   return (
     <>
       {loading && <div>...</div>} {/** componente loading */}
-      {error && <div data-testid="svg-icon">Erro ao carregar icone</div>} {/** componente error */}
       {SvgIconEl && (
         <SvgIconEl
           data-testid="svg-icon"
