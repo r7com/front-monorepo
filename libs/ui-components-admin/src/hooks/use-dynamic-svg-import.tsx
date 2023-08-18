@@ -13,6 +13,7 @@ export function useDynamicSvgImport(iconName: string) {
       try {
         importedIconRef.current = (await import(`../svg/${iconName}.svg`)).ReactComponent
       } catch (error) {
+        console.error(error)
         setError(error)
       } finally {
         setLoading(false)

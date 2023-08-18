@@ -38,6 +38,7 @@ describe(Button.name, () => {
     )
 
     cy.findByRole('button', { name: /button with icon/i }).should('be.visible')
+    cy.findAllByTestId('svg-icon').should('be.visible')
     cy.matchImage()
   })
 })
