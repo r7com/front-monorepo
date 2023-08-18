@@ -45,19 +45,21 @@ export function SvgIcon({
 
   if (error) return null
 
+  if (loading) {
+    /** componente loading */
+    return <div aria-hidden="true">...</div>
+  }
+
   return (
-    <>
-      {loading && <div>...</div>} {/** componente loading */}
-      {SvgIconEl && (
-        <SvgIconEl
-          data-testid="svg-icon"
-          width={sizesVariant.width}
-          height={sizesVariant.height}
-          title={title}
-          className={`transition-all rounded-sm border-hairline ${className} ${colorsVariant}`.trim()}
-          {...rest}
-        />
-      )}
-    </>
+    SvgIconEl && (
+      <SvgIconEl
+        data-testid="svg-icon"
+        width={sizesVariant.width}
+        height={sizesVariant.height}
+        title={title}
+        className={`transition-all rounded-sm border-hairline ${className} ${colorsVariant}`.trim()}
+        {...rest}
+      />
+    )
   )
 }
