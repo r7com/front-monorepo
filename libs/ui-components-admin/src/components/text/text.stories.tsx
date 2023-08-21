@@ -4,7 +4,7 @@ import { Text } from './text'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Text> = {
-  title: 'Example/Disclaimer',
+  title: 'Example/Text',
   component: Text,
   tags: ['autodocs'],
   argTypes: {},
@@ -21,7 +21,12 @@ export const Default: Story = {
     </div>
   ),
   args: {
-    text: 'Componente Disclaimer',
+    children: 'Componente Text',
+    as: 'p',
+    fontWeight: 'font-normal',
+    color: 'text-dark-high-400',
+    fontSize: 'text-xxxs',
+    fontFamily: 'font-open-sans',
   },
   parameters: {
     design: {
