@@ -1,5 +1,6 @@
-export type TextProps = {
-  text: string
+import React from 'react'
+export type TextProps<C extends React.ElementType> = {
+  children: React.ReactNode
   fontSize?:
     | 'text-little'
     | 'text-xxxs'
@@ -13,7 +14,7 @@ export type TextProps = {
     | 'text-xxxl'
 
   fontWeight?: 'font-light' | 'font-normal' | 'font-semibold' | 'font-bold'
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p' | 'span'
+  as?: C
   color?:
     | 'text-dark-high-400'
     | 'text-dark-high-500'
@@ -22,15 +23,22 @@ export type TextProps = {
     | 'text-feedback-helper-400'
     | 'text-brand-primary-400'
     | 'text-brand-primary-500'
+
+  fontFamily?: 'font-open-sans' | 'font-times-new-roman'
 }
 
-export function Text({
-  text,
+export function Text<C extends React.ElementType>({
+  children,
   fontWeight = 'font-normal',
   color = 'text-dark-high-400',
-  as = 'p',
+  as,
   fontSize = 'text-xxxs',
-}: TextProps) {
-  const DynamicTag = as
-  return <DynamicTag className={`${fontSize} ${fontWeight} ${color}`}>{text}</DynamicTag>
+  fontFamily = 'font-open-sans',
+}: TextProps<C>) {
+  const DynamicTag = as || 'p'
+  return (
+    <DynamicTag data-testid="text" className={`${fontSize} ${fontWeight} ${color} ${fontFamily}`}>
+      {children}
+    </DynamicTag>
+  )
 }

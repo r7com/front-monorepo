@@ -111,6 +111,7 @@ module.exports = {
     fontFamily: {
       'open-sans': ['"Open Sans"', 'sans-serif'],
       'playfair-display': ['"Playfair Display"'],
+      'times-new-roman': ['"Times New Roman"'],
       body: ['"Open Sans"'],
     },
     fontSize: {
