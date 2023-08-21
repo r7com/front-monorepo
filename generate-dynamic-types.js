@@ -5,18 +5,16 @@ const prettier = require('prettier')
 /** Centraliza todas os parametros do script passaveis */
 class Config {
   constructor() {
-    /** Pasta base da lib */
-    this.baseFolder = getParam('--baseDir')
     /** Pasta dos arquivos que vão virar tipagem */
-    this.inputFolder = `${this.baseFolder}/${getParam('--inputFolder')}`
-    /** Extensão do arquivo, `ex: .svg` */
-    this.inputExtension = `${getParam('--inputExtension')}`
+    this.inputFolder = getParam('--inputFolder')
+    /** OPCIONAL: Pega apenas a extensão do arquivo passada, `ex: .svg` */
+    this.inputExtension = getParam('--inputExtension')
     /** Nome do arquivo de tipagem `ex: svg-icon.types.ts` */
-    this.outputFileName = `${getParam('--outputFileName')}`
+    this.outputFileName = getParam('--outputFileName')
     /** Diretório onde vai ser gerado o arquivo de tipagem */
-    this.outputFile = `${this.baseFolder}/${getParam('--outputFolder')}/${this.outputFileName}`
+    this.outputFile = getParam('--outputFile')
     /** Nome da tipagem, por exemplo `SvgIcons` */
-    this.typeName = `${getParam('--typeName')}`
+    this.typeName = getParam('--typeName')
     /** Prefixo da tipagem, por exemplo `export type SvgIcons = ` */
     this.typePrefix = `export type ${this.typeName} = `
     /** Watcher ainda não implementado, talvez usar a lib `chokidar`,
@@ -77,12 +75,23 @@ function dynamicTypes() {
   /** Retorna uma array com os nomes dos arquivos na pasta */
   function getFileNames() {
     const filesOnFolder = fs.readdirSync(cfg.inputFolder)
+    // Filtra apenas os arquivos com a extensão passada em `inputExtension`
+    if (cfg.inputExtension) {
+      return (
+        filesOnFolder
+          // Pega apenas arquivos com a extensão passada por parametro
+          .filter(file => path.extname(file).toLowerCase() === cfg.inputExtension)
+          // Remove a extensão do nome do arquivo
+          .map(file => path.basename(file, cfg.inputExtension))
+      )
+    }
+    // Não filtra por extensão, pega todas
     return (
       filesOnFolder
-        // Pega apenas arquivos com a extensão passada por parametro
-        .filter(file => path.extname(file).toLowerCase() === cfg.inputExtension)
-        // Remove a extensão do nome do arquivo
-        .map(file => path.basename(file, cfg.inputExtension))
+        // Remove arquivos que começam com `.`, ex: `.gitkeep`
+        .filter(file => !file.startsWith('.'))
+        // Remove qualquer extensão do nome do arquivo
+        .map(file => path.parse(file).name)
     )
   }
 
@@ -125,7 +134,6 @@ function dynamicTypes() {
   const namesAdded = names.filter(icon => !oldNamesOnType.includes(icon))
   /** Arquivos na tipagem que não estavam mais na pasta */
   const namesRemoved = oldNamesOnType.filter(icon => !names.includes(icon))
-
   /** União dos nomes dos ícones `"circle" | "square" | "rectangle"...` */
   const typesUnion = names.map(name => `'${name}'`).join(' | ')
   /** Tipagem em uma linha só, sem formatação `export type SvgIcons = 'a' | 'b' | 'c'...` */
