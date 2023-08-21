@@ -1,19 +1,20 @@
 import { Text } from './text'
 
-const disclaimerSelector = '[data-testid="disclaimer"]'
+const textSelector = '[data-testid="text"]'
 
 describe(Text.name, () => {
-  const text = 'Testando disclaimer'
-
-  beforeEach(() => {
-    cy.mount(<Text text={text} />)
-  })
-
   it('uses custom text for disclaimer paragraph', () => {
-    cy.get(`${disclaimerSelector} > p`).should('have.text', text)
-  })
-
-  it('should match the snapshot', () => {
+    cy.mount(
+      <Text
+        children="Testando"
+        fontFamily="font-times-new-roman"
+        fontSize="text-little"
+        color="text-feedback-success-400"
+        fontWeight="font-bold"
+        as="h1"
+      />,
+    )
+    cy.get(`${textSelector}`).should('be.visible')
     cy.matchImage()
   })
 })
