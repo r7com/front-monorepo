@@ -100,6 +100,12 @@
       "options": {
         "command": "node generate-dynamic-types.js --baseDir libs/ui-components-admin/src --inputFolder svg --inputExtension .svg --outputFolder components/svg-icon --outputFileName svg-icon.types.ts --typeName SvgIcons --showOnlyTypesTable"
       }
+    },
+    "show-svg-types-auto-fix": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node generate-dynamic-types.js --baseDir libs/ui-components-admin/src --inputFolder svg --inputExtension .svg --outputFolder components/svg-icon --outputFileName svg-icon.types.ts --typeName SvgIcons --showOnlyTypesTable --autoFix"
+      }
     }
   },
 
