@@ -126,8 +126,21 @@ function dynamicTypes() {
     }
   }
 
+  /** Estoura erro quando não acha nenhum arquivo na pasta */
+  function validateNames(names = ['']) {
+    const noNamesMessage = `Not found any file that matches on the folder ${
+      cfg.inputExtension ? `with ${cfg.inputExtension} extension` : ''
+    } `
+
+    if (names.length === 0) {
+      console.error(color.error(noNamesMessage))
+      throw new Error(noNamesMessage)
+    }
+  }
+
   /** Todos os nomes dos arquivos na pasta */
   const names = getFileNames()
+  validateNames(names)
   /** Nomes de arquivo já presentes na tipagem */
   const { names: oldNamesOnType, isCreatingTypeFile } = getNamesAlreadyOnType()
   /** Arquivos na pasta que agora estão na tipagem */
