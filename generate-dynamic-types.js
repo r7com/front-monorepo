@@ -9,7 +9,7 @@ class Config {
     this.baseFolder = getParam('--baseDir')
     /** Pasta dos arquivos que vão virar tipagem */
     this.inputFolder = `${this.baseFolder}/${getParam('--inputFolder')}`
-    /** Nome do arquivo de tipagem `ex: svg-icon.types.ts` */
+    /** Extensão do arquivo, `ex: .svg` */
     this.inputExtension = `${getParam('--inputExtension')}`
     /** Nome do arquivo de tipagem `ex: svg-icon.types.ts` */
     this.outputFileName = `${getParam('--outputFileName')}`
@@ -49,14 +49,14 @@ init()
 
 /** Core da tipagem dinâmica - Retorna funções pra tratar ela */
 function dynamicTypes() {
-  /** Retorna uma array com os nomes dos arquivos svg's */
+  /** Retorna uma array com os nomes dos arquivos na pasta */
   function getFileNames() {
     const svgFiles = fs.readdirSync(cfg.inputFolder)
     return (
       svgFiles
-        // Pega apenas svg's
+        // Pega apenas arquivos com a extensão passada por parametro
         .filter(file => path.extname(file).toLowerCase() === cfg.inputExtension)
-        // Remove a extensão .svg do nome do arquivo
+        // Remove a extensão do nome do arquivo
         .map(file => path.basename(file, cfg.inputExtension))
     )
   }
@@ -118,7 +118,7 @@ function dynamicTypes() {
   }
 
   function createDynamicTypesFile() {
-    // Cria ou modifica o arquivo svg-icons.types.ts
+    // Cria ou modifica o arquivo, por exemplo: svg-icons.types.ts
     fs.writeFile(cfg.outputFile, typeContentWithPrettier, error => {
       if (!error) {
         const hasIconsOnType = oldNamesOnType.length > 0
