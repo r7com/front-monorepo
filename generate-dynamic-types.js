@@ -28,6 +28,7 @@ class Config {
     this.hideTypesTable = getBooleanParam('--hideTypesTable')
     /** Mostra apenas a tabela de todos os nomes tipos na união */
     this.showOnlyTypesTable = getBooleanParam('--showOnlyTypesTable')
+    this.autoFix = getBooleanParam('--autoFix')
   }
 }
 
@@ -38,7 +39,12 @@ function init() {
   const { createDynamicTypesFile, showTypesTable } = dynamicTypes()
 
   /** Apenas mostra uma tabela com todas as tipagens */
-  if (cfg.showOnlyTypesTable) return showTypesTable()
+  if (cfg.showOnlyTypesTable) {
+    showTypesTable()
+    if (!cfg.autoFix) {
+      return
+    }
+  }
 
   /** Cria/atualiza o arquivo com as tipagens dinâmicas */
   createDynamicTypesFile()
@@ -49,11 +55,30 @@ init()
 
 /** Core da tipagem dinâmica - Retorna funções pra tratar ela */
 function dynamicTypes() {
+  class Color {
+    constructor() {
+      this.getColorFunc = (color = '') => {
+        return (text = '') => `${color}${text}\x1b[0m`
+      }
+      this.added = this.getColorFunc('\x1b[32m')
+      this.removed = this.getColorFunc('\x1b[31m')
+      this.success = this.getColorFunc('\x1b[32m')
+      this.error = this.getColorFunc('\x1b[31m')
+      this.warning = this.getColorFunc('\x1b[33m')
+      this.titleSuccess = this.getColorFunc('\x1b[42m')
+      this.titleError = this.getColorFunc('\x1b[41m')
+      this.reset = this.getColorFunc('\x1b[0m')
+    }
+  }
+
+  /** Centraliza todas as cores pra console.log */
+  const color = new Color()
+
   /** Retorna uma array com os nomes dos arquivos na pasta */
   function getFileNames() {
-    const svgFiles = fs.readdirSync(cfg.inputFolder)
+    const filesOnFolder = fs.readdirSync(cfg.inputFolder)
     return (
-      svgFiles
+      filesOnFolder
         // Pega apenas arquivos com a extensão passada por parametro
         .filter(file => path.extname(file).toLowerCase() === cfg.inputExtension)
         // Remove a extensão do nome do arquivo
@@ -74,29 +99,31 @@ function dynamicTypes() {
       const typesUnionWithoutPrefix = typeContentUglyfied
         .replace(cfg.typePrefix, '')
         .replace(/'/g, '')
-      !cfg.showOnlyTypesTable &&
-        console.log(`\n\x1b[90m> Updating file "${cfg.outputFileName}"...\x1b[0m `)
       // Retorna uma array com os ícones presentes na tipagem
-      return typesUnionWithoutPrefix.split(' | ')
+      return {
+        names: typesUnionWithoutPrefix.split(' | '),
+        isCreatingTypeFile: false,
+      }
     } catch (error) {
-      if (error.code === 'ENOENT') {
-        !cfg.showOnlyTypesTable &&
-          console.log(`\n\x1b[90m> Creating file "${cfg.outputFileName}"...\x1b[0m`)
-      } else {
-        console.error(`\x1b[31m[41mError reading the file ${cfg.outputFileName}`, error)
-        // Reseta a cor vermelha "\x1b[31m" acima senão os logs abaixo ficam vermelhos
-        console.log(`\x1b[0m`)
+      if (error.code !== 'ENOENT') {
+        console.error(color.error(`Error reading the file ${cfg.outputFileName}`))
+        throw new Error(error)
       }
       // Retorna array vazia se não existir o arquivo da tipagem ainda
-      return []
+      return {
+        names: [],
+        isCreatingTypeFile: true,
+      }
     }
   }
 
   /** Todos os nomes dos arquivos na pasta */
   const names = getFileNames()
   /** Nomes de arquivo já presentes na tipagem */
-  const oldNamesOnType = getNamesAlreadyOnType()
+  const { names: oldNamesOnType, isCreatingTypeFile } = getNamesAlreadyOnType()
+  /** Arquivos na pasta que agora estão na tipagem */
   const namesAdded = names.filter(icon => !oldNamesOnType.includes(icon))
+  /** Arquivos na tipagem que não estavam mais na pasta */
   const namesRemoved = oldNamesOnType.filter(icon => !names.includes(icon))
 
   /** União dos nomes dos ícones `"circle" | "square" | "rectangle"...` */
@@ -112,26 +139,55 @@ function dynamicTypes() {
 
   /** Tabela com todos os ícones */
   function showTypesTable() {
-    const noTypesMessage = '\x1b[33mNo types yet, try running the generate command first\x1b[0m'
-    const namesOnType = oldNamesOnType.length > 0 ? oldNamesOnType : noTypesMessage
-    console.table(namesOnType)
+    const noTypesMessage = color.warning('No types yet, run the generate command first\n ')
+    const mismatchMessage = color.warning('Found a mismatch between files and types (scroll up)\n ')
+    const isNamesMissingOnType = namesAdded.length > 0
+    const isTypesMissingOnNames = namesRemoved.length > 0
+    const isTypesEmpty = oldNamesOnType.length === 0
+    const hasMismatch = isNamesMissingOnType || isNamesMissingOnType
+
+    if (isNamesMissingOnType) {
+      console.log(color.warning(`Missing in type file (${namesAdded.length})`))
+      console.table(namesAdded)
+    }
+
+    if (isTypesMissingOnNames) {
+      console.log(color.warning(`Missing in folder (${namesRemoved.length})`))
+      console.table(namesRemoved)
+    }
+
+    if (!isTypesEmpty) {
+      console.log(`All type names (${oldNamesOnType.length})`)
+      console.table(oldNamesOnType)
+    } else {
+      console.log(noTypesMessage)
+    }
+
+    if (hasMismatch) {
+      console.log(mismatchMessage)
+    }
   }
 
   function createDynamicTypesFile() {
+    if (namesAdded.length === 0 && namesRemoved.length === 0) {
+      console.log(color.success('Folder files and type file are synced, nothing to change'))
+      return
+    }
     // Cria ou modifica o arquivo, por exemplo: svg-icons.types.ts
     fs.writeFile(cfg.outputFile, typeContentWithPrettier, error => {
       if (!error) {
-        const hasIconsOnType = oldNamesOnType.length > 0
-        const message = `${hasIconsOnType ? 'updated' : 'generated'}`
-        console.log(`\x1b[42m Dynamic types ${message} sucessfully! \x1b[0m`)
-        console.log(`\x1b[5mPath: ${cfg.outputFile}\n\n\x1b[0m`)
-        console.log(`\n\x1b[0mTotal: ${names.length}\n`)
+        const fileStatus = isCreatingTypeFile ? 'Creating' : 'Updating'
+        const fileStatusMessage = `\n > ${fileStatus} file "${cfg.outputFileName}"...`
+        console.log(fileStatusMessage)
+        const message = `${isCreatingTypeFile ? 'generated' : 'updated'}`
+        console.log(color.titleSuccess(` Dynamic types ${message} sucessfully! `))
+        console.log(`Output file: ${cfg.outputFile}`)
+        console.log(`\n \nTotal: ${names.length}\n`)
         consoleLogDiff(DIFF_TYPES.added)
         consoleLogDiff(DIFF_TYPES.removed)
       } else {
-        console.error('\x1b[41mError while generating dynamic types', error)
-        // Reset de cor
-        console.log('\x1b[0m')
+        console.error(color.titleError('Error while generating dynamic types'))
+        throw new Error(error)
       }
     })
   }
@@ -140,12 +196,12 @@ function dynamicTypes() {
     added: {
       text: 'added',
       array: namesAdded,
-      color: '\x1b[32m',
+      color: color.added,
     },
     removed: {
       text: 'removed',
       array: namesRemoved,
-      color: '\x1b[31m',
+      color: color.removed,
     },
   }
 
@@ -155,7 +211,7 @@ function dynamicTypes() {
     const hasDiff = type.array.length > 0
     const typesText = `${type.array.length || 'No'} type${type.array.length > 1 ? 's' : ''}`
     const diffText = `${hasDiff ? `: [\n${values}\n]` : ''}`
-    console.log(`${type.color}${typesText} ${type.text}${diffText}\x1b[0m\n`)
+    console.log(type.color(`\n${typesText} ${type.text}${diffText}`))
   }
 
   return {
