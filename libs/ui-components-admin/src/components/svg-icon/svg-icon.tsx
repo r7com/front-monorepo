@@ -1,7 +1,8 @@
 import { useDynamicSvgImport } from '../../hooks/use-dynamic-svg-import'
+import { SvgIcons } from './svg-icon.types'
 
 export type SvgIconProps = {
-  iconName: string
+  iconName: SvgIcons
   size?: 'default' | 'medium' | 'small'
   color?: 'primary' | 'secondary' | 'tertiary' | 'original'
   title?: string

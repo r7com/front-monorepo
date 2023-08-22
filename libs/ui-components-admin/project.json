@@ -88,7 +88,26 @@
           "quiet": true
         }
       }
+    },
+    "generate-svg-types": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node generate-dynamic-types.js --inputFolder libs/ui-components-admin/src/svg --outputFile libs/ui-components-admin/src/components/svg-icon/svg-icon.types.ts --typeName SvgIcons"
+      }
+    },
+    "show-svg-types": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node generate-dynamic-types.js --inputFolder libs/ui-components-admin/src/svg --outputFile libs/ui-components-admin/src/components/svg-icon/svg-icon.types.ts --typeName SvgIcons --showOnlyTypesTable"
+      }
+    },
+    "show-svg-types-auto-fix": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node generate-dynamic-types.js --inputFolder libs/ui-components-admin/src/svg --outputFile libs/ui-components-admin/src/components/svg-icon/svg-icon.types.ts --typeName SvgIcons --showOnlyTypesTable --autoFix"
+      }
     }
   },
+
   "implicitDependencies": ["ui-theme-core"]
 }
