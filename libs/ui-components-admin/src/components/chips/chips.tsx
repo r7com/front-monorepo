@@ -1,3 +1,5 @@
+import React from 'react'
+
 export type ChipsProps<C extends React.ElementType> = {
   as?: C
   size: 'medium' | 'small' | 'large'
@@ -5,6 +7,8 @@ export type ChipsProps<C extends React.ElementType> = {
   children: React.ReactNode
   disabled?: boolean
   selected?: boolean
+  startIcon?: React.ReactNode | null
+  endIcon?: React.ReactNode | null
 } & React.ComponentPropsWithoutRef<C>
 
 export function Chips<C extends React.ElementType = 'span'>({
@@ -14,21 +18,23 @@ export function Chips<C extends React.ElementType = 'span'>({
   disabled = false,
   selected,
   children,
+  startIcon = null,
+  endIcon = null,
   ...rest
 }: ChipsProps<C>) {
   const DynamicTag = as || 'span'
 
   const sizes = {
-    large: 'h-sm text-xs',
-    medium: 'h-xs text-xs',
-    small: 'h-xxs text-xxxs',
+    large: 'h-sm text-xs [&>svg]:h-xxs [&>svg]:w-xxs',
+    medium: 'h-xs text-xs [&>svg]:h-xxs [&>svg]:w-xxs',
+    small: 'h-xxs text-xxxs [&>svg]:h-xxxs [&>svg]:w-xxxs',
   }[size]
 
   const colors = {
     primary: selected
       ? 'bg-brand-primary-500 text-brand-primary-600 border-hairline border-brand-primary-600 [&>svg]:fill-brand-primary-600'
       : disabled
-      ? 'bg-dark-high-600 text-dark-high-500  [&>svg]:fill-dark-high-500'
+      ? 'bg-dark-high-600 text-dark-high-500 [&>svg]:fill-dark-high-500'
       : 'bg-brand-primary-500 text-neutral-high-500',
     secondary: selected
       ? 'bg-highlight-400 text-highlight-600 border-highlight-600 border-hairline [&>svg]:fill-highlight-600'
@@ -65,10 +71,16 @@ export function Chips<C extends React.ElementType = 'span'>({
 
   return (
     <DynamicTag
-      className={`group ${sizes} ${hover} ${focus} ${pressed} ${colors}  px-xxxs rounded-pill font-semibold cursor-pointer flex items-center justify-center w-fit`}
+      className={`${sizes} ${hover} ${focus} ${pressed} ${colors} px-xxxs rounded-pill font-semibold cursor-pointer flex items-center justify-center w-fit`}
       {...rest}
     >
+      {startIcon && React.isValidElement(startIcon)
+        ? React.cloneElement(startIcon, { className: 'mr-nano' })
+        : startIcon}
       {children}
+      {endIcon && React.isValidElement(endIcon)
+        ? React.cloneElement(endIcon, { className: 'ml-nano' })
+        : endIcon}
     </DynamicTag>
   )
 }
