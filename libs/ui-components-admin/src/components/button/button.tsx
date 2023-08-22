@@ -84,9 +84,17 @@ export function Button<C extends React.ElementType = 'button'>({
 
   return (
     <DynamicTag data-testid="button" className={compiledClasses} {...rest}>
-      {startIcon && <span className="mr-nano">{startIcon}</span>}
+      {startIcon && (
+        <span className="mr-nano" aria-hidden="true">
+          {startIcon}
+        </span>
+      )}
       {children}
-      {endIcon && <span className="ml-nano">{endIcon}</span>}
+      {endIcon && (
+        <span className="ml-nano" aria-hidden="true">
+          {endIcon}
+        </span>
+      )}
     </DynamicTag>
   )
 }

@@ -43,20 +43,21 @@ export function SvgIcon({
     `,
   }[color]
 
+  if (!SvgIconEl || error) return null
+
+  if (loading) {
+    /** componente loading */
+    return <div aria-hidden="true">...</div>
+  }
+
   return (
-    <>
-      {loading && <div>...</div>} {/** componente loading */}
-      {error && <div data-testid="svg-icon">Erro ao carregar icone</div>} {/** componente error */}
-      {SvgIconEl && (
-        <SvgIconEl
-          data-testid="svg-icon"
-          width={sizesVariant.width}
-          height={sizesVariant.height}
-          title={title}
-          className={`transition-all rounded-sm border-hairline ${className} ${colorsVariant}`.trim()}
-          {...rest}
-        />
-      )}
-    </>
+    <SvgIconEl
+      data-testid="svg-icon"
+      width={sizesVariant.width}
+      height={sizesVariant.height}
+      title={title}
+      className={`transition-all rounded-sm border-hairline ${className} ${colorsVariant}`.trim()}
+      {...rest}
+    />
   )
 }
