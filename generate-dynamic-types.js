@@ -9,9 +9,7 @@ class Config {
     this.inputFolder = getParam('--inputFolder')
     /** OPCIONAL: Pega apenas a extensão do arquivo passada, `ex: .svg` */
     this.inputExtension = getParam('--inputExtension')
-    /** Nome do arquivo de tipagem `ex: svg-icon.types.ts` */
-    this.outputFileName = getParam('--outputFileName')
-    /** Diretório onde vai ser gerado o arquivo de tipagem */
+    /** Arquivo onde vai ser gerado a tipagem, ex: `libs/app/src/file.types.ts` */
     this.outputFile = getParam('--outputFile')
     /** Nome da tipagem, por exemplo `SvgIcons` */
     this.typeName = getParam('--typeName')
@@ -26,6 +24,7 @@ class Config {
     this.hideTypesTable = getBooleanParam('--hideTypesTable')
     /** Mostra apenas a tabela de todos os nomes tipos na união */
     this.showOnlyTypesTable = getBooleanParam('--showOnlyTypesTable')
+    /** Serve pra corrigir a tipagem além de mostrar a tabela com `--showOnlyTypesTable` */
     this.autoFix = getBooleanParam('--autoFix')
   }
 }
@@ -115,7 +114,7 @@ function dynamicTypes() {
       }
     } catch (error) {
       if (error.code !== 'ENOENT') {
-        console.error(color.error(`Error reading the file ${cfg.outputFileName}`))
+        console.error(color.error(`Error reading the file ${cfg.outputFile}`))
         throw new Error(error)
       }
       // Retorna array vazia se não existir o arquivo da tipagem ainda
@@ -198,11 +197,11 @@ function dynamicTypes() {
     fs.writeFile(cfg.outputFile, typeContentWithPrettier, error => {
       if (!error) {
         const fileStatus = isCreatingTypeFile ? 'Creating' : 'Updating'
-        const fileStatusMessage = `\n > ${fileStatus} file "${cfg.outputFileName}"...`
+        const fileStatusMessage = `\n > ${fileStatus} file...`
         console.log(fileStatusMessage)
         const message = `${isCreatingTypeFile ? 'generated' : 'updated'}`
         console.log(color.titleSuccess(` Dynamic types ${message} sucessfully! `))
-        console.log(`Output file: ${cfg.outputFile}`)
+        console.log(cfg.outputFile)
         console.log(`\n \nTotal: ${names.length}\n`)
         consoleLogDiff(DIFF_TYPES.added)
         consoleLogDiff(DIFF_TYPES.removed)
