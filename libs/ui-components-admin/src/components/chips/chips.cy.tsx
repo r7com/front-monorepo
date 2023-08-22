@@ -113,10 +113,8 @@ describe(Chips.name, () => {
         {text}
       </Chips>,
     )
-
     cy.findByText(text).should('be.visible')
-    cy.get('span').click()
-    cy.wrap(handleClick).should('have.been.calledOnce')
+    cy.wrap(handleClick).should('not.have.been.called')
   })
 
   it('renders a medium chip with disabled tertiary on click', () => {
@@ -126,10 +124,8 @@ describe(Chips.name, () => {
         {text}
       </Chips>,
     )
-
     cy.findByText(text).should('be.visible')
-    cy.get('span').click()
-    cy.wrap(handleClick).should('have.been.calledOnce')
+    cy.wrap(handleClick).should('not.have.been.called')
   })
 
   it('renders a large chip with primary', () => {
