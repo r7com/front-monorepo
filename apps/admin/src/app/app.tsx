@@ -1,11 +1,30 @@
+import { Button, useNotification } from '@r7-front-monorepo/ui-components-admin'
 import * as React from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 
 const Voting = React.lazy(() => import('voting/Module'))
 
 export function App() {
+  const notify = useNotification()
+
   return (
     <React.Suspense fallback={null}>
+      <Button onClick={() => notify.informativeNotification({ message: 'mensagem informativa' })}>
+        informative notification
+      </Button>
+
+      <Button onClick={() => notify.positiveNotification({ message: 'mensagem de sucesso' })}>
+        positive notification
+      </Button>
+
+      <Button onClick={() => notify.alertNotification({ message: 'mensagem de alerta' })}>
+        alert notification
+      </Button>
+
+      <Button onClick={() => notify.errorNotification({ message: 'mensagem de erro' })}>
+        error notification
+      </Button>
+
       <header>
         <ul>
           <li>
