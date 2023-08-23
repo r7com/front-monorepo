@@ -8,9 +8,5 @@
   },
   "eslint.alwaysShowStatus": true,
   "css.lint.unknownAtRules": "ignore",
-  "tailwindCSS.experimental.classRegex": [
-    ["Variant \\=([^;]*)", "'([^']*)'"],
-    ["Variant \\=([^;]*)", "\"([^\"]*)\""],
-    ["Variant \\=([^;]*)", "\\`([^\\`]*)\\`"]
-  ]
+  "tailwindCSS.experimental.classRegex": [["tv\\(([^)]*)\\)", ":\\s*?[\"'`]([^\"'`]*).*"]]
 }
