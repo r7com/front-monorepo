@@ -2,7 +2,7 @@ import { createContext } from 'react'
 import { SnackbarProps } from '../snackbar'
 
 export type NotificationMessage = {
-  key?: number
+  key?: string
 } & SnackbarProps
 
 export const NotificationContext = createContext<{
