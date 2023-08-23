@@ -1,4 +1,4 @@
-import { variants, ButtonVariants } from './variants'
+import { variants, ButtonVariants } from './button.variants'
 
 export type ButtonProps<C extends React.ElementType> = {
   as?: C

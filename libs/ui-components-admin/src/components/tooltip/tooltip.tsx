@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { TooltipVariants, variants } from './variants'
+import { TooltipVariants, variants } from './tooltip.variants'
 
 export type TooltipProps = {
   content: string | React.ReactNode

@@ -1,6 +1,6 @@
 import { useDynamicSvgImport } from '../../hooks/use-dynamic-svg-import'
 import { SvgIcons } from './svg-icon.types'
-import { variants, SvgIconVariants } from './variants'
+import { variants, SvgIconVariants } from './svg-icon.variants'
 
 export type SvgIconProps = {
   iconName: SvgIcons

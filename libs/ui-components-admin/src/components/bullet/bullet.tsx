@@ -1,4 +1,4 @@
-import { variants, BulletVariants } from './variants'
+import { variants, BulletVariants } from './bullet.variants'
 
 export type BulletProps = {
   text: string
