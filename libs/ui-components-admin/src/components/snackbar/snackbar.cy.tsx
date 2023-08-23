@@ -1,44 +1,34 @@
 import { Snackbar } from './snackbar'
 
 const snackbarSelector = '[data-testid="snackbar"]'
-const dismissTime = 4000
 
 describe(Snackbar.name, () => {
-  it('render snackbar default', () => {
-    cy.mount(<Snackbar message="mensagem" type="default" position="bottom-left" />)
+  it('render snackbar informative', () => {
+    cy.mount(<Snackbar message="mensagem" type="informative" />)
     cy.get(snackbarSelector).should('be.visible')
     cy.matchImage()
   })
 
-  it('render snackbar success', () => {
-    cy.mount(<Snackbar message="mensagem" type="success" position="bottom-right" />)
+  it('render snackbar positive', () => {
+    cy.mount(<Snackbar message="mensagem" type="positive" />)
     cy.get(snackbarSelector).should('be.visible')
     cy.matchImage()
   })
 
   it('render snackbar alert', () => {
-    cy.mount(<Snackbar message="mensagem" type="alert" position="top-left" />)
+    cy.mount(<Snackbar message="mensagem" type="alert" />)
     cy.get(snackbarSelector).should('be.visible')
     cy.matchImage()
   })
 
-  it('render snackbar warning', () => {
-    cy.mount(<Snackbar message="mensagem" type="warning" position="top-right" />)
+  it('render snackbar error', () => {
+    cy.mount(<Snackbar message="mensagem" type="error" />)
     cy.get(snackbarSelector).should('be.visible')
     cy.matchImage()
   })
 
-  it(`snackbar should be dismissed in ${dismissTime}mm`, () => {
-    cy.mount(<Snackbar message="mensagem" dismiss={dismissTime} />)
-    cy.get(snackbarSelector).should('be.visible')
-    cy.wait(dismissTime)
-    cy.get(snackbarSelector).should('not.be.visible')
-  })
-
-  it('snackbar should be dismissed with button click', () => {
-    cy.mount(<Snackbar message="mensagem" />)
-    cy.get(snackbarSelector).should('be.visible')
-    cy.get(`${snackbarSelector} button`).click()
+  it('should not be visible', () => {
+    cy.mount(<Snackbar message="mensagem" open={false} />)
     cy.get(snackbarSelector).should('not.be.visible')
   })
 })
