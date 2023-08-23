@@ -14,6 +14,7 @@ module.exports = composePlugins(withNx(), withReact(), withModuleFederation(base
         loader: '@svgr/webpack',
         options: {
           dimensions: false,
+          titleProp: true,
         },
       },
       'url-loader',

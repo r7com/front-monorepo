@@ -1,4 +1,5 @@
 import { SvgIcon } from '../svg-icon'
+import { SvgIcons } from '../svg-icon/svg-icon.types'
 
 export type CardStatusProps = {
   text: string
@@ -33,7 +34,7 @@ export function CardStatus({ text, variant = 'info' }: CardStatusProps) {
   return (
     <div className="flex items-center p-nano">
       <SvgIcon
-        iconName={statusIconVariant}
+        iconName={statusIconVariant as SvgIcons}
         className={`${statusIconColor} w-xxxs h-xxxs min-w-max min-h-max m-nano`}
       />
       <p className={`text-xxxs ${statusTextColor}`}>{text}</p>

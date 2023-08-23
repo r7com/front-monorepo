@@ -14,9 +14,14 @@ export default meta
 type Story = StoryObj<typeof Bullet>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
+export const Default: Story = {
+  render: ({ ...args }) => (
+    <div>
+      <Bullet {...args} />
+    </div>
+  ),
   args: {
-    text: 'primary',
+    text: 'Componente bullet',
   },
   parameters: {
     design: {
