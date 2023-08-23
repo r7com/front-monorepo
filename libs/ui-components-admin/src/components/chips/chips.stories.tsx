@@ -27,7 +27,7 @@ function Render({ ...args }) {
   const handleChips = () => updateArgs({ selected: !selected })
 
   return (
-    <Chips selected={selected} size="large" onClick={handleChips} {...args}>
+    <Chips size="large" onClick={handleChips} {...args}>
       nome tag
     </Chips>
   )
@@ -38,7 +38,6 @@ export const Primary: Story = {
   args: {
     color: 'primary',
     disabled: false,
-    as: 'span',
   },
   parameters: {
     design: {

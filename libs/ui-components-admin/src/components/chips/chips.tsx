@@ -9,6 +9,7 @@ export type ChipsProps<C extends React.ElementType> = {
   selected?: boolean
   startIcon?: React.ReactNode | null
   endIcon?: React.ReactNode | null
+  onClick?: () => void
 } & React.ComponentPropsWithoutRef<C>
 
 export function Chips<C extends React.ElementType = 'span'>({
@@ -20,9 +21,10 @@ export function Chips<C extends React.ElementType = 'span'>({
   children,
   startIcon = null,
   endIcon = null,
+  onClick,
   ...rest
 }: ChipsProps<C>) {
-  const DynamicTag = as || 'span'
+  const DynamicTag = onClick ? 'button' : as || 'span'
 
   const sizes = {
     large: 'h-sm text-xs [&>svg]:h-xxs [&>svg]:w-xxs',
@@ -42,7 +44,7 @@ export function Chips<C extends React.ElementType = 'span'>({
       ? 'bg-dark-high-600 text-dark-high-500 [&>svg]:fill-dark-high-500 pointer-events-none	'
       : 'bg-highlight-500 text-neutral-high-500',
     tertiary: selected
-      ? 'bg-brand-primary-500/medium text-brand-primary-600 border-hairline border-brand-primary-600  [&>svg]:fill-brand-primary-600'
+      ? 'bg-brand-primary-500/medium text-brand-primary-600 border-hairline border-brand-primary-600 [&>svg]:fill-brand-primary-600'
       : disabled
       ? 'text-dark-high-500 border-hairline border-dark-high-500 [&>svg]:fill-dark-high-500 pointer-events-none	'
       : 'text-brand-primary-500 border-hairline border-brand-primary-500 [&>svg]:fill-brand-primary-500',
@@ -72,6 +74,8 @@ export function Chips<C extends React.ElementType = 'span'>({
   return (
     <DynamicTag
       className={`${sizes} ${hover} ${focus} ${pressed} ${colors} px-xxxs rounded-pill font-semibold cursor-pointer flex items-center justify-center w-fit`}
+      onClick={onClick}
+      disabled={disabled}
       {...rest}
     >
       {startIcon && React.isValidElement(startIcon)

@@ -7,11 +7,13 @@ describe(Chips.name, () => {
 
   //layout disabled é o mesmo p primary e secondary
   it('renders a large chip with disabled primary', () => {
+    const handleClick = cy.stub()
     cy.mount(
       <Chips
         size="large"
         disabled
         color="primary"
+        onClick={handleClick}
         startIcon={<SvgIcon iconName="chevron-left" />}
         endIcon={<SvgIcon iconName="chevron-right" />}
       >
@@ -20,15 +22,19 @@ describe(Chips.name, () => {
     )
     cy.get('svg').should('be.visible')
     cy.findByText(text).should('be.visible')
+    cy.findByRole('button').click()
+    cy.wrap(handleClick).should('not.have.been.called')
     cy.matchImage()
   })
 
-  it('renders a large chip with disabled tertiary', () => {
+  it('renders a medium chip with disabled tertiary', () => {
+    const handleClick = cy.stub()
     cy.mount(
       <Chips
-        size="large"
+        size="medium"
         disabled
         color="tertiary"
+        onClick={handleClick}
         startIcon={<SvgIcon iconName="chevron-left" />}
         endIcon={<SvgIcon iconName="chevron-right" />}
       >
@@ -37,6 +43,8 @@ describe(Chips.name, () => {
     )
     cy.get('svg').should('be.visible')
     cy.findByText(text).should('be.visible')
+    cy.findByRole('button').click()
+    cy.wrap(handleClick).should('not.have.been.called')
     cy.matchImage()
   })
 
@@ -57,7 +65,7 @@ describe(Chips.name, () => {
 
     cy.findByText(text).should('be.visible')
     cy.get('svg').should('be.visible')
-    cy.get('span').click()
+    cy.findByRole('button').click()
     cy.wrap(handleClick).should('have.been.calledOnce')
     cy.matchImage()
   })
@@ -79,7 +87,7 @@ describe(Chips.name, () => {
 
     cy.findByText(text).should('be.visible')
     cy.get('svg').should('be.visible')
-    cy.get('span').click()
+    cy.findByRole('button').click()
     cy.wrap(handleClick).should('have.been.calledOnce')
     cy.matchImage()
   })
@@ -101,31 +109,9 @@ describe(Chips.name, () => {
 
     cy.findByText(text).should('be.visible')
     cy.get('svg').should('be.visible')
-    cy.get('span').click()
+    cy.findByRole('button').click()
     cy.wrap(handleClick).should('have.been.calledOnce')
     cy.matchImage()
-  })
-
-  it('renders a large chip with disabled primary on click', () => {
-    const handleClick = cy.stub()
-    cy.mount(
-      <Chips size="large" color="primary" onClick={handleClick} disabled>
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.wrap(handleClick).should('not.have.been.called')
-  })
-
-  it('renders a medium chip with disabled tertiary on click', () => {
-    const handleClick = cy.stub()
-    cy.mount(
-      <Chips size="medium" color="tertiary" onClick={handleClick} disabled>
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-    cy.wrap(handleClick).should('not.have.been.called')
   })
 
   it('renders a large chip with primary', () => {
@@ -141,6 +127,7 @@ describe(Chips.name, () => {
     )
     cy.findByText(text).should('be.visible')
     cy.get('svg').should('be.visible')
+    cy.get('span').should('be.visible')
     cy.matchImage()
   })
 
@@ -157,6 +144,7 @@ describe(Chips.name, () => {
     )
     cy.findByText(text).should('be.visible')
     cy.get('svg').should('be.visible')
+    cy.get('span').should('be.visible')
     cy.matchImage()
   })
 
@@ -173,6 +161,7 @@ describe(Chips.name, () => {
     )
     cy.findByText(text).should('be.visible')
     cy.get('svg').should('be.visible')
+    cy.get('span').should('be.visible')
     cy.matchImage()
   })
 
@@ -183,40 +172,6 @@ describe(Chips.name, () => {
       </Chips>,
     )
     cy.findByText(text).should('be.visible')
-  })
-
-  it('renders a large chip with selected primary tag a', () => {
-    const handleClick = cy.stub()
-    cy.mount(
-      <Chips size="large" color="primary" onClick={handleClick} selected as="a">
-        {text}
-      </Chips>,
-    )
-
-    cy.findByText(text).should('be.visible')
-    cy.get('a').click()
-    cy.wrap(handleClick).should('have.been.calledOnce')
-  })
-
-  it('renders a large chip with primary tag button', () => {
-    cy.mount(
-      <Chips size="large" color="primary" as="button" title={text}>
-        {text}
-      </Chips>,
-    )
-    cy.findByText(text).should('be.visible')
-  })
-
-  it('renders a medium chip with selected primary tag button', () => {
-    const handleClick = cy.stub()
-    cy.mount(
-      <Chips size="medium" color="primary" onClick={handleClick} selected as="button">
-        {text}
-      </Chips>,
-    )
-
-    cy.findByText(text).should('be.visible')
-    cy.get('button').click()
-    cy.wrap(handleClick).should('have.been.calledOnce')
+    cy.get('a').should('be.visible')
   })
 })
