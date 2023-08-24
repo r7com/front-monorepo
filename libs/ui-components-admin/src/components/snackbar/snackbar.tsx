@@ -36,7 +36,7 @@ export function Snackbar({
   }[type]
 
   return (
-    <div className={root()} role="presentation" data-testid="snackbar">
+    <div className={root()} role="alert">
       <div className={iconContainer()}>
         <SvgIcon iconName={iconVariant} size="small" />
       </div>
