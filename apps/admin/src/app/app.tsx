@@ -11,7 +11,8 @@ export function App() {
     <React.Suspense fallback={null}>
       <Button
         onClick={() =>
-          notify.informativeNotification({
+          notify({
+            type: 'informative',
             message: 'mensagem informativa',
             onDismiss: () => console.log('run on notification dismiss'),
           })
@@ -22,7 +23,11 @@ export function App() {
 
       <Button
         onClick={() =>
-          notify.positiveNotification({ message: 'mensagem de sucesso', dismissTimeout: 2000 })
+          notify({
+            message: 'mensagem de sucesso',
+            dismissTimeout: 2000,
+            type: 'positive',
+          })
         }
       >
         positive notification
@@ -30,7 +35,8 @@ export function App() {
 
       <Button
         onClick={() =>
-          notify.alertNotification({
+          notify({
+            type: 'alert',
             message: 'mensagem de alerta',
             action: <Button>click</Button>,
           })
@@ -39,7 +45,7 @@ export function App() {
         alert notification
       </Button>
 
-      <Button onClick={() => notify.errorNotification({ message: 'mensagem de erro' })}>
+      <Button onClick={() => notify({ message: 'mensagem de erro', type: 'error' })}>
         error notification
       </Button>
 
