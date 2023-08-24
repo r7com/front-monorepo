@@ -3,7 +3,7 @@ import { tv, type VariantProps } from 'tailwind-variants'
 export const variants = tv({
   slots: {
     toggle:
-      'flex items-center flex-shrink-0 p-1 rounded-pill p-quark ease-in-out after:rounded-circular after:duration-300 transition-colors',
+      'flex items-center flex-shrink-0 rounded-pill p-quark ease-in-out after:rounded-circular after:duration-300 transition-colors',
     iconsContainer: 'absolute flex items-center',
     iconChecked: 'min-w-max min-h-max m-nano',
     iconUnchecked: 'absolute min-w-max min-h-max m-nano',

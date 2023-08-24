@@ -29,7 +29,7 @@ export function Toggle({
   return (
     <label
       htmlFor={name}
-      className="relative flex items-center group p-2 text-xl m-quark cursor-pointer w-full h-full"
+      className="relative flex items-center group p-nano text-xl m-quark cursor-pointer w-full h-full"
     >
       <input
         name={name}
