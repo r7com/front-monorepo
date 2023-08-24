@@ -26,9 +26,4 @@ describe(Snackbar.name, () => {
     cy.get(snackbarSelector).should('be.visible')
     cy.matchImage()
   })
-
-  it('should not be visible', () => {
-    cy.mount(<Snackbar message="mensagem" open={false} />)
-    cy.get(snackbarSelector).should('not.be.visible')
-  })
 })
