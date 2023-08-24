@@ -13,8 +13,10 @@ export function NotificationProvider({ children }: NotificationProviderProps) {
   }>({ current: null as never, queue: [] })
 
   const addMessage = (message: NotificationMessage) => {
-    if (current) setMessages(() => ({ current, queue: queue.concat(message) }))
-    else setMessages({ queue, current: { ...message, open: true } })
+    const newMessage = { ...message, open: true }
+
+    if (current) setMessages(() => ({ current, queue: queue.concat(newMessage) }))
+    else setMessages({ queue, current: newMessage })
   }
 
   const removeMessage = () => {
@@ -27,15 +29,13 @@ export function NotificationProvider({ children }: NotificationProviderProps) {
   return (
     <NotificationContext.Provider value={{ addMessage }}>
       {children}
-      {current && (
-        <Snackbar
-          {...current}
-          onDismiss={() => {
-            removeMessage()
-            current.onDismiss && current.onDismiss()
-          }}
-        />
-      )}
+      <Snackbar
+        {...current}
+        onDismiss={() => {
+          removeMessage()
+          current?.onDismiss && current.onDismiss()
+        }}
+      />
     </NotificationContext.Provider>
   )
 }
