@@ -2,7 +2,7 @@ import { VariantProps, tv } from 'tailwind-variants'
 
 export const variants = tv(
   {
-    base: 'inline-flex items-center box-border cursor-pointer border-hairline rounded-md text-center leading-6 font-medium transition-all',
+    base: 'inline-flex items-center box-border cursor-pointer border-hairline rounded-md text-center leading-6 font-medium transition-all gap-nano',
     variants: {
       size: {
         large: 'text-xs py-[16px] px-nano',
