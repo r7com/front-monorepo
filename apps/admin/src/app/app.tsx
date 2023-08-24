@@ -9,15 +9,33 @@ export function App() {
 
   return (
     <React.Suspense fallback={null}>
-      <Button onClick={() => notify.informativeNotification({ message: 'mensagem informativa' })}>
+      <Button
+        onClick={() =>
+          notify.informativeNotification({
+            message: 'mensagem informativa',
+            onDismiss: () => console.log('run on notification dismiss'),
+          })
+        }
+      >
         informative notification
       </Button>
 
-      <Button onClick={() => notify.positiveNotification({ message: 'mensagem de sucesso' })}>
+      <Button
+        onClick={() =>
+          notify.positiveNotification({ message: 'mensagem de sucesso', dismissTimeout: 2000 })
+        }
+      >
         positive notification
       </Button>
 
-      <Button onClick={() => notify.alertNotification({ message: 'mensagem de alerta' })}>
+      <Button
+        onClick={() =>
+          notify.alertNotification({
+            message: 'mensagem de alerta',
+            action: <Button>click</Button>,
+          })
+        }
+      >
         alert notification
       </Button>
 

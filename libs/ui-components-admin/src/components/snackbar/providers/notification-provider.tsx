@@ -27,7 +27,15 @@ export function NotificationProvider({ children }: NotificationProviderProps) {
   return (
     <NotificationContext.Provider value={{ addMessage }}>
       {children}
-      {current && <Snackbar {...current} onExit={removeMessage} />}
+      {current && (
+        <Snackbar
+          {...current}
+          onDismiss={() => {
+            removeMessage()
+            current.onDismiss && current.onDismiss()
+          }}
+        />
+      )}
     </NotificationContext.Provider>
   )
 }

@@ -7,7 +7,7 @@ export type SnackbarProps = {
   message: string
   action?: React.ReactNode
   dismissTimeout?: number
-  onExit?(): void
+  onDismiss?(): void
 } & SnackbarVariants
 
 export function Snackbar({
@@ -16,17 +16,17 @@ export function Snackbar({
   type = 'informative',
   open = true,
   dismissTimeout = 4000,
-  onExit,
+  onDismiss,
 }: SnackbarProps) {
   const { root, iconContainer } = variants({ open, type })
 
   useEffect(() => {
-    if (onExit) {
-      const timeout = setTimeout(onExit, dismissTimeout)
+    if (onDismiss) {
+      const timeout = setTimeout(onDismiss, dismissTimeout)
 
       return () => clearTimeout(timeout)
     }
-  }, [dismissTimeout, onExit])
+  }, [dismissTimeout, onDismiss])
 
   const iconVariant = {
     informative: 'circle-info' as SvgIcons,

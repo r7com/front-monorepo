@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { NotificationContext, NotificationMessage } from '../contexts/notification-context'
 import { v4 as uuidv4 } from 'uuid'
 
-type DefaultMessage = Omit<NotificationMessage, 'onExit' | 'key' | 'open'>
+type DefaultMessage = Omit<NotificationMessage, 'key' | 'open'>
 
 type TypedMessage = Omit<DefaultMessage, 'type'>
 
