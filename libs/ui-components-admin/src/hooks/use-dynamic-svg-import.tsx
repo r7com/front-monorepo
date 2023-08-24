@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
+import { SvgIcons } from '../components/svg-icon/svg-icon.types'
 
-export function useDynamicSvgImport(iconName: string) {
-  console.log('trocar "iconName" por tipagem dinamica quando disponivel')
+export function useDynamicSvgImport(iconName: SvgIcons) {
   const importedIconRef = useRef<React.FC<React.SVGProps<SVGAElement> & { title?: string }>>()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<unknown>()

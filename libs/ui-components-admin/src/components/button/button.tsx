@@ -28,17 +28,9 @@ export function Button<C extends React.ElementType = 'button'>({
       className={variants({ color, size, disabled, className })}
       {...rest}
     >
-      {startIcon && (
-        <span className="mr-nano" aria-hidden="true">
-          {startIcon}
-        </span>
-      )}
+      {startIcon}
       {children}
-      {endIcon && (
-        <span className="ml-nano" aria-hidden="true">
-          {endIcon}
-        </span>
-      )}
+      {endIcon}
     </DynamicTag>
   )
 }
