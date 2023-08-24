@@ -17,12 +17,12 @@ export function Toggle({
   checked,
   onChange,
 }: ToggleProps) {
-  const { toggleVariant, boxVariant, checkVariant, errorVariant } = variants({ size, disabled })
+  const { toggle, iconsContainer, iconChecked, iconUnchecked } = variants({ size, disabled })
 
   const iconElements = !disableIcon && (
-    <div className={boxVariant()}>
-      <SvgIcon iconName="check" className={checkVariant()} />
-      <SvgIcon iconName="error" className={errorVariant()} />
+    <div className={iconsContainer()}>
+      <SvgIcon iconName="check" className={iconChecked()} />
+      <SvgIcon iconName="error" className={iconUnchecked()} />
     </div>
   )
 
@@ -40,7 +40,7 @@ export function Toggle({
         disabled={disabled}
         checked={checked}
       />
-      <span aria-hidden="true" className={toggleVariant()}></span>
+      <span aria-hidden="true" className={toggle()}></span>
       {iconElements}
     </label>
   )
