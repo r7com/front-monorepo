@@ -28,17 +28,17 @@ export function Snackbar({
     }
   }, [dismissTimeout, onDismiss])
 
-  const iconVariant = {
-    informative: 'circle-info' as SvgIcons,
-    positive: 'circle-check' as SvgIcons,
-    alert: 'hand-regular' as SvgIcons,
-    error: 'circle-error' as SvgIcons,
-  }[type]
+  const iconVariant: Record<NonNullable<typeof type>, SvgIcons> = {
+    informative: 'circle-info',
+    positive: 'circle-check',
+    alert: 'hand-regular',
+    error: 'circle-error',
+  }
 
   return (
     <div className={root()} role="alert">
       <div className={iconContainer()}>
-        <SvgIcon iconName={iconVariant} size="small" />
+        <SvgIcon iconName={iconVariant[type]} size="small" />
       </div>
       <div className="flex justify-center flex-col sm:flex-row w-full mx-xxxs">
         <span className="w-full flex items-center mr-nano !text-light-high-600 text-xxxs leading-[22px] font-semibold">
