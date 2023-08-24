@@ -32,7 +32,10 @@ module.exports = {
       'inner-level4': 'inset 0px 1rem 4rem -0.25rem rgba(51, 51, 51, 24%)',
       'inner-level5': 'inset 0px 0.25rem 0.25rem 0px rgba(51, 51, 51, 32%)',
     },
-
+    dropShadow: {
+      glow: '0rem 0rem 1px #218ee1',
+      none: 'none',
+    },
     colors: {
       transparent: 'transparent',
       'neutral-low': {
