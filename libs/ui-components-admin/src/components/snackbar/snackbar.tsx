@@ -28,7 +28,7 @@ export function Snackbar({
     }
   }, [dismissTimeout, onDismiss])
 
-  const iconVariant: Record<NonNullable<typeof type>, SvgIcons> = {
+  const iconVariant: Record<typeof type, SvgIcons> = {
     informative: 'circle-info',
     positive: 'circle-check',
     alert: 'hand-regular',
