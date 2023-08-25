@@ -1,20 +1,70 @@
 import { Text } from './text'
 
-const textSelector = '[data-testid="text"]'
-
 describe(Text.name, () => {
-  it('uses custom text for disclaimer paragraph', () => {
+  const text = 'Teste'
+  it('using fontSize', () => {
     cy.mount(
-      <Text
-        children="Testando"
-        fontFamily="font-times-new-roman"
-        fontSize="text-little"
-        color="text-feedback-success-400"
-        fontWeight="font-bold"
-        as="h1"
-      />,
+      <>
+        <Text fontSize="little">{text}</Text>
+        <Text fontSize="xxxs">{text}</Text>
+        <Text fontSize="xxs">{text}</Text>
+        <Text fontSize="xs">{text}</Text>
+        <Text fontSize="sm">{text}</Text>
+        <Text fontSize="md">{text}</Text>
+        <Text fontSize="lg">{text}</Text>
+        <Text fontSize="xl">{text}</Text>
+        <Text fontSize="xxl">{text}</Text>
+        <Text fontSize="xxxl">{text}</Text>
+      </>,
     )
-    cy.get(`${textSelector}`).should('be.visible')
+    cy.findAllByText(text).each(element => {
+      expect(element.text()).to.be.equal(text)
+    })
+    cy.findAllByText(text).should('be.visible')
+    cy.matchImage()
+  })
+
+  it('using fontWeight', () => {
+    cy.mount(
+      <>
+        <Text fontWeight="light">{text}</Text>
+        <Text fontWeight="normal">{text}</Text>
+        <Text fontWeight="semibold">{text}</Text>
+        <Text fontWeight="bold">{text}</Text>
+      </>,
+    )
+    cy.findAllByText(text).each(element => {
+      expect(element.text()).to.be.equal(text)
+    })
+    cy.findAllByText(text).should('be.visible')
+    cy.matchImage()
+  })
+
+  it('using fontFamily', () => {
+    cy.mount(
+      <>
+        <Text fontFamily="openSans">{text}</Text>
+        <Text fontFamily="playfair">{text}</Text>
+      </>,
+    )
+    cy.findAllByText(text).each(element => {
+      expect(element.text()).to.be.equal(text)
+    })
+    cy.findAllByText(text).should('be.visible')
+    cy.matchImage()
+  })
+
+  it('using color', () => {
+    cy.mount(
+      <>
+        <Text color="neutralLow">{text}</Text>
+        <Text color="neutralHigh">{text}</Text>
+      </>,
+    )
+    cy.findAllByText(text).each(element => {
+      expect(element.text()).to.be.equal(text)
+    })
+    cy.findAllByText(text).should('be.visible')
     cy.matchImage()
   })
 })
