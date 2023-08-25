@@ -27,4 +27,21 @@ const prodConfig = {
 }
 
 // Nx plugins for webpack to build config object from Nx options and context.
-module.exports = composePlugins(withNx(), withReact(), withModuleFederation(prodConfig))
+module.exports = composePlugins(withNx(), withReact(), withModuleFederation(prodConfig), config => {
+  // Further customize webpack config
+  config.module.rules.push({
+    test: /\.svg$/i,
+    use: [
+      {
+        loader: '@svgr/webpack',
+        options: {
+          dimensions: false,
+          titleProp: true,
+        },
+      },
+      'url-loader',
+    ],
+  })
+
+  return config
+})
