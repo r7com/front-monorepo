@@ -14,7 +14,7 @@ export function Snackbar({
   message,
   action = null,
   type = 'informative',
-  open = true,
+  open = false,
   dismissTimeout = 4000,
   onDismiss,
 }: SnackbarProps) {
