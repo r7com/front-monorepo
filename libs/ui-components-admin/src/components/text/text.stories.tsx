@@ -23,10 +23,10 @@ export const Default: Story = {
   args: {
     children: 'Componente Text',
     as: 'p',
-    fontWeight: 'font-normal',
-    color: 'text-dark-high-400',
-    fontSize: 'text-xxxs',
-    fontFamily: 'font-open-sans',
+    fontWeight: 'light',
+    color: 'neutralLow',
+    fontSize: 'xxxs',
+    fontFamily: 'openSans',
   },
   parameters: {
     design: {
