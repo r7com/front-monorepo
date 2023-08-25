@@ -28,6 +28,10 @@ module.exports = {
       'inner-level3': 'inset 0px 1rem 2rem -0.25rem rgba(51, 51, 51, 16%)',
       'inner-level4': 'inset 0px 1rem 4rem -0.25rem rgba(51, 51, 51, 24%)',
     },
+    dropShadow: {
+      glow: '0rem 0rem 1px #218ee1',
+      none: 'none',
+    },
     colors: {
       transparent: 'transparent',
       'neutral-low': {
