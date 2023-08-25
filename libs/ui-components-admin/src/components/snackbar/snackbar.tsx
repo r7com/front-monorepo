@@ -35,7 +35,7 @@ export function Snackbar({
     error: 'circle-error',
   }
 
-  const role = message ? (type === 'error' ? 'alert' : 'status') : undefined
+  const role = type === 'error' ? 'alert' : 'status'
 
   return (
     <div className={root()} role={role}>
