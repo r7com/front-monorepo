@@ -58,7 +58,9 @@ describe(Text.name, () => {
     cy.mount(
       <>
         <Text color="neutralLow">{text}</Text>
-        <Text color="neutralHigh">{text}</Text>
+        <div className="bg-neutral-low-600">
+          <Text color="neutralHigh">{text}</Text>
+        </div>
       </>,
     )
     cy.findAllByText(text).each(element => {
