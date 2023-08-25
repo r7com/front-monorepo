@@ -1,43 +1,22 @@
 import React from 'react'
+import { TextVariants, variants } from './text.variants'
 export type TextProps<C extends React.ElementType> = {
   children: React.ReactNode
-  fontSize?:
-    | 'text-little'
-    | 'text-xxxs'
-    | 'text-xxs'
-    | 'text-xs'
-    | 'text-sm'
-    | 'text-md'
-    | 'text-lg'
-    | 'text-xl'
-    | 'text-xxl'
-    | 'text-xxxl'
-
-  fontWeight?: 'font-light' | 'font-normal' | 'font-semibold' | 'font-bold'
   as?: C
-  color?:
-    | 'text-dark-high-400'
-    | 'text-dark-high-500'
-    | 'text-feedback-success-400'
-    | 'text-feedback-warning-400'
-    | 'text-feedback-helper-400'
-    | 'text-brand-primary-400'
-    | 'text-brand-primary-500'
-
-  fontFamily?: 'font-open-sans' | 'font-times-new-roman'
-}
+} & TextVariants
 
 export function Text<C extends React.ElementType>({
   children,
-  fontWeight = 'font-normal',
-  color = 'text-dark-high-400',
   as,
-  fontSize = 'text-xxxs',
-  fontFamily = 'font-open-sans',
+  fontWeight = 'normal',
+  color = 'neutralLow',
+  fontSize = 'xxxs',
+  fontFamily = 'openSans',
 }: TextProps<C>) {
   const DynamicTag = as || 'p'
+
   return (
-    <DynamicTag data-testid="text" className={`${fontSize} ${fontWeight} ${color} ${fontFamily}`}>
+    <DynamicTag className={variants({ fontSize, fontWeight, fontFamily, color })}>
       {children}
     </DynamicTag>
   )
