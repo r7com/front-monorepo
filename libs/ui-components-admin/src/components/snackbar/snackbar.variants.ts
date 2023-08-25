@@ -2,16 +2,16 @@ import { tv, type VariantProps } from 'tailwind-variants'
 
 export const variants = tv({
   slots: {
-    root: 'fixed flex items-stretch overflow-hidden sm:w-[560px] min-h-[72px] sm:bottom-xxs sm:right-xxs sm:left-auto left-nano right-nano bottom-nano rounded-md bg-neutral-low-500',
+    root: 'fixed flex items-stretch overflow-hidden sm:w-[560px] min-h-[72px] sm:right-xxs sm:left-auto left-nano right-nano rounded-md bg-neutral-low-500 transition-all',
     iconContainer: 'flex items-center justify-center w-sm fill-dark-high-400',
   },
   variants: {
     open: {
       true: {
-        root: 'visible opacity-[1] motion-safe:transition-all',
+        root: 'sm:bottom-xxs bottom-nano visible opacity-[1]',
       },
       false: {
-        root: 'invisible opacity-[0] motion-safe:transition-all',
+        root: '-bottom-[1000px] invisible opacity-transparent',
       },
     },
     type: {
