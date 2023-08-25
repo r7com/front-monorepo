@@ -17,7 +17,7 @@ export const variants = tv({
       },
       false: {
         toggle:
-          'bg-dark-high-500 peer-checked:bg-brand-primary-500  after:bg-light-high-500 group-hover:bg-dark-high-600 group-hover:peer-checked:bg-brand-primary-600 group-active:shadow-neutral-low-600 group-active:shadow-inner group-active:peer-checked:shadow-neutral-low-600 group-active:peer-checked:shadow-inner shadow-drop peer-focus:outline peer-focus:outline-1 peer-focus:outline-light-high-500 peer-focus:shadow-neutral-low-400 peer-checked:peer-focus:shadow-brand-primary-500',
+          'bg-dark-high-500 peer-checked:bg-brand-primary-500 after:bg-light-high-500 group-hover:bg-dark-high-600 group-hover:peer-checked:bg-brand-primary-600 group-active:shadow-neutral-low-600 group-active:shadow-inner group-active:peer-checked:shadow-neutral-low-600 group-active:peer-checked:shadow-inner shadow-drop peer-focus:outline peer-focus:outline-1 peer-focus:outline-light-high-500 peer-focus:shadow-neutral-low-400 peer-checked:peer-focus:shadow-brand-primary-500',
         iconChecked: 'fill-light-high-500',
         iconUnchecked: 'fill-light-high-500',
       },
