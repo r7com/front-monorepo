@@ -56,6 +56,7 @@ describe(Chips.name, () => {
     )
     cy.get('svg').should('be.visible')
     cy.findByText(text).should('be.visible')
+    cy.findByRole('button').click({ force: true })
     cy.wrap(handleClick).should('not.have.been.called')
   })
 
@@ -75,6 +76,7 @@ describe(Chips.name, () => {
     )
     cy.get('svg').should('be.visible')
     cy.findByText(text).should('be.visible')
+    cy.findByRole('button').click({ force: true })
     cy.wrap(handleClick).should('not.have.been.called')
   })
 
