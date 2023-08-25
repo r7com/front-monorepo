@@ -73,18 +73,14 @@ export function Chips<C extends React.ElementType = 'span'>({
 
   return (
     <DynamicTag
-      className={`${sizes} ${hover} ${focus} ${pressed} ${colors} px-xxxs rounded-pill font-semibold cursor-pointer flex items-center justify-center w-fit`}
+      className={`${sizes} ${hover} ${focus} ${pressed} ${colors} gap-nano px-xxxs rounded-pill font-semibold cursor-pointer flex items-center justify-center w-fit`}
       onClick={onClick}
       disabled={disabled}
       {...rest}
     >
-      {startIcon && React.isValidElement(startIcon)
-        ? React.cloneElement(startIcon, { className: 'mr-nano' })
-        : startIcon}
+      {startIcon}
       {children}
-      {endIcon && React.isValidElement(endIcon)
-        ? React.cloneElement(endIcon, { className: 'ml-nano' })
-        : endIcon}
+      {endIcon}
     </DynamicTag>
   )
 }
