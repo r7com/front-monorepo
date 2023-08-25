@@ -39,6 +39,7 @@ export function SvgIcon({
       width={sizesVariant.width}
       height={sizesVariant.height}
       title={title}
+      aria-hidden={!title ? 'true' : undefined}
       className={variants({ color, className })}
       {...rest}
     />
