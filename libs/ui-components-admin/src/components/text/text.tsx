@@ -5,7 +5,7 @@ export type TextProps<C extends React.ElementType> = {
   as?: C
 } & TextVariants
 
-export function Text<C extends React.ElementType>({
+export function Text<C extends React.ElementType = 'p'>({
   children,
   as,
   fontWeight = 'normal',
