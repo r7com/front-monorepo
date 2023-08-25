@@ -6,36 +6,47 @@ export type NotificationProviderProps = {
   children: React.ReactNode
 }
 
+const initialValue = { current: null as never, queue: [] }
+
 export function NotificationProvider({ children }: NotificationProviderProps) {
   const [{ current, queue }, setMessages] = useState<{
     current: NotificationMessage
     queue: NotificationMessage[]
-  }>({ current: null as never, queue: [] })
+  }>(initialValue)
 
   const addMessage = (message: NotificationMessage) => {
-    const newMessage = { ...message, open: true }
-
-    if (current) setMessages(() => ({ current, queue: queue.concat(newMessage) }))
-    else setMessages({ queue, current: newMessage })
+    if (current) setMessages(() => ({ current, queue: queue.concat({ ...message, open: true }) }))
+    else {
+      setMessages({ queue, current: message })
+      setTimeout(() => {
+        setMessages(oldMessages => ({
+          ...oldMessages,
+          current: { ...oldMessages.current, open: true },
+        }))
+      }, 100)
+    }
   }
 
   const removeMessage = () => {
     setMessages({ queue, current: { ...current, open: false } })
     setTimeout(() => {
-      setMessages({ current: queue[0], queue: queue.slice(1) })
-    }, 200)
+      if (queue.length) setMessages({ current: queue[0], queue: queue.slice(1) })
+      else setMessages(initialValue)
+    }, 100)
   }
 
   return (
     <NotificationContext.Provider value={{ addMessage }}>
       {children}
-      <Snackbar
-        {...current}
-        onDismiss={() => {
-          removeMessage()
-          current?.onDismiss && current.onDismiss()
-        }}
-      />
+      {current && (
+        <Snackbar
+          {...current}
+          onDismiss={() => {
+            removeMessage()
+            current?.onDismiss && current.onDismiss()
+          }}
+        />
+      )}
     </NotificationContext.Provider>
   )
 }
