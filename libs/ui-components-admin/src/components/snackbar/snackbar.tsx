@@ -1,71 +1,52 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { SvgIcon } from '../svg-icon'
-import { IconButton } from '../icon-button'
+import { SvgIcons } from '../svg-icon/svg-icon.types'
+import { variants, SnackbarVariants } from './snackbar.variants'
 
 export type SnackbarProps = {
   message: string
-  position?: 'top-left' | 'top-right' | 'bottom-right' | 'bottom-left'
-  type?: 'default' | 'alert' | 'warning' | 'success'
-  dismiss?: number
-}
+  action?: React.ReactNode
+  dismissTimeout?: number
+  onDismiss?(): void
+} & SnackbarVariants
 
 export function Snackbar({
   message,
-  position = 'bottom-left',
-  type = 'default',
-  dismiss = 5000,
+  action = null,
+  type = 'informative',
+  open = false,
+  dismissTimeout = 4000,
+  onDismiss,
 }: SnackbarProps) {
-  const [isActive, setActive] = useState(true)
-
-  const onDismiss = () => setActive(false)
-
-  const positionsVariant = {
-    'top-right': 'sm:top-xxs sm:right-xxs sm:left-auto left-nano right-nano top-nano',
-    'bottom-right': 'sm:bottom-xxs sm:right-xxs sm:left-auto left-nano right-nano bottom-nano',
-    'top-left': 'sm:top-xxs sm:left-xxs sm:right-auto left-nano right-nano top-nano',
-    'bottom-left': 'sm:bottom-xxs sm:left-xxs sm:right-auto left-nano right-nano bottom-nano',
-  }[position]
-
-  const typeVariant = {
-    default: { color: 'bg-[#1b1b1b]' },
-    alert: { color: 'bg-feedback-helper-500', icon: 'snackbar-alert' },
-    warning: { color: 'bg-feedback-warning-500', icon: 'snackbar-warning' },
-    success: { color: 'bg-feedback-success-500', icon: 'snackbar-success' },
-  }[type]
-
-  const fadeInOutVariant = {
-    show: 'visible opacity-[1] motion-safe:transition-all',
-    hide: 'invisible opacity-[0] motion-safe:transition-all',
-  }[isActive ? 'show' : 'hide']
+  const { root, iconContainer } = variants({ open, type })
 
   useEffect(() => {
-    const timer = setTimeout(onDismiss, dismiss)
-    return () => clearTimeout(timer)
-  }, [dismiss])
+    if (onDismiss) {
+      const timeout = setTimeout(onDismiss, dismissTimeout)
+
+      return () => clearTimeout(timeout)
+    }
+  }, [dismissTimeout, onDismiss])
+
+  const iconVariant: Record<typeof type, SvgIcons> = {
+    informative: 'circle-info',
+    positive: 'circle-check',
+    alert: 'hand-regular',
+    error: 'circle-error',
+  }
+
+  const role = type === 'error' ? 'alert' : 'status'
 
   return (
-    <div
-      className={`fixed flex justify-start items-center z-50 cursor-pointer sm:min-w-[388px] sm:min-h-[56px] ${positionsVariant} ${fadeInOutVariant}`.trim()}
-      role="presentation"
-      data-testid="snackbar"
-    >
-      <div
-        className={`flex w-full h-full py-xxxs px-xxs gap-nano rounded-md ${typeVariant.color}`.trim()}
-        role="alert"
-      >
-        {typeVariant?.icon && (
-          <div className="flex items-center">
-            <SvgIcon iconName={typeVariant.icon} width={20} height={20} />
-          </div>
-        )}
-        <span className="text-[#f5f6fa] text-xxxs leading-6 font-semibold items-center">
+    <div className={root()} role={role}>
+      <div className={iconContainer()}>
+        <SvgIcon iconName={iconVariant[type]} size="small" />
+      </div>
+      <div className="flex justify-center flex-col sm:flex-row w-full mx-xxxs">
+        <span className="w-full flex items-center mr-nano !text-light-high-600 text-xxxs leading-[22px] font-semibold">
           {message}
         </span>
-        <div className="ml-auto flex items-center">
-          <IconButton onClick={onDismiss}>
-            <SvgIcon iconName="snackbar-close" size="medium" />
-          </IconButton>
-        </div>
+        <div className="flex items-center">{action}</div>
       </div>
     </div>
   )

@@ -2,7 +2,7 @@ import { VariantProps, tv } from 'tailwind-variants'
 
 export const variants = tv(
   {
-    base: 'inline-flex items-center box-border cursor-pointer border-hairline rounded-md text-center leading-6 font-medium transition-all',
+    base: 'inline-flex items-center box-border cursor-pointer border-hairline rounded-md text-center leading-6 font-medium transition-all gap-nano',
     variants: {
       size: {
         large: 'text-xs py-[16px] px-nano',
@@ -17,7 +17,7 @@ export const variants = tv(
         tertiary:
           'bg-transparent border-brand-primary-500 hover:border-brand-primary-600 active:border-light-low-500 focus:shadow-level1 focus:shadow-brand-primary-500 text-brand-primary-500 hover:text-brand-primary-600 active:text-light-low-500',
         ghost:
-          'bg-transparent border-none text-brand-primary-500 hover:text-brand-primary-600 active:text-light-low-500',
+          'bg-transparent border-none text-brand-primary-500 hover:text-brand-primary-600 active:text-light-low-500 focus:drop-shadow-glow active:drop-shadow-none',
       },
       disabled: {
         true: '!pointer-events-none !select-none',
