@@ -26,6 +26,18 @@ describe(Button.name, () => {
     cy.get('@callback').should('have.been.calledOnce')
   })
 
+  it('failed click with disabled button', () => {
+    const onClick = cy.stub().as('callback')
+    cy.mount(
+      <Button onClick={onClick} disabled>
+        click button
+      </Button>,
+    )
+
+    cy.findByRole('button', { name: /click button/i }).click({ force: true })
+    cy.get('@callback').should('not.have.been.called')
+  })
+
   it('with icon', () => {
     cy.mount(
       <Button
