@@ -50,6 +50,7 @@ describe(Chips.name, () => {
         onClick={handleClick}
         startIcon={<SvgIcon iconName="chevron-left" />}
         endIcon={<SvgIcon iconName="chevron-right" />}
+        clickable
       >
         {text}
       </Chips>,
@@ -70,6 +71,7 @@ describe(Chips.name, () => {
         onClick={handleClick}
         startIcon={<SvgIcon iconName="chevron-left" />}
         endIcon={<SvgIcon iconName="chevron-right" />}
+        clickable
       >
         {text}
       </Chips>,
@@ -144,6 +146,7 @@ describe(Chips.name, () => {
         color="primary"
         onClick={handleClick}
         selected
+        clickable
       >
         {text}
       </Chips>,
@@ -165,6 +168,7 @@ describe(Chips.name, () => {
         color="tertiary"
         onClick={handleClick}
         selected
+        clickable
       >
         {text}
       </Chips>,
@@ -186,6 +190,7 @@ describe(Chips.name, () => {
         color="secondary"
         onClick={handleClick}
         selected
+        clickable
       >
         {text}
       </Chips>,

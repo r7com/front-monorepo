@@ -9,6 +9,7 @@ export type ChipsProps<C extends React.ElementType> = {
   selected?: boolean
   startIcon?: React.ReactNode | null
   endIcon?: React.ReactNode | null
+  clickable?: boolean
   onClick?: () => void
 } & React.ComponentPropsWithoutRef<C>
 
@@ -21,10 +22,11 @@ export function Chips<C extends React.ElementType = 'span'>({
   children,
   startIcon = null,
   endIcon = null,
+  clickable,
   onClick,
   ...rest
 }: ChipsProps<C>) {
-  const DynamicTag = onClick ? 'button' : as || 'span'
+  const DynamicTag = clickable ? 'button' : as || 'span'
 
   const sizes = {
     large: 'h-sm text-xs [&>svg]:h-xxs [&>svg]:w-xxs',
@@ -75,6 +77,7 @@ export function Chips<C extends React.ElementType = 'span'>({
     <DynamicTag
       className={`${sizes} ${hover} ${focus} ${pressed} ${colors} gap-nano px-xxxs rounded-pill font-semibold cursor-pointer flex items-center justify-center w-fit`}
       onClick={onClick}
+      clickable={clickable}
       disabled={disabled}
       {...rest}
     >
