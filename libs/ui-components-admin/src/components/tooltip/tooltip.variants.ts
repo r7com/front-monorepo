@@ -10,7 +10,7 @@ export const variants = tv({
       bottom: `top-[calc(100%_+_10px)] translate-y-0 translate-x-1/2 right-1/2 after:border-[10px] after:border-solid after:border-transparent after:border-t-[0px] after:border-b-[10px] after:border-b-solid after:border-b-neutral-low-600 after:left-1/2 after:bottom-full after:-translate-x-1/2`,
       'top-right': `-translate-y-[calc(100%_+_10px)] right-[calc(50%_-_1.2rem)] after:border-[10px] after:border-solid after:border-transparent after:border-b-[0px] after:border-t-[10px] after:border-t-solid after:border-t-neutral-low-600 after:right-0 after:top-full after:-translate-x-1/2`,
       'top-left': `-translate-y-[calc(100%_+_10px)] left-[calc(50%_-_1.2rem)] after:border-[10px] after:border-solid after:border-transparent after:border-b-[0px] after:border-t-[10px] after:border-t-solid after:border-t-neutral-low-600 after:top-full`,
-      'bottom-left': `top-[calc(100%_+_10px)] left-[calc(50%_-_1.2rem)] after:border-[10px] after:border-solid after:border-transparent after:border-t-[0px] after:border-b-[10px] after:border-b-solid after:border-b-neutral-low-600 after:bottom-full`,
+      'bottom-left': `top-[calc(100%_+_10px)] left-[calc(50%_-_1rem)] after:border-[10px] after:border-solid after:border-transparent after:border-t-[0px] after:border-b-[10px] after:border-b-solid after:border-b-neutral-low-600 after:bottom-full`,
       'bottom-right': `top-[calc(100%_+_10px)] right-[calc(50%_-_1.2rem)] after:border-[10px] after:border-solid after:border-transparent after:border-t-[0px] after:border-b-[10px] after:border-b-solid after:border-b-neutral-low-600 after:bottom-full after:-translate-x-1/2 after:right-0`,
     },
     arrow: {
