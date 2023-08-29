@@ -1,6 +1,6 @@
 import { CardStatus } from './card-status'
 
-describe(CardStatus.name, () => {
+describe(`should render all its ${CardStatus.name}`, () => {
   const text = 'Card Status'
   const al = `[aria-label="status"]`
 
