@@ -5,20 +5,7 @@ export type TooltipProps = {
   content: string | React.ReactNode
   children: React.ReactNode
   className?: string
-  marginArrow?:
-    | 'quark'
-    | 'nano'
-    | 'xxxs'
-    | 'xxs'
-    | 'xs'
-    | 'sm'
-    | 'md'
-    | 'lg'
-    | 'xl'
-    | 'xxl'
-    | 'xxxl'
-    | 'huge'
-    | 'giant'
+  margin?: 'small' | 'medium' | 'large'
 } & TooltipVariants
 
 export function Tooltip({
@@ -26,12 +13,11 @@ export function Tooltip({
   children,
   className = '',
   position = 'top',
-  marginArrow = 'nano',
+  margin,
   arrow = true,
 }: TooltipProps) {
   const [isHover, setHover] = useState(false)
-  const firstCharacter = position.charAt(0)
-  const arrowPosition = `m${firstCharacter}-${marginArrow}`
+  const { tooltip, target } = variants({ position, arrow, hover: isHover, margin, className })
 
   return (
     <div className="inline-block relative">
@@ -39,16 +25,17 @@ export function Tooltip({
         role="tooltip"
         id="tooltip"
         aria-hidden={!isHover}
-        className={variants({ position, arrow, hover: isHover, className })}
+        className={tooltip()}
         onMouseEnter={() => {
           console.log('SPAN')
           setHover(true)
         }}
+        onMouseLeave={() => setHover(false)}
       >
         {content}
       </span>
       <div
-        className={`inline-block ${arrowPosition}`}
+        className={target()}
         aria-describedby="tooltip"
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
