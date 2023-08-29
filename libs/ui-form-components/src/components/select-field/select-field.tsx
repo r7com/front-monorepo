@@ -28,7 +28,7 @@ export function SelectField({
         </label>
       )}
       <select {...rest} className={selectSlot({ className })} name={name} id={name} value={value}>
-        <option>{placeholder}</option>
+        <option value="">{placeholder}</option>
         {options.map(({ id, name }) => (
           <option key={id} value={id}>
             {name}
