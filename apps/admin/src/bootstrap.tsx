@@ -7,13 +7,15 @@ import { NotificationProvider } from '@r7-front-monorepo/ui-components-admin'
 
 import App from './app/app'
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-root.render(
+export const RootApp = (
   <StrictMode>
     <BrowserRouter>
       <NotificationProvider>
         <App />
       </NotificationProvider>
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+root.render(RootApp)
