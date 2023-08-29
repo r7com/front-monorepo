@@ -18,7 +18,7 @@ export function CardStatus({ text, variant = 'info' }: CardStatusProps) {
   }
 
   return (
-    <div className="flex items-center p-nano">
+    <div aria-label="status" className="flex items-center p-nano">
       <SvgIcon iconName={statusIconVariant[variant]} className={iconColorVariant()} />
       <p className={textVariant()}>{text}</p>
     </div>
