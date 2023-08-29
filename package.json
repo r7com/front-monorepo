@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "prepare": "husky install",
-    "commit": "cz"
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -60,9 +59,7 @@
     "@vitest/ui": "^0.32.0",
     "autoprefixer": "10.4.13",
     "babel-jest": "^29.4.1",
-    "commitizen": "^4.3.0",
     "cypress": "^12.16.0",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": "8.46.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "2.14.0",
@@ -97,10 +94,5 @@
     "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.32.0",
     "webpack-merge": "^5.9.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
