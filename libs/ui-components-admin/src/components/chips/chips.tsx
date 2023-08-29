@@ -2,7 +2,7 @@ import React from 'react'
 
 export type ChipsProps<C extends React.ElementType> = {
   as?: C
-  size: 'medium' | 'small' | 'large'
+  size?: 'medium' | 'small' | 'large'
   color?: 'primary' | 'secondary' | 'tertiary'
   children: React.ReactNode
   disabled?: boolean
@@ -22,7 +22,7 @@ export function Chips<C extends React.ElementType = 'span'>({
   children,
   startIcon = null,
   endIcon = null,
-  clickable,
+  clickable = false,
   onClick,
   ...rest
 }: ChipsProps<C>) {
