@@ -26,4 +26,17 @@ describe(IconButton.name, () => {
     cy.findByRole('button').click()
     cy.get('@callback').should('have.been.calledOnce')
   })
+
+  it('failed click with disabled button', () => {
+    const onClick = cy.stub().as('callback')
+
+    cy.mount(
+      <IconButton onClick={onClick} disabled>
+        <SvgIcon iconName="error" color="primary" title="error" />
+      </IconButton>,
+    )
+
+    cy.findByRole('button').click({ force: true })
+    cy.get('@callback').should('not.have.been.called')
+  })
 })
