@@ -1,6 +1,6 @@
-import { tv, type VariantProps } from '@r7-front-monorepo/utils'
+import { createVariants, VariantProps } from '@r7-front-monorepo/utils'
 
-export const variants = tv({
+export const variants = createVariants({
   slots: {
     base: 'flex items-center gap-quark p-xxxs',
     dotVariant: 'w-nano h-nano rounded-circular',

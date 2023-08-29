@@ -1,7 +1,5 @@
-import { tv as tailwindVariants, VariantProps, defaultConfig } from 'tailwind-variants'
+import { tv as createVariants, type VariantProps, defaultConfig } from 'tailwind-variants'
 
-defaultConfig.twMerge = false
+defaultConfig.twMerge = true
 
-const tv = tailwindVariants
-
-export { type VariantProps, tv }
+export { type VariantProps, createVariants }
