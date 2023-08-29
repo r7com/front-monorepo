@@ -1,10 +1,10 @@
-import { tv, type VariantProps } from 'tailwind-variants'
+import { tv, type VariantProps } from '@r7-front-monorepo/utils'
 
 export const variants = tv({
   slots: {
     base: 'flex items-center gap-quark p-xxxs',
     dotVariant: 'w-nano h-nano rounded-circular',
-    textVariant: '!text-dark-high-500 font-open-sans text-xxxs',
+    textVariant: 'text-dark-high-500 font-open-sans text-xxxs',
   },
   variants: {
     variant: {
