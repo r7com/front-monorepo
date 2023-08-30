@@ -65,7 +65,6 @@ export function App() {
           </li>
         </ul>
       </header>
-
       <Routes>
         <Route path="/" element={<h1>Hello Dashboard</h1>} />
         <Route path="/voting" element={<Voting />} />
