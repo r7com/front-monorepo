@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@r7-front-monorepo/ui-components-admin": ["libs/ui-components-admin/src/index.ts"],
-      "@r7-front-monorepo/ui-form-components": ["libs/ui-form-components/src/index.ts"]
+      "@r7-front-monorepo/ui-form-components": ["libs/ui-form-components/src/index.ts"],
+      "@r7-front-monorepo/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
