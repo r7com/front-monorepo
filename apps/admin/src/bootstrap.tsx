@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import './style.css'
 
-import { NotificationProvider } from '@r7-front-monorepo/ui-components-admin'
+import { NotificationProvider } from '@r7-jarvics/ui-base-components'
 
 import App from './app/app'
 

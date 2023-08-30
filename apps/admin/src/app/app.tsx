@@ -1,4 +1,4 @@
-import { Button, SvgIcon, useNotification } from '@r7-front-monorepo/ui-components-admin'
+import { Button, SvgIcon, useNotification } from '@r7-jarvics/ui-base-components'
 import * as React from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 
