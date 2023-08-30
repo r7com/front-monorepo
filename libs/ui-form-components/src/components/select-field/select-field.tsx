@@ -5,7 +5,7 @@ export type SelectFieldProps = {
   label?: string
   className?: string
   placeholder: string
-  options: { id: string | number; name: string | number }[]
+  options: { value: string | number; text: string }[]
 } & SelectVariants &
   React.SelectHTMLAttributes<HTMLSelectElement>
 
@@ -29,9 +29,9 @@ export function SelectField({
       )}
       <select {...rest} className={selectSlot({ className })} name={name} id={name} value={value}>
         <option value="">{placeholder}</option>
-        {options.map(({ id, name }) => (
-          <option key={id} value={id}>
-            {name}
+        {options.map(({ value, text }) => (
+          <option key={value} value={value}>
+            {text}
           </option>
         ))}
       </select>
