@@ -4,7 +4,6 @@ export type InputFieldProps = {
   name: string
   label?: string
   className?: string
-  type?: 'text' | 'password' | 'email' | 'number' | 'tel'
 } & InputVariants &
   React.InputHTMLAttributes<HTMLInputElement>
 
