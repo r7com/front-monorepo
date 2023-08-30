@@ -11,7 +11,8 @@ export type ChipsProps<C extends React.ElementType> = {
   endIcon?: React.ReactNode | null
   clickable?: boolean
   onClick?: () => void
-} & React.ComponentPropsWithoutRef<C>
+} & ChipsVariants &
+  React.ComponentPropsWithoutRef<C>
 
 export function Chips<C extends React.ElementType = 'span'>({
   as,

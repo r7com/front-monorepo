@@ -1,4 +1,4 @@
-import { VariantProps, tv } from 'tailwind-variants'
+import { tv, type VariantProps } from 'tailwind-variants'
 
 export const variants = tv({
   base: 'gap-nano px-xxxs rounded-pill font-semibold cursor-pointer flex items-center justify-center w-fit',
