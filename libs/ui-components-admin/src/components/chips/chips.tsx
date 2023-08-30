@@ -2,11 +2,7 @@ import { variants, ChipsVariants } from './chips.variants'
 
 export type ChipsProps<C extends React.ElementType> = {
   as?: C
-  size: 'medium' | 'small' | 'large'
-  color?: 'primary' | 'secondary' | 'tertiary'
   children: React.ReactNode
-  disabled?: boolean
-  selected?: boolean
   startIcon?: React.ReactNode | null
   endIcon?: React.ReactNode | null
   clickable?: boolean
