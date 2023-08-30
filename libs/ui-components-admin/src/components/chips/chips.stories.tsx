@@ -27,7 +27,7 @@ function Render({ ...args }) {
   const handleChips = () => updateArgs({ selected: !selected })
 
   return (
-    <Chips size="large" onClick={handleChips} {...args}>
+    <Chips size="large" onClick={handleChips} clickable {...args}>
       nome tag
     </Chips>
   )
