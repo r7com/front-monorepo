@@ -74,7 +74,7 @@
       "executor": "@nx/storybook:build",
       "outputs": ["{options.outputDir}"],
       "options": {
-        "outputDir": "dist/storybook/ui-components-admin",
+        "outputDir": "dist/storybook/ui-base-components",
         "configDir": "libs/ui-base-components/.storybook"
       },
       "configurations": {
