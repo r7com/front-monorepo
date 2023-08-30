@@ -3,7 +3,7 @@ import { tv, type VariantProps } from 'tailwind-variants'
 export const variants = tv({
   slots: {
     tooltip:
-      'bg-dark-low-400 w-max rounded-md transition-opacity ease-in-out duration-200 text-neutral-high-400 absolute p-nano',
+      "bg-dark-low-400 w-max rounded-md transition-opacity ease-in-out duration-200 text-neutral-high-400 absolute p-nano after:content-[''] after:block after:absolute",
     target: 'inline-block',
   },
   variants: {
@@ -18,7 +18,7 @@ export const variants = tv({
       },
       left: {
         tooltip:
-          'right-[calc(100%_+_10px)] top-1/2 -translate-y-1/2 after:right-0 after:border-[10px] after:border-solid after:border-transparent after:left-1/2 after:border-r-[0px] after:border-l-[10px] after:border-l-neutral-low-600 after:translate-x-full after:-translate-y-1/2 after:top-1/2',
+          'right-[calc(100%_+_10px)] top-1/2 -translate-y-1/2 after:right-0 after:border-[10px] after:border-solid after:border-transparent after:border-r-[0px] after:border-l-[10px] after:border-l-neutral-low-600 after:translate-x-full after:-translate-y-1/2 after:top-1/2',
       },
       bottom: {
         tooltip:
@@ -40,12 +40,6 @@ export const variants = tv({
         tooltip:
           'top-[calc(100%_+_10px)] right-[calc(50%_-_1.2rem)] after:border-[10px] after:border-solid after:border-transparent after:border-t-[0px] after:border-b-[10px] after:border-b-solid after:border-b-neutral-low-600 after:bottom-full after:-translate-x-1/2 after:right-0',
       },
-    },
-    arrow: {
-      true: {
-        tooltip: "after:content-[''] after:block after:absolute",
-      },
-      false: '',
     },
     hover: {
       true: { tooltip: 'opacity-[1] z-10' },

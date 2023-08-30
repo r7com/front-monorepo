@@ -15,7 +15,7 @@ describe(Tooltip.name, () => {
     cy.matchImage()
   })
 
-  it('Should not be visible on mouseover', () => {
+  it('Should not be visible without mouseover', () => {
     cy.mount(
       <div className="flex justify-center items-center h-screen">
         <Tooltip content="conteudo do tooltip" position="bottom-left" margin="medium">
@@ -43,7 +43,7 @@ describe(Tooltip.name, () => {
   it('Should be visible with position left on mouseover', () => {
     cy.mount(
       <div className="flex justify-center items-center h-screen">
-        <Tooltip content="conteudo do tooltip" position="left" arrow={false}>
+        <Tooltip content="conteudo do tooltip" position="left" margin="small">
           <Button>teste</Button>
         </Tooltip>
       </div>,

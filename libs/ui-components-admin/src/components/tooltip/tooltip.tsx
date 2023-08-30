@@ -14,10 +14,9 @@ export function Tooltip({
   className = '',
   position = 'top',
   margin,
-  arrow = true,
 }: TooltipProps) {
   const [isHover, setHover] = useState(false)
-  const { tooltip, target } = variants({ position, arrow, hover: isHover, margin, className })
+  const { tooltip, target } = variants({ position, hover: isHover, margin, className })
 
   return (
     <div className="inline-block relative">
