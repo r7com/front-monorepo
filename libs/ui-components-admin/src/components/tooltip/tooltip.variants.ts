@@ -1,6 +1,6 @@
-import { tv, type VariantProps } from 'tailwind-variants'
+import { createVariants, VariantProps } from '@r7-front-monorepo/utils'
 
-export const variants = tv({
+export const variants = createVariants({
   slots: {
     tooltip:
       "bg-dark-low-400 w-max max-w-[164px] text-center shadow-level1 rounded-md transition-opacity ease-in-out duration-200 text-neutral-high-400 absolute p-nano after:content-[''] after:block after:absolute",
