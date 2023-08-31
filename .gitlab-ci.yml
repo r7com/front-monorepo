@@ -31,6 +31,7 @@ ui-base-components build:
     refs:
       - main
       - merge_requests
+      - uiBaseComponents
     changes:
       - libs/ui-base-components/**/*
   except:
@@ -47,6 +48,7 @@ ui-base-components test:
     refs:
       - main
       - merge_requests
+      - uiBaseComponents
     changes:
       - libs/ui-base-components/**/*
   except:
@@ -65,6 +67,7 @@ ui-base-components e2e:
     refs:
       - main
       - merge_requests
+      - uiBaseComponents
     changes:
       - libs/ui-base-components/**/*
   except:
@@ -88,6 +91,7 @@ admin build:
     refs:
       - main
       - merge_requests
+      - uiBaseComponents
     changes:
       - apps/admin/**/*
   except:
@@ -104,6 +108,7 @@ admin test:
     refs:
       - main
       - merge_requests
+      - uiBaseComponents
     changes:
       - apps/admin/**/*
   except:
@@ -120,6 +125,7 @@ voting build:
     refs:
       - main
       - merge_requests
+      - uiBaseComponents
     changes:
       - apps/voting/**/*
   except:
@@ -136,6 +142,7 @@ voting test:
     refs:
       - main
       - merge_requests
+      - uiBaseComponents
     changes:
       - apps/voting/**/*
   except:
