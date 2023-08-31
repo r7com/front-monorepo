@@ -17,7 +17,9 @@ export function App() {
           </li>
         </ul>
       </header>
-      <Button onClick={() => notify({ message: 'hello', type: 'positive' })}>snackbar</Button>
+      <Button onClick={() => notify({ message: 'hello', type: 'positive' })}>
+        snackbar trigger-pipeline
+      </Button>
 
       {/* Children routes will be rendered in <Outlet /> */}
       <Outlet />
