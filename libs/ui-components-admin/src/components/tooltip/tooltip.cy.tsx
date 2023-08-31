@@ -5,7 +5,7 @@ describe(Tooltip.name, () => {
   it('Should be visible on mouseover', () => {
     cy.mount(
       <div className="flex justify-center items-center h-screen">
-        <Tooltip content="conteudo do tooltip" position="bottom" margin="large">
+        <Tooltip content="conteudo do tooltip" position="bottom">
           <Button>teste</Button>
         </Tooltip>
       </div>,
@@ -18,7 +18,7 @@ describe(Tooltip.name, () => {
   it('Should not be visible without mouseover', () => {
     cy.mount(
       <div className="flex justify-center items-center h-screen">
-        <Tooltip content="conteudo do tooltip" position="bottom-left" margin="medium">
+        <Tooltip content="conteudo do tooltip" position="bottom-left">
           <Button>teste</Button>
         </Tooltip>
       </div>,
@@ -30,7 +30,7 @@ describe(Tooltip.name, () => {
   it('Should be visible with position bottom-right on mouseover', () => {
     cy.mount(
       <div className="flex justify-center items-center h-screen">
-        <Tooltip content="conteudo do tooltip" position="bottom-right" margin="small">
+        <Tooltip content="conteudo do tooltip" position="bottom-right">
           <Button>teste</Button>
         </Tooltip>
       </div>,
@@ -43,7 +43,7 @@ describe(Tooltip.name, () => {
   it('Should be visible with position left on mouseover', () => {
     cy.mount(
       <div className="flex justify-center items-center h-screen">
-        <Tooltip content="conteudo do tooltip" position="left" margin="small">
+        <Tooltip content="conteudo do tooltip" position="left">
           <Button>teste</Button>
         </Tooltip>
       </div>,
