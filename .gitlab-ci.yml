@@ -31,7 +31,6 @@ ui-base-components build:
     refs:
       - main
       - merge_requests
-      - uiBaseComponents
     changes:
       - libs/ui-base-components/**/*
   except:
@@ -48,7 +47,6 @@ ui-base-components test:
     refs:
       - main
       - merge_requests
-      - uiBaseComponents
     changes:
       - libs/ui-base-components/**/*
   except:
@@ -67,7 +65,6 @@ ui-base-components e2e:
     refs:
       - main
       - merge_requests
-      - uiBaseComponents
     changes:
       - libs/ui-base-components/**/*
   except:
@@ -81,68 +78,68 @@ ui-base-components e2e:
       - cypress/screenshots/**/*.png
     expire_in: 1 day
 
-  #admin jobs
-  # admin build:
-  #   stage: build
-  #   needs: ['ui-base-components build']
-  #   script:
-  #     - yarn nx build admin
-  #   only:
-  #     refs:
-  #       - main
-  #       - merge_requests
-  #     changes:
-  #       - apps/admin/**/*
-  #   except:
-  #     changes:
-  #       - apps/admin/**/*.{json,md,css,scss,sass}
-  #       - apps/admin/**/*.test.{js,ts,jsx,tsx}
-  #       - apps/admin/**/*.spec.{js,ts,jsx,tsx}
+#admin jobs
+admin build:
+  stage: build
+  needs: ['ui-base-components build']
+  script:
+    - yarn nx build admin
+  only:
+    refs:
+      - main
+      - merge_requests
+    changes:
+      - apps/admin/**/*
+  except:
+    changes:
+      - apps/admin/**/*.{json,md,css,scss,sass}
+      - apps/admin/**/*.test.{js,ts,jsx,tsx}
+      - apps/admin/**/*.spec.{js,ts,jsx,tsx}
 
-  # admin test:
-  #   stage: test
-  #   script:
-  #     - yarn nx test admin
-  #   only:
-  #     refs:
-  #       - main
-  #       - merge_requests
-  #     changes:
-  #       - apps/admin/**/*
-  #   except:
-  #     changes:
-  #       - apps/admin/**/*.{json,md,css,scss,sass}
+admin test:
+  stage: test
+  script:
+    - yarn nx test admin
+  only:
+    refs:
+      - main
+      - merge_requests
+    changes:
+      - apps/admin/**/*
+  except:
+    changes:
+      - apps/admin/**/*.{json,md,css,scss,sass}
 
-  # # voting jobs
-  # voting build:
-  #   stage: build
-  #   needs: ['ui-base-components build']
-  #   script:
-  #     - yarn nx build voting
-  #   only:
-  #     refs:
-  #       - main
-  #       - merge_requests
-  #     changes:
-  #       - apps/voting/**/*
-  #   except:
-  #     changes:
-  #       - apps/voting/**/*.{json,md,css,scss,sass}
-  #       - apps/voting/**/*.test.{js,ts,jsx,tsx}
-  #       - apps/voting/**/*.spec.{js,ts,jsx,tsx}
+# # voting jobs
+voting build:
+  stage: build
+  needs: ['ui-base-components build']
+  script:
+    - yarn nx build voting
+  only:
+    refs:
+      - main
+      - merge_requests
+    changes:
+      - apps/voting/**/*
+  except:
+    changes:
+      - apps/voting/**/*.{json,md,css,scss,sass}
+      - apps/voting/**/*.test.{js,ts,jsx,tsx}
+      - apps/voting/**/*.spec.{js,ts,jsx,tsx}
 
-  # voting test:
-  #   stage: test
-  #   script:
-  #     - yarn nx test voting
-  #   only:
-  #     refs:
-  #       - main
-  #       - merge_requests
-  #     changes:
-  #       - apps/voting/**/*
-  #   except:
-  #     changes:
-  #       - apps/voting/**/*.{json,md,css,scss,sass}
+voting test:
+  stage: test
+  script:
+    - yarn nx test voting
+  only:
+    refs:
+      - main
+      - merge_requests
+    changes:
+      - apps/voting/**/*
+  except:
+    changes:
+      - apps/voting/**/*.{json,md,css,scss,sass}
 
   environment: production
