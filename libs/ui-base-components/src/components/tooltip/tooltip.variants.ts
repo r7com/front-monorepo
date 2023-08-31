@@ -1,4 +1,4 @@
-import { createVariants, VariantProps } from '@r7-front-monorepo/utils'
+import { createVariants, VariantProps } from '@r7-jarvics/utils'
 
 export const variants = createVariants({
   base: 'bg-dark-low-400 w-max rounded-md transition-opacity ease-in-out duration-150 text-neutral-high-400 absolute px-xxxs py-xxs',

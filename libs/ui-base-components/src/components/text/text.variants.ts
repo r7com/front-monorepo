@@ -1,4 +1,4 @@
-import { createVariants, VariantProps } from '@r7-front-monorepo/utils'
+import { createVariants, VariantProps } from '@r7-jarvics/utils'
 
 export const variants = createVariants({
   variants: {
