@@ -5,7 +5,7 @@ describe(IconButton.name, () => {
   it('rendered', () => {
     cy.mount(
       <IconButton>
-        <SvgIcon iconName="error" color="primary" title="error" />
+        <SvgIcon iconName="circle-error" color="primary" title="error" />
       </IconButton>,
     )
 
@@ -19,7 +19,7 @@ describe(IconButton.name, () => {
 
     cy.mount(
       <IconButton onClick={onClick}>
-        <SvgIcon iconName="error" color="primary" title="error" />
+        <SvgIcon iconName="circle-error" color="primary" title="error" />
       </IconButton>,
     )
 
@@ -32,7 +32,7 @@ describe(IconButton.name, () => {
 
     cy.mount(
       <IconButton onClick={onClick} disabled>
-        <SvgIcon iconName="error" color="primary" title="error" />
+        <SvgIcon iconName="circle-error" color="primary" title="error" />
       </IconButton>,
     )
 

@@ -7,7 +7,13 @@ yarn
 yarn build ui-base-components
 ```
 
-Seguir documentação do nx
+## Documentações
+
+### Contribuições
+
+[Contribuindo para projetos da Record TV](https://r7com.atlassian.net/wiki/spaces/~16747656/pages/2006745089/Contribuindo+para+projetos+da+Record+TV#Commits-no-front-monorepo)
+
+### NX
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
