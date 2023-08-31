@@ -3,7 +3,6 @@ import { Link, Outlet } from 'react-router-dom'
 
 export function App() {
   const notify = useNotification()
-  // console.log(notify)
 
   return (
     <>
