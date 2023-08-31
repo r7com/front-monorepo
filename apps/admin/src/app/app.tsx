@@ -1,4 +1,4 @@
-import { Button, useNotification } from '@r7-front-monorepo/ui-components-admin'
+import { Button, useNotification } from '@r7-jarvics/ui-base-components'
 import { Link, Outlet } from 'react-router-dom'
 
 export function App() {
