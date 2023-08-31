@@ -1,27 +1,17 @@
-import { StrictMode, Suspense, lazy } from 'react'
+import { StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider } from 'react-router-dom'
 
 import { NotificationProvider } from '@r7-front-monorepo/ui-components-admin'
-import App from './app/app'
+import { routes } from './routes'
 
 import './style.css'
-
-const Voting = lazy(() => import('voting/Module'))
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    children: [{ path: '/voting', element: <Voting /> }],
-  },
-])
 
 export const RootApp = (
   <StrictMode>
     <NotificationProvider>
       <Suspense fallback={null}>
-        <RouterProvider router={router} />
+        <RouterProvider router={routes} />
       </Suspense>
     </NotificationProvider>
   </StrictMode>
