@@ -7,31 +7,20 @@ export type TooltipProps = {
   className?: string
 } & TooltipVariants
 
-export function Tooltip({
-  content,
-  children,
-  className = '',
-  position = 'top',
-  arrow = true,
-}: TooltipProps) {
+export function Tooltip({ content, children, className = '', position = 'top' }: TooltipProps) {
   const [isHover, setHover] = useState(false)
+  const { tooltip, target, root } = variants({ position, hover: isHover, className })
 
   return (
-    <div className="inline relative">
-      <span
-        data-testid="tooltip"
-        role="tooltip"
-        id="tooltip"
-        aria-hidden={!isHover}
-        className={variants({ position, arrow, hover: isHover, className })}
-      >
+    <div
+      className={root()}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <span role="tooltip" id="tooltip" aria-hidden={!isHover} className={tooltip()}>
         {content}
       </span>
-      <div
-        aria-describedby="tooltip"
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-      >
+      <div className={target()} aria-describedby="tooltip">
         {children}
       </div>
     </div>
