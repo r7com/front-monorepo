@@ -1,4 +1,9 @@
-import { Button, SvgIcon, useNotification } from '@r7-front-monorepo/ui-components-admin'
+import {
+  Button,
+  CardStatus,
+  SvgIcon,
+  useNotification,
+} from '@r7-front-monorepo/ui-components-admin'
 import * as React from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 
@@ -9,6 +14,7 @@ export function App() {
 
   return (
     <React.Suspense fallback={null}>
+      <CardStatus text="teste" variant="success" />
       <Button startIcon={<SvgIcon iconName="archive" />} endIcon={<SvgIcon iconName="archive" />}>
         click
       </Button>
