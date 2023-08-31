@@ -1,6 +1,6 @@
-import { tv, type VariantProps } from 'tailwind-variants'
+import { createVariants, VariantProps } from '@r7-front-monorepo/utils'
 
-export const variants = tv({
+export const variants = createVariants({
   base: 'bg-dark-low-400 w-max rounded-md transition-opacity ease-in-out duration-150 text-neutral-high-400 absolute px-xxxs py-xxs',
   variants: {
     position: {

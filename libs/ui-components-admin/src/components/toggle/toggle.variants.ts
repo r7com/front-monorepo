@@ -1,6 +1,6 @@
-import { tv, type VariantProps } from 'tailwind-variants'
+import { createVariants, VariantProps } from '@r7-front-monorepo/utils'
 
-export const variants = tv({
+export const variants = createVariants({
   slots: {
     toggle:
       'flex items-center flex-shrink-0 rounded-pill p-quark ease-in-out after:rounded-circular after:duration-300 transition-colors',
