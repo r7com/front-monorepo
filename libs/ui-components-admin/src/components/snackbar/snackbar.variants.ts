@@ -1,6 +1,6 @@
-import { tv, type VariantProps } from 'tailwind-variants'
+import { createVariants, VariantProps } from '@r7-front-monorepo/utils'
 
-export const variants = tv({
+export const variants = createVariants({
   slots: {
     root: 'fixed flex items-stretch overflow-hidden sm:w-[560px] min-h-[72px] sm:right-xxs sm:left-auto left-nano right-nano rounded-md bg-neutral-low-500 transition-all',
     iconContainer: 'flex items-center justify-center w-sm fill-dark-high-400',
