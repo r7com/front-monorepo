@@ -4,7 +4,7 @@
 
 ```
 yarn
-yarn build ui-components-admin
+yarn build ui-base-components
 ```
 
 ## Documentações
