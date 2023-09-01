@@ -14,8 +14,8 @@ stages:
   tags:
     - gitlab-runner-ec2
   only:
-    # - main
-    # - merge_requests
+    - main
+    - merge_requests
     - improvePipeline
   cache:
     key:
