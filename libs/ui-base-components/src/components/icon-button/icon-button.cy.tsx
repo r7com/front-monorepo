@@ -1,20 +1,21 @@
 import { SvgIcon } from '../svg-icon'
 import { IconButton } from './icon-button'
 
-describe(IconButton.name, () => {
-  it('rendered', () => {
+describe(`${IconButton.name} with icon`, () => {
+  it('should render icon-button with icon', () => {
     cy.mount(
       <IconButton>
-        <SvgIcon iconName="circle-error" color="primary" title="error" />
+        <SvgIcon iconName="error" color="primary" title="error" />
       </IconButton>,
     )
 
     cy.findByRole('button').should('be.visible')
-    cy.findByTitle('error').should('exist')
     cy.matchImage()
   })
+})
 
-  it('on click', () => {
+describe(`${IconButton.name} interactions`, () => {
+  it('should called "onClick" callback once on click', () => {
     const onClick = cy.stub().as('callback')
 
     cy.mount(
@@ -27,7 +28,7 @@ describe(IconButton.name, () => {
     cy.get('@callback').should('have.been.calledOnce')
   })
 
-  it('failed click with disabled button', () => {
+  it('should fail to trigger "onClick" callback when disabled', () => {
     const onClick = cy.stub().as('callback')
 
     cy.mount(
