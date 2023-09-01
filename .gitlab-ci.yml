@@ -33,7 +33,7 @@ stages:
     # Remove as extensões de arquivo e substitui por /*
     # Remove a quebra de linha e coloca ","
     # Remove a vírgula da última pasta
-    - CHANGED_FOLDERS=$(git diff --name-only origin/main HEAD | grep -v '__image_snapshots__' | grep 'src/components' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/*,"}' | tr -d '\n' | sed 's/,$//')
+    - CHANGED_FOLDERS=$(git diff --name-only $NX_BASE $NX_HEAD | grep -v '__image_snapshots__' | grep 'src/components' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/*,"}' | tr -d '\n' | sed 's/,$//')
 
 # format-check:
 #   stage: test
@@ -60,7 +60,10 @@ component-test:
   script:
     - echo $(git diff --name-status origin/main HEAD)
     - echo $CHANGED_FOLDERS
-    - npx nx run-many -t component-test --parallel=3 --configuration=ci --spec $CHANGED_FOLDERS
+    - apt-get update && apt-get install -y xvfb
+    - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+    - export DISPLAY=:99
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci --spec $CHANGED_FOLDERS
 
   # artifacts:
   #   when: on_failure
