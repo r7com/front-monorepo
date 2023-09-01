@@ -20,7 +20,7 @@ describe(Button.name, () => {
 
   it('on click', () => {
     const onClick = cy.stub().as('callback')
-    cy.mount(<Button onClick={onClick}>click button</Button>)
+    cy.mount(<Button onClick={onClick}>click buttonsdsd</Button>)
 
     cy.findByRole('button', { name: /click button/i }).click()
     cy.get('@callback').should('have.been.calledOnce')
