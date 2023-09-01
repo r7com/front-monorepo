@@ -8,31 +8,31 @@ describe(`should render all its ${CardStatus.name}`, () => {
     cy.findByText(text).should('be.visible')
   }
 
-  it(`Check render of success`, () => {
+  it(`should render success status`, () => {
     cy.mount(<CardStatus text={text} variant="success" />)
     byRoleText(role, text)
     cy.matchImage()
   })
 
-  it(`Check render of error`, () => {
+  it(`should render error status`, () => {
     cy.mount(<CardStatus text={text} variant="error" />)
     byRoleText(role, text)
     cy.matchImage()
   })
 
-  it(`Check render of helper`, () => {
+  it(`should render helper status`, () => {
     cy.mount(<CardStatus text={text} variant="helper" />)
     byRoleText(role, text)
     cy.matchImage()
   })
 
-  it(`Check render of info`, () => {
+  it(`should render info status`, () => {
     cy.mount(<CardStatus text={text} variant="info" />)
     byRoleText(role, text)
     cy.matchImage()
   })
 
-  it(`Check status of waiting`, () => {
+  it(`should render waiting status`, () => {
     cy.mount(<CardStatus text={text} variant="waiting" />)
     byRoleText(role, text)
     cy.matchImage()
