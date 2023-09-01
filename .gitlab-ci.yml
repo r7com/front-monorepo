@@ -65,8 +65,8 @@ component-test:
   artifacts:
     when: on_failure
     paths:
-      - dist/cypress/**/videos/*.mp4
-      - dist/cypress/screenshots/**/*.png
+      - dist/cypress
+      # - dist/cypress/**/screenshots/**/*.png
     expire_in: 1 day
 # build:
 #   stage: build
