@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@r7-front-monorepo/ui-components-admin": ["libs/ui-components-admin/src/index.ts"]
+      "@r7-jarvics/ui-base-components": ["libs/ui-base-components/src/index.ts"],
+      "@r7-jarvics/ui-form-components": ["libs/ui-form-components/src/index.ts"],
+      "@r7-jarvics/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

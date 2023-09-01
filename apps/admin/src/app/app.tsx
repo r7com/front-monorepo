@@ -1,17 +1,15 @@
-import * as React from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
-
-const Voting = React.lazy(() => import('voting/Module'))
+import { Button, useNotification } from '@r7-jarvics/ui-base-components'
+import { Link, Outlet } from 'react-router-dom'
 
 export function App() {
+  const notify = useNotification()
+
   return (
-    <React.Suspense fallback={null}>
+    <>
       <header>
         <ul>
           <li>
-            <Link className="no-underline" to="/">
-              Home
-            </Link>
+            <Link to="/">Home</Link>
           </li>
 
           <li>
@@ -19,11 +17,11 @@ export function App() {
           </li>
         </ul>
       </header>
-      <Routes>
-        <Route path="/" element={<h1>Hello Dashboard</h1>} />
-        <Route path="/voting" element={<Voting />} />
-      </Routes>
-    </React.Suspense>
+      <Button onClick={() => notify({ message: 'hello', type: 'positive' })}>snackbar</Button>
+
+      {/* Children routes will be rendered in <Outlet /> */}
+      <Outlet />
+    </>
   )
 }
 

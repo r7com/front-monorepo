@@ -1,0 +1,11 @@
+{
+  "name": "@r7-jarvics/utils",
+  "version": "0.0.1",
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "tailwind-variants": "^0.1.13"
+  },
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts"
+}
