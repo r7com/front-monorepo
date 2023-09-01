@@ -19,6 +19,7 @@ export function InputField({
 
   return (
     <div className={wrapperSlot()}>
+      trigger input
       {label && (
         <label className={labelSlot()} htmlFor={name}>
           {label}
