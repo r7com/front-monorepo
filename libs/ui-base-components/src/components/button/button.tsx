@@ -33,7 +33,7 @@ export function Button<C extends React.ElementType = 'button'>({
       {startIcon}
       {children}
       {endIcon}
-      asdasdasdasdasdasdasda
+      ssdsd
     </DynamicTag>
   )
 }
