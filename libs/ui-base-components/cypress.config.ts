@@ -8,6 +8,8 @@ export default defineConfig({
     setupNodeEvents(on, config) {
       initPlugin(on, config)
     },
+    // excludeSpecPattern: '**/__image_snapshots__/**',
+    specPattern: 'src/components/**/*.cy.tsx',
   },
   env: {
     pluginVisualRegressionDiffConfig: { threshold: 0.01 },
