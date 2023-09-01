@@ -25,7 +25,6 @@ export function Button<C extends React.ElementType = 'button'>({
   return (
     <DynamicTag
       data-testid="button"
-      id="ksddsdd"
       disabled={DynamicTag === 'button' ? disabled : undefined}
       className={variants({ color, size, disabled, className })}
       {...rest}
@@ -33,7 +32,6 @@ export function Button<C extends React.ElementType = 'button'>({
       {startIcon}
       {children}
       {endIcon}
-      dfdfsdfsdfsdfsdfsdfsdfsdfsd
     </DynamicTag>
   )
 }
