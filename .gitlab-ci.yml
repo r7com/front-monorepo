@@ -11,6 +11,8 @@ stages:
 
 .distributed:
   interruptible: true
+  tags:
+    - gitlab-runner-ec2
   only:
     # - main
     # - merge_requests
