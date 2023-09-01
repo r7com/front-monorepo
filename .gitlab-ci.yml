@@ -57,7 +57,6 @@ component-test:
   stage: test
   extends: .distributed
   script:
-    - echo $(git diff --name-status origin/main HEAD)
     - echo $CHANGED_FOLDERS
     - apt-get update && apt-get install -y xvfb
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
