@@ -33,7 +33,7 @@ stages:
     # Remove as extensões de arquivo e substitui por /*
     # Remove a quebra de linha e coloca ","
     # Remove a vírgula da última pasta
-    - CHANGED_FOLDERS=$(git diff --name-only origin/${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA} origin/$CI_COMMIT_SHAD | grep '/' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/*,"}' | tr -d '\n' | sed 's/,$//')
+    - CHANGED_FOLDERS=$(git diff --name-only ${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA} $CI_COMMIT_SHAD | grep '/' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/*,"}' | tr -d '\n' | sed 's/,$//')
 
 # format-check:
 #   stage: test
