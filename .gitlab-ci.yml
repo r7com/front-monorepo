@@ -17,16 +17,23 @@ stages:
     # - main
     # - merge_requests
     - improvePipeline
-  # cache:
-  #   key:
-  #     files:
-  #       - yarn.lock
-  #   paths:
-  #     - '.yarn-cache/'
+  cache:
+    key:
+      files:
+        - yarn.lock
+    paths:
+      - '.yarn-cache/'
   before_script:
-    # - yarn install --cache-folder .yarn-cache --prefer-offline --frozen-lockfile
-    - NX_HEAD=$CI_COMMIT_SHA
+    - yarn install --cache-folder .yarn-cache --prefer-offline --frozen-lockfile
     - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
+    - NX_HEAD=$CI_COMMIT_SHA
+
+    # CHANGED_FOLDERS:
+    # Verifica quais pastas foram modificadas até o último commit com a main
+    # Remove as extensões de arquivo e substitui por /*
+    # Remove a quebra de linha e coloca ","
+    # Remove a vírgula da última pasta
+    - CHANGED_FOLDERS=$(git diff --name-only $NX_BASE $NX_HEAD | grep '/' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/*,"}' | tr -d '\n' | sed 's/,$//')
 
 # format-check:
 #   stage: test
@@ -49,16 +56,14 @@ stages:
 component-test:
   stage: test
   extends: .distributed
-  # script:
-  #   - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci
   script:
-    - echo $(git diff --name-only origin/${NX_BASE} origin/${NX_HEAD} -- ./)
-  # artifacts:
-  #   when: always
-  #   paths:
-  #     - cypress/videos/**/*.mp4
-  #     - cypress/screenshots/**/*.png
-  #   expire_in: 1 day
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci --spec $CHANGED_FOLDERS
+  artifacts:
+    when: always
+    paths:
+      - cypress/videos/**/*.mp4
+      - cypress/screenshots/**/*.png
+    expire_in: 1 day
 # build:
 #   stage: build
 #   extends: .distributed

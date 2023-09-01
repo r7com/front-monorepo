@@ -9,4 +9,7 @@ export default defineConfig({
       initPlugin(on, config)
     },
   },
+  env: {
+    pluginVisualRegressionDiffConfig: { threshold: 0.01 },
+  },
 })
