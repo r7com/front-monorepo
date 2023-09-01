@@ -17,14 +17,14 @@ stages:
     # - main
     # - merge_requests
     - improvePipeline
-  cache:
-    key:
-      files:
-        - yarn.lock
-    paths:
-      - '.yarn-cache/'
+  # cache:
+  #   key:
+  #     files:
+  #       - yarn.lock
+  #   paths:
+  #     - '.yarn-cache/'
   before_script:
-    - yarn install --cache-folder .yarn-cache --prefer-offline --frozen-lockfile
+    # - yarn install --cache-folder .yarn-cache --prefer-offline --frozen-lockfile
     - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
     - NX_HEAD=$CI_COMMIT_SHA
 
@@ -59,14 +59,15 @@ component-test:
   extends: .distributed
   script:
     - echo $(git diff --name-status origin/main HEAD)
-    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci --spec $CHANGED_FOLDERS
+    - echo $CHANGED_FOLDERS
+    # - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci --spec $CHANGED_FOLDERS
 
-  artifacts:
-    when: on_failure
-    paths:
-      - dist/cypress/**/videos/*.mp4
-      - dist/cypress/screenshots/**/*.png
-    expire_in: 1 day
+  # artifacts:
+  #   when: on_failure
+  #   paths:
+  #     - dist/cypress/**/videos/*.mp4
+  #     - dist/cypress/screenshots/**/*.png
+  #   expire_in: 1 day
 # build:
 #   stage: build
 #   extends: .distributed
