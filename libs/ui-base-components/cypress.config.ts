@@ -8,7 +8,7 @@ export default defineConfig({
     setupNodeEvents(on, config) {
       initPlugin(on, config)
     },
-    // excludeSpecPattern: '**/__image_snapshots__/**',
+    excludeSpecPattern: '**/__image_snapshots__/**',
     specPattern: 'src/components/**/*.cy.tsx',
   },
   env: {
