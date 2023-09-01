@@ -33,7 +33,7 @@ stages:
     # Remove as extensões de arquivo e substitui por /*
     # Remove a quebra de linha e coloca ","
     # Remove a vírgula da última pasta
-    - CHANGED_FOLDERS=$(git diff --name-only $NX_BASE $NX_HEAD | grep '/' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/*,"}' | tr -d '\n' | sed 's/,$//')
+    - CHANGED_FOLDERS=$(git diff main | grep '/' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/*,"}' | tr -d '\n' | sed 's/,$//')
 
 # format-check:
 #   stage: test
@@ -59,7 +59,9 @@ component-test:
   extends: .distributed
   script:
     - echo $(git diff --name-only $NX_BASE $NX_HEAD)
-    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci --spec $CHANGED_FOLDERS
+    - if [[ "$CHANGED_FOLDERS" == *"src/components/"* ]]; then
+      npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci --spec $CHANGED_FOLDERS
+      fi
   artifacts:
     when: on_failure
     paths:
