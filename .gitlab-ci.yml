@@ -27,14 +27,12 @@ stages:
     - yarn install --cache-folder .yarn-cache --prefer-offline --frozen-lockfile
     - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
     - NX_HEAD=$CI_COMMIT_SHA
-    - echo $(git diff --name-only $NX_BASE $NX_HEAD | grep -v '__image_snapshots__' | grep 'src/components' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/*,"}' | tr -d '\n' | sed 's/,$//')
-
     # CHANGED_FOLDERS:
     # Verifica quais pastas foram modificadas até o último commit com a main
     # Remove as extensões de arquivo e substitui por /*
     # Remove a quebra de linha e coloca ","
     # Remove a vírgula da última pasta
-    - CHANGED_FOLDERS=$(git diff --name-only $NX_BASE $NX_HEAD | grep -v '__image_snapshots__' | grep 'src/components' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/*,"}' | tr -d '\n' | sed 's/,$//')
+    - CHANGED_FOLDERS=$(git diff --name-only origin/main HEAD| grep -v '__image_snapshots__' | grep 'src/components' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/*,"}' | tr -d '\n' | sed 's/,$//')
 
 # format-check:
 #   stage: test
