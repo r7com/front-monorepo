@@ -3,7 +3,7 @@ import { createVariants, VariantProps } from '@r7-jarvics/utils'
 export const variants = createVariants({
   slots: {
     iconColorVariant: 'w-xxxs h-xxxs min-w-max min-h-max m-nano',
-    textVariant: '!text-xxxs',
+    textVariant: 'text-xxxs',
   },
   variants: {
     variant: {
