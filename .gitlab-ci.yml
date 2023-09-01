@@ -58,10 +58,9 @@ component-test:
   stage: test
   extends: .distributed
   script:
-    - echo $(git diff --name-only $NX_BASE $NX_HEAD)
-    - if [[ "$CHANGED_FOLDERS" == *"src/components/"* ]]; then
-      npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci --spec $CHANGED_FOLDERS
-      fi
+    - echo $(git diff --name-status origin/main HEAD)
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci --spec $CHANGED_FOLDERS
+
   artifacts:
     when: on_failure
     paths:
