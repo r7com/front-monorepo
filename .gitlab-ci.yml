@@ -62,13 +62,12 @@ component-test:
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
     - export DISPLAY=:99
     - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci --spec $CHANGED_FOLDERS
-
-  # artifacts:
-  #   when: on_failure
-  #   paths:
-  #     - dist/cypress/**/videos/*.mp4
-  #     - dist/cypress/screenshots/**/*.png
-  #   expire_in: 1 day
+  artifacts:
+    when: on_failure
+    paths:
+      - dist/cypress/**/videos/*.mp4
+      - dist/cypress/screenshots/**/*.png
+    expire_in: 1 day
 # build:
 #   stage: build
 #   extends: .distributed
