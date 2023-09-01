@@ -2,7 +2,7 @@ import { SvgIcon } from './svg-icon'
 import { SvgIcons } from './svg-icon.types'
 
 describe(SvgIcon.name, () => {
-  it('should renders all "color" variant options', () => {
+  it('should render all "color" variant options', () => {
     cy.mount(
       <>
         <SvgIcon iconName="circle-info" color="primary" title="icon 1" />
@@ -19,7 +19,7 @@ describe(SvgIcon.name, () => {
     cy.matchImage()
   })
 
-  it('should renders all "size" variant options', () => {
+  it('should render all "size" variant options', () => {
     cy.mount(
       <>
         <SvgIcon iconName="circle-info" color="primary" title="icon 1" size="small" />
@@ -34,12 +34,12 @@ describe(SvgIcon.name, () => {
     cy.matchImage()
   })
 
-  it('should not render svg when icon name not exist', () => {
+  it('should not render svg when icon name does not exist', () => {
     cy.mount(<SvgIcon iconName={'non-existent' as SvgIcons} color="primary" title="Informação" />)
     cy.findByTitle('Informação').should('not.exist')
   })
 
-  it('should renders svg with aria-hidden=true when title does not exists', () => {
+  it('should render svg with aria-hidden=true when title does not exist', () => {
     cy.mount(<SvgIcon iconName="archive" color="primary" />)
     cy.get('svg').should('have.attr', 'aria-hidden', 'true')
   })

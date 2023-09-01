@@ -2,7 +2,7 @@ import { SvgIcon } from '../svg-icon'
 import { IconButton } from './icon-button'
 
 describe(`${IconButton.name} with icon`, () => {
-  it('should renders icon-button with icon', () => {
+  it('should render icon-button with icon', () => {
     cy.mount(
       <IconButton>
         <SvgIcon iconName="error" color="primary" title="error" />
@@ -28,7 +28,7 @@ describe(`${IconButton.name} interactions`, () => {
     cy.get('@callback').should('have.been.calledOnce')
   })
 
-  it('should failed to trigger "onClick" callback on click disabled button', () => {
+  it('should fail to trigger "onClick" callback when disabled', () => {
     const onClick = cy.stub().as('callback')
 
     cy.mount(

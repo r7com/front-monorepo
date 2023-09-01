@@ -2,13 +2,13 @@ import { SvgIcon } from '../svg-icon'
 import { Button } from './button'
 
 describe(`${Button.name} variant options`, () => {
-  it('should renders as button', () => {
+  it('should render as button', () => {
     cy.mount(<Button>click button</Button>)
     cy.findByRole('button', { name: /click button/i }).should('be.visible')
     cy.matchImage()
   })
 
-  it('should renders as link', () => {
+  it('should render as link', () => {
     cy.mount(
       <Button as="a" href="#">
         click link
@@ -18,7 +18,7 @@ describe(`${Button.name} variant options`, () => {
     cy.matchImage()
   })
 
-  it('should renders all "color" variant options', () => {
+  it('should render all "color" variant options', () => {
     cy.mount(
       <>
         <Button color="primary">primary</Button>
@@ -35,7 +35,7 @@ describe(`${Button.name} variant options`, () => {
     cy.matchImage()
   })
 
-  it('should renders all "size" variant options', () => {
+  it('should render all "size" variant options', () => {
     cy.mount(
       <>
         <Button size="large">large</Button>
@@ -50,7 +50,7 @@ describe(`${Button.name} variant options`, () => {
     cy.matchImage()
   })
 
-  it('should renders with "startIcon" and "endIcon"', () => {
+  it('should render with "startIcon" and "endIcon"', () => {
     cy.mount(
       <Button
         color="primary"
@@ -75,7 +75,7 @@ describe(`${Button.name} interactions`, () => {
     cy.get('@callback').should('have.been.calledOnce')
   })
 
-  it('should failed to trigger "onClick" callback on click disabled button', () => {
+  it('should fail to trigger "onClick" callback when disabled', () => {
     const onClick = cy.stub().as('callback')
     cy.mount(
       <Button onClick={onClick} disabled>
