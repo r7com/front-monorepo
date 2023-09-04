@@ -21,7 +21,7 @@ export function InputField({
     <div className={wrapperSlot()}>
       {label && (
         <label className={labelSlot()} htmlFor={name}>
-          {label}
+          {label} sdfsfsdf
         </label>
       )}
       <input
