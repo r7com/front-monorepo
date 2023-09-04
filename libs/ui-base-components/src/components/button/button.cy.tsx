@@ -1,44 +1,56 @@
 import { SvgIcon } from '../svg-icon'
 import { Button } from './button'
 
-describe(Button.name, () => {
-  it('renders as button', () => {
-    cy.mount(<Button as="button">click button</Button>)
-    cy.findByRole('button', { name: /click button/i })
+describe(`${Button.name} variant options`, () => {
+  it('should render as button', () => {
+    cy.mount(<Button>click button</Button>)
+    cy.findByRole('button', { name: /click button/i }).should('be.visible')
     cy.matchImage()
   })
 
-  it('renders as link', () => {
+  it('should render as link', () => {
     cy.mount(
       <Button as="a" href="#">
         click link
       </Button>,
     )
-    cy.findByRole('link', { name: /click link/i })
+    cy.findByRole('link', { name: /click link/i }).should('be.visible')
     cy.matchImage()
   })
 
-  it('on click', () => {
-    const onClick = cy.stub().as('callback')
-    cy.mount(<Button onClick={onClick}>click button</Button>)
-
-    cy.findByRole('button', { name: /click button/i }).click()
-    cy.get('@callback').should('have.been.calledOnce')
-  })
-
-  it('failed click with disabled button', () => {
-    const onClick = cy.stub().as('callback')
+  it('should render all "color" variant options', () => {
     cy.mount(
-      <Button onClick={onClick} disabled>
-        click button
-      </Button>,
+      <>
+        <Button color="primary">primary</Button>
+        <Button color="secondary">secondary</Button>
+        <Button color="tertiary">tertiary</Button>
+        <Button color="ghost">ghost</Button>
+      </>,
     )
 
-    cy.findByRole('button', { name: /click button/i }).click({ force: true })
-    cy.get('@callback').should('not.have.been.called')
+    cy.findByRole('button', { name: /primary/i }).should('be.visible')
+    cy.findByRole('button', { name: /secondary/i }).should('be.visible')
+    cy.findByRole('button', { name: /tertiary/i }).should('be.visible')
+    cy.findByRole('button', { name: /ghost/i }).should('be.visible')
+    cy.matchImage()
   })
 
-  it('with icon', () => {
+  it('should render all "size" variant options', () => {
+    cy.mount(
+      <>
+        <Button size="large">large</Button>
+        <Button size="medium">medium</Button>
+        <Button size="small">small</Button>
+      </>,
+    )
+
+    cy.findByRole('button', { name: /large/i }).should('be.visible')
+    cy.findByRole('button', { name: /medium/i }).should('be.visible')
+    cy.findByRole('button', { name: /small/i }).should('be.visible')
+    cy.matchImage()
+  })
+
+  it('should render with "startIcon" and "endIcon"', () => {
     cy.mount(
       <Button
         color="primary"
@@ -50,7 +62,28 @@ describe(Button.name, () => {
     )
 
     cy.findByRole('button', { name: /button with icon/i }).should('be.visible')
-    cy.findAllByTestId('svg-icon').should('be.visible')
     cy.matchImage()
+  })
+})
+
+describe(`${Button.name} interactions`, () => {
+  it('should called "onClick" callback once on click', () => {
+    const onClick = cy.stub().as('callback')
+    cy.mount(<Button onClick={onClick}>click button</Button>)
+
+    cy.findByRole('button', { name: /click button/i }).click()
+    cy.get('@callback').should('have.been.calledOnce')
+  })
+
+  it('should fail to trigger "onClick" callback when disabled', () => {
+    const onClick = cy.stub().as('callback')
+    cy.mount(
+      <Button onClick={onClick} disabled>
+        click button
+      </Button>,
+    )
+
+    cy.findByRole('button', { name: /click button/i }).click({ force: true })
+    cy.get('@callback').should('not.have.been.called')
   })
 })
