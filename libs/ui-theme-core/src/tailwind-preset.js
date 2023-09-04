@@ -73,7 +73,7 @@ module.exports = {
         500: '#43a047',
         600: '#368039',
       },
-      'feedback-iformative': {
+      'feedback-informative': {
         400: '#678dc5',
         500: '#4170b7',
         600: '#345a92',
