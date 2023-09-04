@@ -13,7 +13,7 @@ export function App() {
           </li>
 
           <li>
-            <Link to="/voting">Voting</Link>
+            <Link to="/voting">Voting Admin</Link>
           </li>
         </ul>
       </header>
