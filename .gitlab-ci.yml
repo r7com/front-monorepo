@@ -33,8 +33,8 @@ stages:
     # Remove as extensões de arquivo e substitui por /*
     # Remove a quebra de linha e coloca ","
     # Remove a vírgula da última pasta
-    - echo $(git diff --name-only $CI_DEFAULT_BRANCH HEAD)
-    - CHANGED_FOLDERS=$(git diff --name-only $CI_DEFAULT_BRANCH HEAD | grep -v '__image_snapshots__' | grep 'src/components' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/*,"}' | tr -d '\n' | sed 's/,$//')
+    - echo $(git diff --name-only ${CI_DEFAULT_BRANCH}...HEAD)
+    - CHANGED_FOLDERS=$(git diff --name-only ${CI_DEFAULT_BRANCH}...HEAD | grep -v '__image_snapshots__' | grep 'src/components' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/*,"}' | tr -d '\n' | sed 's/,$//')
 
 # format-check:
 #   stage: test
