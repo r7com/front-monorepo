@@ -63,12 +63,12 @@ component-test:
     # - export DISPLAY=:99
     # - echo 'Corrigir'
     - npx nx run-many -t component-test --parallel=3 --configuration=ci --spec $CHANGED_FOLDERS
-  artifacts:
-    when: on_failure
-    paths:
-      - dist/cypress
-      # - dist/cypress/**/screenshots/**/*.png
-    expire_in: 1 day
+  # artifacts:
+  #   when: on_failure
+  #   paths:
+  #     - dist/cypress
+  #     # - dist/cypress/**/screenshots/**/*.png
+  #   expire_in: 1 day
 # build:
 #   stage: build
 #   extends: .distributed
