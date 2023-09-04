@@ -103,6 +103,7 @@ const icons = [
   'whatsapp',
   'zoomin',
 ]
+
 const meta: Meta<typeof Tab> = {
   title: 'Example/Tab',
   component: Tab,
