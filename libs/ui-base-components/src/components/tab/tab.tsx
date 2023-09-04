@@ -1,27 +1,52 @@
-import { SvgIcon } from '../svg-icon'
-export type TabsProps = {
-  size?: 'small' | 'medium' | 'large'
-  startIcon?: React.ReactNode | null
-  endIcon?: React.ReactNode | null
-}
+import { SvgIcon, SvgIconProps } from '../svg-icon'
+import { SvgIcons } from '../svg-icon/svg-icon.types'
+import { TabVariants, variants } from './tab.variants'
 
-export function Tab({ size = 'medium' }: TabsProps) {
+export type TabProps = {
+  text: string
+  selected: boolean
+  id: string
+  size?: 'small' | 'medium' | 'large'
+  startIconName?: SvgIcons
+  endIconName?: SvgIcons
+} & TabVariants
+
+export function Tab({
+  text,
+  selected = false,
+  id,
+  size = 'medium',
+  startIconName,
+  endIconName,
+}: TabProps) {
+  const { button, icon } = variants({ size, selected })
+
+  const svgSize = {
+    small: 'small',
+    medium: 'medium',
+    large: 'default',
+  }[size]
+
   return (
     <button
       type="button"
-      className="flex text-light-low-400 p-nano gap-nano items-center border-b-thin border-transparent hover:text-brand-primary-600 group transition-colors active:border-b-brand-primary-500 active:text-light-low-400 active:outline-none active:drop-shadow-none focus-visible:drop-shadow-glow focus-visible:outline-none focus-visible:text-brand-primary-500 focus-visible:border-b-brand-primary-500"
+      className={button()}
+      role="tab"
+      aria-selected={selected}
+      tab-index={selected ? '0' : '-1'}
+      id={id}
     >
-      <SvgIcon
-        size="medium"
-        className="fill-light-low-400 group-active:fill-light-low-400  group-hover:fill-brand-primary-600 group-focus-visible:fill-brand-primary-500"
-        iconName="clock"
-      />
-      Sou o tab
-      <SvgIcon
-        size="medium"
-        className="fill-light-low-400 group-active:fill-light-low-400 group-hover:fill-brand-primary-600 group-focus-visible:fill-brand-primary-500"
-        iconName="chevron-bottom"
-      />
+      {startIconName && (
+        <SvgIcon
+          size={svgSize as SvgIconProps['size']}
+          className={icon()}
+          iconName={startIconName}
+        />
+      )}
+      {text}
+      {endIconName && (
+        <SvgIcon size={svgSize as SvgIconProps['size']} className={icon()} iconName={endIconName} />
+      )}
     </button>
   )
 }
