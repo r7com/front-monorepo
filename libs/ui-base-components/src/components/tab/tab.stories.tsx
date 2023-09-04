@@ -1,13 +1,146 @@
 import type { Meta, StoryObj } from '@storybook/react'
-
 import { Tab } from './tab'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
+const icons = [
+  '',
+  'archive',
+  'arrow-left',
+  'bars',
+  'bell',
+  'box',
+  'calendar-days',
+  'camera',
+  'check',
+  'chevron-bottom',
+  'chevron-left',
+  'chevron-right',
+  'chevron-top',
+  'circle-add',
+  'circle-check',
+  'circle-close',
+  'circle-constrict',
+  'circle-error',
+  'circle-expand',
+  'circle-info',
+  'clock',
+  'clone',
+  'close',
+  'closed-captioning',
+  'compress',
+  'config',
+  'contrast',
+  'dropanddown',
+  'ellipsis',
+  'error',
+  'expand',
+  'external-link',
+  'eye',
+  'facebook',
+  'flipboard',
+  'forward-10-seconds',
+  'gauge',
+  'google-news',
+  'graduate',
+  'grid',
+  'group',
+  'hand-regular',
+  'helper',
+  'image',
+  'info',
+  'instagram',
+  'interrogation',
+  'key-lg',
+  'link',
+  'linkedin',
+  'location',
+  'logo-R7',
+  'logout',
+  'more_item',
+  'mosaic',
+  'paper-word',
+  'paper',
+  'pause-circle',
+  'pause',
+  'pen',
+  'photo',
+  'pie-chart',
+  'play-circle',
+  'play',
+  'playlist',
+  'preview-closed',
+  'profile',
+  'read',
+  'record',
+  'regula',
+  'restore-1',
+  'restore',
+  'rewind-10-seconds',
+  'satellite',
+  'scale',
+  'screen',
+  'search',
+  'share',
+  'slider',
+  'snackbar-alert',
+  'snackbar-close',
+  'snackbar-success',
+  'snackbar-warning',
+  'start',
+  'success',
+  'support',
+  'theme',
+  'tiktok',
+  'tools',
+  'trash',
+  'twitter',
+  'upload',
+  'user-austronaut',
+  'video',
+  'volume-mute',
+  'volume-up',
+  'waiting',
+  'whatsapp',
+  'zoomin',
+]
 const meta: Meta<typeof Tab> = {
   title: 'Example/Tab',
   component: Tab,
   tags: ['autodocs'],
-  argTypes: {},
+  argTypes: {
+    text: {
+      description: '<b>Mandatory:</b> name displayed on tab',
+    },
+    size: {
+      description: '<b>Optional:</b> size of the tab',
+      table: {
+        defaultValue: {
+          summary: 'medium',
+        },
+      },
+      options: ['small', 'medium', 'large'],
+      control: { type: 'radio' },
+    },
+    selected: {
+      description:
+        '<b>Mandatory:</b> defines the tab as selected. Some accessibility values change depending on it',
+      table: {
+        defaultValue: {
+          summary: false,
+        },
+      },
+    },
+    startIconName: {
+      description: '<b>Optional:</b> name of the icon displayed at start of the tab',
+      options: icons,
+      control: { type: 'select' },
+    },
+    endIconName: {
+      description: '<b>Optional:</b> name of the icon displayed at the end of the tab',
+      options: icons,
+      control: { type: 'select' },
+    },
+  },
 }
 
 export default meta
@@ -15,16 +148,15 @@ type Story = StoryObj<typeof Tab>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
-  render: ({ ...args }) => (
-    <div>
-      <Tab {...args} />
-    </div>
-  ),
-  args: {},
+  args: {
+    text: 'Tab',
+    size: 'medium',
+    selected: false,
+  },
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/EMH8xJPwcYWJYP8DBYePpR/Desktop%3A-Votação?type=design&node-id=1108%3A74&mode=dev',
+      url: 'https://www.figma.com/file/nMEiuxdxLaEtYcA7K68e7r/Base-Components-(Atualiza%C3%A7%C3%A3o-2023)?node-id=1979%3A3247&mode=dev',
       accessToken: 'figd_sHs6Ap894w4C-OAFls7tuq0fMMROyue-8zQJ8hRE',
     },
   },
