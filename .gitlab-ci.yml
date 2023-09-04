@@ -34,8 +34,6 @@ stages:
     # Remove a quebra de linha e coloca ","
     # Remove a vírgula da última pasta
     - echo $(git diff --name-only origin/${CI_DEFAULT_BRANCH}...HEAD)
-    - CHANGED_FOLDERS=$(git diff --name-only origin/${CI_DEFAULT_BRANCH}...HEAD | grep -v '__image_snapshots__' | grep 'src/components' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/*,"}' | tr -d '\n' | sed 's/,$//')
-
 # format-check:
 #   stage: test
 #   extends: .distributed
@@ -63,7 +61,18 @@ component-test:
     - apt-get update && apt-get install -y xvfb
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
     - export DISPLAY=:99
+    - CHANGED_FOLDERS=$(git diff --name-only origin/${CI_DEFAULT_BRANCH}...HEAD | grep -v '__image_snapshots__' | grep 'src/components' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/*,"}' | tr -d '\n' | sed 's/,$//')
     - npx nx run-many -t component-test --parallel=3 --configuration=ci --spec $CHANGED_FOLDERS
+  only:
+    refs:
+      - main
+      - merge_requests
+      - newPipeline
+    changes:
+      - libs/**/src/components/*
+  except:
+    changes:
+      - libs/**/**/*.{json,md,css,scss,sass,stories}
   artifacts:
     when: on_failure
     paths:
