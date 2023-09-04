@@ -16,17 +16,21 @@ module.exports = {
       pill: '1.25rem',
       circular: '50%',
     },
+
     boxShadow: {
       drop: '0px 0px 0.2rem 0.1rem rgba(51, 51, 51, 8%)',
       level1: '0px 0.5rem 1rem -0.25rem rgba(51, 51, 51, 8%)',
       level2: '0px 1rem 1.5rem -0.25rem rgba(51, 51, 51, 8%)',
       level3: '0px 1rem 2rem -0.25rem rgba(51, 51, 51, 16%)',
       level4: '0px 1rem 4rem -0.25rem rgba(51, 51, 51, 24%)',
+      level5: '0px 0px 0.25rem 0px rgba(51, 51, 51, 100%)',
       inner: 'inset 0px 0.25rem 1rem -0.25rem rgba(51, 51, 51, 8%)',
+      'inner-level0': 'inset 0.25rem 0.25rem 0.25rem 0px rgba(51,51, 51, 10%)',
       'inner-level1': 'inset 0px 0.5rem 1rem -0.25rem rgba(51, 51, 51, 8%)',
       'inner-level2': 'inset 0px 1rem 1.5rem -0.25rem rgba(51, 51, 51, 8%)',
       'inner-level3': 'inset 0px 1rem 2rem -0.25rem rgba(51, 51, 51, 16%)',
       'inner-level4': 'inset 0px 1rem 4rem -0.25rem rgba(51, 51, 51, 24%)',
+      'inner-level5': 'inset 0px 0.25rem 0.25rem 0px rgba(51, 51, 51, 32%)',
     },
     dropShadow: {
       glow: '0rem 0rem 1px #218ee1',
