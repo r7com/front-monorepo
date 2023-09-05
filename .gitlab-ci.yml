@@ -56,14 +56,14 @@ stages:
 #     - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t test --parallel=3 --configuration=ci
 
 component-test:
-  image: cypress/browsers
+  image: cypress/browsers:node18.12.0-chrome106-ff106
   stage: test
   extends: .distributed
   script:
-    # - apt-get update && apt-get install -y xvfb
-    # - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-    # - export DISPLAY=:99
-    - CHANGED_FOLDERS=$(git diff --dirstat=files,0 -w --name-only origin/main...HEAD -- '*/**/components/**/*.tsx' | sed 's:/[^/]*$:/\*:' | paste -sd ',')
+    - apt-get update && apt-get install -y xvfb
+    - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+    - export DISPLAY=:99
+    - CHANGED_FOLDERS=$(git diff --dirstat=files,0 -w --name-only origin/${CI_DEFAULT_BRANCH} $CI_COMMIT_SHA | sed 's:/[^/]*$:/\*:' | paste -sd ',')
     - echo $CHANGED_FOLDERS
     - npx nx affected --base=origin/${CI_DEFAULT_BRANCH} --head=$CI_COMMIT_SHA -t component-test --parallel=3 --configuration=ci --spec "${CHANGED_FOLDERS}"
   only:
@@ -72,7 +72,7 @@ component-test:
       - merge_requests
       - newPipeline
     changes:
-      - '*/**/components/**/*.{tsx,cy.tsx}'
+      - '*/**/components/**/*.tsx'
   # except:
   #   changes:
   #     - libs/**/*.{json,md,css,scss,sass}
@@ -80,8 +80,9 @@ component-test:
   artifacts:
     when: on_failure
     paths:
-      - dist/cypress
-      # - dist/cypress/**/screenshots/**/*.png
+      # - dist/cypress
+      - dist/cypress/**/screenshots/**/*.png
+      - dist/cypress/**/videos/**/*.mp4
     expire_in: 1 day
 # build:
 #   stage: build
