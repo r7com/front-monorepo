@@ -63,7 +63,7 @@ component-test:
     # - apt-get update && apt-get install -y xvfb
     # - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
     # - export DISPLAY=:99
-    - CHANGED_FOLDERS=$(git diff --name-only origin/${CI_DEFAULT_BRANCH} $CI_COMMIT_SHA | grep -v '__image_snapshots__' | grep 'src/components' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/**/*,"}' | tr -d '\n' | sed 's/,$//')
+    - CHANGED_FOLDERS=$(git diff --name-only origin/${CI_DEFAULT_BRANCH} $CI_COMMIT_SHA | grep -v '__image_snapshots__' | grep 'src/components' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/**/*,"}' | tr -d '[:space:]\n' | sed 's/,$//')
     - echo $CHANGED_FOLDERS
     - npx cypress cache path
     - npx cypress cache list
