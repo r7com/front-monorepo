@@ -33,7 +33,7 @@ stages:
     # Remove as extensões de arquivo e substitui por /*
     # Remove a quebra de linha e coloca ","
     # Remove a vírgula da última pasta
-    - echo $(git diff --name-only origin/${CI_DEFAULT_BRANCH}...HEAD)
+    - echo $(git diff --name-only origin/${CI_DEFAULT_BRANCH}...$CI_COMMIT_SHA)
 # format-check:
 #   stage: test
 #   extends: .distributed
@@ -62,7 +62,7 @@ component-test:
     - export DISPLAY=:99
     - CHANGED_FOLDERS=$(git diff --name-only origin/${CI_DEFAULT_BRANCH}...HEAD | grep -v '__image_snapshots__' | grep 'src/components' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/*,"}' | tr -d '\n' | sed 's/,$//')
     - echo $CHANGED_FOLDERS
-    - npx nx affected -t component-test --parallel=3 --configuration=ci --spec $CHANGED_FOLDERS
+    - npx nx affected --base=origin/${CI_DEFAULT_BRANCH} --head=$CI_COMMIT_SHA -t component-test --parallel=3 --configuration=ci --spec $CHANGED_FOLDERS
   only:
     refs:
       - main
