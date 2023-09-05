@@ -8,7 +8,7 @@ image: $NODE_VERSION
 
 stages:
   - test
-  # - build
+  - build
 
 .distributed:
   interruptible: true
@@ -30,29 +30,23 @@ stages:
     - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
     - NX_HEAD=$CI_COMMIT_SHA
 
-    # CHANGED_FOLDERS:
-    # Verifica quais pastas foram modificadas até o último commit com a main
-    # Remove as extensões de arquivo e substitui por /*
-    # Remove a quebra de linha e coloca ","
-    # Remove a vírgula da última pasta
-    - echo $(git diff --name-only origin/${CI_DEFAULT_BRANCH}...$CI_COMMIT_SHA)
-# format-check:
-#   stage: test
-#   extends: .distributed
-#   script:
-#     - npx nx format:check --base=$NX_BASE --head=$NX_HEAD
+format-check:
+  stage: test
+  extends: .distributed
+  script:
+    - npx nx format:check --base=$NX_BASE --head=$NX_HEAD
 
-# lint:
-#   stage: test
-#   extends: .distributed
-#   script:
-#     - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t lint --parallel=3
+lint:
+  stage: test
+  extends: .distributed
+  script:
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t lint --parallel=3
 
-# test:
-#   stage: test
-#   extends: .distributed
-#   script:
-#     - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t test --parallel=3 --configuration=ci
+test:
+  stage: test
+  extends: .distributed
+  script:
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t test --parallel=3 --configuration=ci
 
 component-test:
   image: cypress/browsers:node18.12.0-chrome106-ff106
@@ -63,8 +57,11 @@ component-test:
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
     - export DISPLAY=:99
     - CHANGED_FOLDERS=$(git diff --dirstat=files,0 -w --name-only origin/${CI_DEFAULT_BRANCH} $CI_COMMIT_SHA -- '*/**/components/**/*.tsx' | sed 's:/[^/]*$:/\*:' | paste -sd ',')
+    # CHANGED_FOLDERS:
+    # Verifica quais pastas foram modificadas até o último commit com a main
+    # exibe apenas as pastas de componentes modificados com padrão '/*,' do spec pattern do cypress
     - echo $CHANGED_FOLDERS
-    - npx nx affected --base=origin/${CI_DEFAULT_BRANCH} --head=$CI_COMMIT_SHA -t component-test --configuration=ci --spec "${CHANGED_FOLDERS}"
+    - npx nx affected --base=origin/${CI_DEFAULT_BRANCH} --head=$CI_COMMIT_SHA -t component-test --parallel=3 --configuration=ci --spec "${CHANGED_FOLDERS}"
   only:
     refs:
       - main
@@ -72,17 +69,13 @@ component-test:
       - newPipeline
     changes:
       - '*/**/components/**/*.tsx'
-  # except:
-  #   changes:
-  #     - libs/**/*.{json,md,css,scss,sass}
-  #     - libs/**/*.{stories.tsx,config.ts,config.js}
-  # artifacts:
-  #   when: on_failure
-  #   paths:
-  #     - dist/cypress
-  #   expire_in: 1 day
-# build:
-#   stage: build
-#   extends: .distributed
-#   script:
-#     - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t build --parallel=3
+  artifacts:
+    when: on_failure
+    paths:
+      - dist/cypress
+    expire_in: 1 day
+build:
+  stage: build
+  extends: .distributed
+  script:
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t build --parallel=3
