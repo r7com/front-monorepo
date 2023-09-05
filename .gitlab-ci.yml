@@ -68,8 +68,8 @@ component-test:
       - main
       - merge_requests
       - newPipeline
-    changes:
-      - libs/**/src/components/*
+    # changes:
+    #   - libs/**/src/components/*
   # except:
   #   changes:
   #     - libs/*/**/*.{json,md,css,scss,sass}
