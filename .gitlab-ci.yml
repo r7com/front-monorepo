@@ -75,11 +75,11 @@ component-test:
   #   changes:
   #     - libs/**/*.{json,md,css,scss,sass}
   #     - libs/**/*.{stories.tsx,config.ts,config.js}
-  artifacts:
-    when: on_failure
-    paths:
-      - dist/cypress
-    expire_in: 1 day
+  # artifacts:
+  #   when: on_failure
+  #   paths:
+  #     - dist/cypress
+  #   expire_in: 1 day
 # build:
 #   stage: build
 #   extends: .distributed
