@@ -63,7 +63,7 @@ component-test:
     - export DISPLAY=:99
     - CHANGED_FOLDERS=$(git diff --dirstat=files,0 -w --name-only origin/${CI_DEFAULT_BRANCH} $CI_COMMIT_SHA -- '*/**/components/**/*.tsx' | sed 's:/[^/]*$:/\*:' | paste -sd ',')
     - echo $CHANGED_FOLDERS
-    - npx nx affected --base=origin/${CI_DEFAULT_BRANCH} --head=$CI_COMMIT_SHA -t component-test --maxWorkers=1 --configuration=ci --spec "${CHANGED_FOLDERS}"
+    - npx nx affected --base=origin/${CI_DEFAULT_BRANCH} --head=$CI_COMMIT_SHA -t component-test --verbose --skip-nx-cache --configuration=ci --spec "${CHANGED_FOLDERS}"
   only:
     refs:
       - main
