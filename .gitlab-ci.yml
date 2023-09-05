@@ -1,151 +1,81 @@
 variables:
-  NODE_VERSION: node:16.14-alpine
+  NODE_VERSION: node:18
   CI: 'true'
+  GIT_DEPTH: 0
+  CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache/Cypress'
 
 image: $NODE_VERSION
 
-default:
+stages:
+  - test
+  - build
+
+.distributed:
+  interruptible: true
   tags:
     - gitlab-runner-ec2
-  interruptible: true
+  only:
+    - main
+    - merge_requests
+    - newPipeline
   cache:
     key:
       files:
         - yarn.lock
     paths:
       - '.yarn-cache/'
+      - cache/Cypress
   before_script:
     - yarn install --cache-folder .yarn-cache --prefer-offline --frozen-lockfile
+    - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
+    - NX_HEAD=$CI_COMMIT_SHA
 
-stages:
-  - build
-  - test
-  - e2e
-
-#ui-base-components jobs
-ui-base-components build:
-  stage: build
-  script:
-    - yarn nx build ui-base-components
-  only:
-    refs:
-      - main
-      - merge_requests
-      - uiBaseComponents
-    changes:
-      - libs/ui-base-components/**/*
-  except:
-    changes:
-      - libs/ui-base-components/**/*.{json,md,css,scss,sass}
-      - libs/ui-base-components/**/*.test.{js,ts,jsx,tsx}
-      - libs/ui-base-components/**/*.spec.{js,ts,jsx,tsx}
-
-ui-base-components test:
+format-check:
   stage: test
+  extends: .distributed
   script:
-    - yarn nx test ui-base-components
-  only:
-    refs:
-      - main
-      - merge_requests
-      - uiBaseComponents
-    changes:
-      - libs/ui-base-components/**/*
-  except:
-    changes:
-      - libs/ui-base-components/**/*.{json,md,css,scss,sass}
+    - npx nx format:check --base=$NX_BASE --head=$NX_HEAD
 
-ui-base-components e2e:
-  stage: e2e
-  image: cypress/browsers:node18.12.0-chrome107
+lint:
+  stage: test
+  extends: .distributed
+  script:
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t lint --parallel=3
+
+test:
+  stage: test
+  extends: .distributed
+  script:
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t test --parallel=3 --configuration=ci
+
+component-test:
+  image: cypress/browsers:node18.12.0-chrome106-ff106
+  stage: test
+  extends: .distributed
   script:
     - apt-get update && apt-get install -y xvfb
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
     - export DISPLAY=:99
-    - yarn nx component-test ui-base-components --graph=output.html
+    - CHANGED_FOLDERS=$(git diff --dirstat=files,0 -w --name-only origin/${CI_DEFAULT_BRANCH} $CI_COMMIT_SHA -- '*/**/components/**/*.tsx' | sed 's:/[^/]*$:/\*:' | paste -sd ',')
+    # CHANGED_FOLDERS:
+    # Verifica quais pastas foram modificadas até o último commit com a main
+    # exibe apenas as pastas de componentes modificados com padrão '/*,' do spec pattern do cypress
+    - echo $CHANGED_FOLDERS
+    - npx nx affected --base=origin/${CI_DEFAULT_BRANCH} --head=$CI_COMMIT_SHA -t component-test --parallel=3 --configuration=ci --spec "${CHANGED_FOLDERS}"
   only:
     refs:
       - main
       - merge_requests
-      - uiBaseComponents
+      - newPipeline
     changes:
-      - libs/ui-base-components/**/*
-  except:
-    changes:
-      - libs/ui-base-components/**/*.{json,md,css,scss,sass}
-
+      - '*/**/components/**/*.tsx'
   artifacts:
-    when: always
+    when: on_failure
     paths:
-      - cypress/videos/**/*.mp4
-      - cypress/screenshots/**/*.png
+      - dist/cypress
     expire_in: 1 day
-#admin jobs
-# admin build:
-#   stage: build
-#   needs: ['ui-base-components build']
-#   script:
-#     - yarn nx build admin
-#   only:
-#     refs:
-#       - main
-#       - merge_requests
-#       - uiBaseComponents
-#     changes:
-#       - apps/admin/**/*
-#   except:
-#     changes:
-#       - apps/admin/**/*.{json,md,css,scss,sass}
-#       - apps/admin/**/*.test.{js,ts,jsx,tsx}
-#       - apps/admin/**/*.spec.{js,ts,jsx,tsx}
-
-# admin test:
-#   stage: test
-#   script:
-#     - yarn nx test admin
-#   only:
-#     refs:
-#       - main
-#       - merge_requests
-#       - uiBaseComponents
-#     changes:
-#       - apps/admin/**/*
-#   except:
-#     changes:
-#       - apps/admin/**/*.{json,md,css,scss,sass}
-
-# # voting jobs
-# voting build:
-#   stage: build
-#   needs: ['ui-base-components build']
-#   script:
-#     - yarn nx build voting
-#   only:
-#     refs:
-#       - main
-#       - merge_requests
-#       - uiBaseComponents
-#     changes:
-#       - apps/voting/**/*
-#   except:
-#     changes:
-#       - apps/voting/**/*.{json,md,css,scss,sass}
-#       - apps/voting/**/*.test.{js,ts,jsx,tsx}
-#       - apps/voting/**/*.spec.{js,ts,jsx,tsx}
-
-# voting test:
-#   stage: test
-#   script:
-#     - yarn nx test voting
-#   only:
-#     refs:
-#       - main
-#       - merge_requests
-#       - uiBaseComponents
-#     changes:
-#       - apps/voting/**/*
-#   except:
-#     changes:
-#       - apps/voting/**/*.{json,md,css,scss,sass}
-
-#   environment: production
+build:
+  stage: build
+  extends: .distributed
+  script:
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t build --parallel=3
