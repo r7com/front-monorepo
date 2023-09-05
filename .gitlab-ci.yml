@@ -2,6 +2,7 @@ variables:
   NODE_VERSION: node:18
   CI: 'true'
   GIT_DEPTH: 0
+  CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache/Cypress'
 
 image: $NODE_VERSION
 
@@ -23,6 +24,8 @@ stages:
         - yarn.lock
     paths:
       - '.yarn-cache/'
+      - cache/Cypress
+      - node_modules
   before_script:
     - yarn install --cache-folder .yarn-cache --prefer-offline --frozen-lockfile
     - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
@@ -53,15 +56,17 @@ stages:
 #     - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t test --parallel=3 --configuration=ci
 
 component-test:
-  image: cypress/browsers:node18.12.0-chrome106-ff106
+  image: cypress/base:18.16.1
   stage: test
   extends: .distributed
   script:
-    - apt-get update && apt-get install -y xvfb
-    - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-    - export DISPLAY=:99
-    - CHANGED_FOLDERS=$(git diff --name-only origin/${CI_DEFAULT_BRANCH} $CI_COMMIT_SHA | grep -v '__image_snapshots__' | grep 'src/components' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/*,"}' | tr -d '\n' | sed 's/,$//')
+    # - apt-get update && apt-get install -y xvfb
+    # - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+    # - export DISPLAY=:99
+    - CHANGED_FOLDERS=$(git diff --name-only origin/${CI_DEFAULT_BRANCH} $CI_COMMIT_SHA | grep -v '__image_snapshots__' | grep 'src/components' | awk -F'/' 'BEGIN {OFS="/"} {NF--; print $0 "/**/*,"}' | tr -d '\n' | sed 's/,$//')
     - echo $CHANGED_FOLDERS
+    - npx cypress cache path
+    - npx cypress cache list
     - npx nx affected --base=origin/${CI_DEFAULT_BRANCH} --head=$CI_COMMIT_SHA -t component-test --parallel=3 --configuration=ci --spec $CHANGED_FOLDERS
   only:
     refs:
