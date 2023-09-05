@@ -63,7 +63,7 @@ component-test:
     - apt-get update && apt-get install -y xvfb
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
     - export DISPLAY=:99
-    - CHANGED_FOLDERS=$(git diff --dirstat=files,0 -w --name-only origin/${CI_DEFAULT_BRANCH} $CI_COMMIT_SHA | sed 's:/[^/]*$:/\*:' | paste -sd ',')
+    - CHANGED_FOLDERS=$(git diff --dirstat=files,0 -w --name-only origin/${CI_DEFAULT_BRANCH} $CI_COMMIT_SHA -- '*/**/components/**/*.tsx' | sed 's:/[^/]*$:/\*:' | paste -sd ',')
     - echo $CHANGED_FOLDERS
     - npx nx affected --base=origin/${CI_DEFAULT_BRANCH} --head=$CI_COMMIT_SHA -t component-test --parallel=3 --configuration=ci --spec "${CHANGED_FOLDERS}"
   only:
