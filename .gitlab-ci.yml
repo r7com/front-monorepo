@@ -72,7 +72,7 @@ component-test:
       - merge_requests
       - newPipeline
     changes:
-      - /**/components/**/*.{tsx,cy.tsx}
+      - '*/**/components/**/*.{tsx,cy.tsx}'
   # except:
   #   changes:
   #     - libs/**/*.{json,md,css,scss,sass}
