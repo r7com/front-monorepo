@@ -69,11 +69,11 @@ component-test:
       - merge_requests
       - newPipeline
     changes:
-      - /**/src/components/*.{tsx,cy.tsx,ts}
-  except:
-    changes:
-      - /**/*.{json,md,css,scss,sass}
-      - /**/*.stories.tsx
+      - libs/**/*.{tsx,cy.tsx}
+  # except:
+  #   changes:
+  #     - libs/**/*.{json,md,css,scss,sass}
+  #     - libs/**/*.{stories.tsx,config.ts,config.js}
   artifacts:
     when: on_failure
     paths:
