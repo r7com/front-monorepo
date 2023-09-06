@@ -63,31 +63,6 @@
         "watch": false,
         "browser": "chrome"
       }
-    },
-    "storybook": {
-      "executor": "@nx/storybook:storybook",
-      "options": {
-        "port": 6606,
-        "configDir": "libs/ui-form-components/.storybook"
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
-    },
-    "build-storybook": {
-      "executor": "@nx/storybook:build",
-      "outputs": ["{options.outputDir}"],
-      "options": {
-        "outputDir": "dist/storybook/ui-form-components",
-        "configDir": "libs/ui-form-components/.storybook"
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
     }
   }
 }

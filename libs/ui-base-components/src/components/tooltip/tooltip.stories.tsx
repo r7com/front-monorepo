@@ -27,7 +27,6 @@ const configs: Story = {
     },
   },
   args: {
-    arrow: true,
     position: 'top',
     className: '',
     children: <Button>Elemento</Button>,
