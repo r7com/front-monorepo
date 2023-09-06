@@ -7,7 +7,7 @@ export type CardStatusProps = {
 } & CardStatusVariants
 
 export function CardStatus({ text, variant = 'info' }: CardStatusProps) {
-  const { iconColor, textColor } = variants({ variant })
+  const { iconStyle, textStyle } = variants({ variant })
 
   const statusIconVariant: Record<typeof variant, SvgIcons> = {
     success: 'circle-check',
@@ -19,8 +19,8 @@ export function CardStatus({ text, variant = 'info' }: CardStatusProps) {
 
   return (
     <div role="status" className="flex items-center p-nano">
-      <SvgIcon iconName={statusIconVariant[variant]} className={iconColor()} />
-      <p className={textColor()}>{text}</p>
+      <SvgIcon iconName={statusIconVariant[variant]} className={iconStyle()} />
+      <p className={textStyle()}>{text}</p>
     </div>
   )
 }
