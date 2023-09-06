@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.0.1-alpha.6](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-form-components-0.0.1-alpha.5...ui-form-components-0.0.1-alpha.6) (2023-09-06)
+
 ## [0.0.1-alpha.5](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-form-components-0.0.1-alpha.4...ui-form-components-0.0.1-alpha.5) (2023-09-06)
 
 ## [0.0.1-alpha.4](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-form-components-0.0.1-alpha.3...ui-form-components-0.0.1-alpha.4) (2023-09-06)

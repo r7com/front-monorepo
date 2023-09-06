@@ -69,7 +69,7 @@ deploy ui-form-components:
     - yarn nx build ui-form-components
     - echo '@r7-jarvics:registry.npmjs.org/:_authToken=${NPM_TOKEN}' > ./dist/libs/ui-form-components/.npmrc
     - ls ./dist/libs/ui-form-components
-    - yarn nx deploy ui-form-components --no-build
+    - yarn nx deploy --noBuild ui-form-components
   only:
     refs:
       - /ui-form-components\-.*/
