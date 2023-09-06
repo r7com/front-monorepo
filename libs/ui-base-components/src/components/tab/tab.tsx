@@ -4,8 +4,9 @@ import { TabVariants, variants } from './tab.variants'
 
 export type TabProps = {
   text: string
-  selected: boolean
   id: string
+  tabpanelId: string
+  selected?: boolean
   size?: 'small' | 'medium' | 'large'
   startIconName?: SvgIcons
   endIconName?: SvgIcons
@@ -15,6 +16,7 @@ export function Tab({
   text,
   selected = false,
   id,
+  tabpanelId,
   size = 'medium',
   startIconName,
   endIconName,
@@ -35,6 +37,7 @@ export function Tab({
       aria-selected={selected}
       tab-index={selected ? '0' : '-1'}
       id={id}
+      aria-controls={tabpanelId}
     >
       {startIconName && (
         <SvgIcon
