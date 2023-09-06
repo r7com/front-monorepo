@@ -51,17 +51,11 @@
         "skipServe": true,
         "watch": true,
         "browser": "chrome"
-      }
-    },
-    "component-test:ci": {
-      "executor": "@nx/cypress:cypress",
-      "options": {
-        "cypressConfig": "libs/ui-form-components/cypress.config.ts",
-        "testingType": "component",
-        "devServerTarget": "ui-form-components:build",
-        "skipServe": true,
-        "watch": false,
-        "browser": "chrome"
+      },
+      "configurations": {
+        "ci": {
+          "watch": false
+        }
       }
     },
     "storybook": {
