@@ -71,7 +71,8 @@ build:
       - dist
     expire_in: 1 week
   only:
-    - tags
+    refs:
+      - tags
   # except:
   #   - branches
 
@@ -84,4 +85,5 @@ deploy:
   dependencies:
     - build
   only:
-    - tags
+    refs:
+      - tags
