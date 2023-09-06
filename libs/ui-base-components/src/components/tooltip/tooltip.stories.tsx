@@ -27,7 +27,7 @@ const configs: Story = {
     },
   },
   args: {
-    position: 'top',
+    position: 'bottom',
     className: '',
     children: <Button>Elemento</Button>,
   },
