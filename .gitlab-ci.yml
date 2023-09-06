@@ -65,13 +65,12 @@ deploy ui-form-components:
   stage: deploy
   extends: .distributed
   # needs: []
-  before_script:
+  script:
     - yarn nx build ui-form-components
     # - echo '@r7-jarvics:registry.npmjs.org/:_authToken=${NPM_TOKEN}' > ./dist/libs/ui-form-components/.npmrc
     - 'echo "@r7-jarvics:registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc'
     - 'echo "@r7-jarvics:registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ./dist/libs/ui-form-components/.npmrc'
-    - ls ./dist/libs/ui-form-components
-  script:
+    - ls ./
     - ls ./dist/libs/ui-form-components
     - yarn nx deploy --noBuild ui-form-components
   only:
