@@ -2,13 +2,13 @@ variables:
   NODE_VERSION: node:18
   CI: 'true'
   GIT_DEPTH: 0
-  CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache/Cypress'
 
 image: $NODE_VERSION
 
 stages:
   - test
   - build
+  - deploy
 
 .distributed:
   interruptible: true
@@ -23,7 +23,6 @@ stages:
         - yarn.lock
     paths:
       - '.yarn-cache/'
-      - cache/Cypress
   before_script:
     - yarn install --cache-folder .yarn-cache --prefer-offline --frozen-lockfile
     - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
@@ -61,8 +60,28 @@ component-test:
       - dist/cypress
     expire_in: 1 day
 # só é necessário o build após a criação dos stages de release ou deploy
-# build:
-#   stage: build
-#   extends: .distributed
-#   script:
-#     - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t build --parallel=3
+build:
+  stage: build
+  extends: .distributed
+  script:
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t build --parallel=3
+  artifacts:
+    when: on_success
+    paths:
+      - dist
+    expire_in: 1 week
+  only:
+    - tags
+  # except:
+  #   - branches
+
+deploy:
+  stage: deploy
+  extends: .distributed
+  script:
+    - echo '@r7-jarvics:registry.npmjs.org/:_authToken=${NPM_TOKEN}' > ./.npmrc
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t deploy --parallel=3
+  dependencies:
+    - build
+  only:
+    - tags
