@@ -112,12 +112,6 @@
       "options": {
         "preset": "angular"
       }
-    },
-    "deploy": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "access": "restricted"
-      }
     }
   },
   "implicitDependencies": ["ui-theme-core"]
