@@ -68,8 +68,8 @@ deploy ui-form-components:
     - yarn nx build ui-form-components
     - yarn nx build-css ui-form-components
     - cd ./dist/libs/ui-form-components
-    - echo "@r7devs:registry=https://registry.npmjs.org/" > /.npmrc
-    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> /.npmrc
+    - echo "@r7devs:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
     - npm publish
   only:
     refs:
@@ -85,8 +85,8 @@ deploy ui-base-components:
     - yarn nx build ui-base-components
     - yarn nx build-css ui-base-components
     - cd ./dist/libs/ui-base-components
-    - echo "@r7devs:registry=https://registry.npmjs.org/" > /.npmrc
-    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> /.npmrc
+    - echo "@r7devs:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
     - npm publish
   only:
     refs:
