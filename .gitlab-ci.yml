@@ -93,8 +93,7 @@ deploy ui-base-components:
     # - ls ./
     - echo "@r7devs:registry=https://registry.npmjs.org/" > ./dist/libs/ui-base-components/.npmrc
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ./dist/libs/ui-base-components/.npmrc
-    - cd ./dist/libs/ui-base-components
-    - npm publish
+    - yarn nx deploy ui-base-components --noBuild --dist-folder-path './dist/libs/ui-base-components'
   only:
     refs:
       - /ui-base-components\-.*/
