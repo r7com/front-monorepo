@@ -16,6 +16,7 @@
       "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
+      "dependsOn": ["build-css"],
       "options": {
         "outputPath": "dist/libs/ui-base-components"
       },
@@ -26,6 +27,12 @@
         "production": {
           "mode": "production"
         }
+      }
+    },
+    "build-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tailwindcss -c libs/ui-base-components/tailwind.config.js --minify  -i libs/ui-base-components/src/style.css -o dist/libs/ui-base-components/style.css"
       }
     },
     "test": {

@@ -71,12 +71,31 @@ deploy ui-form-components:
     # - 'echo "@r7-jarvics:registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc'
     # - 'echo "@r7-jarvics:registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ./dist/libs/ui-form-components/.npmrc'
     # - ls ./
-    - echo "@r7-jarvics:registry.npmjs.org/:_authToken=${NPM_TOKEN}">./dist/libs/ui-form-components/.npmrc
-    - cat ./dist/libs/ui-form-components/.npmrc
-    - ls -la ./dist/libs/ui-form-components
+    - echo "@r7devs:registry=https://registry.npmjs.org/" > ./dist/libs/ui-form-components/.npmrc
+    - echo "@r7-jarvics:registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ./dist/libs/ui-form-components/.npmrc
     - yarn nx deploy --noBuild ui-form-components
   only:
     refs:
       - /ui-form-components\-.*/
+    # except:
+    # - branches
+
+deploy ui-base-components:
+  stage: deploy
+  extends: .distributed
+  # needs: []
+  script:
+    - yarn nx build ui-base-components
+    - yarn nx build-css ui-base-components
+    # - echo '@r7-jarvics:registry.npmjs.org/:_authToken=${NPM_TOKEN}' > ./dist/libs/ui-base-components/.npmrc
+    # - 'echo "@r7-jarvics:registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc'
+    # - 'echo "@r7-jarvics:registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ./dist/libs/ui-base-components/.npmrc'
+    # - ls ./
+    - echo "@r7devs:registry=https://registry.npmjs.org/" > ./dist/libs/ui-base-components/.npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ./dist/libs/ui-base-components/.npmrc
+    - yarn nx deploy --noBuild ui-base-components
+  only:
+    refs:
+      - /ui-base-components\-.*/
     # except:
     # - branches
