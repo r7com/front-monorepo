@@ -14,9 +14,9 @@ export type TabProps = {
 
 export function Tab({
   text,
-  selected = false,
   id,
   tabpanelId,
+  selected = false,
   size = 'medium',
   startIconName,
   endIconName,
