@@ -4,10 +4,73 @@
   "sourceRoot": "apps/vision-components/src",
   "projectType": "application",
   "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/vision-components"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "vision-components:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "vision-components:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "vision-components:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "vision-components:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "vision-components:build:development"
+        },
+        "production": {
+          "buildTarget": "vision-components:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/apps/vision-components"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/vision-components/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
     "storybook": {
       "executor": "@nx/storybook:storybook",
       "options": {
-        "port": 6606,
+        "port": 4400,
         "configDir": "apps/vision-components/.storybook"
       },
       "configurations": {
@@ -20,7 +83,7 @@
       "executor": "@nx/storybook:build",
       "outputs": ["{options.outputDir}"],
       "options": {
-        "outputDir": "dist/apps/vision-components",
+        "outputDir": "dist/storybook/vision-components",
         "configDir": "apps/vision-components/.storybook"
       },
       "configurations": {
