@@ -1,6 +1,6 @@
 {
   "name": "@r7devs/ui-base-components",
-  "version": "0.0.1-alpha.5",
+  "version": "0.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
