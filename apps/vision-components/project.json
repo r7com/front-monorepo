@@ -70,7 +70,7 @@
     "storybook": {
       "executor": "@nx/storybook:storybook",
       "options": {
-        "port": 4400,
+        "port": 6606,
         "configDir": "apps/vision-components/.storybook"
       },
       "configurations": {
@@ -83,7 +83,7 @@
       "executor": "@nx/storybook:build",
       "outputs": ["{options.outputDir}"],
       "options": {
-        "outputDir": "dist/storybook/vision-components",
+        "outputDir": "dist/apps/vision-components",
         "configDir": "apps/vision-components/.storybook"
       },
       "configurations": {

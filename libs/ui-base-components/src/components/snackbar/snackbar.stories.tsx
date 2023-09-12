@@ -15,7 +15,7 @@ type Story = StoryObj<SnackbarProps>
 
 export const Primary: Story = {
   render: ({ ...args }) => (
-    <div className="h-[500px]">
+    <div style={{ height: 500 }}>
       <Snackbar {...args} />
     </div>
   ),

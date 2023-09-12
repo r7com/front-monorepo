@@ -15,7 +15,9 @@ type Story = StoryObj<typeof Tooltip>
 
 const configs: Story = {
   render: ({ ...args }) => (
-    <div className="centralize">
+    <div
+      style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}
+    >
       <Tooltip {...args} />
     </div>
   ),
