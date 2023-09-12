@@ -130,16 +130,27 @@ const meta: Meta<typeof Tab> = {
           summary: false,
         },
       },
+      type: 'boolean',
     },
     startIconName: {
       description: '<b>Optional:</b> name of the icon displayed at start of the tab',
       options: icons,
       control: { type: 'select' },
+      type: 'string',
     },
     endIconName: {
       description: '<b>Optional:</b> name of the icon displayed at the end of the tab',
       options: icons,
       control: { type: 'select' },
+      type: 'string',
+    },
+    id: {
+      description: '<b>Mandatory:</b> Unique identifier fot the tab',
+      type: 'string',
+    },
+    tabpanelId: {
+      description: '<b>Mandatory:</b> Unique identifier of the panel related to the tab',
+      type: 'string',
     },
   },
 }
