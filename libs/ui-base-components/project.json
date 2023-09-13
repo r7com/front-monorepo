@@ -58,31 +58,6 @@
         }
       }
     },
-    "storybook": {
-      "executor": "@nx/storybook:storybook",
-      "options": {
-        "port": 6606,
-        "configDir": "libs/ui-base-components/.storybook"
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
-    },
-    "build-storybook": {
-      "executor": "@nx/storybook:build",
-      "outputs": ["{options.outputDir}"],
-      "options": {
-        "outputDir": "dist/storybook/ui-base-components",
-        "configDir": "libs/ui-base-components/.storybook"
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
-    },
     "generate-svg-types": {
       "executor": "nx:run-commands",
       "options": {
