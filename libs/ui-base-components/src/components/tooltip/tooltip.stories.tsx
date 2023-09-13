@@ -15,7 +15,10 @@ type Story = StoryObj<typeof Tooltip>
 
 const configs: Story = {
   render: ({ ...args }) => (
-    <div className="justify-center flex items-center h-[100vh]">
+    <div
+      className="justify-center flex items-center h-screen"
+      // style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}
+    >
       <Tooltip {...args} />
     </div>
   ),
@@ -27,8 +30,7 @@ const configs: Story = {
     },
   },
   args: {
-    arrow: true,
-    position: 'top',
+    position: 'bottom',
     className: '',
     children: <Button>Elemento</Button>,
   },
