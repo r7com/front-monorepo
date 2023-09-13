@@ -12,8 +12,8 @@ describe(Chips.name, () => {
         size="large"
         disabled
         color="primary"
-        startIcon={<SvgIcon iconName="chevron-left" fill="white" />}
-        endIcon={<SvgIcon iconName="chevron-right" fill="white" />}
+        startIcon={<SvgIcon iconName="chevron-left" />}
+        endIcon={<SvgIcon iconName="chevron-right" />}
       >
         {text}
       </Chips>,
@@ -29,8 +29,8 @@ describe(Chips.name, () => {
         size="medium"
         disabled
         color="tertiary"
-        startIcon={<SvgIcon iconName="chevron-left" fill="white" />}
-        endIcon={<SvgIcon iconName="chevron-right" fill="white" />}
+        startIcon={<SvgIcon iconName="chevron-left" />}
+        endIcon={<SvgIcon iconName="chevron-right" />}
       >
         {text}
       </Chips>,
@@ -48,8 +48,8 @@ describe(Chips.name, () => {
         disabled
         color="primary"
         onClick={handleClick}
-        startIcon={<SvgIcon iconName="chevron-left" fill="white" />}
-        endIcon={<SvgIcon iconName="chevron-right" fill="white" />}
+        startIcon={<SvgIcon iconName="chevron-left" />}
+        endIcon={<SvgIcon iconName="chevron-right" />}
         clickable
       >
         {text}
@@ -69,8 +69,8 @@ describe(Chips.name, () => {
         disabled
         color="tertiary"
         onClick={handleClick}
-        startIcon={<SvgIcon iconName="chevron-left" fill="white" />}
-        endIcon={<SvgIcon iconName="chevron-right" fill="white" />}
+        startIcon={<SvgIcon iconName="chevron-left" />}
+        endIcon={<SvgIcon iconName="chevron-right" />}
         clickable
       >
         {text}
@@ -85,8 +85,8 @@ describe(Chips.name, () => {
   it('renders a large chip with selected primary', () => {
     cy.mount(
       <Chips
-        startIcon={<SvgIcon iconName="chevron-left" fill="white" />}
-        endIcon={<SvgIcon iconName="chevron-right" fill="white" />}
+        startIcon={<SvgIcon iconName="chevron-left" />}
+        endIcon={<SvgIcon iconName="chevron-right" />}
         size="large"
         color="primary"
         selected
@@ -103,8 +103,8 @@ describe(Chips.name, () => {
   it('renders a medium chip with selected tertiary', () => {
     cy.mount(
       <Chips
-        startIcon={<SvgIcon iconName="chevron-left" fill="white" />}
-        endIcon={<SvgIcon iconName="chevron-right" fill="white" />}
+        startIcon={<SvgIcon iconName="chevron-left" />}
+        endIcon={<SvgIcon iconName="chevron-right" />}
         size="medium"
         color="tertiary"
         selected
@@ -122,8 +122,8 @@ describe(Chips.name, () => {
     cy.mount(
       <Chips
         size="small"
-        startIcon={<SvgIcon iconName="chevron-left" fill="white" />}
-        endIcon={<SvgIcon iconName="chevron-right" fill="white" />}
+        startIcon={<SvgIcon iconName="chevron-left" />}
+        endIcon={<SvgIcon iconName="chevron-right" />}
         color="secondary"
         selected
       >
@@ -140,8 +140,8 @@ describe(Chips.name, () => {
     const handleClick = cy.stub()
     cy.mount(
       <Chips
-        startIcon={<SvgIcon iconName="chevron-left" fill="white" />}
-        endIcon={<SvgIcon iconName="chevron-right" fill="white" />}
+        startIcon={<SvgIcon iconName="chevron-left" />}
+        endIcon={<SvgIcon iconName="chevron-right" />}
         size="large"
         color="primary"
         onClick={handleClick}
@@ -162,8 +162,8 @@ describe(Chips.name, () => {
     const handleClick = cy.stub()
     cy.mount(
       <Chips
-        startIcon={<SvgIcon iconName="chevron-left" fill="white" />}
-        endIcon={<SvgIcon iconName="chevron-right" fill="white" />}
+        startIcon={<SvgIcon iconName="chevron-left" />}
+        endIcon={<SvgIcon iconName="chevron-right" />}
         size="medium"
         color="tertiary"
         onClick={handleClick}
@@ -185,8 +185,8 @@ describe(Chips.name, () => {
     cy.mount(
       <Chips
         size="small"
-        startIcon={<SvgIcon iconName="chevron-left" fill="white" />}
-        endIcon={<SvgIcon iconName="chevron-right" fill="white" />}
+        startIcon={<SvgIcon iconName="chevron-left" />}
+        endIcon={<SvgIcon iconName="chevron-right" />}
         color="secondary"
         onClick={handleClick}
         selected
@@ -207,8 +207,8 @@ describe(Chips.name, () => {
       <Chips
         size="large"
         color="primary"
-        startIcon={<SvgIcon iconName="chevron-left" fill="white" />}
-        endIcon={<SvgIcon iconName="chevron-right" fill="white" />}
+        startIcon={<SvgIcon iconName="chevron-left" />}
+        endIcon={<SvgIcon iconName="chevron-right" />}
       >
         {text}
       </Chips>,
@@ -224,8 +224,8 @@ describe(Chips.name, () => {
       <Chips
         size="medium"
         color="secondary"
-        startIcon={<SvgIcon iconName="chevron-left" fill="white" />}
-        endIcon={<SvgIcon iconName="chevron-right" fill="white" />}
+        startIcon={<SvgIcon iconName="chevron-left" />}
+        endIcon={<SvgIcon iconName="chevron-right" />}
       >
         {text}
       </Chips>,
@@ -241,8 +241,8 @@ describe(Chips.name, () => {
       <Chips
         size="small"
         color="tertiary"
-        startIcon={<SvgIcon iconName="chevron-left" fill="white" />}
-        endIcon={<SvgIcon iconName="chevron-right" fill="white" />}
+        startIcon={<SvgIcon iconName="chevron-left" />}
+        endIcon={<SvgIcon iconName="chevron-right" />}
       >
         {text}
       </Chips>,
