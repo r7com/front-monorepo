@@ -9,6 +9,7 @@ image: $NODE_VERSION
 stages:
   - test
   - build
+  - storybook
 
 .distributed:
   interruptible: true
@@ -28,6 +29,21 @@ stages:
     - yarn install --cache-folder .yarn-cache --prefer-offline --frozen-lockfile
     - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
     - NX_HEAD=$CI_COMMIT_SHA
+
+storybook:
+  extends: .distributed
+  stage: storybook
+  script:
+    - yarn nx build-storybook vision-components
+    - ls -la dist/apps/vision-components
+
+  only:
+    refs:
+      - main
+      - merge_requests
+      - deployStorybook
+    changes:
+      - '*/**/components/**/*.stories.tsx'
 
 test:
   stage: test
