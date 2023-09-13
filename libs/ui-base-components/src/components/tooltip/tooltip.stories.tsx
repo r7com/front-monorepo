@@ -16,7 +16,8 @@ type Story = StoryObj<typeof Tooltip>
 const configs: Story = {
   render: ({ ...args }) => (
     <div
-      style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}
+      className="justify-center flex items-center h-screen"
+      // style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}
     >
       <Tooltip {...args} />
     </div>

@@ -4,8 +4,8 @@ const { join } = require('path')
 module.exports = {
   mode: 'jit',
   content: [
-    join(__dirname, '{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}'),
-    'libs/**/!(*.stories|*.spec|*.cy).{tsx,ts,jsx,js,html}',
+    join(__dirname, '{src,pages,components,app}/**/*!(*.spec).{ts,tsx,html}'),
+    'libs/**/!(*.spec|*.cy).{tsx,ts,jsx,js,html}',
   ],
   theme: {
     extend: {},

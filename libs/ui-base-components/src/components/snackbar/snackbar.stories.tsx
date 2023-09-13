@@ -15,12 +15,13 @@ type Story = StoryObj<SnackbarProps>
 
 export const Primary: Story = {
   render: ({ ...args }) => (
-    <div style={{ height: 500 }}>
+    <div className="h-[500px]">
       <Snackbar {...args} />
     </div>
   ),
   args: {
     message: 'mensagem',
+    open: true,
   },
   parameters: {
     design: {
