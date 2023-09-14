@@ -111,6 +111,10 @@
     "vitest": "^0.32.0",
     "webpack-merge": "^5.9.0"
   },
+  "resolutions": {
+    "wrap-ansi": "7.0.0",
+    "string-width": "4.1.0"
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
