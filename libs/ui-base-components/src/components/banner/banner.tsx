@@ -1,32 +1,55 @@
-import { useState, type ReactNode } from 'react'
+import { type ReactNode } from 'react'
 import { IconButton } from '../icon-button'
 import { SvgIcon } from '../svg-icon'
+import { variants } from './banner-variants'
+import { BannerNormalIconProps } from './components/banner-icon'
+import { SvgIcons } from '../svg-icon/svg-icon.types'
+
+/** Temporariamente aqui  */
+type CustomExtract<T, U extends T> = U
+
+/** Temporário  */
+export type MockBannerProps = {
+  isVisible: BannerProps['isVisible']
+  iconType: BannerNormalIconProps['type']
+  customIconName: CustomExtract<SvgIcons, 'record' | 'chevron-right'>
+  description: string
+  imageSourceUrl: string
+}
+
+/** Temporário  */
+export function MockBanner({ iconType = 'informative', isVisible = true }: MockBannerProps) {
+  return <div></div>
+}
 
 export type BannerProps = {
   children?: ReactNode
-  /** Repassa a função de fechar o banner */
-  renderBanner?: ({ close }: { close: () => void }) => ReactNode
+  /** Mostra ou não o banner */
+  isVisible: boolean
   /** Callback ao fechar */
-  onClose?: () => void
+  onClose?: (isVisible: boolean) => void
 }
 
-export function Banner({ children, renderBanner, onClose }: BannerProps) {
-  const [isOpen, setIsOpen] = useState(true)
-
-  function close() {
-    setIsOpen(false)
-    onClose && onClose()
+export function Banner({ children, isVisible, onClose }: BannerProps) {
+  function handleClose() {
+    if (onClose) {
+      onClose(!isVisible)
+    }
   }
 
   return (
-    isOpen && (
-      <div className="relative bg-dark-low-400 text-light-high-400 rounded-lg p-nano flex gap-xxs flex-wrap">
+    isVisible && (
+      <div className={variants({ onClose: !!onClose })}>
         {children}
-        {renderBanner && renderBanner({ close })}
-        {children && (
-          <IconButton className="absolute right-nano top-right-nano" onClick={close}>
-            <SvgIcon iconName="close" size="small" />
-          </IconButton>
+        {onClose && (
+          <div className="flex h-full justify-start">
+            <IconButton
+              className="absolute right-nano top-right-nano [&>svg]:fill-neutral-high-400 dark:[&>svg]:fill-dark-low-400"
+              onClick={handleClose}
+            >
+              <SvgIcon iconName="close" size="small" />
+            </IconButton>
+          </div>
         )}
       </div>
     )
