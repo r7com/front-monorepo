@@ -3,5 +3,9 @@ export type BannerOptionsProps = {
 }
 
 export function BannerOptions({ children }: BannerOptionsProps) {
-  return <div className="flex gap-xxxs p-xxxs shrink-0 ml-auto">{children}</div>
+  return (
+    <div className="flex h-full items-center p-xxxs ml-auto">
+      <div className="flex items-center gap-xxxs h-fit shrink-0">{children}</div>
+    </div>
+  )
 }
