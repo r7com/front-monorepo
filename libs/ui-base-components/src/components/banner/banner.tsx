@@ -1,9 +1,8 @@
-import { type ReactNode } from 'react'
 import { IconButton } from '../icon-button'
 import { SvgIcon } from '../svg-icon'
 import { variants } from './banner-variants'
-import { BannerNormalIconProps } from './components/banner-icon'
-import { SvgIcons } from '../svg-icon/svg-icon.types'
+import { type BannerNormalIconProps } from './components/banner-icon'
+import { type SvgIcons } from '../svg-icon/svg-icon.types'
 
 /** Temporariamente aqui  */
 type CustomExtract<T, U extends T> = U
@@ -23,7 +22,7 @@ export function MockBanner({ iconType = 'informative', isVisible = true }: MockB
 }
 
 export type BannerProps = {
-  children?: ReactNode
+  children?: React.ReactNode
   /** Mostra ou não o banner */
   isVisible: boolean
   /** Callback ao fechar */
