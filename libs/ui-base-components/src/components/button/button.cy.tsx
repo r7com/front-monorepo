@@ -54,8 +54,8 @@ describe(`${Button.name} variant options`, () => {
     cy.mount(
       <Button
         color="primary"
-        startIcon={<SvgIcon iconName="check" />}
-        endIcon={<SvgIcon iconName="check" />}
+        startIcon={<SvgIcon iconName="check" fill="white" />}
+        endIcon={<SvgIcon iconName="check" fill="white" />}
       >
         Button With Icon
       </Button>,

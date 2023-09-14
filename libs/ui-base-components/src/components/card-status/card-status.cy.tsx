@@ -1,6 +1,6 @@
 import { CardStatus } from './card-status'
 
-describe(`should render all its ${CardStatus.name}`, () => {
+describe(`${CardStatus.name} variant options`, () => {
   const text = 'Card Status'
   const role = 'status'
   const byRoleText = (role: string, text: string) => {
