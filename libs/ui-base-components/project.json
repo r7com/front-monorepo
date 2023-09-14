@@ -58,6 +58,12 @@
         }
       }
     },
+    "svg-sprite": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx svg-sprite --symbol --si=true --dest={projectRoot}/src/svg/compiled {projectRoot}/src/svg/*.svg"
+      }
+    },
     "generate-svg-types": {
       "executor": "nx:run-commands",
       "options": {

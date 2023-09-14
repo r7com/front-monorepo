@@ -31,16 +31,7 @@ module.exports = composePlugins(withNx(), withReact(), withModuleFederation(prod
   // Further customize webpack config
   config.module.rules.push({
     test: /\.svg$/i,
-    use: [
-      {
-        loader: '@svgr/webpack',
-        options: {
-          dimensions: false,
-          titleProp: true,
-        },
-      },
-      'url-loader',
-    ],
+    use: ['url-loader', 'svg-sprite-loader'],
   })
 
   return config
