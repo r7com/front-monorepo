@@ -36,7 +36,6 @@ storybook:
   script:
     - yarn nx build-storybook vision-components
     - ls -la dist/apps/vision-components
-
   only:
     refs:
       - main
@@ -44,7 +43,6 @@ storybook:
       - deployStorybook
     changes:
       - '*/**/components/**/*.stories.tsx'
-
 test:
   stage: test
   extends: .distributed
