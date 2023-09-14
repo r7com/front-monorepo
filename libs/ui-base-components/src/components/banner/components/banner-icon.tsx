@@ -1,11 +1,18 @@
-import React from 'react'
 import { SvgIcon } from '../../svg-icon'
 import { SvgIcons } from '../../svg-icon/svg-icon.types'
-import { variants, BannerIconVariants } from './banner-icon-variants'
+import { variants, type BannerIconVariants } from './banner-icon-variants'
 
-export type BannerIconProps = {
+export type BannerNormalIconProps = {
+  type: Exclude<BannerIconVariants['type'], 'custom'>
   children?: React.ReactNode
-} & BannerIconVariants
+}
+
+export type BannerCustomIconProps = {
+  type: 'custom'
+  children: React.ReactNode
+}
+
+export type BannerIconProps = BannerNormalIconProps | BannerCustomIconProps
 
 export function BannerIcon({ children, type = 'informative' }: BannerIconProps) {
   const iconVariant: Record<Exclude<typeof type, 'custom'>, SvgIcons> = {
