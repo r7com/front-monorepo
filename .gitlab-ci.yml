@@ -40,7 +40,6 @@ storybook:
     refs:
       - main
       - merge_requests
-      - deployStorybook
     changes:
       - '*/**/components/**/*.stories.tsx'
 test:
