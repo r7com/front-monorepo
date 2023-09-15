@@ -1,6 +1,5 @@
-import { SvgIcon } from '../svg-icon'
+import { SvgIcon, SvgIcons } from '../svg-icon'
 import { CardStatusVariants, variants } from './card-status.variants'
-import { SvgIcons } from '../svg-icon/svg-icon.types'
 
 export type CardStatusProps = {
   text: string
