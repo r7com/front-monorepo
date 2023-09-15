@@ -67,19 +67,19 @@
     "generate-svg-types": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "node generate-dynamic-types.js --inputFolder libs/ui-base-components/src/svg --outputFile libs/ui-base-components/src/components/svg-icon/svg-icon.types.ts --typeName SvgIcons"
+        "command": "node tools/generate-dynamic-types.js --inputFolder {projectRoot}/src/svg --outputFile {projectRoot}/src/components/svg-icon/svg-icon.types.ts --typeName SvgIcons"
       }
     },
     "show-svg-types": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "node generate-dynamic-types.js --inputFolder libs/ui-base-components/src/svg --outputFile libs/ui-base-components/src/components/svg-icon/svg-icon.types.ts --typeName SvgIcons --showOnlyTypesTable"
+        "command": "node tools/generate-dynamic-types.js --inputFolder {projectRoot}/src/svg --outputFile {projectRoot}/src/components/svg-icon/svg-icon.types.ts --typeName SvgIcons --showOnlyTypesTable"
       }
     },
     "show-svg-types-auto-fix": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "node generate-dynamic-types.js --inputFolder libs/ui-base-components/src/svg --outputFile libs/ui-base-components/src/components/svg-icon/svg-icon.types.ts --typeName SvgIcons --showOnlyTypesTable --autoFix"
+        "command": "node tools/generate-dynamic-types.js --inputFolder {projectRoot}/src/svg --outputFile {projectRoot}/src/components/svg-icon/svg-icon.types.ts --typeName SvgIcons --showOnlyTypesTable --autoFix"
       }
     }
   },
