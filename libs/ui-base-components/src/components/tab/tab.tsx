@@ -23,7 +23,7 @@ export function Tab({
   endIconName,
 }: TabProps) {
   const ref = useRef<HTMLButtonElement>(null)
-  const { button, icon } = variants({ size, selected })
+  const { button, icon } = variants({ size })
   const tabEvent = new CustomEvent('onTabClick', {
     bubbles: true,
     detail: {
