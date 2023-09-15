@@ -2,6 +2,10 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.0.2-alpha.3](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.0.2-alpha.2...ui-base-components-0.0.2-alpha.3) (2023-09-15)
+
+## [0.0.2-alpha.3](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.0.2-alpha.2...ui-base-components-0.0.2-alpha.3) (2023-09-15)
+
 ## [0.0.2-alpha.2](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.0.2-alpha.1...ui-base-components-0.0.2-alpha.2) (2023-09-15)
 
 ### Bug Fixes
