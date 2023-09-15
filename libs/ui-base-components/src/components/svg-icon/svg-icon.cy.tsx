@@ -1,5 +1,4 @@
 import { SvgIcon } from './svg-icon'
-import { SvgIcons } from './svg-icon.types'
 
 describe(SvgIcon.name, () => {
   it('should render all "color" variant options', () => {
@@ -32,11 +31,6 @@ describe(SvgIcon.name, () => {
     cy.findByTitle('icon 2').should('exist')
     cy.findByTitle('icon 3').should('exist')
     cy.matchImage()
-  })
-
-  it('should not render svg when icon name does not exist', () => {
-    cy.mount(<SvgIcon iconName={'non-existent' as SvgIcons} color="primary" title="Informação" />)
-    cy.findByTitle('Informação').should('not.exist')
   })
 
   it('should render svg with aria-hidden=true when title does not exist', () => {

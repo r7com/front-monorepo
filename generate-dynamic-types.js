@@ -8,7 +8,7 @@ class Config {
     /** Pasta dos arquivos que vão virar tipagem */
     this.inputFolder = getParam('--inputFolder')
     /** OPCIONAL: Pega apenas a extensão do arquivo passada, `ex: .svg` */
-    this.inputExtension = getParam('--inputExtension')
+    this.inputExtension = getParam('--inputExtension') || '.svg'
     /** Arquivo onde vai ser gerado a tipagem, ex: `libs/app/src/file.types.ts` */
     this.outputFile = getParam('--outputFile')
     /** Nome da tipagem, por exemplo `SvgIcons` */
