@@ -15,9 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@r7-jarvics/ui-base-components": ["libs/ui-base-components/src/index.ts"],
-      "@r7-jarvics/ui-form-components": ["libs/ui-form-components/src/index.ts"],
-      "@r7-jarvics/utils": ["libs/utils/src/index.ts"]
+      "@r7/tools": ["tools/src/index.ts"],
+      "@r7/ui-base-components": ["libs/ui-base-components/src/index.ts"],
+      "@r7/ui-form-components": ["libs/ui-form-components/src/index.ts"],
+      "@r7/ui-header-horizontal-menu": ["libs/ui-header-horizontal-menu/src/index.ts"],
+      "@r7/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

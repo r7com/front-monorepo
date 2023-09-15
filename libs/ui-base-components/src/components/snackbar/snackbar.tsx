@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
-import { SvgIcon } from '../svg-icon'
-import { SvgIcons } from '../svg-icon/svg-icon.types'
+import { SvgIcon, SvgIcons } from '../svg-icon'
 import { variants, SnackbarVariants } from './snackbar.variants'
 
 export type SnackbarProps = {

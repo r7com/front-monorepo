@@ -1,40 +1,40 @@
 import { CardStatus } from './card-status'
 
-describe(CardStatus.name, () => {
+describe(`${CardStatus.name} variant options`, () => {
   const text = 'Card Status'
+  const role = 'status'
+  const byRoleText = (role: string, text: string) => {
+    cy.findByRole(role).should('be.visible')
+    cy.findByText(text).should('be.visible')
+  }
 
-  it(`Check status of success`, () => {
+  it(`should render success status`, () => {
     cy.mount(<CardStatus text={text} variant="success" />)
-    cy.get('[data-testid="card-status"]').should('be.visible')
-    cy.get('[data-testid="card-status"] > p').should('have.text', text)
+    byRoleText(role, text)
     cy.matchImage()
   })
 
-  it(`Check status of error`, () => {
+  it(`should render error status`, () => {
     cy.mount(<CardStatus text={text} variant="error" />)
-    cy.get('[data-testid="card-status"]').should('be.visible')
-    cy.get('[data-testid="card-status"] > p').should('have.text', text)
+    byRoleText(role, text)
     cy.matchImage()
   })
 
-  it(`Check status of helper`, () => {
+  it(`should render helper status`, () => {
     cy.mount(<CardStatus text={text} variant="helper" />)
-    cy.get('[data-testid="card-status"]').should('be.visible')
-    cy.get('[data-testid="card-status"] > p').should('have.text', text)
+    byRoleText(role, text)
     cy.matchImage()
   })
 
-  it(`Check status of info`, () => {
+  it(`should render info status`, () => {
     cy.mount(<CardStatus text={text} variant="info" />)
-    cy.get('[data-testid="card-status"]').should('be.visible')
-    cy.get('[data-testid="card-status"] > p').should('have.text', text)
+    byRoleText(role, text)
     cy.matchImage()
   })
 
-  it(`Check status of waiting`, () => {
+  it(`should render waiting status`, () => {
     cy.mount(<CardStatus text={text} variant="waiting" />)
-    cy.get('[data-testid="card-status"]').should('be.visible')
-    cy.get('[data-testid="card-status"] > p').should('have.text', text)
+    byRoleText(role, text)
     cy.matchImage()
   })
 })

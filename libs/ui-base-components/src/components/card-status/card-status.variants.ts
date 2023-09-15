@@ -1,32 +1,32 @@
-import { createVariants, VariantProps } from '@r7-jarvics/utils'
+import { createVariants, VariantProps } from '@r7/tools'
 
 export const variants = createVariants({
   slots: {
-    iconVariant: 'w-xxxs h-xxxs min-w-max min-h-max m-nano',
-    textVariant: 'text-xxxs',
+    iconStyle: 'w-xxxs h-xxxs min-w-max min-h-max m-nano',
+    textStyle: 'text-xxxs',
   },
   variants: {
     variant: {
       success: {
-        iconVariant: 'fill-feedback-success-400',
-        textVariant: 'text-feedback-success-400',
+        iconStyle: 'fill-feedback-success-400',
+        textStyle: 'text-feedback-success-400',
       },
       error: {
-        iconVariant: 'fill-feedback-warning-400',
-        textVariant: 'text-feedback-warning-400',
+        iconStyle: 'fill-feedback-warning-400',
+        textStyle: 'text-feedback-warning-400',
       },
 
       helper: {
-        iconVariant: 'fill-feedback-helper-400',
-        textVariant: 'text-feedback-helper-400',
+        iconStyle: 'fill-feedback-helper-400',
+        textStyle: 'text-feedback-helper-400',
       },
       info: {
-        iconVariant: 'fill-brand-primary-400',
-        textVariant: 'text-brand-primary-400',
+        iconStyle: 'fill-brand-primary-400',
+        textStyle: 'text-brand-primary-400',
       },
       waiting: {
-        iconVariant: 'fill-brand-primary-400',
-        textVariant: 'text-brand-primary-400',
+        iconStyle: 'fill-brand-primary-400',
+        textStyle: 'text-brand-primary-400',
       },
     },
   },

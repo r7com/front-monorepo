@@ -8,6 +8,8 @@ image: $NODE_VERSION
 stages:
   - test
   - deploy
+  - build
+  - storybook
 
 .distributed:
   interruptible: true
@@ -22,11 +24,24 @@ stages:
         - yarn.lock
     paths:
       - '.yarn-cache/'
+      - cache/Cypress
   before_script:
     - yarn install --cache-folder .yarn-cache --prefer-offline --frozen-lockfile
     - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
     - NX_HEAD=$CI_COMMIT_SHA
 
+storybook:
+  extends: .distributed
+  stage: storybook
+  script:
+    - yarn nx build-storybook vision-components
+    - ls -la dist/apps/vision-components
+  only:
+    refs:
+      - main
+      - merge_requests
+    changes:
+      - '*/**/components/**/*.stories.tsx'
 test:
   stage: test
   extends: .distributed
@@ -68,7 +83,7 @@ deploy ui-form-components:
     - yarn nx build ui-form-components
     - yarn nx build-css ui-form-components
     - cd ./dist/libs/ui-form-components
-    - echo "@r7devs:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
     - npm publish
   only:
@@ -85,7 +100,7 @@ deploy ui-base-components:
     - yarn nx build ui-base-components
     - yarn nx build-css ui-base-components
     - cd ./dist/libs/ui-base-components
-    - echo "@r7devs:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
     - npm publish
   only:
