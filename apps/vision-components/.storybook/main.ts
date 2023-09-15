@@ -17,6 +17,11 @@ const config: StorybookConfig = {
       },
     },
   },
+  typescript: {
+    reactDocgenTypescriptOptions: {
+      tsconfigPath: './tsconfig.base.json',
+    },
+  },
 }
 
 export default config
