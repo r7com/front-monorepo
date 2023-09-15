@@ -21,6 +21,7 @@ export const Primary: Story = {
   ),
   args: {
     message: 'mensagem',
+    open: true,
   },
   parameters: {
     design: {

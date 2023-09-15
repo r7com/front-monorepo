@@ -18,7 +18,7 @@ type Story = StoryObj<IconButtonProps>
 export const Primary: Story = {
   render: ({ ...args }) => (
     <IconButton {...args}>
-      <SvgIcon iconName="error" title="error" />
+      <SvgIcon iconName="error" title="error" color="secondary" />
     </IconButton>
   ),
   args: {},

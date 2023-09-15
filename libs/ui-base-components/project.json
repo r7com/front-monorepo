@@ -58,29 +58,10 @@
         }
       }
     },
-    "storybook": {
-      "executor": "@nx/storybook:storybook",
+    "svg-sprite": {
+      "executor": "nx:run-commands",
       "options": {
-        "port": 6606,
-        "configDir": "libs/ui-base-components/.storybook"
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
-      }
-    },
-    "build-storybook": {
-      "executor": "@nx/storybook:build",
-      "outputs": ["{options.outputDir}"],
-      "options": {
-        "outputDir": "dist/storybook/ui-base-components",
-        "configDir": "libs/ui-base-components/.storybook"
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
+        "command": "npx svg-sprite --symbol --si=true --dest={projectRoot}/src/svg/compiled {projectRoot}/src/svg/*.svg"
       }
     },
     "generate-svg-types": {
