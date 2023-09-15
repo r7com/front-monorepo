@@ -1,8 +1,7 @@
 import { IconButton } from '../icon-button'
-import { SvgIcon } from '../svg-icon'
+import { SvgIcon, type SvgIcons } from '../svg-icon'
 import { variants } from './banner-variants'
-import { type BannerNormalIconProps } from './components/banner-icon'
-import { type SvgIcons } from '../svg-icon/svg-icon.types'
+import { type BannerNormalIconProps } from './components'
 
 /** Temporariamente aqui  */
 type CustomExtract<T, U extends T> = U
@@ -38,11 +37,16 @@ export function Banner({ children, isVisible, onClose }: BannerProps) {
 
   return (
     isVisible && (
-      <div className={variants({ onClose: !!onClose })}>
+      <div
+        data-testid="banner-root"
+        aria-hidden={isVisible}
+        className={variants({ onClose: !!onClose })}
+      >
         {children}
         {onClose && (
           <div className="flex h-full justify-start">
             <IconButton
+              aria-label="Fechar"
               className="absolute right-nano top-right-nano [&>svg]:fill-neutral-high-400 dark:[&>svg]:fill-dark-low-400"
               onClick={handleClose}
             >

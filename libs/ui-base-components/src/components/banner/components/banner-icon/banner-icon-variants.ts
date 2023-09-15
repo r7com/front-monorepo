@@ -1,7 +1,7 @@
-import { createVariants, type VariantProps } from '@r7-jarvics/utils'
+import { createVariants, type VariantProps } from '@r7-jarvics/tools'
 
 export const variants = createVariants({
-  base: 'flex items-center justify-center p-xxs rounded-lg [&>svg]:fill-neutral-high-400',
+  base: 'w-fit flex items-center justify-center p-xxs rounded-lg [&>svg]:fill-neutral-high-400',
   variants: {
     type: {
       informative: 'bg-feedback-informative-500',

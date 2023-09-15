@@ -1,9 +1,11 @@
 import { Banner as BannerRoot } from './banner'
-import { BannerContent } from './components/banner-content'
-import { BannerIcon } from './components/banner-icon'
-import { BannerDescription } from './components/banner-description'
-import { BannerOptions } from './components/banner-options'
-import { BannerImage } from './components/banner-image'
+import {
+  BannerContent,
+  BannerIcon,
+  BannerDescription,
+  BannerOptions,
+  BannerImage,
+} from './components'
 
 export const Banner = {
   Root: BannerRoot,

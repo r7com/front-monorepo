@@ -1,5 +1,4 @@
-import { SvgIcon } from '../../svg-icon'
-import { SvgIcons } from '../../svg-icon/svg-icon.types'
+import { SvgIcon, type SvgIcons } from '../../../svg-icon'
 import { variants, type BannerIconVariants } from './banner-icon-variants'
 
 export type BannerNormalIconProps = {
@@ -23,8 +22,8 @@ export function BannerIcon({ children, type = 'informative' }: BannerIconProps) 
   }
 
   return (
-    <div className={variants({ type })}>
+    <figure className={variants({ type })}>
       {type === 'custom' ? children : <SvgIcon iconName={iconVariant[type]} />}
-    </div>
+    </figure>
   )
 }
