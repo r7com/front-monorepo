@@ -1,5 +1,5 @@
 {
-  "name": "@r7/ui-base-components",
+  "name": "@r7/ui-header-horizontal-menu",
   "version": "0.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",

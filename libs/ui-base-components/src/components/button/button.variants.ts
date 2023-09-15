@@ -1,4 +1,4 @@
-import { createVariants, VariantProps } from '@r7-jarvics/tools'
+import { createVariants, VariantProps } from '@r7/tools'
 
 export const variants = createVariants({
   base: 'inline-flex items-center box-border cursor-pointer border-hairline rounded-md text-center leading-6 font-medium transition-all gap-nano',
