@@ -1,6 +1,8 @@
-import { useDynamicSvgImport } from '../../hooks/use-dynamic-svg-import'
+import { useEffect } from 'react'
 import { SvgIcons } from './svg-icon.types'
 import { variants, SvgIconVariants } from './svg-icon.variants'
+
+import { insertSvgSpriteRoot } from './insert-root'
 
 export type SvgIconProps = {
   iconName: SvgIcons
@@ -8,7 +10,7 @@ export type SvgIconProps = {
   title?: string
   className?: string
 } & SvgIconVariants &
-  React.SVGProps<SVGAElement>
+  React.SVGProps<SVGSVGElement>
 
 export function SvgIcon({
   iconName,
@@ -18,30 +20,24 @@ export function SvgIcon({
   title = '',
   ...rest
 }: SvgIconProps) {
-  const { loading, error, SvgIconEl } = useDynamicSvgImport(iconName)
-
   const sizesVariant = {
     default: { width: 32, height: 32 },
     medium: { width: 24, height: 24 },
     small: { width: 16, height: 16 },
   }[size]
 
-  if (!SvgIconEl || error) return null
-
-  if (loading) {
-    /** componente loading */
-    return <div aria-hidden="true">...</div>
-  }
+  useEffect(insertSvgSpriteRoot, [])
 
   return (
-    <SvgIconEl
-      data-testid="svg-icon"
+    <svg
       width={sizesVariant.width}
       height={sizesVariant.height}
-      title={title}
       aria-hidden={!title ? 'true' : undefined}
       className={variants({ color, className })}
       {...rest}
-    />
+    >
+      {title && <title>{title}</title>}
+      <use href={`#${iconName}`} />
+    </svg>
   )
 }

@@ -9,6 +9,7 @@ image: $NODE_VERSION
 stages:
   - test
   - build
+  - storybook
 
 .distributed:
   interruptible: true
@@ -29,6 +30,18 @@ stages:
     - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
     - NX_HEAD=$CI_COMMIT_SHA
 
+storybook:
+  extends: .distributed
+  stage: storybook
+  script:
+    - yarn nx build-storybook vision-components
+    - ls -la dist/apps/vision-components
+  only:
+    refs:
+      - main
+      - merge_requests
+    changes:
+      - '*/**/components/**/*.stories.tsx'
 test:
   stage: test
   extends: .distributed
@@ -48,7 +61,7 @@ component-test:
     # Verifica quais pastas foram modificadas até o último commit com a main
     # exibe apenas as pastas de componentes modificados com padrão '/*,' do spec pattern do cypress
     - echo $CHANGED_FOLDERS
-    - npx nx affected --base=origin/${CI_DEFAULT_BRANCH} --head=$CI_COMMIT_SHA -t component-test --parallel=3 --configuration=ci --spec "${CHANGED_FOLDERS}"
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci --spec "${CHANGED_FOLDERS}"
   only:
     refs:
       - main
