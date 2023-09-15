@@ -1,4 +1,4 @@
-import { createVariants, VariantProps } from '@r7-jarvics/utils'
+import { createVariants, VariantProps } from '@r7-jarvics/tools'
 
 export const variants = createVariants({
   base: 'transition-all rounded-sm border-hairline',
