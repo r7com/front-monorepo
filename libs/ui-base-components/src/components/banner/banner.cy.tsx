@@ -5,7 +5,7 @@ import { SvgIcon } from '../svg-icon'
 const bannerSelector = '[data-testid="banner-root"]'
 const bannerCloseSelector = '[aria-label="Fechar"]'
 
-const AllVariants = (
+const BannerVariants = (
   <div className="flex flex-col gap-nano p-nano">
     <Banner.Root isVisible={true} onClose={() => null}>
       <Banner.Content>
@@ -59,30 +59,33 @@ const AllVariants = (
     </Banner.Root>
   </div>
 )
+
 describe('Banner', () => {
   it('should match all composable banners on dark mode', () => {
-    cy.mount(AllVariants)
+    cy.mount(<div className="dark">{BannerVariants}</div>)
     cy.matchImage()
   })
 
   it('should match all composable banners on light mode', () => {
-    cy.mount(<div className="dark bg-neutral-low-400">{AllVariants}</div>)
+    cy.mount(<div className="bg-neutral-low-400">{BannerVariants}</div>)
     cy.matchImage()
   })
 
   it('should be visible when isVisible is true', () => {
     const onClose = cy.stub().as('callback')
     cy.mount(
-      <Banner.Root isVisible={true} onClose={onClose}>
-        <Banner.Content>
-          <Banner.Icon type="informative" />
+      <div className="dark flex flex-col gap-nano p-nano">
+        <Banner.Root isVisible={true} onClose={onClose}>
+          <Banner.Content>
+            <Banner.Icon type="informative" />
 
-          <Banner.Description>
-            O sistema JARVICS será atualizado durante os dias 03 e 04 de agosto de 2023. Contamos
-            com sua compreensão.
-          </Banner.Description>
-        </Banner.Content>
-      </Banner.Root>,
+            <Banner.Description>
+              O sistema JARVICS será atualizado durante os dias 03 e 04 de agosto de 2023. Contamos
+              com sua compreensão.
+            </Banner.Description>
+          </Banner.Content>
+        </Banner.Root>
+      </div>,
     )
     cy.get(bannerSelector).should('be.visible')
     cy.matchImage()
@@ -97,16 +100,18 @@ describe('Banner', () => {
   it('should run onClose callback with false when isVisible is true', () => {
     const onClose = cy.stub().as('callback')
     cy.mount(
-      <Banner.Root isVisible={true} onClose={onClose}>
-        <Banner.Content>
-          <Banner.Icon type="informative" />
+      <div className="bg-neutral-low-400 flex flex-col gap-nano p-nano">
+        <Banner.Root isVisible={true} onClose={onClose}>
+          <Banner.Content>
+            <Banner.Icon type="informative" />
 
-          <Banner.Description>
-            O sistema JARVICS será atualizado durante os dias 03 e 04 de agosto de 2023. Contamos
-            com sua compreensão.
-          </Banner.Description>
-        </Banner.Content>
-      </Banner.Root>,
+            <Banner.Description>
+              O sistema JARVICS será atualizado durante os dias 03 e 04 de agosto de 2023. Contamos
+              com sua compreensão.
+            </Banner.Description>
+          </Banner.Content>
+        </Banner.Root>
+      </div>,
     )
     cy.get(bannerCloseSelector).click()
     cy.get('@callback').should('have.been.calledWith', false)
