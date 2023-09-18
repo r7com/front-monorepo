@@ -1,36 +1,53 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Banner } from './'
 import { SvgIcon } from '../svg-icon'
-// import { Text } from '../text'
 import { Button } from '../button'
-import { MockBanner } from './banner'
 import { useArgs } from '@storybook/client-api'
+import { BannerMock } from './banner-mock'
 
-const meta: Meta<typeof MockBanner> = {
+const meta: Meta<typeof BannerMock> = {
   title: 'Example/Banner',
-  component: MockBanner,
+  component: BannerMock,
   tags: ['autodocs'],
   /** Default em todos os stories */
   args: {
     isVisible: true,
   },
+  /** Switch dark mode provisório */
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+      values: [
+        {
+          name: 'dark',
+          /** Tema Dark precisa ter o fundo claro, porque os componentes são escuros */
+          value: '#FFF',
+        },
+        {
+          /** Tema Light precisa ter o fundo escuro, porque os componentes são claros */
+          name: 'light',
+          value: '#333',
+        },
+      ],
+    },
+  },
 }
 
 export default meta
 
-type Story = StoryObj<typeof MockBanner>
+type Story = StoryObj<typeof BannerMock>
 
 export const DefaultIcons: Story = {
   render: function Render({ ...args }, { globals }) {
     const [{ isVisible }, updateArgs] = useArgs()
     const handleToggle = (isVisible: boolean) => updateArgs({ isVisible })
+    console.log('#', globals)
 
     return (
-      <div className={globals?.backgrounds?.value === '#333333' ? 'dark' : 'light'}>
+      <div className={globals?.backgrounds?.value === '#333' ? 'light' : 'dark'}>
         <Banner.Root isVisible={isVisible} onClose={handleToggle}>
           <Banner.Content>
             <Banner.Icon type={args.iconType} />
-
             <Banner.Description>{args.description}</Banner.Description>
           </Banner.Content>
         </Banner.Root>
@@ -43,7 +60,7 @@ export const DefaultIcons: Story = {
       'O sistema JARVICS será atualizado durante os dias 03 e 04 de agosto de 2023. Contamos com sua compreensão.',
   },
   parameters: {
-    controls: { exclude: ['customIconName'] },
+    controls: { exclude: ['customIconName', 'imageSourceUrl'] },
   },
 }
 
@@ -53,7 +70,7 @@ export const CustomIcon: Story = {
     const handleToggle = (isVisible: boolean) => updateArgs({ isVisible })
 
     return (
-      <div className={globals?.backgrounds?.value === '#333333' ? 'dark' : 'light'}>
+      <div className={globals?.backgrounds?.value === '#333' ? 'light' : 'dark'}>
         <Banner.Root isVisible={isVisible} onClose={handleToggle}>
           <Banner.Content>
             <Banner.Icon type="custom">
@@ -82,7 +99,7 @@ export const CustomIconsAction: Story = {
     const handleToggle = (isVisible: boolean) => updateArgs({ isVisible })
 
     return (
-      <div className={globals?.backgrounds?.value === '#333333' ? 'dark' : 'light'}>
+      <div className={globals?.backgrounds?.value === '#333' ? 'light' : 'dark'}>
         <Banner.Root isVisible={isVisible}>
           <Banner.Content>
             <Banner.Icon type="custom">
@@ -115,7 +132,7 @@ export const ImageActions: Story = {
     const handleToggle = (isVisible: boolean) => updateArgs({ isVisible })
 
     return (
-      <div className={globals?.backgrounds?.value === '#333333' ? 'dark' : 'light'}>
+      <div className={globals?.backgrounds?.value === '#333' ? 'light' : 'dark'}>
         <Banner.Root isVisible={isVisible}>
           <Banner.Content>
             <Banner.Image alt="Default image" sourceUrl={args.imageSourceUrl} />
