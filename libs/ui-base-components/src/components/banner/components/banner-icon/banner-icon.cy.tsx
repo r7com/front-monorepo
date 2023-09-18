@@ -19,7 +19,11 @@ describe(BannerIcon.name, () => {
           </BannerIcon>
         </div>
 
-        <div className="bg-neutral-low-500">
+        <BannerIcon type="custom">
+          <SvgIcon iconName="record" />
+        </BannerIcon>
+
+        <div className="dark bg-neutral-low-500">
           <BannerIcon type="custom">
             <SvgIcon iconName="record" />
           </BannerIcon>
