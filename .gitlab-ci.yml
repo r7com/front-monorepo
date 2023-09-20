@@ -52,8 +52,8 @@ test:
       - main
       - merge_requests
     changes:
-      - '/**/*.tsx'
-      - '/**/*.ts'
+      - '*/**/*.tsx'
+      - '*/**/*.ts'
 
 component-test:
   image: cypress/browsers:node18.12.0-chrome106-ff106
