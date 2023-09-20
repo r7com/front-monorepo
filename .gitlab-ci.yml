@@ -27,8 +27,8 @@ stages:
       - cache/Cypress
   before_script:
     - yarn install --cache-folder .yarn-cache --prefer-offline --frozen-lockfile
-    - NX_BASE=origin/${CI_DEFAULT_BRANCH}
-    - NX_HEAD=$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME
+    - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
+    - NX_HEAD=$CI_COMMIT_SHA
 
 storybook:
   extends: .distributed
@@ -46,7 +46,7 @@ test:
   stage: test
   extends: .distributed
   script:
-    - npx nx affected --base=origin/main --head=automatedVersions -t test --parallel=3 --configuration=ci
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t test --parallel=3 --configuration=ci
 
 component-test:
   image: cypress/browsers:node18.12.0-chrome106-ff106
@@ -60,7 +60,6 @@ component-test:
     # CHANGED_FOLDERS:
     # Verifica quais pastas foram modificadas até o último commit com a main
     # exibe apenas as pastas de componentes modificados com padrão '/*,' do spec pattern do cypress
-    - echo $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME
     - echo $CHANGED_FOLDERS
     - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci --spec "${CHANGED_FOLDERS}"
   only:
