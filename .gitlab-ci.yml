@@ -41,12 +41,19 @@ storybook:
       - main
       - merge_requests
     changes:
-      - '*/**/components/**/*.stories.tsx'
+      - '*.stories.tsx'
 test:
   stage: test
   extends: .distributed
   script:
     - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t test --parallel=3 --configuration=ci
+  only:
+    refs:
+      - main
+      - merge_requests
+    changes:
+      - '*.tsx'
+      - '*.ts'
 
 component-test:
   image: cypress/browsers:node18.12.0-chrome106-ff106
@@ -67,7 +74,7 @@ component-test:
       - main
       - merge_requests
     changes:
-      - '**/components/**'
+      - '*.tsx'
   artifacts:
     when: on_failure
     paths:
