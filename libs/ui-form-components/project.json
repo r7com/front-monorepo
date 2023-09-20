@@ -63,6 +63,30 @@
           "watch": false
         }
       }
+    },
+    "storybook": {
+      "executor": "@nx/storybook:storybook",
+      "options": {
+        "port": 6606,
+        "configDir": "libs/ui-form-components/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "watch": false
+        }
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular"
+      }
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "restricted"
+      }
     }
   }
 }
