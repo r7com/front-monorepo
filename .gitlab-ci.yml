@@ -56,18 +56,18 @@ component-test:
     - apt-get update && apt-get install -y xvfb
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
     - export DISPLAY=:99
-    - CHANGED_FOLDERS=$(git diff --dirstat=files,0 -w --name-only origin/${CI_DEFAULT_BRANCH} $CI_COMMIT_SHA -- '*/**/components/**/*.tsx' | sed 's:/[^/]*$:/\*:' | paste -sd ',')
+    - CHANGED_FOLDERS=$(git diff --dirstat=files,0 -w --name-only origin/${CI_DEFAULT_BRANCH} $CI_COMMIT_SHA -- '**/components/**' | sed 's:/[^/]*$:/\*:' | paste -sd ',')
     # CHANGED_FOLDERS:
     # Verifica quais pastas foram modificadas até o último commit com a main
     # exibe apenas as pastas de componentes modificados com padrão '/*,' do spec pattern do cypress
     - echo $CHANGED_FOLDERS
     - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci --spec "${CHANGED_FOLDERS}"
-  # only:
-  #   refs:
-  #     - main
-  #     - merge_requests
-  #   changes:
-  #     - '*/**/components/**/*.tsx'
+  only:
+    refs:
+      - main
+      - merge_requests
+    changes:
+      - '**/components/**'
   artifacts:
     when: on_failure
     paths:
