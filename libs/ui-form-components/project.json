@@ -12,6 +12,12 @@
         "lintFilePatterns": ["libs/ui-form-components/**/*.{ts,tsx,js,jsx}"]
       }
     },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --noEmit -p {projectRoot}/tsconfig.lib.json"
+      }
+    },
     "build": {
       "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],

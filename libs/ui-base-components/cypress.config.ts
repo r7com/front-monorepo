@@ -1,11 +1,11 @@
 import { nxComponentTestingPreset } from '@nx/react/plugins/component-testing'
 import { defineConfig } from 'cypress'
 import { initPlugin } from '@frsource/cypress-plugin-visual-regression-diff/plugins'
+import { configVisualRegressionDiff } from '@r7/cypress'
 
 export default defineConfig({
   env: {
-    pluginVisualRegressionUpdateImages: true,
-    pluginVisualRegressionDiffConfig: { threshold: 0.05 },
+    ...configVisualRegressionDiff,
   },
   component: {
     ...nxComponentTestingPreset(__filename, { bundler: 'vite' }),
