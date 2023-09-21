@@ -2,10 +2,10 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 
 export type TabsProps = {
   children: React.ReactNode
-  initialTabId: string
+  initialTabId?: string
 }
 
-export function Tabs({ children, initialTabId }: TabsProps) {
+export function Tabs({ children, initialTabId = undefined }: TabsProps) {
   const [actualTabId, setActualTab] = useState('')
   const tabsRef = useRef<HTMLDivElement>(null)
   const [tabs, setTabs] = useState<NodeListOf<HTMLElement>>()
@@ -73,9 +73,8 @@ export function Tabs({ children, initialTabId }: TabsProps) {
     const $panels = currentTabsRef?.querySelectorAll('[role=tabpanel]') as NodeListOf<HTMLElement>
     setTabs($tabs)
     setPanels($panels)
-
     currentTabsRef?.addEventListener('onTabClick', handleTabClick as EventListener)
-    setActualTab(initialTabId)
+    setActualTab(initialTabId || $tabs[0].id)
 
     return () => {
       currentTabsRef?.removeEventListener('onTabClick', handleTabClick as EventListener)
@@ -84,7 +83,7 @@ export function Tabs({ children, initialTabId }: TabsProps) {
 
   return (
     /* eslint-disable-next-line jsx-a11y/no-static-element-interactions */
-    <div ref={tabsRef} onKeyDown={handleKeyDown}>
+    <div data-testid="tabs" ref={tabsRef} onKeyDown={handleKeyDown}>
       {children}
     </div>
   )
