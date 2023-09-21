@@ -8,11 +8,14 @@ const meta: Meta<typeof Tab> = {
   component: Tab,
   tags: ['autodocs'],
   argTypes: {
+    id: {
+      description: 'Unique identifier for the tab',
+    },
     text: {
-      description: '<b>Mandatory:</b> name displayed on tab',
+      description: 'Name displayed on tab',
     },
     size: {
-      description: '<b>Optional:</b> size of the tab',
+      description: 'Size of the tab',
       table: {
         defaultValue: {
           summary: 'medium',
@@ -22,19 +25,14 @@ const meta: Meta<typeof Tab> = {
       control: { type: 'radio' },
     },
     startIconName: {
-      description: '<b>Optional:</b> name of the icon displayed at start of the tab',
-      type: 'string',
+      description: 'Name of the icon displayed at start of the tab',
     },
     endIconName: {
-      description: '<b>Optional:</b> name of the icon displayed at the end of the tab',
-      type: 'string',
-    },
-    id: {
-      description: '<b>Mandatory:</b> Unique identifier for the tab',
+      description: 'Name of the icon displayed at the end of the tab',
       type: 'string',
     },
     tabpanelId: {
-      description: '<b>Mandatory:</b> Unique identifier of the panel related to the tab',
+      description: 'Unique identifier of the panel related to the tab',
       type: 'string',
     },
   },
