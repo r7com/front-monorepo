@@ -1,4 +1,4 @@
-import { createVariants } from '@r7-jarvics/tools'
+import { createVariants, VariantProps } from '@r7-jarvics/tools'
 
 export const variants = createVariants({
   base: 'h-auto sm:h-[50px] w-full bg-editorial-color',
@@ -8,3 +8,9 @@ export const variants = createVariants({
     },
   },
 })
+
+/**
+ * variante 'fixed' sera usada apenas internamente
+ * pelo componente e nao deve ser exposta como uma 'prop'
+ */
+export type HeaderVariants = Omit<VariantProps<typeof variants>, 'fixed'>

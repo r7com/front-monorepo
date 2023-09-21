@@ -1,11 +1,11 @@
-import { variants } from './header.variants'
+import { variants, HeaderVariants } from './header.variants'
 import { useWindowScroll } from '@uidotdev/usehooks'
 
 export type HeaderProps = {
   children: React.ReactNode
   className?: string
   editorialColor?: string
-}
+} & HeaderVariants
 
 export function Header({ children, className = '', editorialColor = '' }: HeaderProps) {
   const [{ y: axisY }] = useWindowScroll()
