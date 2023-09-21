@@ -5,7 +5,12 @@ import { Button } from '../button'
 import { useArgs } from '@storybook/client-api'
 import { BannerMock } from './banner-mock'
 
-const meta: Meta<typeof BannerMock> = {
+type BannerPropsAndCustomArgs = React.ComponentProps<typeof BannerMock> & {
+  handleToggle: (isVisible: boolean) => void
+  teste?: 'a' | 'b'
+}
+
+const meta: Meta<BannerPropsAndCustomArgs> = {
   title: 'Example/Banner',
   component: BannerMock,
   tags: ['autodocs'],
@@ -16,7 +21,7 @@ const meta: Meta<typeof BannerMock> = {
   /** Switch dark mode provisório */
   parameters: {
     backgrounds: {
-      default: 'dark',
+      default: 'light',
       values: [
         {
           name: 'dark',
@@ -31,132 +36,127 @@ const meta: Meta<typeof BannerMock> = {
       ],
     },
   },
+  decorators: [
+    (Story, context) => {
+      const [{ isVisible }, updateArgs] = useArgs()
+      const handleToggle = (isVisible: boolean) => updateArgs({ isVisible })
+      const isDark = context.globals.backgrounds?.value === '#FFF'
+
+      return (
+        <div style={{ margin: '1em' }} className={isDark ? 'dark' : ''}>
+          <Story args={{ ...context.args, isVisible, handleToggle }} />
+        </div>
+      )
+    },
+  ],
 }
 
 export default meta
 
-type Story = StoryObj<typeof BannerMock>
+type Story = StoryObj<typeof meta>
 
 export const DefaultIcons: Story = {
-  render: function Render({ ...args }, { globals }) {
-    const [{ isVisible }, updateArgs] = useArgs()
-    const handleToggle = (isVisible: boolean) => updateArgs({ isVisible })
-    console.log('#', globals)
-
+  render: args => {
     return (
-      <div className={globals?.backgrounds?.value === '#333' ? 'light' : 'dark'}>
-        <Banner.Root isVisible={isVisible} onClose={handleToggle}>
-          <Banner.Content>
-            <Banner.Icon type={args.iconType} />
-            <Banner.Description>{args.description}</Banner.Description>
-          </Banner.Content>
-        </Banner.Root>
-      </div>
+      <Banner.Root isVisible={args.isVisible}>
+        <Banner.Content>
+          <Banner.Icon type={args.iconType}>
+            <SvgIcon iconName={args.iconName} />
+          </Banner.Icon>
+          <Banner.Description>{args.description}</Banner.Description>
+        </Banner.Content>
+      </Banner.Root>
     )
   },
   args: {
+    teste: 'a',
     iconType: 'informative',
+    iconName: 'bell',
     description:
       'O sistema JARVICS será atualizado durante os dias 03 e 04 de agosto de 2023. Contamos com sua compreensão.',
   },
   parameters: {
-    controls: { exclude: ['customIconName', 'imageSourceUrl'] },
+    controls: { exclude: ['imageSourceUrl'] },
   },
 }
 
 export const CustomIcon: Story = {
-  render: function Render({ ...args }, { globals }) {
-    const [{ isVisible }, updateArgs] = useArgs()
-    const handleToggle = (isVisible: boolean) => updateArgs({ isVisible })
-
+  render: args => {
     return (
-      <div className={globals?.backgrounds?.value === '#333' ? 'light' : 'dark'}>
-        <Banner.Root isVisible={isVisible} onClose={handleToggle}>
-          <Banner.Content>
-            <Banner.Icon type="custom">
-              <SvgIcon iconName={args.customIconName} />
-            </Banner.Icon>
+      <Banner.Root isVisible={args.isVisible} onClose={args.handleToggle}>
+        <Banner.Content>
+          <Banner.Icon type={args.iconType}>
+            <SvgIcon iconName={args.iconName} />
+          </Banner.Icon>
 
-            <Banner.Description>{args.description}</Banner.Description>
-          </Banner.Content>
-        </Banner.Root>
-      </div>
+          <Banner.Description>{args.description}</Banner.Description>
+        </Banner.Content>
+      </Banner.Root>
     )
   },
   args: {
-    customIconName: 'record',
+    iconType: 'custom',
+    iconName: 'record',
     description:
       'O sistema JARVICS será atualizado durante os dias 03 e 04 de agosto de 2023. Contamos com sua compreensão.',
   },
   parameters: {
-    controls: { exclude: ['iconType'] },
+    controls: { exclude: ['imageSourceUrl'] },
   },
 }
 
 export const CustomIconsAction: Story = {
-  render: function Render({ ...args }, { globals }) {
-    const [{ isVisible }, updateArgs] = useArgs()
-    const handleToggle = (isVisible: boolean) => updateArgs({ isVisible })
-
+  render: args => {
     return (
-      <div className={globals?.backgrounds?.value === '#333' ? 'light' : 'dark'}>
-        <Banner.Root isVisible={isVisible}>
-          <Banner.Content>
-            <Banner.Icon type="custom">
-              <SvgIcon iconName={args.customIconName} />
-            </Banner.Icon>
+      <Banner.Root isVisible={args.isVisible}>
+        <Banner.Content>
+          <Banner.Icon type={args.iconType}>
+            <SvgIcon iconName={args.iconName} />
+          </Banner.Icon>
 
-            <Banner.Description>{args.description}</Banner.Description>
-          </Banner.Content>
+          <Banner.Description>{args.description}</Banner.Description>
+        </Banner.Content>
 
-          <Banner.Options>
-            <Button onClick={() => handleToggle(!isVisible)}>ACEITAR</Button>
-          </Banner.Options>
-        </Banner.Root>
-      </div>
+        <Banner.Options>
+          <Button onClick={() => args.handleToggle(!args.isVisible)}>ACEITAR</Button>
+        </Banner.Options>
+      </Banner.Root>
     )
   },
   args: {
-    customIconName: 'record',
+    iconType: 'custom',
+    iconName: 'record',
     description:
       'Este site utiliza cookies e outras tecnologias para melhorar sua experiência. Ao continuar navegando, você aceita as condições de nossa Política de Privacidade',
-  },
-  parameters: {
-    controls: { exclude: ['iconType'] },
   },
 }
 
 export const ImageActions: Story = {
-  render: function Render({ ...args }, { globals }) {
-    const [{ isVisible }, updateArgs] = useArgs()
-    const handleToggle = (isVisible: boolean) => updateArgs({ isVisible })
-
+  render: args => {
     return (
-      <div className={globals?.backgrounds?.value === '#333' ? 'light' : 'dark'}>
-        <Banner.Root isVisible={isVisible}>
-          <Banner.Content>
-            <Banner.Image alt="Default image" sourceUrl={args.imageSourceUrl} />
+      <Banner.Root isVisible={args.isVisible}>
+        <Banner.Content>
+          <Banner.Image alt="Default image" sourceUrl={args.imageSourceUrl} />
 
-            <Banner.Description>{args.description}</Banner.Description>
-          </Banner.Content>
+          <Banner.Description>{args.description}</Banner.Description>
+        </Banner.Content>
 
-          <Banner.Options>
-            <Button>CADASTRAR</Button>
+        <Banner.Options>
+          <Button>CADASTRAR</Button>
 
-            <Button color="ghost" onClick={() => handleToggle(!isVisible)}>
-              Dispensar
-            </Button>
-          </Banner.Options>
-        </Banner.Root>
-      </div>
+          <Button color="ghost" onClick={() => args.handleToggle(!args.isVisible)}>
+            Dispensar
+          </Button>
+        </Banner.Options>
+      </Banner.Root>
     )
   },
   args: {
-    description: 'Fique por dentro das melhores noticias em primeira mão',
     imageSourceUrl:
-      'https://img.r7.com/images/r7-30072019142631584?crop_position=c&dimensions=160x80',
+      'https://img.r7.com/images/r7-30072019142631584?crop_position=c&dimensions=225x70',
+    description: 'Fique por dentro das melhores noticias em primeira mão',
   },
   parameters: {
-    controls: { exclude: ['iconType', 'customIconName'] },
+    controls: { exclude: ['iconType', 'iconName'] },
   },
 }

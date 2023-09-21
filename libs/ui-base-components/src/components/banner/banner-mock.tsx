@@ -1,6 +1,6 @@
 import { type SvgIcons } from '../svg-icon'
 import { BannerProps } from './banner'
-import { type BannerNormalIconProps } from './components'
+import type { BannerIconVariants } from './components/banner-icon/banner-icon-variants'
 
 /** Temporariamente aqui  */
 type Extract<T, U extends T> = U
@@ -8,8 +8,11 @@ type Extract<T, U extends T> = U
 /** Mocka as props do Banner no Storybook  */
 export type BannerMockProps = {
   isVisible: BannerProps['isVisible']
-  iconType: BannerNormalIconProps['type']
-  customIconName: Extract<SvgIcons, 'record' | 'chevron-right'>
+  iconType: BannerIconVariants['type']
+  iconName: Extract<
+    SvgIcons,
+    'bell' | 'archive' | 'circle-add' | 'info' | 'record' | 'chevron-right'
+  >
   description?: string
   imageSourceUrl?: string
 }
@@ -18,13 +21,13 @@ export type BannerMockProps = {
 export function BannerMock({
   iconType = 'informative',
   isVisible = true,
-  customIconName = 'record',
+  iconName = 'record',
 }: BannerMockProps) {
   return (
     isVisible && (
       <div>
         {iconType}
-        {customIconName}
+        {iconName}
       </div>
     )
   )
