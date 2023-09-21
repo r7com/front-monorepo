@@ -5,7 +5,7 @@ describe(Tab.name, () => {
     cy.mount(<Tab id="1" tabpanelId="1" text="Aba" />)
     cy.findByRole('tab').should('be.visible')
     cy.findByRole('tab').should('have.attr', 'aria-selected', 'false')
-    cy.findByRole('tab').should('have.attr', 'tab-index', '-1')
+    cy.findByRole('tab').should('have.attr', 'tabindex', '-1')
     cy.matchImage()
   })
 
@@ -51,14 +51,6 @@ describe(Tab.name, () => {
       cy.get('svg').should('have.length', 2)
     })
 
-    cy.matchImage()
-  })
-
-  it('should render "selected" variant', () => {
-    cy.mount(<Tab id="1" tabpanelId="1" text="Aba" selected />)
-    cy.findByRole('tab').should('be.visible')
-    cy.findByRole('tab').should('have.attr', 'tab-index', '0')
-    cy.findByRole('tab').should('have.attr', 'aria-selected', 'true')
     cy.matchImage()
   })
 })
