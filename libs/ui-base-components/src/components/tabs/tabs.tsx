@@ -1,54 +1,91 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 export type TabsProps = {
   children: React.ReactNode
-  initialTab: string
+  initialTabId: string
 }
 
-export function Tabs({ children, initialTab }: TabsProps) {
-  const ref = useRef<HTMLDivElement>(null)
+export function Tabs({ children, initialTabId }: TabsProps) {
+  const [actualTabId, setActualTab] = useState('')
+  const tabsRef = useRef<HTMLDivElement>(null)
+  const [tabs, setTabs] = useState<NodeListOf<HTMLElement>>()
+  const [panels, setPanels] = useState<NodeListOf<HTMLElement>>()
 
-  function changeTab(
-    tabs: NodeListOf<HTMLElement> | undefined,
-    activeTabId: string,
-    panels: NodeListOf<HTMLElement> | undefined,
-  ) {
-    console.log('qewqw', tabs)
-    console.log('qewqw', activeTabId)
-    console.log('qewqw', panels)
+  const changeTab = useCallback(
+    (activeTabId: string) => {
+      tabs?.forEach(tab => {
+        if (activeTabId !== tab.id) {
+          tab.ariaSelected = 'false'
+          tab.tabIndex = -1
+        } else {
+          tab.ariaSelected = 'true'
+          tab.tabIndex = 0
+        }
+      })
+      panels?.forEach(panel => {
+        const relatedTab = panel.getAttribute('aria-labelledby')
+        if (activeTabId !== relatedTab) {
+          panel.hidden = true
+          panel.classList.add('hidden')
+        } else {
+          panel.hidden = false
+          panel.classList.remove('hidden')
+        }
+      })
+    },
+    [tabs, panels],
+  )
+
+  function handleTabClick(event: CustomEvent) {
+    setActualTab(event.detail.tabId)
+  }
+
+  function handleKeyDown(event: React.KeyboardEvent) {
+    const arrayTabs: HTMLElement[] = []
     tabs?.forEach(tab => {
-      if (activeTabId !== tab.id) {
-        tab.ariaSelected = 'false'
-        tab.tabIndex = -1
-      }
+      arrayTabs.push(tab)
     })
-    panels?.forEach(panel => {
-      const relatedTab = panel.getAttribute('aria-labelledby')
-      console.log(relatedTab)
-      if (activeTabId !== relatedTab) {
-        panel.hidden = true
-        panel.classList.add('hidden')
-      } else {
-        panel.hidden = false
-        panel.classList.remove('hidden')
+    const actualTabIndex = arrayTabs.findIndex(tab => tab.id === actualTabId)
+
+    if (event.key === 'ArrowRight') {
+      if (!(actualTabIndex === arrayTabs?.length - 1)) {
+        const nextTabId = arrayTabs[actualTabIndex + 1].id
+        arrayTabs[actualTabIndex + 1].focus()
+        setActualTab(nextTabId)
       }
-    })
+    }
+    if (event.key === 'ArrowLeft') {
+      if (!(actualTabIndex === 0)) {
+        const prevTabId = arrayTabs[actualTabIndex - 1].id
+        arrayTabs[actualTabIndex - 1].focus()
+        setActualTab(prevTabId)
+      }
+    }
   }
 
   useEffect(() => {
-    function handleTabClick(event: CustomEvent) {
-      const tabs = ref.current?.querySelectorAll('[role=tab]') as NodeListOf<HTMLElement>
-      const panels = ref.current?.querySelectorAll('[role=tabpanel]') as NodeListOf<HTMLElement>
-      console.log(event)
-      changeTab(tabs, event.detail.tabId, panels)
-    }
+    changeTab(actualTabId)
+  }, [panels, tabs, actualTabId, changeTab])
 
-    const element = ref.current
-    element?.addEventListener('onTabClick', handleTabClick as EventListener)
+  useEffect(() => {
+    const currentTabsRef = tabsRef.current
+    const $tabs = currentTabsRef?.querySelectorAll('[role=tab]') as NodeListOf<HTMLElement>
+    const $panels = currentTabsRef?.querySelectorAll('[role=tabpanel]') as NodeListOf<HTMLElement>
+    setTabs($tabs)
+    setPanels($panels)
+
+    currentTabsRef?.addEventListener('onTabClick', handleTabClick as EventListener)
+    setActualTab(initialTabId)
+
     return () => {
-      element?.removeEventListener('onTabClick', handleTabClick as EventListener)
+      currentTabsRef?.removeEventListener('onTabClick', handleTabClick as EventListener)
     }
-  }, [])
+  }, [initialTabId])
 
-  return <div ref={ref}>{children}</div>
+  return (
+    /* eslint-disable-next-line jsx-a11y/no-static-element-interactions */
+    <div ref={tabsRef} onKeyDown={handleKeyDown}>
+      {children}
+    </div>
+  )
 }
