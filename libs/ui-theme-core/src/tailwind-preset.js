@@ -1,5 +1,6 @@
 const plugin = require('tailwindcss/plugin')
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
     borderWidth: {
@@ -188,4 +189,5 @@ module.exports = {
       )
     }),
   ],
+  darkMode: 'class',
 }
