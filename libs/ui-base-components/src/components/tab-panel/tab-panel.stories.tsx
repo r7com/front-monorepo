@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { TabPanel } from './tabpanel'
+import { TabPanel } from './tab-panel'
 import { Button } from '../button'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
@@ -20,10 +20,6 @@ const meta: Meta<typeof TabPanel> = {
       description: 'Unique identifier for the panel',
       type: 'string',
     },
-    selected: {
-      description: 'Defines the tabpanel as selected',
-      type: 'boolean',
-    },
     tabId: {
       description: 'Unique identifier of the tab related to the panel',
       type: 'string',
@@ -37,7 +33,6 @@ type Story = StoryObj<typeof TabPanel>
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
   args: {
-    selected: true,
     children: (
       <>
         <p>Conteúdo do tabpanel</p>
