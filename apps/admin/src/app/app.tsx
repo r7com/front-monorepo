@@ -9,7 +9,7 @@ export function App() {
       <header>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Home Teste</Link>
           </li>
 
           <li>
