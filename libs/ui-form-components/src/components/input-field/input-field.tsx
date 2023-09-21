@@ -18,7 +18,7 @@ export function InputField({
   const { inputSlot, labelSlot, wrapperSlot } = variants({})
 
   return (
-    <div className={wrapperSlot()}>
+    <div className={wrapperSlot()} id="input">
       {label && (
         <label className={labelSlot()} htmlFor={name}>
           {label}
