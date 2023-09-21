@@ -1,1 +1,2 @@
-export * from './components/secondary-footer'
+export * from './mocks/institucional'
+export * from './components/institucional'
