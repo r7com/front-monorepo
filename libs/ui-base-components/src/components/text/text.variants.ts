@@ -1,4 +1,4 @@
-import { createVariants, VariantProps } from '@r7-jarvics/tools'
+import { createVariants, VariantProps } from '@r7/tools'
 
 export const variants = createVariants({
   variants: {
