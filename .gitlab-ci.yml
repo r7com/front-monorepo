@@ -86,16 +86,12 @@ build:
   extends: .distributed
   script:
     - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t build --parallel=3
-  artifacts:
-    paths:
-      - dist/
 
 deploy ui-form-components:
   stage: deploy
   extends: .distributed
-  dependencies:
-    - build
   script:
+    - yarn nx build ui-form-components
     - yarn nx build-css ui-form-components
     - cd ./dist/libs/ui-form-components
     - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
@@ -110,9 +106,8 @@ deploy ui-form-components:
 deploy ui-base-components:
   stage: deploy
   extends: .distributed
-  dependencies:
-    - build
   script:
+    - yarn nx build ui-base-components
     - yarn nx build-css ui-base-components
     - cd ./dist/libs/ui-base-components
     - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
