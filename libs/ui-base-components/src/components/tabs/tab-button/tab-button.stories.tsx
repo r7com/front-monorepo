@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Tab } from './tab'
+import { TabButton } from './tab-button'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 
-const meta: Meta<typeof Tab> = {
-  title: 'Example/Tab',
-  component: Tab,
+const meta: Meta<typeof TabButton> = {
+  title: 'Example/TabButton',
+  component: TabButton,
   tags: ['autodocs'],
   argTypes: {
     id: {
@@ -39,7 +39,7 @@ const meta: Meta<typeof Tab> = {
 }
 
 export default meta
-type Story = StoryObj<typeof Tab>
+type Story = StoryObj<typeof TabButton>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {

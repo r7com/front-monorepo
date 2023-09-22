@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Tabs } from './tabs'
 import { TabList } from '../tab-list'
-import { Tab } from '../tab/tab'
+import { TabButton } from '../tab-button/tab-button'
 import { TabPanel } from '../tab-panel'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
@@ -28,9 +28,9 @@ export const Default: Story = {
   render: ({ ...args }) => (
     <Tabs {...args}>
       <TabList ariaLabel="cypress tabs">
-        <Tab id="tab1" tabpanelId="tabpanel1" text="tab1" />
-        <Tab id="tab2" tabpanelId="tabpanel2" text="tab2" />
-        <Tab id="tab3" tabpanelId="tabpanel3" text="tab3" />
+        <TabButton id="tab1" tabpanelId="tabpanel1" text="tab1" />
+        <TabButton id="tab2" tabpanelId="tabpanel2" text="tab2" />
+        <TabButton id="tab3" tabpanelId="tabpanel3" text="tab3" />
       </TabList>
 
       <TabPanel id="tabpanel1" tabId="tab1">

@@ -24,4 +24,4 @@ export const variants = createVariants({
   },
 })
 
-export type TabVariants = VariantProps<typeof variants>
+export type TabButtonVariants = VariantProps<typeof variants>

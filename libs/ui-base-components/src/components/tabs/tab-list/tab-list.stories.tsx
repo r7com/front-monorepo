@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { TabList } from './tab-list'
-import { Tab } from '../tab/tab'
+import { TabButton } from '../tab-button/tab-button'
 
 const meta: Meta<typeof TabList> = {
   title: 'Example/TabList',
@@ -22,10 +22,10 @@ type Story = StoryObj<typeof TabList>
 export const Default: Story = {
   render: ({ ...args }) => (
     <TabList {...args}>
-      <Tab tabpanelId="panel1" id="tab1" text="sou o tab" size="large" />
-      <Tab tabpanelId="panel2" id="tab2" text="sou o tab" size="large" />
-      <Tab tabpanelId="panel3" id="tab3" text="sou o tab" size="large" />
-      <Tab tabpanelId="panel4" id="tab4" text="sou o tab" size="large" />
+      <TabButton tabpanelId="panel1" id="tab1" text="sou o tab" size="large" />
+      <TabButton tabpanelId="panel2" id="tab2" text="sou o tab" size="large" />
+      <TabButton tabpanelId="panel3" id="tab3" text="sou o tab" size="large" />
+      <TabButton tabpanelId="panel4" id="tab4" text="sou o tab" size="large" />
     </TabList>
   ),
   args: {

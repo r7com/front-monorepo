@@ -1,24 +1,24 @@
-import { SvgIcon, SvgIconProps } from '../svg-icon'
-import { SvgIcons } from '../svg-icon/svg-icon.types'
-import { TabVariants, variants } from './tab.variants'
+import { SvgIcon, SvgIconProps } from '../../svg-icon'
+import { SvgIcons } from '../../svg-icon/svg-icon.types'
+import { TabButtonVariants, variants } from './tab-button.variants'
 
-export type TabProps = {
+export type TabButtonProps = {
   text: string
   id: string
   tabpanelId: string
   size?: 'small' | 'medium' | 'large'
   startIconName?: SvgIcons
   endIconName?: SvgIcons
-} & TabVariants
+} & TabButtonVariants
 
-export function Tab({
+export function TabButton({
   text,
   id,
   tabpanelId,
   size = 'medium',
   startIconName,
   endIconName,
-}: TabProps) {
+}: TabButtonProps) {
   const { button, icon } = variants({ size })
   const tabEvent = new CustomEvent('onTabClick', {
     bubbles: true,

@@ -1,8 +1,8 @@
-import { Tab } from './tab'
+import { TabButton } from './tab-button'
 
-describe(Tab.name, () => {
+describe(TabButton.name, () => {
   it('should render default tab', () => {
-    cy.mount(<Tab id="1" tabpanelId="1" text="Aba" />)
+    cy.mount(<TabButton id="1" tabpanelId="1" text="Aba" />)
     cy.findByRole('tab').should('be.visible')
     cy.findByRole('tab').should('have.attr', 'aria-selected', 'false')
     cy.findByRole('tab').should('have.attr', 'tabindex', '-1')
@@ -12,9 +12,9 @@ describe(Tab.name, () => {
   it('should render all "size" variant options', () => {
     cy.mount(
       <>
-        <Tab id="1" tabpanelId="1" text="small" size="small" />
-        <Tab id="2" tabpanelId="2" text="medium" />
-        <Tab id="3" tabpanelId="3" text="large" size="large" />
+        <TabButton id="1" tabpanelId="1" text="small" size="small" />
+        <TabButton id="2" tabpanelId="2" text="medium" />
+        <TabButton id="3" tabpanelId="3" text="large" size="large" />
       </>,
     )
 
@@ -27,9 +27,9 @@ describe(Tab.name, () => {
   it('should render the tab with icons at the start, at the end and both start and end', () => {
     cy.mount(
       <>
-        <Tab id="1" tabpanelId="1" text="start" startIconName="info" />
-        <Tab id="2" tabpanelId="2" text="end" endIconName="info" />
-        <Tab id="3" tabpanelId="3" text="both" startIconName="info" endIconName="clock" />
+        <TabButton id="1" tabpanelId="1" text="start" startIconName="info" />
+        <TabButton id="2" tabpanelId="2" text="end" endIconName="info" />
+        <TabButton id="3" tabpanelId="3" text="both" startIconName="info" endIconName="clock" />
       </>,
     )
 

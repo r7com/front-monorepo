@@ -1,6 +1,6 @@
 import { TabList } from '../tab-list/tab-list'
 import { TabPanel } from '../tab-panel/tab-panel'
-import { Tab } from '../tab/tab'
+import { TabButton } from '../tab-button/tab-button'
 import { Tabs } from './tabs'
 
 const tabsSelector = '[data-testid="tabs"]'
@@ -11,9 +11,9 @@ describe(Tabs.name, () => {
       cy.mount(
         <Tabs>
           <TabList ariaLabel="cypress tabs">
-            <Tab id="tab1" tabpanelId="tabpanel1" text="tab1" />
-            <Tab id="tab2" tabpanelId="tabpanel2" text="tab2" />
-            <Tab id="tab3" tabpanelId="tabpanel3" text="tab3" />
+            <TabButton id="tab1" tabpanelId="tabpanel1" text="tab1" />
+            <TabButton id="tab2" tabpanelId="tabpanel2" text="tab2" />
+            <TabButton id="tab3" tabpanelId="tabpanel3" text="tab3" />
           </TabList>
 
           <TabPanel id="tabpanel1" tabId="tab1">
@@ -38,9 +38,9 @@ describe(Tabs.name, () => {
       cy.mount(
         <Tabs initialTabId={initialTabId}>
           <TabList ariaLabel="cypress tabs">
-            <Tab id="tab1" tabpanelId="tabpanel1" text="tab1" />
-            <Tab id="tab2" tabpanelId="tabpanel2" text="tab2" />
-            <Tab id="tab3" tabpanelId="tabpanel3" text="tab3" />
+            <TabButton id="tab1" tabpanelId="tabpanel1" text="tab1" />
+            <TabButton id="tab2" tabpanelId="tabpanel2" text="tab2" />
+            <TabButton id="tab3" tabpanelId="tabpanel3" text="tab3" />
           </TabList>
 
           <TabPanel id="tabpanel1" tabId="tab1">
@@ -78,9 +78,9 @@ describe(Tabs.name, () => {
       cy.mount(
         <Tabs>
           <TabList ariaLabel="cypress tabs">
-            <Tab id="tab1" tabpanelId="tabpanel1" text="tab1" />
-            <Tab id="tab2" tabpanelId="tabpanel2" text="tab2" />
-            <Tab id="tab3" tabpanelId="tabpanel3" text="tab3" />
+            <TabButton id="tab1" tabpanelId="tabpanel1" text="tab1" />
+            <TabButton id="tab2" tabpanelId="tabpanel2" text="tab2" />
+            <TabButton id="tab3" tabpanelId="tabpanel3" text="tab3" />
           </TabList>
 
           <TabPanel id="tabpanel1" tabId="tab1">
