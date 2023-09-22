@@ -2,13 +2,12 @@ variables:
   NODE_VERSION: node:18
   CI: 'true'
   GIT_DEPTH: 0
-  CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache/Cypress'
 
 image: $NODE_VERSION
 
 stages:
   - test
-  - build
+  - deploy
   - storybook
 
 .distributed:
@@ -41,12 +40,19 @@ storybook:
       - main
       - merge_requests
     changes:
-      - '*/**/components/**/*.stories.tsx'
+      - '*.stories.tsx'
 test:
   stage: test
   extends: .distributed
   script:
     - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t test --parallel=3 --configuration=ci
+  only:
+    refs:
+      - main
+      - merge_requests
+    changes:
+      - '*/**/*.tsx'
+      - '*/**/*.ts'
 
 component-test:
   image: cypress/browsers:node18.12.0-chrome106-ff106
@@ -56,10 +62,10 @@ component-test:
     - apt-get update && apt-get install -y xvfb
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
     - export DISPLAY=:99
-    - CHANGED_FOLDERS=$(git diff --dirstat=files,0 -w --name-only origin/${CI_DEFAULT_BRANCH} $CI_COMMIT_SHA -- '*/**/components/**/*.tsx' | sed 's:/[^/]*$:/\*:' | paste -sd ',')
+    - CHANGED_FOLDERS=$(git diff --dirstat=files,0 -w --name-only origin/${CI_DEFAULT_BRANCH} $CI_COMMIT_SHA -- '**/components/**' | sed 's:/[^/]*$:/\*:' | paste -sd ',')
     # CHANGED_FOLDERS:
-    # Verifica quais pastas foram modificadas até o último commit com a main
-    # exibe apenas as pastas de componentes modificados com padrão '/*,' do spec pattern do cypress
+    # Check which folders were modified until the last commit with main
+    # only display component folders modified with pattern '/*,' from the cypress spec pattern
     - echo $CHANGED_FOLDERS
     - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci --spec "${CHANGED_FOLDERS}"
   only:
@@ -67,15 +73,37 @@ component-test:
       - main
       - merge_requests
     changes:
-      - '*/**/components/**/*.tsx'
+      - '*/**/*.tsx'
   artifacts:
     when: on_failure
     paths:
       - dist/cypress
     expire_in: 1 day
-# só é necessário o build após a criação dos stages de release ou deploy
-# build:
-#   stage: build
-#   extends: .distributed
-#   script:
-#     - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t build --parallel=3
+
+deploy ui-form-components:
+  stage: deploy
+  extends: .distributed
+  script:
+    - yarn nx build ui-form-components
+    - yarn nx build-css ui-form-components
+    - cd ./dist/libs/ui-form-components
+    - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+    - npm publish
+  only:
+    refs:
+      - /ui-form-components\-.*/
+
+deploy ui-base-components:
+  stage: deploy
+  extends: .distributed
+  script:
+    - yarn nx build ui-base-components
+    - yarn nx build-css ui-base-components
+    - cd ./dist/libs/ui-base-components
+    - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+    - npm publish
+  only:
+    refs:
+      - /ui-base-components\-.*/
