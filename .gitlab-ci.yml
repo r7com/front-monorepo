@@ -8,7 +8,6 @@ image: $NODE_VERSION
 stages:
   - test
   - deploy
-  - build
   - storybook
 
 .distributed:
@@ -80,12 +79,6 @@ component-test:
     paths:
       - dist/cypress
     expire_in: 1 day
-
-build:
-  stage: build
-  extends: .distributed
-  script:
-    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t build --parallel=3
 
 deploy ui-form-components:
   stage: deploy
