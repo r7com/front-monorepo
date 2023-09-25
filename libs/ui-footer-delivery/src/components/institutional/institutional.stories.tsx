@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Institutional } from './index'
 import { data } from '../../mocks/institutional'
 import { useId } from 'react'
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 
 type RootProps = {
   editorialName: string
@@ -56,7 +55,7 @@ const RootMobile = ({ editorialName }: RootProps) => {
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Root> = {
-  title: 'Example/Institutional',
+  title: 'Footer/Institutional',
   component: Root,
   tags: ['autodocs'],
   argTypes: {},
@@ -87,7 +86,6 @@ export const Mobile: Story = {
   },
   parameters: {
     viewport: {
-      viewports: INITIAL_VIEWPORTS,
       defaultViewport: 'ipad',
     },
     design: {
