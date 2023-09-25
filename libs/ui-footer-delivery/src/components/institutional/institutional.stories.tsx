@@ -74,7 +74,7 @@ export const Default: Story = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/OBWV1tXbl1eXmdxzgEmcs3/Core-C-%7C-Delivery?type=design&node-id=2046-7445&mode=design&t=MVc0EOV7AfiDwEMQ-0',
+      url: 'https://www.figma.com/file/OBWV1tXbl1eXmdxzgEmcs3/Core-C-%7C-Delivery?node-id=1970%3A2582&mode=dev',
       accessToken: 'figd_sHs6Ap894w4C-OAFls7tuq0fMMROyue-8zQJ8hRE',
     },
   },
@@ -93,7 +93,7 @@ export const Mobile: Story = {
     },
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/OBWV1tXbl1eXmdxzgEmcs3/Core-C-%7C-Delivery?type=design&node-id=2046-7445&mode=design&t=MVc0EOV7AfiDwEMQ-0',
+      url: 'https://www.figma.com/file/OBWV1tXbl1eXmdxzgEmcs3/Core-C-%7C-Delivery?node-id=2046%3A7444&mode=dev',
       accessToken: 'figd_sHs6Ap894w4C-OAFls7tuq0fMMROyue-8zQJ8hRE',
     },
   },
