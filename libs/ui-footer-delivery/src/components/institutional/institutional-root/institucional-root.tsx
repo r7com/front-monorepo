@@ -7,7 +7,7 @@ export function InstitutionalRoot({ editorialColor, children }: InstitutionalRoo
   return (
     <section
       className="bg-editorial-color pt-xs lg:pt-sm lg:px-huge lg:pb-xs pb-xxxs"
-      style={{ backgroundColor: editorialColor ?? undefined }}
+      style={{ backgroundColor: editorialColor ? editorialColor : '' }}
       data-testid="institutional"
       aria-label="institutional"
     >
