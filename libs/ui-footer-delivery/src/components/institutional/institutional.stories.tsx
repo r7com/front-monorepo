@@ -85,7 +85,6 @@ export const Mobile: Story = {
   args: {
     editorialName: 'entretenimento',
   },
-
   parameters: {
     viewport: {
       viewports: INITIAL_VIEWPORTS,
