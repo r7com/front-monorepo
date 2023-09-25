@@ -81,7 +81,7 @@ export const Default: Story = {
 }
 
 export const Mobile: Story = {
-  render: ({ ...args }) => <RootMobile {...args} />,
+  render: args => <RootMobile {...args} />,
   args: {
     editorialName: 'entretenimento',
   },
