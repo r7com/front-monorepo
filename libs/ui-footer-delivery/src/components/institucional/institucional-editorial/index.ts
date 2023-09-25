@@ -1,1 +1,0 @@
-export * from './institucional-editorial'

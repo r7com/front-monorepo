@@ -1,2 +1,2 @@
-export * from './mocks/institucional'
-export * from './components/institucional'
+export * from './mocks/institutional'
+export * from './components/institutional'
