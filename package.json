@@ -67,6 +67,7 @@
     "@types/uuid": "^9.0.2",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
+    "@uidotdev/usehooks": "^2.3.1",
     "@vitejs/plugin-react": "^4.0.0",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "@vitest/coverage-c8": "^0.32.0",
