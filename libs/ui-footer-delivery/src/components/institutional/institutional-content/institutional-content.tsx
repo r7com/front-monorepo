@@ -3,5 +3,5 @@ export type InstitutionalContentProps = {
 }
 
 export function InstitutionalContent({ children }: InstitutionalContentProps) {
-  return <div className="lg:flex justify-between items-center">{children}</div>
+  return <div className="block lg:flex justify-between items-center">{children}</div>
 }
