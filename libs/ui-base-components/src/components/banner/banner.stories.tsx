@@ -11,7 +11,7 @@ type BannerPropsAndCustomArgs = React.ComponentProps<typeof BannerMock> & {
 }
 
 const meta: Meta<BannerPropsAndCustomArgs> = {
-  title: 'Example/Banner',
+  title: 'Communication/Banner',
   component: BannerMock,
   tags: ['autodocs'],
   /** Default em todos os stories */
@@ -58,13 +58,28 @@ type Story = StoryObj<typeof meta>
 export const DefaultIcons: Story = {
   render: args => {
     return (
-      <Banner.Root isVisible={args.isVisible}>
+      <Banner.Root>
         <Banner.Content>
           <Banner.Icon type={args.iconType}>
             <SvgIcon iconName={args.iconName} />
           </Banner.Icon>
-          <Banner.Description>{args.description}</Banner.Description>
+
+          <Banner.Description>
+            <span id="banner-description">{args.description}</span>
+          </Banner.Description>
         </Banner.Content>
+
+        <Banner.Options>
+          <Button>Saiba mais</Button>
+
+          <Button
+            aria-describedby="banner-description"
+            color="ghost"
+            onClick={() => args.handleToggle(!args.isVisible)}
+          >
+            Dispensar
+          </Button>
+        </Banner.Options>
       </Banner.Root>
     )
   },
@@ -80,32 +95,7 @@ export const DefaultIcons: Story = {
   },
 }
 
-export const CustomIcon: Story = {
-  render: args => {
-    return (
-      <Banner.Root isVisible={args.isVisible} onClose={args.handleToggle}>
-        <Banner.Content>
-          <Banner.Icon type={args.iconType}>
-            <SvgIcon iconName={args.iconName} />
-          </Banner.Icon>
-
-          <Banner.Description>{args.description}</Banner.Description>
-        </Banner.Content>
-      </Banner.Root>
-    )
-  },
-  args: {
-    iconType: 'custom',
-    iconName: 'record',
-    description:
-      'O sistema JARVICS será atualizado durante os dias 03 e 04 de agosto de 2023. Contamos com sua compreensão.',
-  },
-  parameters: {
-    controls: { exclude: ['imageSourceUrl'] },
-  },
-}
-
-export const CustomIconsAction: Story = {
+export const CustomIcons: Story = {
   render: args => {
     return (
       <Banner.Root isVisible={args.isVisible}>

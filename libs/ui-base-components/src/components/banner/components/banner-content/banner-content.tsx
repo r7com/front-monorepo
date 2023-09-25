@@ -6,7 +6,7 @@ export type BannerContentProps = {
 
 export function BannerContent({ children }: BannerContentProps) {
   return (
-    <div className="flex flex-col md:h-[70px] sm:flex-row gap-xxxs items-center w-full">
+    <div className="flex flex-1 flex-col md:h-[70px] sm:flex-row gap-xxxs items-center w-full">
       {children}
     </div>
   )
