@@ -1,5 +1,6 @@
 import { data } from '../../mocks/institutional'
 import { Institutional } from './index'
+
 const institucionalSelector = '[data-testid="institutional"]'
 
 describe('Institutional Footer', () => {

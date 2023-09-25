@@ -67,7 +67,7 @@ type Story = StoryObj<typeof Root>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
-  render: ({ ...args }) => <Root {...args} />,
+  render: args => <Root {...args} />,
   args: {
     editorialName: 'r7',
   },

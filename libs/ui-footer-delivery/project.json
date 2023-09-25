@@ -12,6 +12,14 @@
         "lintFilePatterns": ["libs/ui-footer-delivery/**/*.{ts,tsx,js,jsx}"]
       }
     },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["tsc -p tsconfig.app.json --noEmit"],
+        "cwd": "apps/admin",
+        "forwardAllArgs": false
+      }
+    },
     "build": {
       "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
