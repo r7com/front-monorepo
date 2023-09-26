@@ -34,6 +34,12 @@
         }
       }
     },
+    "build-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tailwindcss -c libs/ui-form-components/tailwind.config.js --minify  -i libs/ui-form-components/src/style.css -o dist/libs/ui-form-components/style.css"
+      }
+    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
@@ -62,6 +68,12 @@
         "ci": {
           "watch": false
         }
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular"
       }
     }
   }
