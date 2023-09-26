@@ -1,5 +1,6 @@
 import { SvgIcon, SvgIconProps } from '../../svg-icon'
 import { SvgIcons } from '../../svg-icon/svg-icon.types'
+import { useTabs } from '../tabs/hooks/use-tabs'
 import { TabButtonVariants, variants } from './tab-button.variants'
 
 export type TabButtonProps = {
@@ -20,21 +21,15 @@ export function TabButton({
   endIconName,
 }: TabButtonProps) {
   const { button, icon } = variants({ size })
-  const tabEvent = new CustomEvent('onTabClick', {
-    bubbles: true,
-    detail: {
-      tabId: id,
-    },
-  })
+  const { currentTabId, setCurrentTabId } = useTabs()
   const svgSize = {
     small: 'small',
     medium: 'medium',
     large: 'default',
   }[size]
 
-  function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
-    const target = event.target as HTMLElement
-    target.dispatchEvent(tabEvent)
+  function handleClick() {
+    setCurrentTabId(id)
   }
 
   return (
@@ -42,8 +37,8 @@ export function TabButton({
       type="button"
       className={button()}
       role="tab"
-      aria-selected={false}
-      tabIndex={-1}
+      aria-selected={currentTabId === id}
+      tabIndex={currentTabId === id ? 0 : -1}
       id={id}
       aria-controls={tabpanelId}
       onClick={handleClick}

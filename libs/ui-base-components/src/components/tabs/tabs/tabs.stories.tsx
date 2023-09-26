@@ -1,13 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Tabs } from './tabs'
-import { TabList } from '../tab-list'
-import { TabButton } from '../tab-button/tab-button'
-import { TabPanel } from '../tab-panel'
+import { Tabs } from '..'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const meta: Meta<typeof Tabs> = {
+const meta: Meta<typeof Tabs.Root> = {
   title: 'Example/Tabs',
-  component: Tabs,
+  component: Tabs.Root,
   tags: ['autodocs'],
   argTypes: {
     initialTabId: {
@@ -26,25 +23,25 @@ type Story = StoryObj<typeof Tabs>
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
   render: ({ ...args }) => (
-    <Tabs {...args}>
-      <TabList ariaLabel="cypress tabs">
-        <TabButton id="tab1" tabpanelId="tabpanel1" text="tab1" />
-        <TabButton id="tab2" tabpanelId="tabpanel2" text="tab2" />
-        <TabButton id="tab3" tabpanelId="tabpanel3" text="tab3" />
-      </TabList>
+    <Tabs.Root {...args}>
+      <Tabs.List ariaLabel="cypress tabs">
+        <Tabs.Button id="tab1" tabpanelId="tabpanel1" text="tab1" />
+        <Tabs.Button id="tab2" tabpanelId="tabpanel2" text="tab2" />
+        <Tabs.Button id="tab3" tabpanelId="tabpanel3" text="tab3" />
+      </Tabs.List>
 
-      <TabPanel id="tabpanel1" tabId="tab1">
+      <Tabs.Panel id="tabpanel1" tabId="tab1">
         <h2>Conteúdo tab 1</h2>
-      </TabPanel>
+      </Tabs.Panel>
 
-      <TabPanel id="tabpanel2" tabId="tab2">
+      <Tabs.Panel id="tabpanel2" tabId="tab2">
         <h2>Conteúdo tab 2</h2>
-      </TabPanel>
+      </Tabs.Panel>
 
-      <TabPanel id="tabpanel3" tabId="tab3">
+      <Tabs.Panel id="tabpanel3" tabId="tab3">
         <h2>Conteúdo tab 3</h2>
-      </TabPanel>
-    </Tabs>
+      </Tabs.Panel>
+    </Tabs.Root>
   ),
   args: {},
   parameters: {

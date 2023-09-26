@@ -10,9 +10,6 @@ const meta: Meta<typeof TabList> = {
     ariaLabel: {
       description: 'Value of the aria-label property',
     },
-    className: {
-      description: 'CSS classes to style the tablist',
-    },
   },
 }
 
