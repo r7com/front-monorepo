@@ -1,7 +1,7 @@
 import { createVariants, VariantProps } from '@r7/tools'
 
 export const variants = createVariants({
-  base: 'h-auto sm:h-[50px] w-full bg-editorial-color',
+  base: 'flex justify-around items-center px-nano h-auto w-full bg-editorial-color',
   variants: {
     fixed: {
       true: 'fixed',
