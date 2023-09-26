@@ -1,9 +1,9 @@
 import { data } from '../../mocks/institutional'
 import { Institutional } from './index'
 
-const institucionalSelector = '[data-testid="institutional"]'
-
 describe('Institutional Footer', () => {
+  const currentYear = new Date().getFullYear()
+
   it('should render Institutional Footer', () => {
     cy.mount(
       <Institutional.Root>
@@ -12,20 +12,23 @@ describe('Institutional Footer', () => {
             <Institutional.Logo />
             <Institutional.Editorial editorialName="r7" />
           </Institutional.Wrapper>
-          <Institutional.Copyright />
+          <Institutional.Copyright>
+            Todos os direitos reservados - 2009-{currentYear} - Rádio e Televisão Record S.A
+          </Institutional.Copyright>
         </Institutional.Content>
-        <Institutional.Line />
+
         <Institutional.List>
           {data.map(({ url, name }, i) => (
             <Institutional.Item key={i}>
-              <Institutional.Link url={url} name={name} />
+              <Institutional.Link url={url} title={name}>
+                {name}
+              </Institutional.Link>
             </Institutional.Item>
           ))}
         </Institutional.List>
       </Institutional.Root>,
     )
     cy.viewport(1024, 768)
-    cy.get(institucionalSelector).should('be.visible')
     cy.matchImage()
   })
 
@@ -37,21 +40,44 @@ describe('Institutional Footer', () => {
             <Institutional.Logo />
             <Institutional.Editorial editorialName="r7" />
           </Institutional.Wrapper>
-          <Institutional.Copyright />
+          <Institutional.Copyright>
+            Todos os direitos reservados - 2009-{currentYear} - Rádio e Televisão Record S.A
+          </Institutional.Copyright>
         </Institutional.Content>
-        <Institutional.Line />
         <Institutional.List>
           <Institutional.Item>
             <Institutional.Link
               url={'https://www.r7.com/termos-e-condicoes'}
-              name={'Termos e Condições de Uso'}
-            />
+              title={'Termos e Condições de Uso'}
+            >
+              Termos e Condições de Uso
+            </Institutional.Link>
           </Institutional.Item>
         </Institutional.List>
       </Institutional.Root>,
     )
     cy.viewport(320, 480)
-    cy.get(institucionalSelector).should('be.visible')
     cy.matchImage()
+  })
+
+  it('should render structure Institutional Footer', () => {
+    cy.mount(
+      <Institutional.List>
+        <Institutional.Item>
+          <Institutional.Link
+            url={'https://www.r7.com/termos-e-condicoes'}
+            title={'Termos e Condições de Uso'}
+          >
+            Termos e Condições de Uso
+          </Institutional.Link>
+        </Institutional.Item>
+      </Institutional.List>,
+    )
+
+    cy.findByRole('list').within(() => {
+      cy.findByRole('listitem').within(() => {
+        cy.findByRole('link', { name: /Termos e Condições de Uso/i })
+      })
+    })
   })
 })

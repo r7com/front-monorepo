@@ -3,11 +3,13 @@ import { Institutional } from './index'
 import { data } from '../../mocks/institutional'
 import { useId } from 'react'
 
-type RootProps = {
+type RootDesktopProps = {
   editorialName: string
 }
 
-const Root = ({ editorialName }: RootProps) => {
+const currentYear = new Date().getFullYear()
+
+const RootDesktop = ({ editorialName }: RootDesktopProps) => {
   const id = useId()
   return (
     <Institutional.Root>
@@ -16,13 +18,16 @@ const Root = ({ editorialName }: RootProps) => {
           <Institutional.Logo />
           <Institutional.Editorial editorialName={editorialName} />
         </Institutional.Wrapper>
-        <Institutional.Copyright />
+        <Institutional.Copyright>
+          Todos os direitos reservados - 2009-{currentYear} - Rádio e Televisão Record S.A
+        </Institutional.Copyright>
       </Institutional.Content>
-      <Institutional.Line />
       <Institutional.List>
         {data.map(({ url, name }, i) => (
           <Institutional.Item key={`${id}${i}`}>
-            <Institutional.Link url={url} name={name} />
+            <Institutional.Link url={url} title={name}>
+              {name}
+            </Institutional.Link>
           </Institutional.Item>
         ))}
       </Institutional.List>
@@ -30,7 +35,7 @@ const Root = ({ editorialName }: RootProps) => {
   )
 }
 
-const RootMobile = ({ editorialName }: RootProps) => {
+const RootMobile = ({ editorialName }: RootDesktopProps) => {
   return (
     <Institutional.Root>
       <Institutional.Content>
@@ -38,15 +43,18 @@ const RootMobile = ({ editorialName }: RootProps) => {
           <Institutional.Logo />
           <Institutional.Editorial editorialName={editorialName} />
         </Institutional.Wrapper>
-        <Institutional.Copyright />
+        <Institutional.Copyright>
+          Todos os direitos reservados - 2009-{currentYear} - Rádio e Televisão Record S.A
+        </Institutional.Copyright>
       </Institutional.Content>
-      <Institutional.Line />
       <Institutional.List>
         <Institutional.Item>
           <Institutional.Link
             url={'https://www.r7.com/termos-e-condicoes'}
-            name={'Termos e Condições de Uso'}
-          />
+            title={'Termos e Condições de Uso'}
+          >
+            Termos e Condições de Uso
+          </Institutional.Link>
         </Institutional.Item>
       </Institutional.List>
     </Institutional.Root>
@@ -54,19 +62,19 @@ const RootMobile = ({ editorialName }: RootProps) => {
 }
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const meta: Meta<typeof Root> = {
+const meta: Meta<typeof RootDesktop> = {
   title: 'Footer/Institutional',
-  component: Root,
+  component: RootDesktop,
   tags: ['autodocs'],
   argTypes: {},
 }
 
 export default meta
-type Story = StoryObj<typeof Root>
+type Story = StoryObj<typeof RootDesktop>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Default: Story = {
-  render: args => <Root {...args} />,
+export const Desktop: Story = {
+  render: args => <RootDesktop {...args} />,
   args: {
     editorialName: 'r7',
   },

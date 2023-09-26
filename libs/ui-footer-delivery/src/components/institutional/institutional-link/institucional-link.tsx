@@ -1,18 +1,19 @@
 type InstitutionalLinkProps = {
-  name: string
+  children: React.ReactNode
   url: string
+  title: string
 }
 
-export function InstitutionalLink({ name, url }: InstitutionalLinkProps) {
+export function InstitutionalLink({ children, url, title }: InstitutionalLinkProps) {
   return (
     <a
-      title={name}
+      title={title}
       href={url}
       target="_blank"
       className="text-light-high-400 uppercase text-little hover:underline"
       rel="noreferrer"
     >
-      {name}
+      {children}
     </a>
   )
 }

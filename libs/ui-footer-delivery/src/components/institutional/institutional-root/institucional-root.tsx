@@ -8,8 +8,7 @@ export function InstitutionalRoot({ editorialColor, children }: InstitutionalRoo
     <section
       className="bg-editorial-color pt-xs lg:pt-sm lg:px-huge lg:pb-xs pb-xxxs"
       style={{ backgroundColor: editorialColor ? editorialColor : '' }}
-      data-testid="institutional"
-      aria-label="Institucional"
+      aria-label="Links para sites institucionais"
     >
       {children}
     </section>

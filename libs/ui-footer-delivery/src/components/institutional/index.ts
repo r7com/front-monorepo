@@ -2,7 +2,6 @@ import { InstitutionalList } from './institutional-list'
 import { InstitutionalItem } from './institutional-item'
 import { InstitutionalLink } from './institutional-link'
 import { InstitutionalRoot } from './institutional-root'
-import { InstitutionalLine } from './institutional-line'
 import { InstitutionalContent } from './institutional-content'
 import { InstitutionalCopyright } from './institutional-copyright'
 import { InstitutionalWrapper } from './institutional-wrapper'
@@ -14,7 +13,6 @@ export const Institutional = {
   Link: InstitutionalLink,
   List: InstitutionalList,
   Root: InstitutionalRoot,
-  Line: InstitutionalLine,
   Content: InstitutionalContent,
   Copyright: InstitutionalCopyright,
   Wrapper: InstitutionalWrapper,
