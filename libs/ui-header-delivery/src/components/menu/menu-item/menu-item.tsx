@@ -16,10 +16,9 @@ export function MenuItem({ url, text, id, newWindow = true, children }: MenuItem
   const [ref, isMenuExpanded] = useHover<HTMLLIElement>()
   const { changeActiveMenuItem } = useActiveItem()
 
-  const activeMenuOnInteraction = useCallback(
-    () => changeActiveMenuItem(id),
-    [changeActiveMenuItem, id],
-  )
+  const activeMenuOnInteraction = useCallback(() => {
+    return changeActiveMenuItem(id)
+  }, [changeActiveMenuItem, id])
 
   useEffect(() => {
     if (isMenuExpanded) activeMenuOnInteraction()
