@@ -6,7 +6,7 @@ export type MenuProviderProps = {
 }
 
 export function MenuProvider({ children }: MenuProviderProps) {
-  const [activeMenuItem, setActiveItem] = useState<string>(null as never)
+  const [activeMenuItem, setActiveItem] = useState<string>('')
 
   return (
     <MenuContext.Provider
