@@ -5,7 +5,7 @@ export function useActiveItem() {
   const context = useContext(MenuContext)
 
   if (context === null) {
-    throw new Error('error')
+    throw new Error('MenuContext has not been initialized yet')
   }
 
   return context
