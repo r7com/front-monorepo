@@ -18,6 +18,7 @@
       "@r7/cypress": ["cypress-global-configs/index.ts"],
       "@r7/tools": ["tools/src/index.ts"],
       "@r7/ui-base-components": ["libs/ui-base-components/src/index.ts"],
+      "@r7/ui-card": ["libs/ui-card/src/index.ts"],
       "@r7/ui-form-components": ["libs/ui-form-components/src/index.ts"],
       "@r7/ui-header-delivery": ["libs/ui-header-delivery/src/index.ts"]
     }
