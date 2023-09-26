@@ -1,6 +1,8 @@
 import { createContext } from 'react'
 
-export const MenuContext = createContext<{
+type MenuContextProps = {
   changeActiveMenuItem(id: string): void
   activeMenuItem: string
-}>(null as never)
+}
+
+export const MenuContext = createContext<MenuContextProps | null>(null)
