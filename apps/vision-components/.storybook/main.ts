@@ -8,6 +8,7 @@ const config: StorybookConfig = {
     '@storybook/addon-links',
     '@storybook/addon-mdx-gfm',
     '@storybook/addon-designs',
+    '@storybook/addon-viewport',
   ],
   framework: {
     name: '@storybook/react-vite',
