@@ -1,13 +1,13 @@
 export type InstitutionalRootProps = {
-  editorialColor?: string
+  bgColor?: string
   children: React.ReactNode
 }
 
-export function InstitutionalRoot({ editorialColor, children }: InstitutionalRootProps) {
+export function InstitutionalRoot({ bgColor, children }: InstitutionalRootProps) {
   return (
     <section
       className="bg-editorial-color pt-xs lg:pt-sm lg:px-huge lg:pb-xs pb-xxxs"
-      style={{ backgroundColor: editorialColor ? editorialColor : '' }}
+      style={{ backgroundColor: bgColor || undefined }}
       aria-label="Links para sites institucionais"
     >
       {children}
