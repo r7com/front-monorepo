@@ -5,13 +5,27 @@ const CompleteHeader = () => (
   <Header>
     <Menu.Root>
       <Menu.List>
-        <Menu.Item url="#">brasilia</Menu.Item>
-        <Menu.Item url="#">entretenimento</Menu.Item>
-        <Menu.Item url="#">esportes</Menu.Item>
-        <Menu.Item url="#">hora 7</Menu.Item>
-        <Menu.Item url="#">jr 24h</Menu.Item>
-        <Menu.Item url="#">record tv</Menu.Item>
-        <Menu.Item url="#">a fazenda 15</Menu.Item>
+        <Menu.Item>
+          <Menu.Link href="#">brasilia</Menu.Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Menu.Link href="#">entretenimento</Menu.Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Menu.Link href="#">esportes</Menu.Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Menu.Link href="#">hora 7</Menu.Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Menu.Link href="#">jr 24h</Menu.Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Menu.Link href="#">record tv</Menu.Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Menu.Link href="#">a fazenda 15</Menu.Link>
+        </Menu.Item>
       </Menu.List>
     </Menu.Root>
   </Header>
