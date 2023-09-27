@@ -3,10 +3,5 @@ export type RootProps = {
 }
 
 export function CardRoot({ children }: RootProps) {
-  return (
-    <article>
-      Article
-      {children}
-    </article>
-  )
+  return <article>{children}</article>
 }
