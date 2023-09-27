@@ -25,7 +25,7 @@ const RootDesktop = ({ editorialName }: RootDesktopProps) => {
       <Institutional.List>
         {data.map(({ url, name }, i) => (
           <Institutional.Item key={`${id}${i}`}>
-            <Institutional.Link url={url} title={name}>
+            <Institutional.Link href={url} title={name}>
               {name}
             </Institutional.Link>
           </Institutional.Item>
@@ -50,7 +50,7 @@ const RootMobile = ({ editorialName }: RootDesktopProps) => {
       <Institutional.List>
         <Institutional.Item>
           <Institutional.Link
-            url={'https://www.r7.com/termos-e-condicoes'}
+            href={'https://www.r7.com/termos-e-condicoes'}
             title={'Termos e Condições de Uso'}
           >
             Termos e Condições de Uso
