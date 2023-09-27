@@ -44,7 +44,7 @@ export const Primary: Story = {
   ),
   args: {
     className: '',
-    editorialColor: '',
+    bgColor: '',
   },
   parameters: {
     design: {
