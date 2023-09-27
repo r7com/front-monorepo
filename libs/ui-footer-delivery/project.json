@@ -39,6 +39,15 @@
       "options": {
         "preset": "angular"
       }
+    },
+    "component-test": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "libs/ui-footer-delivery/cypress.config.ts",
+        "testingType": "component",
+        "devServerTarget": "ui-footer-delivery:build",
+        "skipServe": true
+      }
     }
   }
 }
