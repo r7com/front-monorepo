@@ -16,7 +16,7 @@ export function Header({ children, className = '', bgColor = '' }: HeaderProps) 
   return (
     <header
       className={variants({ fixed: isFixed, className })}
-      style={{ backgroundColor: bgColor ?? undefined }}
+      style={{ backgroundColor: bgColor || undefined }}
     >
       {children}
     </header>
