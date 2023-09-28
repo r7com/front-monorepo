@@ -1,13 +1,13 @@
-import { variants, HeaderVariants } from './header.variants'
 import { useWindowScroll } from '@uidotdev/usehooks'
+import { variants } from './header.variants'
 
 export type HeaderProps = {
   children: React.ReactNode
   className?: string
-  editorialColor?: string
-} & HeaderVariants
+  bgColor?: string
+}
 
-export function Header({ children, className = '', editorialColor = '' }: HeaderProps) {
+export function Header({ children, className = '', bgColor = '' }: HeaderProps) {
   const [{ y: axisY }] = useWindowScroll()
 
   // O header fica 'fixed' depois de 50px na regra atual
@@ -15,9 +15,10 @@ export function Header({ children, className = '', editorialColor = '' }: Header
 
   return (
     <header
-      className={variants({ className, fixed: isFixed })}
-      style={{ backgroundColor: editorialColor ?? undefined }}
+      className={variants({ fixed: isFixed, className })}
+      style={{ backgroundColor: bgColor || undefined }}
     >
+      <span className="hidden">aisudhaosiudh</span>
       {children}
     </header>
   )
