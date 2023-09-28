@@ -60,7 +60,10 @@
       },
       "configurations": {
         "ci": {
-          "watch": false
+          "watch": false,
+          "env": {
+            "pluginVisualRegressionUpdateImages": true
+          }
         }
       }
     }
