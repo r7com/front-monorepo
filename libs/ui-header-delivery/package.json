@@ -1,5 +1,5 @@
 {
-  "name": "@front-monorepo/ui-header-delivery",
+  "name": "@r7/ui-header-delivery",
   "version": "0.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
