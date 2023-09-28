@@ -18,6 +18,7 @@ export function Header({ children, className = '', bgColor = '' }: HeaderProps) 
       className={variants({ fixed: isFixed, className })}
       style={{ backgroundColor: bgColor || undefined }}
     >
+      <span className="hidden">aisudhaosiudh</span>
       {children}
     </header>
   )
