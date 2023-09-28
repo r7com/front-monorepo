@@ -68,6 +68,18 @@
           }
         }
       }
+    },
+    "build-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tailwindcss -c libs/ui-footer-delivery/tailwind.config.js --minify  -i libs/ui-footer-delivery/src/style.css -o dist/libs/ui-footer-delivery/style.css"
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular"
+      }
     }
   }
 }
