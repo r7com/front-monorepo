@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import dts from 'vite-plugin-dts'
+import svgr from 'vite-plugin-svgr'
 import * as path from 'path'
 
 export default defineConfig({
@@ -13,6 +14,11 @@ export default defineConfig({
       entryRoot: 'src',
       tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
       skipDiagnostics: true,
+    }),
+    svgr({
+      svgrOptions: {
+        titleProp: true,
+      },
     }),
     react(),
     nxViteTsPaths(),

@@ -40,13 +40,34 @@
         "preset": "angular"
       }
     },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/ui-footer-delivery/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
     "component-test": {
       "executor": "@nx/cypress:cypress",
       "options": {
         "cypressConfig": "libs/ui-footer-delivery/cypress.config.ts",
         "testingType": "component",
         "devServerTarget": "ui-footer-delivery:build",
-        "skipServe": true
+        "skipServe": true,
+        "watch": true,
+        "browser": "chrome"
+      },
+      "configurations": {
+        "ci": {
+          "watch": false
+        }
       }
     }
   }

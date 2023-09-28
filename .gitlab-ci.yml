@@ -62,7 +62,7 @@ component-test:
     - apt-get update && apt-get install -y xvfb
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
     - export DISPLAY=:99
-    - CHANGED_FOLDERS=$(git diff --dirstat=files,0 -w --name-only origin/${CI_DEFAULT_BRANCH} $CI_COMMIT_SHA -- '**/components/**' | sed 's:/[^/]*$:/\*:' | paste -sd ',')
+    - CHANGED_FOLDERS=$(git diff --dirstat=files,0 -w --name-only origin/${CI_DEFAULT_BRANCH} $CI_COMMIT_SHA -- '**/components/**' ':!**/__image_snapshots__/**' | sed 's:/[^/]*$:/\*:' | paste -sd ',')
     # CHANGED_FOLDERS:
     # Check which folders were modified until the last commit with main
     # only display component folders modified with pattern '/*,' from the cypress spec pattern
