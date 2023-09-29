@@ -37,7 +37,7 @@
     "build-css": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "tailwindcss -c libs/ui-base-components/tailwind.config.js --minify  -i libs/ui-base-components/src/style.css -o dist/libs/ui-base-components/style.css"
+        "command": "tailwindcss -c libs/ui-card/tailwind.config.js --minify  -i libs/ui-card/src/style.css -o dist/libs/ui-card/style.css"
       }
     },
     "test": {
@@ -51,6 +51,22 @@
         "ci": {
           "ci": true,
           "codeCoverage": true
+        }
+      }
+    },
+    "component-test": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "libs/ui-card/cypress.config.ts",
+        "testingType": "component",
+        "devServerTarget": "ui-card:build",
+        "skipServe": true,
+        "watch": true,
+        "browser": "chrome"
+      },
+      "configurations": {
+        "ci": {
+          "watch": false
         }
       }
     }
