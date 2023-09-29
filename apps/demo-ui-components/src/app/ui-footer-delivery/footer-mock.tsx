@@ -1,8 +1,8 @@
-import { Footer, SitemapFooter } from '@r7/ui-footer-delivery'
+import { SitemapFooter } from '@r7/ui-footer-delivery'
 
 export function FooterMock() {
   return (
-    <Footer>
+    <footer>
       <SitemapFooter.Root>
         <SitemapFooter.Container>
           <SitemapFooter.MenuList>
@@ -30,6 +30,6 @@ export function FooterMock() {
           </SitemapFooter.MenuList>
         </SitemapFooter.Container>
       </SitemapFooter.Root>
-    </Footer>
+    </footer>
   )
 }
