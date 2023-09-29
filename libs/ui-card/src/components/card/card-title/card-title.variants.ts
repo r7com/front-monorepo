@@ -1,4 +1,5 @@
 import { VariantProps, createVariants } from '@r7/tools'
+
 export const variants = createVariants({
   base: 'text-neutral-low-500 dark:text-neutral-high-400 mb-xxxs font-semibold',
   variants: {
@@ -13,4 +14,4 @@ export const variants = createVariants({
   },
 })
 
-export type TitleVariants = VariantProps<typeof variants>
+export type CardTitleVariants = VariantProps<typeof variants>
