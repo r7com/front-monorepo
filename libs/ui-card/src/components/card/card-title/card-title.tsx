@@ -1,4 +1,3 @@
-import React from 'react'
 import { TitleVariants, variants } from './card-title.variants'
 export type TitleProps = {
   children: React.ReactNode
