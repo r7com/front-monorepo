@@ -132,3 +132,17 @@ deploy ui-footer-delivery:
   only:
     refs:
       - /ui-footer-delivery\-.*/
+
+deploy ui-header-delivery:
+  stage: deploy
+  extends: .distributed
+  script:
+    - yarn nx build ui-header-delivery
+    - yarn nx build-css ui-header-delivery
+    - cd ./dist/libs/ui-header-delivery
+    - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+    - npm publish
+  only:
+    refs:
+      - /ui-header-delivery\-.*/
