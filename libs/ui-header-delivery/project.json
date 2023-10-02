@@ -60,8 +60,23 @@
       },
       "configurations": {
         "ci": {
-          "watch": false
+          "watch": false,
+          "env": {
+            "pluginVisualRegressionUpdateImages": true
+          }
         }
+      }
+    },
+    "build-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tailwindcss -c libs/ui-header-delivery/tailwind.config.js --minify  -i libs/ui-header-delivery/src/style.css -o dist/libs/ui-header-delivery/style.css"
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular"
       }
     }
   }
