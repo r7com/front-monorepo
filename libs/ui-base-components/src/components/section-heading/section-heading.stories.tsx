@@ -100,21 +100,3 @@ export const NoTags: Story = {
     color: '#4766ac',
   },
 }
-
-export const MobileTitle: Story = {
-  ...Default,
-  parameters: {
-    viewport: {
-      defaultViewport: 'iphonese2',
-    },
-  },
-}
-
-export const MobileImage: Story = {
-  ...Image,
-  parameters: {
-    viewport: {
-      defaultViewport: 'iphonese2',
-    },
-  },
-}
