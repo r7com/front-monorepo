@@ -52,49 +52,57 @@ const SectionHeadingImage = (
 )
 
 describe(`SectionHeading`, () => {
-  it('should match desktop image with text as title', () => {
-    cy.viewport('macbook-11')
+  beforeEach(() => {
     cy.mount(SectionHeadingTitle)
-    cy.matchImage()
   })
 
-  it('should match desktop image with image as title', () => {
+  it('should have a separator', () => {
+    cy.findByRole('separator').should('be.visible')
+  })
+
+  it('should render its tags', () => {
+    cy.findByRole('link', { name: /Flavio Ricco/i }).should('be.visible')
+    cy.findByRole('link', { name: /Keila Jimenez/i }).should('be.visible')
+    cy.findByRole('link', { name: /Fabíola Reipert/i }).should('be.visible')
+  })
+})
+
+describe(`SectionHeading - Title`, () => {
+  beforeEach(() => {
+    cy.mount(SectionHeadingTitle)
+  })
+
+  it('should match desktop image with text as title', () => {
     cy.viewport('macbook-11')
-    cy.mount(SectionHeadingImage)
     cy.matchImage()
   })
 
   it('should match mobile image with text as title', () => {
     cy.viewport('iphone-se2')
-    cy.mount(SectionHeadingTitle)
+    cy.matchImage()
+  })
+
+  it('should have a title when title is text', () => {
+    cy.findByRole('heading').should('be.visible')
+  })
+})
+
+describe(`SectionHeading - Image`, () => {
+  beforeEach(() => {
+    cy.mount(SectionHeadingImage)
+  })
+
+  it('should match desktop image with image as title', () => {
+    cy.viewport('macbook-11')
     cy.matchImage()
   })
 
   it('should match mobile image with image as title', () => {
     cy.viewport('iphone-se2')
-    cy.mount(SectionHeadingImage)
     cy.matchImage()
   })
 
-  it('should have a title when title is text', () => {
-    cy.mount(SectionHeadingTitle)
-    cy.findByRole('heading').should('be.visible')
-  })
-
   it('should have a image when title is image', () => {
-    cy.mount(SectionHeadingImage)
     cy.findByRole('img').should('be.visible')
-  })
-
-  it('should have a separator', () => {
-    cy.mount(SectionHeadingTitle)
-    cy.findByRole('separator').should('be.visible')
-  })
-
-  it('should render its tags', () => {
-    cy.mount(SectionHeadingTitle)
-    cy.findByRole('link', { name: /Flavio Ricco/i }).should('be.visible')
-    cy.findByRole('link', { name: /Keila Jimenez/i }).should('be.visible')
-    cy.findByRole('link', { name: /Fabíola Reipert/i }).should('be.visible')
   })
 })
