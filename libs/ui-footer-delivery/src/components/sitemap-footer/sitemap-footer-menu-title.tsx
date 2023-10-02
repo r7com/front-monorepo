@@ -5,11 +5,11 @@ type SitemapFooterMenuTitleProps = {
 
 export function SitemapFooterMenuTitle({ children, textColor = '' }: SitemapFooterMenuTitleProps) {
   return (
-    <h3
+    <h5
       className="mb-xxxs text-editorial-color uppercase text-sm font-light"
       style={{ color: textColor || undefined }}
     >
       {children}
-    </h3>
+    </h5>
   )
 }

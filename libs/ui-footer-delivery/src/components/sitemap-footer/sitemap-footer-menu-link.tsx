@@ -21,7 +21,7 @@ export function SitemapFooterMenuLink({
       className="hover:underline"
       {...rest}
     >
-      {children}
+      <h6>{children}</h6>
     </a>
   )
 }
