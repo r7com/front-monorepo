@@ -5,7 +5,10 @@ export type SectionHeadingProps = {
 
 export function SectionHeading({ children, color = '#556373' }: SectionHeadingProps) {
   return (
-    <div className="flex items-center gap-nano" style={{ '--color': color } as React.CSSProperties}>
+    <div
+      className="flex flex-wrap md:flex-nowrap items-center gap-nano py-xxxs"
+      style={{ '--color': color } as React.CSSProperties}
+    >
       {children}
     </div>
   )
