@@ -1,8 +1,5 @@
-export type SectionHeadingImageProps = {
-  src: string
-  alt: string
-}
+export type SectionHeadingImageProps = React.ImgHTMLAttributes<HTMLImageElement>
 
-export function SectionHeadingImage({ src, alt }: SectionHeadingImageProps) {
-  return <img className="rounded-md w-[110px] min-w-[110px] h-[70px]" src={src} alt={alt} />
+export function SectionHeadingImage({ alt, ...rest }: SectionHeadingImageProps) {
+  return <img className="rounded-md w-[110px] min-w-[110px] h-[70px]" alt={alt} {...rest} />
 }
