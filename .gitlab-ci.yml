@@ -52,6 +52,10 @@ deploy storybook:
     - aws s3 cp dist/apps/vision-components/ s3://r7-pipelines-statics/vision-components/
   dependencies:
     - build storybook
+  only:
+    refs:
+      - main
+      - merge_requests
 
 test:
   stage: test
