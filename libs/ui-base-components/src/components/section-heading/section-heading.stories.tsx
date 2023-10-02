@@ -21,17 +21,19 @@ export const Default: Story = {
 
       <SectionHeading.Line />
 
-      <SectionHeading.Tag href="#" title="Flavio Ricco">
-        Flavio Ricco
-      </SectionHeading.Tag>
+      <SectionHeading.Tags>
+        <SectionHeading.Tag href="#" title="Flavio Ricco">
+          Flavio Ricco
+        </SectionHeading.Tag>
 
-      <SectionHeading.Tag href="#" title="Keila Jimenez">
-        Keila Jimenez
-      </SectionHeading.Tag>
+        <SectionHeading.Tag href="#" title="Keila Jimenez">
+          Keila Jimenez
+        </SectionHeading.Tag>
 
-      <SectionHeading.Tag href="#" title="Fabíola Reipert">
-        Fabíola Reipert
-      </SectionHeading.Tag>
+        <SectionHeading.Tag href="#" title="Fabíola Reipert">
+          Fabíola Reipert
+        </SectionHeading.Tag>
+      </SectionHeading.Tags>
     </SectionHeading.Root>
   ),
   args: {
@@ -42,24 +44,28 @@ export const Default: Story = {
 export const Image: Story = {
   render: ({ ...args }) => (
     <SectionHeading.Root {...args}>
-      <SectionHeading.Image
-        src="https://img.r7.com/images/jr-24h-18112019115830166?resize=110x70&crop=200x127+0+37"
-        alt="Jornal da Record"
-      />
+      <a href="/">
+        <SectionHeading.Image
+          src="https://img.r7.com/images/jr-24h-18112019115830166?resize=110x70&crop=200x127+0+37"
+          alt="Jornal da Record"
+        />
+      </a>
 
       <SectionHeading.Line />
 
-      <SectionHeading.Tag href="#" title="Christina Lemos">
-        Christina Lemos
-      </SectionHeading.Tag>
+      <SectionHeading.Tags>
+        <SectionHeading.Tag href="#" title="Christina Lemos">
+          Christina Lemos
+        </SectionHeading.Tag>
 
-      <SectionHeading.Tag href="#" title="Thiago Nolasco">
-        Thiago Nolasco
-      </SectionHeading.Tag>
+        <SectionHeading.Tag href="#" title="Thiago Nolasco">
+          Thiago Nolasco
+        </SectionHeading.Tag>
 
-      <SectionHeading.Tag href="#" title="Luiz Fara Monteiro">
-        Luiz Fara Monteiro
-      </SectionHeading.Tag>
+        <SectionHeading.Tag href="#" title="Luiz Fara Monteiro">
+          Luiz Fara Monteiro
+        </SectionHeading.Tag>
+      </SectionHeading.Tags>
     </SectionHeading.Root>
   ),
   args: {
@@ -92,5 +98,23 @@ export const NoTags: Story = {
   ),
   args: {
     color: '#4766ac',
+  },
+}
+
+export const MobileTitle: Story = {
+  ...Default,
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphonese2',
+    },
+  },
+}
+
+export const MobileImage: Story = {
+  ...Image,
+  parameters: {
+    viewport: {
+      defaultViewport: 'iphonese2',
+    },
   },
 }
