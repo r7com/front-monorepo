@@ -1,5 +1,7 @@
 const plugin = require('tailwindcss/plugin')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
     borderWidth: {
@@ -161,6 +163,9 @@ module.exports = {
       xxxl: '5rem',
       huge: '8rem',
       giant: '10rem',
+    },
+    screens: {
+      ...defaultTheme.screens,
     },
     extend: {
       container: theme => ({
