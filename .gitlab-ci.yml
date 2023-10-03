@@ -7,8 +7,8 @@ image: $NODE_VERSION
 
 stages:
   - test
-  - deploy
   - storybook
+  - deploy
 
 .distributed:
   interruptible: true
@@ -48,7 +48,7 @@ deploy storybook:
   image:
     name: gitlab.ir7.com.br:5050/sre/docker-images/gitlab-runner-images:1.0.5
     entrypoint: [""]
-  stage: storybook
+  stage: deploy
   interruptible: true
   tags:
     - gitlab-runner-ec2
