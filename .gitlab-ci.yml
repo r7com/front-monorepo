@@ -58,6 +58,9 @@ deploy storybook:
       - merge_requests
     changes:
       - '*.stories.tsx'
+  interruptible: true
+  tags:
+    - gitlab-runner-ec2
 
 test:
   stage: test
