@@ -29,18 +29,40 @@ stages:
     - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
     - NX_HEAD=$CI_COMMIT_SHA
 
-storybook:
+build storybook:
   extends: .distributed
   stage: storybook
   script:
     - yarn nx build-storybook vision-components
-    - ls -la dist/apps/vision-components
   only:
     refs:
       - main
       - merge_requests
     changes:
       - '*.stories.tsx'
+  artifacts:
+    paths:
+      - dist/apps/vision-components/
+
+deploy storybook:
+  interruptible: true
+  tags:
+    - gitlab-runner-ec2
+  image: gitlab.ir7.com.br:5050/sre/docker-images/gitlab-runner-images:1.0.5
+  stage: storybook
+  script:
+    - ls -la dist/apps/vision-components
+    - aws s3 cp dist/apps/vision-components/ s3://r7-pipelines-statics/vision-components/
+  dependencies:
+    - build storybook
+  only:
+    refs:
+      - main
+      - merge_requests
+      - storybookDeploy
+    changes:
+      - '*.stories.tsx'
+
 test:
   stage: test
   extends: .distributed
