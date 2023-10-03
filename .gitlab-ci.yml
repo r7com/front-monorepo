@@ -45,7 +45,9 @@ build storybook:
       - dist/apps/vision-components/
 
 deploy storybook:
-  image: gitlab.ir7.com.br:5050/sre/docker-images/gitlab-runner-images:1.0.5
+  image:
+    name: gitlab.ir7.com.br:5050/sre/docker-images/gitlab-runner-images:1.0.5
+    entrypoint: [""]
   stage: storybook
   interruptible: true
   tags:
