@@ -59,6 +59,7 @@ deploy storybook:
     refs:
       - main
       - merge_requests
+      - storybookDeploy
     changes:
       - '*.stories.tsx'
 
