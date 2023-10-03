@@ -45,6 +45,8 @@ build storybook:
       - dist/apps/vision-components/
 
 deploy storybook:
+  dependencies:
+    - build storybook
   image:
     name: gitlab.ir7.com.br:5050/sre/docker-images/gitlab-runner-images:1.0.5
     entrypoint: [""]
@@ -55,8 +57,6 @@ deploy storybook:
   script:
     - ls -la dist/apps/vision-components
     - aws s3 cp dist/apps/vision-components/ s3://r7-pipelines-statics/vision-components/
-  dependencies:
-    - build storybook
   # only:
   #   refs:
   #     - main
