@@ -55,7 +55,7 @@ deploy storybook:
   script:
     - ls -la dist/apps/vision-components
     - aws s3 cp dist/apps/vision-components/ s3://r7-pipelines-statics/vision-components/
-  needs:
+  dependencies:
     - build storybook
   only:
     refs:
