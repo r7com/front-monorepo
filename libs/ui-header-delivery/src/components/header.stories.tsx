@@ -36,7 +36,7 @@ export const Primary: Story = {
             <Menu.Link href="#">record tv</Menu.Link>
           </Menu.Item>
           <Menu.Item>
-            <Menu.Link href="#">a fazenda 15</Menu.Link>
+            <Menu.Link href="#">a fazenda 1</Menu.Link>
           </Menu.Item>
         </Menu.List>
       </Menu.Root>
