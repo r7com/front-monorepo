@@ -34,12 +34,12 @@ build storybook:
   stage: storybook
   script:
     - yarn nx build-storybook vision-components
-  # only:
-  #   refs:
-  #     - main
-  #     - merge_requests
-  #   changes:
-  #     - '*.stories.tsx'
+  only:
+    refs:
+      - main
+      - merge_requests
+#    changes:
+#      - '*.stories.tsx'
   artifacts:
     paths:
       - dist/apps/vision-components/
@@ -57,12 +57,12 @@ deploy storybook:
     - aws s3 cp dist/apps/vision-components/ s3://r7-pipelines-statics/vision-components/
   needs:
     - build storybook
-  # only:
-  #   refs:
-  #     - main
-  #     - merge_requests
-  #   changes:
-  #     - '*.stories.tsx'
+  only:
+    refs:
+      - main
+      - merge_requests
+  #  changes:
+  #    - '*.stories.tsx'
 
 test:
   stage: test
