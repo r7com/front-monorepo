@@ -34,12 +34,12 @@ build storybook:
   stage: storybook
   script:
     - yarn nx build-storybook vision-components
-  only:
-    refs:
-      - main
-      - merge_requests
-    changes:
-      - '*.stories.tsx'
+  # only:
+  #   refs:
+  #     - main
+  #     - merge_requests
+  #   changes:
+  #     - '*.stories.tsx'
   artifacts:
     paths:
       - dist/apps/vision-components/
