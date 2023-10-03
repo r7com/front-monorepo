@@ -37,9 +37,9 @@ build storybook:
   only:
     refs:
       - main
-      - merge_requests
-#    changes:
-#      - '*.stories.tsx'
+      - tags
+    changes:
+      - '*.stories.tsx'
   artifacts:
     paths:
       - dist/apps/vision-components/
@@ -60,9 +60,9 @@ deploy storybook:
   only:
     refs:
       - main
-      - merge_requests
-  #  changes:
-  #    - '*.stories.tsx'
+      - tags
+    changes:
+      - '*.stories.tsx'
 
 test:
   stage: test
