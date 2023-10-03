@@ -7,8 +7,8 @@ image: $NODE_VERSION
 
 stages:
   - test
-  - deploy
   - storybook
+  - deploy
 
 .distributed:
   interruptible: true
@@ -37,7 +37,7 @@ build storybook:
   only:
     refs:
       - main
-      - merge_requests
+      - tags
     changes:
       - '*.stories.tsx'
   artifacts:
@@ -45,20 +45,22 @@ build storybook:
       - dist/apps/vision-components/
 
 deploy storybook:
+  image:
+    name: gitlab.ir7.com.br:5050/sre/docker-images/gitlab-runner-images:1.0.5
+    entrypoint: [""]
+  stage: deploy
   interruptible: true
   tags:
     - gitlab-runner-ec2
-  image: gitlab.ir7.com.br:5050/sre/docker-images/gitlab-runner-images:1.0.5
-  stage: storybook
   script:
     - ls -la dist/apps/vision-components
-    - aws s3 cp dist/apps/vision-components/ s3://r7-pipelines-statics/vision-components/
+    - aws s3 cp dist/apps/vision-components/ s3://r7-pipelines-statics/vision-components/ --recursive
   dependencies:
     - build storybook
   only:
     refs:
       - main
-      - merge_requests
+      - tags
     changes:
       - '*.stories.tsx'
 
