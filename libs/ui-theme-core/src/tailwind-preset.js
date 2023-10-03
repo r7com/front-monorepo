@@ -1,6 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
+  darkMode: 'class',
   theme: {
     borderWidth: {
       hairline: '0.063rem',
