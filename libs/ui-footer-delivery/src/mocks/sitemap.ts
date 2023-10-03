@@ -1,5 +1,5 @@
 // arc menu data example
-export const sitemapData = {
+export const SITEMAP_DATA = {
   _website: 'r7',
   _id: '/',
   name: 'R7',
