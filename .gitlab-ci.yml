@@ -108,6 +108,17 @@ deploy ui-base-components:
     refs:
       - /ui-base-components\-.*/
 
+deploy ui-card:
+  stage: deploy
+  extends: .distributed
+  script:
+    - yarn nx build ui-card
+    - yarn nx build-css ui-card
+    - cd ./dist/libs/ui-card
+  only:
+    refs:
+      - /ui-card\-.*/
+
 deploy ui-footer-delivery:
   stage: deploy
   extends: .distributed
