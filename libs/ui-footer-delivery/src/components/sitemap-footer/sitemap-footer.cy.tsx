@@ -1,8 +1,8 @@
 import { SitemapFooter } from './index'
-import { sitemapData } from '../../mocks/sitemap'
+import { SITEMAP_DATA } from '../../mocks/sitemap'
 
 describe('SitemapFooter', () => {
-  const columns = sitemapData?.children[0]?.children
+  const columns = SITEMAP_DATA?.children[0]?.children
 
   beforeEach(() => {
     cy.mount(
@@ -20,13 +20,13 @@ describe('SitemapFooter', () => {
                           <SitemapFooter.Submenu>
                             {section?.children.map(sectionItem => (
                               <SitemapFooter.SubmenuItem key={sectionItem._id}>
-                                <SitemapFooter.MenuLik
+                                <SitemapFooter.MenuLink
                                   openInNewTab={true}
                                   title={sectionItem.display_name}
-                                  url={sectionItem.url}
+                                  href={sectionItem.url}
                                 >
                                   {sectionItem.display_name}
-                                </SitemapFooter.MenuLik>
+                                </SitemapFooter.MenuLink>
                               </SitemapFooter.SubmenuItem>
                             ))}
                           </SitemapFooter.Submenu>
@@ -67,9 +67,9 @@ describe('SitemapFooter', () => {
 
   it('should render link component according with the props', () => {
     cy.mount(
-      <SitemapFooter.MenuLik url="https://r7.com" title="R7 Home" openInNewTab>
+      <SitemapFooter.MenuLink href="https://r7.com" title="R7 Home" openInNewTab>
         My link component
-      </SitemapFooter.MenuLik>,
+      </SitemapFooter.MenuLink>,
     )
 
     cy.findByRole('link', { name: /my link component/i })
@@ -82,9 +82,9 @@ describe('SitemapFooter', () => {
 
   it('should render link component without prop openInNewTab', () => {
     cy.mount(
-      <SitemapFooter.MenuLik url="https://r7.com" title="R7 Home">
+      <SitemapFooter.MenuLink href="https://r7.com" title="R7 Home">
         My link component
-      </SitemapFooter.MenuLik>,
+      </SitemapFooter.MenuLink>,
     )
 
     cy.findByRole('link', { name: /my link component/i })

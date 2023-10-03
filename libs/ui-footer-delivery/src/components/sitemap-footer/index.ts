@@ -12,7 +12,7 @@ export const SitemapFooter = {
   Container: SitemapFooterContainer,
   MenuList: SitemapFooterMenuList,
   MenuItem: SitemapFooterMenuItem,
-  MenuLik: SitemapFooterMenuLink,
+  MenuLink: SitemapFooterMenuLink,
   MenuTitle: SitemapFooterMenuTitle,
   Submenu: SitemapFooterSubmenu,
   SubmenuItem: SitemapFooterSubmenuItem,

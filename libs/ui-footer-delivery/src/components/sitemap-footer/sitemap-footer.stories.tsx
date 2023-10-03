@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { SitemapFooter } from './index'
-import { sitemapData } from '../../mocks/sitemap'
+import { SITEMAP_DATA } from '../../mocks/sitemap'
 
-const columns = sitemapData?.children[0]?.children
+const columns = SITEMAP_DATA?.children[0]?.children
 
 type SitemapFooterProps = {
   textColor: string
@@ -12,8 +12,6 @@ type SitemapFooterProps = {
 const meta: Meta<SitemapFooterProps> = {
   title: 'Footer/SitemapFooter',
   tags: ['autodocs'],
-  subcomponents: {},
-  argTypes: {},
 }
 
 export default meta
@@ -38,13 +36,13 @@ export const Desktop: Story = {
                         <SitemapFooter.Submenu>
                           {section?.children.map(sectionItem => (
                             <SitemapFooter.SubmenuItem key={sectionItem._id}>
-                              <SitemapFooter.MenuLik
+                              <SitemapFooter.MenuLink
                                 openInNewTab={true}
                                 title={sectionItem.display_name}
-                                url={sectionItem.url}
+                                href={sectionItem.url}
                               >
                                 {sectionItem.display_name}
-                              </SitemapFooter.MenuLik>
+                              </SitemapFooter.MenuLink>
                             </SitemapFooter.SubmenuItem>
                           ))}
                         </SitemapFooter.Submenu>
