@@ -8,12 +8,12 @@ export type SidebarRootProps = {
 export function SidebarRoot({ children }: SidebarRootProps) {
   const { sidebar } = useSidebar()
 
-  const { sidebarContaner, sidebarMenu } = variants({ isSidebarOpen: sidebar.isOpen })
+  const { sidebarContainer, sidebarMenu } = variants({ isSidebarOpen: sidebar.isOpen })
 
   const closeSidebar = () => sidebar.toggle(false)
 
   return (
-    <div className={sidebarContaner()}>
+    <div className={sidebarContainer()}>
       <button className="absolute inset-0" onClick={closeSidebar} aria-controls="sidebar">
         <span className="hidden">control sidebar</span>
       </button>
