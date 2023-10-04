@@ -15,7 +15,7 @@ export function SidebarRoot({ children }: SidebarRootProps) {
   return (
     <div className={sidebarContainer()}>
       <button className="absolute inset-0" onClick={closeSidebar} aria-controls="sidebar">
-        <span className="hidden">control sidebar</span>
+        <span className="sr-only">fechar menu</span>
       </button>
       <nav className={sidebarMenu()} id="sidebar" aria-label="Menu lateral">
         {children}
