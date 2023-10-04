@@ -2,13 +2,26 @@ export type RootProps = {
   children: React.ReactNode
   newsUrl: string
   newsTitle: string
+  className?: string
   openInBlank?: boolean
 }
 
-export function CardRoot({ children, newsUrl, newsTitle, openInBlank = false }: RootProps) {
+export function CardRoot({
+  children,
+  newsUrl,
+  newsTitle,
+  className,
+  openInBlank = false,
+}: RootProps) {
   return (
     <article>
-      <a href={newsUrl} title={newsTitle} target={openInBlank ? '_blank' : undefined}>
+      <a
+        className={className}
+        href={newsUrl}
+        title={newsTitle}
+        target={openInBlank ? '_blank' : undefined}
+        rel="noreferrer"
+      >
         {children}
       </a>
     </article>
