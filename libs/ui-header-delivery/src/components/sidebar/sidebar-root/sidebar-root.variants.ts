@@ -4,7 +4,7 @@ export const variants = createVariants({
   slots: {
     sidebarSlot: 'w-[280px] fixed inset-0 top-lg flex z-20 transition-all duration-200',
     sidebarListSlot: 'bg-neutral-high-400 w-full p-xxs overflow-x-hidden',
-    backdropButtonSlot: 'absolute w-screen h-screen inset-0 transition-all top-lg',
+    backdropButtonSlot: 'fixed w-full h-screen inset-0 transition-all top-lg',
   },
   variants: {
     isSidebarOpen: {
