@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { SidebarContext } from '../context/sidebar-context'
 
 export type SidebarProviderProps = {
@@ -7,6 +7,12 @@ export type SidebarProviderProps = {
 
 export function SidebarProvider({ children }: SidebarProviderProps) {
   const [isSidebarOpen, toggleSidebar] = useState(false)
+
+  useEffect(() => {
+    document.body.classList[isSidebarOpen ? 'add' : 'remove']('overflow-hidden')
+
+    return () => document.body.classList.remove('overflow-hidden')
+  }, [isSidebarOpen])
 
   return (
     <SidebarContext.Provider
