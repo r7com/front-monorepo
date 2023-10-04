@@ -1,6 +1,8 @@
 import { useWindowScroll } from '@uidotdev/usehooks'
 import { variants } from './header.variants'
 
+import { SidebarProvider } from '../sidebar/utils/provider/sidebar-provider'
+
 export type HeaderProps = {
   children: React.ReactNode
   className?: string
@@ -14,11 +16,13 @@ export function Header({ children, className = '', bgColor = '' }: HeaderProps) 
   const isFixed = axisY !== null && axisY >= 50
 
   return (
-    <header
-      className={variants({ fixed: isFixed, className })}
-      style={{ backgroundColor: bgColor || undefined }}
-    >
-      {children}
-    </header>
+    <SidebarProvider>
+      <header
+        className={variants({ fixed: isFixed, className })}
+        style={{ backgroundColor: bgColor || undefined }}
+      >
+        {children}
+      </header>
+    </SidebarProvider>
   )
 }
