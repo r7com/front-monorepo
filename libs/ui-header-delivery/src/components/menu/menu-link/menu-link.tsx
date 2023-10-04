@@ -3,7 +3,7 @@ export type MenuLinkProps = {
   children: React.ReactNode
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>
 
-export function MenuLink({ children, title, newWindow = false, ...rest }: MenuLinkProps) {
+export function MenuLink({ children, newWindow = false, ...rest }: MenuLinkProps) {
   return (
     <a
       target={newWindow ? '_blank' : undefined}
