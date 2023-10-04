@@ -77,6 +77,14 @@ describe('Header with sidebar', () => {
     cy.mount(<Header>{MockSidebar}</Header>)
   })
 
+  it('sidebar should not be visible by default', () => {
+    cy.viewport('macbook-11')
+
+    cy.findByRole('navigation', { hidden: true }).should('not.be.visible')
+
+    cy.matchImage()
+  })
+
   it('should open sidebar on sidebar-toggle click', () => {
     cy.viewport('macbook-11')
 
@@ -84,5 +92,7 @@ describe('Header with sidebar', () => {
 
     cy.findByRole('button', { expanded: false, name: /menu/i }).click()
     cy.findByRole('navigation').should('be.visible')
+
+    cy.matchImage()
   })
 })
