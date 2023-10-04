@@ -1,8 +1,8 @@
-export function CardImage() {
-  return (
-    <img
-      src="https://ae01.alicdn.com/kf/S4c2e465e53e44ee18b194bec67d80428K/Kawaii-Anime-Gojo-Satoru-Cats-Enamel-Pin-Role-Eye-Mask-Cute-Manga-Brooches-Badge-Jujutsu-Kaisen.jpg"
-      alt="cat"
-    />
-  )
+export type CardImageProps = {
+  className?: string
+  children: React.ReactNode
+}
+
+export function CardImage({ className, children }: CardImageProps) {
+  return <figure className={`rounded-md overflow-hidden relative ${className}`}>{children}</figure>
 }
