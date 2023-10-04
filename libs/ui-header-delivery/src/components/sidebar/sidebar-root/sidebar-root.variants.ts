@@ -2,19 +2,19 @@ import { createVariants } from '@r7/tools'
 
 export const variants = createVariants({
   slots: {
-    sidebarMenu:
-      'w-[280px] bg-neutral-high-400 z-20 transition-all duration-200 absolute inset-0 overflow-x-hidden',
-    sidebarContainer: 'w-full h-screen absolute overflow-hidden top-lg flex transition-all',
+    sidebarSlot: 'w-[280px] fixed inset-0 top-lg flex z-20 transition-all duration-200',
+    sidebarListSlot: 'bg-neutral-high-400 w-full p-xxs overflow-x-hidden',
+    backdropButtonSlot: 'absolute w-screen h-screen inset-0 transition-all top-lg',
   },
   variants: {
     isSidebarOpen: {
       true: {
-        sidebarMenu: 'translate-x-0',
-        sidebarContainer: 'visible backdrop-brightness-75',
+        sidebarSlot: 'translate-x-0 visible',
+        backdropButtonSlot: 'backdrop-brightness-50 visible',
       },
       false: {
-        sidebarMenu: '-translate-x-full',
-        sidebarContainer: 'invisible',
+        sidebarSlot: '-translate-x-full invisible',
+        backdropButtonSlot: 'invisible',
       },
     },
   },
