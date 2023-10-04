@@ -18,7 +18,7 @@ export function SidebarToggle({ children }: SidebarToggleProps) {
     <button
       type="button"
       className={buttonSlot()}
-      color="ghost"
+      aria-controls="sidebar"
       aria-expanded={sidebar.isOpen}
       onClick={toggleSidebar}
     >
