@@ -1,13 +1,13 @@
 export type SidebarLinkProps = {
   children: React.ReactNode
-  newWindow?: boolean
+  openInNewtab?: boolean
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>
 
-export function SidebarLink({ children, newWindow = false, ...rest }: SidebarLinkProps) {
+export function SidebarLink({ children, openInNewtab = false, ...rest }: SidebarLinkProps) {
   return (
     <a
-      target={newWindow ? '_blank' : undefined}
-      rel={newWindow ? 'noreferrer' : undefined}
+      target={openInNewtab ? '_blank' : undefined}
+      rel={openInNewtab ? 'noreferrer' : undefined}
       className="w-full flex hover:underline"
       {...rest}
     >
