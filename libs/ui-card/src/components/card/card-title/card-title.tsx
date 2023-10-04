@@ -7,5 +7,5 @@ export type CardTitleProps = {
 
 export function CardTitle({ children, as, fontStyle = 'heading-level-3' }: CardTitleProps) {
   const DynamicTag = as || 'h3'
-  return <DynamicTag className={`font-open-sans ${variants({ fontStyle })}`}>{children}</DynamicTag>
+  return <DynamicTag className={variants({ fontStyle })}>{children}</DynamicTag>
 }

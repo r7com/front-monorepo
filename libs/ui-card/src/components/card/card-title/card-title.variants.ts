@@ -1,7 +1,7 @@
 import { VariantProps, createVariants } from '@r7/tools'
 
 export const variants = createVariants({
-  base: 'text-neutral-low-500 dark:text-neutral-high-400 mb-xxxs font-semibold',
+  base: 'font-open-sans text-neutral-low-500 dark:text-neutral-high-400 mb-xxxs font-semibold',
   variants: {
     fontStyle: {
       'heading-level-1': '',
