@@ -12,14 +12,6 @@
         "lintFilePatterns": ["libs/ui-footer-delivery/**/*.{ts,tsx,js,jsx}"]
       }
     },
-    "typecheck": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": ["tsc -p tsconfig.app.json --noEmit"],
-        "cwd": "apps/admin",
-        "forwardAllArgs": false
-      }
-    },
     "build": {
       "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
@@ -72,7 +64,7 @@
     "build-css": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "tailwindcss -c libs/ui-footer-delivery/tailwind.config.js --minify  -i libs/ui-footer-delivery/src/style.css -o dist/libs/ui-footer-delivery/style.css"
+        "command": "tailwindcss -c libs/ui-footer-delivery/tailwind.config.js --minify -i libs/ui-footer-delivery/src/style.css -o dist/libs/ui-footer-delivery/style.css"
       }
     },
     "version": {
