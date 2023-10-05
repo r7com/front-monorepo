@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { SectionHeading as SectionHeadingRoot, SectionHeadingProps } from './section-heading'
+import { SectionHeadingRoot, SectionHeadingRootProps } from './section-heading-root'
 import { SectionHeading } from './'
 
-const meta: Meta<SectionHeadingProps> = {
+const meta: Meta<SectionHeadingRootProps> = {
   title: 'Heading/SectionHeading',
   component: SectionHeadingRoot,
   tags: ['autodocs'],
@@ -10,7 +10,7 @@ const meta: Meta<SectionHeadingProps> = {
 }
 
 export default meta
-type Story = StoryObj<SectionHeadingProps>
+type Story = StoryObj<SectionHeadingRootProps>
 
 export const Default: Story = {
   render: ({ ...args }) => (
