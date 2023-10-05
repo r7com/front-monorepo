@@ -7,4 +7,4 @@ type SidebarContextProps = {
   }
 }
 
-export const SidebarContext = createContext<SidebarContextProps>(null as never)
+export const SidebarContext = createContext<SidebarContextProps | null>(null)
