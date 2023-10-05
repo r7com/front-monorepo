@@ -20,7 +20,7 @@ type Story = StoryObj<SitemapFooterProps>
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Desktop: Story = {
   render: args => (
-    <SitemapFooter.Root>
+    <SitemapFooter.Root color={args.textColor}>
       <SitemapFooter.Container>
         {columns?.length > 0 &&
           columns.map(
@@ -29,9 +29,7 @@ export const Desktop: Story = {
                 <SitemapFooter.MenuList key={column._id}>
                   {column?.children.map(section => (
                     <SitemapFooter.MenuItem key={section._id}>
-                      <SitemapFooter.MenuTitle textColor={args.textColor}>
-                        {section.name}
-                      </SitemapFooter.MenuTitle>
+                      <SitemapFooter.MenuTitle>{section.name}</SitemapFooter.MenuTitle>
                       {section?.children.length > 0 && (
                         <SitemapFooter.Submenu>
                           {section?.children.map(sectionItem => (
