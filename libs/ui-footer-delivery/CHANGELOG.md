@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.0.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-footer-delivery-0.1.2...ui-footer-delivery-1.0.0) (2023-10-05)
+
+### Features
+
+- **ui-base-components:** add sitemap footer component ([013b49f](https://gitlab.ir7.com.br/r7/front-monorepo/commit/013b49f9732335d33b76bb72c1c69affa40991c4))
+
 # [0.2.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-footer-delivery-0.1.0...ui-footer-delivery-0.2.0) (2023-09-29)
 
 ## [0.1.2](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-footer-delivery-0.1.1...ui-footer-delivery-0.1.2) (2023-09-28)
