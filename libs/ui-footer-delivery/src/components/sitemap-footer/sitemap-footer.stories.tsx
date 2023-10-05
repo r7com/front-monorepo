@@ -5,7 +5,7 @@ import { SITEMAP_DATA } from '../../mocks/sitemap'
 const columns = SITEMAP_DATA?.children[0]?.children
 
 type SitemapFooterProps = {
-  textColor: string
+  color: string
 }
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
@@ -20,7 +20,7 @@ type Story = StoryObj<SitemapFooterProps>
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Desktop: Story = {
   render: args => (
-    <SitemapFooter.Root color={args.textColor}>
+    <SitemapFooter.Root color={args.color}>
       <SitemapFooter.Container>
         {columns?.length > 0 &&
           columns.map(
@@ -54,7 +54,7 @@ export const Desktop: Story = {
     </SitemapFooter.Root>
   ),
   args: {
-    textColor: '#218ee1',
+    color: '#218ee1',
   },
   parameters: {
     design: {
