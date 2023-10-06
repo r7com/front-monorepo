@@ -2,7 +2,7 @@ import { StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
 
-import { NotificationProvider } from '@r7-jarvics/ui-base-components'
+import { NotificationProvider } from '@r7/ui-base-components'
 import { routes } from './routes'
 
 import './style.css'

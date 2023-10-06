@@ -34,6 +34,12 @@
         }
       }
     },
+    "build-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tailwindcss -c libs/ui-base-components/tailwind.config.js --minify  -i libs/ui-base-components/src/style.css -o dist/libs/ui-base-components/style.css"
+      }
+    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
@@ -60,7 +66,10 @@
       },
       "configurations": {
         "ci": {
-          "watch": false
+          "watch": false,
+          "env": {
+            "pluginVisualRegressionUpdateImages": true
+          }
         }
       }
     },
@@ -86,6 +95,12 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "node tools/generate-dynamic-types.js --inputFolder {projectRoot}/src/svg --outputFile {projectRoot}/src/components/svg-icon/svg-icon.types.ts --typeName SvgIcons --showOnlyTypesTable --autoFix"
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular"
       }
     }
   },
