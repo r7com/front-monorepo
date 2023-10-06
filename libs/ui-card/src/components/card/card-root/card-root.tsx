@@ -1,4 +1,4 @@
-export type RootProps = {
+export type CardRootProps = {
   children: React.ReactNode
   newsUrl: string
   newsTitle: string
@@ -12,7 +12,7 @@ export function CardRoot({
   newsTitle,
   className,
   openInBlank = false,
-}: RootProps) {
+}: CardRootProps) {
   return (
     <article>
       <a
