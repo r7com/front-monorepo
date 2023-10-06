@@ -4,5 +4,5 @@ export type CardHatImageProps = {
 }
 
 export function CardHatImage({ imageSource, description }: CardHatImageProps) {
-  return <img src={imageSource} alt={description} className="w-xxxs h-xxxs mr-nano" />
+  return <img src={imageSource} alt={description} className="w-xxxs h-xxxs mr-nano aspect-square" />
 }
