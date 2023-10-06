@@ -1,20 +1,12 @@
 import { createVariants, VariantProps } from '@r7/tools'
 
 export const variants = createVariants({
-  slots: {
-    link: 'flex items-center gap-quark p-nano text-neutral-low-500 font-light w-auto',
-  },
+  base: 'flex items-center gap-quark p-nano text-neutral-low-500 font-light w-auto',
   variants: {
     size: {
-      large: {
-        link: 'text-xxs',
-      },
-      medium: {
-        link: 'text-xxxs',
-      },
-      small: {
-        link: 'text-little',
-      },
+      large: 'text-xxs',
+      medium: 'text-xxxs',
+      small: 'text-little',
     },
   },
 })

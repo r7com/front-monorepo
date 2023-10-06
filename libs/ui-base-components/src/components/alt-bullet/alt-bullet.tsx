@@ -7,10 +7,8 @@ export type AltBulletProps = {
 } & AltBulletVariants
 
 export function AltBullet({ text, url, size = 'medium' }: AltBulletProps) {
-  const { link } = variants({ size })
-
   return (
-    <a href={url} className={link()}>
+    <a href={url} className={variants({ size })}>
       <SvgIcon iconName="bullet" className="fill-brand-primary-500 w-nano h-nano" />
       {text}
     </a>
