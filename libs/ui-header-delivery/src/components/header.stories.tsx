@@ -24,7 +24,7 @@ export const Primary: Story = {
           {SIDEBAR_DATA.map(({ category, data, id }) => {
             return (
               <Sidebar.Category key={id} title={category}>
-                <Sidebar.List>
+                <Sidebar.List label={category}>
                   {data.map(({ id, text, submenu, title, url }) => {
                     return (
                       <Sidebar.Item key={id}>
@@ -32,7 +32,7 @@ export const Primary: Story = {
                           <>
                             <Sidebar.Button id={id}>{text}</Sidebar.Button>
                             <Sidebar.Submenu id={id}>
-                              <Sidebar.List>
+                              <Sidebar.List label={text}>
                                 {submenu.map(({ id, text, title, url }) => {
                                   return (
                                     <Sidebar.Item key={id}>
