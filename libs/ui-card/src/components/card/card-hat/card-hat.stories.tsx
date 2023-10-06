@@ -1,0 +1,65 @@
+import { Meta, StoryObj } from '@storybook/react'
+import { Card } from '../'
+import { CardHatTitleProps } from './card-hat-title'
+import { CardHatImageProps } from './card-hat-image'
+
+const meta: Meta<CardHatTitleProps> = {
+  title: 'ui-card/Card/Hat',
+  component: Card.HatTitle,
+  tags: ['autodocs'],
+  argTypes: {},
+}
+
+export default meta
+
+type HatTitleStory = StoryObj<CardHatTitleProps>
+type HatImageStory = StoryObj<CardHatImageProps>
+
+export const WithoutImage: HatTitleStory = {
+  render: ({ ...args }) => (
+    <Card.Root
+      newsTitle="The McRib is back (again): How a McNugget shortage led to its rise"
+      newsUrl="https://www.google.com"
+    >
+      <Card.HatTitle {...args}>News section</Card.HatTitle>
+    </Card.Root>
+  ),
+  args: {
+    color: 'low',
+  },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/Pxz9nVdP2Im0YRWnDNM3J5/Core-C-%7C-Widgets-Home?node-id=2039%3A624&mode=dev',
+      accessToken: 'figd_sHs6Ap894w4C-OAFls7tuq0fMMROyue-8zQJ8hRE',
+    },
+  },
+}
+
+export const WithImage: HatImageStory = {
+  render: ({ ...args }) => (
+    <Card.Root
+      newsTitle="The McRib is back (again): How a McNugget shortage led to its rise"
+      newsUrl="https://www.google.com"
+    >
+      <Card.HatWrapper>
+        <Card.HatImage {...args} />
+        <Card.HatTitle>News section</Card.HatTitle>
+      </Card.HatWrapper>
+    </Card.Root>
+  ),
+  args: {
+    imageSource: 'http://img.r7.com/images/concurso-publico-14032022123440824?dimensions=128x128',
+    description: 'Human hand writting in a paper',
+  },
+  parameters: {
+    controls: {
+      exclude: 'color',
+    },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/Pxz9nVdP2Im0YRWnDNM3J5/Core-C-%7C-Widgets-Home?node-id=2039%3A624&mode=dev',
+      accessToken: 'figd_sHs6Ap894w4C-OAFls7tuq0fMMROyue-8zQJ8hRE',
+    },
+  },
+}
