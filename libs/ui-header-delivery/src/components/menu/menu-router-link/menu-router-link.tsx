@@ -5,15 +5,9 @@ export type MenuRouterLinkProps = {
   openInNewtab?: React.ReactNode
 } & NavLinkProps
 
-export function MenuRouterLink({
-  children,
-  openInNewtab = false,
-  to,
-  ...rest
-}: MenuRouterLinkProps) {
+export function MenuRouterLink({ children, openInNewtab = false, ...rest }: MenuRouterLinkProps) {
   return (
     <NavLink
-      to={to}
       target={openInNewtab ? '_blank' : undefined}
       rel={openInNewtab ? 'noreferrer' : undefined}
       className={({ isActive }) => variants({ isActive })}
