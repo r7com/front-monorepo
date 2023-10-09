@@ -15,7 +15,7 @@ type Story = StoryObj<CardTitleProps>
 
 export const Primary: Story = {
   render: ({ ...args }) => (
-    <Card.Root
+    <Card
       className="flex"
       newsTitle="The McRib is back (again): How a McNugget shortage led to its rise"
       newsUrl="https://www.google.com"
@@ -23,7 +23,7 @@ export const Primary: Story = {
       <Card.Title {...args}>
         The McRib is back (again): How a McNugget shortage led to its rise
       </Card.Title>
-    </Card.Root>
+    </Card>
   ),
   args: {},
   parameters: {

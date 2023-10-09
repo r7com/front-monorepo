@@ -15,7 +15,7 @@ type Story = StoryObj<CardImageProps>
 
 export const WithoutLabel: Story = {
   render: ({ ...args }) => (
-    <Card.Root
+    <Card
       newsTitle="The McRib is back (again): How a McNugget shortage led to its rise"
       newsUrl="https://www.google.com"
     >
@@ -26,7 +26,7 @@ export const WithoutLabel: Story = {
           className="w-full object-cover h-full"
         />
       </Card.Image>
-    </Card.Root>
+    </Card>
   ),
   args: {
     className: 'mb-xxxs',
@@ -44,7 +44,7 @@ export const WithoutLabel: Story = {
 
 export const WithLabel: Story = {
   render: ({ ...args }) => (
-    <Card.Root
+    <Card
       newsTitle="The McRib is back (again): How a McNugget shortage led to its rise"
       newsUrl="https://www.google.com"
     >
@@ -56,7 +56,7 @@ export const WithLabel: Story = {
         />
         <Card.Label type="live" />
       </Card.Image>
-    </Card.Root>
+    </Card>
   ),
   args: {
     className: 'mb-xxxs',

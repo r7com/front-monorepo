@@ -1,21 +1,21 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Card } from './'
-import { CardRootProps } from './card-root/card-root'
+import { CardProps } from './card'
 
-const meta: Meta<CardRootProps> = {
+const meta: Meta<CardProps> = {
   title: 'ui-card/Card',
-  component: Card.Root,
+  component: Card,
   tags: ['autodocs'],
   argTypes: {},
 }
 
 export default meta
 
-type Story = StoryObj<CardRootProps>
+type Story = StoryObj<CardProps>
 
 export const Primary: Story = {
   render: ({ ...args }) => (
-    <Card.Root {...args}>
+    <Card {...args}>
       <Card.HatWrapper>
         <Card.HatImage
           imageSource="//img.r7.com/images/concurso-publico-14032022123440824?dimensions=128x128"
@@ -26,7 +26,7 @@ export const Primary: Story = {
       <Card.Title as="h2" fontStyle="heading-level-1">
         The McRib is back (again): How a McNugget shortage led to its rise
       </Card.Title>
-    </Card.Root>
+    </Card>
   ),
   args: {
     newsTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
@@ -44,7 +44,7 @@ export const Primary: Story = {
 
 export const ImageToTheSides: Story = {
   render: ({ ...args }) => (
-    <Card.Root {...args}>
+    <Card {...args}>
       <Card.Image className="mr-xxxs">
         <img
           src="//img.r7.com/images/concurso-publico-14032022123440824?dimensions=128x128"
@@ -62,7 +62,7 @@ export const ImageToTheSides: Story = {
         </Card.HatWrapper>
         <Card.Title>The McRib is back (again): How a McNugget shortage led to its rise</Card.Title>
       </div>
-    </Card.Root>
+    </Card>
   ),
   args: {
     className: 'flex',
@@ -81,7 +81,7 @@ export const ImageToTheSides: Story = {
 
 export const ImageAbove: Story = {
   render: ({ ...args }) => (
-    <Card.Root {...args}>
+    <Card {...args}>
       <Card.Image className="mb-xxxs" format="landscape">
         <img
           src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?resize=536x326&crop=691x420 80 0&dimensions=536x326"
@@ -100,7 +100,7 @@ export const ImageAbove: Story = {
         </Card.HatWrapper>
         <Card.Title>The McRib is back (again): How a McNugget shortage led to its rise</Card.Title>
       </div>
-    </Card.Root>
+    </Card>
   ),
   args: {
     newsTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
@@ -118,7 +118,7 @@ export const ImageAbove: Story = {
 
 export const TitleOverImage: Story = {
   render: ({ ...args }) => (
-    <Card.Root {...args}>
+    <Card {...args}>
       <Card.Image format="landscape" shadow>
         <img
           src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?resize=536x326&crop=691x420 80 0&dimensions=536x326"
@@ -139,7 +139,7 @@ export const TitleOverImage: Story = {
           The McRib is back (again): How a McNugget shortage led to its rise
         </Card.Title>
       </div>
-    </Card.Root>
+    </Card>
   ),
   args: {
     className: 'relative',
