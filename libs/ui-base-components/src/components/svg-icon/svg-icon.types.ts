@@ -1,4 +1,5 @@
 export type SvgIcons =
+  | 'acrl-r'
   | 'archive'
   | 'arrow-left'
   | 'bars'
@@ -58,6 +59,7 @@ export type SvgIcons =
   | 'pause-circle'
   | 'pause'
   | 'pen'
+  | 'phone'
   | 'photo'
   | 'pie-chart'
   | 'play-circle'
@@ -65,6 +67,8 @@ export type SvgIcons =
   | 'playlist'
   | 'preview-closed'
   | 'profile'
+  | 'quotation'
+  | 'r7-estudio'
   | 'read'
   | 'record'
   | 'regula'
