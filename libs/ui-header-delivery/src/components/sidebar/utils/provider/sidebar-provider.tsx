@@ -6,7 +6,18 @@ export type SidebarProviderProps = {
 }
 
 export function SidebarProvider({ children }: SidebarProviderProps) {
-  const [isSidebarOpen, toggleSidebar] = useState(false)
+  const [{ currentActiveSubmenu, isSidebarOpen }, setState] = useState({
+    isSidebarOpen: false,
+    currentActiveSubmenu: '',
+  })
+
+  const toggleSidebar = (open: boolean) => {
+    setState(() => ({ isSidebarOpen: open, currentActiveSubmenu: '' }))
+  }
+
+  const toggleSubmenu = (id = '') => {
+    setState(prev => ({ ...prev, currentActiveSubmenu: id }))
+  }
 
   useEffect(() => {
     document.body.classList[isSidebarOpen ? 'add' : 'remove']('overflow-hidden')
@@ -19,7 +30,12 @@ export function SidebarProvider({ children }: SidebarProviderProps) {
       value={{
         sidebar: {
           isOpen: isSidebarOpen,
-          toggle: open => toggleSidebar(() => open),
+          toggle: toggleSidebar,
+        },
+        submenu: {
+          currentActive: currentActiveSubmenu,
+          show: toggleSubmenu,
+          hide: toggleSubmenu,
         },
       }}
     >
