@@ -2,18 +2,18 @@ import { NavLink, NavLinkProps } from 'react-router-dom'
 import { variants } from './sidebar-router-link.variants'
 
 export type SidebarRouterLinkProps = {
-  openInNewtab?: boolean
+  openInNewTab?: boolean
 } & NavLinkProps
 
 export function SidebarRouterLink({
   children,
-  openInNewtab = false,
+  openInNewTab = false,
   ...rest
 }: SidebarRouterLinkProps) {
   return (
     <NavLink
-      target={openInNewtab ? '_blank' : undefined}
-      rel={openInNewtab ? 'noreferrer' : undefined}
+      target={openInNewTab ? '_blank' : undefined}
+      rel={openInNewTab ? 'noreferrer' : undefined}
       className={({ isActive }) => variants({ isActive })}
       {...rest}
     >
