@@ -1,6 +1,5 @@
 export type MenuLinkProps = {
-  newWindow?: boolean
-  openInNewTab?: React.ReactNode
+  openInNewTab?: boolean
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>
 
 export function MenuLink({ children, openInNewTab = false, ...rest }: MenuLinkProps) {
