@@ -1,14 +1,23 @@
 import { SvgIcon } from '@r7/ui-base-components'
+import { useSidebar } from '../utils/hooks/use-sidebar'
 
 export type SidebarButtonProps = {
   children: React.ReactNode
+  /** id must be an unique pair between sidebar-button and its corresponding sidebar-submenu */
   id: string
 }
 
 export function SidebarButton({ children, id }: SidebarButtonProps) {
+  const { submenu } = useSidebar()
+
+  const activeSubmenu = () => submenu.show(id)
+
   return (
     <button
       type="button"
+      onClick={activeSubmenu}
+      aria-expanded={id === submenu.currentActive}
+      tabIndex={submenu.currentActive ? -1 : undefined}
       className="bg-none flex justify-between items-center w-full text-neutral-low-500 uppercase"
     >
       {children}
