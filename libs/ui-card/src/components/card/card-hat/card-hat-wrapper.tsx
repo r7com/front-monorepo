@@ -1,7 +1,9 @@
+import { CardHatWrapperVariants, variants } from './card-hat-wrapper.variants'
+
 export type CardHatWrapperProps = {
   children: React.ReactNode
-}
+} & CardHatWrapperVariants
 
-export function CardHatWrapper({ children }: CardHatWrapperProps) {
-  return <div className="flex items-center mb-nano">{children}</div>
+export function CardHatWrapper({ children, type = undefined }: CardHatWrapperProps) {
+  return <div className={`flex items-center mb-nano ${variants({ type })}`}>{children}</div>
 }

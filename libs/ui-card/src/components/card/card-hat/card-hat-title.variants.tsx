@@ -6,6 +6,7 @@ export const variants = createVariants({
     color: {
       high: 'text-neutral-high-400',
       low: 'text-neutral-low-500',
+      alert: 'text-neutral-high-400 font-bold',
     },
   },
 })
