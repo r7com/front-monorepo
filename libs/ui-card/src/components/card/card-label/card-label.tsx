@@ -1,3 +1,4 @@
+import { SvgIcon, SvgIcons } from '@r7/ui-base-components'
 import { CardLabelVariants, variants } from './card-label-variants'
 
 export type CardLabelProps = {
@@ -14,10 +15,12 @@ export function CardLabel({
   sponsoredByImageDesc,
   sponsoredByTitle,
 }: CardLabelProps) {
+  const { iconStyle, labelStyle } = variants({ type })
+
   if (type === 'sponsored-by') {
     return (
       <a href={sponsoredByUrl} title={sponsoredByTitle}>
-        <span className={variants({ type })}>
+        <span className={labelStyle()}>
           <span className="mr-nano">Oferecido por</span>
           <img className="w-xxs h-auto" src={sponsoredByImage} alt={sponsoredByImageDesc} />
         </span>
@@ -25,5 +28,17 @@ export function CardLabel({
     )
   }
 
-  return <span className={variants({ type })}></span>
+  let svgTemplate
+  if (type != 'live') {
+    const iconName = {
+      blog: 'quotation',
+      studio: 'r7-estudio',
+      voting: '',
+      podcast: 'phone',
+      aclr: 'acrl-r',
+    }[type] as SvgIcons
+    svgTemplate = <SvgIcon className={iconStyle()} size="small" iconName={iconName} />
+  }
+
+  return <span className={labelStyle()}>{svgTemplate ?? svgTemplate}</span>
 }
