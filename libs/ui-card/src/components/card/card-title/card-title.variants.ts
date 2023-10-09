@@ -4,12 +4,11 @@ export const variants = createVariants({
   base: 'font-open-sans font-semibold',
   variants: {
     fontStyle: {
-      'heading-level-1': '',
-      'heading-level-2': 'text-md md:text-xxl',
+      'heading-level-1': 'text-md md:text-xxl',
+      'heading-level-2': 'text-sm md:text-md',
       'heading-level-3': 'text-sm',
-      'heading-level-4': '',
-      'heading-level-5': '',
-      'heading-level-6': '',
+      'heading-level-4': 'text-xxs',
+      'heading-level-5': 'text-xxxs',
     },
     color: {
       high: 'text-neutral-high-400',
