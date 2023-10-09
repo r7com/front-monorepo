@@ -23,13 +23,12 @@ export const Primary: Story = {
         />
         <Card.HatTitle>News section</Card.HatTitle>
       </Card.HatWrapper>
-      <Card.Title as="h2" fontStyle="heading-level-2">
+      <Card.Title as="h2" fontStyle="heading-level-1">
         The McRib is back (again): How a McNugget shortage led to its rise
       </Card.Title>
     </Card.Root>
   ),
   args: {
-    className: '',
     newsTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
     newsUrl: 'https://www.google.com',
     openInBlank: true,
@@ -104,7 +103,6 @@ export const ImageAbove: Story = {
     </Card.Root>
   ),
   args: {
-    className: '',
     newsTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
     newsUrl: 'https://www.google.com',
     openInBlank: true,

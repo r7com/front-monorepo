@@ -20,9 +20,9 @@ export const Primary: Story = {
       newsTitle="The McRib is back (again): How a McNugget shortage led to its rise"
       newsUrl="https://www.google.com"
     >
-      <Card.Image className="mr-xxxs">
+      <Card.Image className="mr-xxxs" format="landscape">
         <img
-          src="http://img.r7.com/images/concurso-publico-14032022123440824?dimensions=128x128"
+          src="http://img.r7.com/images/concurso-publico-14032022123440824?dimensions=300x200"
           alt="Human hand writting in a paper"
         />
         <Card.Label {...args} />
@@ -39,7 +39,7 @@ export const Primary: Story = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/Pxz9nVdP2Im0YRWnDNM3J5/Core-C-%7C-Widgets-Home?node-id=2039%3A624&mode=dev',
+      url: 'https://www.figma.com/file/OBWV1tXbl1eXmdxzgEmcs3/Core-C-%7C-Delivery?node-id=1970%3A2484&mode=dev',
       accessToken: 'figd_sHs6Ap894w4C-OAFls7tuq0fMMROyue-8zQJ8hRE',
     },
   },
