@@ -1,5 +1,4 @@
 export type SidebarLinkProps = {
-  children: React.ReactNode
   openInNewTab?: boolean
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>
 
