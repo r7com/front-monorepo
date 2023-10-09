@@ -4,11 +4,12 @@ export type SectionHeadingTitleProps = {
 
 export function SectionHeadingTitle({ children, ...rest }: SectionHeadingTitleProps) {
   return (
-    <h2
+    <span
+      role="presentation"
       className={`text-xl md:text-xxl font-light break-keep whitespace-nowrap text-[var(--color)]`}
       {...rest}
     >
       {children}
-    </h2>
+    </span>
   )
 }

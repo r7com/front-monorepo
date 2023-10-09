@@ -83,7 +83,7 @@ describe(`SectionHeading - Title`, () => {
   })
 
   it('should have a title when title is text', () => {
-    cy.findByRole('heading').should('be.visible')
+    cy.findByRole('presentation').should('be.visible')
   })
 })
 
