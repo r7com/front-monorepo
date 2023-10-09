@@ -1,2 +1,2 @@
-export * from './mocks/institutional'
+export * from './components/sitemap-footer'
 export * from './components/institutional'

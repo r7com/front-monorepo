@@ -7,8 +7,8 @@ image: $NODE_VERSION
 
 stages:
   - test
-  - deploy
   - storybook
+  - deploy
 
 .distributed:
   interruptible: true
@@ -29,18 +29,41 @@ stages:
     - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
     - NX_HEAD=$CI_COMMIT_SHA
 
-storybook:
+build storybook:
   extends: .distributed
   stage: storybook
   script:
     - yarn nx build-storybook vision-components
-    - ls -la dist/apps/vision-components
   only:
     refs:
       - main
-      - merge_requests
+      - tags
     changes:
       - '*.stories.tsx'
+  artifacts:
+    paths:
+      - dist/apps/vision-components/
+
+deploy storybook:
+  image:
+    name: gitlab.ir7.com.br:5050/sre/docker-images/gitlab-runner-images:1.0.5
+    entrypoint: [""]
+  stage: deploy
+  interruptible: true
+  tags:
+    - gitlab-runner-ec2
+  script:
+    - ls -la dist/apps/vision-components
+    - aws s3 cp dist/apps/vision-components/ s3://r7-pipelines-statics/vision-components/ --recursive
+  dependencies:
+    - build storybook
+  only:
+    refs:
+      - main
+      - tags
+    changes:
+      - '*.stories.tsx'
+
 test:
   stage: test
   extends: .distributed
@@ -62,12 +85,7 @@ component-test:
     - apt-get update && apt-get install -y xvfb
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
     - export DISPLAY=:99
-    - CHANGED_FOLDERS=$(git diff --dirstat=files,0 -w --name-only origin/${CI_DEFAULT_BRANCH} $CI_COMMIT_SHA -- '**/components/**' ':!**/__image_snapshots__/**' | sed 's:/[^/]*$:/\*:' | paste -sd ',')
-    # CHANGED_FOLDERS:
-    # Check which folders were modified until the last commit with main
-    # only display component folders modified with pattern '/*,' from the cypress spec pattern
-    - echo $CHANGED_FOLDERS
-    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci --spec "${CHANGED_FOLDERS}"
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci
   only:
     refs:
       - main
@@ -107,6 +125,17 @@ deploy ui-base-components:
   only:
     refs:
       - /ui-base-components\-.*/
+
+deploy ui-card:
+  stage: deploy
+  extends: .distributed
+  script:
+    - yarn nx build ui-card
+    - yarn nx build-css ui-card
+    - cd ./dist/libs/ui-card
+  only:
+    refs:
+      - /ui-card\-.*/
 
 deploy ui-footer-delivery:
   stage: deploy

@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Header, Menu } from '../'
+import { Header, Menu, Sidebar } from '../'
+
+import { MENU_DATA } from '../mocks/MENU_DATA'
+import { SIDEBAR_DATA } from '../mocks/SIDEBAR_DATA'
 
 const meta: Meta<typeof Header> = {
   title: 'header-delivery/Header',
@@ -13,34 +16,64 @@ export default meta
 type Story = StoryObj<typeof Header>
 
 export const Primary: Story = {
-  render: ({ ...args }) => (
-    <Header {...args}>
-      <Menu.Root>
-        <Menu.List>
-          <Menu.Item>
-            <Menu.Link href="#">brasilia</Menu.Link>
-          </Menu.Item>
-          <Menu.Item>
-            <Menu.Link href="#">entretenimento</Menu.Link>
-          </Menu.Item>
-          <Menu.Item>
-            <Menu.Link href="#">esportes</Menu.Link>
-          </Menu.Item>
-          <Menu.Item>
-            <Menu.Link href="#">hora 7</Menu.Link>
-          </Menu.Item>
-          <Menu.Item>
-            <Menu.Link href="#">jr 24h</Menu.Link>
-          </Menu.Item>
-          <Menu.Item>
-            <Menu.Link href="#">record tv</Menu.Link>
-          </Menu.Item>
-          <Menu.Item>
-            <Menu.Link href="#">a fazenda 15</Menu.Link>
-          </Menu.Item>
-        </Menu.List>
-      </Menu.Root>
-    </Header>
+  render: args => (
+    <div className="h-screen">
+      <Header {...args}>
+        <Sidebar.Toggle>menu</Sidebar.Toggle>
+        <Sidebar>
+          {SIDEBAR_DATA.map(({ category, data, id }) => {
+            return (
+              <Sidebar.Category key={id} title={category}>
+                <Sidebar.List label={category}>
+                  {data.map(({ id, text, submenu, title, url }) => {
+                    return (
+                      <Sidebar.Item key={id}>
+                        {submenu?.length ? (
+                          <>
+                            <Sidebar.Button id={id}>{text}</Sidebar.Button>
+                            <Sidebar.Submenu id={id}>
+                              <Sidebar.List label={text}>
+                                {submenu.map(({ id, text, title, url }) => {
+                                  return (
+                                    <Sidebar.Item key={id}>
+                                      <Sidebar.Link title={title} href={url}>
+                                        {text}
+                                      </Sidebar.Link>
+                                    </Sidebar.Item>
+                                  )
+                                })}
+                              </Sidebar.List>
+                            </Sidebar.Submenu>
+                          </>
+                        ) : (
+                          <Sidebar.Link title={title} href={url}>
+                            {text}
+                          </Sidebar.Link>
+                        )}
+                      </Sidebar.Item>
+                    )
+                  })}
+                </Sidebar.List>
+              </Sidebar.Category>
+            )
+          })}
+        </Sidebar>
+
+        <Menu>
+          <Menu.List>
+            {MENU_DATA.map(item => {
+              return (
+                <Menu.Item key={item.id}>
+                  <Menu.Link href={item.url} title={item.title}>
+                    {item.text}
+                  </Menu.Link>
+                </Menu.Item>
+              )
+            })}
+          </Menu.List>
+        </Menu>
+      </Header>
+    </div>
   ),
   args: {
     className: '',
