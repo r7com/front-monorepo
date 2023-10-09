@@ -1,20 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { SectionHeadingRoot, SectionHeadingRootProps } from './section-heading-root'
-import { SectionHeading } from './'
+import { SectionHeading, SectionHeadingProps } from './section-heading'
 
-const meta: Meta<SectionHeadingRootProps> = {
+const meta: Meta<SectionHeadingProps> = {
   title: 'Heading/SectionHeading',
-  component: SectionHeadingRoot,
+  component: SectionHeading,
   tags: ['autodocs'],
   argTypes: {},
 }
 
 export default meta
-type Story = StoryObj<SectionHeadingRootProps>
+type Story = StoryObj<SectionHeadingProps>
 
 export const Default: Story = {
   render: ({ ...args }) => (
-    <SectionHeading.Root {...args}>
+    <SectionHeading {...args}>
       <SectionHeading.Title>
         <a href="/">Entretenimento</a>
       </SectionHeading.Title>
@@ -34,7 +33,7 @@ export const Default: Story = {
           Fabíola Reipert
         </SectionHeading.Tag>
       </SectionHeading.Tags>
-    </SectionHeading.Root>
+    </SectionHeading>
   ),
   args: {
     color: '#F78714',
@@ -43,7 +42,7 @@ export const Default: Story = {
 
 export const Image: Story = {
   render: ({ ...args }) => (
-    <SectionHeading.Root {...args}>
+    <SectionHeading {...args}>
       <a href="/">
         <SectionHeading.Image
           src="https://img.r7.com/images/jr-24h-18112019115830166?resize=110x70&crop=200x127+0+37"
@@ -66,7 +65,7 @@ export const Image: Story = {
           Luiz Fara Monteiro
         </SectionHeading.Tag>
       </SectionHeading.Tags>
-    </SectionHeading.Root>
+    </SectionHeading>
   ),
   args: {
     color: '#4766ac',
@@ -75,11 +74,11 @@ export const Image: Story = {
 
 export const TitleNoLink: Story = {
   render: ({ ...args }) => (
-    <SectionHeading.Root {...args}>
+    <SectionHeading {...args}>
       <SectionHeading.Title>Em alta</SectionHeading.Title>
 
       <SectionHeading.Line />
-    </SectionHeading.Root>
+    </SectionHeading>
   ),
   args: {
     color: '#218EE1',
@@ -88,13 +87,13 @@ export const TitleNoLink: Story = {
 
 export const NoTags: Story = {
   render: ({ ...args }) => (
-    <SectionHeading.Root {...args}>
+    <SectionHeading {...args}>
       <SectionHeading.Title>
         <a href="/">Record TV</a>
       </SectionHeading.Title>
 
       <SectionHeading.Line />
-    </SectionHeading.Root>
+    </SectionHeading>
   ),
   args: {
     color: '#4766ac',

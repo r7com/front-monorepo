@@ -1,7 +1,7 @@
 import { SectionHeading } from './'
 
 const SectionHeadingTitle = (
-  <SectionHeading.Root color="#F78714">
+  <SectionHeading color="#F78714">
     <SectionHeading.Title>
       <a href="/">Entretenimento</a>
     </SectionHeading.Title>
@@ -21,11 +21,11 @@ const SectionHeadingTitle = (
         Fabíola Reipert
       </SectionHeading.Tag>
     </SectionHeading.Tags>
-  </SectionHeading.Root>
+  </SectionHeading>
 )
 
 const SectionHeadingImage = (
-  <SectionHeading.Root color="#4766ac">
+  <SectionHeading color="#4766ac">
     <a href="/">
       <SectionHeading.Image
         src="https://img.r7.com/images/jr-24h-18112019115830166?resize=110x70&crop=200x127+0+37"
@@ -48,7 +48,7 @@ const SectionHeadingImage = (
         Luiz Fara Monteiro
       </SectionHeading.Tag>
     </SectionHeading.Tags>
-  </SectionHeading.Root>
+  </SectionHeading>
 )
 
 describe(`SectionHeading`, () => {
