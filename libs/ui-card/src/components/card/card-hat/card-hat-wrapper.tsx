@@ -4,6 +4,6 @@ export type CardHatWrapperProps = {
   children: React.ReactNode
 } & CardHatWrapperVariants
 
-export function CardHatWrapper({ children, type = undefined }: CardHatWrapperProps) {
+export function CardHatWrapper({ children, type }: CardHatWrapperProps) {
   return <div className={`flex items-center mb-nano ${variants({ type })}`}>{children}</div>
 }
