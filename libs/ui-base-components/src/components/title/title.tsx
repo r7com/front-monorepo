@@ -5,8 +5,8 @@ export type TitleProps = {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 } & TitleVariants
 
-export function Title({ children, as = 'h1', style = 'titleLarge' }: TitleProps) {
+export function Title({ children, as = 'h1', size = 'large' }: TitleProps) {
   const DynamicTag = as || 'h1'
 
-  return <DynamicTag className={variants({ style })}>{children}</DynamicTag>
+  return <DynamicTag className={variants({ size })}>{children}</DynamicTag>
 }
