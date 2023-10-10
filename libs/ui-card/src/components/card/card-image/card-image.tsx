@@ -6,7 +6,7 @@ export type CardImageProps = {
 } & CardImageVariants
 
 export function CardImage({
-  className,
+  className = '',
   children,
   shadow = false,
   format = 'square',
