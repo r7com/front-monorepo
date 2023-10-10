@@ -20,18 +20,30 @@ export const Primary: Story = {
     <div className="h-screen">
       <Header {...args}>
         <Sidebar.Toggle>menu</Sidebar.Toggle>
-        <Sidebar.Root>
+        <Sidebar>
           {SIDEBAR_DATA.map(({ category, data, id }) => {
             return (
               <Sidebar.Category key={id} title={category}>
-                <Sidebar.List>
+                <Sidebar.List label={category}>
                   {data.map(({ id, text, submenu, title, url }) => {
                     return (
                       <Sidebar.Item key={id}>
                         {submenu?.length ? (
                           <>
                             <Sidebar.Button id={id}>{text}</Sidebar.Button>
-                            {/* todo: submenu */}
+                            <Sidebar.Submenu id={id}>
+                              <Sidebar.List label={text}>
+                                {submenu.map(({ id, text, title, url }) => {
+                                  return (
+                                    <Sidebar.Item key={id}>
+                                      <Sidebar.Link title={title} href={url}>
+                                        {text}
+                                      </Sidebar.Link>
+                                    </Sidebar.Item>
+                                  )
+                                })}
+                              </Sidebar.List>
+                            </Sidebar.Submenu>
                           </>
                         ) : (
                           <Sidebar.Link title={title} href={url}>
@@ -45,9 +57,9 @@ export const Primary: Story = {
               </Sidebar.Category>
             )
           })}
-        </Sidebar.Root>
+        </Sidebar>
 
-        <Menu.Root>
+        <Menu>
           <Menu.List>
             {MENU_DATA.map(item => {
               return (
@@ -59,7 +71,7 @@ export const Primary: Story = {
               )
             })}
           </Menu.List>
-        </Menu.Root>
+        </Menu>
       </Header>
     </div>
   ),
