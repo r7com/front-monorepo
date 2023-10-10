@@ -1,5 +1,6 @@
 import { MenuItem } from '../menu-item/menu-item'
 import { MenuLink } from '../menu-link/menu-link'
+import { MenuRouterLink } from '../menu-router-link/menu-router-link'
 import { MenuList } from '../menu-list/menu-list'
 
 export type MenuRootProps = {
@@ -16,4 +17,5 @@ export function Menu({ children }: MenuRootProps) {
 
 Menu.Item = MenuItem
 Menu.Link = MenuLink
+Menu.RouterLink = MenuRouterLink
 Menu.List = MenuList
