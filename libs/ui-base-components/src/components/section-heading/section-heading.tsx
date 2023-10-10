@@ -6,10 +6,10 @@ import { SectionHeadingTitle } from './section-heading-title/section-heading-tit
 
 export type SectionHeadingProps = {
   children: React.ReactNode
-  color: string
+  color?: string
 }
 
-export function SectionHeading({ children, color = '#556373' }: SectionHeadingProps) {
+export function SectionHeading({ children, color = '#4766ac' }: SectionHeadingProps) {
   return (
     <div
       className="flex flex-wrap md:flex-nowrap items-center gap-nano py-xxxs"
