@@ -1,5 +1,4 @@
 import { NavLink, NavLinkProps } from 'react-router-dom'
-import { variants } from './sidebar-router-link.variants'
 
 export type SidebarRouterLinkProps = {
   openInNewTab?: boolean
@@ -14,7 +13,7 @@ export function SidebarRouterLink({
     <NavLink
       target={openInNewTab ? '_blank' : undefined}
       rel={openInNewTab ? 'noreferrer' : undefined}
-      className={({ isActive }) => variants({ isActive })}
+      className={() => 'w-full flex hover:underline'}
       {...rest}
     >
       {children}
