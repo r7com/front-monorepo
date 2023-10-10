@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Card } from './'
-import { CardProps } from './card'
+import { CardProps } from './'
 
 const meta: Meta<CardProps> = {
   title: 'ui-card/Card',
