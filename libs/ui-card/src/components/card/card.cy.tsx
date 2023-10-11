@@ -1,6 +1,6 @@
 import { Card } from './'
 
-describe(`${Card.name}`, () => {
+describe(Card.name, () => {
   it('should render default card', () => {
     cy.mount(
       <Card newsTitle="I am a news" newsUrl="https://www.r7.com">

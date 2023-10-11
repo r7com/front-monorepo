@@ -1,5 +1,6 @@
 import { Card } from '../'
-describe(`${Card.Image.name}`, () => {
+
+describe(Card.Image.name, () => {
   it('should render default image', () => {
     cy.mount(
       <Card.Image className="w-[200px] mb-xxxs">
