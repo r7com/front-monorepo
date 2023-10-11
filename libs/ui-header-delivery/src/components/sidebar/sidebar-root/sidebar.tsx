@@ -4,6 +4,7 @@ import { SidebarList } from '../sidebar-list/sidebar-list'
 import { SidebarItem } from '../sidebar-item/sidebar-item'
 import { SidebarButton } from '../sidebar-button/sidebar-button'
 import { SidebarLink } from '../sidebar-link/sidebar-link'
+import { SidebarRouterLink } from '../sidebar-router-link/sidebar-router-link'
 import { SidebarSubmenu } from '../sidebar-submenu/sidebar-submenu'
 
 import { useSidebar } from '../utils/hooks/use-sidebar'
@@ -40,4 +41,5 @@ Sidebar.List = SidebarList
 Sidebar.Item = SidebarItem
 Sidebar.Button = SidebarButton
 Sidebar.Link = SidebarLink
+Sidebar.RouterLink = SidebarRouterLink
 Sidebar.Submenu = SidebarSubmenu
