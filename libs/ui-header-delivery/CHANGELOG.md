@@ -2,6 +2,35 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.0.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-0.2.0...ui-header-delivery-1.0.0) (2023-10-10)
+
+### Bug Fixes
+
+- fixing misspelled 'sidebarContainer' word ([963e231](https://gitlab.ir7.com.br/r7/front-monorepo/commit/963e231d419e69c4ec06c6a8a4e90ae19929ca9e))
+
+### Features
+
+- adding custom label for sidebar-list ([8a5d2de](https://gitlab.ir7.com.br/r7/front-monorepo/commit/8a5d2de809764902fd7c89fe0cf62bc8cc95d179))
+- adding submenu actions and current state to provider ([2495e6e](https://gitlab.ir7.com.br/r7/front-monorepo/commit/2495e6e1d7bb86cb524c4b5bfe276f7276ffffed))
+- adding submenu context actions and current active ([f88ab41](https://gitlab.ir7.com.br/r7/front-monorepo/commit/f88ab415a530f5006a95a424342b4e6c29d21658))
+- creating menu-router-link and sidebar-router-link to use with react-router-dom ([58a8fd3](https://gitlab.ir7.com.br/r7/front-monorepo/commit/58a8fd32bf030e2f4af988d03590055b6c9f0434))
+- creating sidebar-button component ([5a67455](https://gitlab.ir7.com.br/r7/front-monorepo/commit/5a67455c8396b56eb0490fbcfc079e56885a04cd))
+- creating sidebar-category component ([8ae0cfa](https://gitlab.ir7.com.br/r7/front-monorepo/commit/8ae0cfa6749e78d9a4288f564f11cf8441b2d745))
+- creating sidebar-link component ([a5bf86d](https://gitlab.ir7.com.br/r7/front-monorepo/commit/a5bf86de1c317cfa1ef01fb23b7b37fd93ce7fc0))
+- creating sidebar-link component ([bfa236b](https://gitlab.ir7.com.br/r7/front-monorepo/commit/bfa236bc4bfc77c832a38b9c7c3a5cf47c091943))
+- creating sidebar-list component ([4402714](https://gitlab.ir7.com.br/r7/front-monorepo/commit/44027142ccbab8e57a335ddcc0558be3f4b239c5))
+- creating sidebar-root component ([69b86c9](https://gitlab.ir7.com.br/r7/front-monorepo/commit/69b86c9cab78b01ce9263b368506d802f1faf452))
+- creating sidebar-submenu component with its actions and validations ([d8f2dcc](https://gitlab.ir7.com.br/r7/front-monorepo/commit/d8f2dcc922dfb8b7078674ea813fa1efaa3454eb))
+- creating sidebar-toggle component ([b46f850](https://gitlab.ir7.com.br/r7/front-monorepo/commit/b46f850ce61c6bf6b828718c660d9e94f89d9766))
+- exporting sidebar components ([ccda4bf](https://gitlab.ir7.com.br/r7/front-monorepo/commit/ccda4bf9255562e9d4b4d21ea04e168a10778442))
+- handle sidebar state (open/close) with sidebar-provider and use-sidebar hook ([79d00f5](https://gitlab.ir7.com.br/r7/front-monorepo/commit/79d00f5c29b4e75df4e70d8c64ca4f03c29b8bad))
+- open corresponding submenu by id on button click ([afe5281](https://gitlab.ir7.com.br/r7/front-monorepo/commit/afe52816f2bb9e3ad88e5c60e0e8de1f7bc4bc24))
+- wrapping header component with sidebar-provider ([568d65a](https://gitlab.ir7.com.br/r7/front-monorepo/commit/568d65af323e69fe8c16d80458da8f5e0037089a))
+
+### Performance Improvements
+
+- removing "as never" cast by initializing context as context or null ([0333430](https://gitlab.ir7.com.br/r7/front-monorepo/commit/03334308e84d87d30bead801ee2d853bb03adc58))
+
 # [0.2.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-0.1.0...ui-header-delivery-0.2.0) (2023-09-29)
 
 # 0.1.0 (2023-09-29)
