@@ -85,6 +85,7 @@ export type SvgIcons =
   | 'success'
   | 'support'
   | 'theme'
+  | 'thunder'
   | 'tiktok'
   | 'tools'
   | 'trash'
