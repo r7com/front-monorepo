@@ -10,7 +10,7 @@ export function CardTitle({
   children,
   as,
   className,
-  fontStyle = 'heading-level-3',
+  fontStyle = 'heading-level-2',
   color = 'low',
 }: CardTitleProps) {
   const DynamicTag = as || 'h3'
