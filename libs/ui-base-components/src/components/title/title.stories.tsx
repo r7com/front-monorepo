@@ -21,7 +21,9 @@ export const Default: Story = {
     </div>
   ),
   args: {
-    children: 'Componente bullet',
+    children: 'Component title',
+    as: 'h1',
+    size: 'large',
   },
   parameters: {
     design: {

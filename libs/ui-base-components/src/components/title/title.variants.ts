@@ -4,8 +4,8 @@ export const variants = createVariants({
   base: 'font-open-sans',
   variants: {
     size: {
-      large: 'text-xl sm:text-xxl font-semibold',
-      medium: 'text-md sm:font-semibold font-medium leading-8',
+      large: 'text-xl font-semibold leading-10 sm:text-xxl',
+      medium: 'text-md font-normal leading-8 sm:font-semibold ',
       small: 'font-semibold text-xxs leading-6',
     },
   },
