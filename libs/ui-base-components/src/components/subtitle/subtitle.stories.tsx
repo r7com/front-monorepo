@@ -4,7 +4,7 @@ import { Subtitle } from './subtitle'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Subtitle> = {
-  title: 'Example/Bullet',
+  title: 'Example/Subtitle',
   component: Subtitle,
   tags: ['autodocs'],
   argTypes: {},

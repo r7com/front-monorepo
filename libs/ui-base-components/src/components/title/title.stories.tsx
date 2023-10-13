@@ -4,7 +4,7 @@ import { Title } from './title'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Title> = {
-  title: 'Example/Bullet',
+  title: 'Example/Title',
   component: Title,
   tags: ['autodocs'],
   argTypes: {},
