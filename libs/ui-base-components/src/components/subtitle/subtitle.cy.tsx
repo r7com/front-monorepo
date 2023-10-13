@@ -1,8 +1,8 @@
 import { Subtitle } from './subtitle'
 
 describe(Subtitle.name, () => {
-  const text = 'Component Title'
-  it('using size', () => {
+  const text = 'Component Subtitle'
+  it('using size variations', () => {
     cy.mount(
       <>
         <Subtitle size="large">{text}</Subtitle>

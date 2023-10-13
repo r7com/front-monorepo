@@ -2,7 +2,7 @@ import { Title } from './title'
 
 describe(Title.name, () => {
   const text = 'Component Title'
-  it('using size', () => {
+  it('using size variations', () => {
     cy.mount(
       <>
         <Title size="large">{text}</Title>
