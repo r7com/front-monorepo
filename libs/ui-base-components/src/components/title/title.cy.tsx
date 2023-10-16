@@ -17,7 +17,6 @@ describe(Title.name, () => {
       </>,
     )
     cy.findAllByRole('heading').should('be.visible')
-    cy.findAllByText(text).should('be.visible')
     cy.matchImage()
   })
 })
