@@ -5,14 +5,18 @@ describe(Subtitle.name, () => {
   it('using size variations', () => {
     cy.mount(
       <>
-        <Subtitle size="large">{text}</Subtitle>
-        <Subtitle size="medium">{text}</Subtitle>
-        <Subtitle size="small">{text}</Subtitle>
+        <Subtitle size="large" as="h2">
+          {text}
+        </Subtitle>
+        <Subtitle size="medium" as="h3">
+          {text}
+        </Subtitle>
+        <Subtitle size="small" as="h4">
+          {text}
+        </Subtitle>
       </>,
     )
-    cy.findAllByText(text).each(element => {
-      expect(element.text()).to.be.equal(text)
-    })
+    cy.findAllByRole('heading').should('be.visible')
     cy.findAllByText(text).should('be.visible')
     cy.matchImage()
   })
