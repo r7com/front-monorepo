@@ -67,7 +67,11 @@ const MockSidebar = (
 
 describe('Header with menu', () => {
   beforeEach(() => {
-    cy.mount(<Header>{MockMenu}</Header>)
+    cy.mount(
+      <Header>
+        <Header.MainSection>{MockMenu}</Header.MainSection>
+      </Header>,
+    )
   })
 
   it('navigation should be visible with desktop viewport', () => {
@@ -86,7 +90,11 @@ describe('Header with menu', () => {
 
 describe('Header with sidebar', () => {
   beforeEach(() => {
-    cy.mount(<Header>{MockSidebar}</Header>)
+    cy.mount(
+      <Header>
+        <Header.MainSection>{MockSidebar}</Header.MainSection>
+      </Header>,
+    )
   })
 
   it('sidebar should not be visible by default', () => {
@@ -107,11 +115,26 @@ describe('Header with sidebar', () => {
 
     cy.matchImage()
   })
+
+  it('should open sidebar on sidebar-toggle click - mobile presentation', () => {
+    cy.viewport('iphone-se2')
+
+    cy.findByRole('navigation', { hidden: true }).should('not.be.visible')
+
+    cy.findByRole('button', { expanded: false, name: /menu/i }).click()
+    cy.findByRole('navigation').should('be.visible')
+
+    cy.matchImage()
+  })
 })
 
 describe('Header with sidebar - user interactions', () => {
   beforeEach(() => {
-    cy.mount(<Header>{MockSidebar}</Header>)
+    cy.mount(
+      <Header>
+        <Header.MainSection>{MockSidebar}</Header.MainSection>
+      </Header>,
+    )
   })
 
   it('click on "blogs" item should expand its submenu', () => {
