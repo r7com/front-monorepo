@@ -67,7 +67,11 @@ const MockSidebar = (
 
 describe('Header with menu', () => {
   beforeEach(() => {
-    cy.mount(<Header>{MockMenu}</Header>)
+    cy.mount(
+      <Header>
+        <Header.MainSection>{MockMenu}</Header.MainSection>
+      </Header>,
+    )
   })
 
   it('navigation should be visible with desktop viewport', () => {
@@ -86,7 +90,11 @@ describe('Header with menu', () => {
 
 describe('Header with sidebar', () => {
   beforeEach(() => {
-    cy.mount(<Header>{MockSidebar}</Header>)
+    cy.mount(
+      <Header>
+        <Header.MainSection>{MockSidebar}</Header.MainSection>
+      </Header>,
+    )
   })
 
   it('sidebar should not be visible by default', () => {
