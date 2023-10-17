@@ -42,7 +42,7 @@ export function CardLabel({
 
   return (
     <span data-testid="label" className={labelStyle()}>
-      {svgTemplate ?? svgTemplate}
+      {svgTemplate && svgTemplate}
     </span>
   )
 }
