@@ -16,69 +16,68 @@ export default meta
 type Story = StoryObj<typeof Header>
 
 export const Primary: Story = {
-  render: args => (
+  render: () => (
     <div className="h-screen">
-      <Header {...args}>
-        <Sidebar.Toggle>menu</Sidebar.Toggle>
-        <Sidebar>
-          {SIDEBAR_DATA.map(({ category, data, id }) => {
-            return (
-              <Sidebar.Category key={id} title={category}>
-                <Sidebar.List label={category}>
-                  {data.map(({ id, text, submenu, title, url }) => {
-                    return (
-                      <Sidebar.Item key={id}>
-                        {submenu?.length ? (
-                          <>
-                            <Sidebar.Button id={id}>{text}</Sidebar.Button>
-                            <Sidebar.Submenu id={id}>
-                              <Sidebar.List label={text}>
-                                {submenu.map(({ id, text, title, url }) => {
-                                  return (
-                                    <Sidebar.Item key={id}>
-                                      <Sidebar.Link title={title} href={url}>
-                                        {text}
-                                      </Sidebar.Link>
-                                    </Sidebar.Item>
-                                  )
-                                })}
-                              </Sidebar.List>
-                            </Sidebar.Submenu>
-                          </>
-                        ) : (
-                          <Sidebar.Link title={title} href={url}>
-                            {text}
-                          </Sidebar.Link>
-                        )}
-                      </Sidebar.Item>
-                    )
-                  })}
-                </Sidebar.List>
-              </Sidebar.Category>
-            )
-          })}
-        </Sidebar>
-
-        <Menu>
-          <Menu.List>
-            {MENU_DATA.map(item => {
+      <Header>
+        <Header.MainSection>
+          <Sidebar.Toggle>menu</Sidebar.Toggle>
+          <Sidebar>
+            {SIDEBAR_DATA.map(({ category, data, id }) => {
               return (
-                <Menu.Item key={item.id}>
-                  <Menu.Link href={item.url} title={item.title}>
-                    {item.text}
-                  </Menu.Link>
-                </Menu.Item>
+                <Sidebar.Category key={id} title={category}>
+                  <Sidebar.List label={category}>
+                    {data.map(({ id, text, submenu, title, url }) => {
+                      return (
+                        <Sidebar.Item key={id}>
+                          {submenu?.length ? (
+                            <>
+                              <Sidebar.Button id={id}>{text}</Sidebar.Button>
+                              <Sidebar.Submenu id={id}>
+                                <Sidebar.List label={text}>
+                                  {submenu.map(({ id, text, title, url }) => {
+                                    return (
+                                      <Sidebar.Item key={id}>
+                                        <Sidebar.Link title={title} href={url}>
+                                          {text}
+                                        </Sidebar.Link>
+                                      </Sidebar.Item>
+                                    )
+                                  })}
+                                </Sidebar.List>
+                              </Sidebar.Submenu>
+                            </>
+                          ) : (
+                            <Sidebar.Link title={title} href={url}>
+                              {text}
+                            </Sidebar.Link>
+                          )}
+                        </Sidebar.Item>
+                      )
+                    })}
+                  </Sidebar.List>
+                </Sidebar.Category>
               )
             })}
-          </Menu.List>
-        </Menu>
+          </Sidebar>
+
+          <Menu>
+            <Menu.List>
+              {MENU_DATA.map(item => {
+                return (
+                  <Menu.Item key={item.id}>
+                    <Menu.Link href={item.url} title={item.title}>
+                      {item.text}
+                    </Menu.Link>
+                  </Menu.Item>
+                )
+              })}
+            </Menu.List>
+          </Menu>
+        </Header.MainSection>
       </Header>
     </div>
   ),
-  args: {
-    className: '',
-    bgColor: '',
-  },
+  args: {},
   parameters: {
     design: {
       type: 'figma',
