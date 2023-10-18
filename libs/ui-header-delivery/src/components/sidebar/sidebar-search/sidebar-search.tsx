@@ -1,16 +1,12 @@
 import { SvgIcon } from '@r7/ui-base-components'
 import { variants } from './sidebar-search.variants'
 
-export type SidebarSearchProps = {
-  onSubmit(evt: React.FormEvent<HTMLFormElement>): void
-}
-
-export function SidebarSearch({ onSubmit }: SidebarSearchProps) {
+export function SidebarSearch() {
   const { wrapperSlot, formSlot, inputSlot, submitSlot } = variants()
 
   return (
     <div className={wrapperSlot()}>
-      <form role="search" className={formSlot()} action="https://busca.r7.com" onSubmit={onSubmit}>
+      <form role="search" className={formSlot()} action="https://busca.r7.com">
         <button type="submit" title="buscar" className={submitSlot()}>
           <SvgIcon iconName="search" size="small" className="fill-neutral-low-400" />
         </button>
