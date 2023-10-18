@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import { SidebarContext } from '../context/sidebar-context'
+import { HeaderContext } from '../context/header-context'
 
-export type SidebarProviderProps = {
+export type HeaderProviderProps = {
   children: React.ReactNode
 }
 
-export function SidebarProvider({ children }: SidebarProviderProps) {
+export function HeaderProvider({ children }: HeaderProviderProps) {
   const [{ currentActiveSubmenu, isSidebarOpen }, setState] = useState({
     isSidebarOpen: false,
     currentActiveSubmenu: '',
@@ -26,7 +26,7 @@ export function SidebarProvider({ children }: SidebarProviderProps) {
   }, [isSidebarOpen])
 
   return (
-    <SidebarContext.Provider
+    <HeaderContext.Provider
       value={{
         sidebar: {
           isOpen: isSidebarOpen,
@@ -40,6 +40,6 @@ export function SidebarProvider({ children }: SidebarProviderProps) {
       }}
     >
       {children}
-    </SidebarContext.Provider>
+    </HeaderContext.Provider>
   )
 }

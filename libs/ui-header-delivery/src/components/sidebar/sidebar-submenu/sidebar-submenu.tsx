@@ -1,4 +1,4 @@
-import { useSidebar } from '../utils/hooks/use-sidebar'
+import { useHeaderActions } from '../../header/utils/hooks/use-header-actions'
 import { variants } from './sidebar-submenu.variants'
 import { Button, SvgIcon } from '@r7/ui-base-components'
 
@@ -9,7 +9,7 @@ export type SidebarSubmenuProps = {
 }
 
 export function SidebarSubmenu({ children, id }: SidebarSubmenuProps) {
-  const { submenu } = useSidebar()
+  const { submenu } = useHeaderActions()
 
   const backToMainMenu = () => submenu.hide()
   const isCurrentActive = submenu.currentActive === id

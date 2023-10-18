@@ -1,5 +1,5 @@
 import { SvgIcon } from '@r7/ui-base-components'
-import { useSidebar } from '../utils/hooks/use-sidebar'
+import { useHeaderActions } from '../../header/utils/hooks/use-header-actions'
 
 export type SidebarButtonProps = {
   children: React.ReactNode
@@ -8,7 +8,7 @@ export type SidebarButtonProps = {
 }
 
 export function SidebarButton({ children, id }: SidebarButtonProps) {
-  const { submenu } = useSidebar()
+  const { submenu } = useHeaderActions()
 
   const activeSubmenu = () => submenu.show(id)
 

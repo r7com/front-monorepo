@@ -1,4 +1,4 @@
-import { SidebarProvider } from '../../sidebar/utils/provider/sidebar-provider'
+import { HeaderProvider } from '../utils/provider/header-provider'
 import { HeaderMainSection } from '../header-main-section/header-main-section'
 import { HeaderSection } from '../header-section/header-section'
 
@@ -8,9 +8,9 @@ export type HeaderProps = {
 
 export function Header({ children }: HeaderProps) {
   return (
-    <SidebarProvider>
+    <HeaderProvider>
       <header className="flex flex-col">{children}</header>
-    </SidebarProvider>
+    </HeaderProvider>
   )
 }
 
