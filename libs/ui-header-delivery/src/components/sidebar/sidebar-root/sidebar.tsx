@@ -6,6 +6,7 @@ import { SidebarButton } from '../sidebar-button/sidebar-button'
 import { SidebarLink } from '../sidebar-link/sidebar-link'
 import { SidebarRouterLink } from '../sidebar-router-link/sidebar-router-link'
 import { SidebarSubmenu } from '../sidebar-submenu/sidebar-submenu'
+import { SidebarSearch } from '../sidebar-search/sidebar-search'
 
 import { useHeaderActions } from '../../header/utils/hooks/use-header-actions'
 import { variants } from './sidebar.variants'
@@ -43,3 +44,4 @@ Sidebar.Button = SidebarButton
 Sidebar.Link = SidebarLink
 Sidebar.RouterLink = SidebarRouterLink
 Sidebar.Submenu = SidebarSubmenu
+Sidebar.Search = SidebarSearch
