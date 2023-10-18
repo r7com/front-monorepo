@@ -7,7 +7,7 @@ import { SidebarLink } from '../sidebar-link/sidebar-link'
 import { SidebarRouterLink } from '../sidebar-router-link/sidebar-router-link'
 import { SidebarSubmenu } from '../sidebar-submenu/sidebar-submenu'
 
-import { useSidebar } from '../utils/hooks/use-sidebar'
+import { useHeaderActions } from '../../header/utils/hooks/use-header-actions'
 import { variants } from './sidebar.variants'
 
 export type SidebarRootProps = {
@@ -15,7 +15,7 @@ export type SidebarRootProps = {
 }
 
 export function Sidebar({ children }: SidebarRootProps) {
-  const { sidebar } = useSidebar()
+  const { sidebar } = useHeaderActions()
 
   const { sidebarListSlot, sidebarSlot, backdropButtonSlot } = variants({
     isSidebarOpen: sidebar.isOpen,
