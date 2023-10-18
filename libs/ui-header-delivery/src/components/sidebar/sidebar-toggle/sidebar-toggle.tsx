@@ -1,12 +1,12 @@
 import { variants } from './sidebar-toggle.variants'
-import { useSidebar } from '../utils/hooks/use-sidebar'
+import { useHeaderActions } from '../../header/utils/hooks/use-header-actions'
 
 export type SidebarToggleProps = {
   children: React.ReactNode
 }
 
 export function SidebarToggle({ children }: SidebarToggleProps) {
-  const { sidebar } = useSidebar()
+  const { sidebar } = useHeaderActions()
 
   const toggleSidebar = () => sidebar.toggle(!sidebar.isOpen)
 
