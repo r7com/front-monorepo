@@ -9,7 +9,7 @@ export type CardTitleProps = {
 export function CardTitle({
   children,
   as,
-  className,
+  className = '',
   fontStyle = 'heading-level-2',
   color = 'low',
 }: CardTitleProps) {
