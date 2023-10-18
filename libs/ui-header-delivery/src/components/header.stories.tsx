@@ -22,6 +22,12 @@ export const Primary: Story = {
         <Header.MainSection>
           <Sidebar.Toggle>menu</Sidebar.Toggle>
           <Sidebar>
+            <Sidebar.Search
+              onSubmit={evt => {
+                evt.preventDefault()
+                console.log(evt)
+              }}
+            />
             {SIDEBAR_DATA.map(({ category, data, id }) => {
               return (
                 <Sidebar.Category key={id} title={category}>
