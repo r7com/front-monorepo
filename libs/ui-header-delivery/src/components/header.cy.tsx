@@ -25,6 +25,12 @@ const MockSidebar = (
   <>
     <Sidebar.Toggle>menu</Sidebar.Toggle>
     <Sidebar>
+      <Sidebar.Search
+        onSubmit={evt => {
+          evt.preventDefault()
+          console.log(evt)
+        }}
+      />
       {SIDEBAR_DATA.map(({ category, data, id }) => {
         return (
           <Sidebar.Category key={id} title={category}>
@@ -123,6 +129,22 @@ describe('Header with sidebar', () => {
 
     cy.findByRole('button', { expanded: false, name: /menu/i }).click()
     cy.findByRole('navigation').should('be.visible')
+
+    cy.matchImage()
+  })
+
+  it('sidebar search form should not be visible in large displays', () => {
+    cy.viewport('macbook-11')
+    cy.findByRole('button', { expanded: false, name: /menu/i }).click()
+
+    cy.findByRole('search', { hidden: true }).should('not.be.visible')
+  })
+
+  it('sidebar search form should only be visible in small devices', () => {
+    cy.viewport('iphone-se2')
+    cy.findByRole('button', { expanded: false, name: /menu/i }).click()
+
+    cy.findByRole('search').should('be.visible')
 
     cy.matchImage()
   })
