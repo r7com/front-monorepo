@@ -187,18 +187,18 @@ module.exports = {
         '[type="search"]::-webkit-search-cancel-button': { display: 'none' },
         '[type="search"]::-webkit-search-results-button': { display: 'none' },
         '[type="search"]::-webkit-search-results-decoration': { display: 'none' },
-      }),
-        addUtilities(
-          {
-            '.content-container': {
-              width: '100%',
-              '@media (min-width: 768px)': {
-                width: '771px',
-              },
+      })
+      addUtilities(
+        {
+          '.content-container': {
+            width: '100%',
+            '@media (min-width: 768px)': {
+              width: '771px',
             },
           },
-          ['responsive', 'hover'],
-        )
+        },
+        ['responsive', 'hover'],
+      )
     }),
   ],
 }
