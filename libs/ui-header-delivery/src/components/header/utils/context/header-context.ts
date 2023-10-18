@@ -1,6 +1,6 @@
 import { createContext } from 'react'
 
-type SidebarContextProps = {
+type HeaderContextProps = {
   sidebar: {
     toggle(open: boolean): void
     isOpen: boolean
@@ -12,4 +12,4 @@ type SidebarContextProps = {
   }
 }
 
-export const SidebarContext = createContext<SidebarContextProps | null>(null)
+export const HeaderContext = createContext<HeaderContextProps | null>(null)
