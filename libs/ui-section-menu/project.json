@@ -1,0 +1,63 @@
+{
+  "name": "ui-section-menu",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ui-section-menu/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/ui-section-menu/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/libs/ui-section-menu"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "component-test": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "libs/ui-section-menu/cypress.config.ts",
+        "testingType": "component",
+        "devServerTarget": "ui-section-menu:build",
+        "skipServe": true,
+        "watch": true,
+        "browser": "chrome"
+      },
+      "configurations": {
+        "ci": {
+          "watch": false,
+          "env": {
+            "pluginVisualRegressionUpdateImages": true
+          }
+        }
+      }
+    },
+    "build-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tailwindcss -c libs/ui-section-menu/tailwind.config.js --minify -i libs/ui-section-menu/src/style.css -o dist/libs/ui-section-menu/style.css"
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular"
+      }
+    }
+  }
+}
