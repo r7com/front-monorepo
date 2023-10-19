@@ -1,14 +1,6 @@
 import { useHeaderActions } from '../utils/hooks/use-header-actions'
 import { variants } from './header-search.variants'
 
-/**
-────────────▄▄█▀─────▄
-────────▄▄▀▀▒▒▒▀████▀▄
-───▄▄▄▀▀▒▄▀▒▒▄▄██▀▒▒▒█
-▄▀▀░░░░░░▀███▀▀░░░░░░█
-▀███▄▄▄▄▄▄▄▄▄▄▄▄▄▄███▀
-*/
-
 export function HeaderSearch() {
   const { header } = useHeaderActions()
 
