@@ -21,7 +21,7 @@ export const Default: Story = {
     </div>
   ),
   args: {
-    text: 'Componente bullet',
+    children: 'Component title',
     url: 'https://www.r7.com/',
     size: 'medium',
   },

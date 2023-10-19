@@ -10,9 +10,15 @@ describe(AltBullet.name, () => {
   it(`render all size variants`, () => {
     cy.mount(
       <>
-        <AltBullet url={url} text={text.small} size="small" />
-        <AltBullet url={url} text={text.medium} size="medium" />
-        <AltBullet url={url} text={text.large} size="large" />
+        <AltBullet url={url} size="small">
+          {text.small}
+        </AltBullet>
+        <AltBullet url={url} size="medium">
+          {text.small}
+        </AltBullet>
+        <AltBullet url={url} size="large">
+          {text.small}
+        </AltBullet>
       </>,
     )
 
