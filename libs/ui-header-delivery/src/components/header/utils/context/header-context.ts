@@ -10,6 +10,10 @@ type HeaderContextProps = {
     hide(): void
     currentActive: string
   }
+  header: {
+    isSearchActive: boolean
+    toggle(open: boolean): void
+  }
 }
 
 export const HeaderContext = createContext<HeaderContextProps | null>(null)
