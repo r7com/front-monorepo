@@ -1,1 +1,1 @@
-export * from './lib/ui-section-heading'
+export * from './components/section-heading'
