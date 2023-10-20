@@ -48,7 +48,17 @@
         "cypressConfig": "libs/ui-section-heading/cypress.config.ts",
         "testingType": "component",
         "devServerTarget": "ui-section-heading:build",
-        "skipServe": true
+        "skipServe": true,
+        "watch": true,
+        "browser": "chrome"
+      },
+      "configurations": {
+        "ci": {
+          "watch": false,
+          "env": {
+            "pluginVisualRegressionUpdateImages": true
+          }
+        }
       }
     }
   }
