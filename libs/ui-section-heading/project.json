@@ -73,6 +73,7 @@
       "configurations": {
         "ci": {
           "watch": false,
+          "quiet": true,
           "env": {
             "pluginVisualRegressionUpdateImages": true
           }
