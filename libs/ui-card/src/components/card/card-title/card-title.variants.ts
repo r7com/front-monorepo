@@ -6,8 +6,8 @@ export const variants = createVariants({
     fontStyle: {
       'heading-level-1': 'text-md md:text-xxl',
       'heading-level-2': 'text-sm md:text-md',
-      'heading-level-3': 'text-xxs',
-      'heading-level-4': 'text-xxxs',
+      'heading-level-3': 'text-xxs md:text-sm',
+      'heading-level-4': 'text-xxxs md:text-xxs',
     },
     color: {
       high: 'text-neutral-high-400',
