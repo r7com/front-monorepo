@@ -178,3 +178,17 @@ deploy ui-section-menu:
   only:
     refs:
       - /ui-section-menu\-.*/
+
+deploy ui-section-heading:
+  stage: deploy
+  extends: .distributed
+  script:
+    - yarn nx build ui-section-heading
+    - yarn nx build-css ui-section-heading
+    - cd ./dist/libs/ui-section-heading
+    - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+    - npm publish
+  only:
+    refs:
+      - /ui-section-heading\-.*/
