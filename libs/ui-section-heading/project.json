@@ -41,6 +41,15 @@
           "codeCoverage": true
         }
       }
+    },
+    "component-test": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "libs/ui-section-heading/cypress.config.ts",
+        "testingType": "component",
+        "devServerTarget": "ui-section-heading:build",
+        "skipServe": true
+      }
     }
   }
 }
