@@ -1,6 +1,6 @@
-import { AltBullet } from './alt-bullet'
+import { Bullet } from './bullet'
 
-describe(AltBullet.name, () => {
+describe(Bullet.name, () => {
   const text = {
     small: 'Headline example small',
     medium: 'Headline example medium',
@@ -10,15 +10,15 @@ describe(AltBullet.name, () => {
   it(`render all size variants`, () => {
     cy.mount(
       <>
-        <AltBullet url={url} size="small">
+        <Bullet url={url} size="small">
           {text.small}
-        </AltBullet>
-        <AltBullet url={url} size="medium">
+        </Bullet>
+        <Bullet url={url} size="medium">
           {text.small}
-        </AltBullet>
-        <AltBullet url={url} size="large">
+        </Bullet>
+        <Bullet url={url} size="large">
           {text.small}
-        </AltBullet>
+        </Bullet>
       </>,
     )
 

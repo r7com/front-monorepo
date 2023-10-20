@@ -1,23 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { AltBullet } from './alt-bullet'
+import { Bullet } from './bullet'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const meta: Meta<typeof AltBullet> = {
-  title: 'Example/AltBullet',
-  component: AltBullet,
+const meta: Meta<typeof Bullet> = {
+  title: 'Example/Bullet',
+  component: Bullet,
   tags: ['autodocs'],
   argTypes: {},
 }
 
 export default meta
-type Story = StoryObj<typeof AltBullet>
+type Story = StoryObj<typeof Bullet>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
   render: ({ ...args }) => (
     <div>
-      <AltBullet {...args} />
+      <Bullet {...args} />
     </div>
   ),
   args: {

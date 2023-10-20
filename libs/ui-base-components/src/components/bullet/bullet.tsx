@@ -1,12 +1,12 @@
 import { SvgIcon } from '../svg-icon'
-import { variants, AltBulletVariants } from './alt-bullet.variants'
+import { variants, BulletVariants } from './bullet.variants'
 
-export type AltBulletProps = {
+export type BulletProps = {
   children: React.ReactNode
   url: string
-} & AltBulletVariants
+} & BulletVariants
 
-export function AltBullet({ children, url, size = 'medium' }: AltBulletProps) {
+export function Bullet({ children, url, size = 'medium' }: BulletProps) {
   return (
     <a href={url} className={variants({ size })}>
       <SvgIcon iconName="bullet" className="fill-brand-primary-500 w-nano h-nano" />

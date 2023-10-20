@@ -11,4 +11,4 @@ export const variants = createVariants({
   },
 })
 
-export type AltBulletVariants = VariantProps<typeof variants>
+export type BulletVariants = VariantProps<typeof variants>
