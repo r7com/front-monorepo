@@ -14,10 +14,10 @@ describe(Bullet.name, () => {
           {text.small}
         </Bullet>
         <Bullet url={url} size="medium">
-          {text.small}
+          {text.medium}
         </Bullet>
         <Bullet url={url} size="large">
-          {text.small}
+          {text.large}
         </Bullet>
       </>,
     )
