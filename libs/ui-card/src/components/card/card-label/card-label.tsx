@@ -28,21 +28,18 @@ export function CardLabel({
     )
   }
 
-  let svgTemplate
-  if (type !== 'live') {
-    const iconName = {
-      blog: 'quotation',
-      studio: 'r7-estudio',
-      voting: 'thunder',
-      podcast: 'phone',
-      aclr: 'acrl-r',
-    }[type] as SvgIcons
-    svgTemplate = <SvgIcon className={iconStyle()} size="small" iconName={iconName} />
-  }
+  const iconName = {
+    blog: 'quotation',
+    studio: 'r7-estudio',
+    voting: 'thunder',
+    podcast: 'phone',
+    aclr: 'acrl-r',
+    live: null,
+  }[type] as SvgIcons | null
 
   return (
     <span data-testid="label" className={labelStyle()}>
-      {svgTemplate && svgTemplate}
+      {iconName && <SvgIcon className={iconStyle()} size="small" iconName={iconName} />}
     </span>
   )
 }
