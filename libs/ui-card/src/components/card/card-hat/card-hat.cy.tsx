@@ -9,8 +9,8 @@ describe(Card.HatTitle.name, () => {
 
   it('should render all "color" variants of title', () => {
     cy.mount(
-      <body style={{ backgroundColor: '#12af5b' }}>
-        <Card.HatTitle color="alert">I am a hat</Card.HatTitle>
+      <body className="bg-brand-primary-500">
+        <Card.HatTitle color="high-bold">I am a hat</Card.HatTitle>
         <Card.HatTitle color="low">I am a hat</Card.HatTitle>
         <Card.HatTitle color="high">I am a hat</Card.HatTitle>
       </body>,
@@ -49,12 +49,12 @@ describe(Card.HatWrapper.name, () => {
 
   it('should render "type" variant composition', () => {
     cy.mount(
-      <Card.HatWrapper type="alert">
+      <Card.HatWrapper type="warning">
         <Card.HatImage
           description="I am a hat image"
           imageSource="http://img.r7.com/images/concurso-publico-14032022123440824?dimensions=128x128"
         />
-        <Card.HatTitle color="alert">I am a hat</Card.HatTitle>
+        <Card.HatTitle color="high-bold">I am a hat</Card.HatTitle>
       </Card.HatWrapper>,
     )
     cy.matchImage()

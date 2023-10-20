@@ -78,7 +78,7 @@ export const BreakingNews: HatAlertStory = {
     </Card>
   ),
   args: {
-    type: 'alert',
+    type: 'warning',
   },
   parameters: {
     controls: {
