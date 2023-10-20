@@ -73,7 +73,7 @@ export const BreakingNews: HatAlertStory = {
       newsUrl="https://www.google.com"
     >
       <Card.HatWrapper {...args}>
-        <Card.HatTitle color="alert">News section</Card.HatTitle>
+        <Card.HatTitle color="high-bold">News section</Card.HatTitle>
       </Card.HatWrapper>
     </Card>
   ),
