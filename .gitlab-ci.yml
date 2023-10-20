@@ -178,3 +178,17 @@ deploy ui-voting-components:
   only:
     refs:
       - /ui-voting-components\-.*/
+
+deploy ui-section-menu:
+  stage: deploy
+  extends: .distributed
+  script:
+    - yarn nx build ui-section-menu
+    - yarn nx build-css ui-section-menu
+    - cd ./dist/libs/ui-section-menu
+    - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+    - npm publish
+  only:
+    refs:
+      - /ui-section-menu\-.*/
