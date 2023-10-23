@@ -1,4 +1,4 @@
-import { SvgIcon, SvgIcons } from '../svg-icon'
+import { SvgIcon, SvgIcons } from '@r7/ui-base-components'
 import { CardStatusVariants, variants } from './card-status.variants'
 
 export type CardStatusProps = {

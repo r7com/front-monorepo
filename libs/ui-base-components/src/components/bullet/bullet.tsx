@@ -1,16 +1,16 @@
+import { SvgIcon } from '../svg-icon'
 import { variants, BulletVariants } from './bullet.variants'
 
 export type BulletProps = {
-  text: string
+  children: React.ReactNode
+  url: string
 } & BulletVariants
 
-export function Bullet({ text, variant = 'waiting' }: BulletProps) {
-  const { base, dotVariant, textVariant } = variants({ variant })
-
+export function Bullet({ children, url, size = 'medium' }: BulletProps) {
   return (
-    <div data-testid="bullet" className={base()}>
-      <span className={dotVariant()}></span>
-      <p className={textVariant()}>{text}</p>
-    </div>
+    <a href={url} className={variants({ size })}>
+      <SvgIcon iconName="bullet" className="fill-brand-primary-500 w-nano h-nano" />
+      {children}
+    </a>
   )
 }
