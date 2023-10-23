@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.0.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-1.0.0...ui-header-delivery-2.0.0) (2023-10-20)
+
+### Features
+
+- adding header-actions to header-provider ([bc89d6c](https://gitlab.ir7.com.br/r7/front-monorepo/commit/bc89d6c8913d1e0b895a4aa6557ee0a1f8c79717))
+- composing header with created components ([626778a](https://gitlab.ir7.com.br/r7/front-monorepo/commit/626778a24ec2376f7594680418e4f8097acb1464))
+- creating header-logo ([ae8a3f1](https://gitlab.ir7.com.br/r7/front-monorepo/commit/ae8a3f1d53c3180ee6633e3b04e8eed4cb4a734b))
+- creating header-main-section and variants ([af63fa1](https://gitlab.ir7.com.br/r7/front-monorepo/commit/af63fa1180a101a69144bbc8c1526b497503a01d))
+- creating header-search with its toggle button ([215f091](https://gitlab.ir7.com.br/r7/front-monorepo/commit/215f091815ffbb3db58d920d7b53cce90773189f))
+- creating header-section ([0728f9b](https://gitlab.ir7.com.br/r7/front-monorepo/commit/0728f9b24df8487fb531ce3e57bcb42d7c8419eb))
+- creating header-social components for sharing ([22d6b92](https://gitlab.ir7.com.br/r7/front-monorepo/commit/22d6b92cd5e8878855556511164df96dc8a6d86d))
+- creating sidebar-search form with styles ([b87c930](https://gitlab.ir7.com.br/r7/front-monorepo/commit/b87c9304550d532fe9e07ca16be15339037cd119))
+- extending header with related components ([bf7c164](https://gitlab.ir7.com.br/r7/front-monorepo/commit/bf7c1641691b32e984dbab311cd1273255e08892))
+- renaming sidebar-provider to header-provider ([445bbd3](https://gitlab.ir7.com.br/r7/front-monorepo/commit/445bbd38917dbe167eae5c7656f4430577e5b223))
+
 # [1.0.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-0.2.0...ui-header-delivery-1.0.0) (2023-10-10)
 
 ### Bug Fixes
