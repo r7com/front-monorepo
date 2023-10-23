@@ -165,6 +165,20 @@ deploy ui-header-delivery:
     refs:
       - /ui-header-delivery\-.*/
 
+deploy ui-voting-components:
+  stage: deploy
+  extends: .distributed
+  script:
+    - yarn nx build ui-voting-components
+    - yarn nx build-css ui-voting-components
+    - cd ./dist/libs/ui-voting-components
+    - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+    - npm publish
+  only:
+    refs:
+      - /ui-voting-components\-.*/
+
 deploy ui-section-menu:
   stage: deploy
   extends: .distributed

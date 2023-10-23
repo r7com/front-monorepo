@@ -1,4 +1,5 @@
-import { Button, useNotification } from '@r7/ui-base-components'
+import { Button } from '@r7/ui-base-components'
+import { useNotification } from '@r7/ui-voting-components'
 import { Link, Outlet } from 'react-router-dom'
 
 export function App() {

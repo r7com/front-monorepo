@@ -1,34 +1,30 @@
 import { Bullet } from './bullet'
 
-const bulletSelector = '[data-testid="bullet"]'
-
 describe(Bullet.name, () => {
-  const text = 'Bullet'
-  it(`check status published`, () => {
-    cy.mount(<Bullet text={text} variant="published" />)
-    cy.get(`${bulletSelector}`).should('be.visible')
-    cy.get(`${bulletSelector} > p`).should('have.text', text)
-    cy.matchImage()
-  })
+  const text = {
+    small: 'Headline example small',
+    medium: 'Headline example medium',
+    large: 'Headline example large',
+  }
+  const url = 'https://www.r7.com/'
+  it(`render all size variants`, () => {
+    cy.mount(
+      <>
+        <Bullet url={url} size="small">
+          {text.small}
+        </Bullet>
+        <Bullet url={url} size="medium">
+          {text.medium}
+        </Bullet>
+        <Bullet url={url} size="large">
+          {text.large}
+        </Bullet>
+      </>,
+    )
 
-  it(`check status waiting`, () => {
-    cy.mount(<Bullet text={text} variant="waiting" />)
-    cy.get(`${bulletSelector}`).should('be.visible')
-    cy.get(`${bulletSelector} > p`).should('have.text', text)
-    cy.matchImage()
-  })
-
-  it(`check status closed`, () => {
-    cy.mount(<Bullet text={text} variant="closed" />)
-    cy.get(`${bulletSelector}`).should('be.visible')
-    cy.get(`${bulletSelector} > p`).should('have.text', text)
-    cy.matchImage()
-  })
-
-  it(`check status paused`, () => {
-    cy.mount(<Bullet text={text} variant="paused" />)
-    cy.get(`${bulletSelector}`).should('be.visible')
-    cy.get(`${bulletSelector} > p`).should('have.text', text)
+    cy.findByRole('link', { name: text.small }).should('be.visible')
+    cy.findByRole('link', { name: text.medium }).should('be.visible')
+    cy.findByRole('link', { name: text.large }).should('be.visible')
     cy.matchImage()
   })
 })
