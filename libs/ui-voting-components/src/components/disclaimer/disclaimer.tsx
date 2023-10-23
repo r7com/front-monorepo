@@ -1,4 +1,4 @@
-import { SvgIcon } from '../svg-icon'
+import { SvgIcon } from '@r7/ui-base-components'
 
 export type DisclaimerProps = {
   text: string
