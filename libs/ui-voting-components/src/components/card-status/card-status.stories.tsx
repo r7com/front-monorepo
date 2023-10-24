@@ -4,7 +4,7 @@ import { CardStatus } from './card-status'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof CardStatus> = {
-  title: 'Example/CardStatus',
+  title: 'Voting/CardStatus',
   component: CardStatus,
   tags: ['autodocs'],
   argTypes: {},
