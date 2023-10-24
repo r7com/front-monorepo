@@ -3,7 +3,7 @@ import { useArgs } from '@storybook/client-api'
 import { Chips, ChipsProps } from './chips'
 
 const meta: Meta<ChipsProps<'span'>> = {
-  title: 'Example/Chips',
+  title: 'Base/Chips',
   component: Chips,
   tags: ['autodocs'],
   argTypes: {
