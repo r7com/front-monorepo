@@ -47,7 +47,7 @@ build storybook:
 deploy storybook:
   image:
     name: gitlab.ir7.com.br:5050/sre/docker-images/gitlab-runner-images:1.0.5
-    entrypoint: [""]
+    entrypoint: ['']
   stage: deploy
   interruptible: true
   tags:
@@ -164,3 +164,45 @@ deploy ui-header-delivery:
   only:
     refs:
       - /ui-header-delivery\-.*/
+
+deploy ui-voting-components:
+  stage: deploy
+  extends: .distributed
+  script:
+    - yarn nx build ui-voting-components
+    - yarn nx build-css ui-voting-components
+    - cd ./dist/libs/ui-voting-components
+    - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+    - npm publish
+  only:
+    refs:
+      - /ui-voting-components\-.*/
+
+deploy ui-section-menu:
+  stage: deploy
+  extends: .distributed
+  script:
+    - yarn nx build ui-section-menu
+    - yarn nx build-css ui-section-menu
+    - cd ./dist/libs/ui-section-menu
+    - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+    - npm publish
+  only:
+    refs:
+      - /ui-section-menu\-.*/
+
+deploy ui-section-heading:
+  stage: deploy
+  extends: .distributed
+  script:
+    - yarn nx build ui-section-heading
+    - yarn nx build-css ui-section-heading
+    - cd ./dist/libs/ui-section-heading
+    - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+    - npm publish
+  only:
+    refs:
+      - /ui-section-heading\-.*/

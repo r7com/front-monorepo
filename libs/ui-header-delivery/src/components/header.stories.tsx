@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { SvgIcon } from '@r7/ui-base-components'
 import { Header, Menu, Sidebar } from '../'
 
 import { MENU_DATA } from '../mocks/MENU_DATA'
@@ -20,6 +21,10 @@ export const Primary: Story = {
     <div className="h-screen">
       <Header>
         <Header.MainSection>
+          <Header.Logo
+            link="https://www.r7.com"
+            image={<SvgIcon iconName="logo-R7" color="primary" width={40} height={40} />}
+          />
           <Sidebar.Toggle>menu</Sidebar.Toggle>
           <Sidebar>
             <Sidebar.Search />
@@ -74,6 +79,16 @@ export const Primary: Story = {
               })}
             </Menu.List>
           </Menu>
+          <Header.SocialList>
+            <Header.SocialItem
+              socialName="facebook"
+              socialUrl="https://www.facebook.com/portalr7"
+            />
+            <Header.SocialItem socialName="twitter" socialUrl="https://twitter.com/portalr7" />
+            <Header.SocialItem socialName="instagram" socialUrl="https://instagram.com/portalr7" />
+          </Header.SocialList>
+          <Header.SearchToggle />
+          <Header.Search />
         </Header.MainSection>
       </Header>
     </div>

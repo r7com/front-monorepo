@@ -1,0 +1,84 @@
+{
+  "name": "ui-section-heading",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ui-section-heading/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/ui-section-heading/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --noEmit -p {projectRoot}/tsconfig.lib.json"
+      }
+    },
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/libs/ui-section-heading"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "build-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tailwindcss -c libs/ui-section-heading/tailwind.config.js --minify  -i libs/ui-section-heading/src/style.css -o dist/libs/ui-section-heading/style.css"
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/ui-section-heading/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "component-test": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "libs/ui-section-heading/cypress.config.ts",
+        "testingType": "component",
+        "devServerTarget": "ui-section-heading:build",
+        "skipServe": true,
+        "watch": true,
+        "browser": "chrome"
+      },
+      "configurations": {
+        "ci": {
+          "watch": false,
+          "quiet": true,
+          "env": {
+            "pluginVisualRegressionUpdateImages": true
+          }
+        }
+      }
+    }
+  }
+}
