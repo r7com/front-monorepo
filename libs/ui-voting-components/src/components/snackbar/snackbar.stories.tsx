@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Snackbar, SnackbarProps } from './snackbar'
 
 const meta: Meta<SnackbarProps> = {
-  title: 'Example/Snackbar',
+  title: 'Voting/Snackbar',
   component: Snackbar,
   tags: ['autodocs'],
   argTypes: {},
