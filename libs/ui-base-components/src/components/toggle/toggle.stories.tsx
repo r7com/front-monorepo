@@ -4,7 +4,7 @@ import { useArgs } from '@storybook/client-api'
 import { Toggle } from './toggle'
 
 const meta: Meta<typeof Toggle> = {
-  title: 'Example/Toggle',
+  title: 'Base/Toggle',
   component: Toggle,
   tags: ['autodocs'],
   argTypes: {},

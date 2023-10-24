@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { SvgIcon, SvgIconProps } from './svg-icon'
 
 const meta: Meta<SvgIconProps> = {
-  title: 'Example/SvgIcon',
+  title: 'Base/SvgIcon',
   component: SvgIcon,
   tags: ['autodocs'],
   argTypes: {},
