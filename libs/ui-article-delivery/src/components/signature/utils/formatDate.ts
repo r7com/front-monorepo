@@ -13,7 +13,6 @@ export const formatDate = (date: string) => {
       .replace(',', '')
 
     const [datePart, timePart] = formatedPublishedDate.split(' ')
-
     const [day, month, year] = datePart.split('/')
     const [hour, minute] = timePart.split(':')
 
