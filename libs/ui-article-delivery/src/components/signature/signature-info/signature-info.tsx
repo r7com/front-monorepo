@@ -2,7 +2,7 @@ export type SignatureInfoProps = {
   sectionUrl: string
   sectionName: string
   author: string
-  color: string
+  color?: string
 }
 
 export function SignatureInfo({ sectionName, sectionUrl, author, color }: SignatureInfoProps) {
