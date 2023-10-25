@@ -20,6 +20,8 @@ export function App() {
           </li>
           <li>
             <Link to="/ui-article-delivery">Ui Article Delivery</Link>
+          </li>
+          <li>
             <Link to="/ui-section-menu">Section Menu</Link>
           </li>
         </ul>
