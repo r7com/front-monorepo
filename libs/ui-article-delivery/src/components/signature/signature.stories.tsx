@@ -13,12 +13,12 @@ type Story = StoryObj<{ color: string }>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
-  render: ({ ...args }) => (
+  render: ({ color }) => (
     <Signature>
       <Signature.Content>
         <Signature.Info
           author="do R7"
-          color={args.color}
+          color={color}
           sectionName="Notícias"
           sectionUrl="https://noticias.r7.com/agencia-estado"
         />
@@ -39,17 +39,17 @@ export const Default: Story = {
 }
 
 export const WithAgency: Story = {
-  render: ({ ...args }) => (
+  render: ({ color }) => (
     <Signature>
       <Signature.Agency
         url="https://agenciaestado.com.br"
         name="Agência Estado"
         imageUrl="https://img.r7.com/images/logo-agencia-estado-09012020093353497?dimensions=50x50"
-      ></Signature.Agency>
+      />
       <Signature.Content>
         <Signature.Info
           author="Agência Estado"
-          color={args.color}
+          color={color}
           sectionName="Agência Estado"
           sectionUrl="https://noticias.r7.com/agencia-estado"
         />

@@ -8,7 +8,7 @@ export type SignatureProps = {
   children: ReactNode
 }
 
-export function Signature({ children }: SignatureProps): JSX.Element {
+export function Signature({ children }: SignatureProps) {
   return <div className="flex items-center">{children}</div>
 }
 
