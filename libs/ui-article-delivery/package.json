@@ -8,8 +8,5 @@
       "import": "./index.mjs",
       "require": "./index.js"
     }
-  },
-  "devDependencies": {
-    "@types/react-copy-to-clipboard": "^5.0.5"
   }
 }
