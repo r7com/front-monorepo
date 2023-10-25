@@ -1,1 +1,1 @@
-export * from './font-size-changer-root'
+export * from './font-size-changer'

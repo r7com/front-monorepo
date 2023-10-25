@@ -1,26 +1,27 @@
 import { getElements, numberFontSize } from '../utils'
 import { FontSizeChangerVariants, variants } from '../font-size-changer.variants'
 
-export type FontSizeChangerIncreaseProps = {
-  maxSize?: number
+export type FontSizeChangerDecreaseProps = {
+  minSize?: number
 } & FontSizeChangerVariants
 
-export function FontSizeChangerIncrease({ maxSize = 24 }: FontSizeChangerIncreaseProps) {
-  const increase = () => {
+export function FontSizeChangerDecrease({ minSize = 10 }: FontSizeChangerDecreaseProps) {
+  const { decrease } = variants()
+  const handleDecrease = () => {
     const elements = getElements()
 
     elements.forEach($item => {
       const fontSize = numberFontSize($item)
 
-      if (fontSize >= maxSize) return
+      if (fontSize <= minSize) return
 
-      $item.style.fontSize = `${fontSize + 2}px`
+      $item.style.fontSize = `${fontSize - 2}px`
     })
   }
 
   return (
-    <button onClick={increase} title="Aumentar fonte do texto" className={variants()}>
-      A+
+    <button onClick={handleDecrease} className={decrease()} title="Diminuir fonte do texto">
+      A-
     </button>
   )
 }
