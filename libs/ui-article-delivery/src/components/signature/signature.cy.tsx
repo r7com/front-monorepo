@@ -65,7 +65,10 @@ describe('Signature', () => {
       </Signature>,
     )
 
-    cy.findByAltText(/agência estado - r7/i).should('be.visible')
+    cy.findByAltText(/agência estado - r7/i)
+      .should('be.visible')
+      .and('have.prop', 'naturalWidth')
+      .should('be.greaterThan', 0)
     cy.findAllByTitle(/agência estado - r7/i).should('have.attr', 'target', '_blank')
     cy.findAllByTitle(/agência estado - r7/i).should('have.attr', 'rel', 'noreferrer')
     cy.matchImage()
