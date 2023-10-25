@@ -20,7 +20,7 @@ export function App() {
       </header>
       <Button onClick={() => notify({ message: 'hello', type: 'positive' })}>snackbar</Button>
       <ContrastControl />
-      <p>as</p>
+      <a href="s">dsfd</a>
       {/* Children routes will be rendered in <Outlet /> */}
       <Outlet />
     </>

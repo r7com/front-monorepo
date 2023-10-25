@@ -20,7 +20,7 @@
     }
 
     & a {
-      @apply !text-brand-primary-400 !underline-offset-2 !font-bold;
+      @apply !text-brand-primary-400 !underline !font-bold;
     }
 
     & img {
