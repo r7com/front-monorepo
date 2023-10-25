@@ -2,6 +2,8 @@ import { useLocalStorage } from '@uidotdev/usehooks'
 import { $body, contrastClass, storageName } from './constants'
 
 import './css/contrast.css'
+import { IconButton } from '../icon-button'
+import { SvgIcon } from '../svg-icon'
 
 export function ContrastControl() {
   const [contrast, saveContrast] = useLocalStorage<boolean>(storageName)
@@ -24,5 +26,9 @@ export function ContrastControl() {
   function setContrast() {
     $body && $body.classList.add(contrastClass)
   }
-  return <button onClick={handleContrast}>contrast</button>
+  return (
+    <button onClick={handleContrast} title="Alto contraste">
+      <SvgIcon iconName="contrast" title="Alto contraste" />
+    </button>
+  )
 }

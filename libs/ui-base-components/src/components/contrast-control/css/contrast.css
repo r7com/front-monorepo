@@ -15,6 +15,10 @@
       @apply !text-neutral-high-400;
     }
 
+    & svg {
+      @apply !fill-neutral-high-400;
+    }
+
     & a {
       @apply !text-brand-primary-400 !underline-offset-2 !font-bold;
     }
