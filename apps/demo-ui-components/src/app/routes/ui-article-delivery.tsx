@@ -7,7 +7,7 @@ export function UiArticleDelivery() {
         url="https://agenciaestado.com.br"
         name="Agência Estado - R7"
         imageUrl="https://img.r7.com/images/logo-agencia-estado-09012020093353497?dimensions=50x50"
-      ></Signature.Agency>
+      />
       <Signature.Content>
         <Signature.Info
           author="Agência Estado"
