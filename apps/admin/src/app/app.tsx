@@ -1,4 +1,4 @@
-import { Button, FontSizeChanger } from '@r7/ui-base-components'
+import { Button, FontSizeChangerRoot } from '@r7/ui-base-components'
 import { useNotification } from '@r7/ui-voting-components'
 
 import { Link, Outlet } from 'react-router-dom'
@@ -20,7 +20,12 @@ export function App() {
         </ul>
       </header>
       <Button onClick={() => notify({ message: 'hello', type: 'positive' })}>snackbar</Button>
-      <FontSizeChanger />
+
+      <FontSizeChangerRoot>
+        <FontSizeChangerRoot.Increase />
+        <FontSizeChangerRoot.Decrease />
+      </FontSizeChangerRoot>
+
       <article>
         <p className="text-xxs">anderson</p>
         <p className="text-xs">anderson22</p>

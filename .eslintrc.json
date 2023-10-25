@@ -5,10 +5,7 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "extends": [
-        "plugin:prettier/recommended",
-        "plugin:jsx-a11y/recommended"
-      ],
+      "extends": ["plugin:prettier/recommended", "plugin:jsx-a11y/recommended"],
       "rules": {
         "@nx/enforce-module-boundaries": [
           "error",
@@ -24,7 +21,8 @@
           }
         ],
         "semi": 0,
-        "prettier/prettier": ["error", { "semi": false }]
+        "prettier/prettier": ["error", { "semi": false }],
+        "react/jsx-no-useless-fragment": "off"
       }
     },
     {
