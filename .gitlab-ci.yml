@@ -68,7 +68,7 @@ test:
   stage: test
   extends: .distributed
   script:
-    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t test --parallel=3 --configuration=ci
+    - TZ=GMT+3 npx nx affected --base=$NX_BASE --head=$NX_HEAD -t test --parallel=3 --configuration=ci
   only:
     refs:
       - main
@@ -85,7 +85,7 @@ component-test:
     - apt-get update && apt-get install -y xvfb
     - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
     - export DISPLAY=:99
-    - npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci
+    - TZ=GMT+3 npx nx affected --base=$NX_BASE --head=$NX_HEAD -t component-test --parallel=3 --configuration=ci
   only:
     refs:
       - main

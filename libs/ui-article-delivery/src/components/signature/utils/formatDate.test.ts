@@ -4,7 +4,6 @@ describe('formatDate', () => {
   it('should return date with the correct format', () => {
     const date = '2023-06-29T15:12:23Z'
     const finalDate = '29/06/2023 - 12h12'
-
     expect(formatDate(date)).toBe(finalDate)
   })
 

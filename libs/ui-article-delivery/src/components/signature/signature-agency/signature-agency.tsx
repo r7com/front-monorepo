@@ -12,6 +12,8 @@ export function SignatureAgency({ name, url, imageUrl }: SignatureAgencyProps) {
         alt={name}
         className="w-[37px] h-[37px] rounded-md mr-nano block"
         title={name}
+        width={37}
+        height={37}
       />
     </a>
   )
