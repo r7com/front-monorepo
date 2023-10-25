@@ -1,40 +1,18 @@
-type SignatureProps = {
-  sectionName: string
-  sectionUrl: string
-  author: string
-  published: string
-  color: string
-  modified?: string
+import { ReactNode } from 'react'
+import { SignatureAgency } from './signature-agency/signature-agency'
+import { SignatureContent } from './signature-content/signature-content'
+import { SignatureInfo } from './signature-info/signature-info'
+import { SignatureDate } from './signature-date/signature-date'
+
+export type SignatureProps = {
+  children: ReactNode
 }
 
-export function Signature({
-  sectionName,
-  sectionUrl,
-  author,
-  published,
-  modified,
-  color,
-}: SignatureProps): JSX.Element {
-  return (
-    <div className="flex flex-col mb-xxxs lg:mb-0">
-      <p>
-        <a
-          href={sectionUrl}
-          title={sectionName}
-          className="text-editorial-color text-xxxs font-semibold uppercase"
-          style={{ color }}
-        >
-          {sectionName}
-        </a>
-        <span className="text-editorial-color ml-quark mr-quark" style={{ color }}>
-          |
-        </span>
-        {author}
-      </p>
-      <time dateTime={`${published}`} className="uppercase text-little">
-        {published}
-        {modified && <span> (Atualizado em {modified})</span>}
-      </time>
-    </div>
-  )
+export function Signature({ children }: SignatureProps): JSX.Element {
+  return <div className="flex items-center">{children}</div>
 }
+
+Signature.Agency = SignatureAgency
+Signature.Content = SignatureContent
+Signature.Info = SignatureInfo
+Signature.Date = SignatureDate

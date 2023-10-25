@@ -41,6 +41,25 @@
           "codeCoverage": true
         }
       }
+    },
+    "component-test": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "libs/ui-article-delivery/cypress.config.ts",
+        "testingType": "component",
+        "devServerTarget": "ui-article-delivery:build",
+        "skipServe": true,
+        "watch": true,
+        "browser": "chrome"
+      },
+      "configurations": {
+        "ci": {
+          "watch": false,
+          "env": {
+            "pluginVisualRegressionUpdateImages": true
+          }
+        }
+      }
     }
   }
 }
