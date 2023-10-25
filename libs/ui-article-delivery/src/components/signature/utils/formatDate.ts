@@ -10,9 +10,14 @@ export const formatDate = (date: string) => {
       timeZone: 'America/Sao_Paulo',
     })
       .format(publishedDate)
-      .replace(/[:,]/g, match => (match === ',' ? ' -' : 'h'))
+      .replace(',', '')
 
-    return formatedPublishedDate
+    const [datePart, timePart] = formatedPublishedDate.split(' ')
+
+    const [day, month, year] = datePart.split('/')
+    const [hour, minute] = timePart.split(':')
+
+    return `${day}/${month}/${year} - ${hour}h${minute}`
   } catch (e) {
     return ''
   }
