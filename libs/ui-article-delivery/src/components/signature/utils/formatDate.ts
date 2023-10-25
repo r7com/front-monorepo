@@ -7,14 +7,12 @@ export const formatDate = (date: string) => {
       day: '2-digit',
       hour: '2-digit',
       minute: '2-digit',
-      timeZone: 'America/New_York',
-    }).format(publishedDate)
+      timeZone: 'America/Sao_Paulo',
+    })
+      .format(publishedDate)
+      .replace(/[:,]/g, match => (match === ',' ? ' -' : 'h'))
 
-    console.log(formatedPublishedDate)
-
-    const finalDate = formatedPublishedDate.replace(/:/g, 'h').replace(/,/g, ' -')
-
-    return finalDate
+    return formatedPublishedDate
   } catch (e) {
     return ''
   }
