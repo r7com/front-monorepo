@@ -1,4 +1,6 @@
 /* eslint-disable */
+// process.env.TZ = 'GMT+3'
+
 export default {
   displayName: 'ui-article-delivery',
   preset: '../../jest.preset.js',

@@ -7,6 +7,7 @@ export const formatDate = (date: string) => {
       day: '2-digit',
       hour: '2-digit',
       minute: '2-digit',
+      timeZone: 'America/Sao_Paulo',
     })
       .format(publishedDate)
       .replace(/:/g, 'h')
