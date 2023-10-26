@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import { AccessibilityBarItem } from './accessibility-bar-item'
-import { AccessibilityBarList } from './accessibility-bar-list/accessibility-bar-list'
+import { AccessibilityBarList } from './accessibility-bar-list'
 
 export type AccessibilityBarProps = {
   children: ReactNode
