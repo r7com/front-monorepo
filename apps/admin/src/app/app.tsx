@@ -1,4 +1,4 @@
-import { Button, FontSizeChanger } from '@r7/ui-base-components'
+import { Button, FontSizeChanger, Audima } from '@r7/ui-base-components'
 import { useNotification } from '@r7/ui-voting-components'
 
 import { Link, Outlet } from 'react-router-dom'
@@ -32,6 +32,10 @@ export function App() {
         <span data-font-size-changer>positive</span>
       </article>
 
+      <Audima />
+      <h1>sou um h1</h1>
+      <p>anderson</p>
+      {/* {Audima()} */}
       {/* Children routes will be rendered in <Outlet /> */}
       <Outlet />
     </>
