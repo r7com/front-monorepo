@@ -1,7 +1,7 @@
 import { useLocalStorage } from '@uidotdev/usehooks'
 import { $body, contrastClass, storageName } from './constants'
 import { variants } from './contrast-control.variants'
-import { SvgIcon } from '../svg-icon'
+import { SvgIcon } from '@r7/ui-base-components'
 
 import './css/contrast.css'
 

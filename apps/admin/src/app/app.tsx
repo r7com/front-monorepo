@@ -1,10 +1,7 @@
-import {
-  Button,
-  FontSizeChanger,
-  Audima,
-  ContrastControl,
-  AccessibilityBar,
-} from '@r7/ui-base-components'
+import { FontSizeChanger, Audima, ContrastControl, AccessibilityBar } from '@r7/ui-article-delivery'
+
+import { Button } from '@r7/ui-base-components'
+
 import { useNotification } from '@r7/ui-voting-components'
 
 import { Link, Outlet } from 'react-router-dom'
