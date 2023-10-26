@@ -48,8 +48,8 @@ module.exports = {
       },
       'neutral-high': {
         400: '#ffffff',
-        500: '#f4f4f4',
-        600: '#9b9b9b',
+        500: '#F8F8F8',
+        600: '#DDDDE1',
       },
       'brand-primary': {
         400: '#4da5e7',
