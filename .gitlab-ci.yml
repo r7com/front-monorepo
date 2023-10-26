@@ -37,7 +37,6 @@ build storybook:
   only:
     refs:
       - main
-      - tags
     changes:
       - '*.stories.tsx'
   artifacts:
@@ -60,7 +59,6 @@ deploy storybook:
   only:
     refs:
       - main
-      - tags
     changes:
       - '*.stories.tsx'
 
