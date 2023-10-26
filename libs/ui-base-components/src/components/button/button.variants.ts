@@ -1,7 +1,7 @@
 import { createVariants, VariantProps } from '@r7/tools'
 
 export const variants = createVariants({
-  base: 'inline-flex items-center box-border cursor-pointer border-hairline rounded-md text-center leading-6 font-medium transition-all gap-nano',
+  base: 'inline-flex items-center box-border cursor-pointer border-hairline rounded-md text-center leading-6 font-medium transition-all gap-nano dark:border-[1px] dark:border-solid dark:border-neutral-high-400 dark:bg-dark-low-600 dark:text-neutral-high-400 dark:fill-neutral-high-400',
   variants: {
     size: {
       large: 'text-xs py-[16px] px-nano',

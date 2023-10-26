@@ -1,11 +1,11 @@
 import { getElements, numberFontSize } from '../utils'
-import { FontSizeChangerVariants, variants } from '../font-size-changer.variants'
+import { FontSizeControlVariants, variants } from '../font-size-control.variants'
 
-export type FontSizeChangerDecreaseProps = {
+export type FontSizeControlDecreaseProps = {
   minSize?: number
-} & FontSizeChangerVariants
+} & FontSizeControlVariants
 
-export function FontSizeChangerDecrease({ minSize = 10 }: FontSizeChangerDecreaseProps) {
+export function FontSizeControlDecrease({ minSize = 10 }: FontSizeControlDecreaseProps) {
   const { decrease } = variants()
   const handleDecrease = () => {
     const elements = getElements()

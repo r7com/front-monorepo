@@ -1,9 +1,9 @@
 import { useLocalStorage } from '@uidotdev/usehooks'
-import { $body, contrastClass, storageName } from './constants'
+import { $html, contrastClass, storageName } from './constants'
 import { variants } from './contrast-control.variants'
 import { SvgIcon } from '@r7/ui-base-components'
 
-import './css/contrast.css'
+// import './css/contrast.css'
 
 export function ContrastControl() {
   const [contrast, saveContrast] = useLocalStorage<boolean>(storageName)
@@ -15,20 +15,20 @@ export function ContrastControl() {
   }
 
   function removeContrast() {
-    $body && $body.classList.remove(contrastClass)
+    $html && $html.classList.remove(contrastClass)
   }
 
   function toggleContrast() {
     saveContrast(prev => !prev)
-    $body && $body.classList.toggle(contrastClass)
+    $html && $html.classList.toggle(contrastClass)
   }
 
   function setContrast() {
-    $body && $body.classList.add(contrastClass)
+    $html && $html.classList.add(contrastClass)
   }
   return (
     <button onClick={handleContrast} title="Alto contraste" className={variants()}>
-      <SvgIcon iconName="contrast" title="Alto contraste" />
+      <SvgIcon iconName="contrast" title="Alto contraste" className="dark:fill-neutral-high-400" />
     </button>
   )
 }

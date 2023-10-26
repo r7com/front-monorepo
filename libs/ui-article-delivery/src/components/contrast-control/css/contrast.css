@@ -28,7 +28,7 @@
     }
 
     & button {
-      @apply !border-[1px] !border-solid !border-neutral-high-400 !bg-dark-low-600;
+      @apply !border-[1px] !border-solid !border-neutral-high-400 !bg-light-low-600;
     }
   }
 }

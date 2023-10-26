@@ -10,7 +10,7 @@ export function Audima() {
         width="100%"
         height="50"
         src={`https://${audimaDomain()}.audima.co/iframe-later-thin-audima.html?skin=thin&amp;statistic=true`}
-        className="checked aud-message-received w-[350px] md:w-[600px] -mr-nano mb-xxxs md:mb-0"
+        className="checked aud-message-received w-[350px] md:w-[600px] -ml-nano md:-ml-auto mb-xxxs md:mb-0"
         // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
         role="button"
       ></iframe>

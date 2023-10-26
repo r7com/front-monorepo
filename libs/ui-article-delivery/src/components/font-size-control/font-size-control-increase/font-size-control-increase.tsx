@@ -1,11 +1,11 @@
 import { getElements, numberFontSize } from '../utils'
-import { FontSizeChangerVariants, variants } from '../font-size-changer.variants'
+import { FontSizeControlVariants, variants } from '../font-size-control.variants'
 
-export type FontSizeChangerIncreaseProps = {
+export type FontSizeControlIncreaseProps = {
   maxSize?: number
-} & FontSizeChangerVariants
+} & FontSizeControlVariants
 
-export function FontSizeChangerIncrease({ maxSize = 24 }: FontSizeChangerIncreaseProps) {
+export function FontSizeControlIncrease({ maxSize = 24 }: FontSizeControlIncreaseProps) {
   const { increase } = variants()
 
   const handleIncrease = () => {
