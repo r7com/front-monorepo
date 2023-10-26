@@ -1,4 +1,4 @@
-import { Button, FontSizeChanger, Audima } from '@r7/ui-base-components'
+import { Button, FontSizeChanger, Audima, ContrastControl } from '@r7/ui-base-components'
 import { useNotification } from '@r7/ui-voting-components'
 
 import { Link, Outlet } from 'react-router-dom'
@@ -35,7 +35,9 @@ export function App() {
       <Audima />
       <h1>sou um h1</h1>
       <p>anderson</p>
-      {/* {Audima()} */}
+
+      <ContrastControl />
+      <a href="s">dsfd</a>
       {/* Children routes will be rendered in <Outlet /> */}
       <Outlet />
     </>

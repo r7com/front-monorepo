@@ -1,0 +1,34 @@
+@tailwind base;
+
+@layer base {
+  .r7-contrast {
+    @apply !bg-dark-low-600;
+
+    & span,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    button {
+      @apply !text-neutral-high-400;
+    }
+
+    & svg {
+      @apply !fill-neutral-high-400;
+    }
+
+    & a {
+      @apply !text-brand-primary-400 !underline !font-bold;
+    }
+
+    & img {
+      @apply !grayscale;
+    }
+
+    & button {
+      @apply !border-[1px] !border-solid !border-neutral-high-400 !bg-dark-low-600;
+    }
+  }
+}
