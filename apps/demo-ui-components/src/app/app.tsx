@@ -1,5 +1,5 @@
 import { Route, Routes, Link } from 'react-router-dom'
-import { UiFooterDelivery, UiSectionMenu } from './routes'
+import { UiFooterDelivery, UiSectionMenu, UiArticleDelivery } from './routes'
 
 export function App() {
   return (
@@ -19,6 +19,9 @@ export function App() {
             <Link to="/ui-footer-delivery">Footer Delivery</Link>
           </li>
           <li>
+            <Link to="/ui-article-delivery">Ui Article Delivery</Link>
+          </li>
+          <li>
             <Link to="/ui-section-menu">Section Menu</Link>
           </li>
         </ul>
@@ -26,6 +29,7 @@ export function App() {
       <Routes>
         <Route path="/" />
         <Route path="/ui-footer-delivery" element={<UiFooterDelivery />} />
+        <Route path="/ui-article-delivery" element={<UiArticleDelivery />} />
         <Route path="/ui-section-menu" element={<UiSectionMenu />} />
       </Routes>
       {/* END: routes */}
