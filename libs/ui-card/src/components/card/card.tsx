@@ -13,7 +13,13 @@ export type CardProps = {
   openInBlank?: boolean
 }
 
-export function Card({ children, newsUrl, newsTitle, className, openInBlank = false }: CardProps) {
+export function Card({
+  children,
+  newsUrl,
+  newsTitle,
+  className = '',
+  openInBlank = false,
+}: CardProps) {
   return (
     <article>
       <a
