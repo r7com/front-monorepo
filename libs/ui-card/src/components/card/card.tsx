@@ -27,7 +27,7 @@ export function Card({
         href={newsUrl}
         title={newsTitle}
         target={openInBlank ? '_blank' : undefined}
-        rel="noreferrer"
+        rel={openInBlank ? 'noreferrer' : undefined}
       >
         {children}
       </a>
