@@ -5,5 +5,5 @@ export type CardHatWrapperProps = {
 } & CardHatWrapperVariants
 
 export function CardHatWrapper({ children, type }: CardHatWrapperProps) {
-  return <div className={`flex items-center mb-nano ${variants({ type })}`}>{children}</div>
+  return <div className={variants({ type })}>{children}</div>
 }

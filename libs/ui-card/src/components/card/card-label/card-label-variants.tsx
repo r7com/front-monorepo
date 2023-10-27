@@ -9,7 +9,6 @@ export const variants = createVariants({
   variants: {
     type: {
       live: {
-        iconStyle: '',
         labelStyle:
           'before:w-nano before:h-nano before:inline-block before:bg-feedback-warning-500 before:rounded-circular before:mr-nano after:font-open-sans after:text-little after:font-normal after:text-light-low-600 after:content-["AO_VIVO"]',
       },
@@ -20,10 +19,8 @@ export const variants = createVariants({
       },
       studio: {
         iconStyle: 'w-[60px]',
-        labelStyle: '',
       },
       'sponsored-by': {
-        iconStyle: '',
         labelStyle: 'text-little text-neutral-low-500',
       },
       voting: {
@@ -38,7 +35,6 @@ export const variants = createVariants({
       },
       aclr: {
         iconStyle: 'w-[40px]',
-        labelStyle: '',
       },
     },
   },

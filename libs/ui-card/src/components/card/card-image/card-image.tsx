@@ -11,5 +11,5 @@ export function CardImage({
   shadow = false,
   format = 'square',
 }: CardImageProps) {
-  return <figure className={`${variants({ shadow, format })} ${className}`}>{children}</figure>
+  return <figure className={variants({ shadow, format, className })}>{children}</figure>
 }
