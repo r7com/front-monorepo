@@ -5,6 +5,7 @@ export type SvgIcons =
   | 'bars'
   | 'bell'
   | 'box'
+  | 'bullet'
   | 'calendar-days'
   | 'camera'
   | 'check'

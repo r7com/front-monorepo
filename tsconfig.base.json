@@ -17,11 +17,15 @@
     "paths": {
       "@r7/cypress": ["cypress-global-configs/index.ts"],
       "@r7/tools": ["tools/src/index.ts"],
+      "@r7/ui-article-delivery": ["libs/ui-article-delivery/src/index.ts"],
       "@r7/ui-base-components": ["libs/ui-base-components/src/index.ts"],
       "@r7/ui-card": ["libs/ui-card/src/index.ts"],
       "@r7/ui-footer-delivery": ["libs/ui-footer-delivery/src/index.ts"],
       "@r7/ui-form-components": ["libs/ui-form-components/src/index.ts"],
-      "@r7/ui-header-delivery": ["libs/ui-header-delivery/src/index.ts"]
+      "@r7/ui-header-delivery": ["libs/ui-header-delivery/src/index.ts"],
+      "@r7/ui-section-heading": ["libs/ui-section-heading/src/index.ts"],
+      "@r7/ui-section-menu": ["libs/ui-section-menu/src/index.ts"],
+      "@r7/ui-voting-components": ["libs/ui-voting-components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

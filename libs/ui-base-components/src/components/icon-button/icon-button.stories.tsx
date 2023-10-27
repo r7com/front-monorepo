@@ -5,7 +5,7 @@ import { SvgIcon } from '../svg-icon'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<IconButtonProps> = {
-  title: 'Example/IconButton',
+  title: 'Base/IconButton',
   component: IconButton,
   tags: ['autodocs'],
   argTypes: {},

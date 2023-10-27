@@ -180,7 +180,14 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(function ({ addUtilities, theme }) {
+    plugin(function ({ addUtilities, theme, addBase }) {
+      addBase({
+        /** hide default 'x' icon from input:search */
+        '[type="search"]::-webkit-search-decoration': { display: 'none' },
+        '[type="search"]::-webkit-search-cancel-button': { display: 'none' },
+        '[type="search"]::-webkit-search-results-button': { display: 'none' },
+        '[type="search"]::-webkit-search-results-decoration': { display: 'none' },
+      })
       addUtilities(
         {
           '.content-container': {
