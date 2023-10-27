@@ -1,5 +1,6 @@
 import { Signature } from '@r7/ui-article-delivery'
 import { FontSizeControl, Audima, ContrastControl, AccessibilityBar } from '@r7/ui-article-delivery'
+import { Button } from '@r7/ui-base-components'
 
 export function UiArticleDelivery() {
   return (
