@@ -19,4 +19,4 @@ export const RootApp = (
 
 const root = createRoot(document.getElementById('root') as HTMLElement)
 
-root.render(RootApp as any)
+root.render(RootApp)
