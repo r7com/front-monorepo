@@ -6,40 +6,43 @@ import { ArticleProvider } from '../../utils/provider/article-provider'
 describe('AccessibilityBar', () => {
   beforeEach(() =>
     cy.mount(
-      <ArticleProvider>
-        <AccessibilityBar>
-          {/* AUDIMA */}
-          <iframe
-            aria-label="Pressione control e ponto para iniciar ou pausar a leitura do conteúdo. Audíma"
-            title="Audima-player"
-            id="audima-iframe"
-            width="100%"
-            height="50"
-            src={`https://audio.audima.co/iframe-later-thin-audima.html?skin=thin&amp;statistic=true`}
-            className="checked aud-message-received w-full -ml-nano md:-ml-auto mb-xxxs md:mb-0"
-          ></iframe>
+      <div className="my-0 mx-auto w-[900px]">
+        <ArticleProvider>
+          <AccessibilityBar>
+            {/* AUDIMA */}
+            <iframe
+              aria-label="Pressione control e ponto para iniciar ou pausar a leitura do conteúdo. Audíma"
+              title="Audima-player"
+              id="audima-iframe"
+              width="100%"
+              height="50"
+              src={`https://audio.audima.co/iframe-later-thin-audima.html?skin=thin&amp;statistic=true`}
+              className="checked aud-message-received w-full -ml-nano md:-ml-auto mb-xxxs md:mb-0"
+            ></iframe>
 
-          <AccessibilityBar.List>
-            <AccessibilityBar.Item>
-              <ContrastControl />
-            </AccessibilityBar.Item>
-            <AccessibilityBar.Item>
-              <FontSizeControl.Increase />
-            </AccessibilityBar.Item>
-            <AccessibilityBar.Item>
-              <FontSizeControl.Decrease />
-            </AccessibilityBar.Item>
-          </AccessibilityBar.List>
-        </AccessibilityBar>
-      </ArticleProvider>,
+            <AccessibilityBar.List>
+              <AccessibilityBar.Item>
+                <ContrastControl />
+              </AccessibilityBar.Item>
+              <AccessibilityBar.Item>
+                <FontSizeControl.Increase />
+              </AccessibilityBar.Item>
+              <AccessibilityBar.Item>
+                <FontSizeControl.Decrease />
+              </AccessibilityBar.Item>
+            </AccessibilityBar.List>
+          </AccessibilityBar>
+        </ArticleProvider>
+        ,
+      </div>,
     ),
   )
   it('Should render AccessibilityBar', () => {
     cy.matchImage()
   })
 
-  it('Should render AccessibilityBar mobile', () => {
-    cy.viewport(320, 480)
+  it('Should render AccessibilityBar Desktop', () => {
+    cy.viewport('macbook-15')
     cy.matchImage()
   })
 })
