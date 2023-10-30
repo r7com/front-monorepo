@@ -1,27 +1,12 @@
-import { getElements, numberFontSize } from '../utils'
-import { FontSizeControlVariants, variants } from '../font-size-control.variants'
+import { variants } from '../font-size-control.variants'
+import { useArticleAction } from '../../../utils/hooks/use-article-actions'
 
-export type FontSizeControlIncreaseProps = {
-  maxSize?: number
-} & FontSizeControlVariants
-
-export function FontSizeControlIncrease({ maxSize = 24 }: FontSizeControlIncreaseProps) {
-  const { increase } = variants()
-
-  const handleIncrease = () => {
-    const elements = getElements()
-
-    elements.forEach($item => {
-      const fontSize = numberFontSize($item)
-
-      if (fontSize >= maxSize) return
-
-      $item.style.fontSize = `${fontSize + 2}px`
-    })
-  }
+export function FontSizeControlIncrease() {
+  const { increaseSlot } = variants()
+  const { increase } = useArticleAction()
 
   return (
-    <button onClick={handleIncrease} title="Aumentar fonte do texto" className={increase()}>
+    <button onClick={increase} title="Aumentar fonte do texto" className={increaseSlot()}>
       A+
     </button>
   )

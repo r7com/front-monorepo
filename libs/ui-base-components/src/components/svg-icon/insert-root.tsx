@@ -8,7 +8,7 @@ export function insertSvgSpriteRoot() {
   if ($root) return
 
   const div = document.createElement('div')
-  div.innerHTML = renderToString(<SvgSpriteList id={id} className="hidden" />)
+  // div.innerHTML = renderToString('')
 
   document.body.appendChild(div)
 }

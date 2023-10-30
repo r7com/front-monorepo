@@ -6,3 +6,5 @@ export const numberFontSize = ($text: HTMLElement) => {
 export function getElements(): NodeListOf<HTMLElement> {
   return document.querySelectorAll('article p, [data-font-size-control]')
 }
+
+export const getArticle = () => document.querySelector('article') as HTMLElement
