@@ -19,14 +19,16 @@ export function UiArticleDelivery() {
           <Signature.Date published="2023-06-29T15:12:23Z" modified="2023-08-28T14:32:13.07Z" />
         </Signature.Content>
       </Signature>
-      <SocialShare.List>
-        <SocialShare.Item name="facebook" link="https://www.google.com" title="titulo" />
-        <SocialShare.Item name="linkedin" link="https://www.google.com" title="titulo" />
-        <SocialShare.Item name="twitter" link="https://www.google.com" title="titulo" />
-        <SocialShare.Item name="whatsapp" link="https://www.google.com" title="titulo" />
-        <SocialShare.Item name="googleNews" link="kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" title="titulo" />
-        <SocialShare.Item name="share" link="kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" title="titulo" />
-      </SocialShare.List>
+      <SocialShare>
+        <SocialShare.List>
+          <SocialShare.Item name="facebook" link="#facebook" title="facebook" />
+          <SocialShare.Item name="linkedin" link="#linkedin" title="linkedin" />
+          <SocialShare.Item name="twitter" link="#twitter" title="twitter" />
+          <SocialShare.Item name="whatsapp" link="#whatsapp" title="whatsapp" />
+          <SocialShare.Item name="googleNews" link="#googlenews" title="google-news" />
+          <SocialShare.Item name="share" link="#share" title="share" />
+        </SocialShare.List>
+      </SocialShare>
     </div>
   )
 }
