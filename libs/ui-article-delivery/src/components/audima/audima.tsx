@@ -1,7 +1,6 @@
 import { audimaDomain } from './utils'
 
 export function Audima() {
-  console.log('andersson')
   return (
     <>
       <div id="audimaWidget"></div>
