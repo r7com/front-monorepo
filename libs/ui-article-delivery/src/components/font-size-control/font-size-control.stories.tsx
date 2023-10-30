@@ -9,7 +9,7 @@ const meta: Meta<FontSizeControlProps> = {
 }
 
 export default meta
-type Story = StoryObj<{ color: string }>
+type Story = StoryObj
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
