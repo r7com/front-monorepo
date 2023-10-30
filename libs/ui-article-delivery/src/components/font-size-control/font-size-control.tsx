@@ -1,9 +1,8 @@
-import { ReactNode } from 'react'
 import { FontSizeControlDecrease } from './font-size-control-decrease'
 import { FontSizeControlIncrease } from './font-size-control-increase'
 
 export type FontSizeControlProps = {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export function FontSizeControl({ children }: FontSizeControlProps) {

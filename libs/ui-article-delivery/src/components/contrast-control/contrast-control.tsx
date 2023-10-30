@@ -3,8 +3,6 @@ import { $html, contrastClass, storageName } from './constants'
 import { variants } from './contrast-control.variants'
 import { SvgIcon } from '@r7/ui-base-components'
 
-// import './css/contrast.css'
-
 export function ContrastControl() {
   const [contrast, saveContrast] = useLocalStorage<boolean>(storageName)
 

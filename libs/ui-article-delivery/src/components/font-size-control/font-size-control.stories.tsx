@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Audima } from './audima'
+import { FontSizeControl, FontSizeControlProps } from './font-size-control'
+import { ArticleProvider } from '../../utils/provider/article-provider'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const meta: Meta = {
-  title: 'Article/Audima',
-  component: Audima,
+const meta: Meta<FontSizeControlProps> = {
+  title: 'Article/FontSizeControl',
+  component: FontSizeControl,
 }
 
 export default meta
@@ -13,18 +14,14 @@ type Story = StoryObj<{ color: string }>
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
   render: () => (
-    <>
-      {/* AUDIMA */}
-      <iframe
-        aria-label="Pressione control e ponto para iniciar ou pausar a leitura do conteúdo. Audíma"
-        title="Audima-player"
-        id="audima-iframe"
-        width="100%"
-        height="50"
-        src={`https://audio.audima.co/iframe-later-thin-audima.html?skin=thin&amp;statistic=true`}
-        className="checked aud-message-received w-[350px] md:w-[600px] -ml-nano md:-ml-auto mb-xxxs md:mb-0"
-      ></iframe>
-    </>
+    <ArticleProvider>
+      <div className="flex">
+        <FontSizeControl.Increase />
+        <FontSizeControl.Decrease />
+      </div>
+
+      <article className="text-[calc(theme(fontSize.xxxs)_*_var(--font-size))]">storybook</article>
+    </ArticleProvider>
   ),
 
   parameters: {
