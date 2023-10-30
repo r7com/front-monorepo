@@ -41,6 +41,7 @@ describe(Card.Image.name, () => {
     cy.findAllByRole('figure').should('be.visible')
     cy.matchImage()
   })
+
   it('should render image with shadow', () => {
     cy.mount(
       <Card.Image className="w-[200px] mb-xxxs" shadow>
