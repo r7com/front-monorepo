@@ -9,7 +9,7 @@ import {
 
 export function UiArticleDelivery() {
   return (
-    <div>
+    <div className="container flex flex-col gap-xxxs sm:gap-0 sm:flex-row sm:justify-between">
       <Signature>
         <Signature.Agency
           url="https://agenciaestado.com.br"
