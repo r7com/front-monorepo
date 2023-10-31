@@ -8,7 +8,7 @@ describe('Audima', () => {
           id="audima-iframe"
           width="100%"
           height="50"
-          src={`https://audio.audima.co/iframe-later-thin-audima.html?skin=thin&amp;statistic=true`}
+          src="https://audio.audima.co/iframe-later-thin-audima.html?skin=thin&amp;statistic=true"
           className="checked aud-message-received w-[350px] md:w-[600px] -ml-nano md:-ml-auto mb-xxxs md:mb-0"
         ></iframe>
       </div>,
