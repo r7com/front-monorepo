@@ -1,5 +1,11 @@
-import { Signature } from '@r7/ui-article-delivery'
-import { FontSizeControl, Audima, ContrastControl, AccessibilityBar } from '@r7/ui-article-delivery'
+import {
+  FontSizeControl,
+  Audima,
+  ContrastControl,
+  AccessibilityBar,
+  SocialShare,
+  Signature,
+} from '@r7/ui-article-delivery'
 
 export function UiArticleDelivery() {
   return (
@@ -35,6 +41,16 @@ export function UiArticleDelivery() {
           </AccessibilityBar.Item>
         </AccessibilityBar.List>
       </AccessibilityBar>
+      <SocialShare>
+        <SocialShare.List>
+          <SocialShare.Item name="facebook" link="#facebook" title="facebook" />
+          <SocialShare.Item name="linkedin" link="#linkedin" title="linkedin" />
+          <SocialShare.Item name="twitter" link="#twitter" title="twitter" />
+          <SocialShare.Item name="whatsapp" link="#whatsapp" title="whatsapp" />
+          <SocialShare.Item name="googleNews" link="#googlenews" title="google-news" />
+          <SocialShare.Item name="share" link="#share" title="share" />
+        </SocialShare.List>
+      </SocialShare>
     </div>
   )
 }
