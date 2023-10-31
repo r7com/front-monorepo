@@ -124,6 +124,12 @@ module.exports = {
       'agerating-18anos': {
         500: '#000000',
       },
+      social: {
+        facebook: '#4764f2',
+        twitter: '#4891f0',
+        linkedin: '#3559c2',
+        whatsapp: '#1eab84',
+      },
       'editorial-color': 'var(--editorial-color, #218ee1)',
       inherit: 'inherit',
       current: 'current-color',

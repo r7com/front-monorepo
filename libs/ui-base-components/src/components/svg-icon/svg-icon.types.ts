@@ -37,6 +37,7 @@ export type SvgIcons =
   | 'flipboard'
   | 'forward-10-seconds'
   | 'gauge'
+  | 'google-news-white'
   | 'google-news'
   | 'graduate'
   | 'grid'
