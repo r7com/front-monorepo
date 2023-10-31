@@ -20,7 +20,7 @@ type HatAlertStory = StoryObj<CardHatWrapperProps>
 export const WithoutImage: HatTitleStory = {
   render: ({ ...args }) => (
     <Card
-      newsTitle="The McRib is back (again): How a McNugget shortage led to its rise"
+      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
       newsUrl="https://www.google.com"
     >
       <Card.HatTitle {...args}>News section</Card.HatTitle>
@@ -41,7 +41,7 @@ export const WithoutImage: HatTitleStory = {
 export const WithImage: HatImageStory = {
   render: ({ ...args }) => (
     <Card
-      newsTitle="The McRib is back (again): How a McNugget shortage led to its rise"
+      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
       newsUrl="https://www.google.com"
     >
       <Card.HatWrapper>
@@ -69,7 +69,7 @@ export const WithImage: HatImageStory = {
 export const BreakingNews: HatAlertStory = {
   render: ({ ...args }) => (
     <Card
-      newsTitle="The McRib is back (again): How a McNugget shortage led to its rise"
+      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
       newsUrl="https://www.google.com"
     >
       <Card.HatWrapper {...args}>

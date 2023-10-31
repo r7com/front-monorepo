@@ -29,7 +29,7 @@ export const Primary: Story = {
     </Card>
   ),
   args: {
-    newsTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
+    newsUrlTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
     newsUrl: 'https://www.google.com',
     openInBlank: true,
   },
@@ -66,7 +66,7 @@ export const ImageToTheSides: Story = {
   ),
   args: {
     className: 'flex',
-    newsTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
+    newsUrlTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
     newsUrl: 'https://www.google.com',
     openInBlank: true,
   },
@@ -103,7 +103,7 @@ export const ImageAbove: Story = {
     </Card>
   ),
   args: {
-    newsTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
+    newsUrlTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
     newsUrl: 'https://www.google.com',
     openInBlank: true,
   },
@@ -143,7 +143,7 @@ export const TitleOverImage: Story = {
   ),
   args: {
     className: 'relative',
-    newsTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
+    newsUrlTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
     newsUrl: 'https://www.google.com',
     openInBlank: true,
   },

@@ -8,7 +8,7 @@ import { CardTitle } from './card-title/card-title'
 export type CardProps = {
   children: React.ReactNode
   newsUrl: string
-  newsTitle: string
+  newsUrlTitle: string
   className?: string
   openInBlank?: boolean
 }
@@ -16,7 +16,7 @@ export type CardProps = {
 export function Card({
   children,
   newsUrl,
-  newsTitle,
+  newsUrlTitle,
   className = '',
   openInBlank = false,
 }: CardProps) {
@@ -25,7 +25,7 @@ export function Card({
       <a
         className={className}
         href={newsUrl}
-        title={newsTitle}
+        title={newsUrlTitle}
         target={openInBlank ? '_blank' : undefined}
         rel={openInBlank ? 'noreferrer' : undefined}
       >

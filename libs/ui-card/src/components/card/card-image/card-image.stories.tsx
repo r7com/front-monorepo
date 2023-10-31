@@ -16,7 +16,7 @@ type Story = StoryObj<CardImageProps>
 export const WithoutLabel: Story = {
   render: ({ ...args }) => (
     <Card
-      newsTitle="The McRib is back (again): How a McNugget shortage led to its rise"
+      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
       newsUrl="https://www.google.com"
     >
       <Card.Image {...args}>
@@ -45,7 +45,7 @@ export const WithoutLabel: Story = {
 export const WithLabel: Story = {
   render: ({ ...args }) => (
     <Card
-      newsTitle="The McRib is back (again): How a McNugget shortage led to its rise"
+      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
       newsUrl="https://www.google.com"
     >
       <Card.Image {...args}>

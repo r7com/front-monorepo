@@ -17,7 +17,7 @@ export const Primary: Story = {
   render: ({ ...args }) => (
     <Card
       className="flex"
-      newsTitle="The McRib is back (again): How a McNugget shortage led to its rise"
+      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
       newsUrl="https://www.google.com"
     >
       <Card.Image className="mr-xxxs" format="landscape">
