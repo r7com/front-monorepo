@@ -205,16 +205,16 @@ deploy ui-section-heading:
     refs:
       - /ui-section-heading\-.*/
 
-  deploy ui-section-foot:
-    stage: deploy
-    extends: .distributed
-    script:
-      - yarn nx build ui-section-foot
-      - yarn nx build-css ui-section-foot
-      - cd ./dist/libs/ui-section-foot
-      - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
-      - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
-      - npm publish
-    only:
-      refs:
-        - /ui-section-foot\-.*/
+deploy ui-section-foot:
+  stage: deploy
+  extends: .distributed
+  script:
+    - yarn nx build ui-section-foot
+    - yarn nx build-css ui-section-foot
+    - cd ./dist/libs/ui-section-foot
+    - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+    - npm publish
+  only:
+    refs:
+      - /ui-section-foot\-.*/
