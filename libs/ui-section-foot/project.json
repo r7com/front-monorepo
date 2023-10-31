@@ -1,0 +1,84 @@
+{
+  "name": "ui-section-foot",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ui-section-foot/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/ui-section-foot/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/libs/ui-section-foot"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "build-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tailwindcss -c {projectRoot}/tailwind.config.js --minify  -i {projectRoot}/src/style.css -o dist/{projectRoot}/style.css"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/ui-section-foot/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "component-test": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "libs/ui-section-foot/cypress.config.ts",
+        "testingType": "component",
+        "devServerTarget": "ui-section-foot:build",
+        "skipServe": true,
+        "watch": true,
+        "browser": "chrome"
+      },
+      "configurations": {
+        "ci": {
+          "watch": false,
+          "quiet": true,
+          "env": {
+            "pluginVisualRegressionUpdateImages": true
+          }
+        }
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --noEmit -p {projectRoot}/tsconfig.lib.json"
+      }
+    }
+  }
+}
