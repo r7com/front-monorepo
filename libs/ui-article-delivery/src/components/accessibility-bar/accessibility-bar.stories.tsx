@@ -81,7 +81,6 @@ export const Mobile: Story = {
       </AccessibilityBar.List>
     </AccessibilityBar>
   ),
-
   parameters: {
     viewport: {
       defaultViewport: 'iphone12',
