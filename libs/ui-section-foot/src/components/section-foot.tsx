@@ -21,4 +21,4 @@ export function SectionFoot({ children, color = '#ffffff', bg = '#4766ac' }: Sec
 
 SectionFoot.Line = SectionFootLine
 SectionFoot.Link = SectionFootLink
-SectionFoot.Title = SectionFootText
+SectionFoot.Text = SectionFootText

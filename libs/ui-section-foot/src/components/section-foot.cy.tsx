@@ -5,7 +5,7 @@ const sectionFoot = (
     <SectionFoot.Line />
 
     <SectionFoot.Link href="https://www.r7.com/" title="Mais a fazenda">
-      <SectionFoot.Title>MAIS A FAZENDA</SectionFoot.Title>
+      <SectionFoot.Text>MAIS A FAZENDA</SectionFoot.Text>
     </SectionFoot.Link>
   </SectionFoot>
 )
