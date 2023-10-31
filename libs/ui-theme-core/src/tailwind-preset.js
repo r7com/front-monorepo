@@ -5,6 +5,11 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   darkMode: 'class',
   theme: {
+    aspectRatio: {
+      portrait: '0.65',
+      landscape: '16/9',
+      square: '1',
+    },
     borderWidth: {
       hairline: '0.063rem',
       thin: '0.125rem',
