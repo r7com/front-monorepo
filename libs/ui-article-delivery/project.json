@@ -60,6 +60,18 @@
           }
         }
       }
+    },
+    "build-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tailwindcss -c libs/ui-article-delivery/tailwind.config.js --minify -i libs/ui-article-delivery/src/style.css -o dist/libs/ui-article-delivery/style.css"
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular"
+      }
     }
   }
 }
