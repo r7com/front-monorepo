@@ -10,7 +10,7 @@ export function SignatureDate({ published, modified }: SignatureDateProps) {
   const formatModified = modified ? formatDate(modified) : null
 
   return (
-    <p className="uppercase text-little text-neutral-low-500">
+    <p className="uppercase text-little text-agerating-18anos-500 dark:text-neutral-high-400">
       <time itemProp="datePublished" dateTime={published}>
         {formatPublished}
       </time>
