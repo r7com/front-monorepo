@@ -1,9 +1,10 @@
 import { Route, Routes, Link } from 'react-router-dom'
 import { UiFooterDelivery, UiSectionMenu, UiArticleDelivery } from './routes'
+import { ArticleProvider } from '@r7/ui-article-delivery'
 
 export function App() {
   return (
-    <div>
+    <ArticleProvider>
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
       {/* Feel free to move and update them to fit your needs */}
@@ -33,7 +34,7 @@ export function App() {
         <Route path="/ui-section-menu" element={<UiSectionMenu />} />
       </Routes>
       {/* END: routes */}
-    </div>
+    </ArticleProvider>
   )
 }
 

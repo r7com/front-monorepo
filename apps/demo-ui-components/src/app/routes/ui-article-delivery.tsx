@@ -1,4 +1,11 @@
-import { Signature, SocialShare } from '@r7/ui-article-delivery'
+import {
+  FontSizeControl,
+  Audima,
+  ContrastControl,
+  AccessibilityBar,
+  SocialShare,
+  Signature,
+} from '@r7/ui-article-delivery'
 
 export function UiArticleDelivery() {
   return (
@@ -19,6 +26,21 @@ export function UiArticleDelivery() {
           <Signature.Date published="2023-06-29T15:12:23Z" modified="2023-08-28T14:32:13.07Z" />
         </Signature.Content>
       </Signature>
+      <p className="text-[calc(theme(fontSize.xxxs)_*_var(--font-size))]">anderson</p>
+      <AccessibilityBar>
+        <Audima />
+        <AccessibilityBar.List>
+          <AccessibilityBar.Item>
+            <ContrastControl />
+          </AccessibilityBar.Item>
+          <AccessibilityBar.Item>
+            <FontSizeControl.Increase />
+          </AccessibilityBar.Item>
+          <AccessibilityBar.Item>
+            <FontSizeControl.Decrease />
+          </AccessibilityBar.Item>
+        </AccessibilityBar.List>
+      </AccessibilityBar>
       <SocialShare>
         <SocialShare.List>
           <SocialShare.Item name="facebook" link="#facebook" title="facebook" />
