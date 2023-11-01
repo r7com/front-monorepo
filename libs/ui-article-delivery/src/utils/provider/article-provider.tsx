@@ -10,12 +10,12 @@ export function ArticleProvider({ children }: ArticleProviderProps) {
   const articleRef = useRef<HTMLElement | null>(null)
   let fontSize = 1
 
-  function decrease() {
+  function decreaseFontSize() {
     fontSize -= MULTIPLIER
     articleRef.current?.style.setProperty('--font-size', `${fontSize}`)
   }
 
-  function increase() {
+  function increaseFontSize() {
     fontSize += MULTIPLIER
     articleRef.current?.style.setProperty('--font-size', `${fontSize}`)
   }
@@ -23,8 +23,8 @@ export function ArticleProvider({ children }: ArticleProviderProps) {
   return (
     <ArticleContext.Provider
       value={{
-        increase,
-        decrease,
+        increaseFontSize,
+        decreaseFontSize,
       }}
     >
       <article ref={articleRef} style={{ '--font-size': '1' } as React.CSSProperties}>

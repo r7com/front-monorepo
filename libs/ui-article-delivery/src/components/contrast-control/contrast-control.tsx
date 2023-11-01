@@ -6,26 +6,26 @@ import { SvgIcon } from '@r7/ui-base-components'
 export function ContrastControl() {
   const [contrast, saveContrast] = useLocalStorage<boolean>(storageName)
 
-  contrast ? setContrast() : removeContrast()
+  contrast ? addContrast() : removeContrast()
 
-  function handleContrast() {
+  function handleToggleContrast() {
     toggleContrast()
   }
 
   function removeContrast() {
-    $html && $html.classList.remove(contrastClass)
+    $html?.classList.remove(contrastClass)
   }
 
   function toggleContrast() {
     saveContrast(prev => !prev)
-    $html && $html.classList.toggle(contrastClass)
+    $html?.classList.toggle(contrastClass)
   }
 
-  function setContrast() {
-    $html && $html.classList.add(contrastClass)
+  function addContrast() {
+    $html?.classList.add(contrastClass)
   }
   return (
-    <button onClick={handleContrast} title="Alto contraste" className={variants()}>
+    <button onClick={handleToggleContrast} title="Alto contraste" className={variants()}>
       <SvgIcon iconName="contrast" title="Alto contraste" className="dark:fill-neutral-high-400" />
     </button>
   )

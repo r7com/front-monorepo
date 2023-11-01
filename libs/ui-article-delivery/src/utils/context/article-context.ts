@@ -1,8 +1,8 @@
 import { createContext } from 'react'
 
 type ArticleContextProps = {
-  decrease(): void
-  increase(): void
+  decreaseFontSize(): void
+  increaseFontSize(): void
 }
 
 export const ArticleContext = createContext<ArticleContextProps | null>(null)
