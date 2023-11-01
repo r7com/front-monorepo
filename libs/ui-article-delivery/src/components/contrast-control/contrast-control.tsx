@@ -24,6 +24,7 @@ export function ContrastControl() {
   function addContrast() {
     $html?.classList.add(contrastClass)
   }
+
   return (
     <button onClick={handleToggleContrast} title="Alto contraste" className={variants()}>
       <SvgIcon iconName="contrast" title="Alto contraste" className="dark:fill-neutral-high-400" />
