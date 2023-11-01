@@ -12,7 +12,7 @@ export function SectionFoot({ children, color = '#ffffff', bg = '#4766ac' }: Sec
   return (
     <div
       className="flex flex-nowrap justify-center items-center gap-nano py-xxxs relative"
-      style={{ '--color': color, '--bg': bg } as React.CSSProperties}
+      style={{ '--bg': bg } as React.CSSProperties}
     >
       {children}
     </div>

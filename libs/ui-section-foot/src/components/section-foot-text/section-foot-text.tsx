@@ -6,7 +6,7 @@ export function SectionFootText({ children, ...rest }: SectionFootTextProps) {
   return (
     <span
       role="presentation"
-      className={`text-little md:text-xxxs font-normal break-keep whitespace-nowrap text-[var(--color)]`}
+      className={`text-little md:text-xxxs font-normal break-keep whitespace-nowrap text-white`}
       {...rest}
     >
       {children}
