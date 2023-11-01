@@ -8,7 +8,7 @@ export type SectionFootProps = {
   bg?: string
 }
 
-export function SectionFoot({ children, color = '#ffffff', bg = '#4766ac' }: SectionFootProps) {
+export function SectionFoot({ children, bg = '#556373' }: SectionFootProps) {
   return (
     <div
       className="flex flex-nowrap justify-center items-center gap-nano py-xxxs relative"
