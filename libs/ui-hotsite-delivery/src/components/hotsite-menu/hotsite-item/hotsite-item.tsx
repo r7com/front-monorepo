@@ -10,7 +10,7 @@ export function HotsiteItem({ children }: HotsiteItemProps) {
   return (
     <li
       onMouseLeave={hotsite.hide}
-      className="h-lg flex items-center transition-colors relative tracking-wide font-semibold sm:font-normal whitespace-nowrap text-dark-high-600 sm:text-neutral-low-600 text-xxxs sm:text-xxs border-b-[3px] border-transparent hover:border-[var(--section-color)]"
+      className="h-lg flex items-center transition-colors relative font-medium whitespace-nowrap text-light-low-400 text-xxs border-b-thin border-transparent hover:border-[var(--section-color)]"
     >
       {children}
     </li>

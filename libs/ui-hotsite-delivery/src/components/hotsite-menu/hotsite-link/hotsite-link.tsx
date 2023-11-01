@@ -15,7 +15,7 @@ export function HotsiteLink({ children, openInNewTab = false, ...rest }: Hotsite
     <a
       target={openInNewTab ? '_blank' : undefined}
       rel={openInNewTab ? 'noreferrer' : undefined}
-      className="uppercase hover:text-[var(--section-color)]"
+      className="uppercase hover:text-[var(--section-color)] transition-colors"
       {...rest}
     >
       {children}

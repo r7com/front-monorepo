@@ -16,7 +16,7 @@ export function Hotsite({ children, label, sectionColor }: HotsiteRootProps) {
   return (
     <HotsiteProvider>
       <div
-        className="border-b-hairline border-neutral-high-500 overflow-y-auto"
+        className="border-b-hairline border-neutral-high-500 overflow-x-scroll overflow-y-hidden sm:overflow-visible"
         style={
           {
             '--section-color': sectionColor || 'var(--editorial-color, #218ee1)',

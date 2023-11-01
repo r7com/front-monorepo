@@ -20,10 +20,10 @@ export function HotsiteButton({ children, id }: HotsiteButtonProps) {
       onMouseEnter={toggleSubmenu}
       onClick={toggleSubmenu}
       aria-expanded={id === hotsite.currentActive}
-      className="flex uppercase items-center gap-quark h-full hover:text-[var(--section-color)]"
+      className="flex uppercase items-center gap-nano h-full hover:text-[var(--section-color)] hover:!fill-[var(--section-color)] transition-colors"
     >
       {children}
-      <SvgIcon iconName="chevron-bottom" className="fill-neutral-high-600" width={13} height={13} />
+      <SvgIcon iconName="chevron-bottom" className="transition-none" size="small" />
     </button>
   )
 }
