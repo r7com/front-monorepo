@@ -3,14 +3,6 @@ export type MenuLinkProps = {
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>
 
 export function MenuLink({ children, openInNewTab = false, ...rest }: MenuLinkProps) {
-  /**
-  ────────────▄▄█▀─────▄
-  ────────▄▄▀▀▒▒▒▀████▀▄
-  ───▄▄▄▀▀▒▄▀▒▒▄▄██▀▒▒▒█
-  ▄▀▀░░░░░░▀███▀▀░░░░░░█
-  ▀███▄▄▄▄▄▄▄▄▄▄▄▄▄▄███▀
-  */
-
   return (
     <a
       target={openInNewTab ? '_blank' : undefined}
