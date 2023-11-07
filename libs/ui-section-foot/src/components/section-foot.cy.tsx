@@ -1,18 +1,18 @@
 import { SectionFoot } from './'
 
-const sectionFoot = (
+const SectionFootCy = (
   <SectionFoot bg="#556373">
     <SectionFoot.Line />
 
     <SectionFoot.Link href="https://www.r7.com/" title="Mais a fazenda">
-      <SectionFoot.Text>MAIS A FAZENDA</SectionFoot.Text>
+      Mais a fazenda
     </SectionFoot.Link>
   </SectionFoot>
 )
 
 describe(`${SectionFoot.name}`, () => {
   beforeEach(() => {
-    cy.mount(sectionFoot)
+    cy.mount(SectionFootCy)
   })
 
   it('should have a separator', () => {
@@ -20,17 +20,13 @@ describe(`${SectionFoot.name}`, () => {
   })
 
   it('should render its link', () => {
-    cy.findByRole('link', { name: /MAIS A FAZENDA/i }).should('be.visible')
-  })
-
-  it('should have a title', () => {
-    cy.findByRole('presentation').should('be.visible')
+    cy.findByRole('link', { name: /Mais a fazenda/i }).should('be.visible')
   })
 })
 
 describe(`${SectionFoot.name} - Viewport`, () => {
   beforeEach(() => {
-    cy.mount(sectionFoot)
+    cy.mount(SectionFootCy)
   })
 
   it('should match the section foot on the desktop', () => {

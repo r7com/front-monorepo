@@ -1,10 +1,8 @@
 import { SectionFootLine } from './section-foot-line/section-foot-line'
 import { SectionFootLink } from './section-foot-link/section-foot-link'
-import { SectionFootText } from './section-foot-text/section-foot-text'
 
 export type SectionFootProps = {
   children: React.ReactNode
-  color?: string
   bg?: string
 }
 
@@ -21,4 +19,3 @@ export function SectionFoot({ children, bg = '#556373' }: SectionFootProps) {
 
 SectionFoot.Line = SectionFootLine
 SectionFoot.Link = SectionFootLink
-SectionFoot.Text = SectionFootText

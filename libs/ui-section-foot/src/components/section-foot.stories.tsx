@@ -17,7 +17,7 @@ export const Default: Story = {
       <SectionFoot.Line />
 
       <SectionFoot.Link href="https://www.r7.com/" title="Mais notícias">
-        <SectionFoot.Text>Mais notícias</SectionFoot.Text>
+        Mais a fazenda
       </SectionFoot.Link>
     </SectionFoot>
   ),
