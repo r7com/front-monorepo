@@ -10,4 +10,4 @@ export const variants = createVariants({
     },
   },
 })
-export type TitleVariants = VariantProps<typeof variants>
+export type HeadingVariants = VariantProps<typeof variants>

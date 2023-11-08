@@ -1,19 +1,19 @@
-import { Title } from './title'
+import { Heading } from './heading'
 
-describe(Title.name, () => {
+describe(Heading.name, () => {
   const text = 'Component Title'
   it('using size variations', () => {
     cy.mount(
       <>
-        <Title size="large" as="h1">
+        <Heading size="large" as="h1">
           {text}
-        </Title>
-        <Title size="medium" as="h2">
+        </Heading>
+        <Heading size="medium" as="h2">
           {text}
-        </Title>
-        <Title size="small" as="h3">
+        </Heading>
+        <Heading size="small" as="h3">
           {text}
-        </Title>
+        </Heading>
       </>,
     )
     cy.findAllByRole('heading').should('be.visible')

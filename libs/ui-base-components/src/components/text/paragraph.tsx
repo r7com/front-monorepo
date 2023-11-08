@@ -1,18 +1,18 @@
 import React from 'react'
-import { TextVariants, variants } from './text.variants'
-export type TextProps<C extends React.ElementType> = {
+import { ParagraphVariants, variants } from './paragraph.variants'
+export type ParagraphProps<C extends React.ElementType> = {
   children: React.ReactNode
   as?: C
-} & TextVariants
+} & ParagraphVariants
 
-export function Text<C extends React.ElementType = 'p'>({
+export function Paragraph<C extends React.ElementType = 'p'>({
   children,
   as,
   fontWeight = 'normal',
   color = 'neutralLow',
   fontSize = 'xxxs',
   fontFamily = 'openSans',
-}: TextProps<C>) {
+}: ParagraphProps<C>) {
   const DynamicTag = as || 'p'
 
   return (
