@@ -27,7 +27,7 @@ export const Default: Story = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/OBWV1tXbl1eXmdxzgEmcs3/Core-C-%7C-Delivery?type=design&node-id=1989-3051&mode=design&t=xx7Gv2klBxZJBSky-0',
+      url: 'https://www.figma.com/file/OBWV1tXbl1eXmdxzgEmcs3/Core-C-%7C-Delivery?node-id=1989%3A3051&mode=dev',
       accessToken: 'figd_sHs6Ap894w4C-OAFls7tuq0fMMROyue-8zQJ8hRE',
     },
   },
