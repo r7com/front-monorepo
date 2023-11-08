@@ -3,6 +3,14 @@
   "tasksRunnerOptions": {
     "default": {
       "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "component-test",
+          "build-storybook"
+        ],
         "accessToken": "ZGUzMWNjMGYtYzY2NC00NzU3LTllNTQtZjZmY2JiMmYwZjRlfHJlYWQtd3JpdGU="
       }
     }
@@ -74,5 +82,6 @@
         "unitTestRunner": "jest"
       }
     }
-  }
+  },
+  "nxCloudAccessToken": "MWYzMDljNGYtY2NhOC00Y2Y4LWJiODMtZGM0YzExYjQ5NTg1fHJlYWQtd3JpdGU="
 }
