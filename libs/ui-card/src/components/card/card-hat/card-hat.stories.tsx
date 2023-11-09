@@ -17,7 +17,7 @@ type HatTitleStory = StoryObj<CardHatTitleProps>
 type HatImageStory = StoryObj<CardHatImageProps>
 type HatAlertStory = StoryObj<CardHatWrapperProps>
 
-export const WithoutImage: HatTitleStory = {
+export const Primary: HatTitleStory = {
   render: ({ ...args }) => (
     <Card
       newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
@@ -58,6 +58,36 @@ export const WithImage: HatImageStory = {
     controls: {
       exclude: 'color',
     },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/Pxz9nVdP2Im0YRWnDNM3J5/Core-C-%7C-Widgets-Home?node-id=2039%3A624&mode=dev',
+      accessToken: 'figd_sHs6Ap894w4C-OAFls7tuq0fMMROyue-8zQJ8hRE',
+    },
+  },
+}
+
+export const WithLink: StoryObj<CardHatWrapperProps> = {
+  render: ({ ...args }) => (
+    <Card
+      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
+      newsUrl="https://www.google.com"
+    >
+      <Card.HatWrapper {...args}>
+        <Card.HatImage
+          imageSource="https://img.r7.com/images/logo-lance-16062023142548616?dimensions=16x16"
+          description="Logomarca da Lance!"
+        />
+        <Card.HatTitle>Agency name</Card.HatTitle>
+      </Card.HatWrapper>
+    </Card>
+  ),
+  args: {
+    hatUrl: 'https://esportes.r7.com/lance',
+    hatUrlTitle: 'Lance!',
+    openInBlank: false,
+    withLink: true,
+  },
+  parameters: {
     design: {
       type: 'figma',
       url: 'https://www.figma.com/file/Pxz9nVdP2Im0YRWnDNM3J5/Core-C-%7C-Widgets-Home?node-id=2039%3A624&mode=dev',

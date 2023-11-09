@@ -59,4 +59,22 @@ describe(Card.HatWrapper.name, () => {
     )
     cy.matchImage()
   })
+
+  it('should render hat with link', () => {
+    cy.mount(
+      <Card.HatWrapper
+        withLink
+        hatUrl="https://www.google.com"
+        hatUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
+      >
+        <Card.HatImage
+          description="I am a hat image"
+          imageSource="http://img.r7.com/images/concurso-publico-14032022123440824?dimensions=128x128"
+        />
+        <Card.HatTitle>I am a hat</Card.HatTitle>
+      </Card.HatWrapper>,
+    )
+    cy.findByRole('link').should('be.visible')
+    cy.matchImage()
+  })
 })
