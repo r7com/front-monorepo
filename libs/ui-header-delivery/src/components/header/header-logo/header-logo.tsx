@@ -7,8 +7,8 @@ export type HeaderLogoProps = {
 export function HeaderLogo({ logoUrl, link, alt }: HeaderLogoProps) {
   return (
     <div className="sm:mr-sm sm:ml-xxs">
-      <a href={link} title="r7-logo">
-        <img src={logoUrl} loading="lazy" alt={alt} />
+      <a href={link} title="Portal R7">
+        <img src={logoUrl} loading="lazy" alt={alt} width={36} height={40} />
       </a>
     </div>
   )
