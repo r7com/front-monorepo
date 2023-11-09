@@ -1,4 +1,3 @@
-import { SvgIcon } from '@r7/ui-base-components'
 import { Header } from './header'
 import { Menu } from './menu'
 import { Sidebar } from './sidebar'
@@ -11,7 +10,8 @@ const CompleteHeader = (
     <Header.MainSection>
       <Header.Logo
         link="https://www.r7.com"
-        image={<SvgIcon iconName="logo-R7" color="primary" width={40} height={40} />}
+        logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1698842893138.svg"
+        alt="Logo R7"
       />
 
       <Sidebar.Toggle>menu</Sidebar.Toggle>

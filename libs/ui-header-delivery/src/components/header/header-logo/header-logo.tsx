@@ -1,13 +1,14 @@
 export type HeaderLogoProps = {
   link: string
-  image: React.ReactNode
+  logoUrl: string
+  alt: string
 }
 
-export function HeaderLogo({ image, link }: HeaderLogoProps) {
+export function HeaderLogo({ logoUrl, link, alt }: HeaderLogoProps) {
   return (
     <div className="sm:mr-sm sm:ml-xxs">
       <a href={link} title="r7-logo">
-        {image}
+        <img src={logoUrl} loading="lazy" alt={alt} />
       </a>
     </div>
   )
