@@ -7,10 +7,11 @@ import { CardTitle } from './card-title/card-title'
 
 export type CardProps = {
   children: React.ReactNode
-  newsUrl: string
-  newsUrlTitle: string
+  newsUrl?: string
+  newsUrlTitle?: string
   className?: string
   openInBlank?: boolean
+  withLink?: boolean
 }
 
 export function Card({
@@ -19,8 +20,9 @@ export function Card({
   newsUrlTitle,
   className = '',
   openInBlank = false,
+  withLink = true,
 }: CardProps) {
-  return (
+  return withLink ? (
     <article>
       <a
         className={className}
@@ -32,6 +34,8 @@ export function Card({
         {children}
       </a>
     </article>
+  ) : (
+    <article>{children}</article>
   )
 }
 
