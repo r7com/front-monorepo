@@ -5,6 +5,21 @@ describe(Card.Title.name, () => {
     cy.findByRole('heading', { level: 3 }).should('be.visible')
   })
 
+  it('should render title with link', () => {
+    cy.mount(
+      <Card.Title
+        withLink
+        newsUrl="https://www.google.com"
+        newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
+      >
+        I am a title
+      </Card.Title>,
+    )
+
+    cy.findByRole('link').should('be.visible')
+    cy.findByRole('heading', { level: 3 }).should('be.visible')
+  })
+
   it('should render all "color" variants', () => {
     cy.mount(
       <body className="bg-brand-primary-500">
