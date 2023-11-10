@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+div:has(> span) {
+  /* styles to apply to the li tag */
+}
