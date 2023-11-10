@@ -1,4 +1,4 @@
-import { useWindowScroll, useWindowSize } from '@uidotdev/usehooks'
+import { useEffect, useState } from 'react'
 import { variants } from './header-main-section.variants'
 import { useScrollDirection } from '../utils/hooks/use-scroll-direction'
 
@@ -8,16 +8,21 @@ export type HeaderMainSectionProps = {
 }
 
 export function HeaderMainSection({ children, bgColor = '' }: HeaderMainSectionProps) {
-  const [{ y: axisY }] = useWindowScroll()
-  const size = useWindowSize()
-  const direction = useScrollDirection()
+  const [isFixed, setIsFixed] = useState(false)
+  const scrollDirection = useScrollDirection()
 
-  let isFixed
+  useEffect(() => {
+    const updateIsFixedValue = () => {
+      window.requestAnimationFrame(() => {
+        if (window.innerWidth >= 640) setIsFixed(() => window.scrollY >= 50)
+        else setIsFixed(() => scrollDirection === 'up')
+      })
+    }
 
-  // O header fica 'fixed' depois de 50px na regra atual desktop
-  if (size.width && size.width >= 640) isFixed = axisY !== null && axisY >= 50
-  // O header fica 'fixed' quando o scroll da página é pra cima no mobile
-  else isFixed = direction === 'up'
+    window.addEventListener('scroll', updateIsFixedValue)
+
+    return () => window.removeEventListener('scroll', updateIsFixedValue)
+  }, [scrollDirection])
 
   return (
     <div className={variants({ fixed: isFixed })} style={{ backgroundColor: bgColor || undefined }}>
