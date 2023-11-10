@@ -24,7 +24,6 @@ module.exports = {
       pill: '1.25rem',
       circular: '50%',
     },
-
     boxShadow: {
       drop: '0px 0px 0.2rem 0.1rem rgba(51, 51, 51, 8%)',
       level1: '0px 0.5rem 1rem -0.25rem rgba(51, 51, 51, 8%)',

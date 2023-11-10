@@ -1,7 +1,7 @@
 import React from 'react'
 import { ParagraphVariants, variants } from './paragraph.variants'
 export type ParagraphProps<C extends React.ElementType> = {
-  children: React.ReactNode
+  children?: React.ReactNode
   as?: C
 } & ParagraphVariants
 

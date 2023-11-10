@@ -4,9 +4,12 @@ export const variants = createVariants({
   base: 'font-open-sans dark:text-neutral-high-400',
   variants: {
     size: {
-      large: 'text-md font-semibold leading-8',
-      medium: 'text-xxs leading-6 font-bold',
-      small: 'text-xxxs font-normal leading-5 sm:leading-4 sm:font-semibold',
+      large: 'text-xxs font-bold leading-md sm:text-md sm:font-medium sm:leading-lg',
+      small: 'text-xxxs font-normal leading-sm sm:font-medium sm:leading-xs',
+    },
+    color: {
+      neutralLow: 'text-neutral-low-500',
+      neutralHigh: 'text-neutral-high-400',
     },
   },
 })
