@@ -4,7 +4,7 @@ export const variants = createVariants({
   base: 'flex justify-around items-center px-nano h-lg w-full bg-editorial-color relative',
   variants: {
     fixed: {
-      true: '!fixed',
+      true: '!fixed z-10',
     },
   },
 })
