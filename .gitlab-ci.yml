@@ -166,6 +166,20 @@ deploy ui-header-delivery:
     refs:
       - /ui-header-delivery\-.*/
 
+deploy ui-hotsite-delivery:
+  stage: deploy
+  extends: .distributed
+  script:
+    - yarn nx build ui-hotsite-delivery
+    - yarn nx build-css ui-hotsite-delivery
+    - cd ./dist/libs/ui-hotsite-delivery
+    - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+    - npm publish
+  only:
+    refs:
+      - /ui-hotsite-delivery\-.*/
+
 deploy ui-voting-components:
   stage: deploy
   extends: .distributed
@@ -207,3 +221,17 @@ deploy ui-section-heading:
   only:
     refs:
       - /ui-section-heading\-.*/
+
+deploy ui-section-foot:
+  stage: deploy
+  extends: .distributed
+  script:
+    - yarn nx build ui-section-foot
+    - yarn nx build-css ui-section-foot
+    - cd ./dist/libs/ui-section-foot
+    - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+    - npm publish
+  only:
+    refs:
+      - /ui-section-foot\-.*/
