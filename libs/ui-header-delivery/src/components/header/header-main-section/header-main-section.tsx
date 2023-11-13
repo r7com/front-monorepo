@@ -9,20 +9,23 @@ export type HeaderMainSectionProps = {
 
 export function HeaderMainSection({ children, bgColor = '' }: HeaderMainSectionProps) {
   const [isFixed, setIsFixed] = useState(false)
+  const [scrollYThreshold, setScrollYThreshold] = useState(false)
+
   const scrollDirection = useScrollDirection()
 
   useEffect(() => {
-    const updateIsFixedValue = () => {
-      window.requestAnimationFrame(() => {
-        if (window.innerWidth >= 640) setIsFixed(() => window.scrollY >= 50)
-        else setIsFixed(() => scrollDirection === 'up')
-      })
-    }
+    const windowOnScroll = () =>
+      window.requestAnimationFrame(() => setScrollYThreshold(() => window.scrollY >= 50))
 
-    window.addEventListener('scroll', updateIsFixedValue)
+    window.addEventListener('scroll', windowOnScroll)
 
-    return () => window.removeEventListener('scroll', updateIsFixedValue)
-  }, [scrollDirection])
+    return () => window.removeEventListener('scroll', windowOnScroll)
+  }, [])
+
+  useEffect(() => {
+    if (window.innerWidth >= 640) setIsFixed(() => scrollYThreshold)
+    else setIsFixed(() => scrollDirection === 'up')
+  }, [scrollDirection, scrollYThreshold])
 
   return (
     <div className={variants({ fixed: isFixed })} style={{ backgroundColor: bgColor || undefined }}>
