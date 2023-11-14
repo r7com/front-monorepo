@@ -8,6 +8,10 @@ export const variants = createVariants({
       medium: 'base-text-md base-font-normal base-leading-8 sm:base-font-semibold base-',
       small: 'base-font-semibold base-text-xxs base-leading-6',
     },
+    color: {
+      neutralLow: 'base-text-neutral-low-500',
+      neutralHigh: 'base-text-neutral-high-400',
+    },
   },
 })
-export type TitleVariants = VariantProps<typeof variants>
+export type HeadingVariants = VariantProps<typeof variants>

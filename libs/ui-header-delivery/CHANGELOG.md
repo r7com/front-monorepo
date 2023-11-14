@@ -2,6 +2,36 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.1.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.1.0...ui-header-delivery-2.1.1) (2023-11-14)
+
+# [2.1.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.0.0...ui-header-delivery-2.1.0) (2023-11-14)
+
+### Bug Fixes
+
+- update isFixed on scroll on header using window scroll event to prevent re-renders ([8c6d324](https://gitlab.ir7.com.br/r7/front-monorepo/commit/8c6d324f4a3257f8813d4712d4a318c6f203cccb))
+
+### Features
+
+- custom hook to detect scroll direction ([c1c2849](https://gitlab.ir7.com.br/r7/front-monorepo/commit/c1c2849be9c11330e36a631fea14b4208d1454de))
+
+# [2.1.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.0.0...ui-header-delivery-2.1.0) (2023-11-14)
+
+### Bug Fixes
+
+- update isFixed on scroll on header using window scroll event to prevent re-renders ([8c6d324](https://gitlab.ir7.com.br/r7/front-monorepo/commit/8c6d324f4a3257f8813d4712d4a318c6f203cccb))
+
+### Features
+
+- custom hook to detect scroll direction ([c1c2849](https://gitlab.ir7.com.br/r7/front-monorepo/commit/c1c2849be9c11330e36a631fea14b4208d1454de))
+
+# [2.1.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.0.0...ui-header-delivery-2.1.0) (2023-11-10)
+
+### Bug Fixes
+
+- **header:** removed lazy ([6aed26f](https://gitlab.ir7.com.br/r7/front-monorepo/commit/6aed26f3be1e38b3c93177003141d9849f249c08))
+- **Header:** removed prop acepted reactNode and inserted img tag that receved url ([abdb6eb](https://gitlab.ir7.com.br/r7/front-monorepo/commit/abdb6eb9297e6d6e763344a098eb50adc8748081))
+- **header:** title of link and added width and height ([1d7a702](https://gitlab.ir7.com.br/r7/front-monorepo/commit/1d7a7026b9cb04f6d0f1f5c1300a94f11f69c5af))
+
 # [2.0.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-1.0.0...ui-header-delivery-2.0.0) (2023-10-20)
 
 ### Features
