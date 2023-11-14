@@ -3,5 +3,5 @@ type SitemapFooterMenuItemProps = {
 }
 
 export function SitemapFooterMenuItem({ children }: SitemapFooterMenuItemProps) {
-  return <li className="p-xxxs">{children}</li>
+  return <li className="footer-p-xxxs">{children}</li>
 }
