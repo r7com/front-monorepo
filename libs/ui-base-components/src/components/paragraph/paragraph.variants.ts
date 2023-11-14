@@ -32,4 +32,4 @@ export const variants = createVariants({
   },
 })
 
-export type TextVariants = VariantProps<typeof variants>
+export type ParagraphVariants = VariantProps<typeof variants>
