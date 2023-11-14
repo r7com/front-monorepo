@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.0.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.0.0...ui-header-delivery-2.0.1) (2023-11-14)
+
+### Bug Fixes
+
+- update isFixed on scroll on header using window scroll event to prevent re-renders ([8c6d324](https://gitlab.ir7.com.br/r7/front-monorepo/commit/8c6d324f4a3257f8813d4712d4a318c6f203cccb))
+
+### Features
+
+- custom hook to detect scroll direction ([c1c2849](https://gitlab.ir7.com.br/r7/front-monorepo/commit/c1c2849be9c11330e36a631fea14b4208d1454de))
+
 # [2.1.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.0.0...ui-header-delivery-2.1.0) (2023-11-10)
 
 ### Bug Fixes
