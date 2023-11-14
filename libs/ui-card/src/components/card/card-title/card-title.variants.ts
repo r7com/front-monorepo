@@ -1,7 +1,7 @@
 import { VariantProps, createVariants } from '@r7/tools'
 
 export const variants = createVariants({
-  base: 'font-open-sans font-semibold',
+  base: 'card-font-open-sans card-font-semibold',
   variants: {
     fontStyle: {
       'heading-level-1': 'text-md md:text-xxl',
@@ -10,8 +10,8 @@ export const variants = createVariants({
       'heading-level-4': 'text-xxxs md:text-xxs',
     },
     color: {
-      high: 'text-neutral-high-400',
-      low: 'text-neutral-low-500',
+      high: 'card-text-neutral-high-400',
+      low: 'card-text-neutral-low-500',
     },
   },
 })

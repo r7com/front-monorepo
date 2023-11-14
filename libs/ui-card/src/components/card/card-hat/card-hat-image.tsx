@@ -8,7 +8,7 @@ export function CardHatImage({ imageSource, description }: CardHatImageProps) {
     <img
       src={imageSource}
       alt={description}
-      className="mr-nano aspect-square"
+      className="card-mr-nano card-aspect-square"
       width="16"
       height="16"
     />

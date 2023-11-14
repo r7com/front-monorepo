@@ -1,15 +1,15 @@
 import { VariantProps, createVariants } from '@r7/tools'
 
 export const variants = createVariants({
-  base: 'rounded-md overflow-hidden relative',
+  base: 'card-rounded-md card-overflow-hidden card-relative',
   variants: {
     format: {
-      square: 'aspect-square',
-      landscape: 'aspect-landscape',
-      portrait: 'aspect-portrait',
+      square: 'card-aspect-square',
+      landscape: 'card-aspect-landscape',
+      portrait: 'card-aspect-portrait',
     },
     shadow: {
-      true: 'after:absolute after:inset-0 after:pointer-events-none after:bg-gradient-to-b from-transparent to-[#000] after:opacity-intense',
+      true: 'after:card-absolute after:card-inset-0 after:card-pointer-events-none after:card-bg-gradient-to-b card-from-transparent card-to-[#000] after:card-opacity-intense',
       false: '',
     },
   },
