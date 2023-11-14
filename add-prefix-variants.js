@@ -12,7 +12,7 @@ glob('**/*.variants.ts', { cwd: rootDir, nodir: true, absolute: true }, (er, fil
         return
       }
 
-      const updatedData = data.replace(/toggle:\s*'([^']+)'/, (match, p1) => {
+      const updatedData = data.replace(/className:\s*'([^']+)'/g, (match, p1) => {
         const updatedBase = p1
           .split(' ')
           .map(className => {
@@ -25,7 +25,7 @@ glob('**/*.variants.ts', { cwd: rootDir, nodir: true, absolute: true }, (er, fil
             }
           })
           .join(' ')
-        return `toggle: '${updatedBase}'`
+        return `className: '${updatedBase}'`
       })
 
       fs.writeFile(file, updatedData, 'utf-8', err => {

@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const glob = require('glob')
 const rootDir = 'libs/ui-base-components'
-const classNameRegex = /className=["']([\s\S]+?)["']/g
+const classNameRegex = /className=[`']([\s\S]+?)[`']/g
 
 glob('**/*.{ts,tsx}', { cwd: rootDir }, (er, files) => {
   files.forEach(file => {

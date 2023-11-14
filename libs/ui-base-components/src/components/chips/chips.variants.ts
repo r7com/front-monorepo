@@ -40,19 +40,19 @@ export const variants = createVariants({
       color: ['primary'],
       selected: true,
       className:
-        '!bg-brand-primary-500 !base-text-brand-primary-600 !base-border-brand-primary-600 [&>svg]:!base-fill-brand-primary-600',
+        '!base-bg-brand-primary-500 !base-text-brand-primary-600 !base-border-brand-primary-600 [&>svg]:!base-fill-brand-primary-600',
     },
     {
       color: ['secondary'],
       selected: true,
       className:
-        '!bg-highlight-400 !base-text-highlight-600 !base-border-highlight-600 [&>svg]:!base-fill-highlight-600',
+        '!base-bg-highlight-400 !base-text-highlight-600 !base-border-highlight-600 [&>svg]:!base-fill-highlight-600',
     },
     {
       color: ['tertiary'],
       selected: true,
       className:
-        '!bg-brand-primary-500/medium !base-text-brand-primary-600 !base-border-brand-primary-600 [&>svg]:!base-fill-brand-primary-600',
+        '!base-bg-brand-primary-500/medium !base-text-brand-primary-600 !base-border-brand-primary-600 [&>svg]:!base-fill-brand-primary-600',
     },
   ],
 })
