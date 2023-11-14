@@ -1,4 +1,3 @@
-import { SvgIcon } from '@r7/ui-base-components'
 import { Header } from './header'
 import { Menu } from './menu'
 import { Sidebar } from './sidebar'
@@ -11,7 +10,8 @@ const CompleteHeader = (
     <Header.MainSection>
       <Header.Logo
         link="https://www.r7.com"
-        image={<SvgIcon iconName="logo-R7" color="primary" width={40} height={40} />}
+        logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1698842893138.svg"
+        alt="Portal R7"
       />
 
       <Sidebar.Toggle>menu</Sidebar.Toggle>
@@ -82,10 +82,10 @@ const CompleteHeader = (
 describe('Header', () => {
   beforeEach(() => cy.mount(CompleteHeader))
 
-  it('R7-Logo, sidebar-toggle button, navigation-menu, social-media share buttons and search-toggle button should be visible in large devices', () => {
+  it('Portal R7, sidebar-toggle button, navigation-menu, social-media share buttons and search-toggle button should be visible in large devices', () => {
     cy.viewport('macbook-11')
 
-    cy.findByTitle('r7-logo').should('be.visible')
+    cy.findByAltText('Portal R7').should('be.visible')
     cy.findByRole('button', { expanded: false, name: /menu/i }).should('be.visible')
     cy.findByLabelText('Menu principal').should('be.visible')
     cy.findByLabelText('Redes sociais para compartilhar').should('be.visible')
@@ -94,10 +94,10 @@ describe('Header', () => {
     cy.matchImage()
   })
 
-  it('Sidebar-toggle button and R7-Logo should be visible in small devices', () => {
+  it('Sidebar-toggle button and Portal R7 should be visible in small devices', () => {
     cy.viewport('iphone-se2')
 
-    cy.findByTitle('r7-logo').should('be.visible')
+    cy.findByAltText('Portal R7').should('be.visible')
     cy.findByRole('button', { expanded: false, name: /menu/i }).should('be.visible')
 
     cy.findByLabelText('Menu principal').should('not.be.visible')
