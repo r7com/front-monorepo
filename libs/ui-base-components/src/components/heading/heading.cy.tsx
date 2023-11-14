@@ -1,7 +1,7 @@
 import { Heading } from './heading'
 
 describe(Heading.name, () => {
-  const text = 'Component Title'
+  const text = 'Component Heading'
   it('using size variations', () => {
     cy.mount(
       <>

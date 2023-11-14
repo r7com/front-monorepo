@@ -8,9 +8,6 @@ describe(Subheading.name, () => {
         <Subheading size="large" as="h2">
           {text}
         </Subheading>
-        <Subheading size="medium" as="h3">
-          {text}
-        </Subheading>
         <Subheading size="small" as="h4">
           {text}
         </Subheading>
