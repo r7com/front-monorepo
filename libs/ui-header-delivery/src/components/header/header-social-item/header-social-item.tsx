@@ -7,7 +7,7 @@ export type HeaderSocialItemProps = {
 
 export function HeaderSocialItem({ socialName, socialUrl }: HeaderSocialItemProps) {
   return (
-    <li className="mr-quark">
+    <li className="header-mr-quark">
       <a
         href={socialUrl}
         target="_blank"
@@ -15,7 +15,7 @@ export function HeaderSocialItem({ socialName, socialUrl }: HeaderSocialItemProp
         title={`Siga o Portal R7 no ${socialName}`}
       >
         <SvgIcon
-          className="border-neutral-high-400 border-hairline !rounded-circular p-quark"
+          className="header-border-neutral-high-400 header-border-hairline !header-rounded-circular header-p-quark"
           iconName={socialName as SvgIconProps['iconName']}
           width={25}
           height={25}

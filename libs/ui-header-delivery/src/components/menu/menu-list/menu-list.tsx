@@ -4,7 +4,7 @@ export type MenuListProps = {
 
 export function MenuList({ children }: MenuListProps) {
   return (
-    <ul className="ml-xxxs" aria-label="Barra de navegação">
+    <ul className="header-ml-xxxs" aria-label="Barra de navegação">
       {children}
     </ul>
   )

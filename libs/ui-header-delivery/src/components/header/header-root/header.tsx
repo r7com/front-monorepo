@@ -14,7 +14,7 @@ export type HeaderProps = {
 export function Header({ children }: HeaderProps) {
   return (
     <HeaderProvider>
-      <header className="flex flex-col">{children}</header>
+      <header className="header-flex header-flex-col">{children}</header>
     </HeaderProvider>
   )
 }

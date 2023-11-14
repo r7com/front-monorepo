@@ -30,7 +30,7 @@ export function Sidebar({ children }: SidebarRootProps) {
         <ul className={sidebarListSlot()}>{children}</ul>
       </nav>
       <button className={backdropButtonSlot()} onClick={closeSidebar} aria-controls="sidebar">
-        <span className="sr-only">fechar menu</span>
+        <span className="header-sr-only">fechar menu</span>
       </button>
     </>
   )
