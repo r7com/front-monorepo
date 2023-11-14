@@ -24,7 +24,6 @@ module.exports = {
       pill: '1.25rem',
       circular: '50%',
     },
-
     boxShadow: {
       drop: '0px 0px 0.2rem 0.1rem rgba(51, 51, 51, 8%)',
       level1: '0px 0.5rem 1rem -0.25rem rgba(51, 51, 51, 8%)',
@@ -175,6 +174,21 @@ module.exports = {
       xxxl: '5rem',
       huge: '8rem',
       giant: '10rem',
+    },
+    lineHeight: {
+      little: '0.75rem',
+      xxxs: '0.875rem',
+      xxs: '1rem',
+      xs: '1.125rem',
+      pill: '1.25rem',
+      sm: '1.375rem',
+      md: '1.5rem',
+      lg: '2rem',
+      xl: '2.5rem',
+      xxl: '3rem',
+      xxxl: '3.5rem',
+      huge: '4rem',
+      giant: '4.5rem',
     },
     screens: {
       ...defaultTheme.screens,

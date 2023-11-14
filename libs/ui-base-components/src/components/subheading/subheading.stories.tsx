@@ -1,37 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Text } from './text'
+import { Subheading } from './subheading'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const meta: Meta<typeof Text> = {
-  title: 'Base/Text',
-  component: Text,
+const meta: Meta<typeof Subheading> = {
+  title: 'Base/Subheading',
+  component: Subheading,
   tags: ['autodocs'],
   argTypes: {},
 }
 
 export default meta
-type Story = StoryObj<typeof Text>
+type Story = StoryObj<typeof Subheading>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
   render: ({ ...args }) => (
     <div>
-      <Text {...args} />
+      <Subheading {...args} />
     </div>
   ),
   args: {
-    children: 'Componente Text',
-    as: 'p',
-    fontWeight: 'light',
-    color: 'neutralLow',
-    fontSize: 'xxxs',
-    fontFamily: 'openSans',
+    children: 'Component subheading',
+    as: 'h2',
+    size: 'large',
   },
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/EMH8xJPwcYWJYP8DBYePpR/Desktop%3A-Votação?type=design&node-id=1108%3A74&mode=dev',
+      url: 'https://www.figma.com/file/OaJJ2O9QrWobVbEsXfGttI/Global-Tokens?node-id=0%3A1&mode=dev',
       accessToken: 'figd_sHs6Ap894w4C-OAFls7tuq0fMMROyue-8zQJ8hRE',
     },
   },
