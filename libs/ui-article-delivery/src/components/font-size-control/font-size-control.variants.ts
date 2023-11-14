@@ -3,9 +3,9 @@ import { createVariants, VariantProps } from '@r7/tools'
 export const variants = createVariants({
   slots: {
     increaseSlot:
-      'md:mr-nano mr-xxxs md:w-xs md:h-xs md:text-sm rounded-md w-sm h-sm text-md bg-neutral-high-600/medium text-agerating-18anos-500 font-semibold flex items-center justify-center border-none hover:bg-[#f1f1f1] dark:border-[1px] dark:border-solid dark:border-neutral-high-400 dark:bg-agerating-18anos-500 dark:text-neutral-high-400',
+      'md:article-mr-nano article-mr-xxxs md:article-w-xs md:article-h-xs md:article-text-sm article-rounded-md article-w-sm article-h-sm article-text-md article-bg-neutral-high-600/medium article-text-agerating-18anos-500 article-font-semibold article-flex article-items-center article-justify-center article-border-none hover:article-bg-[#f1f1f1] dark:article-border-[1px] dark:article-border-solid dark:article-border-neutral-high-400 dark:article-bg-agerating-18anos-500 dark:article-text-neutral-high-400',
     decreaseSlot:
-      'md:w-xs md:h-xs md:text-sm rounded-md w-sm h-sm text-md bg-neutral-high-600/medium text-agerating-18anos-500 font-semibold flex items-center justify-center border-none hover:bg-[#f1f1f1] dark:border-[1px] dark:border-solid dark:border-neutral-high-400 dark:bg-agerating-18anos-500 dark:text-neutral-high-400',
+      'md:article-w-xs md:article-h-xs md:article-text-sm article-rounded-md article-w-sm article-h-sm article-text-md article-bg-neutral-high-600/medium article-text-agerating-18anos-500 article-font-semibold article-flex article-items-center article-justify-center article-border-none hover:article-bg-[#f1f1f1] dark:article-border-[1px] dark:article-border-solid dark:article-border-neutral-high-400 dark:article-bg-agerating-18anos-500 dark:article-text-neutral-high-400',
   },
 })
 

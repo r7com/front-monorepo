@@ -17,7 +17,7 @@ type Story = StoryObj
 export const Default: Story = {
   render: () => (
     <ArticleProvider>
-      <div className="w-5/6 h-screen mx-auto flex flex-col justify-center">
+      <div className="article-w-5/6 article-h-screen article-mx-auto article-flex article-flex-col article-justify-center">
         <AccessibilityBar>
           {/* AUDIMA */}
           <iframe
@@ -27,7 +27,7 @@ export const Default: Story = {
             width="100%"
             height="50"
             src={`https://audio.audima.co/iframe-later-thin-audima.html?skin=thin&amp;statistic=true`}
-            className="checked aud-message-received w-[350px] md:w-[600px] -ml-nano md:-ml-auto mb-xxxs md:mb-0"
+            className="article-checked article-aud-message-received article-w-[350px] md:article-w-[600px] article--ml-nano md:article--ml-auto article-mb-xxxs md:article-mb-0"
           ></iframe>
           <AccessibilityBar.List>
             <AccessibilityBar.Item>
@@ -66,7 +66,7 @@ export const Mobile: Story = {
           width="100%"
           height="50"
           src="https://audio.audima.co/iframe-later-thin-audima.html?skin=thin&amp;statistic=true"
-          className="checked aud-message-received w-[350px] md:w-[600px] -ml-nano md:-ml-auto mb-xxxs md:mb-0"
+          className="article-checked article-aud-message-received article-w-[350px] md:article-w-[600px] article--ml-nano md:article--ml-auto article-mb-xxxs md:article-mb-0"
         ></iframe>
         <AccessibilityBar.List>
           <AccessibilityBar.Item>

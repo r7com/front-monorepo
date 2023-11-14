@@ -12,7 +12,7 @@ const prettier = require('prettier')
 
 const rootDir = 'libs/ui-article-delivery'
 const prefix = 'article'
-const variantKey = 'base'
+const variantKey = 'square'
 const classNameRegex = new RegExp(`(?:className=|${variantKey}:)\\s*["']([^"']+)["']`, 'g')
 
 glob('**/*.{variants.ts,tsx}', { cwd: rootDir }, (er, files) => {
