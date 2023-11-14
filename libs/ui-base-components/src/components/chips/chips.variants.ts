@@ -1,57 +1,58 @@
 import { createVariants, VariantProps } from '@r7/tools'
 
 export const variants = createVariants({
-  base: 'gap-nano px-xxxs rounded-pill font-semibold cursor-pointer flex items-center justify-center w-fit transition-colors',
+  base: 'base-gap-nano base-px-xxxs base-rounded-pill base-font-semibold base-cursor-pointer base-flex base-items-center base-justify-center base-w-fit base-transition-colors',
   variants: {
     size: {
-      large: 'h-sm text-xs [&>svg]:h-xxs [&>svg]:w-xxs',
-      medium: 'h-xs text-xs [&>svg]:h-xxs [&>svg]:w-xxs',
-      small: 'h-xxs text-xxxs [&>svg]:h-xxxs [&>svg]:w-xxxs',
+      large: 'base-h-sm base-text-xs [&>svg]:base-h-xxs [&>svg]:base-w-xxs',
+      medium: 'base-h-xs base-text-xs [&>svg]:base-h-xxs [&>svg]:base-w-xxs',
+      small: 'base-h-xxs base-text-xxxs [&>svg]:base-h-xxxs [&>svg]:base-w-xxxs',
     },
     color: {
       primary:
-        'bg-brand-primary-500 text-neutral-high-500 hover:bg-brand-primary-600 hover:text-neutral-high-500 [&>svg]:fill-[#fff] [&>svg]:hover:fill-neutral-high-500 focus:border-light-low-500 focus:!border-thin active:bg-brand-primary-600 active:shadow-inner-level5',
+        'base-bg-brand-primary-500 base-text-neutral-high-500 hover:base-bg-brand-primary-600 hover:base-text-neutral-high-500 [&>svg]:base-fill-[#fff] [&>svg]:base-hover:fill-neutral-high-500 focus:base-border-light-low-500 focus:!base-border-thin active:base-bg-brand-primary-600 active:base-shadow-inner-level5',
       secondary:
-        'bg-highlight-500 text-neutral-high-500 hover:bg-highlight-600 hover:text-neutral-high-500 [&>svg]:fill-[#fff] [&>svg]:hover:fill-neutral-high-500 focus:border-light-low-500 focus:!border-thin active:border-highlight-400 active:shadow-inner-level5',
+        'base-bg-highlight-500 base-text-neutral-high-500 hover:base-bg-highlight-600 hover:base-text-neutral-high-500 [&>svg]:base-fill-[#fff] [&>svg]:base-hover:fill-neutral-high-500 focus:base-border-light-low-500 focus:!base-border-thin active:base-border-highlight-400 active:base-shadow-inner-level5',
       tertiary:
-        'text-brand-primary-500 !border-hairline border-brand-primary-500 [&>svg]:fill-brand-primary-500 hover:border-brand-primary-600 hover:text-brand-primary-600 [&>svg]:hover:fill-brand-primary-600  focus:!shadow-brand-primary-500 focus:shadow-level5 active:!shadow-brand-primary-500/medium active:shadow-inner-level0',
+        'base-text-brand-primary-500 !base-border-hairline base-border-brand-primary-500 [&>svg]:base-fill-brand-primary-500 hover:base-border-brand-primary-600 hover:base-text-brand-primary-600 [&>svg]:base-hover:fill-brand-primary-600 base- focus:!base-shadow-brand-primary-500 focus:base-shadow-level5 active:!base-shadow-brand-primary-500/medium active:base-shadow-inner-level0',
     },
     disabled: {
-      true: 'pointer-events-none',
+      true: 'base-pointer-events-none',
     },
     selected: {
-      true: '!border-hairline',
+      true: '!base-border-hairline',
     },
   },
   compoundVariants: [
     {
       color: ['primary', 'secondary'],
       disabled: true,
-      className: '!bg-dark-high-600 !text-dark-high-500 [&>svg]:!fill-dark-high-500 ',
+      className:
+        '!base-bg-dark-high-600 !base-text-dark-high-500 [&>svg]:!base-fill-dark-high-500 base-',
     },
     {
       color: ['tertiary'],
       disabled: true,
       className:
-        '!text-dark-high-500 !border-hairline !border-dark-high-500 [&>svg]:!fill-dark-high-500',
+        '!base-text-dark-high-500 !base-border-hairline !base-border-dark-high-500 [&>svg]:!base-fill-dark-high-500',
     },
     {
       color: ['primary'],
       selected: true,
       className:
-        '!bg-brand-primary-500 !text-brand-primary-600 !border-brand-primary-600 [&>svg]:!fill-brand-primary-600',
+        '!bg-brand-primary-500 !base-text-brand-primary-600 !base-border-brand-primary-600 [&>svg]:!base-fill-brand-primary-600',
     },
     {
       color: ['secondary'],
       selected: true,
       className:
-        '!bg-highlight-400 !text-highlight-600 !border-highlight-600 [&>svg]:!fill-highlight-600',
+        '!bg-highlight-400 !base-text-highlight-600 !base-border-highlight-600 [&>svg]:!base-fill-highlight-600',
     },
     {
       color: ['tertiary'],
       selected: true,
       className:
-        '!bg-brand-primary-500/medium !text-brand-primary-600 !border-brand-primary-600 [&>svg]:!fill-brand-primary-600',
+        '!bg-brand-primary-500/medium !base-text-brand-primary-600 !base-border-brand-primary-600 [&>svg]:!base-fill-brand-primary-600',
     },
   ],
 })

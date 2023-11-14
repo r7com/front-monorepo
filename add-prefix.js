@@ -1,8 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 const glob = require('glob')
-const rootDir = 'libs/ui-article-delivery/src/components'
-const classNameRegex = /className=["']([\w\s-]+)["']/g
+const rootDir = 'libs/ui-base-components'
+const classNameRegex = /className=["']([\s\S]+?)["']/g
 
 glob('**/*.{ts,tsx}', { cwd: rootDir }, (er, files) => {
   files.forEach(file => {
@@ -14,10 +14,11 @@ glob('**/*.{ts,tsx}', { cwd: rootDir }, (er, files) => {
       }
       const result = data.replace(classNameRegex, (match, p1) => {
         const classNames = p1.split(' ')
-        console.log(filePath)
         const prefixedClassNames = classNames.map(className => {
           if (className.startsWith('base-')) {
             return className
+          } else if (className.includes(':')) {
+            return className.replace(/(?<=:)([^;\s]+)/, 'base-$1')
           } else {
             return `base-${className}`
           }

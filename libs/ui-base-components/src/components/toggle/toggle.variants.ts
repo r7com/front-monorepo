@@ -3,7 +3,7 @@ import { createVariants, VariantProps } from '@r7/tools'
 export const variants = createVariants({
   slots: {
     toggle:
-      'flex items-center flex-shrink-0 rounded-pill p-quark ease-in-out after:rounded-circular after:duration-300 transition-colors',
+      'base-flex base-items-center base-flex-shrink-0 base-rounded-pill base-p-quark base-ease-in-out after:base-rounded-circular after:base-duration-300 base-transition-colors',
     iconsContainer: 'absolute flex items-center',
     iconChecked: 'min-w-max min-h-max m-nano',
     iconUnchecked: 'absolute min-w-max min-h-max m-nano',

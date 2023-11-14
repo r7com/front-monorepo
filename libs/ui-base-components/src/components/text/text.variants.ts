@@ -1,33 +1,33 @@
 import { createVariants, VariantProps } from '@r7/tools'
 
 export const variants = createVariants({
-  base: 'dark:text-neutral-high-400',
+  base: 'dark:base-text-neutral-high-400',
   variants: {
     fontSize: {
-      little: 'text-little',
-      xxxs: 'text-xxxs',
-      xxs: 'text-xxs',
-      xs: 'text-xs',
-      sm: 'text-sm',
-      md: 'text-md',
-      lg: 'text-lg',
-      xl: 'text-xl',
-      xxl: 'text-xxl',
-      xxxl: 'text-xxxl',
+      little: 'base-text-little',
+      xxxs: 'base-text-xxxs',
+      xxs: 'base-text-xxs',
+      xs: 'base-text-xs',
+      sm: 'base-text-sm',
+      md: 'base-text-md',
+      lg: 'base-text-lg',
+      xl: 'base-text-xl',
+      xxl: 'base-text-xxl',
+      xxxl: 'base-text-xxxl',
     },
     fontWeight: {
-      light: 'font-light',
-      normal: 'font-normal',
-      semibold: 'font-semibold',
-      bold: 'font-bold',
+      light: 'base-font-light',
+      normal: 'base-font-normal',
+      semibold: 'base-font-semibold',
+      bold: 'base-font-bold',
     },
     fontFamily: {
-      openSans: 'font-open-sans',
-      playfair: 'font-playfair-display',
+      openSans: 'base-font-open-sans',
+      playfair: 'base-font-playfair-display',
     },
     color: {
-      neutralLow: 'text-neutral-low-500',
-      neutralHigh: 'text-neutral-high-400',
+      neutralLow: 'base-text-neutral-low-500',
+      neutralHigh: 'base-text-neutral-high-400',
     },
   },
 })

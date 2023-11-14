@@ -51,7 +51,7 @@ export const variants = createVariants({
     {
       slots: ['root'],
       position: 'bottom-left',
-      className: 'pb-nano',
+      className: 'base-pb-nano',
     },
     {
       slots: ['root'],

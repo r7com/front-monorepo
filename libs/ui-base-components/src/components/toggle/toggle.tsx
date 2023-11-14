@@ -29,14 +29,14 @@ export function Toggle({
   return (
     <label
       htmlFor={name}
-      className="relative flex items-center group p-nano text-xl m-quark cursor-pointer w-full h-full"
+      className="base-relative base-flex base-items-center base-group base-p-nano base-text-xl base-m-quark base-cursor-pointer base-w-full base-h-full"
     >
       <input
         name={name}
         id={name}
         onChange={onChange}
         type="checkbox"
-        className="sr-only peer rounded-md focus:outline-none"
+        className="base-sr-only base-peer base-rounded-md focus:base-outline-none"
         disabled={disabled}
         checked={checked}
       />
