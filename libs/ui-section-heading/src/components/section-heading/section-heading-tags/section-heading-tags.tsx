@@ -3,5 +3,9 @@ export type SectionHeadingTagsProps = {
 }
 
 export function SectionHeadingTags({ children }: SectionHeadingTagsProps) {
-  return <div className="flex gap-xxxs md:gap-nano pb-nano max-md:overflow-x-auto">{children}</div>
+  return (
+    <div className="sheading-flex sheading-gap-xxxs md:sheading-gap-nano sheading-pb-nano sheading-sheading-max-md:overflow-x-auto">
+      {children}
+    </div>
+  )
 }
