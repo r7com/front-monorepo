@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.1.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.0.0...ui-header-delivery-2.1.0) (2023-11-10)
+
+### Bug Fixes
+
+- **header:** removed lazy ([6aed26f](https://gitlab.ir7.com.br/r7/front-monorepo/commit/6aed26f3be1e38b3c93177003141d9849f249c08))
+- **Header:** removed prop acepted reactNode and inserted img tag that receved url ([abdb6eb](https://gitlab.ir7.com.br/r7/front-monorepo/commit/abdb6eb9297e6d6e763344a098eb50adc8748081))
+- **header:** title of link and added width and height ([1d7a702](https://gitlab.ir7.com.br/r7/front-monorepo/commit/1d7a7026b9cb04f6d0f1f5c1300a94f11f69c5af))
+
 # [2.0.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-1.0.0...ui-header-delivery-2.0.0) (2023-10-20)
 
 ### Features
