@@ -10,9 +10,9 @@ const path = require('path')
 const glob = require('glob')
 const prettier = require('prettier')
 
-const rootDir = 'libs/ui-article-delivery'
-const prefix = 'article'
-const variantKey = 'square'
+const rootDir = 'libs/ui-card'
+const prefix = 'card'
+const variantKey = 'iconStyle'
 const classNameRegex = new RegExp(`(?:className=|${variantKey}:)\\s*["']([^"']+)["']`, 'g')
 
 glob('**/*.{variants.ts,tsx}', { cwd: rootDir }, (er, files) => {
