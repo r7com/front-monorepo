@@ -1,3 +1,4 @@
+import '@r7/ui-header-delivery/css'
 import { Route, Routes } from 'react-router-dom'
 import { UiFooterDelivery, UiSectionMenu, UiArticleDelivery } from './routes'
 import { ArticleProvider } from '@r7/ui-article-delivery'
@@ -8,7 +9,11 @@ export function App() {
     <ArticleProvider>
       <Header>
         <Header.MainSection>
-          <Header.Logo link="https://www.r7.com" image={'asdasda'} />
+          <Header.Logo
+            link="https://www.r7.com"
+            logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1698842893138.svg"
+            alt="R7 logo"
+          />
 
           <Menu>
             <Menu.List>

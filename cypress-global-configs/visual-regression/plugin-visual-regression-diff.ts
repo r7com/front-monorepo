@@ -9,7 +9,7 @@ type PluginVisualRegressionOptions = {
 }
 
 const configs: PluginVisualRegressionOptions = {
-  pluginVisualRegressionMaxDiffThreshold: 0.03,
+  pluginVisualRegressionDiffConfig: { threshold: 0.01 },
 }
 
 Object.freeze(configs)

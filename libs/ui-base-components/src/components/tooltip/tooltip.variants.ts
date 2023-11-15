@@ -3,7 +3,7 @@ import { createVariants, VariantProps } from '@r7/tools'
 export const variants = createVariants({
   slots: {
     tooltip:
-      "base-bg-dark-low-400 base-w-max base-max-w-[164px] base-text-center base-shadow-level1 base-rounded-md base-transition-opacity base-ease-in-out base-duration-200 base-text-neutral-high-400 base-absolute base=p-nano after:base-content-[''] after:base-block after:base-absolute",
+      "base-bg-dark-low-400 base-w-max base-max-w-[164px] base-text-center base-shadow-level1 base-rounded-md base-transition-opacity base-ease-in-out base-duration-200 base-text-neutral-high-400 base-absolute base-p-nano after:base-content-[''] after:base-block after:base-absolute",
     target: 'base-inline-block',
     root: 'base-inline-block base-relative',
   },
