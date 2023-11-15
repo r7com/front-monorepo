@@ -11,23 +11,23 @@ export const variants = createVariants({
     position: {
       top: {
         tooltip:
-          'base-bottom-[calc(100%_+_10px)] base-translate-x-1/2 base-right-1/2 after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-b-[0px] after:base-border-t-[10px] after:base-border-t-solid after:base-border-t-dark-low-400 after:base-left-1/2 after:base-top-full after:base--translate-x-1/2',
+          'base-bottom-[calc(100%_+_10px)] base-translate-x-1/2 base-right-1/2 after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-b-[0px] after:base-border-t-[10px] after:base-border-t-solid after:base-border-t-dark-low-400 after:base-left-1/2 after:base-top-full after:-base-translate-x-1/2',
       },
       right: {
         tooltip:
-          'base-left-[calc(100%_+_10px)] base-top-1/2 base--translate-y-1/2 after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-l-[0px] after:base-border-r-[10px] after:base-border-r-solid after:base-border-r-dark-low-400 after:base-top-1/2 after:base-left-[1px] after:base--translate-x-full after:base--translate-y-1/2',
+          'base-left-[calc(100%_+_10px)] base-top-1/2 -base-translate-y-1/2 after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-l-[0px] after:base-border-r-[10px] after:base-border-r-solid after:base-border-r-dark-low-400 after:base-top-1/2 after:base-left-[1px] after:-base-translate-x-full after:-base-translate-y-1/2',
       },
       left: {
         tooltip:
-          'base-right-[calc(100%_+_10px)] base-top-1/2 base--translate-y-1/2 after:base-right-0 after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-r-[0px] after:base-border-l-[10px] after:base-border-l-dark-low-400 after:base-translate-x-full after:base--translate-y-1/2 after:base-top-1/2',
+          'base-right-[calc(100%_+_10px)] base-top-1/2 -base-translate-y-1/2 after:base-right-0 after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-r-[0px] after:base-border-l-[10px] after:base-border-l-dark-low-400 after:base-translate-x-full after:-base-translate-y-1/2 after:base-top-1/2',
       },
       bottom: {
         tooltip:
-          'base-top-[calc(100%_+_10px)] base-translate-y-0 base-translate-x-1/2 base-right-1/2 after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-t-[0px] after:base-border-b-[10px] after:base-border-b-solid after:base-border-b-dark-low-400 after:base-left-1/2 after:base-bottom-full after:base--translate-x-1/2',
+          'base-top-[calc(100%_+_10px)] base-translate-y-0 base-translate-x-1/2 base-right-1/2 after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-t-[0px] after:base-border-b-[10px] after:base-border-b-solid after:base-border-b-dark-low-400 after:base-left-1/2 after:base-bottom-full after:-base-translate-x-1/2',
       },
       'top-left': {
         tooltip:
-          'base-bottom-[calc(100%_+_10px)] base-right-[calc(50%_-_1.2rem)] after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-b-[0px] after:base-border-t-[10px] after:base-border-t-solid after:base-border-t-dark-low-400 after:base-right-0 after:base-top-full after:base--translate-x-1/2',
+          'base-bottom-[calc(100%_+_10px)] base-right-[calc(50%_-_1.2rem)] after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-b-[0px] after:base-border-t-[10px] after:base-border-t-solid after:base-border-t-dark-low-400 after:base-right-0 after:base-top-full after:-base-translate-x-1/2',
       },
       'top-right': {
         tooltip:
@@ -39,12 +39,12 @@ export const variants = createVariants({
       },
       'bottom-left': {
         tooltip:
-          'base-top-[calc(100%_+_10px)] base-right-[calc(50%_-_1.2rem)] after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-t-[0px] after:base-border-b-[10px] after:base-border-b-solid after:base-border-b-dark-low-400 after:base-bottom-full after:base--translate-x-1/2 after:base-right-0',
+          'base-top-[calc(100%_+_10px)] base-right-[calc(50%_-_1.2rem)] after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-t-[0px] after:base-border-b-[10px] after:base-border-b-solid after:base-border-b-dark-low-400 after:base-bottom-full after:-base-translate-x-1/2 after:base-right-0',
       },
     },
     hover: {
       true: { tooltip: 'base-opacity-[1] base-z-10' },
-      false: { tooltip: 'base-opacity-[0] base--z-10' },
+      false: { tooltip: 'base-opacity-[0] -base-z-10' },
     },
   },
   compoundSlots: [

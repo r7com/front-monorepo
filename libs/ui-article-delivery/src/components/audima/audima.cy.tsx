@@ -9,7 +9,7 @@ describe('Audima', () => {
           width="100%"
           height="50"
           src="https://audio.audima.co/iframe-later-thin-audima.html?skin=thin&amp;statistic=true"
-          className="article-checked article-aud-message-received article-w-[350px] md:article-w-[600px] article--ml-nano md:article--ml-auto article-mb-xxxs md:article-mb-0"
+          className="article-checked article-aud-message-received article-w-[350px] md:article-w-[600px] -article-ml-nano md:-article-ml-auto article-mb-xxxs md:article-mb-0"
         ></iframe>
       </div>,
     )

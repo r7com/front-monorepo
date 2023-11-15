@@ -16,7 +16,7 @@ export const variants = createVariants({
         backdropButtonSlot: 'header-backdrop-brightness-50 header-visible',
       },
       false: {
-        sidebarSlot: 'header--translate-x-full header-invisible',
+        sidebarSlot: '-header-translate-x-full header-invisible',
         backdropButtonSlot: 'header-invisible',
       },
     },

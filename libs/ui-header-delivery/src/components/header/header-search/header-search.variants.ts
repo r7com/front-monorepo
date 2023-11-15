@@ -16,7 +16,7 @@ export const variants = createVariants({
         wrapperSlot: 'header-translate-y-0 header-visible header-z-20',
       },
       false: {
-        wrapperSlot: 'header--translate-y-full header-invisible header-opacity-transparent',
+        wrapperSlot: '-header-translate-y-full header-invisible header-opacity-transparent',
       },
     },
   },

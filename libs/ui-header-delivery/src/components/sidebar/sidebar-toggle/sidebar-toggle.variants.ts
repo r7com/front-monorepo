@@ -19,7 +19,7 @@ export const variants = createVariants({
         iconSlot: 'header-justify-center header-relative',
         firstLineSlot: 'header-absolute header-rotate-45',
         secondLineSlot: 'header-bg-transparent',
-        thirdLineSlot: 'header-absolute header--rotate-45',
+        thirdLineSlot: 'header-absolute -header-rotate-45',
       },
     },
   },
