@@ -3,9 +3,10 @@ import { HeaderContext } from '../context/header-context'
 
 export type HeaderProviderProps = {
   children: React.ReactNode
+  headerRef: HTMLElement | null
 }
 
-export function HeaderProvider({ children }: HeaderProviderProps) {
+export function HeaderProvider({ children, headerRef }: HeaderProviderProps) {
   const [{ currentActiveSubmenu, isSidebarOpen, isSearchActive }, setState] = useState({
     isSidebarOpen: false,
     isSearchActive: false,
@@ -45,6 +46,7 @@ export function HeaderProvider({ children }: HeaderProviderProps) {
         header: {
           isSearchActive,
           toggle: toggleHeaderSearch,
+          height: headerRef?.clientHeight,
         },
       }}
     >

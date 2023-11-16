@@ -16,7 +16,7 @@ export type SidebarRootProps = {
 }
 
 export function Sidebar({ children }: SidebarRootProps) {
-  const { sidebar } = useHeaderActions()
+  const { sidebar, header } = useHeaderActions()
 
   const { sidebarListSlot, sidebarSlot, backdropButtonSlot } = variants({
     isSidebarOpen: sidebar.isOpen,
@@ -26,11 +26,21 @@ export function Sidebar({ children }: SidebarRootProps) {
 
   return (
     <>
-      <nav className={sidebarSlot()} id="sidebar" aria-label="Menu lateral">
+      <nav
+        className={sidebarSlot()}
+        id="sidebar"
+        aria-label="Menu lateral"
+        style={{ top: header.height }}
+      >
         <ul className={sidebarListSlot()}>{children}</ul>
       </nav>
-      <button className={backdropButtonSlot()} onClick={closeSidebar} aria-controls="sidebar">
-        <span className="header-sr-only">fechar menu</span>
+      <button
+        className={backdropButtonSlot()}
+        onClick={closeSidebar}
+        aria-controls="sidebar"
+        style={{ top: header.height }}
+      >
+        <span className="sr-only">fechar menu</span>
       </button>
     </>
   )
