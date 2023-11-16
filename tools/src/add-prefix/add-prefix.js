@@ -10,8 +10,8 @@ const path = require('path')
 const glob = require('glob')
 const prettier = require('prettier')
 
-const rootDir = 'libs/ui-section-menu'
-const prefix = 'smenu'
+const rootDir = 'libs/ui-article-delivery'
+const prefix = 'article'
 const variantKey = 'base'
 const classNameRegex = new RegExp(`(?:className=|${variantKey}:)\\s*["']([^"']+)["']`, 'g')
 
