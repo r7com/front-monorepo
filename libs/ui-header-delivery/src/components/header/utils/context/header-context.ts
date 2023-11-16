@@ -13,7 +13,7 @@ type HeaderContextProps = {
   header: {
     isSearchActive: boolean
     toggle(open: boolean): void
-    height: number | undefined
+    height?: number
   }
 }
 
