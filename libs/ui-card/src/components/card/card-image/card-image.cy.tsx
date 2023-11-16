@@ -11,6 +11,10 @@ describe(Card.Image.name, () => {
       </Card.Image>,
     )
     cy.findByRole('figure').should('be.visible')
+    cy.findByAltText(/Human hand writting in a paper/i)
+      .should('be.visible')
+      .and('have.prop', 'naturalWidth')
+      .should('be.greaterThan', 0)
     cy.matchImage()
   })
 

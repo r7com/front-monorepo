@@ -28,7 +28,10 @@ describe(Card.HatImage.name, () => {
         imageSource="http://img.r7.com/images/concurso-publico-14032022123440824?dimensions=128x128"
       />,
     )
-    cy.findByRole('img').should('be.visible')
+    cy.findByAltText('I am a hat image')
+      .should('be.visible')
+      .and('have.prop', 'naturalWidth')
+      .should('be.greaterThan', 0)
     cy.matchImage()
   })
 })
