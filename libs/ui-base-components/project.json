@@ -34,12 +34,6 @@
         }
       }
     },
-    "build-css": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "tailwindcss -c libs/ui-base-components/tailwind.config.js --minify  -i libs/ui-base-components/src/style.css -o dist/libs/ui-base-components/style.css"
-      }
-    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
@@ -64,6 +58,7 @@
         "watch": true,
         "browser": "chrome"
       },
+      "dependsOn": ["^build"],
       "configurations": {
         "ci": {
           "watch": false,
