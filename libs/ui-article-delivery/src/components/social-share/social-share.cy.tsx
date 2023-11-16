@@ -28,7 +28,7 @@ describe(SocialShare.name, () => {
 
   it('should render social-share links with secondary color and rounded shape', () => {
     cy.mount(
-      <div className="bg-neutral-low-600 h-screen">
+      <div className="article-bg-neutral-low-600 article-h-screen">
         <SocialShare>
           <SocialShare.List>
             <SocialShare.Item

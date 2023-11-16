@@ -17,7 +17,7 @@ type Story = StoryObj<typeof Header>
 
 export const Primary: Story = {
   render: () => (
-    <div className="h-screen">
+    <div className="header-h-screen">
       <Header>
         <Header.MainSection>
           <Header.Logo

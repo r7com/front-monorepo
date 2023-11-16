@@ -4,7 +4,7 @@ export type MenuListProps = {
 
 export function MenuList({ children }: MenuListProps) {
   return (
-    <ul className="flex gap-xxs cursor-pointer" aria-label="Barra de navegação">
+    <ul className="smenu-flex smenu-gap-xxs smenu-cursor-pointer" aria-label="Barra de navegação">
       {children}
     </ul>
   )

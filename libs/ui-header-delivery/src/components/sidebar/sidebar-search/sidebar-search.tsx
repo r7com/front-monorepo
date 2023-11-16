@@ -8,9 +8,9 @@ export function SidebarSearch() {
     <div className={wrapperSlot()}>
       <form role="search" className={formSlot()} action="https://busca.r7.com">
         <button type="submit" title="buscar" className={submitSlot()}>
-          <SvgIcon iconName="search" size="small" className="fill-neutral-low-400" />
+          <SvgIcon iconName="search" size="small" className="header-fill-neutral-low-400" />
         </button>
-        <label htmlFor="searchBar" className="sr-only">
+        <label htmlFor="searchBar" className="header-sr-only">
           Campo de busca
         </label>
         <input

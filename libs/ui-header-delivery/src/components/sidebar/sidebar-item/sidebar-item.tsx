@@ -3,5 +3,9 @@ export type SidebarItemProps = {
 }
 
 export function SidebarItem({ children }: SidebarItemProps) {
-  return <li className="[&:not(:last-child)]:mb-xxs text-xxxs font-medium">{children}</li>
+  return (
+    <li className="[&:not(:last-child)]:header-mb-xxs header-text-xxxs header-font-medium">
+      {children}
+    </li>
+  )
 }

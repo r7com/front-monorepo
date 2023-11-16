@@ -4,7 +4,7 @@ export type SubmenuItemProps = {
 
 export function SubmenuItem({ children }: SubmenuItemProps) {
   return (
-    <li className="py-[19px] px-xxxs bg-neutral-high-400 hover:bg-neutral-high-500 transition-colors">
+    <li className="smenu-py-[19px] smenu-px-xxxs smenu-bg-neutral-high-400 hover:smenu-bg-neutral-high-500 smenu-transition-colors">
       {children}
     </li>
   )

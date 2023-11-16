@@ -1,16 +1,16 @@
 import { createVariants, VariantProps } from '@r7/tools'
 
 export const variants = createVariants({
-  base: 'transition-all rounded-sm border-hairline',
+  base: 'base-transition-all base-rounded-sm base-border-hairline',
   variants: {
     color: {
       primary:
-        'bg-brand-primary-500 hover:bg-brand-primary-600 active:bg-brand-primary-400 fill-neutral-high-400 border-brand-primary-500 hover:border-brand-primary-600 active:border-brand-primary-600',
+        'base-bg-brand-primary-500 hover:base-bg-brand-primary-600 active:base-bg-brand-primary-400 base-fill-neutral-high-400 base-border-brand-primary-500 hover:base-border-brand-primary-600 active:base-border-brand-primary-600',
       secondary:
-        'bg-highlight-500 hover:bg-highlight-600 active:bg-highlight-400 fill-neutral-high-400 border-highlight-500 hover:border-highlight-600 active:border-highlight-600',
+        'base-bg-highlight-500 hover:base-bg-highlight-600 active:base-bg-highlight-400 base-fill-neutral-high-400 base-border-highlight-500 hover:base-border-highlight-600 active:base-border-highlight-600',
       tertiary:
-        'border-brand-primary-500 hover:border-brand-primary-600 active:border-light-low-500 fill-brand-primary-500 hover:fill-brand-primary-600 active:fill-light-low-500',
-      original: 'border-transparent hover:grayscale-[.2] active:grayscale-[.4]',
+        'base-border-brand-primary-500 hover:base-border-brand-primary-600 active:base-border-light-low-500 base-fill-brand-primary-500 hover:base-fill-brand-primary-600 active:base-fill-light-low-500',
+      original: 'base-border-transparent hover:base-grayscale-[.2] active:base-grayscale-[.4]',
     },
   },
 })

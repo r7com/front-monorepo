@@ -19,10 +19,10 @@ export function SidebarSubmenu({ children, id }: SidebarSubmenuProps) {
       <Button
         color="ghost"
         size="large"
-        className="capitalize font-extrabold"
+        className="header-capitalize header-font-extrabold"
         onClick={backToMainMenu}
         startIcon={
-          <SvgIcon iconName="arrow-left" size="small" className="fill-brand-primary-500" />
+          <SvgIcon iconName="arrow-left" size="small" className="header-fill-brand-primary-500" />
         }
       >
         voltar

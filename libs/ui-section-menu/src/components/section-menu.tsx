@@ -16,14 +16,14 @@ export function SectionMenu({ children, label, sectionColor }: SectionMenuProps)
   return (
     <SectionMenuProvider>
       <div
-        className="border-b-hairline border-neutral-high-500 overflow-x-scroll overflow-y-hidden sm:overflow-visible"
+        className="smenu-border-b-hairline smenu-border-neutral-high-500 smenu-overflow-x-scroll smenu-overflow-y-hidden sm:smenu-overflow-visible"
         style={
           {
             '--section-color': sectionColor || 'var(--editorial-color, #218ee1)',
           } as React.CSSProperties
         }
       >
-        <nav className="relative container" aria-label={label}>
+        <nav className="smenu-relative smenu-container" aria-label={label}>
           {children}
         </nav>
       </div>

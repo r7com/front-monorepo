@@ -12,7 +12,7 @@ export function SitemapFooterMenuLink({
     <a
       target={openInNewTab ? '_blank' : undefined}
       rel={openInNewTab ? 'noreferrer' : undefined}
-      className="hover:underline"
+      className="hover:footer-underline"
       {...rest}
     >
       <h6>{children}</h6>

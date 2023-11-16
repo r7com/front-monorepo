@@ -20,10 +20,10 @@ export function MenuButton({ children, id }: MenuButtonProps) {
       onMouseEnter={toggleSubmenu}
       onClick={toggleSubmenu}
       aria-expanded={id === submenu.currentActive}
-      className="flex uppercase items-center gap-nano h-full hover:text-[var(--section-color)] hover:!fill-[var(--section-color)] transition-colors"
+      className="smenu-flex smenu-uppercase smenu-items-center smenu-gap-nano smenu-h-full hover:smenu-text-[var(--section-color)] hover:!smenu-fill-[var(--section-color)] smenu-transition-colors"
     >
       {children}
-      <SvgIcon iconName="chevron-bottom" className="transition-none" size="small" />
+      <SvgIcon iconName="chevron-bottom" className="smenu-transition-none" size="small" />
     </button>
   )
 }

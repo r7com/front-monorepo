@@ -5,12 +5,14 @@ describe('FontSizeControl', () => {
   beforeEach(() => {
     cy.mount(
       <ArticleProvider>
-        <div className="flex">
+        <div className="article-flex">
           <FontSizeControl.Increase />
           <FontSizeControl.Decrease />
         </div>
 
-        <article className="text-[calc(theme(fontSize.xxxs)_*_var(--font-size))]">anderson</article>
+        <article className="article-text-[calc(theme(fontSize.xxxs)_*_var(--font-size))]">
+          anderson
+        </article>
       </ArticleProvider>,
     )
   })
