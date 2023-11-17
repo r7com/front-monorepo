@@ -25,7 +25,7 @@ export function Card({
   return withLink ? (
     <article>
       <a
-        className={className}
+        className={`flex ${className}`}
         href={newsUrl}
         title={newsUrlTitle}
         target={openInBlank ? '_blank' : undefined}
