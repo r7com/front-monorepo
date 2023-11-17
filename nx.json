@@ -45,6 +45,10 @@
         "{projectRoot}/tsconfig.storybook.json"
       ],
       "cache": true
+    },
+    "@nx/vite:test": {
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
+      "cache": true
     }
   },
   "namedInputs": {
