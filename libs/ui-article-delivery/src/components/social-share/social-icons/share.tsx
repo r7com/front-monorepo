@@ -26,12 +26,12 @@ export function ShareIcon({ color, link = '' }: SocialIconProps) {
       onClick={copyClipboardFeedback}
       title="Copiar o link de compartilhamento"
       aria-label="Clique para copiar o link de compartilhamento"
-      className="relative"
+      className="article-relative"
     >
       <SvgIcon iconName="share" className={shareSlot()} title="share" />
       {showTooltip && (
-        <span className="absolute left-full top-quark">
-          <span className="flex justify-center items-center w-xxxl h-xxs rounded-md bg-dark-high-500 text-little">
+        <span className="article-absolute article-left-full article-top-quark">
+          <span className="article-flex article-justify-center article-items-center article-w-xxxl article-h-xxs article-rounded-md article-bg-dark-high-500 article-text-little">
             Link copiado!
           </span>
         </span>

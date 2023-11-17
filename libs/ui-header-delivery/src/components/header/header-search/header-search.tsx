@@ -11,7 +11,7 @@ export function HeaderSearch() {
   return (
     <div id="header-search-form" className={wrapperSlot()}>
       <form role="search" action="https://busca.r7.com" className={formSlot()}>
-        <label htmlFor="headerSearchBar" className="sr-only">
+        <label htmlFor="headerSearchBar" className="header-sr-only">
           Busca do Portal R7
         </label>
         <input

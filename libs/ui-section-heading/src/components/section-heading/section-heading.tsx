@@ -12,7 +12,7 @@ export type SectionHeadingProps = {
 export function SectionHeading({ children, color = '#4766ac' }: SectionHeadingProps) {
   return (
     <div
-      className="flex flex-wrap md:flex-nowrap items-center gap-nano py-xxxs"
+      className="sheading-flex sheading-flex-wrap md:sheading-flex-nowrap sheading-items-center sheading-gap-nano sheading-py-xxxs"
       style={{ '--color': color } as React.CSSProperties}
     >
       {children}

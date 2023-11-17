@@ -3,5 +3,9 @@ export type SocialListProps = {
 }
 
 export function SocialList({ children }: SocialListProps) {
-  return <ul className="flex items-center gap-xxxs sm:gap-nano">{children}</ul>
+  return (
+    <ul className="article-flex article-items-center article-gap-xxxs sm:article-gap-nano">
+      {children}
+    </ul>
+  )
 }

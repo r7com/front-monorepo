@@ -4,8 +4,11 @@ export type InstitutionalWrapperProps = {
 
 export function InstitutionalWrapper({ children }: InstitutionalWrapperProps) {
   return (
-    <div className="flex justify-center">
-      <a href="https://www.r7.com" className="flex items-end text-light-high-400">
+    <div className="footer-flex footer-justify-center">
+      <a
+        href="https://www.r7.com"
+        className="footer-flex footer-items-end footer-text-light-high-400"
+      >
         {children}
       </a>
     </div>

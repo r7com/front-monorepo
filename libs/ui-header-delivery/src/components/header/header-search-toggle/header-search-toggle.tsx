@@ -9,13 +9,13 @@ export function HeaderSearchToggle() {
   return (
     <button
       type="button"
-      className="hidden sm:flex items-center justify-center w-lg h-full bg-neutral-high-400/light"
+      className="header-hidden sm:header-flex header-items-center header-justify-center header-w-lg header-h-full header-bg-neutral-high-400/light"
       aria-controls="header-search-form"
       aria-expanded={header.isSearchActive}
       aria-label="Alternador de busca"
       onClick={toggleHeaderSearch}
     >
-      <SvgIcon iconName="search" size="medium" className="fill-neutral-high-500" />
+      <SvgIcon iconName="search" size="medium" className="header-fill-neutral-high-500" />
     </button>
   )
 }

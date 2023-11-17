@@ -1,3 +1,5 @@
 export function SectionHeadingLine() {
-  return <hr className="w-full h-[1px] border-[var(--color)] pb-nano md:pb-0" />
+  return (
+    <hr className="sheading-w-full sheading-h-[1px] sheading-border-[var(--color)] sheading-pb-nano md:sheading-pb-0" />
+  )
 }

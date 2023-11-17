@@ -3,90 +3,90 @@ import { createVariants, VariantProps } from '@r7/tools'
 export const variants = createVariants({
   slots: {
     tooltip:
-      "bg-dark-low-400 w-max max-w-[164px] text-center shadow-level1 rounded-md transition-opacity ease-in-out duration-200 text-neutral-high-400 absolute p-nano after:content-[''] after:block after:absolute",
-    target: 'inline-block',
-    root: 'inline-block relative',
+      "base-bg-dark-low-400 base-w-max base-max-w-[164px] base-text-center base-shadow-level1 base-rounded-md base-transition-opacity base-ease-in-out base-duration-200 base-text-neutral-high-400 base-absolute base-p-nano after:base-content-[''] after:base-block after:base-absolute",
+    target: 'base-inline-block',
+    root: 'base-inline-block base-relative',
   },
   variants: {
     position: {
       top: {
         tooltip:
-          'bottom-[calc(100%_+_10px)] translate-x-1/2 right-1/2 after:border-[10px] after:border-solid after:border-transparent after:border-b-[0px] after:border-t-[10px] after:border-t-solid after:border-t-dark-low-400 after:left-1/2 after:top-full after:-translate-x-1/2',
+          'base-bottom-[calc(100%_+_10px)] base-translate-x-1/2 base-right-1/2 after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-b-[0px] after:base-border-t-[10px] after:base-border-t-solid after:base-border-t-dark-low-400 after:base-left-1/2 after:base-top-full after:-base-translate-x-1/2',
       },
       right: {
         tooltip:
-          'left-[calc(100%_+_10px)] top-1/2 -translate-y-1/2 after:border-[10px] after:border-solid after:border-transparent after:border-l-[0px] after:border-r-[10px] after:border-r-solid after:border-r-dark-low-400 after:top-1/2 after:left-[1px] after:-translate-x-full after:-translate-y-1/2',
+          'base-left-[calc(100%_+_10px)] base-top-1/2 -base-translate-y-1/2 after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-l-[0px] after:base-border-r-[10px] after:base-border-r-solid after:base-border-r-dark-low-400 after:base-top-1/2 after:base-left-[1px] after:-base-translate-x-full after:-base-translate-y-1/2',
       },
       left: {
         tooltip:
-          'right-[calc(100%_+_10px)] top-1/2 -translate-y-1/2 after:right-0 after:border-[10px] after:border-solid after:border-transparent after:border-r-[0px] after:border-l-[10px] after:border-l-dark-low-400 after:translate-x-full after:-translate-y-1/2 after:top-1/2',
+          'base-right-[calc(100%_+_10px)] base-top-1/2 -base-translate-y-1/2 after:base-right-0 after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-r-[0px] after:base-border-l-[10px] after:base-border-l-dark-low-400 after:base-translate-x-full after:-base-translate-y-1/2 after:base-top-1/2',
       },
       bottom: {
         tooltip:
-          'top-[calc(100%_+_10px)] translate-y-0 translate-x-1/2 right-1/2 after:border-[10px] after:border-solid after:border-transparent after:border-t-[0px] after:border-b-[10px] after:border-b-solid after:border-b-dark-low-400 after:left-1/2 after:bottom-full after:-translate-x-1/2',
+          'base-top-[calc(100%_+_10px)] base-translate-y-0 base-translate-x-1/2 base-right-1/2 after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-t-[0px] after:base-border-b-[10px] after:base-border-b-solid after:base-border-b-dark-low-400 after:base-left-1/2 after:base-bottom-full after:-base-translate-x-1/2',
       },
       'top-left': {
         tooltip:
-          'bottom-[calc(100%_+_10px)] right-[calc(50%_-_1.2rem)] after:border-[10px] after:border-solid after:border-transparent after:border-b-[0px] after:border-t-[10px] after:border-t-solid after:border-t-dark-low-400 after:right-0 after:top-full after:-translate-x-1/2',
+          'base-bottom-[calc(100%_+_10px)] base-right-[calc(50%_-_1.2rem)] after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-b-[0px] after:base-border-t-[10px] after:base-border-t-solid after:base-border-t-dark-low-400 after:base-right-0 after:base-top-full after:-base-translate-x-1/2',
       },
       'top-right': {
         tooltip:
-          'bottom-[calc(100%_+_10px)] left-[calc(50%_-_1.2rem)] after:border-[10px] after:border-solid after:border-transparent after:border-b-[0px] after:border-t-[10px] after:border-t-solid after:border-t-dark-low-400 after:top-full',
+          'base-bottom-[calc(100%_+_10px)] base-left-[calc(50%_-_1.2rem)] after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-b-[0px] after:base-border-t-[10px] after:base-border-t-solid after:base-border-t-dark-low-400 after:base-top-full',
       },
       'bottom-right': {
         tooltip:
-          'top-[calc(100%_+_10px)] left-[calc(50%_-_1rem)] after:border-[10px] after:border-solid after:border-transparent after:border-t-[0px] after:border-b-[10px] after:border-b-solid after:border-b-dark-low-400 after:bottom-full',
+          'base-top-[calc(100%_+_10px)] base-left-[calc(50%_-_1rem)] after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-t-[0px] after:base-border-b-[10px] after:base-border-b-solid after:base-border-b-dark-low-400 after:base-bottom-full',
       },
       'bottom-left': {
         tooltip:
-          'top-[calc(100%_+_10px)] right-[calc(50%_-_1.2rem)] after:border-[10px] after:border-solid after:border-transparent after:border-t-[0px] after:border-b-[10px] after:border-b-solid after:border-b-dark-low-400 after:bottom-full after:-translate-x-1/2 after:right-0',
+          'base-top-[calc(100%_+_10px)] base-right-[calc(50%_-_1.2rem)] after:base-border-[10px] after:base-border-solid after:base-border-transparent after:base-border-t-[0px] after:base-border-b-[10px] after:base-border-b-solid after:base-border-b-dark-low-400 after:base-bottom-full after:-base-translate-x-1/2 after:base-right-0',
       },
     },
     hover: {
-      true: { tooltip: 'opacity-[1] z-10' },
-      false: { tooltip: 'opacity-[0] -z-10' },
+      true: { tooltip: 'base-opacity-[1] base-z-10' },
+      false: { tooltip: 'base-opacity-[0] -base-z-10' },
     },
   },
   compoundSlots: [
     {
       slots: ['root'],
       position: 'bottom-left',
-      className: 'pb-nano',
+      className: 'base-pb-nano',
     },
     {
       slots: ['root'],
       position: 'bottom-right',
-      className: 'pb-nano',
+      className: 'base-pb-nano',
     },
     {
       slots: ['root'],
       position: 'bottom',
-      className: 'pb-nano',
+      className: 'base-pb-nano',
     },
     {
       slots: ['root'],
       position: 'left',
-      className: 'pl-nano',
+      className: 'base-pl-nano',
     },
     {
       slots: ['root'],
       position: 'right',
-      className: 'pr-nano',
+      className: 'base-pr-nano',
     },
     {
       slots: ['root'],
       position: 'top',
-      className: 'pt-nano',
+      className: 'base-pt-nano',
     },
     {
       slots: ['root'],
       position: 'top-left',
-      className: 'pt-nano',
+      className: 'base-pt-nano',
     },
     {
       slots: ['root'],
       position: 'top-right',
-      className: 'pt-nano',
+      className: 'base-pt-nano',
     },
   ],
 })
