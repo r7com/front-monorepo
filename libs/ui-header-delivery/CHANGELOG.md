@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.2.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.1.1...ui-header-delivery-2.2.0) (2023-11-17)
+
 ## [2.1.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.1.0...ui-header-delivery-2.1.1) (2023-11-14)
 
 # [2.1.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.0.0...ui-header-delivery-2.1.0) (2023-11-14)
