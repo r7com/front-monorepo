@@ -2,13 +2,13 @@ import { SubheadingVariants, variants } from './subheading.variants'
 
 export type SubheadingProps = {
   children?: React.ReactNode
-  hasHTML?: string
+  dangerHTML?: string
   as?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 } & SubheadingVariants
 
 export function Subheading({
   children,
-  hasHTML,
+  dangerHTML,
   as = 'h2',
   size = 'large',
   color = 'neutralLow',
@@ -18,9 +18,9 @@ export function Subheading({
   return (
     <DynamicTag
       className={variants({ size, color })}
-      dangerouslySetInnerHTML={hasHTML ? { __html: hasHTML } : undefined}
+      dangerouslySetInnerHTML={dangerHTML ? { __html: dangerHTML } : undefined}
     >
-      {!hasHTML ? children : undefined}
+      {!dangerHTML ? children : undefined}
     </DynamicTag>
   )
 }

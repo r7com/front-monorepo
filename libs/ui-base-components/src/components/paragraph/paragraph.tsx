@@ -2,13 +2,13 @@ import React from 'react'
 import { ParagraphVariants, variants } from './paragraph.variants'
 export type ParagraphProps<C extends React.ElementType> = {
   children?: React.ReactNode
-  hasHTML?: string
+  dangerHTML?: string
   as?: C
 } & ParagraphVariants
 
 export function Paragraph<C extends React.ElementType = 'p'>({
   children,
-  hasHTML,
+  dangerHTML,
   as,
   fontWeight = 'normal',
   color = 'neutralLow',
@@ -20,9 +20,9 @@ export function Paragraph<C extends React.ElementType = 'p'>({
   return (
     <DynamicTag
       className={variants({ fontSize, fontWeight, fontFamily, color })}
-      dangerouslySetInnerHTML={hasHTML ? { __html: hasHTML } : undefined}
+      dangerouslySetInnerHTML={dangerHTML ? { __html: dangerHTML } : undefined}
     >
-      {!hasHTML ? children : undefined}
+      {!dangerHTML ? children : undefined}
     </DynamicTag>
   )
 }
