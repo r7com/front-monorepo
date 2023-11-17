@@ -6,7 +6,7 @@ import { ArticleProvider } from '../../utils/provider/article-provider'
 describe('AccessibilityBar', () => {
   beforeEach(() =>
     cy.mount(
-      <div className="my-0 mx-auto w-[900px]">
+      <div className="article-my-0 article-mx-auto article-w-[900px]">
         <ArticleProvider>
           <AccessibilityBar>
             {/* AUDIMA */}
@@ -17,7 +17,7 @@ describe('AccessibilityBar', () => {
               width="100%"
               height="50"
               src="https://audio.audima.co/iframe-later-thin-audima.html?skin=thin&amp;statistic=true"
-              className="checked aud-message-received w-full -ml-nano md:-ml-auto mb-xxxs md:mb-0"
+              className="article-checked article-aud-message-received article-w-full -article-ml-nano md:-article-ml-auto article-mb-xxxs md:article-mb-0"
             ></iframe>
 
             <AccessibilityBar.List>

@@ -1,11 +1,11 @@
 import { VariantProps, createVariants } from '@r7/tools'
 
 export const variants = createVariants({
-  base: 'flex justify-center items-center w-sm sm:w-xs h-sm sm:h-xs border-hairline',
+  base: 'article-flex article-justify-center article-items-center article-w-sm sm:article-w-xs article-h-sm sm:article-h-xs article-border-hairline',
   variants: {
     shape: {
-      circle: 'bg-neutral-low-400 rounded-circular',
-      square: 'border-dark-high-500 rounded-md',
+      circle: 'article-bg-neutral-low-400 article-rounded-circular',
+      square: 'article-border-dark-high-500 article-rounded-md',
     },
   },
 })

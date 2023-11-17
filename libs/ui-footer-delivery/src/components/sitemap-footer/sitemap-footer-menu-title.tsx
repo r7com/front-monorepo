@@ -3,5 +3,9 @@ type SitemapFooterMenuTitleProps = {
 }
 
 export function SitemapFooterMenuTitle({ children }: SitemapFooterMenuTitleProps) {
-  return <h5 className="mb-xxxs uppercase text-sm font-light text-[var(--color)]">{children}</h5>
+  return (
+    <h5 className="footer-mb-xxxs footer-uppercase footer-text-sm footer-font-light footer-text-[var(--color)]">
+      {children}
+    </h5>
+  )
 }

@@ -1,3 +1,4 @@
+import '@r7/ui-footer-delivery/css'
 import { SITEMAP_DATA } from '../mocks/sitemap'
 import { SitemapFooter } from '@r7/ui-footer-delivery'
 

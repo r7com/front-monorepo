@@ -38,6 +38,7 @@
         "watch": true,
         "browser": "chrome"
       },
+      "dependsOn": ["^build"],
       "configurations": {
         "ci": {
           "watch": false,
@@ -45,12 +46,6 @@
             "pluginVisualRegressionUpdateImages": true
           }
         }
-      }
-    },
-    "build-css": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "tailwindcss -c libs/ui-section-menu/tailwind.config.js --minify -i libs/ui-section-menu/src/style.css -o dist/libs/ui-section-menu/style.css"
       }
     },
     "version": {

@@ -4,7 +4,7 @@ export type InstitucionalEditorialProps = {
 
 export function InstitutionalEditorial({ editorialName }: InstitucionalEditorialProps) {
   return (
-    <p className="ml-nano uppercase font-bold text-sm">
+    <p className="footer-ml-nano footer-uppercase footer-font-bold footer-text-sm">
       {editorialName.toLowerCase() === 'r7' ? '.com' : editorialName}
     </p>
   )

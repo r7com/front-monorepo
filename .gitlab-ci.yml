@@ -101,7 +101,6 @@ deploy ui-form-components:
   extends: .distributed
   script:
     - yarn nx build ui-form-components
-    - yarn nx build-css ui-form-components
     - cd ./dist/libs/ui-form-components
     - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
@@ -115,7 +114,6 @@ deploy ui-base-components:
   extends: .distributed
   script:
     - yarn nx build ui-base-components
-    - yarn nx build-css ui-base-components
     - cd ./dist/libs/ui-base-components
     - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
@@ -129,7 +127,6 @@ deploy ui-card:
   extends: .distributed
   script:
     - yarn nx build ui-card
-    - yarn nx build-css ui-card
     - cd ./dist/libs/ui-card
     - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
@@ -143,7 +140,6 @@ deploy ui-footer-delivery:
   extends: .distributed
   script:
     - yarn nx build ui-footer-delivery
-    - yarn nx build-css ui-footer-delivery
     - cd ./dist/libs/ui-footer-delivery
     - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
@@ -157,7 +153,6 @@ deploy ui-header-delivery:
   extends: .distributed
   script:
     - yarn nx build ui-header-delivery
-    - yarn nx build-css ui-header-delivery
     - cd ./dist/libs/ui-header-delivery
     - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
@@ -171,7 +166,6 @@ deploy ui-hotsite-delivery:
   extends: .distributed
   script:
     - yarn nx build ui-hotsite-delivery
-    - yarn nx build-css ui-hotsite-delivery
     - cd ./dist/libs/ui-hotsite-delivery
     - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
@@ -185,7 +179,6 @@ deploy ui-voting-components:
   extends: .distributed
   script:
     - yarn nx build ui-voting-components
-    - yarn nx build-css ui-voting-components
     - cd ./dist/libs/ui-voting-components
     - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
@@ -199,7 +192,6 @@ deploy ui-section-menu:
   extends: .distributed
   script:
     - yarn nx build ui-section-menu
-    - yarn nx build-css ui-section-menu
     - cd ./dist/libs/ui-section-menu
     - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
@@ -213,7 +205,6 @@ deploy ui-section-heading:
   extends: .distributed
   script:
     - yarn nx build ui-section-heading
-    - yarn nx build-css ui-section-heading
     - cd ./dist/libs/ui-section-heading
     - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
@@ -227,7 +218,6 @@ deploy ui-section-foot:
   extends: .distributed
   script:
     - yarn nx build ui-section-foot
-    - yarn nx build-css ui-section-foot
     - cd ./dist/libs/ui-section-foot
     - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc

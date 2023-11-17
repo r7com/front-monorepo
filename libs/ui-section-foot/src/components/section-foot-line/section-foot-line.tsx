@@ -1,3 +1,5 @@
 export function SectionFootLine() {
-  return <hr className="w-full h-[1px] border-[var(--bg)] pb-0 absolute md:relative" />
+  return (
+    <hr className="sfoot-w-full sfoot-h-[1px] sfoot-border-[var(--bg)] sfoot-pb-0 sfoot-absolute md:sfoot-relative" />
+  )
 }

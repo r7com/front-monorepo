@@ -6,7 +6,7 @@ export function SectionHeadingTitle({ children, ...rest }: SectionHeadingTitlePr
   return (
     <span
       role="presentation"
-      className={`text-xl md:text-xxl font-light break-keep whitespace-nowrap text-[var(--color)]`}
+      className="sheading-text-xl md:sheading-text-xxl sheading-font-light sheading-break-keep sheading-whitespace-nowrap sheading-text-[var(--color)]"
       {...rest}
     >
       {children}

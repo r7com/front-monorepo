@@ -15,12 +15,14 @@ type Story = StoryObj
 export const Default: Story = {
   render: () => (
     <ArticleProvider>
-      <div className="flex">
+      <div className="article-flex">
         <FontSizeControl.Increase />
         <FontSizeControl.Decrease />
       </div>
 
-      <article className="text-[calc(theme(fontSize.xxxs)_*_var(--font-size))]">storybook</article>
+      <article className="article-text-[calc(theme(fontSize.xxxs)_*_var(--font-size))]">
+        storybook
+      </article>
     </ArticleProvider>
   ),
 

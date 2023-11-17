@@ -34,12 +34,6 @@
         }
       }
     },
-    "build-css": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "tailwindcss -c libs/ui-card/tailwind.config.js --minify  -i libs/ui-card/src/style.css -o dist/libs/ui-card/style.css"
-      }
-    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
@@ -70,6 +64,7 @@
         "watch": true,
         "browser": "chrome"
       },
+      "dependsOn": ["^build"],
       "configurations": {
         "ci": {
           "watch": false,

@@ -6,7 +6,7 @@ export type AccessibilityBarListProps = {
 
 export function AccessibilityBarList({ children }: AccessibilityBarListProps) {
   return (
-    <ul aria-label="Barra de acessibilidade" className="flex">
+    <ul aria-label="Barra de acessibilidade" className="article-flex">
       {children}
     </ul>
   )

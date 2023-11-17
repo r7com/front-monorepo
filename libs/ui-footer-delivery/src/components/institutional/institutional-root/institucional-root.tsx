@@ -6,7 +6,7 @@ export type InstitutionalRootProps = {
 export function InstitutionalRoot({ bgColor, children }: InstitutionalRootProps) {
   return (
     <section
-      className="bg-editorial-color pt-xs lg:pt-sm lg:px-huge lg:pb-xs pb-xxxs"
+      className="footer-bg-editorial-color footer-pt-xs lg:footer-pt-sm lg:footer-px-huge lg:footer-pb-xs footer-pb-xxxs"
       style={{ backgroundColor: bgColor || undefined }}
       aria-label="Links para sites institucionais"
     >

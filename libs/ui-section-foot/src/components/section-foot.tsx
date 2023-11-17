@@ -9,7 +9,7 @@ export type SectionFootProps = {
 export function SectionFoot({ children, bg = '#556373' }: SectionFootProps) {
   return (
     <div
-      className="flex flex-nowrap justify-center items-center gap-nano py-xxxs relative"
+      className="sfoot-flex sfoot-flex-nowrap sfoot-justify-center sfoot-items-center sfoot-gap-nano sfoot-py-xxxs sfoot-relative"
       style={{ '--bg': bg } as React.CSSProperties}
     >
       {children}

@@ -3,19 +3,23 @@ import { createVariants } from '@r7/tools'
 export const variants = createVariants({
   slots: {
     buttonSlot:
-      'flex items-center h-full gap-[1px] text-neutral-high-400 absolute left-xxxs sm:static',
-    iconSlot: 'flex flex-col w-xxxs h-xxxs mr-nano justify-around',
-    firstLineSlot: 'bg-neutral-high-400 w-full h-[2px] rounded-sm transition-all',
-    secondLineSlot: 'bg-neutral-high-400 w-full h-[2px] rounded-sm transition-all',
-    thirdLineSlot: 'bg-neutral-high-400 w-full h-[2px] rounded-sm transition-all',
+      'header-flex header-items-center header-h-full header-gap-[1px] header-text-neutral-high-400 header-absolute header-left-xxxs sm:header-static',
+    iconSlot:
+      'header-flex header-flex-col header-w-xxxs header-h-xxxs header-mr-nano header-justify-around',
+    firstLineSlot:
+      'header-bg-neutral-high-400 header-w-full header-h-[2px] header-rounded-sm header-transition-all',
+    secondLineSlot:
+      'header-bg-neutral-high-400 header-w-full header-h-[2px] header-rounded-sm header-transition-all',
+    thirdLineSlot:
+      'header-bg-neutral-high-400 header-w-full header-h-[2px] header-rounded-sm header-transition-all',
   },
   variants: {
     isSidebarOpen: {
       true: {
-        iconSlot: 'justify-center relative',
-        firstLineSlot: 'absolute rotate-45',
-        secondLineSlot: 'bg-transparent',
-        thirdLineSlot: 'absolute -rotate-45',
+        iconSlot: 'header-justify-center header-relative',
+        firstLineSlot: 'header-absolute header-rotate-45',
+        secondLineSlot: 'header-bg-transparent',
+        thirdLineSlot: 'header-absolute -header-rotate-45',
       },
     },
   },

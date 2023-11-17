@@ -16,7 +16,7 @@ type Story = StoryObj<SectionMenuProps>
 
 export const Primary: Story = {
   render: args => (
-    <div className="h-[400px]">
+    <div className="smenu-h-[400px]">
       <SectionMenu {...args}>
         <SectionMenu.List>
           {menuData.items.map(item => (

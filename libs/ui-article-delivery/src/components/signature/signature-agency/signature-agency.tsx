@@ -10,7 +10,7 @@ export function SignatureAgency({ name, url, imageUrl }: SignatureAgencyProps) {
       <img
         src={imageUrl}
         alt={name}
-        className="rounded-md mr-nano block dark:grayscale"
+        className="article-rounded-md article-mr-nano article-block dark:article-grayscale"
         title={name}
         width={37}
         height={37}

@@ -7,7 +7,7 @@ export function MenuLink({ children, openInNewTab = false, ...rest }: MenuLinkPr
     <a
       target={openInNewTab ? '_blank' : undefined}
       rel={openInNewTab ? 'noreferrer' : undefined}
-      className="uppercase hover:text-[var(--section-color)] transition-colors"
+      className="smenu-uppercase hover:smenu-text-[var(--section-color)] smenu-transition-colors"
       {...rest}
     >
       {children}

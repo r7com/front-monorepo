@@ -27,7 +27,11 @@ export function ContrastControl() {
 
   return (
     <button onClick={handleToggleContrast} title="Alto contraste" className={variants()}>
-      <SvgIcon iconName="contrast" title="Alto contraste" className="dark:fill-neutral-high-400" />
+      <SvgIcon
+        iconName="contrast"
+        title="Alto contraste"
+        className="dark:article-fill-neutral-high-400"
+      />
     </button>
   )
 }

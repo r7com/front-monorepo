@@ -1,3 +1,4 @@
+export * from './styles/style'
 export * from './components/button'
 export * from './components/chips'
 export * from './components/icon-button'
