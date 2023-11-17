@@ -10,7 +10,7 @@ export function MenuItem({ children }: MenuItemProps) {
   return (
     <li
       onMouseLeave={submenu.hide}
-      className="h-lg flex items-center transition-colors relative font-medium whitespace-nowrap text-light-low-400 text-xxs border-b-thin border-transparent hover:border-[var(--section-color)]"
+      className="smenu-h-lg smenu-flex smenu-items-center smenu-transition-colors smenu-relative smenu-font-medium smenu-whitespace-nowrap smenu-text-light-low-400 smenu-text-xxs smenu-border-b-thin smenu-border-transparent hover:smenu-border-[var(--section-color)]"
     >
       {children}
     </li>

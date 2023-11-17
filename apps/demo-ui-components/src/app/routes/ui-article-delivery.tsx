@@ -1,3 +1,4 @@
+import '@r7/ui-article-delivery/css'
 import {
   FontSizeControl,
   Audima,

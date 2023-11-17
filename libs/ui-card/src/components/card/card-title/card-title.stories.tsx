@@ -16,7 +16,7 @@ type Story = StoryObj<CardTitleProps>
 export const Primary: Story = {
   render: ({ ...args }) => (
     <Card
-      className="flex"
+      className="card-flex"
       newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
       newsUrl="https://www.google.com"
     >

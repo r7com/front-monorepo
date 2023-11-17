@@ -23,23 +23,23 @@ describe(Card.Label.name, () => {
 
   it('should render all other "type" variants', () => {
     cy.mount(
-      <div className="flex flex-col items-end">
-        <div className="w-[150px] h-[50px] relative">
+      <div className="card-flex card-flex-col card-items-end">
+        <div className="card-w-[150px] card-h-[50px] card-relative">
           <Card.Label type="aclr" />
         </div>
-        <div className="w-[150px] h-[50px] relative">
+        <div className="card-w-[150px] card-h-[50px] card-relative">
           <Card.Label type="blog" />
         </div>
-        <div className="w-[150px] h-[50px] relative">
+        <div className="card-w-[150px] card-h-[50px] card-relative">
           <Card.Label type="live" />
         </div>
-        <div className="w-[150px] h-[50px] relative">
+        <div className="card-w-[150px] card-h-[50px] card-relative">
           <Card.Label type="podcast" />
         </div>
-        <div className="w-[150px] h-[50px] relative">
+        <div className="card-w-[150px] card-h-[50px] card-relative">
           <Card.Label type="studio" />
         </div>
-        <div className="w-[150px] h-[50px] relative">
+        <div className="card-w-[150px] card-h-[50px] card-relative">
           <Card.Label type="voting" />
         </div>
       </div>,

@@ -34,12 +34,6 @@
         }
       }
     },
-    "build-css": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "tailwindcss -c libs/ui-voting-components/tailwind.config.js --minify  -i libs/ui-voting-components/src/style.css -o dist/libs/ui-voting-components/style.css"
-      }
-    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {

@@ -18,10 +18,15 @@ export function SidebarButton({ children, id }: SidebarButtonProps) {
       onClick={activeSubmenu}
       aria-expanded={id === submenu.currentActive}
       tabIndex={submenu.currentActive ? -1 : undefined}
-      className="bg-none flex justify-between items-center w-full text-neutral-low-500 uppercase"
+      className="header-bg-none header-flex header-justify-between header-items-center header-w-full header-text-neutral-low-500 header-uppercase"
     >
       {children}
-      <SvgIcon iconName="chevron-right" className="fill-neutral-high-600" width={13} height={13} />
+      <SvgIcon
+        iconName="chevron-right"
+        className="header-fill-neutral-high-600"
+        width={13}
+        height={13}
+      />
     </button>
   )
 }

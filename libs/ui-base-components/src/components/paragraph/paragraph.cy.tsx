@@ -58,7 +58,7 @@ describe(Paragraph.name, () => {
     cy.mount(
       <>
         <Paragraph color="neutralLow">{text}</Paragraph>
-        <div className="bg-neutral-low-600">
+        <div className="base-bg-neutral-low-600">
           <Paragraph color="neutralHigh">{text}</Paragraph>
         </div>
       </>,

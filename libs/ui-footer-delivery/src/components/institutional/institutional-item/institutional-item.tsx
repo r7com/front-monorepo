@@ -3,5 +3,5 @@ type InstitutionalItemProps = {
 }
 
 export function InstitutionalItem({ children }: InstitutionalItemProps) {
-  return <li className="mr-xxxs last:mr-0">{children}</li>
+  return <li className="footer-mr-xxxs last:footer-mr-0">{children}</li>
 }
