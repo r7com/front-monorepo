@@ -3,19 +3,21 @@ import { createVariants } from '@r7/tools'
 export const variants = createVariants({
   slots: {
     sidebarSlot:
-      'w-[280px] fixed inset-0 top-lg flex z-20 overflow-x-hidden transition-all duration-200',
-    sidebarListSlot: 'bg-neutral-high-400 w-full p-xxs overflow-x-hidden',
-    backdropButtonSlot: 'fixed w-full h-screen inset-0 transition-all top-lg',
+      'header-w-[280px] header-fixed header-inset-0 header-flex header-z-20 header-overflow-x-hidden header-transition-all header-duration-200',
+    sidebarListSlot:
+      'header-bg-neutral-high-400 header-w-full header-p-xxs header-overflow-x-hidden',
+    backdropButtonSlot:
+      'header-fixed header-w-full header-h-screen header-inset-0 header-transition-all',
   },
   variants: {
     isSidebarOpen: {
       true: {
-        sidebarSlot: 'translate-x-0 visible',
-        backdropButtonSlot: 'backdrop-brightness-50 visible',
+        sidebarSlot: 'header-translate-x-0 header-visible',
+        backdropButtonSlot: 'header-backdrop-brightness-50 header-visible',
       },
       false: {
-        sidebarSlot: '-translate-x-full invisible',
-        backdropButtonSlot: 'invisible',
+        sidebarSlot: '-header-translate-x-full header-invisible',
+        backdropButtonSlot: 'header-invisible',
       },
     },
   },

@@ -1,32 +1,93 @@
-import { Route, Routes, Link } from 'react-router-dom'
+import '@r7/ui-header-delivery/css'
+import '@r7/ui-base-components/css'
+import { Route, Routes } from 'react-router-dom'
 import { UiFooterDelivery, UiSectionMenu, UiArticleDelivery } from './routes'
+import { MENU_DATA } from './mocks/MENU_DATA'
+import { SIDEBAR_DATA } from './mocks/SIDEBAR_DATA'
 import { ArticleProvider } from '@r7/ui-article-delivery'
+import { Header, Menu, Sidebar } from '@r7/ui-header-delivery'
 
 export function App() {
   return (
     <ArticleProvider>
-      {/* START: routes */}
-      {/* These routes and navigation have been generated for you */}
-      {/* Feel free to move and update them to fit your needs */}
+      <Header>
+        <Header.MainSection>
+          <Header.Logo
+            link="https://www.r7.com"
+            logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1698842893138.svg"
+            alt="Portal R7"
+          />
+
+          <Sidebar.Toggle>menu</Sidebar.Toggle>
+          <Sidebar>
+            <Sidebar.Search />
+            {SIDEBAR_DATA.map(({ category, data, id }) => {
+              return (
+                <Sidebar.Category key={id} title={category}>
+                  <Sidebar.List label={category}>
+                    {data.map(({ id, text, submenu, title, url }) => {
+                      return (
+                        <Sidebar.Item key={id}>
+                          {submenu?.length ? (
+                            <>
+                              <Sidebar.Button id={id}>{text}</Sidebar.Button>
+                              <Sidebar.Submenu id={id}>
+                                <Sidebar.List label={text}>
+                                  {submenu.map(({ id, text, title, url }) => {
+                                    return (
+                                      <Sidebar.Item key={id}>
+                                        <Sidebar.Link title={title} href={url}>
+                                          {text}
+                                        </Sidebar.Link>
+                                      </Sidebar.Item>
+                                    )
+                                  })}
+                                </Sidebar.List>
+                              </Sidebar.Submenu>
+                            </>
+                          ) : (
+                            <Sidebar.Link title={title} href={url}>
+                              {text}
+                            </Sidebar.Link>
+                          )}
+                        </Sidebar.Item>
+                      )
+                    })}
+                  </Sidebar.List>
+                </Sidebar.Category>
+              )
+            })}
+          </Sidebar>
+
+          <Menu>
+            <Menu.List>
+              {MENU_DATA.map(({ id, text, title, url }) => {
+                return (
+                  <Menu.Item key={id}>
+                    <Menu.Link href={url} title={title}>
+                      {text}
+                    </Menu.Link>
+                  </Menu.Item>
+                )
+              })}
+            </Menu.List>
+          </Menu>
+          <Header.SocialList>
+            <Header.SocialItem
+              socialName="facebook"
+              socialUrl="https://www.facebook.com/portalr7"
+            />
+            <Header.SocialItem socialName="twitter" socialUrl="https://twitter.com/portalr7" />
+            <Header.SocialItem socialName="instagram" socialUrl="https://instagram.com/portalr7" />
+          </Header.SocialList>
+          <Header.SearchToggle />
+          <Header.Search />
+        </Header.MainSection>
+      </Header>
       <br />
       <hr />
       <br />
-      <div role="navigation" className="mb-lg">
-        <ul className="list-disc list-inside">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/ui-footer-delivery">Footer Delivery</Link>
-          </li>
-          <li>
-            <Link to="/ui-article-delivery">Ui Article Delivery</Link>
-          </li>
-          <li>
-            <Link to="/ui-section-menu">Section Menu</Link>
-          </li>
-        </ul>
-      </div>
+
       <Routes>
         <Route path="/" />
         <Route path="/ui-footer-delivery" element={<UiFooterDelivery />} />

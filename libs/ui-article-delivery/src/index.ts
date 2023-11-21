@@ -1,3 +1,4 @@
+export * from './styles/style'
 export * from './components/signature'
 export * from './components/accessibility-bar'
 export * from './components/font-size-control'

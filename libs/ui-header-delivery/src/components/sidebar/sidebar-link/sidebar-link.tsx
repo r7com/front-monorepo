@@ -7,7 +7,7 @@ export function SidebarLink({ children, openInNewTab = false, ...rest }: Sidebar
     <a
       target={openInNewTab ? '_blank' : undefined}
       rel={openInNewTab ? 'noreferrer' : undefined}
-      className="w-full flex hover:underline"
+      className="header-w-full header-flex hover:header-underline"
       {...rest}
     >
       {children}

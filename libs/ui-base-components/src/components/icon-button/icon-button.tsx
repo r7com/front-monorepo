@@ -5,7 +5,7 @@ export type IconButtonProps = {
 
 export function IconButton({ className = '', children, ...rest }: IconButtonProps) {
   return (
-    <button type="button" className={`flex ${className}`.trim()} {...rest}>
+    <button type="button" className={`base-flex ${className}`.trim()} {...rest}>
       {children}
     </button>
   )

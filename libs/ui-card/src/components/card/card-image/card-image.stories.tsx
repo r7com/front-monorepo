@@ -23,7 +23,7 @@ export const Primary: Story = {
         <img
           src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?resize=536x326&crop=691x420 80 0&dimensions=536x326"
           alt="Human hand writting in a paper"
-          className="w-full object-cover h-full"
+          className="card-w-full card-object-cover card-h-full"
         />
       </Card.Image>
     </Card>
@@ -82,7 +82,7 @@ export const WithLabel: Story = {
         <img
           src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?resize=536x326&crop=691x420 80 0&dimensions=536x326"
           alt="Human hand writting in a paper"
-          className="w-full object-cover h-full"
+          className="card-w-full card-object-cover card-h-full"
         />
         <Card.Label type="live" />
       </Card.Image>

@@ -22,7 +22,7 @@ describe(Card.Title.name, () => {
 
   it('should render all "color" variants', () => {
     cy.mount(
-      <body className="bg-brand-primary-500">
+      <body className="card-bg-brand-primary-500">
         <Card.Title color="high">I am a title 1</Card.Title>
         <Card.Title color="low">I am a title 2</Card.Title>
       </body>,

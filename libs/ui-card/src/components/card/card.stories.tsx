@@ -47,7 +47,7 @@ export const Primary: Story = {
 export const ImageToTheSides: Story = {
   render: ({ ...args }) => (
     <Card {...args}>
-      <Card.Image className="mr-xxxs">
+      <Card.Image className="card-mr-xxxs">
         <img
           src="//img.r7.com/images/concurso-publico-14032022123440824?dimensions=128x128"
           alt="Human hand writting in a paper"
@@ -83,11 +83,11 @@ export const ImageToTheSides: Story = {
 export const ImageAbove: Story = {
   render: ({ ...args }) => (
     <Card {...args}>
-      <Card.Image className="mb-xxxs" format="landscape">
+      <Card.Image className="card-mb-xxxs" format="landscape">
         <img
           src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?resize=536x326&crop=691x420 80 0&dimensions=536x326"
           alt="Human hand writting in a paper"
-          className="w-full"
+          className="card-w-full"
         />
         <Card.Label type="live" />
       </Card.Image>
@@ -125,11 +125,11 @@ export const TitleOverImage: Story = {
         <img
           src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?resize=536x326&crop=691x420 80 0&dimensions=536x326"
           alt="cat"
-          className="w-full"
+          className="card-w-full"
         />
         <Card.Label type="live" />
       </Card.Image>
-      <div className="absolute bottom-0 p-xxxs">
+      <div className="card-absolute card-bottom-0 card-p-xxxs">
         <Card.HatWrapper>
           <Card.HatImage
             imageSource="//img.r7.com/images/concurso-publico-14032022123440824?dimensions=128x128"

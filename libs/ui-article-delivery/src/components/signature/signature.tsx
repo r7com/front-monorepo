@@ -9,7 +9,7 @@ export type SignatureProps = {
 }
 
 export function Signature({ children }: SignatureProps) {
-  return <div className="flex items-center">{children}</div>
+  return <div className="article-flex article-items-center">{children}</div>
 }
 
 Signature.Agency = SignatureAgency

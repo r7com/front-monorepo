@@ -11,7 +11,7 @@ export function InstitutionalLink({
   return (
     <a
       target={openInNewtab ? '_blank' : undefined}
-      className="text-light-high-400 uppercase text-little hover:underline"
+      className="footer-text-light-high-400 footer-uppercase footer-text-little hover:footer-underline"
       rel={openInNewtab ? 'noreferrer' : undefined}
       {...rest}
     >

@@ -2,22 +2,22 @@ import { createVariants, VariantProps } from '@r7/tools'
 
 export const variants = createVariants({
   slots: {
-    icon: 'mr-quark fill-brand-primary-500 inline',
-    text: 'text-neutral-low-500 font-light w-auto',
+    icon: 'base-mr-quark base-fill-brand-primary-500 base-inline',
+    text: 'base-text-neutral-low-500 base-font-light base-w-auto',
   },
   variants: {
     size: {
       large: {
-        text: 'text-xxs md:text-sm',
-        icon: 'w-[12px] md:w-[14px] h-[12px] md:h-[14px]',
+        text: 'base-text-xxs md:base-text-sm',
+        icon: 'base-w-[12px] md:base-w-[14px] base-h-[12px] md:base-h-[14px]',
       },
       medium: {
-        text: 'text-xxxs md:text-xxs',
-        icon: 'w-[10px] md:w-[12px] h-[10px] md:h-[12px]',
+        text: 'base-text-xxxs md:base-text-xxs',
+        icon: 'base-w-[10px] md:base-w-[12px] base-h-[10px] md:base-h-[12px]',
       },
       small: {
-        text: 'text-little md:text-xxxs',
-        icon: 'w-nano md:w-[10px] h-nano md:h-[10px]',
+        text: 'base-text-little md:base-text-xxxs',
+        icon: 'base-w-nano md:base-w-[10px] base-h-nano md:base-h-[10px]',
       },
     },
   },

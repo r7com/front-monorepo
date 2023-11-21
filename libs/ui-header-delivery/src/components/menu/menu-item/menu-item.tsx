@@ -4,7 +4,7 @@ export type MenuItemProps = {
 
 export function MenuItem({ children }: MenuItemProps) {
   return (
-    <li className="relative h-lg inline-flex mr-xxxs uppercase cursor-pointer items-center text-neutral-high-500 hover:text-neutral-high-400">
+    <li className="header-relative header-h-lg header-inline-flex header-mr-xxxs header-uppercase header-cursor-pointer header-items-center header-text-neutral-high-500 hover:header-text-neutral-high-400">
       {children}
     </li>
   )

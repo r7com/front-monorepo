@@ -21,8 +21,12 @@ export function CardLabel({
     return (
       <a href={sponsoredByUrl} title={sponsoredByTitle}>
         <span className={labelStyle()}>
-          <span className="mr-nano">Oferecido por</span>
-          <img className="w-xxs h-auto" src={sponsoredByImage} alt={sponsoredByImageDesc} />
+          <span className="card-mr-nano">Oferecido por</span>
+          <img
+            className="card-w-xxs card-h-auto"
+            src={sponsoredByImage}
+            alt={sponsoredByImageDesc}
+          />
         </span>
       </a>
     )

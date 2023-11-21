@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { SvgIcon } from '@r7/ui-base-components'
 import { Header, Menu, Sidebar } from '../'
 
 import { MENU_DATA } from '../mocks/MENU_DATA'
@@ -18,12 +17,13 @@ type Story = StoryObj<typeof Header>
 
 export const Primary: Story = {
   render: () => (
-    <div className="h-screen">
+    <div className="header-h-screen">
       <Header>
         <Header.MainSection>
           <Header.Logo
             link="https://www.r7.com"
-            image={<SvgIcon iconName="logo-R7" color="primary" width={40} height={40} />}
+            logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1698842893138.svg"
+            alt="Logo R7"
           />
           <Sidebar.Toggle>menu</Sidebar.Toggle>
           <Sidebar>

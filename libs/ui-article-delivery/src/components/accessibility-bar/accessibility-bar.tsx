@@ -8,7 +8,9 @@ export type AccessibilityBarProps = {
 
 export function AccessibilityBar({ children }: AccessibilityBarProps) {
   return (
-    <div className="flex flex-col md:flex-row md:items-center md:justify-between">{children}</div>
+    <div className="article-flex article-flex-col md:article-flex-row md:article-items-center md:article-justify-between">
+      {children}
+    </div>
   )
 }
 

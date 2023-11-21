@@ -4,37 +4,37 @@ export const variants = createVariants({
   slots: {
     iconStyle: '',
     labelStyle:
-      'absolute flex items-center right-0 top-0 px-nano py-quark bg-neutral-high-400 font-open-sans rounded-bl-md',
+      'card-absolute card-flex card-items-center card-right-0 card-top-0 card-px-nano card-py-quark card-bg-neutral-high-400 card-font-open-sans card-rounded-bl-md',
   },
   variants: {
     type: {
       live: {
         labelStyle:
-          'before:w-nano before:h-nano before:inline-block before:bg-feedback-warning-500 before:rounded-circular before:mr-nano after:font-open-sans after:text-little after:font-normal after:text-light-low-600 after:content-["AO_VIVO"]',
+          'before:card-w-nano before:card-h-nano before:card-inline-block before:card-bg-feedback-warning-500 before:card-rounded-circular before:card-mr-nano after:card-font-open-sans after:card-text-little after:card-font-normal after:card-text-light-low-600 after:card-content-["AO_VIVO"]',
       },
       blog: {
-        iconStyle: 'mr-quark',
+        iconStyle: 'card-mr-quark',
         labelStyle:
-          'after:font-open-sans after:text-little after:font-normal after:text-light-low-600 after:content-["BLOG"]',
+          'after:card-font-open-sans after:card-text-little after:card-font-normal after:card-text-light-low-600 after:card-content-["BLOG"]',
       },
       studio: {
-        iconStyle: 'w-[60px]',
+        iconStyle: 'card-w-[60px]',
       },
       'sponsored-by': {
-        labelStyle: 'text-little text-neutral-low-500',
+        labelStyle: 'card-text-little card-text-neutral-low-500',
       },
       voting: {
-        iconStyle: 'mr-quark',
+        iconStyle: 'card-mr-quark',
         labelStyle:
-          'after:font-open-sans after:text-little after:font-normal after:text-light-low-600 after:content-["VOTAÇÃO"]',
+          'after:card-font-open-sans after:card-text-little after:card-font-normal after:card-text-light-low-600 after:card-content-["VOTAÇÃO"]',
       },
       podcast: {
-        iconStyle: 'mr-quark',
+        iconStyle: 'card-mr-quark',
         labelStyle:
-          'after:font-open-sans after:text-little after:font-normal after:text-light-low-600 after:content-["PODCAST"]',
+          'after:card-font-open-sans after:card-text-little after:card-font-normal after:card-text-light-low-600 after:card-content-["PODCAST"]',
       },
       aclr: {
-        iconStyle: 'w-[40px]',
+        iconStyle: 'card-w-[40px]',
       },
     },
   },

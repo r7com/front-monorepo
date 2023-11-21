@@ -4,7 +4,7 @@ type InstitutionalCopyrightProps = {
 
 export function InstitutionalCopyright({ children }: InstitutionalCopyrightProps) {
   return (
-    <p className="text-light-high-400 text-little text-center lg:text-left mt-xxxs lg:mt-auto">
+    <p className="footer-text-light-high-400 footer-text-little footer-text-center lg:footer-text-left footer-mt-xxxs lg:footer-mt-auto">
       {children}
     </p>
   )

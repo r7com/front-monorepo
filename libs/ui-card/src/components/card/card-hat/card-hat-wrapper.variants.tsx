@@ -1,10 +1,11 @@
 import { VariantProps, createVariants } from '@r7/tools'
 
 export const variants = createVariants({
-  base: 'flex items-center mb-nano',
+  base: 'card-flex card-items-center card-mb-nano',
   variants: {
     type: {
-      warning: 'bg-feedback-warning-400 rounded-md overflow-hidden p-nano inline-flex',
+      warning:
+        'card-bg-feedback-warning-400 card-rounded-md card-overflow-hidden card-p-nano card-inline-flex',
     },
   },
 })
