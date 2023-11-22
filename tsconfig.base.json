@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@r7/cypress": ["cypress-global-configs/index.ts"],
+      "@r7/exi": ["libs/exi/src/index.ts"],
+      "@r7/exit": ["libs/exit/src/index.ts"],
+      "@r7/exite": ["libs/exite/src/index.ts"],
       "@r7/tools": ["tools/src/index.ts"],
       "@r7/ui-article-delivery": ["libs/ui-article-delivery/src/index.ts"],
       "@r7/ui-article-delivery/css": ["dist/libs/ui-article-delivery/style.css"],
@@ -29,6 +32,7 @@
       "@r7/ui-form-components/css": ["dist/libs/ui-form-components/style.css"],
       "@r7/ui-header-delivery": ["libs/ui-header-delivery/src/index.ts"],
       "@r7/ui-header-delivery/css": ["dist/libs/ui-header-delivery/style.css"],
+      "@r7/ui-my-lib": ["libs/ui-my-lib/src/index.ts"],
       "@r7/ui-section-foot": ["libs/ui-section-foot/src/index.ts"],
       "@r7/ui-section-foot/css": ["dist/libs/ui-section-foot/style.css"],
       "@r7/ui-section-heading": ["libs/ui-section-heading/src/index.ts"],

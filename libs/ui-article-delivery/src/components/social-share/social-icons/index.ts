@@ -1,6 +1,0 @@
-export * from './facebook'
-export * from './google-news'
-export * from './linkedin'
-export * from './share'
-export * from './twitter'
-export * from './whatsapp'
