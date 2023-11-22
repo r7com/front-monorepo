@@ -22,7 +22,7 @@ export function Paragraph<C extends React.ElementType = 'p'>({
       className={variants({ fontSize, fontWeight, fontFamily, color })}
       dangerouslySetInnerHTML={dangerHTML ? { __html: dangerHTML } : undefined}
     >
-      {!dangerHTML ? children : undefined}
+      {children ? children : null}
     </DynamicTag>
   )
 }
