@@ -20,7 +20,7 @@ export function CardHatWrapper({
     <div className={variants({ type })}>
       {withLink ? (
         <a
-          className="flex items-center"
+          className="card-flex card-items-center"
           href={hatUrl}
           title={hatUrlTitle}
           target={openInBlank ? '_blank' : undefined}

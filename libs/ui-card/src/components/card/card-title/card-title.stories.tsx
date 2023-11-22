@@ -39,7 +39,7 @@ export const Primary: Story = {
 
 export const WithLink: Story = {
   render: ({ ...args }) => (
-    <Card className="flex" withLink={false}>
+    <Card className="card-flex" withLink={false}>
       <Card.Title {...args}>
         The McRib is back (again): How a McNugget shortage led to its rise
       </Card.Title>

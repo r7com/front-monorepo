@@ -24,7 +24,7 @@ export function CardTitle({
   const DynamicTag = as || 'h3'
   return withLink ? (
     <a
-      className="flex items-center"
+      className="card-flex card-items-center"
       href={newsUrl}
       title={newsUrlTitle}
       target={openInBlank ? '_blank' : undefined}

@@ -62,7 +62,7 @@ describe(Card.Image.name, () => {
   it('should render image with link', () => {
     cy.mount(
       <Card.Image
-        className="w-[200px] mb-xxxs"
+        className="card-w-[200px] card-mb-xxxs"
         withLink
         newsUrl="https://www.google.com"
         newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"

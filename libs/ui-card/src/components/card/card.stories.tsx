@@ -29,7 +29,7 @@ export const Primary: Story = {
     </Card>
   ),
   args: {
-    className: 'flex-col',
+    className: 'card-flex-col',
     newsUrlTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
     newsUrl: 'https://www.google.com',
     openInBlank: true,
@@ -104,7 +104,7 @@ export const ImageAbove: Story = {
     </Card>
   ),
   args: {
-    className: 'flex-col',
+    className: 'card-flex-col',
     newsUrlTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
     newsUrl: 'https://www.google.com',
     openInBlank: true,
@@ -121,7 +121,7 @@ export const ImageAbove: Story = {
 export const TitleOverImage: Story = {
   render: ({ ...args }) => (
     <Card {...args}>
-      <Card.Image className="w-full" format="landscape" shadow>
+      <Card.Image className="card-w-full" format="landscape" shadow>
         <img
           src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?resize=536x326&crop=691x420 80 0&dimensions=536x326"
           alt="cat"
@@ -144,7 +144,7 @@ export const TitleOverImage: Story = {
     </Card>
   ),
   args: {
-    className: 'relative',
+    className: 'card-relative',
     newsUrlTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
     newsUrl: 'https://www.google.com',
     openInBlank: true,
