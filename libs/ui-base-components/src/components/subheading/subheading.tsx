@@ -20,7 +20,7 @@ export function Subheading({
       className={variants({ size, color })}
       dangerouslySetInnerHTML={dangerHTML ? { __html: dangerHTML } : undefined}
     >
-      {children ? children : null}
+      {!dangerHTML ? children : null}
     </DynamicTag>
   )
 }
