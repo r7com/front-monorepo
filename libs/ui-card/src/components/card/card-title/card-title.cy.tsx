@@ -8,7 +8,6 @@ describe(Card.Title.name, () => {
   it('should render title with link', () => {
     cy.mount(
       <Card.Title
-        withLink
         newsUrl="https://www.google.com"
         newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
       >

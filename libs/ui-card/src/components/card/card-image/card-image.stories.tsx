@@ -44,7 +44,7 @@ export const Primary: Story = {
 
 export const WithLink: Story = {
   render: ({ ...args }) => (
-    <Card withLink={false}>
+    <Card>
       <Card.Image {...args}>
         <img
           src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?resize=536x326&crop=691x420 80 0&dimensions=536x326"
@@ -59,7 +59,6 @@ export const WithLink: Story = {
     className: 'card-mb-xxxs',
     format: 'landscape',
     shadow: false,
-    withLink: true,
     newsUrl: 'https://www.google.com',
     newsUrlTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
   },

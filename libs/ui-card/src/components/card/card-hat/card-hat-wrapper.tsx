@@ -2,7 +2,6 @@ import { CardHatWrapperVariants, variants } from './card-hat-wrapper.variants'
 
 export type CardHatWrapperProps = {
   children: React.ReactNode
-  withLink?: boolean
   hatUrl?: string
   hatUrlTitle?: string
   openInBlank?: boolean
@@ -11,14 +10,13 @@ export type CardHatWrapperProps = {
 export function CardHatWrapper({
   children,
   type,
-  withLink = false,
   hatUrl,
   hatUrlTitle,
   openInBlank = false,
 }: CardHatWrapperProps) {
   return (
     <div className={variants({ type })}>
-      {withLink ? (
+      {hatUrl ? (
         <a
           className="card-flex card-items-center"
           href={hatUrl}

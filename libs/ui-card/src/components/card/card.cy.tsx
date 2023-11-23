@@ -3,7 +3,7 @@ import { Card } from './'
 describe(Card.name, () => {
   it('should render default card', () => {
     cy.mount(
-      <Card newsUrlTitle="I am a news" newsUrl="https://www.r7.com">
+      <Card className="card-flex-col" newsUrlTitle="I am a news" newsUrl="https://www.r7.com">
         <Card.HatWrapper>
           <Card.HatImage
             imageSource="//img.r7.com/images/concurso-publico-14032022123440824?dimensions=128x128"
@@ -26,7 +26,7 @@ describe(Card.name, () => {
 
   it('should render card without link', () => {
     cy.mount(
-      <Card withLink={false}>
+      <Card>
         <Card.HatWrapper>
           <Card.HatImage
             imageSource="//img.r7.com/images/concurso-publico-14032022123440824?dimensions=128x128"

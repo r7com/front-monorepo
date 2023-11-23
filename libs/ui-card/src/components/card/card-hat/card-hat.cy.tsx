@@ -66,7 +66,6 @@ describe(Card.HatWrapper.name, () => {
   it('should render hat with link', () => {
     cy.mount(
       <Card.HatWrapper
-        withLink
         hatUrl="https://www.google.com"
         hatUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
       >

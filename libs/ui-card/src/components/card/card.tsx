@@ -11,7 +11,6 @@ export type CardProps = {
   newsUrlTitle?: string
   className?: string
   openInBlank?: boolean
-  withLink?: boolean
 }
 
 export function Card({
@@ -20,9 +19,8 @@ export function Card({
   newsUrlTitle,
   className = '',
   openInBlank = false,
-  withLink = true,
 }: CardProps) {
-  return withLink ? (
+  return newsUrl ? (
     <article>
       <a
         className={`card-flex ${className}`}

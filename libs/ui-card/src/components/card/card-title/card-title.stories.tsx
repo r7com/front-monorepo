@@ -14,20 +14,16 @@ export default meta
 type Story = StoryObj<CardTitleProps>
 
 export const Primary: Story = {
-  render: ({ ...args }) => (
+  render: () => (
     <Card
       className="card-flex"
       newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
       newsUrl="https://www.google.com"
     >
-      <Card.Title {...args}>
-        The McRib is back (again): How a McNugget shortage led to its rise
-      </Card.Title>
+      <Card.Title>The McRib is back (again): How a McNugget shortage led to its rise</Card.Title>
     </Card>
   ),
-  args: {
-    withLink: false,
-  },
+  args: {},
   parameters: {
     design: {
       type: 'figma',
@@ -39,14 +35,13 @@ export const Primary: Story = {
 
 export const WithLink: Story = {
   render: ({ ...args }) => (
-    <Card className="card-flex" withLink={false}>
+    <Card className="card-flex">
       <Card.Title {...args}>
         The McRib is back (again): How a McNugget shortage led to its rise
       </Card.Title>
     </Card>
   ),
   args: {
-    withLink: true,
     newsUrl: 'https://www.google.com',
     newsUrlTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
   },

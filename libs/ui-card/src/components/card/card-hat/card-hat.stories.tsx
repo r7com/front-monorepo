@@ -85,7 +85,6 @@ export const WithLink: StoryObj<CardHatWrapperProps> = {
     hatUrl: 'https://esportes.r7.com/lance',
     hatUrlTitle: 'Lance!',
     openInBlank: false,
-    withLink: true,
   },
   parameters: {
     design: {

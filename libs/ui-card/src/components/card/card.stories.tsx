@@ -33,7 +33,6 @@ export const Primary: Story = {
     newsUrlTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
     newsUrl: 'https://www.google.com',
     openInBlank: true,
-    withLink: true,
   },
   parameters: {
     design: {

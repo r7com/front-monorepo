@@ -3,7 +3,6 @@ import { CardImageVariants, variants } from './card-image.variants'
 export type CardImageProps = {
   className?: string
   children: React.ReactNode
-  withLink?: boolean
   newsUrl?: string
   newsUrlTitle?: string
   openInBlank?: boolean
@@ -14,12 +13,11 @@ export function CardImage({
   children,
   shadow = false,
   format = 'square',
-  withLink = false,
   newsUrl,
   newsUrlTitle,
   openInBlank = false,
 }: CardImageProps) {
-  return withLink ? (
+  return newsUrl ? (
     <figure className={variants({ shadow, format, className })}>
       <a
         href={newsUrl}
