@@ -34,10 +34,19 @@ export async function copyFile(to, from) {
     console.error('Erro ao copiar o arquivo:', err)
   }
 }
-export async function rename(to, from) {
+export async function renameFile(to, from) {
   try {
-    await fs.renameSync(rootDir + to, rootDir + from)
+    await fse.move(rootDir + to, rootDir + from, { overwrite: true })
   } catch (error) {
     console.log('Erro ao renomear', error)
+  }
+}
+
+export async function removeFile(path) {
+  try {
+    await fse.remove(rootDir + path)
+    console.log('Arquivo removido com sucesso!')
+  } catch (err) {
+    console.error('Erro ao remover o arquivo:', err)
   }
 }

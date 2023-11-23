@@ -1,5 +1,11 @@
 export const questions = [
   {
+    type: 'list',
+    name: 'generate',
+    message: 'Qual executor vai escolher ?',
+    choices: ['@nx/react:library', '@nx/react:application'],
+  },
+  {
     type: 'input',
     name: 'projectName',
     message: 'Qual sera o nome do projeto ?',
@@ -14,11 +20,5 @@ export const questions = [
     validate: function (input) {
       return input.trim() !== '' || 'Por favor, forneça um valor válido.'
     },
-  },
-  {
-    type: 'list',
-    name: 'generate',
-    message: 'Qual executor vai escolher ?',
-    choices: ['@nx/react:library', '@nx/react:application'],
   },
 ]
