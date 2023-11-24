@@ -1,5 +1,3 @@
-// const cheerio = require('cheerio')
-// const prettier = require('prettier')
 import inquirer from 'inquirer'
 import { questions } from './src/utils/questions.mjs'
 import { Library } from './src/generaters/react-library.mjs'

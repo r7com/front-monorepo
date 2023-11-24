@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@r7/andilegakkk": ["libs/andilegakkk/src/index.ts"],
       "@r7/cypress": ["cypress-global-configs/index.ts"],
       "@r7/tools": ["tools/src/index.ts"],
       "@r7/ui-article-delivery": ["libs/ui-article-delivery/src/index.ts"],
