@@ -1,3 +1,4 @@
+import { Link } from '@r7/ui-base-components'
 import { CardImageVariants, variants } from './card-image.variants'
 
 export type CardImageProps = {
@@ -17,16 +18,14 @@ export function CardImage({
   newsUrlTitle,
   openInBlank = false,
 }: CardImageProps) {
-  return newsUrl ? (
-    <a
+  return (
+    <Link
       href={newsUrl}
       title={newsUrlTitle}
       target={openInBlank ? '_blank' : undefined}
       rel={openInBlank ? 'noreferrer' : undefined}
     >
       <figure className={variants({ shadow, format, className })}>{children}</figure>
-    </a>
-  ) : (
-    <figure className={variants({ shadow, format, className })}>{children}</figure>
+    </Link>
   )
 }

@@ -1,3 +1,4 @@
+import { Link } from '@r7/ui-base-components'
 import { CardHatWrapperVariants, variants } from './card-hat-wrapper.variants'
 
 export type CardHatWrapperProps = {
@@ -16,19 +17,15 @@ export function CardHatWrapper({
 }: CardHatWrapperProps) {
   return (
     <div className={variants({ type })}>
-      {hatUrl ? (
-        <a
-          className="card-flex card-items-center"
-          href={hatUrl}
-          title={hatUrlTitle}
-          target={openInBlank ? '_blank' : undefined}
-          rel={openInBlank ? 'noreferrer' : undefined}
-        >
-          {children}
-        </a>
-      ) : (
-        children
-      )}
+      <Link
+        href={hatUrl}
+        className="card-flex card-items-center"
+        title={hatUrlTitle}
+        target={openInBlank ? '_blank' : undefined}
+        rel={openInBlank ? 'noreferrer' : undefined}
+      >
+        {children}
+      </Link>
     </div>
   )
 }

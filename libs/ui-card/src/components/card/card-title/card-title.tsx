@@ -1,3 +1,4 @@
+import { Link } from '@r7/ui-base-components'
 import { CardTitleVariants, variants } from './card-title.variants'
 
 export type CardTitleProps = {
@@ -20,8 +21,8 @@ export function CardTitle({
   openInBlank = false,
 }: CardTitleProps) {
   const DynamicTag = as || 'h3'
-  return newsUrl ? (
-    <a
+  return (
+    <Link
       className="card-flex card-items-center"
       href={newsUrl}
       title={newsUrlTitle}
@@ -29,8 +30,6 @@ export function CardTitle({
       rel={openInBlank ? 'noreferrer' : undefined}
     >
       <DynamicTag className={variants({ fontStyle, color, className })}>{children}</DynamicTag>
-    </a>
-  ) : (
-    <DynamicTag className={variants({ fontStyle, color, className })}>{children}</DynamicTag>
+    </Link>
   )
 }

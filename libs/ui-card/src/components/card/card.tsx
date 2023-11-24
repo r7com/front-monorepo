@@ -1,3 +1,4 @@
+import { Link } from '@r7/ui-base-components'
 import { CardHatImage } from './card-hat/card-hat-image'
 import { CardHatTitle } from './card-hat/card-hat-title'
 import { CardHatWrapper } from './card-hat/card-hat-wrapper'
@@ -20,9 +21,9 @@ export function Card({
   className = '',
   openInBlank = false,
 }: CardProps) {
-  return newsUrl ? (
+  return (
     <article>
-      <a
+      <Link
         className={`card-flex ${className}`}
         href={newsUrl}
         title={newsUrlTitle}
@@ -30,10 +31,8 @@ export function Card({
         rel={openInBlank ? 'noreferrer' : undefined}
       >
         {children}
-      </a>
+      </Link>
     </article>
-  ) : (
-    <article>{children}</article>
   )
 }
 
