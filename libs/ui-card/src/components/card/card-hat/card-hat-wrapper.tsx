@@ -1,4 +1,4 @@
-import { Link } from '@r7/ui-base-components'
+import { ConditionalLink } from '@r7/ui-base-components'
 import { CardHatWrapperVariants, variants } from './card-hat-wrapper.variants'
 
 export type CardHatWrapperProps = {
@@ -17,7 +17,7 @@ export function CardHatWrapper({
 }: CardHatWrapperProps) {
   return (
     <div className={variants({ type })}>
-      <Link
+      <ConditionalLink
         href={hatUrl}
         className="card-flex card-items-center"
         title={hatUrlTitle}
@@ -25,7 +25,7 @@ export function CardHatWrapper({
         rel={openInBlank ? 'noreferrer' : undefined}
       >
         {children}
-      </Link>
+      </ConditionalLink>
     </div>
   )
 }

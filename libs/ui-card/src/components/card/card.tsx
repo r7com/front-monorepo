@@ -1,4 +1,4 @@
-import { Link } from '@r7/ui-base-components'
+import { ConditionalLink } from '@r7/ui-base-components'
 import { CardHatImage } from './card-hat/card-hat-image'
 import { CardHatTitle } from './card-hat/card-hat-title'
 import { CardHatWrapper } from './card-hat/card-hat-wrapper'
@@ -23,7 +23,7 @@ export function Card({
 }: CardProps) {
   return (
     <article>
-      <Link
+      <ConditionalLink
         className={`card-flex ${className}`}
         href={newsUrl}
         title={newsUrlTitle}
@@ -31,7 +31,7 @@ export function Card({
         rel={openInBlank ? 'noreferrer' : undefined}
       >
         {children}
-      </Link>
+      </ConditionalLink>
     </article>
   )
 }

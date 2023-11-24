@@ -1,4 +1,4 @@
-import { Link } from '@r7/ui-base-components'
+import { ConditionalLink } from '@r7/ui-base-components'
 import { CardImageVariants, variants } from './card-image.variants'
 
 export type CardImageProps = {
@@ -19,13 +19,13 @@ export function CardImage({
   openInBlank = false,
 }: CardImageProps) {
   return (
-    <Link
+    <ConditionalLink
       href={newsUrl}
       title={newsUrlTitle}
       target={openInBlank ? '_blank' : undefined}
       rel={openInBlank ? 'noreferrer' : undefined}
     >
       <figure className={variants({ shadow, format, className })}>{children}</figure>
-    </Link>
+    </ConditionalLink>
   )
 }
