@@ -1,28 +1,34 @@
-import { useLocalStorage } from '@uidotdev/usehooks'
-import { $html, contrastClass, storageName } from './constants'
+import { contrastClass, storageName } from './constants'
+import { useEffect, useState } from 'react'
 import { variants } from './contrast-control.variants'
 import { SvgIcon } from '@r7/ui-base-components'
 
 export function ContrastControl() {
-  const [contrast, saveContrast] = useLocalStorage<boolean>(storageName)
+  const [contrast, saveContrast] = useState<boolean>(
+    JSON.parse(window?.localStorage?.getItem(storageName) || 'false'),
+  )
 
-  contrast ? addContrast() : removeContrast()
+  useEffect(() => {
+    contrast ? addContrast() : removeContrast()
+
+    window?.localStorage.setItem(storageName, String(contrast))
+  }, [contrast])
 
   function handleToggleContrast() {
     toggleContrast()
   }
 
   function removeContrast() {
-    $html?.classList.remove(contrastClass)
+    document?.documentElement.classList.remove(contrastClass)
   }
 
   function toggleContrast() {
     saveContrast(prev => !prev)
-    $html?.classList.toggle(contrastClass)
+    document?.documentElement.classList.toggle(contrastClass)
   }
 
   function addContrast() {
-    $html?.classList.add(contrastClass)
+    document?.documentElement.classList.add(contrastClass)
   }
 
   return (

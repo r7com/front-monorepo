@@ -96,6 +96,19 @@ component-test:
       - dist/cypress
     expire_in: 1 day
 
+deploy ui-article-delivery:
+  stage: deploy
+  extends: .distributed
+  script:
+    - yarn nx build ui-article-delivery
+    - cd ./dist/libs/ui-article-delivery
+    - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+    - npm publish
+  only:
+    refs:
+      - /ui-article-delivery\-.*/
+
 deploy ui-form-components:
   stage: deploy
   extends: .distributed
