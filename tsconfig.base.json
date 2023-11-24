@@ -15,9 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@r7/andilegakkk": ["libs/andilegakkk/src/index.ts"],
       "@r7/cypress": ["cypress-global-configs/index.ts"],
       "@r7/tools": ["tools/src/index.ts"],
+      "@r7/tteteerre": ["libs/tteteerre/src/index.ts"],
       "@r7/ui-article-delivery": ["libs/ui-article-delivery/src/index.ts"],
       "@r7/ui-article-delivery/css": ["dist/libs/ui-article-delivery/style.css"],
       "@r7/ui-base-components": ["libs/ui-base-components/src/index.ts"],
