@@ -1,3 +1,4 @@
+import { ConditionalLink } from '@r7/ui-base-components'
 import { Card } from '../'
 
 describe(Card.Image.name, () => {
@@ -61,16 +62,14 @@ describe(Card.Image.name, () => {
 
   it('should render image with link', () => {
     cy.mount(
-      <Card.Image
-        className="card-w-[200px] card-mb-xxxs"
-        newsUrl="https://www.google.com"
-        newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
-      >
-        <img
-          src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?&dimensions=300x300"
-          alt="Human hand writting in a paper"
-        />
-      </Card.Image>,
+      <ConditionalLink href="https://www.google.com" title="Google">
+        <Card.Image className="card-w-[200px] card-mb-xxxs">
+          <img
+            src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?&dimensions=300x300"
+            alt="Human hand writting in a paper"
+          />
+        </Card.Image>
+      </ConditionalLink>,
     )
     cy.findByRole('link')
       .should('be.visible')

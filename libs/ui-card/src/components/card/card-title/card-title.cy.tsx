@@ -1,3 +1,4 @@
+import { ConditionalLink } from '@r7/ui-base-components'
 import { Card } from '../'
 describe(Card.Title.name, () => {
   it('should render default title', () => {
@@ -7,12 +8,12 @@ describe(Card.Title.name, () => {
 
   it('should render title with link', () => {
     cy.mount(
-      <Card.Title
-        newsUrl="https://www.google.com"
-        newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
+      <ConditionalLink
+        href="https://www.google.com"
+        title="The McRib is back (again): How a McNugget shortage led to its rise"
       >
-        I am a title
-      </Card.Title>,
+        <Card.Title>I am a title</Card.Title>,
+      </ConditionalLink>,
     )
 
     cy.findByRole('link').should('be.visible')

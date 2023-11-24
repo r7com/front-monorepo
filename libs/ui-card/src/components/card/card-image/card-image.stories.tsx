@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Card } from '../'
 import { CardImageProps } from './card-image'
+import { ConditionalLink } from '@r7/ui-base-components'
 
 const meta: Meta<CardImageProps> = {
   title: 'ui-card/Card/Image',
@@ -15,10 +16,7 @@ type Story = StoryObj<CardImageProps>
 
 export const Primary: Story = {
   render: ({ ...args }) => (
-    <Card
-      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
-      newsUrl="https://www.google.com"
-    >
+    <Card>
       <Card.Image {...args}>
         <img
           src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?resize=536x326&crop=691x420 80 0&dimensions=536x326"
@@ -45,22 +43,22 @@ export const Primary: Story = {
 export const WithLink: Story = {
   render: ({ ...args }) => (
     <Card>
-      <Card.Image {...args}>
-        <img
-          src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?resize=536x326&crop=691x420 80 0&dimensions=536x326"
-          alt="Human hand writting in a paper"
-          className="card-w-full card-object-cover card-h-full"
-        />
-        <Card.Label type="live" />
-      </Card.Image>
+      <ConditionalLink href="http://www.google.com" title="Google">
+        <Card.Image {...args}>
+          <img
+            src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?resize=536x326&crop=691x420 80 0&dimensions=536x326"
+            alt="Human hand writting in a paper"
+            className="card-w-full card-object-cover card-h-full"
+          />
+          <Card.Label type="live" />
+        </Card.Image>
+      </ConditionalLink>
     </Card>
   ),
   args: {
     className: 'card-mb-xxxs',
     format: 'landscape',
     shadow: false,
-    newsUrl: 'https://www.google.com',
-    newsUrlTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
   },
   parameters: {
     design: {
@@ -73,10 +71,7 @@ export const WithLink: Story = {
 
 export const WithLabel: Story = {
   render: ({ ...args }) => (
-    <Card
-      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
-      newsUrl="https://www.google.com"
-    >
+    <Card>
       <Card.Image {...args}>
         <img
           src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?resize=536x326&crop=691x420 80 0&dimensions=536x326"

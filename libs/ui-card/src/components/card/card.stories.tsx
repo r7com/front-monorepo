@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Card } from './'
 import { CardProps } from './'
+import { ConditionalLink } from '@r7/ui-base-components'
 
 const meta: Meta<CardProps> = {
   title: 'ui-card/Card',
@@ -16,23 +17,22 @@ type Story = StoryObj<CardProps>
 export const Primary: Story = {
   render: ({ ...args }) => (
     <Card {...args}>
-      <Card.HatWrapper>
-        <Card.HatImage
-          imageSource="//img.r7.com/images/concurso-publico-14032022123440824?dimensions=128x128"
-          description="Human hand writting in a paper"
-        />
-        <Card.HatTitle>News section</Card.HatTitle>
-      </Card.HatWrapper>
-      <Card.Title as="h2" fontStyle="heading-level-1">
-        The McRib is back (again): How a McNugget shortage led to its rise
-      </Card.Title>
+      <ConditionalLink href="https://www.google.com" title="Google">
+        <Card.HatWrapper>
+          <Card.HatImage
+            imageSource="//img.r7.com/images/concurso-publico-14032022123440824?dimensions=128x128"
+            description="Human hand writting in a paper"
+          />
+          <Card.HatTitle>News section</Card.HatTitle>
+        </Card.HatWrapper>
+        <Card.Title as="h2" fontStyle="heading-level-1">
+          The McRib is back (again): How a McNugget shortage led to its rise
+        </Card.Title>
+      </ConditionalLink>
     </Card>
   ),
   args: {
     className: 'card-flex-col',
-    newsUrlTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
-    newsUrl: 'https://www.google.com',
-    openInBlank: true,
   },
   parameters: {
     design: {
@@ -66,9 +66,7 @@ export const ImageToTheSides: Story = {
     </Card>
   ),
   args: {
-    newsUrlTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
-    newsUrl: 'https://www.google.com',
-    openInBlank: true,
+    className: 'card-flex',
   },
   parameters: {
     design: {
@@ -104,9 +102,6 @@ export const ImageAbove: Story = {
   ),
   args: {
     className: 'card-flex-col',
-    newsUrlTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
-    newsUrl: 'https://www.google.com',
-    openInBlank: true,
   },
   parameters: {
     design: {
@@ -144,9 +139,6 @@ export const TitleOverImage: Story = {
   ),
   args: {
     className: 'card-relative',
-    newsUrlTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
-    newsUrl: 'https://www.google.com',
-    openInBlank: true,
   },
   parameters: {
     design: {

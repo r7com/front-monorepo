@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Card } from '../'
 import { CardTitleProps } from './card-title'
+import { ConditionalLink } from '@r7/ui-base-components'
 
 const meta: Meta<CardTitleProps> = {
   title: 'ui-card/Card/Title',
@@ -14,16 +15,18 @@ export default meta
 type Story = StoryObj<CardTitleProps>
 
 export const Primary: Story = {
-  render: () => (
-    <Card
-      className="card-flex"
-      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
-      newsUrl="https://www.google.com"
-    >
-      <Card.Title>The McRib is back (again): How a McNugget shortage led to its rise</Card.Title>
+  render: ({ ...args }) => (
+    <Card className="card-flex">
+      <Card.Title {...args}>
+        The McRib is back (again): How a McNugget shortage led to its rise
+      </Card.Title>
     </Card>
   ),
-  args: {},
+  args: {
+    as: 'h1',
+    color: 'low',
+    fontStyle: 'heading-level-1',
+  },
   parameters: {
     design: {
       type: 'figma',
@@ -36,15 +39,14 @@ export const Primary: Story = {
 export const WithLink: Story = {
   render: ({ ...args }) => (
     <Card className="card-flex">
-      <Card.Title {...args}>
-        The McRib is back (again): How a McNugget shortage led to its rise
-      </Card.Title>
+      <ConditionalLink href="https://www.google.com" title="Google">
+        <Card.Title {...args}>
+          The McRib is back (again): How a McNugget shortage led to its rise
+        </Card.Title>
+      </ConditionalLink>
     </Card>
   ),
-  args: {
-    newsUrl: 'https://www.google.com',
-    newsUrlTitle: 'The McRib is back (again): How a McNugget shortage led to its rise',
-  },
+  args: {},
   parameters: {
     design: {
       type: 'figma',

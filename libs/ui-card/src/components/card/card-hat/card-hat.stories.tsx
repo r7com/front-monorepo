@@ -3,6 +3,7 @@ import { Card } from '../'
 import { CardHatTitleProps } from './card-hat-title'
 import { CardHatImageProps } from './card-hat-image'
 import { CardHatWrapperProps } from './card-hat-wrapper'
+import { ConditionalLink } from '@r7/ui-base-components'
 
 const meta: Meta<CardHatTitleProps> = {
   title: 'ui-card/Card/Hat',
@@ -19,10 +20,7 @@ type HatAlertStory = StoryObj<CardHatWrapperProps>
 
 export const Primary: HatTitleStory = {
   render: ({ ...args }) => (
-    <Card
-      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
-      newsUrl="https://www.google.com"
-    >
+    <Card>
       <Card.HatTitle {...args}>News section</Card.HatTitle>
     </Card>
   ),
@@ -40,10 +38,7 @@ export const Primary: HatTitleStory = {
 
 export const WithImage: HatImageStory = {
   render: ({ ...args }) => (
-    <Card
-      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
-      newsUrl="https://www.google.com"
-    >
+    <Card>
       <Card.HatWrapper>
         <Card.HatImage {...args} />
         <Card.HatTitle>News section</Card.HatTitle>
@@ -67,25 +62,24 @@ export const WithImage: HatImageStory = {
 }
 
 export const WithLink: StoryObj<CardHatWrapperProps> = {
-  render: ({ ...args }) => (
-    <Card
-      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
-      newsUrl="https://www.google.com"
-    >
-      <Card.HatWrapper {...args}>
-        <Card.HatImage
-          imageSource="https://img.r7.com/images/logo-lance-16062023142548616?dimensions=16x16"
-          description="Logomarca da Lance!"
-        />
-        <Card.HatTitle>Agency name</Card.HatTitle>
+  render: () => (
+    <Card>
+      <Card.HatWrapper>
+        <ConditionalLink
+          className="card-flex card-items-center"
+          href="https://www.google.com"
+          title="Google"
+        >
+          <Card.HatImage
+            imageSource="https://img.r7.com/images/logo-lance-16062023142548616?dimensions=16x16"
+            description="Logomarca da Lance!"
+          />
+          <Card.HatTitle>Agency name</Card.HatTitle>
+        </ConditionalLink>
       </Card.HatWrapper>
     </Card>
   ),
-  args: {
-    hatUrl: 'https://esportes.r7.com/lance',
-    hatUrlTitle: 'Lance!',
-    openInBlank: false,
-  },
+  args: {},
   parameters: {
     design: {
       type: 'figma',
@@ -97,10 +91,7 @@ export const WithLink: StoryObj<CardHatWrapperProps> = {
 
 export const BreakingNews: HatAlertStory = {
   render: ({ ...args }) => (
-    <Card
-      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
-      newsUrl="https://www.google.com"
-    >
+    <Card>
       <Card.HatWrapper {...args}>
         <Card.HatTitle color="high-bold">News section</Card.HatTitle>
       </Card.HatWrapper>
