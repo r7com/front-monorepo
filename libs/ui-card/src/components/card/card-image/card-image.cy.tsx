@@ -72,10 +72,10 @@ describe(Card.Image.name, () => {
         />
       </Card.Image>,
     )
-    cy.findByRole('figure')
+    cy.findByRole('link')
       .should('be.visible')
       .within(() => {
-        cy.findByRole('link').should('be.visible')
+        cy.findByRole('figure').should('be.visible')
       })
   })
 })
