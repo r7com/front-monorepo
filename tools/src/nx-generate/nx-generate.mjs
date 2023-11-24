@@ -1,7 +1,6 @@
 import inquirer from 'inquirer'
 import { questions } from './src/utils/questions.mjs'
-import { Library } from './src/generaters/react-library.mjs'
-import { Application } from './src/generaters/react-application.mjs'
+import { Application, Library } from './src/generaters/index.mjs'
 
 async function initialize() {
   const data = await inquirer.prompt(questions)

@@ -2,6 +2,8 @@ import path from 'path'
 
 export const rootDir = path.resolve('./')
 
+export const templatesDir = '/tools/src/nx-generate/src/generaters/react-library/templates'
+
 export const firstTest = `
   describe('My First Test', () => {
     it('Does not do much!', () => {

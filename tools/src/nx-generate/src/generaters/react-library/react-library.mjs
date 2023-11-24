@@ -1,7 +1,15 @@
 import shell from 'shelljs'
-import { copyFile, renameFile, writeFile, readFile, prettierFormat } from '../utils/utils.mjs'
-import { SVGR, cypresslink, firstTest, importCypress, svgrImport } from '../utils/constants.mjs'
+import { copyFile, renameFile, writeFile, readFile, prettierFormat } from '../../utils/utils.mjs'
+import {
+  SVGR,
+  cypresslink,
+  firstTest,
+  importCypress,
+  svgrImport,
+  templatesDir,
+} from '../../utils/constants.mjs'
 import { parse } from 'node-html-parser'
+import { tailwind } from './tailwind.mjs'
 
 export class Library {
   constructor({ projectName, prefixName }) {
@@ -12,7 +20,7 @@ export class Library {
 
   async init() {
     this.generateNX()
-    this.tailwindManipulation()
+    tailwind({ prefixName: this.prefixName, projectName: this.projectName })
     await this.filesManipulation()
     this.cypressManipulation()
     this.projectJsonManipulation()
@@ -26,16 +34,16 @@ export class Library {
     )
   }
 
-  async tailwindManipulation() {
-    await copyFile('/tools/src/nx-generate/src/templates/tailwind/', `/libs/${this.projectName}/`)
-    const tailwindConfig = await readFile({
-      path: `/libs/${this.projectName}/tailwind.config.js`,
-      line: 6,
-      insertElements: `prefix: '${this.prefixName}',`,
-    })
-    const tailwindFormat = prettierFormat(tailwindConfig, 'typescript')
-    await writeFile(`/libs/${this.projectName}/tailwind.config.js`, tailwindFormat)
-  }
+  // async tailwindManipulation() {
+  //   await copyFile(`${templatesDir}/tailwind/`, `/libs/${this.projectName}/`)
+  //   const tailwindConfig = await readFile({
+  //     path: `/libs/${this.projectName}/tailwind.config.js`,
+  //     line: 6,
+  //     insertElements: `prefix: '${this.prefixName}',`,
+  //   })
+  //   const tailwindFormat = prettierFormat(tailwindConfig, 'typescript')
+  //   await writeFile(`/libs/${this.projectName}/tailwind.config.js`, tailwindFormat)
+  // }
 
   async cypressManipulation() {
     await shell.exec(
@@ -68,7 +76,7 @@ export class Library {
 
     writeFile(`/libs/${this.projectName}/cypress/tsconfig.json`, tsConfig)
     await copyFile(
-      '/tools/src/nx-generate/src/templates/cypress/cypress.config.ts',
+      `${templatesDir}/cypress/cypress.config.ts`,
       `/libs/${this.projectName}/cypress.config.ts`,
     )
   }
@@ -169,7 +177,7 @@ export class Library {
 
   async storybookManipulation() {
     await copyFile(
-      '/tools/src/nx-generate/src/templates/storybook/template.stories.tsx',
+      `${templatesDir}/storybook/template.stories.tsx`,
       `/libs/${this.projectName}/src/components/${this.projectName}.stories.tsx`,
     )
   }
