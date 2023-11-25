@@ -3,9 +3,6 @@ const { join } = require('path')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  corePlugins: {
-    preflight: false,
-  },
   mode: 'jit',
   // Temos três sections, então fica S de section para nao ficar tao grande
   prefix: 'sfoot-',
