@@ -1,7 +1,7 @@
 import '@r7/ui-article-delivery/css'
 import {
-  FontSizeControl,
-  Audima,
+  FontSizeControlIncrease,
+  FontSizeControlDecrease,
   ContrastControl,
   AccessibilityBar,
   SocialShare,
@@ -29,16 +29,15 @@ export function UiArticleDelivery() {
       </Signature>
       <p className="text-[calc(theme(fontSize.xxxs)_*_var(--font-size))]">anderson</p>
       <AccessibilityBar>
-        <Audima />
         <AccessibilityBar.List>
           <AccessibilityBar.Item>
             <ContrastControl />
           </AccessibilityBar.Item>
           <AccessibilityBar.Item>
-            <FontSizeControl.Increase />
+            <FontSizeControlIncrease />
           </AccessibilityBar.Item>
           <AccessibilityBar.Item>
-            <FontSizeControl.Decrease />
+            <FontSizeControlDecrease />
           </AccessibilityBar.Item>
         </AccessibilityBar.List>
       </AccessibilityBar>

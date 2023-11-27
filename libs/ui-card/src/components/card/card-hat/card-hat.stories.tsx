@@ -3,6 +3,7 @@ import { Card } from '../'
 import { CardHatTitleProps } from './card-hat-title'
 import { CardHatImageProps } from './card-hat-image'
 import { CardHatWrapperProps } from './card-hat-wrapper'
+import { ConditionalLink } from '@r7/ui-base-components'
 
 const meta: Meta<CardHatTitleProps> = {
   title: 'ui-card/Card/Hat',
@@ -17,12 +18,9 @@ type HatTitleStory = StoryObj<CardHatTitleProps>
 type HatImageStory = StoryObj<CardHatImageProps>
 type HatAlertStory = StoryObj<CardHatWrapperProps>
 
-export const WithoutImage: HatTitleStory = {
+export const Primary: HatTitleStory = {
   render: ({ ...args }) => (
-    <Card
-      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
-      newsUrl="https://www.google.com"
-    >
+    <Card>
       <Card.HatTitle {...args}>News section</Card.HatTitle>
     </Card>
   ),
@@ -40,10 +38,7 @@ export const WithoutImage: HatTitleStory = {
 
 export const WithImage: HatImageStory = {
   render: ({ ...args }) => (
-    <Card
-      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
-      newsUrl="https://www.google.com"
-    >
+    <Card>
       <Card.HatWrapper>
         <Card.HatImage {...args} />
         <Card.HatTitle>News section</Card.HatTitle>
@@ -66,12 +61,37 @@ export const WithImage: HatImageStory = {
   },
 }
 
+export const WithLink: StoryObj<CardHatWrapperProps> = {
+  render: () => (
+    <Card>
+      <Card.HatWrapper>
+        <ConditionalLink
+          className="card-flex card-items-center"
+          href="https://www.google.com"
+          title="Google"
+        >
+          <Card.HatImage
+            imageSource="https://img.r7.com/images/logo-lance-16062023142548616?dimensions=16x16"
+            description="Logomarca da Lance!"
+          />
+          <Card.HatTitle>Agency name</Card.HatTitle>
+        </ConditionalLink>
+      </Card.HatWrapper>
+    </Card>
+  ),
+  args: {},
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/Pxz9nVdP2Im0YRWnDNM3J5/Core-C-%7C-Widgets-Home?node-id=2039%3A624&mode=dev',
+      accessToken: 'figd_sHs6Ap894w4C-OAFls7tuq0fMMROyue-8zQJ8hRE',
+    },
+  },
+}
+
 export const BreakingNews: HatAlertStory = {
   render: ({ ...args }) => (
-    <Card
-      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
-      newsUrl="https://www.google.com"
-    >
+    <Card>
       <Card.HatWrapper {...args}>
         <Card.HatTitle color="high-bold">News section</Card.HatTitle>
       </Card.HatWrapper>

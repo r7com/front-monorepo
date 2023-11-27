@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { FontSizeControl, FontSizeControlProps } from './font-size-control'
+import { FontSizeControlDecrease, FontSizeControlIncrease } from './font-size-control'
 import { ArticleProvider } from '../../utils/provider/article-provider'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const meta: Meta<FontSizeControlProps> = {
+const meta: Meta = {
   title: 'Article/FontSizeControl',
-  component: FontSizeControl,
 }
 
 export default meta
@@ -16,8 +15,8 @@ export const Default: Story = {
   render: () => (
     <ArticleProvider>
       <div className="article-flex">
-        <FontSizeControl.Increase />
-        <FontSizeControl.Decrease />
+        <FontSizeControlIncrease />
+        <FontSizeControlDecrease />
       </div>
 
       <article className="article-text-[calc(theme(fontSize.xxxs)_*_var(--font-size))]">
