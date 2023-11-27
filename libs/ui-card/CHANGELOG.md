@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.3.0...ui-card-0.3.1) (2023-11-27)
+
+### Features
+
+- new conditionalLink component in ui-base-componnents; updated tests and stories of ui-card ([b21fc95](https://gitlab.ir7.com.br/r7/front-monorepo/commit/b21fc95bb1ad1146714dafb7fa6eb763a853a738))
+
 # [0.3.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.2.0...ui-card-0.3.0) (2023-11-24)
 
 # [0.2.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.1.1...ui-card-0.2.0) (2023-11-17)

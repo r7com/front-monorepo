@@ -1,6 +1,6 @@
 import { AccessibilityBar } from './accessibility-bar'
 import { ContrastControl } from '../contrast-control'
-import { FontSizeControl } from '../font-size-control'
+import { FontSizeControlIncrease, FontSizeControlDecrease } from '../font-size-control'
 import { ArticleProvider } from '../../utils/provider/article-provider'
 
 describe('AccessibilityBar', () => {
@@ -25,10 +25,10 @@ describe('AccessibilityBar', () => {
                 <ContrastControl />
               </AccessibilityBar.Item>
               <AccessibilityBar.Item>
-                <FontSizeControl.Increase />
+                <FontSizeControlIncrease />
               </AccessibilityBar.Item>
               <AccessibilityBar.Item>
-                <FontSizeControl.Decrease />
+                <FontSizeControlDecrease />
               </AccessibilityBar.Item>
             </AccessibilityBar.List>
           </AccessibilityBar>
