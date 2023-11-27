@@ -1,6 +1,7 @@
 import '@r7/ui-article-delivery/css'
 import {
-  FontSizeControl,
+  FontSizeControlIncrease,
+  FontSizeControlDecrease,
   ContrastControl,
   AccessibilityBar,
   SocialShare,
@@ -33,10 +34,10 @@ export function UiArticleDelivery() {
             <ContrastControl />
           </AccessibilityBar.Item>
           <AccessibilityBar.Item>
-            <FontSizeControl.Increase />
+            <FontSizeControlIncrease />
           </AccessibilityBar.Item>
           <AccessibilityBar.Item>
-            <FontSizeControl.Decrease />
+            <FontSizeControlDecrease />
           </AccessibilityBar.Item>
         </AccessibilityBar.List>
       </AccessibilityBar>

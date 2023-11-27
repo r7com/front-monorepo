@@ -1,8 +1,13 @@
-const plugin = require('tailwindcss/plugin')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  experimental: {
+    optimizeUniversalDefaults: true,
+  },
+  corePlugins: {
+    preflight: false,
+  },
   darkMode: 'class',
   theme: {
     aspectRatio: {
@@ -204,26 +209,5 @@ module.exports = {
       }),
     },
   },
-  plugins: [
-    plugin(function ({ addUtilities, theme, addBase }) {
-      addBase({
-        /** hide default 'x' icon from input:search */
-        '[type="search"]::-webkit-search-decoration': { display: 'none' },
-        '[type="search"]::-webkit-search-cancel-button': { display: 'none' },
-        '[type="search"]::-webkit-search-results-button': { display: 'none' },
-        '[type="search"]::-webkit-search-results-decoration': { display: 'none' },
-      })
-      addUtilities(
-        {
-          '.content-container': {
-            width: '100%',
-            '@media (min-width: 768px)': {
-              width: '771px',
-            },
-          },
-        },
-        ['responsive', 'hover'],
-      )
-    }),
-  ],
+  plugins: [],
 }
