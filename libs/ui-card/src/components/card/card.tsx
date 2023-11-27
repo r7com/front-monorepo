@@ -7,32 +7,11 @@ import { CardTitle } from './card-title/card-title'
 
 export type CardProps = {
   children: React.ReactNode
-  newsUrl: string
-  newsUrlTitle: string
   className?: string
-  openInBlank?: boolean
 }
 
-export function Card({
-  children,
-  newsUrl,
-  newsUrlTitle,
-  className = '',
-  openInBlank = false,
-}: CardProps) {
-  return (
-    <article>
-      <a
-        className={className}
-        href={newsUrl}
-        title={newsUrlTitle}
-        target={openInBlank ? '_blank' : undefined}
-        rel={openInBlank ? 'noreferrer' : undefined}
-      >
-        {children}
-      </a>
-    </article>
-  )
+export function Card({ children, className = '' }: CardProps) {
+  return <article className={className}>{children}</article>
 }
 
 Card.Title = CardTitle

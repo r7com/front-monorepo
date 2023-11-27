@@ -7,9 +7,10 @@ export type BulletProps = {
 } & BulletVariants
 
 export function Bullet({ children, url, size = 'medium' }: BulletProps) {
+  const { textSlot, iconSlot } = variants({ size })
   return (
-    <a href={url} className={variants({ size })}>
-      <SvgIcon iconName="bullet" className="base-fill-brand-primary-500 base-w-nano base-h-nano" />
+    <a href={url} className={textSlot()}>
+      <SvgIcon iconName="bullet" className={iconSlot()} />
       {children}
     </a>
   )

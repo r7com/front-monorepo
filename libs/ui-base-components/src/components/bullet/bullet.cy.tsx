@@ -13,9 +13,11 @@ describe(Bullet.name, () => {
         <Bullet url={url} size="small">
           {text.small}
         </Bullet>
+        <br />
         <Bullet url={url} size="medium">
           {text.medium}
         </Bullet>
+        <br />
         <Bullet url={url} size="large">
           {text.large}
         </Bullet>
