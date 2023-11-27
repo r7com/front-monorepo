@@ -6,7 +6,7 @@ export type FontSizeControlProps = {
 }
 
 export function FontSizeControl({ children }: FontSizeControlProps) {
-  return <>{children}</>
+  return { children }
 }
 
 FontSizeControl.Increase = FontSizeControlIncrease
