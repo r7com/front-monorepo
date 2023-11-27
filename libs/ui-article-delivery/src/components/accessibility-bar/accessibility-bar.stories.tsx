@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { AccessibilityBar, AccessibilityBarProps } from './accessibility-bar'
 import { ContrastControl } from '../contrast-control'
-import { FontSizeControl } from '../font-size-control'
+import { FontSizeControlIncrease, FontSizeControlDecrease } from '../font-size-control'
 import { ArticleProvider } from '../../utils/provider/article-provider'
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
@@ -34,10 +34,10 @@ export const Default: Story = {
               <ContrastControl />
             </AccessibilityBar.Item>
             <AccessibilityBar.Item>
-              <FontSizeControl.Increase />
+              <FontSizeControlIncrease />
             </AccessibilityBar.Item>
             <AccessibilityBar.Item>
-              <FontSizeControl.Decrease />
+              <FontSizeControlDecrease />
             </AccessibilityBar.Item>
           </AccessibilityBar.List>
         </AccessibilityBar>
@@ -73,10 +73,10 @@ export const Mobile: Story = {
             <ContrastControl />
           </AccessibilityBar.Item>
           <AccessibilityBar.Item>
-            <FontSizeControl.Increase />
+            <FontSizeControlIncrease />
           </AccessibilityBar.Item>
           <AccessibilityBar.Item>
-            <FontSizeControl.Decrease />
+            <FontSizeControlDecrease />
           </AccessibilityBar.Item>
         </AccessibilityBar.List>
       </AccessibilityBar>
