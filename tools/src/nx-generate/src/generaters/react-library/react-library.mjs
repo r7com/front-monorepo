@@ -5,26 +5,18 @@ import { projectJson } from './project-json.mjs'
 import { storybook } from './storybook.mjs'
 import { filesManipulation } from './files-manipulation.mjs'
 
-export class Library {
-  constructor({ projectName, prefixName }) {
-    this.projectName = projectName
-    this.prefixName = prefixName
-    this.init()
-  }
+export async function library({ prefixName, projectName }) {
+  generateLib()
+  tailwind({ prefixName, projectName })
+  await filesManipulation(projectName)
+  cypress(projectName)
+  projectJson(projectName)
+  storybook(projectName)
 
-  async init() {
-    this.generateLib()
-    tailwind({ prefixName: this.prefixName, projectName: this.projectName })
-    await filesManipulation(this.projectName)
-    cypress(this.projectName)
-    projectJson(this.projectName)
-    storybook(this.projectName)
-  }
-
-  async generateLib() {
+  async function generateLib() {
     shell.cd('libs')
     await shell.exec(
-      `yarn nx g @nx/react:library --name=${this.projectName} --bundler=vite --compiler=swc --importPath=@r7/${this.projectName} --projectNameAndRootFormat=as-provided --publishable=true`,
+      `yarn nx g @nx/react:library --name=${projectName} --bundler=vite --compiler=swc --importPath=@r7/${projectName} --projectNameAndRootFormat=as-provided --publishable=true`,
     )
   }
 }

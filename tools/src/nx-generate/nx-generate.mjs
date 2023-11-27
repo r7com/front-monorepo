@@ -1,16 +1,16 @@
 import inquirer from 'inquirer'
 import { questions } from './src/utils/questions.mjs'
-import { Application, Library } from './src/generaters/index.mjs'
+import { application, library } from './src/generaters/index.mjs'
 
 async function initialize() {
   const data = await inquirer.prompt(questions)
 
   const choiceGenerater = {
-    '@nx/react:library': Library,
-    '@nx/react:application': Application,
+    '@nx/react:library': library,
+    '@nx/react:application': application,
   }
 
-  new choiceGenerater[data.generate](data)
+  choiceGenerater[data.generate](data)
 }
 
 initialize()

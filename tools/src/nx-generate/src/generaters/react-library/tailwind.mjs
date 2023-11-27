@@ -9,7 +9,6 @@ export async function tailwind({ prefixName, projectName }) {
     insertElements: `prefix: '${prefixName}',`,
   })
 
-  // const tailwindFormat = prettierFormat(tailwindConfig, 'typescript')
   await writeFile({
     path: `/libs/${projectName}/tailwind.config.js`,
     content: tailwindConfig,

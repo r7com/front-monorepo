@@ -1,5 +1,3 @@
-export class Application {
-  constructor(data) {
-    console.log('application', data)
-  }
+export function application() {
+  console.log('application', data)
 }

@@ -25,7 +25,7 @@ export async function cypress(projectName) {
 
     writeFile({
       path: `/libs/${projectName}/cypress/support/component-index.html`,
-      content: $html,
+      content: String($html),
       type: 'html',
     })
   }

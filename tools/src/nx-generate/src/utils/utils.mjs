@@ -9,11 +9,8 @@ export async function readFile({ path, line, insertElements }) {
 
     const lines = content.split('\n')
     const insertIndex = line - 1
-
-    // Converte para array se for uma string
     const elementsArray = Array.isArray(insertElements) ? insertElements : [insertElements]
 
-    // Insere os elementos após a linha escolhida
     lines.splice(insertIndex + 1, 0, ...elementsArray)
 
     const updatedContent = lines.join('\n')
@@ -31,9 +28,7 @@ export async function writeFile({ path, content, type }) {
       return
     }
 
-    const contentString = type === 'html' ? String(content) : JSON.stringify(content, null, 2)
-
-    const contentFormated = prettier.format(contentString, {
+    const contentFormated = prettier.format(content, {
       parser: type,
       ...prettier.resolveConfig.sync(),
     })
