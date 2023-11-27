@@ -1,13 +1,13 @@
 import { ArticleProvider } from '../../utils/provider/article-provider'
-import { FontSizeControl } from './font-size-control'
+import { FontSizeControlIncrease, FontSizeControlDecrease } from './font-size-control'
 
 describe('FontSizeControl', () => {
   beforeEach(() => {
     cy.mount(
       <ArticleProvider>
         <div className="article-flex">
-          <FontSizeControl.Increase />
-          <FontSizeControl.Decrease />
+          <FontSizeControlIncrease />
+          <FontSizeControlDecrease />
         </div>
 
         <article className="article-text-[calc(theme(fontSize.xxxs)_*_var(--font-size))]">
