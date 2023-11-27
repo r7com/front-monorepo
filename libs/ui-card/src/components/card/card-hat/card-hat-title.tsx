@@ -5,5 +5,5 @@ export type CardHatTitleProps = {
 } & CardHatTitleVariants
 
 export function CardHatTitle({ children, color = 'low' }: CardHatTitleProps) {
-  return <p className={variants({ color })}>{children}</p>
+  return <span className={variants({ color })}>{children}</span>
 }

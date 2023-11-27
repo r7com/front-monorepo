@@ -15,11 +15,7 @@ type Story = StoryObj<CardLabelProps>
 
 export const Primary: Story = {
   render: ({ ...args }) => (
-    <Card
-      className="card-flex"
-      newsUrlTitle="The McRib is back (again): How a McNugget shortage led to its rise"
-      newsUrl="https://www.google.com"
-    >
+    <Card className="card-flex">
       <Card.Image className="card-mr-xxxs" format="landscape">
         <img
           src="http://img.r7.com/images/concurso-publico-14032022123440824?dimensions=300x200"

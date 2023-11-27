@@ -1,3 +1,4 @@
+import { ConditionalLink } from '@r7/ui-base-components'
 import { Card } from '../'
 
 describe(Card.HatTitle.name, () => {
@@ -60,6 +61,22 @@ describe(Card.HatWrapper.name, () => {
         <Card.HatTitle color="high-bold">I am a hat</Card.HatTitle>
       </Card.HatWrapper>,
     )
+    cy.matchImage()
+  })
+
+  it('should render hat with link', () => {
+    cy.mount(
+      <Card.HatWrapper>
+        <ConditionalLink href="https://www.google.com" title="Google">
+          <Card.HatImage
+            description="I am a hat image"
+            imageSource="http://img.r7.com/images/concurso-publico-14032022123440824?dimensions=128x128"
+          />
+          <Card.HatTitle>I am a hat</Card.HatTitle>
+        </ConditionalLink>
+      </Card.HatWrapper>,
+    )
+    cy.findByRole('link').should('be.visible')
     cy.matchImage()
   })
 })
