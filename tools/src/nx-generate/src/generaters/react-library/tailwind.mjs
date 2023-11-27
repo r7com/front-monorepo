@@ -1,5 +1,5 @@
 import { templatesDir } from '../../utils/constants.mjs'
-import { copyFile, prettierFormat, readFile, writeFile } from '../../utils/utils.mjs'
+import { copyFile, readFile, writeFile } from '../../utils/utils.mjs'
 
 export async function tailwind({ prefixName, projectName }) {
   await copyFile(`${templatesDir}/tailwind/`, `/libs/${projectName}/`)
@@ -8,6 +8,11 @@ export async function tailwind({ prefixName, projectName }) {
     line: 6,
     insertElements: `prefix: '${prefixName}',`,
   })
-  const tailwindFormat = prettierFormat(tailwindConfig, 'typescript')
-  await writeFile(`/libs/${projectName}/tailwind.config.js`, tailwindFormat)
+
+  // const tailwindFormat = prettierFormat(tailwindConfig, 'typescript')
+  await writeFile({
+    path: `/libs/${projectName}/tailwind.config.js`,
+    content: tailwindConfig,
+    type: 'typescript',
+  })
 }

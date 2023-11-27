@@ -1,7 +1,6 @@
 import fse from 'fs-extra'
 import { rootDir } from './constants.mjs'
 import prettier from 'prettier'
-import { parse } from 'node-html-parser'
 
 export async function readFile({ path, line, insertElements }) {
   try {
@@ -25,9 +24,21 @@ export async function readFile({ path, line, insertElements }) {
   }
 }
 
-export async function writeFile(path, content) {
+export async function writeFile({ path, content, type }) {
   try {
-    await fse.writeFileSync(rootDir + path, content)
+    if (!type) {
+      await fse.writeFileSync(rootDir + path, content)
+      return
+    }
+
+    const contentString = type === 'html' ? String(content) : JSON.stringify(content, null, 2)
+
+    const contentFormated = prettier.format(contentString, {
+      parser: type,
+      ...prettier.resolveConfig.sync(),
+    })
+
+    await fse.writeFileSync(rootDir + path, contentFormated)
     console.log('Arquivo salvo com sucesso!')
   } catch (err) {
     console.error('Erro ao gravar no arquivo:', err)
@@ -58,6 +69,3 @@ export async function removeFile(path) {
     console.error('Erro ao remover o arquivo:', err)
   }
 }
-
-export const prettierFormat = (content, type) =>
-  prettier.format(content, { parser: type, ...prettier.resolveConfig.sync() })

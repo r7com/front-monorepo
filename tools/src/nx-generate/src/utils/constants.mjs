@@ -32,3 +32,32 @@ export const SVGR = `
 `
 
 export const svgrImport = "import svgr from 'vite-plugin-svgr'"
+
+export const projectJsonObj = {
+  typecheck: {
+    executor: 'nx:run-commands',
+    options: {
+      command: 'tsc --noEmit -p {projectRoot}/tsconfig.lib.json',
+    },
+  },
+  version: {
+    executor: '@jscutlery/semver:version',
+    options: {
+      preset: 'angular',
+    },
+  },
+  options: {
+    watch: true,
+    browser: 'chrome',
+  },
+  dependsOn: ['^build'],
+  configurations: {
+    ci: {
+      watch: false,
+      quiet: true,
+      env: {
+        pluginVisualRegressionUpdateImages: true,
+      },
+    },
+  },
+}
