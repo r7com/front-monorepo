@@ -40,7 +40,7 @@ export function Sidebar({ children }: SidebarRootProps) {
         aria-controls="sidebar"
         style={{ top: header.height }}
       >
-        <span className="sr-only">fechar menu</span>
+        <span className="header-sr-only">fechar menu</span>
       </button>
     </>
   )

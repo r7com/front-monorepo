@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.3.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.2.0...ui-card-0.3.0) (2023-11-24)
+
 # [0.2.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.1.1...ui-card-0.2.0) (2023-11-17)
 
 ## [0.1.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.1.0...ui-card-0.1.1) (2023-11-01)
