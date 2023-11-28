@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.3.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-article-delivery-0.2.0...ui-article-delivery-0.3.0) (2023-11-28)
+
+### Features
+
+- new conditionalLink component in ui-base-componnents; updated tests and stories of ui-card ([b21fc95](https://gitlab.ir7.com.br/r7/front-monorepo/commit/b21fc95bb1ad1146714dafb7fa6eb763a853a738))
+
 # [0.2.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-article-delivery-0.1.0...ui-article-delivery-0.2.0) (2023-11-24)
 
 # 0.1.0 (2023-11-23)
