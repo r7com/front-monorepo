@@ -15,7 +15,7 @@ export function SitemapFooterDropdown({ id, children }: SitemapFooterMenuDropdow
     <button
       type="button"
       aria-expanded={isOpen}
-      className="accordion-trigger footer-flex footer-w-full footer-justify-between"
+      className="footer-flex footer-w-full footer-justify-between"
       aria-controls={`${id}-container`}
       id={id}
       onClick={onToggle}

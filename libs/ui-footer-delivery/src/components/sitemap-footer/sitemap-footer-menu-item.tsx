@@ -7,10 +7,8 @@ type SitemapFooterMenuItemProps = {
 
 export function SitemapFooterMenuItem({ children }: SitemapFooterMenuItemProps) {
   return (
-    <DropdownProvider>
-      <li className="footer-flex footer-flex-col footer-py-xxxs md:footer-p-xxxs footer-border-b-neutral-low-400 footer-border-b-hairline footer-border-opacity-light md:footer-border-none">
-        {children}
-      </li>
-    </DropdownProvider>
+    <li className="footer-flex footer-flex-col footer-py-xxxs md:footer-p-xxxs footer-border-b-neutral-low-400 footer-border-b-hairline footer-border-opacity-light md:footer-border-none">
+      <DropdownProvider>{children}</DropdownProvider>
+    </li>
   )
 }

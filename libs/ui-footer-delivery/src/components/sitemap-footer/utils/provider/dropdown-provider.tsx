@@ -8,7 +8,7 @@ export type DropdownProviderProps = {
 export function DropdownProvider({ children }: DropdownProviderProps) {
   const [isOpen, setIsOpen] = useState(false)
 
-  const toggleDropdown = (id = '') => {
+  const toggleDropdown = () => {
     setIsOpen(!isOpen)
   }
 
