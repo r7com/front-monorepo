@@ -1,6 +1,6 @@
 {
   "name": "@r7/ui-footer-delivery",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
