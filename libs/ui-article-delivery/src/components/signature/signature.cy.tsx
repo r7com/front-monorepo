@@ -1,4 +1,4 @@
-import { Signature } from '.'
+import { Signature } from './signature'
 
 describe('Signature', () => {
   it('should render section name props', () => {

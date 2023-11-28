@@ -14,5 +14,5 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-  presets: [require('../ui-theme-core/src/tailwind-preset.js')],
+  presets: [require('../../libs/ui-theme-core/src/tailwind-preset.js')],
 }
