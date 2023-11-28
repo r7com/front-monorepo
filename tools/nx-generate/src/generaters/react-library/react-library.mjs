@@ -6,12 +6,12 @@ import { storybook } from './storybook.mjs'
 import { filesManipulation } from './files-manipulation.mjs'
 
 export async function library({ prefixName, projectName }) {
-  generateLib()
-  tailwind({ prefixName, projectName })
+  await generateLib()
   await filesManipulation(projectName)
-  cypress(projectName)
-  projectJson(projectName)
-  storybook(projectName)
+  await tailwind({ prefixName, projectName })
+  await cypress(projectName)
+  await projectJson(projectName)
+  await storybook(projectName)
 
   async function generateLib() {
     await shell.exec(

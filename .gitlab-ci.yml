@@ -96,6 +96,19 @@ component-test:
       - dist/cypress
     expire_in: 1 day
 
+deploy ui-article-delivery:
+  stage: deploy
+  extends: .distributed
+  script:
+    - yarn nx build ui-article-delivery
+    - cd ./dist/libs/ui-article-delivery
+    - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+    - npm publish
+  only:
+    refs:
+      - /ui-article-delivery\-.*/
+
 deploy ui-form-components:
   stage: deploy
   extends: .distributed
@@ -160,19 +173,6 @@ deploy ui-header-delivery:
   only:
     refs:
       - /ui-header-delivery\-.*/
-
-deploy ui-hotsite-delivery:
-  stage: deploy
-  extends: .distributed
-  script:
-    - yarn nx build ui-hotsite-delivery
-    - cd ./dist/libs/ui-hotsite-delivery
-    - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
-    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
-    - npm publish
-  only:
-    refs:
-      - /ui-hotsite-delivery\-.*/
 
 deploy ui-voting-components:
   stage: deploy

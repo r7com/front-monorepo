@@ -27,7 +27,7 @@ export async function projectJson(projectName) {
     version: projectJsonObj.version,
   }
 
-  writeFile({
+  await writeFile({
     path: `libs/${projectName}/project.json`,
     content: JSON.stringify(projectJson),
     type: 'json',

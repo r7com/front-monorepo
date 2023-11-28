@@ -1,5 +1,11 @@
-import { SVGR, firstTest, svgrImport } from '../../utils/constants.mjs'
-import { readAndModifyFile, renameFile, writeFile } from '../../utils/utils.mjs'
+import { SVGR, firstTest, svgrImport, templatesDir } from '../../utils/constants.mjs'
+import {
+  readAndAddItemsToArray,
+  readAndModifyFile,
+  renameFile,
+  writeFile,
+} from '../../utils/utils.mjs'
+import fse from 'fs-extra'
 
 export async function filesManipulation(projectName) {
   await updateFiles()
@@ -22,7 +28,7 @@ export async function filesManipulation(projectName) {
   async function updateRootIndex() {
     const indexContent = await readAndModifyFile({ path: `libs/${projectName}/src/index.ts` })
     const updateIndexContent = indexContent.replace(/'\.\/lib\//g, "'./components/")
-    writeFile({ path: `libs/${projectName}/src/index.ts`, content: updateIndexContent })
+    await writeFile({ path: `libs/${projectName}/src/index.ts`, content: updateIndexContent })
   }
 
   async function viteConfigFile() {
@@ -32,17 +38,29 @@ export async function filesManipulation(projectName) {
       insertElements: svgrImport,
     })
 
-    writeFile({ path: `libs/${projectName}/vite.config.ts`, content: viteSvgrConfig })
+    await writeFile({ path: `libs/${projectName}/vite.config.ts`, content: viteSvgrConfig })
 
-    let viteConfig = await readAndModifyFile({
+    const viteConfig = await readAndModifyFile({
       path: `libs/${projectName}/vite.config.ts`,
-      line: 13,
+      line: 14,
       insertElements: SVGR,
     })
 
-    writeFile({
+    await writeFile({
       path: `libs/${projectName}/vite.config.ts`,
       content: viteConfig,
+      type: 'typescript',
+    })
+
+    const viteConfigExternal = await readAndAddItemsToArray({
+      path: `libs/${projectName}/vite.config.ts`,
+      arrayName: 'external',
+      items: '@r7/ui-base-components',
+    })
+
+    await writeFile({
+      path: `libs/${projectName}/vite.config.ts`,
+      content: viteConfigExternal,
       type: 'typescript',
     })
   }

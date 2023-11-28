@@ -25,6 +25,7 @@ export async function readAndModifyFile({ path, line, insertElements }) {
     const updatedContent = lines.join('\n')
     return updatedContent
   } catch (err) {
+    console.error('a path existe?', await fse.pathExists(path))
     console.error('Erro ao ler o arquivo:', err)
     throw err
   }
@@ -54,6 +55,7 @@ export async function writeFile({ path, content, type }) {
 
     await fse.writeFileSync(path, contentFormated)
   } catch (err) {
+    console.error('a path existe?', await fse.pathExists(path))
     console.error('Erro ao gravar no arquivo:', err)
   }
 }
@@ -70,6 +72,8 @@ export async function copyFile(to, from) {
   try {
     await fse.copy(to, from)
   } catch (err) {
+    console.error('to existe?', await fse.pathExists(to))
+    console.error('from existe?', await fse.pathExists(from))
     console.error('Erro ao copiar o arquivo:', err)
   }
 }
@@ -86,7 +90,9 @@ export async function renameFile(to, from) {
   try {
     await fse.move(to, from, { overwrite: true })
   } catch (error) {
-    console.log('Erro ao renomear', error)
+    console.error('to existe?', await fse.pathExists(to))
+    console.error('from existe?', await fse.pathExists(from))
+    console.error('Erro ao renomear', error)
   }
 }
 
@@ -101,6 +107,7 @@ export async function removeFile(path) {
   try {
     await fse.remove(path)
   } catch (err) {
+    console.error('a path existe?', await fse.pathExists(path))
     console.error('Erro ao remover o arquivo:', err)
   }
 }
@@ -131,4 +138,34 @@ export function isValidPrefix(input) {
   }
 
   return true
+}
+
+/**
+ * Adds item(s) to an array in a TypeScript file.
+ * @param {Object} options - The options object.
+ * @param {string} options.path - The path to the TypeScript file.
+ * @param {string} options.arrayName - The name of the array to be modified.
+ * @param {string|string[]} options.items - The item or array of items to be added to the array.
+ * @returns {Promise<void>} A promise that resolves when the file is read.
+ */
+export async function readAndAddItemsToArray({ path, arrayName, items }) {
+  try {
+    const tsCode = await fse.readFile(path, 'utf-8')
+
+    const regex = new RegExp(`(${arrayName}\\s*:\\s*\\[.*?\\])`, 's')
+
+    const modifiedCode = tsCode.replace(regex, (match, array) => {
+      const itemsArray = Array.isArray(items) ? items : [items]
+      const modifiedArray = `${array.slice(0, -1)}, ${itemsArray
+        .map(item => `'${item}'`)
+        .join(', ')}]`
+      return modifiedArray
+    })
+
+    return modifiedCode
+  } catch (error) {
+    console.error('a path existe?', await fse.pathExists(path))
+    console.error(`Error adding item(s) to the '${arrayName}' array:`, error)
+    throw error
+  }
 }

@@ -4,10 +4,10 @@ import shell from 'shelljs'
 import { cypresslink, importCypress, templatesDir } from '../../utils/constants.mjs'
 
 export async function cypress(projectName) {
-  generateCypress()
-  insertLinkToHead()
-  insertImportToComponent()
-  tsConfigManipulation()
+  await generateCypress()
+  await tsConfigManipulation()
+  await insertImportToComponent()
+  await insertLinkToHead()
 
   async function generateCypress() {
     await shell.exec(`yarn nx g @nx/react:cypress-component-configuration --project=${projectName}`)
@@ -23,7 +23,7 @@ export async function cypress(projectName) {
     const $head = $html.querySelector('head')
     $head.appendChild($link)
 
-    writeFile({
+    await writeFile({
       path: `libs/${projectName}/cypress/support/component-index.html`,
       content: String($html),
       type: 'html',
@@ -37,7 +37,7 @@ export async function cypress(projectName) {
       insertElements: importCypress,
     })
 
-    writeFile({
+    await writeFile({
       path: `libs/${projectName}/cypress/support/component.ts`,
       content: cypressComponent,
       type: 'typescript',
@@ -51,11 +51,12 @@ export async function cypress(projectName) {
 
     tsConfig.compilerOptions.types.push('@testing-library/cypress')
 
-    writeFile({
+    await writeFile({
       path: `libs/${projectName}/cypress/tsconfig.json`,
       content: JSON.stringify(tsConfig),
       type: 'json',
     })
+
     await copyFile(
       `${templatesDir}/cypress/cypress.config.ts`,
       `libs/${projectName}/cypress.config.ts`,
