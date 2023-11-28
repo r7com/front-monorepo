@@ -56,7 +56,7 @@ export const Desktop: Story = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/aAvhagIuoibmWIOFnUorUe/Sitemap?node-id=19%3A677&mode=dev',
+      url: 'https://www.figma.com/file/OBWV1tXbl1eXmdxzgEmcs3/Core-C-%7C-Delivery?node-id=2546%3A8344&mode=dev',
       accessToken: 'figd_sHs6Ap894w4C-OAFls7tuq0fMMROyue-8zQJ8hRE',
     },
   },
@@ -103,7 +103,7 @@ export const Mobile: Story = {
     },
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/aAvhagIuoibmWIOFnUorUe/Sitemap?node-id=19%3A677&mode=dev',
+      url: 'https://www.figma.com/file/OBWV1tXbl1eXmdxzgEmcs3/Core-C-%7C-Delivery?node-id=2546%3A332&mode=dev',
       accessToken: 'figd_sHs6Ap894w4C-OAFls7tuq0fMMROyue-8zQJ8hRE',
     },
   },
