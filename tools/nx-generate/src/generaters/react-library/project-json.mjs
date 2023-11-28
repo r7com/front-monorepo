@@ -1,8 +1,10 @@
 import { projectJsonObj } from '../../utils/constants.mjs'
-import { readFile, writeFile } from '../../utils/utils.mjs'
+import { readAndModifyFile, writeFile } from '../../utils/utils.mjs'
 
 export async function projectJson(projectName) {
-  const projectJson = JSON.parse(await readFile({ path: `/libs/${projectName}/project.json` }))
+  const projectJson = JSON.parse(
+    await readAndModifyFile({ path: `libs/${projectName}/project.json` }),
+  )
 
   if (!projectJson.targets) {
     projectJson.targets = {}
@@ -26,7 +28,7 @@ export async function projectJson(projectName) {
   }
 
   writeFile({
-    path: `/libs/${projectName}/project.json`,
+    path: `libs/${projectName}/project.json`,
     content: JSON.stringify(projectJson),
     type: 'json',
   })

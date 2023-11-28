@@ -1,5 +1,4 @@
 import fse from 'fs-extra'
-import { rootDir } from './constants.mjs'
 import prettier from 'prettier'
 
 /**
@@ -12,9 +11,9 @@ import prettier from 'prettier'
  * @returns {Promise<string>} A promise that resolves to the updated content of the file.
  * @throws {Error} If there is an error reading the file.
  */
-export async function readFile({ path, line, insertElements }) {
+export async function readAndModifyFile({ path, line, insertElements }) {
   try {
-    const content = fse.readFileSync(rootDir + path, 'utf8')
+    const content = fse.readFileSync(path, 'utf8')
     if (!line) return content
 
     const lines = content.split('\n')
@@ -44,7 +43,7 @@ export async function readFile({ path, line, insertElements }) {
 export async function writeFile({ path, content, type }) {
   try {
     if (!type) {
-      await fse.writeFileSync(rootDir + path, content)
+      await fse.writeFileSync(path, content)
       return
     }
 
@@ -53,7 +52,7 @@ export async function writeFile({ path, content, type }) {
       ...prettier.resolveConfig.sync(),
     })
 
-    await fse.writeFileSync(rootDir + path, contentFormated)
+    await fse.writeFileSync(path, contentFormated)
   } catch (err) {
     console.error('Erro ao gravar no arquivo:', err)
   }
@@ -69,7 +68,7 @@ export async function writeFile({ path, content, type }) {
  */
 export async function copyFile(to, from) {
   try {
-    await fse.copy(rootDir + to, rootDir + from)
+    await fse.copy(to, from)
   } catch (err) {
     console.error('Erro ao copiar o arquivo:', err)
   }
@@ -85,7 +84,7 @@ export async function copyFile(to, from) {
  */
 export async function renameFile(to, from) {
   try {
-    await fse.move(rootDir + to, rootDir + from, { overwrite: true })
+    await fse.move(to, from, { overwrite: true })
   } catch (error) {
     console.log('Erro ao renomear', error)
   }
@@ -100,8 +99,36 @@ export async function renameFile(to, from) {
  */
 export async function removeFile(path) {
   try {
-    await fse.remove(rootDir + path)
+    await fse.remove(path)
   } catch (err) {
     console.error('Erro ao remover o arquivo:', err)
   }
+}
+
+/**
+ * Validates a string according to specific criteria.
+ *
+ * @param {string} input - The string to be validated.
+ * @returns {string} A message indicating whether the string is valid or what error was encountered.
+ */
+export function isValidPrefix(input) {
+  const regex = /^[a-z0-9]+(?:-[a-z0-9]+)*-$/
+
+  if (!regex.test(input)) {
+    if (!/^[a-z0-9]+$/.test(input)) {
+      return 'A string deve conter apenas letras minúsculas e números.'
+    }
+
+    if (!/-$/.test(input)) {
+      return 'A string deve terminar com um traço.'
+    }
+
+    if (/\s/.test(input)) {
+      return 'A string não deve ser separada por espaços.'
+    }
+
+    return 'A string contém um formato inválido para palavras separadas por traços.'
+  }
+
+  return true
 }

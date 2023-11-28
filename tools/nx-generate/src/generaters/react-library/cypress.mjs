@@ -1,5 +1,5 @@
 import { parse } from 'node-html-parser'
-import { copyFile, readFile, writeFile } from '../../utils/utils.mjs'
+import { copyFile, readAndModifyFile, writeFile } from '../../utils/utils.mjs'
 import shell from 'shelljs'
 import { cypresslink, importCypress, templatesDir } from '../../utils/constants.mjs'
 
@@ -14,8 +14,8 @@ export async function cypress(projectName) {
   }
 
   async function insertLinkToHead() {
-    const content = await readFile({
-      path: `/libs/${projectName}/cypress/support/component-index.html`,
+    const content = await readAndModifyFile({
+      path: `libs/${projectName}/cypress/support/component-index.html`,
     })
 
     const $html = parse(content)
@@ -24,21 +24,21 @@ export async function cypress(projectName) {
     $head.appendChild($link)
 
     writeFile({
-      path: `/libs/${projectName}/cypress/support/component-index.html`,
+      path: `libs/${projectName}/cypress/support/component-index.html`,
       content: String($html),
       type: 'html',
     })
   }
 
   async function insertImportToComponent() {
-    const cypressComponent = await readFile({
-      path: `/libs/${projectName}/cypress/support/component.ts`,
+    const cypressComponent = await readAndModifyFile({
+      path: `libs/${projectName}/cypress/support/component.ts`,
       line: 18,
       insertElements: importCypress,
     })
 
     writeFile({
-      path: `/libs/${projectName}/cypress/support/component.ts`,
+      path: `libs/${projectName}/cypress/support/component.ts`,
       content: cypressComponent,
       type: 'typescript',
     })
@@ -46,19 +46,19 @@ export async function cypress(projectName) {
 
   async function tsConfigManipulation() {
     const tsConfig = JSON.parse(
-      await readFile({ path: `/libs/${projectName}/cypress/tsconfig.json` }),
+      await readAndModifyFile({ path: `libs/${projectName}/cypress/tsconfig.json` }),
     )
 
     tsConfig.compilerOptions.types.push('@testing-library/cypress')
 
     writeFile({
-      path: `/libs/${projectName}/cypress/tsconfig.json`,
+      path: `libs/${projectName}/cypress/tsconfig.json`,
       content: JSON.stringify(tsConfig),
       type: 'json',
     })
     await copyFile(
       `${templatesDir}/cypress/cypress.config.ts`,
-      `/libs/${projectName}/cypress.config.ts`,
+      `libs/${projectName}/cypress.config.ts`,
     )
   }
 }

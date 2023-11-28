@@ -1,3 +1,5 @@
+import { isValidPrefix } from './utils.mjs'
+
 export const questions = [
   {
     type: 'list',
@@ -8,7 +10,7 @@ export const questions = [
   {
     type: 'input',
     name: 'projectName',
-    message: 'Qual sera o nome do projeto ?',
+    message: 'Qual será o nome do projeto ?',
     validate: function (input) {
       return input.trim() !== '' || 'Por favor, forneça um valor válido.'
     },
@@ -16,9 +18,7 @@ export const questions = [
   {
     type: 'input',
     name: 'prefixName',
-    message: 'Qual sera o prefix ? Ex: prefix-',
-    validate: function (input) {
-      return input.trim() !== '' || 'Por favor, forneça um valor válido.'
-    },
+    message: 'Qual será o prefix ? Ex: prefix-',
+    validate: input => isValidPrefix(input.trim()),
   },
 ]

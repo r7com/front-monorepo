@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky install",
-    "commit": "cz"
+    "commit": "cz",
+    "nx-generete": "node tools/nx-generate/nx-generate.mjs"
   },
   "private": true,
   "dependencies": {

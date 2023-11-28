@@ -5,12 +5,12 @@ import { application, library } from './src/generaters/index.mjs'
 async function initialize() {
   const data = await inquirer.prompt(questions)
 
-  const choiceGenerater = {
+  const chooseGenerater = {
     '@nx/react:library': library,
     '@nx/react:application': application,
   }
 
-  choiceGenerater[data.generate](data)
+  chooseGenerater[data.generate](data)
 }
 
 initialize()

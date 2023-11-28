@@ -14,9 +14,8 @@ export async function library({ prefixName, projectName }) {
   storybook(projectName)
 
   async function generateLib() {
-    shell.cd('libs')
     await shell.exec(
-      `yarn nx g @nx/react:library --name=${projectName} --bundler=vite --compiler=swc --importPath=@r7/${projectName} --projectNameAndRootFormat=as-provided --publishable=true`,
+      `yarn nx g @nx/react:library --name=${projectName} --directory=libs/${projectName} --bundler=vite --compiler=swc --importPath=@r7/${projectName} --projectNameAndRootFormat=as-provided --publishable=true`,
     )
   }
 }
