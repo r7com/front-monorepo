@@ -8,7 +8,7 @@ export type DropdownProviderProps = {
 export function DropdownProvider({ children }: DropdownProviderProps) {
   const [isOpen, setIsOpen] = useState(false)
 
-  const toggleDropdown = () => {
+  const handleToggle = () => {
     setIsOpen(!isOpen)
   }
 
@@ -16,7 +16,7 @@ export function DropdownProvider({ children }: DropdownProviderProps) {
     <DropdownContext.Provider
       value={{
         isOpen,
-        toggle: toggleDropdown,
+        handleToggle,
       }}
     >
       {children}
