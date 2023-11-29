@@ -3,5 +3,5 @@ type SitemapFooterMenuListProps = {
 }
 
 export function SitemapFooterMenuList({ children }: SitemapFooterMenuListProps) {
-  return <ul className="footer-flex footer-flex-col">{children}</ul>
+  return <ul className="footer-flex footer-flex-col md:footer-flex-row">{children}</ul>
 }

@@ -2,41 +2,41 @@ import { SitemapFooter } from './index'
 import { SITEMAP_DATA } from '../../mocks/sitemap'
 
 describe('SitemapFooter', () => {
-  const columns = SITEMAP_DATA?.children[0]?.children
+  const columns = SITEMAP_DATA?.children
 
   beforeEach(() => {
     cy.mount(
       <SitemapFooter.Root>
-        <SitemapFooter.Container>
-          {columns?.length > 0 &&
-            columns.map(
-              column =>
-                column.children.length > 0 && (
-                  <SitemapFooter.MenuList key={column._id}>
-                    {column?.children.map(section => (
-                      <SitemapFooter.MenuItem key={section._id}>
-                        <SitemapFooter.MenuTitle>{section.name}</SitemapFooter.MenuTitle>
-                        {section?.children.length > 0 && (
-                          <SitemapFooter.Submenu>
-                            {section?.children.map(sectionItem => (
-                              <SitemapFooter.SubmenuItem key={sectionItem._id}>
-                                <SitemapFooter.MenuLink
-                                  openInNewTab={true}
-                                  title={sectionItem.display_name}
-                                  href={sectionItem.url}
-                                >
-                                  {sectionItem.display_name}
-                                </SitemapFooter.MenuLink>
-                              </SitemapFooter.SubmenuItem>
-                            ))}
-                          </SitemapFooter.Submenu>
-                        )}
-                      </SitemapFooter.MenuItem>
-                    ))}
-                  </SitemapFooter.MenuList>
-                ),
-            )}
-        </SitemapFooter.Container>
+        <SitemapFooter.MenuList>
+          {columns.length > 0 &&
+            columns.map(column => (
+              <SitemapFooter.MenuItem key={column._id}>
+                <SitemapFooter.MenuTitle>
+                  <SitemapFooter.Dropdown id={column._id}>
+                    <SitemapFooter.MenuLink title={column.name} href={column.navigation?.menu_url}>
+                      {column.name}
+                    </SitemapFooter.MenuLink>
+                  </SitemapFooter.Dropdown>
+                </SitemapFooter.MenuTitle>
+                <SitemapFooter.Submenu id={column._id}>
+                  {column.children.length > 0 &&
+                    column.children.map(
+                      submenu =>
+                        submenu.navigation && (
+                          <SitemapFooter.SubmenuItem key={submenu._id}>
+                            <SitemapFooter.MenuLink
+                              title={submenu.navigation.nav_title}
+                              href={submenu.navigation.menu_url}
+                            >
+                              {submenu.name}
+                            </SitemapFooter.MenuLink>
+                          </SitemapFooter.SubmenuItem>
+                        ),
+                    )}
+                </SitemapFooter.Submenu>
+              </SitemapFooter.MenuItem>
+            ))}
+        </SitemapFooter.MenuList>
       </SitemapFooter.Root>,
     )
   })
@@ -47,19 +47,71 @@ describe('SitemapFooter', () => {
       .eq(0)
       .within(() => {
         cy.findAllByRole('listitem')
-          .eq(1)
+          .eq(0)
           .within(() => {
             cy.findByRole('heading', { name: /jr 24h/i, level: 5 })
             cy.findByRole('list').within(() => {
               cy.findAllByRole('listitem')
                 .eq(0)
                 .within(() => {
-                  cy.findByRole('link', { name: /economia/i })
+                  cy.findByRole('link')
+                    .eq(0)
                     .should('be.visible')
-                    .and('have.attr', 'href', 'https://noticias.r7.com/economia')
-                    .and('have.attr', 'title', 'ECONOMIA')
+                    .and('have.attr', 'href', 'https://noticias.r7.com/brasilia')
+                    .and('have.attr', 'title', 'BRASÍLIA')
+                    .within(() => {
+                      cy.findByRole('heading', { name: /brasília/i, level: 6 })
+                    })
                 })
             })
+          })
+      })
+    cy.matchImage()
+  })
+
+  it('should render Sitemap Footer mobile with the correct structure', () => {
+    cy.viewport('iphone-se2')
+    cy.findAllByRole('list')
+      .eq(0)
+      .within(() => {
+        cy.findAllByRole('listitem')
+          .eq(0)
+          .within(() => {
+            cy.findByRole('heading', { name: /jr 24h/i, level: 5 })
+            cy.findByRole('button').eq(0).should('be.visible')
+            cy.findByRole('button').eq(0).click()
+            cy.findByRole('list').within(() => {
+              cy.findAllByRole('listitem')
+                .eq(0)
+                .within(() => {
+                  cy.findByRole('link')
+                    .eq(0)
+                    .should('be.visible')
+                    .and('have.attr', 'href', 'https://noticias.r7.com/brasilia')
+                    .and('have.attr', 'title', 'BRASÍLIA')
+                    .within(() => {
+                      cy.findByRole('heading', { name: /brasília/i, level: 6 })
+                    })
+                })
+            })
+          })
+      })
+    cy.matchImage()
+  })
+
+  it('should render Sitemap Footer mobile with the correct structure opening and closing dropdown', () => {
+    cy.viewport('iphone-se2')
+    cy.findAllByRole('list')
+      .eq(0)
+      .within(() => {
+        cy.findAllByRole('listitem')
+          .eq(0)
+          .within(() => {
+            cy.findByRole('heading', { name: /jr 24h/i, level: 5 })
+            cy.findByRole('button').eq(0).should('be.visible')
+            cy.findByRole('button').eq(0).click()
+            cy.findByRole('button').eq(0).click()
+            cy.findByRole('list').should('not.exist')
           })
       })
     cy.matchImage()
