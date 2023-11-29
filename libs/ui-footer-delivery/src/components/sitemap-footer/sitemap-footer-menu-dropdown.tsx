@@ -8,8 +8,10 @@ type SitemapFooterMenuDropdown = {
 } & React.LabelHTMLAttributes<HTMLLabelElement>
 
 export function SitemapFooterDropdown({ id, children }: SitemapFooterMenuDropdown) {
-  const { isOpen, onToggle } = useDropdown()
+  const { isOpen, toggle } = useDropdown()
   const { dropdownIconSlot } = variants({ isDropdownOpen: isOpen })
+
+  const handleToggleDropdown = () => toggle()
 
   return (
     <button
@@ -18,7 +20,7 @@ export function SitemapFooterDropdown({ id, children }: SitemapFooterMenuDropdow
       className="footer-flex footer-w-full footer-justify-between"
       aria-controls={`${id}-container`}
       id={id}
-      onClick={onToggle}
+      onClick={handleToggleDropdown}
     >
       {children}
       <SvgIcon iconName="chevron-bottom" className={dropdownIconSlot()} />

@@ -16,7 +16,7 @@ export function DropdownProvider({ children }: DropdownProviderProps) {
     <DropdownContext.Provider
       value={{
         isOpen,
-        onToggle: toggleDropdown,
+        toggle: toggleDropdown,
       }}
     >
       {children}
