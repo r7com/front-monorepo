@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.3.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-footer-delivery-1.2.1...ui-footer-delivery-1.3.0) (2023-11-29)
+
+### Features
+
+- **sitemap-footer:** rework and adding mobile layout ([d3e6c03](https://gitlab.ir7.com.br/r7/front-monorepo/commit/d3e6c03426f647859175c733950c21bbc69ac99c))
+
 ## [1.2.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-footer-delivery-1.2.0...ui-footer-delivery-1.2.1) (2023-11-28)
 
 # [1.2.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-footer-delivery-1.1.0...ui-footer-delivery-1.2.0) (2023-11-24)
