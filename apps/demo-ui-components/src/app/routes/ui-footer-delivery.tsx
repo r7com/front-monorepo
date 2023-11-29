@@ -7,36 +7,36 @@ const columns = SITEMAP_DATA?.children[0]?.children
 export function UiFooterDelivery() {
   return (
     <SitemapFooter.Root>
-      <SitemapFooter.Container>
-        {columns?.length > 0 &&
-          columns.map(
-            column =>
-              column.children.length > 0 && (
-                <SitemapFooter.MenuList key={column._id}>
-                  {column?.children.map(section => (
-                    <SitemapFooter.MenuItem key={section._id}>
-                      <SitemapFooter.MenuTitle>{section.name}</SitemapFooter.MenuTitle>
-                      {section?.children.length > 0 && (
-                        <SitemapFooter.Submenu>
-                          {section?.children.map(sectionItem => (
-                            <SitemapFooter.SubmenuItem key={sectionItem._id}>
-                              <SitemapFooter.MenuLink
-                                openInNewTab={true}
-                                title={sectionItem.display_name}
-                                href={sectionItem.url}
-                              >
-                                {sectionItem.display_name}
-                              </SitemapFooter.MenuLink>
-                            </SitemapFooter.SubmenuItem>
-                          ))}
-                        </SitemapFooter.Submenu>
-                      )}
-                    </SitemapFooter.MenuItem>
-                  ))}
-                </SitemapFooter.MenuList>
-              ),
-          )}
-      </SitemapFooter.Container>
+      <SitemapFooter.MenuList>
+        {columns.length > 0 &&
+          columns.map(column => (
+            <SitemapFooter.MenuItem key={column._id}>
+              <SitemapFooter.MenuTitle>
+                <SitemapFooter.Dropdown id={column._id}>
+                  <SitemapFooter.MenuLink title={column.name} href={column.navigation?.menu_url}>
+                    {column.name}
+                  </SitemapFooter.MenuLink>
+                </SitemapFooter.Dropdown>
+              </SitemapFooter.MenuTitle>
+              <SitemapFooter.Submenu id={column._id}>
+                {column.children.length > 0 &&
+                  column.children.map(
+                    submenu =>
+                      submenu.navigation && (
+                        <SitemapFooter.SubmenuItem key={submenu._id}>
+                          <SitemapFooter.MenuLink
+                            title={submenu.navigation.nav_title}
+                            href={submenu.navigation.menu_url}
+                          >
+                            {submenu.name}
+                          </SitemapFooter.MenuLink>
+                        </SitemapFooter.SubmenuItem>
+                      ),
+                  )}
+              </SitemapFooter.Submenu>
+            </SitemapFooter.MenuItem>
+          ))}
+      </SitemapFooter.MenuList>
     </SitemapFooter.Root>
   )
 }

@@ -29,6 +29,14 @@ module.exports = {
       pill: '1.25rem',
       circular: '50%',
     },
+    borderOpacity: {
+      'semi-opaque': '0.8',
+      intense: '0.64',
+      medium: '0.32',
+      light: '0.16',
+      'semi-transparent': '0.08',
+      transparent: '0',
+    },
     boxShadow: {
       drop: '0px 0px 0.2rem 0.1rem rgba(51, 51, 51, 8%)',
       level1: '0px 0.5rem 1rem -0.25rem rgba(51, 51, 51, 8%)',
