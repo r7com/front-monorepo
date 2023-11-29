@@ -25,7 +25,7 @@ export async function readAndModifyFile({ path, line, insertElements }) {
     const updatedContent = lines.join('\n')
     return updatedContent
   } catch (err) {
-    console.error('a path existe?', await fse.pathExists(path))
+    console.error('O caminho existe ?', await fse.pathExists(path))
     console.error('Erro ao ler o arquivo:', err)
     throw err
   }
@@ -55,7 +55,7 @@ export async function writeFile({ path, content, type }) {
 
     await fse.writeFileSync(path, contentFormated)
   } catch (err) {
-    console.error('a path existe?', await fse.pathExists(path))
+    console.error('O caminho existe ?', await fse.pathExists(path))
     console.error('Erro ao gravar no arquivo:', err)
   }
 }
@@ -72,8 +72,8 @@ export async function copyFile(to, from) {
   try {
     await fse.copy(to, from)
   } catch (err) {
-    console.error('to existe?', await fse.pathExists(to))
-    console.error('from existe?', await fse.pathExists(from))
+    console.error('A origem do caminho existe ?', await fse.pathExists(to))
+    console.error('O destino do caminho existe ?', await fse.pathExists(from))
     console.error('Erro ao copiar o arquivo:', err)
   }
 }
@@ -90,8 +90,8 @@ export async function renameFile(to, from) {
   try {
     await fse.move(to, from, { overwrite: true })
   } catch (error) {
-    console.error('to existe?', await fse.pathExists(to))
-    console.error('from existe?', await fse.pathExists(from))
+    console.error('A origem do caminho existe ?', await fse.pathExists(to))
+    console.error('O destino do caminho existe ?', await fse.pathExists(from))
     console.error('Erro ao renomear', error)
   }
 }
@@ -107,7 +107,7 @@ export async function removeFile(path) {
   try {
     await fse.remove(path)
   } catch (err) {
-    console.error('a path existe?', await fse.pathExists(path))
+    console.error('O caminho existe ?', await fse.pathExists(path))
     console.error('Erro ao remover o arquivo:', err)
   }
 }
@@ -164,8 +164,8 @@ export async function readAndAddItemsToArray({ path, arrayName, items }) {
 
     return modifiedCode
   } catch (error) {
-    console.error('a path existe?', await fse.pathExists(path))
-    console.error(`Error adding item(s) to the '${arrayName}' array:`, error)
+    console.error('O caminho existe ?', await fse.pathExists(path))
+    console.error(`Erro ao adicionar item(s) no '${arrayName}' array:`, error)
     throw error
   }
 }
