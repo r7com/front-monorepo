@@ -9,7 +9,7 @@ export type MenuRootProps = {
 
 export function Menu({ children }: MenuRootProps) {
   return (
-    <nav className="header-hidden sm:header-block header-flex-1" aria-label="Menu principal">
+    <nav className="header-hidden lg:header-block header-flex-1" aria-label="Menu principal">
       {children}
     </nav>
   )
