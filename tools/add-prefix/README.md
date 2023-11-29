@@ -13,4 +13,4 @@ const rootDir = 'libs/ui-section-menu' // Projeto que vai inserir o prefix
 const prefix = 'article' // Nome do prefix
 const variantKey = 'base' // Nome da chave dentro das variants.ts
 
-`node tools/src/add-prefix/add-prefix.js`
+`node tools/add-prefix/add-prefix.js`
