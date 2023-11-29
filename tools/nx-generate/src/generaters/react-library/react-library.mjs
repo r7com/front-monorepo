@@ -4,10 +4,12 @@ import { cypress } from './cypress.mjs'
 import { projectJson } from './project-json.mjs'
 import { storybook } from './storybook.mjs'
 import { filesManipulation } from './files-manipulation.mjs'
+import { viteConfig } from './vite-config.mjs'
 
 export async function library({ prefixName, projectName }) {
   await generateLib()
   await filesManipulation(projectName)
+  await viteConfig(projectName)
   await tailwind({ prefixName, projectName })
   await cypress(projectName)
   await projectJson(projectName)
