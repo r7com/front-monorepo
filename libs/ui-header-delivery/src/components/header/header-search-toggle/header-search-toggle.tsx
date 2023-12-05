@@ -9,7 +9,7 @@ export function HeaderSearchToggle() {
   return (
     <button
       type="button"
-      className="header-hidden sm:header-flex header-items-center header-justify-center header-w-lg header-h-full header-bg-neutral-high-400/light"
+      className="header-hidden lg:header-flex header-items-center header-justify-center header-w-lg header-h-full header-bg-neutral-high-400/light"
       aria-controls="header-search-form"
       aria-expanded={header.isSearchActive}
       aria-label="Alternador de busca"
