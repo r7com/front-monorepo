@@ -1,8 +1,11 @@
-/* eslint-disable-next-line */
-export interface LayoutProps {}
+import { ReactNode } from 'react'
 
-export function Layout(props: LayoutProps) {
-  return <div className="layout-grid layout-gap-xs layout-grid-cols-12"></div>
+export type LayoutProps = {
+  children: ReactNode
+}
+
+export function Layout({ children }: LayoutProps) {
+  return <div className="layout-grid layout-gap-xs layout-grid-cols-12">{children}</div>
 }
 
 export default Layout
