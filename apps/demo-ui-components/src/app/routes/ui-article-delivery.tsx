@@ -7,6 +7,8 @@ import {
   SocialShare,
   Signature,
 } from '@r7/ui-article-delivery'
+import { Breadcrumb, ConditionalLink } from '@r7/ui-base-components'
+import { MENU_DATA } from '../mocks/MENU_DATA'
 
 export function UiArticleDelivery() {
   return (
@@ -51,6 +53,17 @@ export function UiArticleDelivery() {
           <SocialShare.Item name="share" link="#share" title="share" />
         </SocialShare.List>
       </SocialShare>
+      <Breadcrumb>
+        <Breadcrumb.List>
+          {MENU_DATA.map(({ id, text, url, title }) => (
+            <Breadcrumb.Item key={id}>
+              <ConditionalLink href={url} title={title}>
+                {text}
+              </ConditionalLink>
+            </Breadcrumb.Item>
+          ))}
+        </Breadcrumb.List>
+      </Breadcrumb>
     </div>
   )
 }
