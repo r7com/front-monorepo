@@ -5,5 +5,5 @@ export type BreadcrumbListProps = {
 }
 
 export function BreadcrumbList({ children }: BreadcrumbListProps) {
-  return <ol className="flex">{children}</ol>
+  return <ol className="base-flex">{children}</ol>
 }
