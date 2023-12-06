@@ -1,7 +1,7 @@
 import '@r7/ui-header-delivery/css'
 import '@r7/ui-base-components/css'
 import { Route, Routes } from 'react-router-dom'
-import { UiFooterDelivery, UiSectionMenu, UiArticleDelivery } from './routes'
+import { UiFooterDelivery, UiSectionMenu, UiArticleDelivery, UiBaseComponents } from './routes'
 import { MENU_DATA } from './mocks/MENU_DATA'
 import { SIDEBAR_DATA } from './mocks/SIDEBAR_DATA'
 import { ArticleProvider } from '@r7/ui-article-delivery'
@@ -93,6 +93,7 @@ export function App() {
         <Route path="/ui-footer-delivery" element={<UiFooterDelivery />} />
         <Route path="/ui-article-delivery" element={<UiArticleDelivery />} />
         <Route path="/ui-section-menu" element={<UiSectionMenu />} />
+        <Route path="/ui-base-components" element={<UiBaseComponents />} />
       </Routes>
       {/* END: routes */}
     </ArticleProvider>
