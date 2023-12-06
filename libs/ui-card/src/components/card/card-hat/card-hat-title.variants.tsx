@@ -1,12 +1,16 @@
 import { VariantProps, createVariants } from '@r7/tools'
 
 export const variants = createVariants({
-  base: 'card-block card-text-little md:card-text-xxxs card-font-open-sans card-uppercase',
+  base: 'card-block card-font-open-sans card-uppercase',
   variants: {
     color: {
       high: 'card-text-neutral-high-400',
       low: 'card-text-neutral-low-500',
       'high-bold': 'card-text-neutral-high-400 card-font-bold',
+    },
+    size: {
+      medium: 'card-text-little  md:card-text-xxxs',
+      small: 'card-text-little ',
     },
   },
 })
