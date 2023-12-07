@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-
 import { AdPlaceholder } from './placeholder'
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof AdPlaceholder> = {
   title: 'Base/AdPlaceholder',
   component: AdPlaceholder,
@@ -13,7 +11,6 @@ const meta: Meta<typeof AdPlaceholder> = {
 export default meta
 type Story = StoryObj<typeof AdPlaceholder>
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
   args: {},
   parameters: {
