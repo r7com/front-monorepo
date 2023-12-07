@@ -1,29 +1,29 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Card } from '../'
-import { CardImageProps } from './card-image'
+import { Card } from '..'
+import { CardFigureProps } from './card-figure'
 import { ConditionalLink } from '@r7/ui-base-components'
 
-const meta: Meta<CardImageProps> = {
-  title: 'ui-card/Card/Image',
-  component: Card.Image,
+const meta: Meta<CardFigureProps> = {
+  title: 'ui-card/Card/Figure',
+  component: Card.Figure,
   tags: ['autodocs'],
   argTypes: {},
 }
 
 export default meta
 
-type Story = StoryObj<CardImageProps>
+type Story = StoryObj<CardFigureProps>
 
 export const Primary: Story = {
   render: ({ ...args }) => (
     <Card>
-      <Card.Image {...args}>
+      <Card.Figure {...args}>
         <img
           src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?resize=536x326&crop=691x420 80 0&dimensions=536x326"
           alt="Human hand writting in a paper"
           className="card-w-full card-object-cover card-h-full"
         />
-      </Card.Image>
+      </Card.Figure>
     </Card>
   ),
   args: {
@@ -44,14 +44,14 @@ export const WithLink: Story = {
   render: ({ ...args }) => (
     <Card>
       <ConditionalLink href="http://www.google.com" title="Google">
-        <Card.Image {...args}>
+        <Card.Figure {...args}>
           <img
             src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?resize=536x326&crop=691x420 80 0&dimensions=536x326"
             alt="Human hand writting in a paper"
             className="card-w-full card-object-cover card-h-full"
           />
           <Card.Label type="live" />
-        </Card.Image>
+        </Card.Figure>
       </ConditionalLink>
     </Card>
   ),
@@ -72,14 +72,14 @@ export const WithLink: Story = {
 export const WithLabel: Story = {
   render: ({ ...args }) => (
     <Card>
-      <Card.Image {...args}>
+      <Card.Figure {...args}>
         <img
           src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?resize=536x326&crop=691x420 80 0&dimensions=536x326"
           alt="Human hand writting in a paper"
           className="card-w-full card-object-cover card-h-full"
         />
         <Card.Label type="live" />
-      </Card.Image>
+      </Card.Figure>
     </Card>
   ),
   args: {
