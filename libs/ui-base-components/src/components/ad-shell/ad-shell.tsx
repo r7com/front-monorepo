@@ -38,5 +38,6 @@ export function AdShell({ children, layout = 'none' }: AdShellProps) {
       </div>
     ),
   }[layout]
+
   return AdShellVariant
 }
