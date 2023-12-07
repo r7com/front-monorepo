@@ -16,13 +16,13 @@ type Story = StoryObj<CardLabelProps>
 export const Primary: Story = {
   render: ({ ...args }) => (
     <Card className="card-flex">
-      <Card.Image className="card-mr-xxxs" format="landscape">
+      <Card.Figure className="card-mr-xxxs" format="landscape">
         <img
           src="http://img.r7.com/images/concurso-publico-14032022123440824?dimensions=300x200"
           alt="Human hand writting in a paper"
         />
         <Card.Label {...args} />
-      </Card.Image>
+      </Card.Figure>
     </Card>
   ),
   args: {

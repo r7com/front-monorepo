@@ -15,4 +15,4 @@ export const variants = createVariants({
   },
 })
 
-export type CardImageVariants = VariantProps<typeof variants>
+export type CardFigureVariants = VariantProps<typeof variants>
