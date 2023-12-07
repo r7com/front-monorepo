@@ -19,7 +19,5 @@ export function useIsInViewport(elSelector: string, rootMargin = '-56px') {
     return () => observer.disconnect()
   }, [observer, elSelector])
 
-  console.log(isInViewport)
-
   return isInViewport
 }
