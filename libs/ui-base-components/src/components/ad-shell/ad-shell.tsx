@@ -1,16 +1,18 @@
+import { variants } from './ad-shell.variants'
+
 export type AdShellProps = {
   children: React.ReactNode
   layout: 'lines' | 'background' | 'tag' | 'none'
 }
 
 export function AdShell({ children, layout = 'none' }: AdShellProps) {
+  const { adContainer, text } = variants({ layout })
+
   const AdShellVariant = {
     background: (
       <div className="base-pb-sm base-bg-neutral-high-600 base-rounded-md">
-        <span className="base-block base-text-xxxs base-uppercase base-text-neutral-low-500 base-p-nano base-h-sm base-text-center base-font-open-sans">
-          Publicidade
-        </span>
-        <div className="base-bg-neutral-high-600">{children}</div>
+        <span className={text()}>Publicidade</span>
+        <div className={adContainer()}>{children}</div>
       </div>
     ),
     lines: (
@@ -22,16 +24,14 @@ export function AdShell({ children, layout = 'none' }: AdShellProps) {
           </span>
           <span className="base-bg-neutral-low-400 base-grow base-h-[1px]"></span>
         </div>
-        <div className="base-bg-neutral-high-600">{children}</div>
+        <div className={adContainer()}>{children}</div>
       </div>
     ),
     none: <>{children}</>,
     tag: (
       <div>
-        <span className="base-block base-text-xxxs base-uppercase base-text-neutral-low-500 base-mb-nano base-font-open-sans">
-          Publicidade
-        </span>
-        <div className="base-bg-neutral-high-600">{children}</div>
+        <span className={text()}>Publicidade</span>
+        <div className={adContainer()}>{children}</div>
       </div>
     ),
   }[layout]
