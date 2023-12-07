@@ -10,13 +10,16 @@ export function AdShell({ children, layout = 'none' }: AdShellProps) {
 
   const AdShellVariant = {
     background: (
-      <div className="base-pb-sm base-bg-neutral-high-600 base-rounded-md">
+      <div className="base-pb-sm base-bg-neutral-high-600 base-rounded-md" data-testid="ad-shell">
         <span className={text()}>Publicidade</span>
         <div className={adContainer()}>{children}</div>
       </div>
     ),
     lines: (
-      <div className="base-border-b-hairline base-border-b-neutral-low-400 base-pb-[11px]">
+      <div
+        className="base-border-b-hairline base-border-b-neutral-low-400 base-pb-[11px]"
+        data-testid="ad-shell"
+      >
         <div className="base-flex base-items-center base-mb-nano">
           <span className="base-bg-neutral-low-400 base-grow base-h-[1px]"></span>
           <span className="base-text-neutral-low-400 base-text-little base-uppercase base-mx-nano base-my-0">
@@ -27,9 +30,9 @@ export function AdShell({ children, layout = 'none' }: AdShellProps) {
         <div className={adContainer()}>{children}</div>
       </div>
     ),
-    none: <>{children}</>,
+    none: <div data-testid="ad-shell">{children}</div>,
     tag: (
-      <div>
+      <div data-testid="ad-shell">
         <span className={text()}>Publicidade</span>
         <div className={adContainer()}>{children}</div>
       </div>
