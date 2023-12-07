@@ -13,50 +13,33 @@ const meta: Meta<typeof Breadcrumb> = {
 export default meta
 type Story = StoryObj<typeof Breadcrumb>
 
+const BreadcrumbDemo = () => (
+  <Breadcrumb>
+    <Breadcrumb.List>
+      {MENU_DATA.map(({ id, text, url, title }) => {
+        const lastItem = MENU_DATA[MENU_DATA.length - 1].id === id
+        return (
+          <Breadcrumb.Item key={id}>
+            <ConditionalLink
+              href={url}
+              title={`Ir para a página de ${title}`}
+              aria-current={lastItem ? 'page' : 'false'}
+            >
+              {text}
+            </ConditionalLink>
+          </Breadcrumb.Item>
+        )
+      })}
+    </Breadcrumb.List>
+  </Breadcrumb>
+)
+
 export const Desktop: Story = {
-  render: () => (
-    <Breadcrumb>
-      <Breadcrumb.List>
-        {MENU_DATA.map(({ id, text, url, title }) => {
-          const lastItem = MENU_DATA[MENU_DATA.length - 1].id === id
-          return (
-            <Breadcrumb.Item key={id}>
-              <ConditionalLink
-                href={url}
-                title={`Ir para a página de ${title}`}
-                aria-current={lastItem ? 'page' : 'false'}
-              >
-                {text}
-              </ConditionalLink>
-            </Breadcrumb.Item>
-          )
-        })}
-      </Breadcrumb.List>
-    </Breadcrumb>
-  ),
+  render: BreadcrumbDemo,
 }
 
 export const Mobile: Story = {
-  render: () => (
-    <Breadcrumb>
-      <Breadcrumb.List>
-        {MENU_DATA.map(({ id, text, url, title }) => {
-          const lastItem = MENU_DATA[MENU_DATA.length - 1].id === id
-          return (
-            <Breadcrumb.Item key={id}>
-              <ConditionalLink
-                href={url}
-                title={`Ir para a página de ${title}`}
-                aria-current={lastItem ? 'page' : 'false'}
-              >
-                {text}
-              </ConditionalLink>
-            </Breadcrumb.Item>
-          )
-        })}
-      </Breadcrumb.List>
-    </Breadcrumb>
-  ),
+  render: BreadcrumbDemo,
   parameters: {
     viewport: {
       defaultViewport: 'iphonexr',
