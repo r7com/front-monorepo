@@ -1,14 +1,14 @@
 import { useMemo, useState, useEffect } from 'react'
 
-export function useIsInViewport(elSelector: string) {
-  const [isIntersecting, setIsIntersecting] = useState(false)
+export function useIsInViewport(elSelector: string, rootMargin = '-56px') {
+  const [isInViewport, setIsInViewport] = useState(false)
 
   const observer = useMemo(
     () =>
-      new IntersectionObserver(([entry]) => setIsIntersecting(entry.isIntersecting), {
-        rootMargin: '-50px',
+      new IntersectionObserver(([entry]) => setIsInViewport(entry.isIntersecting), {
+        rootMargin,
       }),
-    [],
+    [rootMargin],
   )
 
   useEffect(() => {
@@ -19,5 +19,7 @@ export function useIsInViewport(elSelector: string) {
     return () => observer.disconnect()
   }, [observer, elSelector])
 
-  return isIntersecting
+  console.log(isInViewport)
+
+  return isInViewport
 }

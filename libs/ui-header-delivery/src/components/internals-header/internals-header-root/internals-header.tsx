@@ -10,12 +10,12 @@ export type InternalsHeaderRootProps = {
 }
 
 export function InternalsHeader({ children, triggerElementSelector }: InternalsHeaderRootProps) {
-  const isTriggerElelentInViewport = useIsInViewport(triggerElementSelector)
+  const isTriggerElementInViewport = useIsInViewport(triggerElementSelector)
 
   return (
     <div
       data-testid="internals-header"
-      className={variants({ fadeIn: !isTriggerElelentInViewport })}
+      className={variants({ fadeIn: !isTriggerElementInViewport })}
     >
       {children}
     </div>
