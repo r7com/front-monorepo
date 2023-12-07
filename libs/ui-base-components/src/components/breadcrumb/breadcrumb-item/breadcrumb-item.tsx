@@ -7,14 +7,10 @@ export type BreadcrumbItemProps = {
 export function BreadcrumbItem({ children }: BreadcrumbItemProps) {
   return (
     <li
-      className="base-hidden base-text-little base-text-neutral-high-600 base-font-normal 
-        last:base-flex first:base-flex md:base-flex after:base-border-t-hairline
-        after:base-content-[' '] after:base-w-[6px] after:base-h-[6px] after:base-rotate-45
-        after:base-cursor-pointer after:base-block base-items-center base-capitalize
-        after:base-border-r-hairline after:base-border-r-agerating-18anos-500 
-      after:base-border-t-agerating-18anos-500 after:base-border-solid 
-        after:base-mx-nano last:after:base-content-none
-        last:base-font-bold last:base-text-neutral-low-500"
+      className="base-hidden base-text-xxxs base-text-neutral-low-400
+        last:base-flex first:base-flex md:base-flex after:base-content-['/'] 
+        after:base-block base-items-center base-capitalize
+        after:base-mx-quark last:after:base-content-none last:base-font-bold"
     >
       {children}
     </li>

@@ -46,7 +46,7 @@ export const Mobile: Story = {
     },
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/wm2WOlSlO2Yl4ClV00bdlP/Artigos---Desktop?node-id=0%3A1&mode=dev',
+      url: 'https://www.figma.com/file/OBWV1tXbl1eXmdxzgEmcs3/Core-C-%7C-Delivery?type=design&node-id=1970-2803&mode=design&t=3RiFTaeOLi6fngmi-0',
       accessToken: 'figd_sHs6Ap894w4C-OAFls7tuq0fMMROyue-8zQJ8hRE',
     },
   },
