@@ -3,7 +3,7 @@ import { createVariants } from '@r7/tools'
 export const variants = createVariants({
   slots: {
     buttonSlot:
-      'header-flex header-items-center header-h-full header-gap-[1px] header-text-neutral-high-400 header-absolute header-left-xxxs sm:header-static',
+      'header-flex header-items-center header-h-full header-gap-[1px] header-text-neutral-high-400 header-absolute header-left-xxxs lg:header-static',
     iconSlot:
       'header-flex header-flex-col header-w-xxxs header-h-xxxs header-mr-nano header-justify-around',
     firstLineSlot:

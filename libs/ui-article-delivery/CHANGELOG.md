@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.4.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-article-delivery-0.3.0...ui-article-delivery-0.4.0) (2023-12-07)
+
+### Features
+
+- **ui-article-delivery:** add article header layout ([e3988c2](https://gitlab.ir7.com.br/r7/front-monorepo/commit/e3988c2fea040c52bc658f657fe3568b41be98ff))
+
 # [0.3.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-article-delivery-0.2.0...ui-article-delivery-0.3.0) (2023-11-28)
 
 ### Features
