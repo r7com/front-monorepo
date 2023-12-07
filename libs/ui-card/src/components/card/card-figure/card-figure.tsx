@@ -1,15 +1,15 @@
-import { CardImageVariants, variants } from './card-image.variants'
+import { CardFigureVariants, variants } from './card-figure.variants'
 
-export type CardImageProps = {
+export type CardFigureProps = {
   className?: string
   children: React.ReactNode
-} & CardImageVariants
+} & CardFigureVariants
 
-export function CardImage({
+export function CardFigure({
   className = '',
   children,
   shadow = false,
   format = 'square',
-}: CardImageProps) {
+}: CardFigureProps) {
   return <figure className={variants({ shadow, format, className })}>{children}</figure>
 }
