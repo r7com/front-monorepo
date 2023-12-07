@@ -1,7 +1,7 @@
 import { CardHatImage } from './card-hat/card-hat-image'
 import { CardHatTitle } from './card-hat/card-hat-title'
 import { CardHatWrapper } from './card-hat/card-hat-wrapper'
-import { CardImage } from './card-image/card-image'
+import { CardFigure } from './card-figure/card-figure'
 import { CardLabel } from './card-label/card-label'
 import { CardTitle } from './card-title/card-title'
 
@@ -18,6 +18,6 @@ Card.Title = CardTitle
 Card.HatImage = CardHatImage
 Card.HatTitle = CardHatTitle
 Card.HatWrapper = CardHatWrapper
-Card.Image = CardImage
+Card.Figure = CardFigure
 Card.Label = CardLabel
 Card.Title = CardTitle
