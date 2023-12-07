@@ -2,7 +2,7 @@ import { variants } from './ad-shell.variants'
 
 export type AdShellProps = {
   children: React.ReactNode
-  layout: 'lines' | 'background' | 'tag' | 'none'
+  layout?: 'lines' | 'background' | 'tag' | 'none'
 }
 
 export function AdShell({ children, layout = 'none' }: AdShellProps) {

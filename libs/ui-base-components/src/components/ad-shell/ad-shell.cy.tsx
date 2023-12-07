@@ -6,11 +6,11 @@ describe(`${AdShell.name}`, () =>
   it('should render all layout variants', () => {
     cy.mount(
       <div className="base-p-md">
-        <AdShell layout="background">
+        <AdShell>
           <AdPlaceholder />
         </AdShell>
         <br></br>
-        <AdShell layout="none">
+        <AdShell layout="background">
           <AdPlaceholder />
         </AdShell>
         <br></br>
