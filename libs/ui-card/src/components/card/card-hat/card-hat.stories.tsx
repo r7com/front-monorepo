@@ -26,6 +26,7 @@ export const Primary: HatTitleStory = {
   ),
   args: {
     color: 'low',
+    size: 'small',
   },
   parameters: {
     design: {

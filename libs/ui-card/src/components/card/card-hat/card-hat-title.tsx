@@ -4,6 +4,6 @@ export type CardHatTitleProps = {
   children: React.ReactNode
 } & CardHatTitleVariants
 
-export function CardHatTitle({ children, color = 'low' }: CardHatTitleProps) {
-  return <span className={variants({ color })}>{children}</span>
+export function CardHatTitle({ children, color = 'low', size = 'small' }: CardHatTitleProps) {
+  return <span className={variants({ color, size })}>{children}</span>
 }
