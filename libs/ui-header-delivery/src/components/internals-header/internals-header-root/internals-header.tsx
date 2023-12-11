@@ -6,19 +6,21 @@ import { InternalsHeaderSectionName } from '../internals-header-section-name/int
 
 export type InternalsHeaderRootProps = {
   children: React.ReactNode
-  triggerElementSelector: string
+  triggerElementSelector?: string
 }
 
 export function InternalsHeader({ children, triggerElementSelector }: InternalsHeaderRootProps) {
-  const isTriggerElementInViewport = useIsInViewport(triggerElementSelector)
+  const [isTriggerElementInViewport, triggerElementExists] = useIsInViewport(triggerElementSelector)
 
   return (
-    <div
-      data-testid="internals-header"
-      className={variants({ fadeIn: !isTriggerElementInViewport })}
-    >
-      {children}
-    </div>
+    triggerElementExists && (
+      <div
+        data-testid="internals-header"
+        className={variants({ fadeIn: !isTriggerElementInViewport })}
+      >
+        {children}
+      </div>
+    )
   )
 }
 
