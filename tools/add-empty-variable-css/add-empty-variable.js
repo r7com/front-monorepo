@@ -1,12 +1,7 @@
 const fs = require('fs')
 const glob = require('glob')
 const path = require('path')
-
-function getParam(param = '') {
-  const paramIndex = process.argv.findIndex(value => value === param)
-
-  return paramIndex > -1 ? process.argv[paramIndex + 1] : ''
-}
+const { getParam } = require('../utils/utils')
 
 const rootDir = getParam('--inputFolder')
 
