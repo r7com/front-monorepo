@@ -23,15 +23,15 @@ function processCSSFile(filePath) {
 
     fs.writeFileSync(filePath, newCssContent, 'utf8')
 
-    console.log(`Regra aplicada com sucesso em: ${filePath}`)
+    console.log(`Rule successfully applied to: ${filePath}`)
   } catch (error) {
-    console.error(`Erro ao processar o arquivo ${filePath}: ${error.message}`)
+    console.error(`Error processing the file ${filePath}: ${error.message}`)
   }
 }
 
 glob('**/style.css', { cwd: rootDir }, (err, files) => {
   if (err) {
-    console.error('Erro ao obter lista de arquivos:', err)
+    console.error('Error getting list of files:', err)
     return
   }
 
