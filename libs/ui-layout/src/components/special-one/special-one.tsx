@@ -1,4 +1,4 @@
-import { Children, ReactElement, ReactNode, isValidElement } from 'react'
+import { Children, ReactNode, isValidElement } from 'react'
 
 type SpecialOneProps = {
   renderMain: ReactNode
@@ -24,7 +24,7 @@ function Main({ rowOne, rowTwo }: MainProps) {
         <div className="layout-grid layout-gap-xs lg:layout-grid-cols-17">
           {Children.map(childrenOne, child => {
             if (isValidElement(child)) {
-              const blocks = Children.toArray(child.props.children) as ReactElement[]
+              const blocks = Children.toArray(child.props.children)
 
               if (blocks.length === 2) {
                 return (
@@ -44,7 +44,7 @@ function Main({ rowOne, rowTwo }: MainProps) {
         <div className="layout-grid layout-gap-xs lg:layout-grid-cols-17">
           {Children.map(childrenTwo, child => {
             if (isValidElement(child)) {
-              const blocks = Children.toArray(child.props.children) as ReactElement[]
+              const blocks = Children.toArray(child.props.children)
 
               if (blocks.length === 3) {
                 return (
