@@ -7,6 +7,7 @@ import {
   SocialShare,
   Signature,
 } from '@r7/ui-article-delivery'
+import { Paragraph } from '@r7/ui-base-components'
 
 export function UiArticleDelivery() {
   return (
@@ -27,7 +28,7 @@ export function UiArticleDelivery() {
           <Signature.Date published="2023-06-29T15:12:23Z" modified="2023-08-28T14:32:13.07Z" />
         </Signature.Content>
       </Signature>
-      <p className="text-[calc(theme(fontSize.xxxs)_*_var(--font-size))]">anderson</p>
+      <Paragraph>anderson</Paragraph>
       <AccessibilityBar>
         <AccessibilityBar.List>
           <AccessibilityBar.Item>
