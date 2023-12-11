@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Header, Menu, Sidebar } from '../'
+import { Header, Menu, Sidebar, InternalsHeader } from '../'
 
 import { MENU_DATA } from '../mocks/MENU_DATA'
 import { SIDEBAR_DATA } from '../mocks/SIDEBAR_DATA'
@@ -91,6 +91,31 @@ export const Primary: Story = {
           <Header.Search />
         </Header.MainSection>
       </Header>
+    </div>
+  ),
+  args: {},
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/OBWV1tXbl1eXmdxzgEmcs3/Core-C-%7C-Delivery?type=design&node-id=1970-2537&mode=design&t=HMPQG6OZhc0dnwMk-0',
+      accessToken: 'figd_sHs6Ap894w4C-OAFls7tuq0fMMROyue-8zQJ8hRE',
+    },
+  },
+}
+
+export const Internals: Story = {
+  render: () => (
+    <div className="header-h-screen">
+      <InternalsHeader triggerElementSelector='[data-el="heading-trigger"]'>
+        <Header.Logo
+          link="https://www.r7.com"
+          logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1695891496962.png"
+          alt="Portal R7"
+        />
+        <InternalsHeader.SectionName sectionUrl="#">editoria</InternalsHeader.SectionName>
+
+        <InternalsHeader.Title>titulo do artigo</InternalsHeader.Title>
+      </InternalsHeader>
     </div>
   ),
   args: {},
