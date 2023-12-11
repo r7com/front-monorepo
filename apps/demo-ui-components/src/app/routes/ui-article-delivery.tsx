@@ -7,7 +7,7 @@ import {
   SocialShare,
   Signature,
 } from '@r7/ui-article-delivery'
-import { Breadcrumb, ConditionalLink } from '@r7/ui-base-components'
+import { Breadcrumb, ConditionalLink, Paragraph } from '@r7/ui-base-components'
 import { MENU_DATA } from '../mocks/MENU_DATA'
 
 export function UiArticleDelivery() {
@@ -29,7 +29,7 @@ export function UiArticleDelivery() {
           <Signature.Date published="2023-06-29T15:12:23Z" modified="2023-08-28T14:32:13.07Z" />
         </Signature.Content>
       </Signature>
-      <p className="text-[calc(theme(fontSize.xxxs)_*_var(--font-size))]">anderson</p>
+      <Paragraph>anderson</Paragraph>
       <AccessibilityBar>
         <AccessibilityBar.List>
           <AccessibilityBar.Item>
