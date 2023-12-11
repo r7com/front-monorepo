@@ -8,22 +8,32 @@
     "lint": {
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
-      "options": { "lintFilePatterns": ["libs/ui-layout/**/*.{ts,tsx,js,jsx}"] }
+      "options": {
+        "lintFilePatterns": ["libs/ui-layout/**/*.{ts,tsx,js,jsx}"]
+      }
     },
     "build": {
       "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
-      "options": { "outputPath": "dist/libs/ui-layout" },
+      "options": {
+        "outputPath": "dist/libs/ui-layout"
+      },
       "configurations": {
-        "development": { "mode": "development" },
-        "production": { "mode": "production" }
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": { "jestConfig": "libs/ui-layout/jest.config.ts" }
+      "options": {
+        "jestConfig": "libs/ui-layout/jest.config.ts"
+      }
     },
     "component-test": {
       "executor": "@nx/cypress:cypress",
@@ -40,14 +50,23 @@
         "ci": {
           "watch": false,
           "quiet": true,
-          "env": { "pluginVisualRegressionUpdateImages": true }
+          "env": {
+            "pluginVisualRegressionUpdateImages": true
+          }
         }
       }
     },
     "typecheck": {
       "executor": "nx:run-commands",
-      "options": { "command": "tsc --noEmit -p {projectRoot}/tsconfig.lib.json" }
+      "options": {
+        "command": "tsc --noEmit -p {projectRoot}/tsconfig.lib.json"
+      }
     },
-    "version": { "executor": "@jscutlery/semver:version", "options": { "preset": "angular" } }
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular"
+      }
+    }
   }
 }

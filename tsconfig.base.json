@@ -30,7 +30,7 @@
       "@r7/ui-header-delivery": ["libs/ui-header-delivery/src/index.ts"],
       "@r7/ui-header-delivery/css": ["dist/libs/ui-header-delivery/style.css"],
       "@r7/ui-layout": ["libs/ui-layout/src/index.ts"],
-      "@r7/ui-layout/css": ["dist/libs/ui-layout/css"],
+      "@r7/ui-layout/css": ["dist/libs/ui-layout/style.css"],
       "@r7/ui-section-foot": ["libs/ui-section-foot/src/index.ts"],
       "@r7/ui-section-foot/css": ["dist/libs/ui-section-foot/style.css"],
       "@r7/ui-section-heading": ["libs/ui-section-heading/src/index.ts"],
