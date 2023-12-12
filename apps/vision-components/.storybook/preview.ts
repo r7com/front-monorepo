@@ -6,6 +6,7 @@ import '@r7/ui-header-delivery/css'
 import '@r7/ui-section-foot/css'
 import '@r7/ui-section-heading/css'
 import '@r7/ui-section-menu/css'
+import '@r7/ui-layout/css'
 import './tailwind.css'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 
