@@ -1,7 +1,8 @@
 import { useMemo, useState, useEffect } from 'react'
 
-export function useIsInViewport(elSelector: string, rootMargin = '-56px') {
+export function useIsInViewport(elSelector?: string, rootMargin = '-56px') {
   const [isInViewport, setIsInViewport] = useState(false)
+  const [elSelectorExists, setElSelectorExists] = useState(false)
 
   const observer = useMemo(
     () =>
@@ -12,12 +13,16 @@ export function useIsInViewport(elSelector: string, rootMargin = '-56px') {
   )
 
   useEffect(() => {
-    const $el = document.querySelector(elSelector)
-
-    $el && observer.observe($el)
+    if (elSelector) {
+      const $el = document.querySelector(elSelector)
+      $el && observer.observe($el)
+      $el && setElSelectorExists(true)
+    } else {
+      setElSelectorExists(false)
+    }
 
     return () => observer.disconnect()
   }, [observer, elSelector])
 
-  return isInViewport
+  return [isInViewport, elSelectorExists]
 }

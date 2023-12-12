@@ -25,6 +25,7 @@ export async function projectJson(projectName) {
     ...projectJson.targets,
     typecheck: projectJsonObj.typecheck,
     version: projectJsonObj.version,
+    'build-css-arc': projectJsonObj['build-css-arc'],
   }
 
   await writeFile({
