@@ -1,4 +1,5 @@
 import { Children, ReactNode, isValidElement } from 'react'
+import { Grid } from '../grid'
 
 type SpecialOneProps = {
   renderMain: ReactNode
@@ -76,14 +77,6 @@ export function SpecialOne({ renderMain, renderSidebar }: SpecialOneProps) {
       <div className="lg:layout-col-span-7">{renderSidebar}</div>
     </Grid>
   )
-}
-
-type GridProps = {
-  children: ReactNode
-}
-
-export function Grid({ children }: GridProps) {
-  return <div className="layout-grid lg:layout-grid-cols-24 layout-gap-xs">{children}</div>
 }
 
 SpecialOne.Main = Main
