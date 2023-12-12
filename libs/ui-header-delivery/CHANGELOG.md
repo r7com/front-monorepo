@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.4.2](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.4.1...ui-header-delivery-2.4.2) (2023-12-12)
+
+### Features
+
+- add comment inside empty variables in css from tailwind ([a2c72f3](https://gitlab.ir7.com.br/r7/front-monorepo/commit/a2c72f306b3aba7a099e7e2413d992d5a00fbbff))
+- add comment inside empty variables in css from tailwind ([91e2087](https://gitlab.ir7.com.br/r7/front-monorepo/commit/91e208700db842328932c806aac0482e689cf86b))
+
 ## [2.4.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.4.0...ui-header-delivery-2.4.1) (2023-12-12)
 
 ### Bug Fixes
