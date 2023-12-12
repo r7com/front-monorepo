@@ -112,27 +112,6 @@ const CompleteHeader = (
 )
 
 describe('InternalsHeader', () => {
-  it('should be rendered', () => {
-    cy.mount(
-      <InternalsHeader triggerElementSelector="no-trigger">
-        <Header.Logo
-          link="https://www.r7.com"
-          logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1695891496962.png"
-          alt="Portal R7"
-        />
-        <InternalsHeader.SectionName sectionUrl="#">editoria</InternalsHeader.SectionName>
-
-        <InternalsHeader.Title>titulo do artigo</InternalsHeader.Title>
-      </InternalsHeader>,
-    )
-
-    cy.viewport('macbook-11')
-
-    cy.get('[data-testid="internals-header"]').should('be.visible')
-
-    cy.matchImage()
-  })
-
   it('should only be visible when "triggerElement" is out of the viewport', () => {
     cy.mount(CompleteHeader)
 
@@ -143,5 +122,7 @@ describe('InternalsHeader', () => {
     cy.scrollTo(0, 500)
 
     cy.get('[data-testid="internals-header"]').should('be.visible')
+
+    cy.matchImage()
   })
 })

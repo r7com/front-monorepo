@@ -8,6 +8,8 @@ import {
   Signature,
   ArticleProvider,
 } from '@r7/ui-article-delivery'
+import { Breadcrumb, ConditionalLink, Paragraph } from '@r7/ui-base-components'
+import { MENU_DATA } from '../mocks/MENU_DATA'
 
 export function UiArticleDelivery() {
   return (
@@ -29,7 +31,7 @@ export function UiArticleDelivery() {
             <Signature.Date published="2023-06-29T15:12:23Z" modified="2023-08-28T14:32:13.07Z" />
           </Signature.Content>
         </Signature>
-        <p className="text-[calc(theme(fontSize.xxxs)_*_var(--font-size))]">anderson</p>
+        <Paragraph>anderson</Paragraph>
         <AccessibilityBar>
           <AccessibilityBar.List>
             <AccessibilityBar.Item>
@@ -53,6 +55,24 @@ export function UiArticleDelivery() {
             <SocialShare.Item name="share" link="#share" title="share" />
           </SocialShare.List>
         </SocialShare>
+        <Breadcrumb>
+          <Breadcrumb.List>
+            {MENU_DATA.map(({ id, text, url, title }) => {
+              const lastItem = MENU_DATA[MENU_DATA.length - 1].id === id
+              return (
+                <Breadcrumb.Item key={id}>
+                  <ConditionalLink
+                    href={url}
+                    title={`Ir para a página de ${title}`}
+                    aria-current={lastItem ? 'page' : 'false'}
+                  >
+                    {text}
+                  </ConditionalLink>
+                </Breadcrumb.Item>
+              )
+            })}
+          </Breadcrumb.List>
+        </Breadcrumb>
       </div>
     </ArticleProvider>
   )

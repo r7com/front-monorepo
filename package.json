@@ -5,7 +5,8 @@
   "scripts": {
     "prepare": "husky install",
     "commit": "cz",
-    "nx-generate": "node tools/nx-generate/nx-generate.mjs"
+    "nx-generate": "node tools/nx-generate/nx-generate.mjs",
+    "test:tools": "jest --config tools/jest.config.js --forceExit"
   },
   "private": true,
   "dependencies": {
