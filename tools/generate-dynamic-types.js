@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const prettier = require('prettier')
+const { getParam } = require('./utils/utils')
 
 /** Centraliza todas os parametros do script passaveis */
 class Config {
@@ -238,14 +239,6 @@ function dynamicTypes() {
     createDynamicTypesFile,
     showTypesTable,
   }
-}
-
-/** Pega o valor do parametro do script `--parametro valor`*/
-function getParam(param = '', required = true) {
-  const paramIndex = process.argv.findIndex(value => value === param)
-  // if (paramIndex === -1 && required)
-  //   throw new Error(`Parameter ${required} "${param}" does not exist`)
-  return paramIndex > -1 ? process.argv[paramIndex + 1] : ''
 }
 
 /** Pega uma flag sem valor */
