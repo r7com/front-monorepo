@@ -85,6 +85,12 @@
         "command": "node tools/generate-dynamic-types.js --inputFolder {projectRoot}/src/svg --outputFile {projectRoot}/src/components/svg-icon/svg-icon.types.ts --typeName SvgIcons --showOnlyTypesTable --autoFix"
       }
     },
+    "build-css-arc": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/add-empty-variable-css/add-empty-variable.js --inputFolder dist/{projectRoot}"
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {

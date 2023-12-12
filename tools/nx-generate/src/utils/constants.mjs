@@ -36,6 +36,13 @@ export const projectJsonObj = {
       preset: 'angular',
     },
   },
+  'build-css-arc': {
+    executor: 'nx:run-commands',
+    options: {
+      command:
+        'node tools/add-empty-variable-css/add-empty-variable.js --inputFolder dist/{projectRoot}',
+    },
+  },
   options: {
     watch: true,
     browser: 'chrome',

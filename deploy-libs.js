@@ -18,6 +18,7 @@ deploy:${project}:
     - yarn install --cache-folder .yarn-cache --prefer-offline --frozen-lockfile
   script:
     - yarn nx build ${project}
+    - yarn nx build-css-arc ${project}
     - cd ./dist/libs/${project}
     - echo "@r7:registry=https://registry.npmjs.org/" > .npmrc
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
