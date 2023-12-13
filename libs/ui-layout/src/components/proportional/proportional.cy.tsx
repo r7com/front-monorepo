@@ -1,4 +1,4 @@
-import { Proportional } from './proportional'
+import { Proportional } from '.'
 
 const Block = () => (
   <div

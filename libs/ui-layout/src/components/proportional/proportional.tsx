@@ -18,7 +18,7 @@ function Proportionals({ grid }: Pick<ProportionalsProps, 'grid'>) {
     const blocks = Children.toArray(children)
 
     return (
-      blocks.length === grid && (
+      blocks.length <= grid && (
         <Grid>
           {blocks.map(block => (
             <div className={gridLayout}>{block}</div>
