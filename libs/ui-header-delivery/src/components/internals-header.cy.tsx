@@ -4,24 +4,26 @@ import { InternalsHeader } from './internals-header'
 const CompleteHeader = (
   <div>
     <Header>
-      <Header.MainSection>
-        <Header.Logo
-          link="https://www.r7.com"
-          logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1698842893138.svg"
-          alt="Portal R7"
-        />
-
-        <InternalsHeader triggerElementSelector='[data-el="heading-trigger"]'>
+      <Header.Fixed>
+        <Header.MainSection>
           <Header.Logo
             link="https://www.r7.com"
-            logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1695891496962.png"
+            logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1698842893138.svg"
             alt="Portal R7"
           />
-          <InternalsHeader.SectionName sectionUrl="#">editoria</InternalsHeader.SectionName>
 
-          <InternalsHeader.Title>titulo do artigo</InternalsHeader.Title>
-        </InternalsHeader>
-      </Header.MainSection>
+          <InternalsHeader triggerElementSelector='[data-el="heading-trigger"]'>
+            <Header.Logo
+              link="https://www.r7.com"
+              logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1695891496962.png"
+              alt="Portal R7"
+            />
+            <InternalsHeader.SectionName sectionUrl="#">editoria</InternalsHeader.SectionName>
+
+            <InternalsHeader.Title>titulo do artigo</InternalsHeader.Title>
+          </InternalsHeader>
+        </Header.MainSection>
+      </Header.Fixed>
     </Header>
     <ul>
       <li>element</li>
