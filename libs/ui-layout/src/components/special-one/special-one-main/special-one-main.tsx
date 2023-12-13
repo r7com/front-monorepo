@@ -11,8 +11,8 @@ export function Main({ rowOne, rowTwo }: MainProps) {
 
   return (
     <>
-      <div className="layout-mb-xs">
-        <div className="layout-grid layout-gap-xs md:layout-grid-cols-24 lg:layout-grid-cols-17">
+      <div className="layout-mb-xxxs xl:layout-mb-xs">
+        <div className="layout-grid layout-gap-xxxs xl:layout-gap-xs md:layout-grid-cols-24 lg:layout-grid-cols-17">
           {Children.map(childrenOne, child => {
             if (isValidElement(child)) {
               const blocks = Children.toArray(child.props.children)
@@ -32,7 +32,7 @@ export function Main({ rowOne, rowTwo }: MainProps) {
         </div>
       </div>
       <div>
-        <div className="layout-grid layout-gap-xs md:layout-grid-cols-24 lg:layout-grid-cols-17">
+        <div className="layout-grid layout-gap-xxxs xl:layout-gap-xs md:layout-grid-cols-24 lg:layout-grid-cols-17">
           {Children.map(childrenTwo, child => {
             if (isValidElement(child)) {
               const blocks = Children.toArray(child.props.children)

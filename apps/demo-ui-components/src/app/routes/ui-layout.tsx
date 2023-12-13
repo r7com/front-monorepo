@@ -15,7 +15,7 @@ export function UiLayout() {
   )
 
   const SidebarBlock = () => (
-    <div className="h-giant lg:h-[calc(560px+32px)] bg-neutral-low-400 items-center justify-center flex">
+    <div className="h-giant lg:h-[calc(560px+16px)] xl:h-[calc(560px+32px)] bg-neutral-low-400 items-center justify-center flex">
       Sidebar Block
     </div>
   )

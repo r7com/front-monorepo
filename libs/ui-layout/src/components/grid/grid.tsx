@@ -3,5 +3,9 @@ type GridProps = {
 }
 
 export function Grid({ children }: GridProps) {
-  return <div className="layout-grid lg:layout-grid-cols-24 layout-gap-xs">{children}</div>
+  return (
+    <div className="layout-grid md:layout-grid-cols-24 layout-gap-xxxs xl:layout-gap-xs">
+      {children}
+    </div>
+  )
 }

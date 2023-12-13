@@ -40,7 +40,7 @@ describe('SpecialOne', () => {
     cy.matchImage()
   })
 
-  it('should render SpecialOne on Tablet', () => {
+  it('should render SpecialOne on Mobile', () => {
     cy.viewport('iphone-8')
     cy.matchImage()
   })
