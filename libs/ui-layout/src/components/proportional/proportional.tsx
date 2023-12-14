@@ -8,10 +8,10 @@ type ProportionalsProps = {
 
 function Proportionals({ grid }: Pick<ProportionalsProps, 'grid'>) {
   const gridLayout = {
-    1: 'lg:layout-col-span-24',
-    2: 'lg:layout-col-span-12',
-    3: 'lg:layout-col-span-8',
-    4: 'lg:layout-col-span-6',
+    1: 'md:layout-col-span-24',
+    2: 'md:layout-col-span-12',
+    3: 'md:layout-col-span-8',
+    4: 'md:layout-col-span-6',
   }[grid]
 
   return ({ children }: Pick<ProportionalsProps, 'children'>) => {
@@ -20,7 +20,7 @@ function Proportionals({ grid }: Pick<ProportionalsProps, 'grid'>) {
     return (
       blocks.length <= grid && (
         <Grid>
-          {blocks.map(block => (
+          {Children.map(blocks, block => (
             <div className={gridLayout}>{block}</div>
           ))}
         </Grid>
