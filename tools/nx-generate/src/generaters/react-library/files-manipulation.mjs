@@ -19,7 +19,11 @@ export async function filesManipulation(projectName) {
   }
 
   async function updateRootIndex() {
-    const indexContent = await readAndModifyFile({ path: `libs/${projectName}/src/index.ts` })
+    const indexContent = await readAndModifyFile({
+      path: `libs/${projectName}/src/index.ts`,
+      insertElements: `export * from './styles/styles'`,
+      line: 1,
+    })
     const updateIndexContent = indexContent.replace(/'\.\/lib\//g, "'./components/")
     await writeFile({ path: `libs/${projectName}/src/index.ts`, content: updateIndexContent })
   }
