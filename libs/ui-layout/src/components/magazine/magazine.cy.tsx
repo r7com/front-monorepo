@@ -24,7 +24,7 @@ const MagazineTwo = (
 describe('Magazine Grids - Desktop', () => {
   beforeEach(() => cy.viewport('macbook-11'))
 
-  it('should render magazine-one grid with two elements', () => {
+  it('should render magazine-one grid with three elements', () => {
     cy.mount(MagazineOne)
 
     cy.findAllByText(/Large Main Block/i)
@@ -34,7 +34,7 @@ describe('Magazine Grids - Desktop', () => {
     cy.matchImage()
   })
 
-  it('should render magazine-two grid with three elements', () => {
+  it('should render magazine-two grid with two elements', () => {
     cy.mount(MagazineTwo)
 
     cy.findAllByText(/Large Main Block/i)
@@ -48,7 +48,7 @@ describe('Magazine Grids - Desktop', () => {
 describe('Magazine Grids - Mobile', () => {
   beforeEach(() => cy.viewport('iphone-se2'))
 
-  it('should render magazine-one grid with two elements', () => {
+  it('should render magazine-one grid with three elements', () => {
     cy.mount(MagazineOne)
 
     cy.findAllByText(/Large Main Block/i)
@@ -58,7 +58,7 @@ describe('Magazine Grids - Mobile', () => {
     cy.matchImage()
   })
 
-  it('should render magazine-two grid with three elements', () => {
+  it('should render magazine-two grid with two elements', () => {
     cy.mount(MagazineTwo)
 
     cy.findAllByText(/Large Main Block/i)
