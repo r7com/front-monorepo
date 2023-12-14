@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Proportional } from '.'
+import { Proportional } from './proportional'
 
 const Block = () => (
   <div className="layout-h-[280px] layout-bg-neutral-low-400 layout-items-center layout-justify-center layout-flex">
