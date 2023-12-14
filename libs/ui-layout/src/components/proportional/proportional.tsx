@@ -6,7 +6,7 @@ type ProportionalsProps = {
   children: React.ReactNode
 }
 
-function Proportionals({ grid }: Pick<ProportionalsProps, 'grid'>) {
+function getProportionalGrids({ grid }: Pick<ProportionalsProps, 'grid'>) {
   const gridLayout = {
     1: 'md:layout-col-span-24',
     2: 'md:layout-col-span-12',
@@ -30,8 +30,8 @@ function Proportionals({ grid }: Pick<ProportionalsProps, 'grid'>) {
 }
 
 export const Proportional = {
-  One: Proportionals({ grid: 1 }),
-  Two: Proportionals({ grid: 2 }),
-  Three: Proportionals({ grid: 3 }),
-  Four: Proportionals({ grid: 4 }),
+  One: getProportionalGrids({ grid: 1 }),
+  Two: getProportionalGrids({ grid: 2 }),
+  Three: getProportionalGrids({ grid: 3 }),
+  Four: getProportionalGrids({ grid: 4 }),
 }
