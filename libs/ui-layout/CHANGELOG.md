@@ -8,12 +8,6 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 - **ui-layout:** add build-arc-css ([f37b1fb](https://gitlab.ir7.com.br/r7/front-monorepo/commit/f37b1fb44971b4265e1ba1c1d2c72e430f631d90))
 
-# [0.2.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.1.0...ui-layout-0.2.0) (2023-12-14)
-
-### Bug Fixes
-
-- **ui-layout:** add build-arc-css ([f37b1fb](https://gitlab.ir7.com.br/r7/front-monorepo/commit/f37b1fb44971b4265e1ba1c1d2c72e430f631d90))
-
 # 0.1.0 (2023-12-14)
 
 ### Features
