@@ -1,10 +1,7 @@
-import { Proportional } from '.'
+import { Proportional } from './proportional'
 
 const Block = () => (
-  <div
-    data-testid="block"
-    className="layout-h-[280px] layout-bg-neutral-low-400 layout-items-center layout-justify-center layout-flex"
-  >
+  <div className="layout-h-[280px] layout-bg-neutral-low-400 layout-items-center layout-justify-center layout-flex">
     Large Main Block
   </div>
 )
@@ -39,13 +36,15 @@ const ProportionalFour = (
   </Proportional.Four>
 )
 
-describe('Proportional Grids', () => {
+describe('Proportional Grids - Desktop', () => {
   beforeEach(() => cy.viewport('macbook-11'))
 
   it('should render proportional-one grid with one element', () => {
     cy.mount(ProportionalOne)
 
-    cy.get('[data-testid="block"]').should('be.visible').and('have.length', 1)
+    cy.findAllByText(/Large Main Block/i)
+      .should('be.visible')
+      .and('have.length', 1)
 
     cy.matchImage()
   })
@@ -53,7 +52,9 @@ describe('Proportional Grids', () => {
   it('should render proportional-two grid with two element', () => {
     cy.mount(ProportionalTwo)
 
-    cy.get('[data-testid="block"]').should('be.visible').and('have.length', 2)
+    cy.findAllByText(/Large Main Block/i)
+      .should('be.visible')
+      .and('have.length', 2)
 
     cy.matchImage()
   })
@@ -61,7 +62,9 @@ describe('Proportional Grids', () => {
   it('should render proportional-three grid with three element', () => {
     cy.mount(ProportionalThree)
 
-    cy.get('[data-testid="block"]').should('be.visible').and('have.length', 3)
+    cy.findAllByText(/Large Main Block/i)
+      .should('be.visible')
+      .and('have.length', 3)
 
     cy.matchImage()
   })
@@ -69,7 +72,53 @@ describe('Proportional Grids', () => {
   it('should render proportional-four grid with four element', () => {
     cy.mount(ProportionalFour)
 
-    cy.get('[data-testid="block"]').should('be.visible').and('have.length', 4)
+    cy.findAllByText(/Large Main Block/i)
+      .should('be.visible')
+      .and('have.length', 4)
+
+    cy.matchImage()
+  })
+})
+
+describe('Proportional Grids - Mobile', () => {
+  beforeEach(() => cy.viewport('iphone-se2'))
+
+  it('should render proportional-one grid with one element', () => {
+    cy.mount(ProportionalOne)
+
+    cy.findAllByText(/Large Main Block/i)
+      .should('be.visible')
+      .and('have.length', 1)
+
+    cy.matchImage()
+  })
+
+  it('should render proportional-two grid with two elements', () => {
+    cy.mount(ProportionalTwo)
+
+    cy.findAllByText(/Large Main Block/i)
+      .should('be.visible')
+      .and('have.length', 2)
+
+    cy.matchImage()
+  })
+
+  it('should render proportional-three grid with three elements', () => {
+    cy.mount(ProportionalThree)
+
+    cy.findAllByText(/Large Main Block/i)
+      .should('be.visible')
+      .and('have.length', 3)
+
+    cy.matchImage()
+  })
+
+  it('should render proportional-four grid with four elements', () => {
+    cy.mount(ProportionalFour)
+
+    cy.findAllByText(/Large Main Block/i)
+      .should('be.visible')
+      .and('have.length', 4)
 
     cy.matchImage()
   })
