@@ -2,7 +2,7 @@ import { VariantProps, createVariants } from '@r7/tools'
 
 export const variants = createVariants({
   slots: {
-    adContainer: 'base-bg-neutral-high-600',
+    adContainer: 'base-flex base-justify-center base-bg-neutral-high-600',
     text: 'base-block base-text-xxxs base-uppercase base-text-neutral-low-500 base-font-open-sans',
   },
   variants: {
