@@ -40,7 +40,6 @@
       "@r7/ui-section-heading/css": ["dist/libs/ui-section-heading/style.css"],
       "@r7/ui-section-menu": ["libs/ui-section-menu/src/index.ts"],
       "@r7/ui-section-menu/css": ["dist/libs/ui-section-menu/style.css"],
-      "@r7/ui-svg": ["libs/ui-svg/src/index.ts"],
       "@r7/ui-voting-components": ["libs/ui-voting-components/src/index.ts"]
     }
   },

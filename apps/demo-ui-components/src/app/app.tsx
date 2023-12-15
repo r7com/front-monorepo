@@ -5,7 +5,6 @@ import { UiFooterDelivery, UiSectionMenu, UiArticleDelivery, UiLayout } from './
 import { MENU_DATA } from './mocks/MENU_DATA'
 import { SIDEBAR_DATA } from './mocks/SIDEBAR_DATA'
 import { Header, Menu, Sidebar } from '@r7/ui-header-delivery'
-import { UiSvg } from '@r7/ui-svg'
 import { ArticleProvider } from '@r7/ui-article-delivery'
 
 export function App() {
@@ -101,7 +100,6 @@ export function App() {
           <Route path="/ui-layout" element={<UiLayout />} />
         </Routes>
         {/* END: routes */}
-        <UiSvg />
       </ArticleProvider>
     </>
   )
