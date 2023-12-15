@@ -5,6 +5,7 @@ import svgr from 'vite-plugin-svgr'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import dts from 'vite-plugin-dts'
 import * as path from 'path'
+// import svgr from '@svgr/rollup'
 
 export default defineConfig({
   cacheDir: '../../node_modules/.vite/ui-base-components',
