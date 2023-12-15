@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@front-monorepo/ui-babel": ["libs/ui-babel/src/index.ts"],
+      "@front-monorepo/ui-babel-js": ["libs/ui-babel-js/src/index.ts"],
+      "@front-monorepo/ui-js-babel": ["libs/ui-js-babel/src/index.ts"],
       "@r7/cypress": ["cypress-global-configs/index.ts"],
       "@r7/tools": ["tools/index.ts"],
       "@r7/ui-article-delivery": ["libs/ui-article-delivery/src/index.ts"],
@@ -37,6 +40,7 @@
       "@r7/ui-section-heading/css": ["dist/libs/ui-section-heading/style.css"],
       "@r7/ui-section-menu": ["libs/ui-section-menu/src/index.ts"],
       "@r7/ui-section-menu/css": ["dist/libs/ui-section-menu/style.css"],
+      "@r7/ui-svg": ["libs/ui-svg/src/index.ts"],
       "@r7/ui-voting-components": ["libs/ui-voting-components/src/index.ts"]
     }
   },

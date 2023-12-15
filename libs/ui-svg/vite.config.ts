@@ -1,18 +1,20 @@
-/// <reference types="vitest" />
+/// <reference types='vitest' />
+import svgr from 'vite-plugin-svgr'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
-import svgr from 'vite-plugin-svgr'
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import dts from 'vite-plugin-dts'
 import * as path from 'path'
-// import svgr from '@svgr/rollup'
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 
 export default defineConfig({
-  cacheDir: '../../node_modules/.vite/ui-base-components',
+  cacheDir: '../../node_modules/.vite/ui-svg',
   plugins: [
+    react(),
+    nxViteTsPaths(),
     svgr({
       svgrOptions: {
         titleProp: true,
+        svgo: true,
       },
     }),
     dts({
@@ -20,17 +22,11 @@ export default defineConfig({
       tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
       skipDiagnostics: true,
     }),
-    react(),
-    nxViteTsPaths(),
   ],
 
   // Uncomment this if you are using workers.
   // worker: {
-  //  plugins: [
-  //    viteTsConfigPaths({
-  //      root: '../../',
-  //    }),
-  //  ],
+  //  plugins: [ nxViteTsPaths() ],
   // },
 
   // Configuration for building your library.
@@ -39,7 +35,7 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
-      name: 'ui-base-components',
+      name: 'ui-svg',
       fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
@@ -47,7 +43,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', '@r7/ui-base-components'],
     },
   },
 })
