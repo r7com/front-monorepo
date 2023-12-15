@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.3.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.2.0...ui-layout-0.3.0) (2023-12-15)
+
+### Features
+
+- **ui-layout:** creating magazine grids for 2 and 3 blocks ([93684b5](https://gitlab.ir7.com.br/r7/front-monorepo/commit/93684b5d8843fbee11c9f5ba8d85da4a1082af97))
+
 # [0.2.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.1.1...ui-layout-0.2.0) (2023-12-15)
 
 ### Bug Fixes
