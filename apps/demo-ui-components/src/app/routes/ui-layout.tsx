@@ -1,5 +1,5 @@
 import '@r7/ui-layout/css'
-import { Container, SpecialOne, Proportional } from '@r7/ui-layout'
+import { Container, SpecialOne, Proportional, Magazine } from '@r7/ui-layout'
 
 export function UiLayout() {
   const LargeMainBlock = () => (
@@ -65,6 +65,17 @@ export function UiLayout() {
           <LargeMainBlock />
           <LargeMainBlock />
         </Proportional.Four>
+
+        <Magazine.One>
+          <LargeMainBlock />
+          <LargeMainBlock />
+          <LargeMainBlock />
+        </Magazine.One>
+
+        <Magazine.Two>
+          <LargeMainBlock />
+          <LargeMainBlock />
+        </Magazine.Two>
       </div>
     </Container>
   )

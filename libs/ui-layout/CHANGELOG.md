@@ -2,6 +2,23 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.3.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.2.0...ui-layout-0.3.0) (2023-12-15)
+
+### Features
+
+- **ui-layout:** creating magazine grids for 2 and 3 blocks ([93684b5](https://gitlab.ir7.com.br/r7/front-monorepo/commit/93684b5d8843fbee11c9f5ba8d85da4a1082af97))
+
+# [0.2.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.1.1...ui-layout-0.2.0) (2023-12-15)
+
+### Bug Fixes
+
+- **ui-layout:** fix changelog ([4ae5f92](https://gitlab.ir7.com.br/r7/front-monorepo/commit/4ae5f92e2fbf500ddb110abadd9c54f94fb8e91c))
+
+### Features
+
+- **ui-layout:** create proportional grids from 1 to 4 slots ([ec50cca](https://gitlab.ir7.com.br/r7/front-monorepo/commit/ec50cca87e008e87f4e1c394ebdee73bbed228da))
+- **ui-layout:** initial version ([d82bcb4](https://gitlab.ir7.com.br/r7/front-monorepo/commit/d82bcb4005b61c065f536b617fb873a5c440c609))
+
 ## [0.1.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.1.0...ui-layout-0.1.1) (2023-12-14)
 
 ### Bug Fixes
