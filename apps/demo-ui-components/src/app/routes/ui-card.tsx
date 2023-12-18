@@ -5,26 +5,24 @@ import { TwoCardsSquarePhoto } from '@r7/ui-card'
 
 export function UiCard() {
   const LargeMainBlock = () => (
-    <div className="layout-h-[320px] layout-bg-neutral-low-400 layout-items-center layout-justify-center flex">
+    <div className="h-[320px] bg-neutral-low-400 items-center justify-center flex">
       Large Main Block
     </div>
   )
 
   const SmallMainBlock = () => (
-    <div className="layout-h-[240px] layout-bg-neutral-low-400 layout-items-center layout-justify-center flex">
+    <div className="h-[240px] bg-neutral-low-400 items-center justify-center flex">
       Small Main Block
     </div>
   )
 
   const SidebarBlock = () => (
-    <div className="layout-h-giant lg:layout-h-[calc(560px+16px)] xl:layout-h-[calc(560px+32px)] layout-bg-neutral-low-400 layout-items-center layout-justify-center flex">
+    <div className="h-giant lg:h-[calc(560px+16px)] xl:h-[calc(560px+32px)] bg-neutral-low-400 items-center justify-center flex">
       Sidebar Block
     </div>
   )
 
-  const Separator = () => (
-    <div style={{ width: '100%', height: '2px', background: 'red', margin: '50px 0' }} />
-  )
+  const Separator = () => <div className="w-full h-[2px] bg-feedback-warning-600 my-md" />
 
   return (
     <Container>
