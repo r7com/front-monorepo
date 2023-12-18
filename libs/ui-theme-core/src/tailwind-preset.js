@@ -225,5 +225,5 @@ module.exports = {
       ...generateGrid(24),
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/container-queries')],
 }
