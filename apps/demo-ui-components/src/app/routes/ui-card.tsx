@@ -29,14 +29,14 @@ export function UiCard() {
       <Proportional.Three>
         <TwoCardsSquarePhoto>
           <TwoCardsSquarePhoto.Item
-            hat="digitalização"
-            title="FGTS vai começar a ser pago com Pix a partir de 1º de março"
+            hat="Lavação de roupa suja "
+            title="Após reencontro com ex-peões, rolou discussão entre Jaquelline e Márcia Fu"
             renderImage={
               <img
                 src={
-                  '//img.r7.com/images/fgts-celular-carteira-digital-10092023170643481?resize=113x113&amp;crop=1054x1054 0 0&amp;dimensions=113x113'
+                  '//img.r7.com/images/a-fazenda-15-18122023112106357?resize=113x113&amp;crop=220x220 231 21&amp;dimensions=113x113'
                 }
-                alt="FGTS vai começar a ser pago com Pix a partir de 1º de março"
+                alt="Após reencontro com ex-peões, rolou discussão entre Jaquelline e Márcia Fu"
                 width={113}
                 height={113}
               />
@@ -44,12 +44,44 @@ export function UiCard() {
           />
 
           <TwoCardsSquarePhoto.Item
-            hat="traição"
-            title="'Não posso ver esse cão', diz Luísa Sonza sobre Chico Moedas"
+            hat="revezamento"
+            title="Tonzão pede ajuda a WL para concluir suas funções, André também se dispõe a colaborar"
             renderImage={
               <img
                 src={
-                  '//img.r7.com/images/luisa-sonza-chico-moedas-14122023102035926?resize=113x113&amp;crop=379x379 0 0&amp;dimensions=113x113'
+                  '//img.r7.com/images/tonzao-pede-ajuda-de-wl-para-concluir-as-funcoes-designadas-a-ele-a-fazenda-15-18122023103503365?resize=113x113&amp;crop=190x190 567 85&amp;dimensions=113x113'
+                }
+                alt="Pelo 13º ano seguido, 'Miguel' é 1º em ranking de nomes dados a bebês em 2023 "
+                width={113}
+                height={113}
+              />
+            }
+          />
+        </TwoCardsSquarePhoto>
+
+        <TwoCardsSquarePhoto>
+          <TwoCardsSquarePhoto.Item
+            hat="entrevista"
+            title="'Foi amor e eu continuo muito apaixonado', confessa Cezar Black sobre Kally Fonseca"
+            renderImage={
+              <img
+                src={
+                  '//img.r7.com/images/a-fazenda-15-18122023141440913?resize=113x113&amp;crop=369x369 124 0&amp;dimensions=113x113'
+                }
+                alt="Depois de mudança de regra, geladeira mais barata custará ao menos R$ 4.000"
+                width={113}
+                height={113}
+              />
+            }
+          />
+
+          <TwoCardsSquarePhoto.Item
+            hat="especulação"
+            title="'Tem que ser forte para estar aqui', afirma Lily em desabafo com Tonzão"
+            renderImage={
+              <img
+                src={
+                  '//img.r7.com/images/tem-que-ser-forte-para-estar-aqui-afirma-lily-em-desabafo-com-tonzao-a-fazenda-15-18122023114100634?resize=113x113&amp;crop=430x430 139 0&amp;dimensions=113x113'
                 }
                 alt="'Não posso ver esse cão', diz Luísa Sonza sobre Chico Moedas"
                 width={113}
@@ -61,14 +93,14 @@ export function UiCard() {
 
         <TwoCardsSquarePhoto>
           <TwoCardsSquarePhoto.Item
-            hat="digitalização"
-            title="FGTS vai começar a ser pago com Pix a partir de 1º de março"
+            hat="A FAZENDA 15"
+            title="Acompanhe 24 horas o cotidiano, as festas e as confusões dos peões no PlayPlus"
             renderImage={
               <img
                 src={
-                  '//img.r7.com/images/fgts-celular-carteira-digital-10092023170643481?resize=113x113&amp;crop=1054x1054 0 0&amp;dimensions=113x113'
+                  '//img.r7.com/images/reacoes-17122023003710485?resize=113x113&amp;crop=420x420 57 0&amp;dimensions=113x113'
                 }
-                alt="FGTS vai começar a ser pago com Pix a partir de 1º de março"
+                alt="Acompanhe 24 horas o cotidiano, as festas e as confusões dos peões no PlayPlus"
                 width={113}
                 height={113}
               />
@@ -76,46 +108,14 @@ export function UiCard() {
           />
 
           <TwoCardsSquarePhoto.Item
-            hat="traição"
-            title="'Não posso ver esse cão', diz Luísa Sonza sobre Chico Moedas"
+            hat="Atividades rurais"
+            title="Jaquelline ensina Tonzão a tirar leite da vaca Mimosa, e faz trolagem com o peão"
             renderImage={
               <img
                 src={
-                  '//img.r7.com/images/luisa-sonza-chico-moedas-14122023102035926?resize=113x113&amp;crop=379x379 0 0&amp;dimensions=113x113'
+                  '//img.r7.com/images/jaque-ensina-tonzao-a-tirar-leite-da-vaca-e-faz-trolagem-com-o-peao-a-fazenda-15-18122023082502918?resize=113x113&amp;crop=365x365 39 61&amp;dimensions=113x113'
                 }
-                alt="'Não posso ver esse cão', diz Luísa Sonza sobre Chico Moedas"
-                width={113}
-                height={113}
-              />
-            }
-          />
-        </TwoCardsSquarePhoto>
-
-        <TwoCardsSquarePhoto>
-          <TwoCardsSquarePhoto.Item
-            hat="digitalização"
-            title="FGTS vai começar a ser pago com Pix a partir de 1º de março"
-            renderImage={
-              <img
-                src={
-                  '//img.r7.com/images/fgts-celular-carteira-digital-10092023170643481?resize=113x113&amp;crop=1054x1054 0 0&amp;dimensions=113x113'
-                }
-                alt="FGTS vai começar a ser pago com Pix a partir de 1º de março"
-                width={113}
-                height={113}
-              />
-            }
-          />
-
-          <TwoCardsSquarePhoto.Item
-            hat="traição"
-            title="'Não posso ver esse cão', diz Luísa Sonza sobre Chico Moedas"
-            renderImage={
-              <img
-                src={
-                  '//img.r7.com/images/luisa-sonza-chico-moedas-14122023102035926?resize=113x113&amp;crop=379x379 0 0&amp;dimensions=113x113'
-                }
-                alt="'Não posso ver esse cão', diz Luísa Sonza sobre Chico Moedas"
+                alt="Jaquelline ensina Tonzão a tirar leite da vaca Mimosa, e faz trolagem com o peão"
                 width={113}
                 height={113}
               />
@@ -271,14 +271,14 @@ export function UiCard() {
               <>
                 <TwoCardsSquarePhoto>
                   <TwoCardsSquarePhoto.Item
-                    hat="digitalização"
-                    title="FGTS vai começar a ser pago com Pix a partir de 1º de março"
+                    hat="'Nossa última foto juntos'"
+                    title="Carol Castro lamenta nas redes sociais a morte do pai, Luca Castro"
                     renderImage={
                       <img
                         src={
-                          '//img.r7.com/images/fgts-celular-carteira-digital-10092023170643481?resize=113x113&amp;crop=1054x1054 0 0&amp;dimensions=113x113'
+                          '//img.r7.com/images/carol-castro-e-o-pai-18122023104242886?resize=113x113&amp;crop=1080x1080 0 0&amp;dimensions=113x113'
                         }
-                        alt="FGTS vai começar a ser pago com Pix a partir de 1º de março"
+                        alt="Carol Castro lamenta nas redes sociais a morte do pai, Luca Castro"
                         width={113}
                         height={113}
                       />
@@ -286,14 +286,14 @@ export function UiCard() {
                   />
 
                   <TwoCardsSquarePhoto.Item
-                    hat="traição"
-                    title="'Não posso ver esse cão', diz Luísa Sonza sobre Chico Moedas"
+                    hat="reflexão"
+                    title="Kelly Key diz que abandonou a carreira na música: 'Sufocante'"
                     renderImage={
                       <img
                         src={
-                          '//img.r7.com/images/luisa-sonza-chico-moedas-14122023102035926?resize=113x113&amp;crop=379x379 0 0&amp;dimensions=113x113'
+                          '//img.r7.com/images/screenshot4-7-18122023115432179?resize=113x113&amp;crop=675x675 223 0&amp;dimensions=113x113'
                         }
-                        alt="'Não posso ver esse cão', diz Luísa Sonza sobre Chico Moedas"
+                        alt="Kelly Key diz que abandonou a carreira na música: 'Sufocante'"
                         width={113}
                         height={113}
                       />
@@ -303,14 +303,14 @@ export function UiCard() {
 
                 <TwoCardsSquarePhoto>
                   <TwoCardsSquarePhoto.Item
-                    hat="digitalização"
-                    title="FGTS vai começar a ser pago com Pix a partir de 1º de março"
+                    hat="CONTEÚDO PATROCINADO"
+                    title="Confira quem são os vencedores do 'Oscar' dos videogames"
                     renderImage={
                       <img
                         src={
-                          '//img.r7.com/images/fgts-celular-carteira-digital-10092023170643481?resize=113x113&amp;crop=1054x1054 0 0&amp;dimensions=113x113'
+                          '//img.r7.com/images/confira-os-vencedores-do-oscar-dos-videogames-18122023124035329?resize=113x113&amp;crop=241x241 85 0&amp;dimensions=113x113'
                         }
-                        alt="FGTS vai começar a ser pago com Pix a partir de 1º de março"
+                        alt="Confira quem são os vencedores do 'Oscar' dos videogames"
                         width={113}
                         height={113}
                       />
@@ -318,14 +318,14 @@ export function UiCard() {
                   />
 
                   <TwoCardsSquarePhoto.Item
-                    hat="traição"
-                    title="'Não posso ver esse cão', diz Luísa Sonza sobre Chico Moedas"
+                    hat="em 2023"
+                    title="Shakira fez 'da geleia um sanduíche' e transformou traição em hits"
                     renderImage={
                       <img
                         src={
-                          '//img.r7.com/images/luisa-sonza-chico-moedas-14122023102035926?resize=113x113&amp;crop=379x379 0 0&amp;dimensions=113x113'
+                          '//img.r7.com/images/shakira-29112023141942291?resize=113x113&amp;crop=222x222 0 0&amp;dimensions=113x113'
                         }
-                        alt="'Não posso ver esse cão', diz Luísa Sonza sobre Chico Moedas"
+                        alt="Shakira fez 'da geleia um sanduíche' e transformou traição em hits"
                         width={113}
                         height={113}
                       />
