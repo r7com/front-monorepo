@@ -23,7 +23,7 @@ TwoCardsSquarePhoto.Item = ({ renderImage, hat, title }: TwoCardsSquarePhotoItem
         </Card.HatWrapper>
 
         <Card.Title
-          className="card-text-sm md:card-text-xxs md:@xs:card-text-xs card-leading-md"
+          className="card-text-sm card-leading-md md:card-leading-pill md:@xs:card-leading-md md:card-text-xxs md:@xs:card-text-xs"
           fontStyle="none"
         >
           {title}
