@@ -7,10 +7,10 @@ import {
   SocialShare,
   Signature,
   useArticleAction,
+  ArticleProvider,
 } from '@r7/ui-article-delivery'
 import { Breadcrumb, ConditionalLink, Paragraph } from '@r7/ui-base-components'
 import { MENU_DATA } from '../mocks/MENU_DATA'
-import { ArticleProvider } from '@r7/ui-article-delivery'
 
 export function UiArticleDelivery() {
   const { fontSize } = useArticleAction()
