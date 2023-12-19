@@ -8,6 +8,7 @@ export const variants = createVariants({
       'heading-level-2': 'card-text-sm md:card-text-md',
       'heading-level-3': 'card-text-xxs md:card-text-sm',
       'heading-level-4': 'card-text-xxxs md:card-text-xxs',
+      none: '',
     },
     color: {
       high: 'card-text-neutral-high-400',
