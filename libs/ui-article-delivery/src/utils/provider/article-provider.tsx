@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useState } from 'react'
 import { ArticleContext } from '../context/article-context'
 import { MULTIPLIER } from '../constants'
 
@@ -7,17 +7,15 @@ type ArticleProviderProps = {
 }
 
 export function ArticleProvider({ children }: ArticleProviderProps) {
-  const articleRef = useRef<HTMLElement | null>(null)
-  let fontSize = 1
+  const fontSizeInitial = 1
+  const [fontSize, setFontSize] = useState(fontSizeInitial)
 
   function decreaseFontSize() {
-    fontSize -= MULTIPLIER
-    articleRef.current?.style.setProperty('--font-size', `${fontSize}`)
+    setFontSize(prev => (prev -= MULTIPLIER))
   }
 
   function increaseFontSize() {
-    fontSize += MULTIPLIER
-    articleRef.current?.style.setProperty('--font-size', `${fontSize}`)
+    setFontSize(prev => (prev += MULTIPLIER))
   }
 
   return (
@@ -25,11 +23,10 @@ export function ArticleProvider({ children }: ArticleProviderProps) {
       value={{
         increaseFontSize,
         decreaseFontSize,
+        fontSize,
       }}
     >
-      <article ref={articleRef} style={{ '--font-size': '1' } as React.CSSProperties}>
-        {children}
-      </article>
+      {children}
     </ArticleContext.Provider>
   )
 }

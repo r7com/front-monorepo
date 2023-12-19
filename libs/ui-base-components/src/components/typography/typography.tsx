@@ -21,7 +21,7 @@ export function Typography<C extends React.ElementType = 'p'>({
 
   return (
     <DynamicTag
-      className={className ?? variants({ fontSize, fontWeight, fontFamily, color })}
+      className={variants({ fontSize, fontWeight, fontFamily, color, className })}
       dangerouslySetInnerHTML={dangerHTML ? { __html: dangerHTML } : undefined}
     >
       {!dangerHTML ? children : null}
