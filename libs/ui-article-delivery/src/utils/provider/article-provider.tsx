@@ -1,14 +1,13 @@
 import { useState } from 'react'
 import { ArticleContext } from '../context/article-context'
-import { MULTIPLIER } from '../constants'
+import { MULTIPLIER, fontSizeInitial } from '../constants'
 
 type ArticleProviderProps = {
   children: React.ReactNode
 }
 
 export function ArticleProvider({ children }: ArticleProviderProps) {
-  const fontSizeInitial = 1
-  const [fontSize, setFontSize] = useState(fontSizeInitial)
+  const [fontSize, setFontSize] = useState<number>(fontSizeInitial)
 
   function decreaseFontSize() {
     setFontSize(prev => (prev -= MULTIPLIER))
