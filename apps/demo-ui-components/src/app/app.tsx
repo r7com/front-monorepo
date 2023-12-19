@@ -5,7 +5,7 @@ import { UiFooterDelivery, UiSectionMenu, UiArticleDelivery, UiLayout, UiCard } 
 import { MENU_DATA } from './mocks/MENU_DATA'
 import { SIDEBAR_DATA } from './mocks/SIDEBAR_DATA'
 import { Header, Menu, Sidebar } from '@r7/ui-header-delivery'
-
+import { ArticleProvider } from '@r7/ui-article-delivery'
 export function App() {
   return (
     <>
@@ -94,7 +94,14 @@ export function App() {
       <Routes>
         <Route path="/" />
         <Route path="/ui-footer-delivery" element={<UiFooterDelivery />} />
-        <Route path="/ui-article-delivery" element={<UiArticleDelivery />} />
+        <Route
+          path="/ui-article-delivery"
+          element={
+            <ArticleProvider>
+              <UiArticleDelivery />
+            </ArticleProvider>
+          }
+        />
         <Route path="/ui-section-menu" element={<UiSectionMenu />} />
         <Route path="/ui-layout" element={<UiLayout />} />
         <Route path="/ui-card" element={<UiCard />} />
