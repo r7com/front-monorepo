@@ -1,4 +1,3 @@
-import React from 'react'
 import { TypographyVariants, variants } from './typography.variants'
 export type TypographyProps<C extends React.ElementType> = {
   children?: React.ReactNode
