@@ -72,6 +72,12 @@
       "options": {
         "preset": "angular"
       }
+    },
+    "watch-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx nx watch '--projects={projectName}' -- tailwindcss -c {projectRoot}/tailwind.config.js -i {projectRoot}/src/style.css -o ./dist/{projectRoot}/style.css --minify"
+      }
     }
   }
 }
