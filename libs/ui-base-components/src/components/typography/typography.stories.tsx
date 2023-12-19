@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import './typography.css'
+import './mock/typography.css'
 
 import { Typography } from './typography'
 

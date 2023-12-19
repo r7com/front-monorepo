@@ -1,5 +1,5 @@
 import { Typography } from './typography'
-import './typography.css'
+import './mock/typography.css'
 
 describe(Typography.name, () => {
   it('using ClassName', () => {
