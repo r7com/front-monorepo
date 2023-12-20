@@ -139,7 +139,7 @@ module.exports = {
       },
       social: {
         facebook: '#4764f2',
-        twitter: '#4891f0',
+        twitter: '#000',
         linkedin: '#3559c2',
         whatsapp: '#1eab84',
       },
