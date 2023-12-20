@@ -7,10 +7,7 @@
   "targets": {
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/ui-layout/**/*.{ts,tsx,js,jsx}"]
-      }
+      "outputs": ["{options.outputFile}"]
     },
     "build": {
       "executor": "@nx/vite:build",
@@ -72,6 +69,12 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "node tools/add-empty-variable-css/add-empty-variable.js --inputFolder dist/{projectRoot}"
+      }
+    },
+    "watch-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx nx watch --projects={projectName} -- tailwindcss -c {projectRoot}/tailwind.config.js -i {projectRoot}/src/style.css -o ./dist/{projectRoot}/style.css --minify"
       }
     }
   }
