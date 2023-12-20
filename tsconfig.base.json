@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@front-monorepo/ui-babel": ["libs/ui-babel/src/index.ts"],
+      "@front-monorepo/ui-babel-js": ["libs/ui-babel-js/src/index.ts"],
+      "@front-monorepo/ui-js-babel": ["libs/ui-js-babel/src/index.ts"],
       "@r7/cypress": ["cypress-global-configs/index.ts"],
       "@r7/tools": ["tools/index.ts"],
       "@r7/ui-article-delivery": ["libs/ui-article-delivery/src/index.ts"],
@@ -29,6 +32,8 @@
       "@r7/ui-form-components/css": ["dist/libs/ui-form-components/style.css"],
       "@r7/ui-header-delivery": ["libs/ui-header-delivery/src/index.ts"],
       "@r7/ui-header-delivery/css": ["dist/libs/ui-header-delivery/style.css"],
+      "@r7/ui-layout": ["libs/ui-layout/src/index.ts"],
+      "@r7/ui-layout/css": ["dist/libs/ui-layout/style.css"],
       "@r7/ui-section-foot": ["libs/ui-section-foot/src/index.ts"],
       "@r7/ui-section-foot/css": ["dist/libs/ui-section-foot/style.css"],
       "@r7/ui-section-heading": ["libs/ui-section-heading/src/index.ts"],

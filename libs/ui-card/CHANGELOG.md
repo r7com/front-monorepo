@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.4.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.3.3...ui-card-0.4.0) (2023-12-19)
+
+### Features
+
+- **component:** two-cards-square-photo ([65606cd](https://gitlab.ir7.com.br/r7/front-monorepo/commit/65606cd613add4f911b81f27a6e542e6997de9d0))
+
+## [0.3.3](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.3.2...ui-card-0.3.3) (2023-12-12)
+
+### Features
+
+- add comment inside empty variables in css from tailwind ([91e2087](https://gitlab.ir7.com.br/r7/front-monorepo/commit/91e208700db842328932c806aac0482e689cf86b))
+
 ## [0.3.2](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.3.1...ui-card-0.3.2) (2023-11-28)
 
 ## [0.3.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.3.0...ui-card-0.3.1) (2023-11-27)

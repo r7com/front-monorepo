@@ -7,10 +7,7 @@
   "targets": {
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/ui-section-heading/**/*.{ts,tsx,js,jsx}"]
-      }
+      "outputs": ["{options.outputFile}"]
     },
     "typecheck": {
       "executor": "nx:run-commands",
@@ -40,6 +37,12 @@
         "preset": "angular"
       }
     },
+    "build-css-arc": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/add-empty-variable-css/add-empty-variable.js --inputFolder dist/{projectRoot}"
+      }
+    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
@@ -66,6 +69,12 @@
             "pluginVisualRegressionUpdateImages": true
           }
         }
+      }
+    },
+    "watch-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx nx watch --projects={projectName} -- tailwindcss -c {projectRoot}/tailwind.config.js -i {projectRoot}/src/style.css -o ./dist/{projectRoot}/style.css --minify"
       }
     }
   }

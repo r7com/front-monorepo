@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const { generateGrid } = require('./utils/generate-grid')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -65,8 +66,8 @@ module.exports = {
       },
       'neutral-high': {
         400: '#ffffff',
-        500: '#F8F8F8',
-        600: '#DDDDE1',
+        500: '#F4F4F4',
+        600: '#9B9B9B',
       },
       'brand-primary': {
         400: '#4da5e7',
@@ -214,8 +215,15 @@ module.exports = {
           sm: theme('spacing.xxxs'),
           lg: theme('spacing.xxs'),
         },
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1164px',
+        },
       }),
+      ...generateGrid(24),
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/container-queries')],
 }

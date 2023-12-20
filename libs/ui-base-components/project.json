@@ -7,10 +7,7 @@
   "targets": {
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/ui-base-components/**/*.{ts,tsx,js,jsx}"]
-      }
+      "outputs": ["{options.outputFile}"]
     },
     "typecheck": {
       "executor": "nx:run-commands",
@@ -85,10 +82,22 @@
         "command": "node tools/generate-dynamic-types.js --inputFolder {projectRoot}/src/svg --outputFile {projectRoot}/src/components/svg-icon/svg-icon.types.ts --typeName SvgIcons --showOnlyTypesTable --autoFix"
       }
     },
+    "build-css-arc": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/add-empty-variable-css/add-empty-variable.js --inputFolder dist/{projectRoot}"
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "angular"
+      }
+    },
+    "watch-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx nx watch --projects={projectName} -- tailwindcss -c {projectRoot}/tailwind.config.js -i {projectRoot}/src/style.css -o ./dist/{projectRoot}/style.css --minify"
       }
     }
   },

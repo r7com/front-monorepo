@@ -5,8 +5,10 @@ import svgr from 'vite-plugin-svgr'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import dts from 'vite-plugin-dts'
 import * as path from 'path'
+// import svgr from '@svgr/rollup'
 
 export default defineConfig({
+  root: __dirname,
   cacheDir: '../../node_modules/.vite/ui-base-components',
   plugins: [
     svgr({
@@ -35,6 +37,9 @@ export default defineConfig({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
+    outDir: '../../dist/libs/ui-base-components',
+    reportCompressedSize: true,
+    commonjsOptions: { transformMixedEsModules: true },
     lib: {
       // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
