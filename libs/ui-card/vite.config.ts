@@ -7,6 +7,7 @@ import dts from 'vite-plugin-dts'
 import * as path from 'path'
 
 export default defineConfig({
+  root: __dirname,
   cacheDir: '../../node_modules/.vite/ui-card',
 
   plugins: [
@@ -32,6 +33,9 @@ export default defineConfig({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
+    outDir: '../../dist/libs/ui-card',
+    reportCompressedSize: true,
+    commonjsOptions: { transformMixedEsModules: true },
     lib: {
       // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',

@@ -5,6 +5,14 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
+  root: __dirname,
+  build: {
+    outDir: '../../dist/apps/demo-ui-components',
+    reportCompressedSize: true,
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+  },
   cacheDir: '../../node_modules/.vite/demo-ui-components',
 
   server: {
@@ -33,6 +41,11 @@ export default defineConfig({
   // },
 
   test: {
+    reporters: ['default'],
+    coverage: {
+      reportsDirectory: '../../coverage/apps/demo-ui-components',
+      provider: 'v8',
+    },
     globals: true,
     cache: {
       dir: '../../node_modules/.vitest',
