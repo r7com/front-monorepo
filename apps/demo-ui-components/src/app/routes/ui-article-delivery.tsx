@@ -6,14 +6,15 @@ import {
   AccessibilityBar,
   SocialShare,
   Signature,
-  ArticleProvider,
+  useArticleAction,
 } from '@r7/ui-article-delivery'
 import { Breadcrumb, ConditionalLink, Paragraph } from '@r7/ui-base-components'
 import { MENU_DATA } from '../mocks/MENU_DATA'
 
 export function UiArticleDelivery() {
+  const { fontSize } = useArticleAction()
   return (
-    <ArticleProvider>
+    <article style={{ '--font-size': `${fontSize}` } as React.CSSProperties}>
       <div className="container flex flex-col gap-xxxs sm:gap-0 sm:flex-row sm:justify-between">
         <Signature>
           <Signature.Agency
@@ -74,6 +75,6 @@ export function UiArticleDelivery() {
           </Breadcrumb.List>
         </Breadcrumb>
       </div>
-    </ArticleProvider>
+    </article>
   )
 }
