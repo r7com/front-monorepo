@@ -1,7 +1,7 @@
 import '@r7/ui-card/css'
 import '@r7/ui-layout/css'
 import { Container, Proportional, SpecialOne } from '@r7/ui-layout'
-import { TwoCardsSquarePhoto } from '@r7/ui-card'
+import { TwoCardsSquarePhoto, ProportionalPhoto } from '@r7/ui-card'
 
 export function UiCard() {
   const LargeMainBlock = () => (
@@ -26,6 +26,107 @@ export function UiCard() {
 
   return (
     <Container>
+      <SpecialOne
+        renderMain={
+          <SpecialOne.Main
+            rowOne={
+              <>
+                <LargeMainBlock />
+                <LargeMainBlock />
+              </>
+            }
+            rowTwo={
+              <>
+                <ProportionalPhoto
+                  renderImage={
+                    <img
+                      src="//img.r7.com/images/apagao-sao-paulo-1123-19122023115816951?resize=348x199&amp;crop=1170x669 0 32&amp;dimensions=328x184"
+                      alt="Ministério da Justiça abre processo contra Enel por apagões"
+                      width="100%"
+                      height="auto"
+                    />
+                  }
+                  hat="são paulo e rio de janeiro"
+                  title="Ministério da Justiça abre processo contra Enel por apagões"
+                />
+
+                <ProportionalPhoto
+                  renderImage={
+                    <img
+                      src="//img.r7.com/images/apagao-sao-paulo-1123-19122023115816951?resize=348x199&amp;crop=1170x669 0 32&amp;dimensions=328x184"
+                      alt="Ministério da Justiça abre processo contra Enel por apagões"
+                      width="100%"
+                      height="auto"
+                    />
+                  }
+                  hat="são paulo e rio de janeiro"
+                  title="Ministério da Justiça abre processo contra Enel por apagões"
+                />
+
+                <ProportionalPhoto
+                  renderImage={
+                    <img
+                      src="//img.r7.com/images/apagao-sao-paulo-1123-19122023115816951?resize=348x199&amp;crop=1170x669 0 32&amp;dimensions=328x184"
+                      alt="Ministério da Justiça abre processo contra Enel por apagões"
+                      width="100%"
+                      height="auto"
+                    />
+                  }
+                  hat="são paulo e rio de janeiro"
+                  title="Ministério da Justiça abre processo contra Enel por apagões"
+                />
+              </>
+            }
+          />
+        }
+        renderSidebar={<SidebarBlock />}
+      />
+
+      <Separator />
+
+      <Proportional.Three>
+        <ProportionalPhoto
+          renderImage={
+            <img
+              src="//img.r7.com/images/apagao-sao-paulo-1123-19122023115816951?resize=348x199&amp;crop=1170x669 0 32&amp;dimensions=328x184"
+              alt="Ministério da Justiça abre processo contra Enel por apagões"
+              width="100%"
+              height="auto"
+            />
+          }
+          hat="são paulo e rio de janeiro"
+          title="Ministério da Justiça abre processo contra Enel por apagões"
+        />
+
+        <ProportionalPhoto
+          renderImage={
+            <img
+              src="//img.r7.com/images/renato-cariani-19122023160842176?dimensions=328x184"
+              alt="‘Saí leve dos esclarecimentos’, diz Cariani sobre depoimento à PF"
+              width="100%"
+              height="auto"
+            />
+          }
+          hat="INFLUENCIADOR FITNESS"
+          title="‘Saí leve dos esclarecimentos’, diz Cariani sobre depoimento à PF"
+        />
+
+        <ProportionalPhoto
+          renderImage={
+            <img
+              src="//img.r7.com/images/larissa-manoela-e-andre-luiz-frambach-posam-com-os-cachorros-no-casamento-19122023163515181?dimensions=328x184"
+              alt="Larissa Manoela teve a presença dos cães em seu casamento 'secreto'"
+              width="100%"
+              height="auto"
+            />
+          }
+          hat="ausência dos pais"
+          title="Larissa Manoela teve a presença dos cães em seu casamento 'secreto'"
+        />
+      </Proportional.Three>
+
+      <Separator />
+
       <Proportional.Three>
         <TwoCardsSquarePhoto>
           <TwoCardsSquarePhoto.Item
