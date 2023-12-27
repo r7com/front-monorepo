@@ -149,6 +149,7 @@ module.exports = {
     },
     // Necessário importar o CSS com a url do google fonts no html
     fontFamily: {
+      primary: ['record-type', 'sans-serif'],
       'open-sans': ['"Open Sans"', 'sans-serif'],
       'playfair-display': ['"Playfair Display"'],
       body: ['"Open Sans"'],
