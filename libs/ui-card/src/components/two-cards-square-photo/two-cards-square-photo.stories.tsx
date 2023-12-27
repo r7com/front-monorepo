@@ -50,7 +50,7 @@ export const TwoSquareCards: Story = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/Pxz9nVdP2Im0YRWnDNM3J5/Core-C-%7C-Widgets-Home---VERS%C3%83O-1?node-id=2023%3A840&mode=dev',
+      url: 'https://www.figma.com/file/Pxz9nVdP2Im0YRWnDNM3J5/Core-C-%7C-Widgets-Home---VERS%C3%83O-1?type=design&node-id=2501-2519&mode=dev',
       accessToken: 'figd_sHs6Ap894w4C-OAFls7tuq0fMMROyue-8zQJ8hRE',
     },
   },
