@@ -4,7 +4,8 @@ import { Card } from '../card'
 
 export type BreakingNewsProps = {
   showImage?: boolean
-  image?: React.ReactNode
+  imageUrl?: string
+  imageAlt?: string
   tag?: string
   title: string
   href: string
@@ -14,7 +15,8 @@ export function BreakingNews({
   theme = 'live',
   showImage = true,
   tag,
-  image,
+  imageUrl,
+  imageAlt,
   title,
   href,
 }: BreakingNewsProps) {
@@ -33,10 +35,16 @@ export function BreakingNews({
           <ConditionalLink href={href}>{tag ? tag : defaultTagValue[theme]}</ConditionalLink>
         </div>
 
-        {showImage && image && (
+        {showImage && imageUrl && imageAlt && (
           <div className={imageSlot()}>
             <ConditionalLink href={href}>
-              <Card.Figure format="landscape">{image}</Card.Figure>
+              <Card.Figure format="landscape">
+                <img
+                  src={imageUrl}
+                  alt={imageAlt}
+                  className="card-w-full card-object-cover card-h-full"
+                />
+              </Card.Figure>
             </ConditionalLink>
           </div>
         )}

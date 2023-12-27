@@ -29,13 +29,9 @@ export const Primary: Story = {
     tag: 'Minha Tag',
     theme: 'urgent',
     title: 'Meu Titulo',
-    image: (
-      <img
-        src="//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?resize=536x326&crop=691x420 80 0&dimensions=536x326"
-        alt="Human hand writting in a paper"
-        className="card-w-full card-object-cover card-h-full"
-      />
-    ),
+    imageAlt: 'Human hand writting in a paper',
+    imageUrl:
+      '//img.r7.com/images/pantano-australia-rosa-brilhante-04102023182425856?resize=536x326&crop=691x420 80 0&dimensions=536x326',
   },
   parameters: {
     design: {
