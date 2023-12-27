@@ -40,40 +40,40 @@ export function UiCard() {
                 <ProportionalPhoto
                   renderImage={
                     <img
-                      src="//img.r7.com/images/apagao-sao-paulo-1123-19122023115816951?resize=348x199&amp;crop=1170x669 0 32&amp;dimensions=328x184"
-                      alt="Ministério da Justiça abre processo contra Enel por apagões"
+                      src="//img.r7.com/images/maiores-bilheterias-de-2023-filmes-cinema-07122023155527132?resize=254x145&crop=646x369 31 0&dimensions=254x145"
+                      alt="Saiba quais foram os filmes com as maiores bilheterias em 2023"
                       width="100%"
                       height="auto"
                     />
                   }
-                  hat="são paulo e rio de janeiro"
-                  title="Ministério da Justiça abre processo contra Enel por apagões"
+                  hat="DE A PEQUENA SEREIA A MARIO"
+                  title="Saiba quais foram os filmes com as maiores bilheterias em 2023"
                 />
 
                 <ProportionalPhoto
                   renderImage={
                     <img
-                      src="//img.r7.com/images/apagao-sao-paulo-1123-19122023115816951?resize=348x199&amp;crop=1170x669 0 32&amp;dimensions=328x184"
-                      alt="Ministério da Justiça abre processo contra Enel por apagões"
+                      src="//img.r7.com/images/maiara-quiderolly-e-jo-25032023102338463?resize=254x145&crop=736x420 17 0&dimensions=254x145"
+                      alt="Jô e Maiára Quiderolly passam o primeiro ano do filho brigando"
                       width="100%"
                       height="auto"
                     />
                   }
-                  hat="são paulo e rio de janeiro"
-                  title="Ministério da Justiça abre processo contra Enel por apagões"
+                  hat="PENSÃO E EXAME DE DNA"
+                  title="Jô e Maiára Quiderolly passam o primeiro ano do filho brigando"
                 />
 
                 <ProportionalPhoto
                   renderImage={
                     <img
-                      src="//img.r7.com/images/apagao-sao-paulo-1123-19122023115816951?resize=348x199&amp;crop=1170x669 0 32&amp;dimensions=328x184"
-                      alt="Ministério da Justiça abre processo contra Enel por apagões"
+                      src="//img.r7.com/images/familia-record-70-anos-26122023163912401?resize=207x118&crop=367x209 0 211&dimensions=207x118"
+                      alt="Confira todos os presentes trocados no amigo-secreto da Família Record"
                       width="100%"
                       height="auto"
                     />
                   }
-                  hat="são paulo e rio de janeiro"
-                  title="Ministério da Justiça abre processo contra Enel por apagões"
+                  hat="EDIÇÃO ESPECIAL"
+                  title="Confira todos os presentes trocados no amigo-secreto da Família Record"
                 />
               </>
             }
