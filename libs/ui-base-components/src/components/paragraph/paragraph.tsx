@@ -13,7 +13,7 @@ export function Paragraph<C extends React.ElementType = 'p'>({
   fontWeight = 'normal',
   color = 'neutralLow',
   fontSize = 'xxxs',
-  fontFamily = 'openSans',
+  fontFamily = 'primary',
 }: ParagraphProps<C>) {
   const DynamicTag = as || 'p'
 
