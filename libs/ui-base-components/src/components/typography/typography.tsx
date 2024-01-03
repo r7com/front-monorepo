@@ -13,7 +13,7 @@ export function Typography<C extends React.ElementType = 'p'>({
   fontWeight = 'normal',
   color = 'neutralLow',
   fontSize = 'xxxs',
-  fontFamily = 'openSans',
+  fontFamily = 'primary',
   className,
 }: TypographyProps<C>) {
   const DynamicTag = as || 'p'

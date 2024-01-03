@@ -24,6 +24,7 @@ export const variants = createVariants({
     fontFamily: {
       openSans: 'base-font-open-sans',
       playfair: 'base-font-playfair-display',
+      primary: 'base-font-primary',
     },
     color: {
       neutralLow: 'base-text-neutral-low-500',
