@@ -1,12 +1,12 @@
-import React from 'react'
-import { ParagraphVariants, variants } from './paragraph.variants'
-export type ParagraphProps<C extends React.ElementType> = {
+import { TypographyVariants, variants } from './typography.variants'
+export type TypographyProps<C extends React.ElementType> = {
   children?: React.ReactNode
   dangerHTML?: string
   as?: C
-} & ParagraphVariants
+  className?: string
+} & TypographyVariants
 
-export function Paragraph<C extends React.ElementType = 'p'>({
+export function Typography<C extends React.ElementType = 'p'>({
   children,
   dangerHTML,
   as,
@@ -14,12 +14,13 @@ export function Paragraph<C extends React.ElementType = 'p'>({
   color = 'neutralLow',
   fontSize = 'xxxs',
   fontFamily = 'primary',
-}: ParagraphProps<C>) {
+  className,
+}: TypographyProps<C>) {
   const DynamicTag = as || 'p'
 
   return (
     <DynamicTag
-      className={variants({ fontSize, fontWeight, fontFamily, color })}
+      className={variants({ fontSize, fontWeight, fontFamily, color, className })}
       dangerouslySetInnerHTML={dangerHTML ? { __html: dangerHTML } : undefined}
     >
       {!dangerHTML ? children : null}

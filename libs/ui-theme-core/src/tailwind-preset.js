@@ -139,7 +139,7 @@ module.exports = {
       },
       social: {
         facebook: '#4764f2',
-        twitter: '#4891f0',
+        twitter: '#000',
         linkedin: '#3559c2',
         whatsapp: '#1eab84',
       },
@@ -149,6 +149,7 @@ module.exports = {
     },
     // Necessário importar o CSS com a url do google fonts no html
     fontFamily: {
+      primary: ['var(--font-family-primary, sans-serif)', 'sans-serif'],
       'open-sans': ['"Open Sans"', 'sans-serif'],
       'playfair-display': ['"Playfair Display"'],
       body: ['"Open Sans"'],

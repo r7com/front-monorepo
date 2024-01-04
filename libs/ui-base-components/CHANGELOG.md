@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.2](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.1...ui-base-components-0.6.2) (2023-12-28)
+
+## [0.6.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.0...ui-base-components-0.6.1) (2023-12-28)
+
+## [0.6.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.0...ui-base-components-0.6.1) (2023-12-28)
+
+### Bug Fixes
+
+- remove favicon ([175ac13](https://gitlab.ir7.com.br/r7/front-monorepo/commit/175ac1373ea0bc37d9e263aaa382678ac83e03b8))
+
+### Features
+
+- added new font family ([b2f22e2](https://gitlab.ir7.com.br/r7/front-monorepo/commit/b2f22e239ee0de530384606580baab783b27b911))
+
+# [0.6.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.5.0...ui-base-components-0.6.0) (2023-12-21)
+
 # [0.5.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.4.1...ui-base-components-0.5.0) (2023-12-12)
 
 ## [0.4.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.4.0...ui-base-components-0.4.1) (2023-12-12)
