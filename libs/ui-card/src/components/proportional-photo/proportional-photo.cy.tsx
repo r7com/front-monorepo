@@ -1,4 +1,5 @@
-import { Card, ProportionalPhoto } from './proportional-photo'
+import { Card } from '../card'
+import { ProportionalPhoto } from './proportional-photo'
 
 describe(ProportionalPhoto.name, () => {
   beforeEach(() => {
