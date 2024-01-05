@@ -1,7 +1,7 @@
 import { createVariants, VariantProps } from '@r7/tools'
 
 export const variants = createVariants({
-  base: 'base-font-open-sans dark:base-text-neutral-high-400',
+  base: 'base-font-primary dark:base-text-neutral-high-400',
   variants: {
     size: {
       large:
