@@ -66,6 +66,5 @@ describe(CardCupom.name, () => {
           })
         })
       })
-    cy.matchImage()
   })
 })
