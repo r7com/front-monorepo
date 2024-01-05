@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { ProportionalPhoto } from './proportional-photo'
+import { Card } from '../card'
 
 const meta: Meta<typeof ProportionalPhoto> = {
   title: 'ui-card/ProportionalPhoto',
@@ -14,10 +15,18 @@ type Story = StoryObj<typeof ProportionalPhoto>
 
 export const TwoSquareCards: Story = {
   render: args => (
-    <ProportionalPhoto renderImage={args.renderImage} hat={args.hat} title={args.title} />
+    <ProportionalPhoto
+      renderImage={args.renderImage}
+      renderHat={args.renderHat}
+      title={args.title}
+    />
   ),
   args: {
-    hat: 'são paulo e rio de janeiro',
+    renderHat: (
+      <Card.HatWrapper>
+        <Card.HatTitle>são paulo e rio de janeiro</Card.HatTitle>
+      </Card.HatWrapper>
+    ),
     title: 'Ministério da Justiça abre processo contra Enel por apagões',
     renderImage: (
       <img

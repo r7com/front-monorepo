@@ -1,7 +1,7 @@
 import '@r7/ui-card/css'
 import '@r7/ui-layout/css'
 import { Container, Proportional, SpecialOne } from '@r7/ui-layout'
-import { TwoCardsSquarePhoto, ProportionalPhoto } from '@r7/ui-card'
+import { Card, TwoCardsSquarePhoto, ProportionalPhoto } from '@r7/ui-card'
 
 export function UiCard() {
   const LargeMainBlock = () => (
@@ -46,7 +46,11 @@ export function UiCard() {
                       height="auto"
                     />
                   }
-                  hat="DE A PEQUENA SEREIA A MARIO"
+                  renderHat={
+                    <Card.HatWrapper>
+                      <Card.HatTitle>DE A PEQUENA SEREIA A MARIO</Card.HatTitle>
+                    </Card.HatWrapper>
+                  }
                   title="Saiba quais foram os filmes com as maiores bilheterias em 2023"
                 />
 
@@ -59,7 +63,11 @@ export function UiCard() {
                       height="auto"
                     />
                   }
-                  hat="PENSÃO E EXAME DE DNA"
+                  renderHat={
+                    <Card.HatWrapper>
+                      <Card.HatTitle>PENSÃO E EXAME DE DNA</Card.HatTitle>
+                    </Card.HatWrapper>
+                  }
                   title="Jô e Maiára Quiderolly passam o primeiro ano do filho brigando"
                 />
 
@@ -72,7 +80,11 @@ export function UiCard() {
                       height="auto"
                     />
                   }
-                  hat="EDIÇÃO ESPECIAL"
+                  renderHat={
+                    <Card.HatWrapper>
+                      <Card.HatTitle>EDIÇÃO ESPECIAL</Card.HatTitle>
+                    </Card.HatWrapper>
+                  }
                   title="Confira todos os presentes trocados no amigo-secreto da Família Record"
                 />
               </>
@@ -94,7 +106,11 @@ export function UiCard() {
               height="auto"
             />
           }
-          hat="são paulo e rio de janeiro"
+          renderHat={
+            <Card.HatWrapper>
+              <Card.HatTitle>são paulo e rio de janeiro</Card.HatTitle>
+            </Card.HatWrapper>
+          }
           title="Ministério da Justiça abre processo contra Enel por apagões"
         />
 
@@ -107,7 +123,11 @@ export function UiCard() {
               height="auto"
             />
           }
-          hat="INFLUENCIADOR FITNESS"
+          renderHat={
+            <Card.HatWrapper>
+              <Card.HatTitle>INFLUENCIADOR FITNESS</Card.HatTitle>
+            </Card.HatWrapper>
+          }
           title="‘Saí leve dos esclarecimentos’, diz Cariani sobre depoimento à PF"
         />
 
@@ -120,7 +140,11 @@ export function UiCard() {
               height="auto"
             />
           }
-          hat="ausência dos pais"
+          renderHat={
+            <Card.HatWrapper>
+              <Card.HatTitle>ausência dos pais</Card.HatTitle>
+            </Card.HatWrapper>
+          }
           title="Larissa Manoela teve a presença dos cães em seu casamento 'secreto'"
         />
       </Proportional.Three>
