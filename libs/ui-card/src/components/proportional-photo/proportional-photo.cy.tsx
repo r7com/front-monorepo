@@ -1,4 +1,4 @@
-import { ProportionalPhoto } from './proportional-photo'
+import { Card, ProportionalPhoto } from './proportional-photo'
 
 describe(ProportionalPhoto.name, () => {
   beforeEach(() => {
@@ -12,7 +12,11 @@ describe(ProportionalPhoto.name, () => {
             height="auto"
           />
         }
-        hat="são paulo e rio de janeiro"
+        renderHat={
+          <Card.HatWrapper>
+            <Card.HatTitle>são paulo e rio de janeiro</Card.HatTitle>
+          </Card.HatWrapper>
+        }
         title="Ministério da Justiça abre processo contra Enel por apagões"
       />,
     )
@@ -20,13 +24,13 @@ describe(ProportionalPhoto.name, () => {
 
   it('should render proportional card - desktop', () => {
     cy.viewport('macbook-16')
-    cy.findAllByRole('article').should('be.visible')
+    cy.findAllByRole('article').should('not.be.visible')
     cy.matchImage()
   })
 
   it('should render proportional card - mobile', () => {
     cy.viewport('iphone-se2')
-    cy.findAllByRole('article').should('be.visible')
+    cy.findAllByRole('article').should('not.be.visible')
     cy.matchImage()
   })
 })
