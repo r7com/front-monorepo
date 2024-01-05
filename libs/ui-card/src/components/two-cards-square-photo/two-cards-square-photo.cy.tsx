@@ -40,14 +40,12 @@ describe(TwoCardsSquarePhoto.name, () => {
   it('should render two cards - desktop', () => {
     cy.viewport('macbook-16')
     cy.findAllByRole('article').should('have.length', 2)
-    cy.debug()
     cy.matchImage()
   })
 
   it('should render two cards - mobile', () => {
     cy.viewport('iphone-se2')
     cy.findAllByRole('article').should('have.length', 2)
-    cy.debug()
     cy.matchImage()
   })
 })
