@@ -25,13 +25,13 @@ describe(ProportionalPhoto.name, () => {
 
   it('should render proportional card - desktop', () => {
     cy.viewport('macbook-16')
-    cy.findAllByRole('article').should('not.be.visible')
+    cy.findAllByRole('article').should('be.visible')
     cy.matchImage()
   })
 
   it('should render proportional card - mobile', () => {
     cy.viewport('iphone-se2')
-    cy.findAllByRole('article').should('not.be.visible')
+    cy.findAllByRole('article').should('be.visible')
     cy.matchImage()
   })
 })
