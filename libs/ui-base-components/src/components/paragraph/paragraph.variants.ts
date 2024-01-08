@@ -1,4 +1,4 @@
-import { createVariants, VariantProps } from '../../tailwind-variants'
+import { createVariants, VariantProps } from '../../utils'
 
 export const variants = createVariants({
   base: 'dark:base-text-neutral-high-400',
