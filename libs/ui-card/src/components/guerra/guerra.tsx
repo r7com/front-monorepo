@@ -14,14 +14,14 @@ export function Guerra({ renderImage, hat, title, renderBullets }: GuerraProps) 
   return (
     <Card className="card-relative">
       <Card.Figure
-        className="card-w-full max-md:card-rounded-none [&>img]:card-w-full sm:card-from-0% sm:card-to-70% lg:card-from-0% lg:card-to-90%"
+        className="card-w-full max-md:card-rounded-none [&>img]:card-w-full md:card-from-0% md:card-to-70% lg:card-from-0% lg:card-to-90%"
         format="landscape"
         shadow
       >
         {renderImage}
       </Card.Figure>
 
-      <div className="w-full card-bg-neutral-low-600 sm:card-bg-transparent sm:card-absolute card-bottom-0 card-p-xxxs">
+      <div className="w-full card-bg-neutral-low-600 md:card-bg-transparent md:card-absolute card-bottom-0 card-p-xxxs">
         {hat && (
           <Card.HatWrapper type="warning">
             <Card.HatTitle color="high">{hat}</Card.HatTitle>
