@@ -15,7 +15,7 @@ describe(CardCoupon.name, () => {
               <ConditionalLink target="_blank" title={anchor_text} href={url} data-partner={name}>
                 <CardCoupon.Content>
                   <img
-                    className="mr-xxxs rounded-md"
+                    className="card-mr-xxxs card-rounded-md"
                     src={logo}
                     alt={anchor_text}
                     loading="lazy"
