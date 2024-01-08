@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.6.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.5.0...ui-card-0.6.0) (2024-01-05)
+
+### Features
+
+- breaking-news bar with its variants and validations ([34c5ec2](https://gitlab.ir7.com.br/r7/front-monorepo/commit/34c5ec292cf656c353c8c3132923f614b714e076))
+
+# [0.5.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.4.0...ui-card-0.5.0) (2024-01-05)
+
+### Features
+
+- **component:** proportional-photo ([ac95ebc](https://gitlab.ir7.com.br/r7/front-monorepo/commit/ac95ebc8e5f838da52d7481b2b5a1f443aa756f3))
+
 # [0.4.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.3.3...ui-card-0.4.0) (2023-12-19)
 
 ### Features
