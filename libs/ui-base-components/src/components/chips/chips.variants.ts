@@ -1,4 +1,4 @@
-import { createVariants, VariantProps } from '@r7/tools'
+import { createVariants, VariantProps } from '../../tailwind-variants'
 
 export const variants = createVariants({
   base: 'base-gap-nano base-px-xxxs base-rounded-pill base-font-semibold base-cursor-pointer base-flex base-items-center base-justify-center base-w-fit base-transition-colors',

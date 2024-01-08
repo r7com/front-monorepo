@@ -1,4 +1,4 @@
-import { createVariants, VariantProps } from '@r7/tools'
+import { createVariants, VariantProps } from '../../tailwind-variants'
 
 export const variants = createVariants({
   base: 'base-transition-all base-rounded-sm base-border-hairline',
