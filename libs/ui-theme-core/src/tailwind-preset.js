@@ -157,7 +157,7 @@ module.exports = {
       primary: ['var(--font-family-primary, sans-serif)', 'sans-serif'],
       'primary-light': ['var(--font-family-primary-light, sans-serif)', 'sans-serif'],
       'open-sans': ['"Open Sans"', 'sans-serif'],
-      'playfair-display': ['var(--font-family-secondary, sans-serif)', 'sans-serif'],
+      secondary: ['var(--font-family-secondary, sans-serif)', 'sans-serif'],
       body: ['"Open Sans"'],
     },
     fontSize: {
