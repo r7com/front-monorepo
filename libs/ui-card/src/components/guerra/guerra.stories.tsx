@@ -35,28 +35,28 @@ export const TwoSquareCards: Story = {
     renderBullets: (
       <>
         <Bullet url="#" color="neutralHigh">
-          Bullet 1
+          Câmara aprova MP que adia Lei de Dados para 31 de dezembro
         </Bullet>
         <Bullet url="#" color="neutralHigh">
-          Bullet 2
+          Casa Verde e Amarela terá financiamento com juros de 4,25%
         </Bullet>
         <Bullet url="#" color="neutralHigh">
-          Bullet 3
+          Senado aprova, em segundo turno, PEC de renovação do Fundeb
         </Bullet>
         <Bullet url="#" color="neutralHigh">
-          Bullet 4
+          Guedes defende fim de deduções do IR para Renda Brasil chegar a R$ 300
         </Bullet>
         <Bullet url="#" color="neutralHigh">
-          Bullet 5
+          Retomada de alto-forno da Usiminas terá presença de Bolsonaro e Zema
         </Bullet>
         <Bullet url="#" color="neutralHigh">
-          Bullet 6
+          Senado aprova em primeiro turno PEC que renova o Fundeb
         </Bullet>
         <Bullet url="#" color="neutralHigh">
-          Bullet 7
+          5 pontos para o Brasil decolar de vez na economia
         </Bullet>
         <Bullet url="#" color="neutralHigh">
-          Bullet 8
+          Queda no PIB e aprovação a Bolsonaro são destaques nesta sexta (14)
         </Bullet>
       </>
     ),
