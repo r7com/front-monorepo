@@ -7,7 +7,10 @@ export type CardCouponProps = {
 }
 export function CardCoupon({ children }: CardCouponProps) {
   return (
-    <section role="contentinfo" className="card-bg-neutral-high-500 card-p-xxxs rounded-md">
+    <section
+      role="contentinfo"
+      className="card-bg-neutral-high-500 card-p-xxxs rounded-md card-font-primary"
+    >
       {children}
     </section>
   )
