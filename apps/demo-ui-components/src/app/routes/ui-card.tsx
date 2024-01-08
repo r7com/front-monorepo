@@ -1,7 +1,8 @@
 import '@r7/ui-card/css'
 import '@r7/ui-layout/css'
 import { Container, Proportional, SpecialOne } from '@r7/ui-layout'
-import { TwoCardsSquarePhoto, BreakingNews, Card, ProportionalPhoto } from '@r7/ui-card'
+import { TwoCardsSquarePhoto, BreakingNews, Card, ProportionalPhoto, Guerra } from '@r7/ui-card'
+import { Bullet } from '@r7/ui-base-components'
 
 export function UiCard() {
   const LargeMainBlock = () => (
@@ -48,6 +49,48 @@ export function UiCard() {
         <Proportional.One>
           <BreakingNews theme="urgent" title="titulo para barra" href="#" />
         </Proportional.One>
+
+        <Guerra
+          hat="Economia"
+          title="Esperamos ter novo valor do auxílio emergencial até sexta, diz Bolsonaro "
+          renderImage={
+            <img
+              src="//img.r7.com/images/pr-jair-bolsonaro-declaracao-a-imprensa-1500-13082020105425814?resize=1100x628&crop=1101x628 123 47&dimensions=1100x628"
+              alt="Esperamos ter novo valor do auxílio emergencial até sexta, diz Bolsonaro  ( Carolina Antunes/PR - 12.08.2020)"
+              style={{ width: '100%' }}
+            />
+          }
+          renderBullets={
+            <>
+              <Bullet url="#" color="neutralHigh">
+                Bullet 1
+              </Bullet>
+              <Bullet url="#" color="neutralHigh">
+                Bullet 2
+              </Bullet>
+              <Bullet url="#" color="neutralHigh">
+                Bullet 3
+              </Bullet>
+              <Bullet url="#" color="neutralHigh">
+                Bullet 4
+              </Bullet>
+              <Bullet url="#" color="neutralHigh">
+                Bullet 5
+              </Bullet>
+              <Bullet url="#" color="neutralHigh">
+                Bullet 6
+              </Bullet>
+              <Bullet url="#" color="neutralHigh">
+                Bullet 7
+              </Bullet>
+              <Bullet url="#" color="neutralHigh">
+                Bullet 8
+              </Bullet>
+            </>
+          }
+        />
+
+        <Separator />
 
         <SpecialOne
           renderMain={
