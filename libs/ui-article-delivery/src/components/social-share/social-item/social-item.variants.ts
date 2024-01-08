@@ -1,4 +1,4 @@
-import { VariantProps, createVariants } from '@r7/tools'
+import { VariantProps, createVariants } from '@r7/ui-base-components'
 
 export const variants = createVariants({
   base: 'article-flex article-justify-center article-items-center article-w-sm sm:article-w-xs article-h-sm sm:article-h-xs article-border-hairline',
