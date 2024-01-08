@@ -1,4 +1,4 @@
-import { createVariants, VariantProps } from '@r7/tools'
+import { createVariants, VariantProps } from '@r7/ui-base-components'
 
 export const variants = createVariants({
   slots: {
