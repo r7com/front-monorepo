@@ -24,6 +24,7 @@ module.exports = {
       veryHeavy: '0.75rem',
     },
     borderRadius: {
+      none: '0',
       sm: '0.125rem',
       md: '0.25rem',
       lg: '0.5rem',
@@ -154,7 +155,6 @@ module.exports = {
     },
     // Necessário importar o CSS com a url do google fonts no html
     fontFamily: {
-      primary: ['var(--font-family-primary, sans-serif)', 'sans-serif'],
       'open-sans': ['"Open Sans"', 'sans-serif'],
       'playfair-display': ['"Playfair Display"'],
       body: ['"Open Sans"'],
