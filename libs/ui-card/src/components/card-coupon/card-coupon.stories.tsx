@@ -1,33 +1,33 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { CardCupom, CardCupomProps } from './'
+import { CardCoupon, CardCouponProps } from '.'
 
 import { ConditionalLink, Typography } from '@r7/ui-base-components'
-import { CUPOM_DATA } from './mock/CUPOM_DATA'
+import { COUPON_DATA } from './mock/COUPON_DATA'
 
-const meta: Meta<CardCupomProps> = {
-  title: 'ui-card/CardCupom',
-  component: CardCupom,
+const meta: Meta<CardCouponProps> = {
+  title: 'ui-card/CardCoupon',
+  component: CardCoupon,
   tags: ['autodocs'],
   argTypes: {},
 }
 
 export default meta
 
-type Story = StoryObj<CardCupomProps>
+type Story = StoryObj<CardCouponProps>
 
 export const Primary: Story = {
   render: () => (
-    <CardCupom>
+    <CardCoupon>
       <Typography primaryTitle as="span">
         r7 Cupons
       </Typography>
-      <CardCupom.List>
-        {CUPOM_DATA.map(({ id, name, url, logo, best_offer_text, anchor_text }) => (
-          <CardCupom.Item key={id}>
+      <CardCoupon.List>
+        {COUPON_DATA.map(({ id, name, url, logo, best_offer_text, anchor_text }) => (
+          <CardCoupon.Item key={id}>
             <ConditionalLink target="_blank" title={anchor_text} href={url} data-partner={name}>
-              <CardCupom.Content>
+              <CardCoupon.Content>
                 <img
-                  className="mr-xxxs rounded-md"
+                  className="card-mr-xxxs card-rounded-md"
                   src={logo}
                   alt={anchor_text}
                   loading="lazy"
@@ -42,12 +42,12 @@ export const Primary: Story = {
                     {best_offer_text}
                   </Typography>
                 </div>
-              </CardCupom.Content>
+              </CardCoupon.Content>
             </ConditionalLink>
-          </CardCupom.Item>
+          </CardCoupon.Item>
         ))}
-      </CardCupom.List>
-    </CardCupom>
+      </CardCoupon.List>
+    </CardCoupon>
   ),
   parameters: {
     design: {

@@ -1,4 +1,4 @@
-export const CUPOM_DATA = [
+export const COUPON_DATA = [
   {
     id: 32732,
     anchor_text: 'Cupom Casas Bahia',

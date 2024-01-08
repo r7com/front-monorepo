@@ -1,19 +1,19 @@
 import { ConditionalLink, Typography } from '@r7/ui-base-components'
-import { CardCupom } from './'
-import { CUPOM_DATA } from './mock/CUPOM_DATA'
+import { CardCoupon } from '.'
+import { COUPON_DATA } from './mock/COUPON_DATA'
 
-describe(CardCupom.name, () => {
-  it('should render default card cupons', () => {
+describe(CardCoupon.name, () => {
+  it('should render default card coupon', () => {
     cy.mount(
-      <CardCupom>
+      <CardCoupon>
         <Typography primaryTitle as="span">
           r7 Cupons
         </Typography>
-        <CardCupom.List>
-          {CUPOM_DATA.map(({ id, name, url, logo, best_offer_text, anchor_text }) => (
-            <CardCupom.Item key={id}>
+        <CardCoupon.List>
+          {COUPON_DATA.map(({ id, name, url, logo, best_offer_text, anchor_text }) => (
+            <CardCoupon.Item key={id}>
               <ConditionalLink target="_blank" title={anchor_text} href={url} data-partner={name}>
-                <CardCupom.Content>
+                <CardCoupon.Content>
                   <img
                     className="mr-xxxs rounded-md"
                     src={logo}
@@ -30,31 +30,31 @@ describe(CardCupom.name, () => {
                       {best_offer_text}
                     </Typography>
                   </div>
-                </CardCupom.Content>
+                </CardCoupon.Content>
               </ConditionalLink>
-            </CardCupom.Item>
+            </CardCoupon.Item>
           ))}
-        </CardCupom.List>
-      </CardCupom>,
+        </CardCoupon.List>
+      </CardCoupon>,
     )
 
     cy.matchImage()
   })
 
-  it('should render structure card cupom', () => {
+  it('should render structure card coupon', () => {
     cy.mount(
-      <CardCupom>
+      <CardCoupon>
         <Typography primaryTitle as="span">
           r7 Cupons
         </Typography>
-        <CardCupom.List>
-          <CardCupom.Item>
+        <CardCoupon.List>
+          <CardCoupon.Item>
             <ConditionalLink href="link">
-              <CardCupom.Content>R7 Cupons</CardCupom.Content>
+              <CardCoupon.Content>R7 Cupons</CardCoupon.Content>
             </ConditionalLink>
-          </CardCupom.Item>
-        </CardCupom.List>
-      </CardCupom>,
+          </CardCoupon.Item>
+        </CardCoupon.List>
+      </CardCoupon>,
     )
 
     cy.findByRole('contentinfo')

@@ -10,8 +10,8 @@ import {
 } from '@r7/ui-article-delivery'
 import { Breadcrumb, ConditionalLink, Paragraph, Typography } from '@r7/ui-base-components'
 import { MENU_DATA } from '../mocks/MENU_DATA'
-import { CardCupom } from '@r7/ui-card'
-import { CUPOM_DATA } from '../mocks/CUPOM_DATA'
+import { CardCoupon } from '@r7/ui-card'
+import { COUPON_DATA } from '../mocks/COUPON_DATA'
 
 export function UiArticleDelivery() {
   const { fontSize } = useArticleAction()
@@ -78,15 +78,15 @@ export function UiArticleDelivery() {
         </Breadcrumb>
       </div>
 
-      <CardCupom>
+      <CardCoupon>
         <Typography primaryTitle as="span">
           r7 Cupons
         </Typography>
-        <CardCupom.List>
-          {CUPOM_DATA.map(({ id, name, url, logo, best_offer_text, anchor_text }) => (
-            <CardCupom.Item key={id}>
+        <CardCoupon.List>
+          {COUPON_DATA.map(({ id, name, url, logo, best_offer_text, anchor_text }) => (
+            <CardCoupon.Item key={id}>
               <ConditionalLink target="_blank" title={anchor_text} href={url} data-partner={name}>
-                <CardCupom.Content>
+                <CardCoupon.Content>
                   <img
                     className="mr-xxxs rounded-md"
                     src={logo}
@@ -103,12 +103,12 @@ export function UiArticleDelivery() {
                       {best_offer_text}
                     </Typography>
                   </div>
-                </CardCupom.Content>
+                </CardCoupon.Content>
               </ConditionalLink>
-            </CardCupom.Item>
+            </CardCoupon.Item>
           ))}
-        </CardCupom.List>
-      </CardCupom>
+        </CardCoupon.List>
+      </CardCoupon>
     </article>
   )
 }

@@ -1,6 +1,6 @@
 export * from './styles/style'
 export * from './components/card'
 export * from './components/two-cards-square-photo'
-export * from './components/card-cupom'
+export * from './components/card-coupon'
 export * from './components/breaking-news-bar'
 export * from './components/proportional-photo'
