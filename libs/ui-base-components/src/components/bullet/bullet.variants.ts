@@ -2,7 +2,7 @@ import { createVariants, VariantProps } from '@r7/tools'
 
 export const variants = createVariants({
   slots: {
-    textSlot: 'base-text-neutral-low-500 base-font-light base-w-auto',
+    textSlot: 'base-font-light base-w-auto',
     iconSlot: 'base-mr-quark base-fill-brand-primary-500 base-inline',
   },
   variants: {
@@ -19,6 +19,10 @@ export const variants = createVariants({
         textSlot: 'base-text-little md:base-text-xxxs',
         iconSlot: 'base-w-nano md:base-w-[10px] base-h-nano md:base-h-[10px]',
       },
+    },
+    color: {
+      neutralLow: { textSlot: 'base-text-neutral-low-500' },
+      neutralHigh: { textSlot: 'base-text-neutral-high-400' },
     },
   },
 })
