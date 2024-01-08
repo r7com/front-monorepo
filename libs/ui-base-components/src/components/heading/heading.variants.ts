@@ -1,4 +1,4 @@
-import { createVariants, VariantProps } from '@r7/tools'
+import { createVariants, VariantProps } from '../../utils'
 
 export const variants = createVariants({
   base: 'base-font-primary dark:base-text-neutral-high-400',
