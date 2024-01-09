@@ -585,16 +585,15 @@
     "@babel/helper-plugin-utils" "^7.22.5"
     "@babel/plugin-syntax-class-static-block" "^7.14.5"
 
-"@babel/plugin-transform-classes@^7.23.5":
-  version "7.23.5"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-classes/-/plugin-transform-classes-7.23.5.tgz#e7a75f815e0c534cc4c9a39c56636c84fc0d64f2"
-  integrity sha512-jvOTR4nicqYC9yzOHIhXG5emiFEOpappSJAl73SDSEDcybD+Puuze8Tnpb9p9qEyYup24tq891gkaygIFvWDqg==
+"@babel/plugin-transform-classes@^7.23.8":
+  version "7.23.8"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-classes/-/plugin-transform-classes-7.23.8.tgz#d08ae096c240347badd68cdf1b6d1624a6435d92"
+  integrity sha512-yAYslGsY1bX6Knmg46RjiCiNSwJKv2IUC8qOdYKqMMr0491SXFhcHqOdRDeCRohOOIzwN/90C6mQ9qAKgrP7dg==
   dependencies:
     "@babel/helper-annotate-as-pure" "^7.22.5"
-    "@babel/helper-compilation-targets" "^7.22.15"
+    "@babel/helper-compilation-targets" "^7.23.6"
     "@babel/helper-environment-visitor" "^7.22.20"
     "@babel/helper-function-name" "^7.23.0"
-    "@babel/helper-optimise-call-expression" "^7.22.5"
     "@babel/helper-plugin-utils" "^7.22.5"
     "@babel/helper-replace-supers" "^7.22.20"
     "@babel/helper-split-export-declaration" "^7.22.6"
@@ -1039,7 +1038,7 @@
     "@babel/plugin-transform-block-scoping" "^7.23.4"
     "@babel/plugin-transform-class-properties" "^7.23.3"
     "@babel/plugin-transform-class-static-block" "^7.23.4"
-    "@babel/plugin-transform-classes" "^7.23.5"
+    "@babel/plugin-transform-classes" "^7.23.8"
     "@babel/plugin-transform-computed-properties" "^7.23.3"
     "@babel/plugin-transform-destructuring" "^7.23.3"
     "@babel/plugin-transform-dotall-regex" "^7.23.3"
@@ -1779,32 +1778,32 @@
     "@figspec/components" "^1.0.1"
     "@lit-labs/react" "^1.0.2"
 
-"@floating-ui/core@^1.4.2":
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/@floating-ui/core/-/core-1.5.2.tgz#53a0f7a98c550e63134d504f26804f6b83dbc071"
-  integrity sha512-Ii3MrfY/GAIN3OhXNzpCKaLxHQfJF9qvwq/kEJYdqDxeIHa01K8sldugal6TmeeXl+WMvhv9cnVzUTaFFJF09A==
-  dependencies:
-    "@floating-ui/utils" "^0.1.3"
-
-"@floating-ui/dom@^1.5.1":
+"@floating-ui/core@^1.5.3":
   version "1.5.3"
-  resolved "https://registry.yarnpkg.com/@floating-ui/dom/-/dom-1.5.3.tgz#54e50efcb432c06c23cd33de2b575102005436fa"
-  integrity sha512-ClAbQnEqJAKCJOEbbLo5IUlZHkNszqhuxS4fHAVxRPXPya6Ysf2G8KypnYcOTpx6I8xcgF9bbHb6g/2KpbV8qA==
+  resolved "https://registry.yarnpkg.com/@floating-ui/core/-/core-1.5.3.tgz#b6aa0827708d70971c8679a16cf680a515b8a52a"
+  integrity sha512-O0WKDOo0yhJuugCx6trZQj5jVJ9yR0ystG2JaNAemYUWce+pmM6WUEFIibnWyEJKdrDxhm75NoSRME35FNaM/Q==
   dependencies:
-    "@floating-ui/core" "^1.4.2"
-    "@floating-ui/utils" "^0.1.3"
+    "@floating-ui/utils" "^0.2.0"
+
+"@floating-ui/dom@^1.5.4":
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/@floating-ui/dom/-/dom-1.5.4.tgz#28df1e1cb373884224a463235c218dcbd81a16bb"
+  integrity sha512-jByEsHIY+eEdCjnTVu+E3ephzTOzkQ8hgUfGwos+bg7NlH33Zc5uO+QHz1mrQUOgIKKDD1RtS201P9NvAfq3XQ==
+  dependencies:
+    "@floating-ui/core" "^1.5.3"
+    "@floating-ui/utils" "^0.2.0"
 
 "@floating-ui/react-dom@^2.0.0":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@floating-ui/react-dom/-/react-dom-2.0.4.tgz#b076fafbdfeb881e1d86ae748b7ff95150e9f3ec"
-  integrity sha512-CF8k2rgKeh/49UrnIBs4BdxPUV6vize/Db1d/YbCLyp9GiVZ0BEwf5AiDSxJRCr6yOkGqTFHtmrULxkEfYZ7dQ==
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@floating-ui/react-dom/-/react-dom-2.0.5.tgz#851522899c34e3e2be1e29f3294f150834936e28"
+  integrity sha512-UsBK30Bg+s6+nsgblXtZmwHhgS2vmbuQK22qgt2pTQM6M3X6H1+cQcLXqgRY3ihVLcZJE6IvqDQozhsnIVqK/Q==
   dependencies:
-    "@floating-ui/dom" "^1.5.1"
+    "@floating-ui/dom" "^1.5.4"
 
-"@floating-ui/utils@^0.1.3":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.1.6.tgz#22958c042e10b67463997bd6ea7115fe28cbcaf9"
-  integrity sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==
+"@floating-ui/utils@^0.2.0":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.2.1.tgz#16308cea045f0fc777b6ff20a9f25474dd8293d2"
+  integrity sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==
 
 "@frsource/base64@1.0.17":
   version "1.0.17"
@@ -2480,40 +2479,40 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@nrwl/cypress@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nrwl/cypress/-/cypress-17.2.5.tgz#26bbe35a51118e02f375b1621225488ccba182f6"
-  integrity sha512-3juSy+fZ+pxQE1Tx/BO+f1u9iUXbF2Vc6biq2rIh/d8Eo7YlDS/9clrLLWCZ4ytT5nzesrnZS0viuRavvNih8g==
+"@nrwl/cypress@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nrwl/cypress/-/cypress-17.2.8.tgz#0fcdece62e35ed7a02fc7b92c0dfc9d1743726e7"
+  integrity sha512-32owq2ybkkKOIeqQ/mkwBzFH4HPukmHEJyJ4v95sUgY8qrnj/Ca89vozdJ6WEvUiqcAb7ebrmp/nqFCz7PIWbg==
   dependencies:
-    "@nx/cypress" v17.2.5
+    "@nx/cypress" "17.2.8"
 
-"@nrwl/devkit@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nrwl/devkit/-/devkit-17.2.5.tgz#990918387fb192732c1803c0015bac171f402685"
-  integrity sha512-rXZDkJMzbViCfxZ19ndLZX9MZhQ50qgQOR6kahYugTcJ6HRV1i/FsKRyKXk1JefMCo8qdw/F5aw9zl0WwOiPdA==
+"@nrwl/devkit@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nrwl/devkit/-/devkit-17.2.8.tgz#dd3467b484c4611454a45541ffb29e4de5b2ebe7"
+  integrity sha512-l2dFy5LkWqSA45s6pee6CoqJeluH+sjRdVnAAQfjLHRNSx6mFAKblyzq5h1f4P0EUCVVVqLs+kVqmNx5zxYqvw==
   dependencies:
-    "@nx/devkit" v17.2.5
+    "@nx/devkit" "17.2.8"
 
-"@nrwl/eslint-plugin-nx@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nrwl/eslint-plugin-nx/-/eslint-plugin-nx-17.2.5.tgz#9b906ad4a4c377e0a6461deb44bae43a0bad43d2"
-  integrity sha512-uvqGdOCqz/A1Ak27pBBcOCI9Ct/rdXfUhmYMDSAPNUx1gzQRofJ3DD4q7uFjEHwc7Qjdqpc4HizYPBaIj4ZaBw==
+"@nrwl/eslint-plugin-nx@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nrwl/eslint-plugin-nx/-/eslint-plugin-nx-17.2.8.tgz#bf3a3c0820eb9a6bf42355ec1012799136595801"
+  integrity sha512-g76ZzBvJ7jenvLXQuXdBUs7p3KP2vr00u7TV4A/J01eDJMFHYVZhYfQNjLhr4nnE4NvNRr8WdrMD2KeGYtdycQ==
   dependencies:
-    "@nx/eslint-plugin" v17.2.5
+    "@nx/eslint-plugin" "17.2.8"
 
-"@nrwl/jest@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nrwl/jest/-/jest-17.2.5.tgz#1f973ed5d3504a871e70e64d9aa41879f33c762a"
-  integrity sha512-zWVk+L+oAgWQovooL+ynehDUTqm6TschYh5utL11N8kMuKPrF/aFSoiE4J47VS6TmO/sQ6hrRVMJfXibMlnZeQ==
+"@nrwl/jest@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nrwl/jest/-/jest-17.2.8.tgz#188644e3177c47e1160cb135662b7697bb152467"
+  integrity sha512-suyAm+5dj03ZevZW0fEZJSn+au1k6+OGPo4LKQ9Y4u/QJW52d2k0nOzrKu79CwkdKP5PFhjnvPP4Oo93RbNNnA==
   dependencies:
-    "@nx/jest" v17.2.5
+    "@nx/jest" "17.2.8"
 
-"@nrwl/js@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nrwl/js/-/js-17.2.5.tgz#af3d50e1cf155b2dc2306646c68f1f07a87dbb04"
-  integrity sha512-Pcw5f1yqT6yJe3DRtdoYmHVngNFy+oWkOkukDbB3MySGyA760NYyFI49/jMuzGd91dV9vCjEjncLQNKYJTKeBg==
+"@nrwl/js@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nrwl/js/-/js-17.2.8.tgz#d10795206769bd30faaf9e137e971ae402977731"
+  integrity sha512-ZfTGNSmSBqvEfP8NOfOHcnqKwhXsfqBrN4IhthQR02sqTA9GkrjSfSUtcGXY01fUitsNUDOn6RZjgX6UysDCXg==
   dependencies:
-    "@nx/js" v17.2.5
+    "@nx/js" "17.2.8"
 
 "@nrwl/nx-cloud@16.5.2":
   version "16.5.2"
@@ -2522,76 +2521,76 @@
   dependencies:
     nx-cloud "16.5.2"
 
-"@nrwl/react@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nrwl/react/-/react-17.2.5.tgz#50c5bc1b7294583cf1442d5192c12e1d2a67eb23"
-  integrity sha512-Jw9RE9jrrpQWToH62V6Kq0K/5m4FyShBo72+UCm9IFzhKrNPo4yP8otXC4k8p1SAE2ZcEQyURTrMoGFiG3JYKw==
+"@nrwl/react@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nrwl/react/-/react-17.2.8.tgz#4e2c6e93691fe149f02db1a46ee16cd482501003"
+  integrity sha512-fj5Qf3B3Nok8T8lF9DpYEeP7DWqP7KF/jBO6h4eniTifh5BRjEq5PaRIhMiVMdepqQiWMPd2tsZyf9nx1qzY6w==
   dependencies:
-    "@nx/react" v17.2.5
+    "@nx/react" "17.2.8"
 
-"@nrwl/storybook@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nrwl/storybook/-/storybook-17.2.5.tgz#c0b7147f97a32ba0cf5a0b5b74282d896f71d2f8"
-  integrity sha512-zoLqGgw5giLkfKL1jGt0TuP82ox6AR1aLbxjmnThnUQeeot+6JWw/8f3ZIoJ9boi4nWxVkT9Ao9pxW4u4P/T5w==
+"@nrwl/storybook@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nrwl/storybook/-/storybook-17.2.8.tgz#7e4f4b5bcf6f19b5dd759c4e729d6443e6b78aa6"
+  integrity sha512-YBedhVfpylP48lG7VqB7xdiPp5DsEY6aFeabiZC3DQWK+oaMAIOYUKFD6+LiviDoPGpIJCeoJRC0UcnAuaLO7g==
   dependencies:
-    "@nx/storybook" v17.2.5
+    "@nx/storybook" "17.2.8"
 
-"@nrwl/tao@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nrwl/tao/-/tao-17.2.5.tgz#48b941569f83a1669023aeecaaf64f0ea09b5aec"
-  integrity sha512-hA89BirzFb2MBm26ZPTTJ/RWRjmZ9R39J8321kVEldehStluA4E5zobNd7MJVp77fBK/CCTlIhFeUEP9qmxhZA==
+"@nrwl/tao@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nrwl/tao/-/tao-17.2.8.tgz#41ff3d715a0763e95cf5c35e7f79cd3be358dc5f"
+  integrity sha512-Qpk5YKeJ+LppPL/wtoDyNGbJs2MsTi6qyX/RdRrEc8lc4bk6Cw3Oul1qTXCI6jT0KzTz+dZtd0zYD/G7okkzvg==
   dependencies:
-    nx v17.2.5
+    nx "17.2.8"
     tslib "^2.3.0"
 
-"@nrwl/vite@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nrwl/vite/-/vite-17.2.5.tgz#427f86412909950e8c3a6b2c5c5f6d9bc621efe6"
-  integrity sha512-GnZ/0mKaxPZRfDnEIAePpb7FOKdqSzbXaLSko2FlRtqTVnIpQYu8VxqgLt3KQQUIpL+1l9UmeMan+6A8UXWyBg==
+"@nrwl/vite@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nrwl/vite/-/vite-17.2.8.tgz#6c0497f5e8d444a87028ff4204079e9da4e18c0c"
+  integrity sha512-j0VBt+euPvpuHZ0thR3J7hkWrh90G0jmKJbT/yvECzcoFWhUvgsR3NJ0Y6a+EEediWbKHhmIeDZWMvWceOebLw==
   dependencies:
-    "@nx/vite" v17.2.5
+    "@nx/vite" "17.2.8"
 
-"@nrwl/web@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nrwl/web/-/web-17.2.5.tgz#88cf4b351f6db2f536913a86008513f56af32755"
-  integrity sha512-43wKLPYylyu+w/Ive+Pl0VvyEWnWUjYK+o8D62WuHx+JCcp+bZUKSdueC38U860SJiE1hoa/YRy57W6ZbP9tVg==
+"@nrwl/web@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nrwl/web/-/web-17.2.8.tgz#5ff1c388a5e26a345d445eb52d8e5474e3d48bd3"
+  integrity sha512-oBiuSQ7Q6hOXHuZW5Gf8m0gcrLTV78jxhSjmhC5F6yzgvBvnfMpCdrJn7W1G+O+kEg3byko8v+Rz39tfc8YPjg==
   dependencies:
-    "@nx/web" v17.2.5
+    "@nx/web" "17.2.8"
 
-"@nrwl/webpack@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nrwl/webpack/-/webpack-17.2.5.tgz#eaa790e109d6e317e2409c339cad499509db40b6"
-  integrity sha512-anjnBvtMQu9kHrVqClXS/x1aTm+xLLr7gmONZBiWr4VSLxO8AO1NuNG9iOC2/i49j+xQ+CfDDauxVwL/X1CUgw==
+"@nrwl/webpack@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nrwl/webpack/-/webpack-17.2.8.tgz#e0d5061c62f6896c6ff0b2b2d4fbda950cc9afa7"
+  integrity sha512-HcwdfjXVz1NrZZnx1Fv48vleOTlsDAgTRHnQL02xYWT6ElhuKRQsqJGvDduQIFAp4KrnEEhEKEx6oDAEZKUkDg==
   dependencies:
-    "@nx/webpack" v17.2.5
+    "@nx/webpack" "17.2.8"
 
-"@nrwl/workspace@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nrwl/workspace/-/workspace-17.2.5.tgz#92cc6c8214c1cb2f2fbc798e2f6da8b11224f2be"
-  integrity sha512-xDyM/P6ggSW3efEgJ6GoYbErJX1uU14h8OXOS0jK5YLeDiJc7AYiW5JrMoZ1IQl4Pp+p2OrYE6nkc8l2zBXjAQ==
+"@nrwl/workspace@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nrwl/workspace/-/workspace-17.2.8.tgz#79d0c143d38087c3e8ee1401c1f977696e5055cd"
+  integrity sha512-RiTDTuzdueZ+++kNQAENHdHbYToOhzO56XWxKOGoMEUSpcmbKRAFReFBzNqD91Fnv562vkW1VNRIb6Ey7X1YHQ==
   dependencies:
-    "@nx/workspace" v17.2.5
+    "@nx/workspace" "17.2.8"
 
-"@nx/cypress@17.2.5", "@nx/cypress@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/cypress/-/cypress-17.2.5.tgz#26027721f172532a6f3a421751d03901fa2491e8"
-  integrity sha512-sSvS60KOOO+K+Y+yokSOFpR+fNyOoI8262fGcOAoXhZFzgYSTUidtfdmza5KtHDTLDYiu3/nRCigcy6tB/NH0g==
+"@nx/cypress@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/cypress/-/cypress-17.2.8.tgz#354fb0b1308499d2580ec270ebfcd565b0ef6f90"
+  integrity sha512-RjDD2AjDg7D743/+hSgzllLlSi4RwP196Nm0C8ltG5udPK1W+3S0qcERgHgtTuYr6+WVZIMtcZF2Vq09zcbtyg==
   dependencies:
-    "@nrwl/cypress" v17.2.5
-    "@nx/devkit" v17.2.5
-    "@nx/eslint" v17.2.5
-    "@nx/js" v17.2.5
+    "@nrwl/cypress" "17.2.8"
+    "@nx/devkit" "17.2.8"
+    "@nx/eslint" "17.2.8"
+    "@nx/js" "17.2.8"
     "@phenomnomnominal/tsquery" "~5.0.1"
     detect-port "^1.5.1"
     semver "7.5.3"
     tslib "^2.3.0"
 
-"@nx/devkit@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/devkit/-/devkit-17.2.5.tgz#3204483bcb71f14c4eb67e1e3e8b75e795b3df3c"
-  integrity sha512-eOIIziLA1AxRtRiDI+ZNGpXVtIwrYKeVTsGbLljaj3i5Ks753VMH340WNNlzMUXMseWG6XuQ4PkMhURza2tzog==
+"@nx/devkit@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/devkit/-/devkit-17.2.8.tgz#49b6c94a3c12fba63eae6514fb37a468d0570e2e"
+  integrity sha512-6LtiQihtZwqz4hSrtT5cCG5XMCWppG6/B8c1kNksg97JuomELlWyUyVF+sxmeERkcLYFaKPTZytP0L3dmCFXaw==
   dependencies:
-    "@nrwl/devkit" v17.2.5
+    "@nrwl/devkit" "17.2.8"
     ejs "^3.1.7"
     enquirer "~2.3.6"
     ignore "^5.0.4"
@@ -2599,43 +2598,43 @@
     tmp "~0.2.1"
     tslib "^2.3.0"
 
-"@nx/eslint-plugin@17.2.5", "@nx/eslint-plugin@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/eslint-plugin/-/eslint-plugin-17.2.5.tgz#f454d9fcb87aec29c9f329196c2cb5107698c550"
-  integrity sha512-xd6IN0/9dt6+8Nd3HvqKnABe5ZcU5RAbVpr3m1t1YD0ZdDYVih492vNuLg4kaAYS+GYut/UQSBTSk+n2cLw9pg==
+"@nx/eslint-plugin@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/eslint-plugin/-/eslint-plugin-17.2.8.tgz#bb190ce2152fc4a1999b7fa3b5a0930b87d22a5d"
+  integrity sha512-SOF/Q1g9SNZnwPpwcZNCYeYU670s1X1hgwHCWisw3jGPTYHvpAMQVGwPyU28OyY4PBrqEOVqLTWsuWQYpUjLOw==
   dependencies:
-    "@nrwl/eslint-plugin-nx" v17.2.5
-    "@nx/devkit" v17.2.5
-    "@nx/js" v17.2.5
-    "@typescript-eslint/type-utils" "^6.13.2"
-    "@typescript-eslint/utils" "^6.13.2"
+    "@nrwl/eslint-plugin-nx" "17.2.8"
+    "@nx/devkit" "17.2.8"
+    "@nx/js" "17.2.8"
+    "@typescript-eslint/type-utils" "^6.9.1"
+    "@typescript-eslint/utils" "^6.9.1"
     chalk "^4.1.0"
     confusing-browser-globals "^1.0.9"
     jsonc-eslint-parser "^2.1.0"
     semver "7.5.3"
     tslib "^2.3.0"
 
-"@nx/eslint@17.2.5", "@nx/eslint@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/eslint/-/eslint-17.2.5.tgz#c627bcf4392c35f8c9e585333ee20dd4f5b86a3b"
-  integrity sha512-+S33U/AXvAygB72Dp646aGAJOhCAJRZGCiArq8nASERD6HWAQU4DMqcYflvTP1OqjPSHkVlaL/JIp7y+XzdTfQ==
+"@nx/eslint@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/eslint/-/eslint-17.2.8.tgz#426010f88aa5518454311b2c7d194444a973e662"
+  integrity sha512-P6s85cIK7LYHixCJFZ+tLCPDxeOt9m2bQQOLxBCLEy5mqaGmjMHzWkLaoQBueCSntE6PSao0MMA+1TeeZjOoDw==
   dependencies:
-    "@nx/devkit" v17.2.5
-    "@nx/js" v17.2.5
-    "@nx/linter" v17.2.5
+    "@nx/devkit" "17.2.8"
+    "@nx/js" "17.2.8"
+    "@nx/linter" "17.2.8"
     tslib "^2.3.0"
     typescript "~5.2.2"
 
-"@nx/jest@17.2.5", "@nx/jest@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/jest/-/jest-17.2.5.tgz#1752a869af187627aef9bc2859eee2f949bba93d"
-  integrity sha512-Fl7RFLY/4k0AqwX8XibkyMd23yCFtRGW68NFk2I2PlaPwnhS9HEoTb4aMJ8PcTqKXyHg2dyGpjv5QMBEtq6yqA==
+"@nx/jest@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/jest/-/jest-17.2.8.tgz#6c0e33b4cbdfdd357230e5a28a093e626bbf01a8"
+  integrity sha512-FnwwURXmG+uv5ELHjHd9uVbUioCPjefAOtENcasLJMs2WYeu3zePsru5B8GO9BBM5g2eTmw10Y5f0riAikZjcw==
   dependencies:
     "@jest/reporters" "^29.4.1"
     "@jest/test-result" "^29.4.1"
-    "@nrwl/jest" v17.2.5
-    "@nx/devkit" v17.2.5
-    "@nx/js" v17.2.5
+    "@nrwl/jest" "17.2.8"
+    "@nx/devkit" "17.2.8"
+    "@nx/js" "17.2.8"
     "@phenomnomnominal/tsquery" "~5.0.1"
     chalk "^4.1.0"
     identity-obj-proxy "3.0.0"
@@ -2645,10 +2644,10 @@
     resolve.exports "1.1.0"
     tslib "^2.3.0"
 
-"@nx/js@17.2.5", "@nx/js@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/js/-/js-17.2.5.tgz#8082ea9ffcd99f7b49efe1259c932359707a9a6c"
-  integrity sha512-kgH7GRGE+c3RXhvY8C7Np5FWK4yk0mRjnL5X6r14ZYPZPwj0OAOGiFXUVy14epp1SHdyqK1gz878kdrpxomaCQ==
+"@nx/js@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/js/-/js-17.2.8.tgz#9f1a620b016ac014125151beacffab18c11952f7"
+  integrity sha512-M91tw9tfSnkoC8pZaC9wNxrgaFU4MeQcgdT08ievaroo77kH4RheySsU1uNc0J58Jk4X4315wu/X7Bf/35m0Mw==
   dependencies:
     "@babel/core" "^7.22.9"
     "@babel/plugin-proposal-decorators" "^7.22.7"
@@ -2657,9 +2656,9 @@
     "@babel/preset-env" "^7.22.9"
     "@babel/preset-typescript" "^7.22.5"
     "@babel/runtime" "^7.22.6"
-    "@nrwl/js" v17.2.5
-    "@nx/devkit" v17.2.5
-    "@nx/workspace" v17.2.5
+    "@nrwl/js" "17.2.8"
+    "@nx/devkit" "17.2.8"
+    "@nx/workspace" "17.2.8"
     "@phenomnomnominal/tsquery" "~5.0.1"
     babel-plugin-const-enum "^1.0.1"
     babel-plugin-macros "^2.8.0"
@@ -2681,73 +2680,73 @@
     tsconfig-paths "^4.1.2"
     tslib "^2.3.0"
 
-"@nx/linter@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/linter/-/linter-17.2.5.tgz#564663a17ff05fa0e8589382d5c37f07be095c34"
-  integrity sha512-MbTDC3H5w6rOfPxDEKScYn9ByXlCwJEX9U6Bh6GGkVl+w0rZ0rwxtwR4i4EIbMNmuWVhQK1GE8gQf2kzndfOhg==
+"@nx/linter@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/linter/-/linter-17.2.8.tgz#bafc71b40a36b492e538898b254a8932433096b4"
+  integrity sha512-dwqE742TIw1+/djzlikKakIfComq8nFnhupWjvl7KrU9r8ytcKyQbxHw7KGMUT9HAEG4xSNuwiaELr/8w4MM2Q==
   dependencies:
-    "@nx/eslint" v17.2.5
+    "@nx/eslint" "17.2.8"
 
-"@nx/nx-darwin-arm64@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/nx-darwin-arm64/-/nx-darwin-arm64-17.2.5.tgz#411b861cb0a98540082b7639dbaaa9f48044a25a"
-  integrity sha512-AGF/XnMkXymS8xYMsbeyNKZWKflfU8TTqEJqlcADMHYcr8OD1Jyq1YYHp/vvPBWqEhUL4bx3GPspQn5YiiCrWw==
+"@nx/nx-darwin-arm64@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/nx-darwin-arm64/-/nx-darwin-arm64-17.2.8.tgz#26645c9548d5e387b43c06fccfa18e2c1f08055e"
+  integrity sha512-dMb0uxug4hM7tusISAU1TfkDK3ixYmzc1zhHSZwpR7yKJIyKLtUpBTbryt8nyso37AS1yH+dmfh2Fj2WxfBHTg==
 
-"@nx/nx-darwin-x64@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/nx-darwin-x64/-/nx-darwin-x64-17.2.5.tgz#94900e137763b03abeb41f2279e214ea606ad9a8"
-  integrity sha512-YQQG+kijDNedE6bwEIeKWtVQOxJD+NHW69z6sb/S+ub8NO293YgNtYXgilet9RwOKBubeSyBqWr+yYbRhOuz+A==
+"@nx/nx-darwin-x64@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/nx-darwin-x64/-/nx-darwin-x64-17.2.8.tgz#5143d6d01d24e338cb3d39076fe2af95146cb538"
+  integrity sha512-0cXzp1tGr7/6lJel102QiLA4NkaLCkQJj6VzwbwuvmuCDxPbpmbz7HC1tUteijKBtOcdXit1/MEoEU007To8Bw==
 
-"@nx/nx-freebsd-x64@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/nx-freebsd-x64/-/nx-freebsd-x64-17.2.5.tgz#731ffa2f70142a28ce33fd59ef564e24ba94ee5f"
-  integrity sha512-AzcYELtNDukSTtO6zTAuu9pUI2634/2ZFLdS15C9cqUrK0XNvBcbj6R1KNGjgaBDUJc9H49+fqU8VnLPpJjBKQ==
+"@nx/nx-freebsd-x64@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/nx-freebsd-x64/-/nx-freebsd-x64-17.2.8.tgz#82a018a1855170e0243b8fe7b0032af279c3fb83"
+  integrity sha512-YFMgx5Qpp2btCgvaniDGdu7Ctj56bfFvbbaHQWmOeBPK1krNDp2mqp8HK6ZKOfEuDJGOYAp7HDtCLvdZKvJxzA==
 
-"@nx/nx-linux-arm-gnueabihf@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/nx-linux-arm-gnueabihf/-/nx-linux-arm-gnueabihf-17.2.5.tgz#4d21f74981baeb7528ff2259a5a433e14af6d8f8"
-  integrity sha512-24Q5N4krcSV6rbFYGRRgbHTc2eSDoJSWesvAtxAW5Sgh6+wAuqFKVwLwY9ZOn1GQwlySB87YwzH2BMkOfEuorw==
+"@nx/nx-linux-arm-gnueabihf@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/nx-linux-arm-gnueabihf/-/nx-linux-arm-gnueabihf-17.2.8.tgz#18b9c324221ff6a30589f3fc272a843aca57b70f"
+  integrity sha512-iN2my6MrhLRkVDtdivQHugK8YmR7URo1wU9UDuHQ55z3tEcny7LV3W9NSsY9UYPK/FrxdDfevj0r2hgSSdhnzA==
 
-"@nx/nx-linux-arm64-gnu@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/nx-linux-arm64-gnu/-/nx-linux-arm64-gnu-17.2.5.tgz#067d2e9adccbd1bff4dbad7ac1338c02ddb3bf9c"
-  integrity sha512-ty08Jnhk/eCVzxdm6o9EaGAZQ4t1WQCO9I/FjriEqtt4e5If6YKJPGjRzu/1OCvppv4d7j0SEN6FiyGkESpBPw==
+"@nx/nx-linux-arm64-gnu@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/nx-linux-arm64-gnu/-/nx-linux-arm64-gnu-17.2.8.tgz#54a08640a2babe78bcf3283565b00eb487db595e"
+  integrity sha512-Iy8BjoW6mOKrSMiTGujUcNdv+xSM1DALTH6y3iLvNDkGbjGK1Re6QNnJAzqcXyDpv32Q4Fc57PmuexyysZxIGg==
 
-"@nx/nx-linux-arm64-musl@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/nx-linux-arm64-musl/-/nx-linux-arm64-musl-17.2.5.tgz#7257b80b3e36070136d06d38f7a45d5732146c80"
-  integrity sha512-iW/hOgkpELTTu53UYNYAUvs5dAXDR94P50HZFvTQeTQH6xr8igMdOBFdApYFZIjD7IrKqNBSeAiyl4TyI6vFag==
+"@nx/nx-linux-arm64-musl@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/nx-linux-arm64-musl/-/nx-linux-arm64-musl-17.2.8.tgz#cd7b673bb9f45fec7aa1b6c880a0d23d658e927f"
+  integrity sha512-9wkAxWzknjpzdofL1xjtU6qPFF1PHlvKCZI3hgEYJDo4mQiatGI+7Ttko+lx/ZMP6v4+Umjtgq7+qWrApeKamQ==
 
-"@nx/nx-linux-x64-gnu@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/nx-linux-x64-gnu/-/nx-linux-x64-gnu-17.2.5.tgz#21d0ed9ecb8fc3742ba5220a4f2a6f4e0d9780d4"
-  integrity sha512-BJi195AOHSHurMrPzT2mNGslIDn4LVxfKKdiRqVeOvQxT3cZij4fzPTUYxdOFnrWU5YPfW4A9p3ydFz8MDapOg==
+"@nx/nx-linux-x64-gnu@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/nx-linux-x64-gnu/-/nx-linux-x64-gnu-17.2.8.tgz#009eb75c77bf075bc9c13ec4f9caf77821eee639"
+  integrity sha512-sjG1bwGsjLxToasZ3lShildFsF0eyeGu+pOQZIp9+gjFbeIkd19cTlCnHrOV9hoF364GuKSXQyUlwtFYFR4VTQ==
 
-"@nx/nx-linux-x64-musl@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/nx-linux-x64-musl/-/nx-linux-x64-musl-17.2.5.tgz#ed68c1df2521259ef1e522f034af63eaa19771ea"
-  integrity sha512-r1TrCFvdAIvogNry3Oy0IrWT2Ed5nZHR0lcuW5ImF0HinMmH/o4Ey7Q4IRo5hB88gxq4AUTWt+WoQbImIvoGPg==
+"@nx/nx-linux-x64-musl@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/nx-linux-x64-musl/-/nx-linux-x64-musl-17.2.8.tgz#8ee2324068732a135ca4b01081942d5956885167"
+  integrity sha512-QiakXZ1xBCIptmkGEouLHQbcM4klQkcr+kEaz2PlNwy/sW3gH1b/1c0Ed5J1AN9xgQxWspriAONpScYBRgxdhA==
 
-"@nx/nx-win32-arm64-msvc@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/nx-win32-arm64-msvc/-/nx-win32-arm64-msvc-17.2.5.tgz#151c69871e59b061eace5ef9dedac2b684be4fa3"
-  integrity sha512-TyMH8mys+r4Vgq5LYE6zY70LsL2F7JC85O+jHeVPR0vDNGm5Nb/UHobT5Y/PLpLxIx0aIeRuu6VI3j3oh1JhNw==
+"@nx/nx-win32-arm64-msvc@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/nx-win32-arm64-msvc/-/nx-win32-arm64-msvc-17.2.8.tgz#9bdce5b4d1f9cec7ef326eaf43b99e68576398b0"
+  integrity sha512-XBWUY/F/GU3vKN9CAxeI15gM4kr3GOBqnzFZzoZC4qJt2hKSSUEWsMgeZtsMgeqEClbi4ZyCCkY7YJgU32WUGA==
 
-"@nx/nx-win32-x64-msvc@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/nx-win32-x64-msvc/-/nx-win32-x64-msvc-17.2.5.tgz#89d2ffa519f8ab4e17469b7d65e353d787feb52e"
-  integrity sha512-I/LWvNasB+iUEzIeejbuaeeezMCfMjpDBsiPdnS5nfHMVnTOrIbfzQOWLWUr+/7R0fYl1BXTp352iaD+M10Agw==
+"@nx/nx-win32-x64-msvc@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/nx-win32-x64-msvc/-/nx-win32-x64-msvc-17.2.8.tgz#8a86ff250021ad47686b58f1840b348a209b1158"
+  integrity sha512-HTqDv+JThlLzbcEm/3f+LbS5/wYQWzb5YDXbP1wi7nlCTihNZOLNqGOkEmwlrR5tAdNHPRpHSmkYg4305W0CtA==
 
-"@nx/react@17.2.5", "@nx/react@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/react/-/react-17.2.5.tgz#2052f4290d63daa5814c884ddf4248cd84c190a1"
-  integrity sha512-md/UTxVit5waw+gaCILPq7SHVXrTxWfzggt10DdLODfbi1PNU087XzmPqvxfeYq1jNfDBKbFsRIclxgUL8evUw==
+"@nx/react@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/react/-/react-17.2.8.tgz#5bd3eef70049c227d0b214bfda80414ca088f7eb"
+  integrity sha512-iJcpKi+Bzi9JZtgZmhQ2QWkt3PxOppYVah/EV9B6m9wOFhNI7IQYOp4NY8BruGZYRhkSsz59ZWZVu9iJSSrayg==
   dependencies:
-    "@nrwl/react" v17.2.5
-    "@nx/devkit" v17.2.5
-    "@nx/eslint" v17.2.5
-    "@nx/js" v17.2.5
-    "@nx/web" v17.2.5
+    "@nrwl/react" "17.2.8"
+    "@nx/devkit" "17.2.8"
+    "@nx/eslint" "17.2.8"
+    "@nx/js" "17.2.8"
+    "@nx/web" "17.2.8"
     "@phenomnomnominal/tsquery" "~5.0.1"
     "@svgr/webpack" "^8.0.1"
     chalk "^4.1.0"
@@ -2755,55 +2754,55 @@
     minimatch "3.0.5"
     tslib "^2.3.0"
 
-"@nx/storybook@17.2.5", "@nx/storybook@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/storybook/-/storybook-17.2.5.tgz#c6c087686615036ba5ae51a1a485e9d075080991"
-  integrity sha512-usF+TxjIF9LmzOBVapp4CJ9Y8dD1rBxjdRpJVzjGfSnpUjvxKGxDZ1dYC2UPojaNAuMcYhQMTGjdwPGU3cJ4oA==
+"@nx/storybook@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/storybook/-/storybook-17.2.8.tgz#b8d3152bdbc95a13414498d0aba0ded532f32038"
+  integrity sha512-8fQck3mP2i3XWCnq/p5l+Y11TQTr8Gv4L64Rggq6nPuZOk6RbinCPG+VMztqGgQET8q4XTTGt8yw5VOUG0cIyw==
   dependencies:
-    "@nrwl/storybook" v17.2.5
-    "@nx/cypress" v17.2.5
-    "@nx/devkit" v17.2.5
-    "@nx/eslint" v17.2.5
-    "@nx/js" v17.2.5
+    "@nrwl/storybook" "17.2.8"
+    "@nx/cypress" "17.2.8"
+    "@nx/devkit" "17.2.8"
+    "@nx/eslint" "17.2.8"
+    "@nx/js" "17.2.8"
     "@phenomnomnominal/tsquery" "~5.0.1"
     semver "7.5.3"
     tslib "^2.3.0"
 
-"@nx/vite@17.2.5", "@nx/vite@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/vite/-/vite-17.2.5.tgz#b69607e0bfed42f32d50410d6d7e1aa052ca0570"
-  integrity sha512-8ENp30M0B3cQhYWBBNZFQZIZYEKXF6EjELUPZPHk+20LhozBFvVGpdutHzsGG+B0mq0qxuUn8W22Xl3VmcR6sg==
+"@nx/vite@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/vite/-/vite-17.2.8.tgz#d824fc488605d502dee7e1e8ad2a6be3083eb294"
+  integrity sha512-EGRNRtJOG/zA3mtN29+KO5jh3MeAjD0En6Ab9rMOmc46FWf6uxb5BfzdVGHKk6MXEwXYv0d7AHe2qBiCk7TCWQ==
   dependencies:
-    "@nrwl/vite" v17.2.5
-    "@nx/devkit" v17.2.5
-    "@nx/js" v17.2.5
+    "@nrwl/vite" "17.2.8"
+    "@nx/devkit" "17.2.8"
+    "@nx/js" "17.2.8"
     "@phenomnomnominal/tsquery" "~5.0.1"
     "@swc/helpers" "~0.5.0"
     enquirer "~2.3.6"
     tsconfig-paths "^4.1.2"
 
-"@nx/web@17.2.5", "@nx/web@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/web/-/web-17.2.5.tgz#0a1fe4620534eacd502435ec49fd6aa72c624ac9"
-  integrity sha512-PP3HBnkhIiswFOYsoRNLsGgZBA4JPmPHNDgr7AxMDBvHpqxMv9sWjTAZq91iOWQB86cY3Bd0C/xEMU5zYjBQ2w==
+"@nx/web@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/web/-/web-17.2.8.tgz#9fb21757715a7f3f799790541094e81e75f12918"
+  integrity sha512-ovPvFVJOiB/ZmOxnCOOyT+ibbdgazXjpa4506hLJxRohDZQw/6jwbCWkTBy/ch6Y8NSN6uNUpB5XUdscfrp52A==
   dependencies:
-    "@nrwl/web" v17.2.5
-    "@nx/devkit" v17.2.5
-    "@nx/js" v17.2.5
+    "@nrwl/web" "17.2.8"
+    "@nx/devkit" "17.2.8"
+    "@nx/js" "17.2.8"
     chalk "^4.1.0"
     detect-port "^1.5.1"
     http-server "^14.1.0"
     tslib "^2.3.0"
 
-"@nx/webpack@17.2.5", "@nx/webpack@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/webpack/-/webpack-17.2.5.tgz#ef4c7f52d769cd39e5ef0eafa051d820d324809b"
-  integrity sha512-SFm5kdyZGirsHaMReTuVAit38gwbNg7rYpwFzMfd1WXvhQ8m7NSLwxiL8+NvTir7iafMIbq7gU6oxUnbzsNQ1g==
+"@nx/webpack@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/webpack/-/webpack-17.2.8.tgz#ec5f9a7405bbbdffd82fd7194fbb777f52297c44"
+  integrity sha512-Gud9Z+VO0dlLpVEJLfPxkEV5wG+ebZ1mv0S0cfTBdD24Fj4MAs0W8QWhRQBtLd2SayU9KMfJr+8gJjkNT6D3Kw==
   dependencies:
     "@babel/core" "^7.22.9"
-    "@nrwl/webpack" v17.2.5
-    "@nx/devkit" v17.2.5
-    "@nx/js" v17.2.5
+    "@nrwl/webpack" "17.2.8"
+    "@nx/devkit" "17.2.8"
+    "@nx/js" "17.2.8"
     autoprefixer "^10.4.9"
     babel-loader "^9.1.2"
     browserslist "^4.21.4"
@@ -2837,16 +2836,16 @@
     webpack-node-externals "^3.0.0"
     webpack-subresource-integrity "^5.1.0"
 
-"@nx/workspace@17.2.5", "@nx/workspace@v17.2.5":
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/@nx/workspace/-/workspace-17.2.5.tgz#52431c833a0b3295aa177ccfffefb6f99d1c95bc"
-  integrity sha512-2xcY9s8jK73JBNpXiFg17TwU4gHtOh59HdKFr7sjkCFVBPNPPv5E9/ZRHtsIC7qko6loM/i47NTP52nX7fhEfQ==
+"@nx/workspace@17.2.8":
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/@nx/workspace/-/workspace-17.2.8.tgz#61fdfc7757231c423f8a98713c0df65241721592"
+  integrity sha512-QCriI4CFCuG+0WTbpu3fHljVR1x6bjNSrbq8nqu8Z/3y+si2/O+7lVNSTkQNr1X2eBPqtIX74APS7ExG8c4vog==
   dependencies:
-    "@nrwl/workspace" v17.2.5
-    "@nx/devkit" v17.2.5
+    "@nrwl/workspace" "17.2.8"
+    "@nx/devkit" "17.2.8"
     chalk "^4.1.0"
     enquirer "~2.3.6"
-    nx v17.2.5
+    nx "17.2.8"
     tslib "^2.3.0"
     yargs-parser "21.1.1"
 
@@ -3536,9 +3535,9 @@
     ts-dedent "^2.0.0"
 
 "@storybook/addon-designs@^7.0.0":
-  version "7.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-designs/-/addon-designs-7.0.7.tgz#64af26ce73e34bd36d4eba1438e83e8c44250967"
-  integrity sha512-4Ec85kgv/r55Zh5xOHSIq7b9h7PyYhavMpwLmjpzeOkEdFwiNM9KCTK8SE58yCXzbkrw1JIGb3+FAWfR5JfK5g==
+  version "7.0.9"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-designs/-/addon-designs-7.0.9.tgz#13906a9390dc9c05ad7803be2ab057adb541fb59"
+  integrity sha512-xJdw1/FgkC8ovTdRIL5FyEJaXtF1XPxsb6rsl2jByG+8tXyM0PJ/yFEkBrqn35Dei2i4N7x8EHXFd8DnzriBRg==
   dependencies:
     "@figspec/react" "^1.0.0"
 
@@ -15108,12 +15107,12 @@ nx-cloud@16.5.2:
     tar "6.1.11"
     yargs-parser ">=21.1.1"
 
-nx@17.2.5, nx@v17.2.5:
-  version "17.2.5"
-  resolved "https://registry.yarnpkg.com/nx/-/nx-17.2.5.tgz#fc34bda5fec6b5b0eb65d17c85cb7128e9b028f8"
-  integrity sha512-bMjl6V+h2Pb7k/iieebQskFqiB5Z7VQgdFJNI6ScMfoMhClWVuF+/fdhxrlN4IaiWHHnZ/KDr7h4kc7puFLr9w==
+nx@17.2.8:
+  version "17.2.8"
+  resolved "https://registry.yarnpkg.com/nx/-/nx-17.2.8.tgz#09482acd5d9b64c115d5ccf12417f1af2787d4d1"
+  integrity sha512-rM5zXbuXLEuqQqcjVjClyvHwRJwt+NVImR2A6KFNG40Z60HP6X12wAxxeLHF5kXXTDRU0PFhf/yACibrpbPrAw==
   dependencies:
-    "@nrwl/tao" v17.2.5
+    "@nrwl/tao" "17.2.8"
     "@yarnpkg/lockfile" "^1.1.0"
     "@yarnpkg/parsers" "3.0.0-rc.46"
     "@zkochan/js-yaml" "0.0.6"
@@ -15148,16 +15147,16 @@ nx@17.2.5, nx@v17.2.5:
     yargs "^17.6.2"
     yargs-parser "21.1.1"
   optionalDependencies:
-    "@nx/nx-darwin-arm64" v17.2.5
-    "@nx/nx-darwin-x64" v17.2.5
-    "@nx/nx-freebsd-x64" v17.2.5
-    "@nx/nx-linux-arm-gnueabihf" v17.2.5
-    "@nx/nx-linux-arm64-gnu" v17.2.5
-    "@nx/nx-linux-arm64-musl" v17.2.5
-    "@nx/nx-linux-x64-gnu" v17.2.5
-    "@nx/nx-linux-x64-musl" v17.2.5
-    "@nx/nx-win32-arm64-msvc" v17.2.5
-    "@nx/nx-win32-x64-msvc" v17.2.5
+    "@nx/nx-darwin-arm64" "17.2.8"
+    "@nx/nx-darwin-x64" "17.2.8"
+    "@nx/nx-freebsd-x64" "17.2.8"
+    "@nx/nx-linux-arm-gnueabihf" "17.2.8"
+    "@nx/nx-linux-arm64-gnu" "17.2.8"
+    "@nx/nx-linux-arm64-musl" "17.2.8"
+    "@nx/nx-linux-x64-gnu" "17.2.8"
+    "@nx/nx-linux-x64-musl" "17.2.8"
+    "@nx/nx-win32-arm64-msvc" "17.2.8"
+    "@nx/nx-win32-x64-msvc" "17.2.8"
 
 nyc@^15.1.0:
   version "15.1.0"
@@ -18472,9 +18471,9 @@ tailwind-variants@^0.1.14:
     tailwind-merge "^1.14.0"
 
 tailwindcss@^3.3.3:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.4.0.tgz#045a9c474e6885ebd0436354e611a76af1c76839"
-  integrity sha512-VigzymniH77knD1dryXbyxR+ePHihHociZbXnLZHUyzf2MMs2ZVqlUrZ3FvpXP8pno9JzmILt1sZPD19M3IxtA==
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.4.1.tgz#f512ca5d1dd4c9503c7d3d28a968f1ad8f5c839d"
+  integrity sha512-qAYmXRfk3ENzuPBakNK0SRrUDipP8NQnEY6772uDhflcQz5EhRdD7JNZxyrFHVQNCwULPBn6FNPp9brpO7ctcA==
   dependencies:
     "@alloc/quick-lru" "^5.2.0"
     arg "^5.0.2"
