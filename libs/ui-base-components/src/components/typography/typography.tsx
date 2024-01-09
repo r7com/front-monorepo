@@ -15,12 +15,13 @@ export function Typography<C extends React.ElementType = 'p'>({
   fontSize = 'xxxs',
   fontFamily = 'primary',
   className,
+  primaryTitle,
 }: TypographyProps<C>) {
   const DynamicTag = as || 'p'
 
   return (
     <DynamicTag
-      className={variants({ fontSize, fontWeight, fontFamily, color, className })}
+      className={variants({ fontSize, fontWeight, fontFamily, color, className, primaryTitle })}
       dangerouslySetInnerHTML={dangerHTML ? { __html: dangerHTML } : undefined}
     >
       {!dangerHTML ? children : null}

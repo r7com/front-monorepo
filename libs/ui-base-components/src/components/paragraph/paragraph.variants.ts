@@ -23,7 +23,7 @@ export const variants = createVariants({
     },
     fontFamily: {
       openSans: 'base-font-open-sans',
-      playfair: 'base-font-playfair-display',
+      secondary: 'base-font-secondary',
       primary: 'base-font-primary',
     },
     color: {

@@ -36,6 +36,7 @@ export const Default: Story = {
     children: 'Component Typography',
     color: 'neutralLow',
     fontSize: 'lg',
+    primaryTitle: true,
   },
   parameters: {
     design: {

@@ -23,12 +23,15 @@ export const variants = createVariants({
     },
     fontFamily: {
       openSans: 'base-font-open-sans',
-      playfair: 'base-font-playfair-display',
+      secondary: 'base-font-secondary',
       primary: 'base-font-primary',
     },
     color: {
       neutralLow: 'base-text-neutral-low-500',
       neutralHigh: 'base-text-neutral-high-400',
+    },
+    primaryTitle: {
+      true: 'base-font-primary-light base-uppercase base-flex base-items-center base-leading-lg base-tracking-tight	!base-text-md !base-font-light after:base-ml-nano base-text-neutral-low-500  after:base-h-[1px] after:base-flex-1 after:base-content-[""] after:base-bg-neutral-low-500',
     },
   },
 })
