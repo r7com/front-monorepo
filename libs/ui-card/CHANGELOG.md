@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.8.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.7.0...ui-card-0.8.0) (2024-01-09)
+
+### Features
+
+- **card:** new guerra card ([a0394e4](https://gitlab.ir7.com.br/r7/front-monorepo/commit/a0394e466ba88c61cf6b5feacd5ebcef7a9130f5))
+
 # [0.7.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.6.0...ui-card-0.7.0) (2024-01-09)
 
 ### Features
