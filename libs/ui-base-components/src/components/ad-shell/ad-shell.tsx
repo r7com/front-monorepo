@@ -22,7 +22,7 @@ export function AdShell({ children, layout = 'none' }: AdShellProps) {
       >
         <div className="base-flex base-items-center base-mb-nano">
           <span className="base-bg-neutral-low-400 base-grow base-h-[1px]"></span>
-          <span className="base-text-neutral-low-400 base-text-little base-uppercase base-mx-nano base-my-0">
+          <span className="base-text-neutral-low-400 base-text-little base-uppercase base-mx-nano base-my-0 base-font-primary">
             Continua após a publicidade
           </span>
           <span className="base-bg-neutral-low-400 base-grow base-h-[1px]"></span>

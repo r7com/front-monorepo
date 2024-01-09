@@ -3,7 +3,7 @@ import { VariantProps, createVariants } from '../../utils'
 export const variants = createVariants({
   slots: {
     adContainer: 'base-flex base-justify-center base-bg-neutral-high-600',
-    text: 'base-block base-text-xxxs base-uppercase base-text-neutral-low-500 base-font-open-sans',
+    text: 'base-block base-text-xxxs base-uppercase base-text-neutral-low-500 base-font-primary',
   },
   variants: {
     layout: {
