@@ -1,7 +1,7 @@
 import { VariantProps, createVariants } from '@r7/ui-base-components'
 
 export const variants = createVariants({
-  base: 'card-block card-font-open-sans card-uppercase',
+  base: 'card-block card-font-primary card-uppercase',
   variants: {
     color: {
       high: 'card-text-neutral-high-400',
