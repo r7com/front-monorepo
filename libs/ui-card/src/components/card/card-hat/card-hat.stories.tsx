@@ -65,19 +65,15 @@ export const WithImage: HatImageStory = {
 export const WithLink: StoryObj<CardHatWrapperProps> = {
   render: () => (
     <Card>
-      <Card.HatWrapper>
-        <ConditionalLink
-          className="card-flex card-items-center"
-          href="https://www.google.com"
-          title="Google"
-        >
+      <ConditionalLink href="https://www.google.com" title="Google" width="fit">
+        <Card.HatWrapper>
           <Card.HatImage
             imageSource="https://img.r7.com/images/logo-lance-16062023142548616?dimensions=16x16"
             description="Logomarca da Lance!"
           />
           <Card.HatTitle>Agency name</Card.HatTitle>
-        </ConditionalLink>
-      </Card.HatWrapper>
+        </Card.HatWrapper>
+      </ConditionalLink>
     </Card>
   ),
   args: {},
