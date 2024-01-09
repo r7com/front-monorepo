@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.7.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.2...ui-base-components-0.7.0) (2024-01-09)
+
+### Features
+
+- created card cupom ([5301bc9](https://gitlab.ir7.com.br/r7/front-monorepo/commit/5301bc967ab028e7aefa5bb8a4385311c4c21bc6))
+
 ## [0.6.2](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.1...ui-base-components-0.6.2) (2023-12-28)
 
 ## [0.6.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.0...ui-base-components-0.6.1) (2023-12-28)
