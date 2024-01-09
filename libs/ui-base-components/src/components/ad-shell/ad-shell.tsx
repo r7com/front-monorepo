@@ -17,7 +17,7 @@ export function AdShell({ children, layout = 'none' }: AdShellProps) {
     ),
     lines: (
       <div
-        className="base-border-b-hairline base-border-b-neutral-low-400 base-pb-[11px]"
+        className="base-border-b-hairline base-border-b-neutral-low-400 base-border-solid base-pb-[11px]"
         data-testid="ad-shell"
       >
         <div className="base-flex base-items-center base-mb-nano">

@@ -1,4 +1,4 @@
-import { VariantProps, createVariants } from '@r7/tools'
+import { VariantProps, createVariants } from '../../utils'
 
 export const variants = createVariants({
   slots: {
