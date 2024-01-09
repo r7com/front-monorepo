@@ -1,4 +1,4 @@
-import { VariantProps, createVariants } from '@r7/tools'
+import { VariantProps, createVariants } from '@r7/ui-base-components'
 
 export const variants = createVariants({
   base: 'card-flex card-items-center card-mb-nano',

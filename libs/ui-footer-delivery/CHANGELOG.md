@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.2](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-footer-delivery-1.3.1...ui-footer-delivery-1.3.2) (2024-01-05)
+
+### Bug Fixes
+
+- **ui-footer-delivery:** change layout to between in menu ([7a82559](https://gitlab.ir7.com.br/r7/front-monorepo/commit/7a825592da614b0ee92e7827842e7bac55ba212a))
+
+### Features
+
+- **ui-layout:** initial version with specialOne ([f1a2fdf](https://gitlab.ir7.com.br/r7/front-monorepo/commit/f1a2fdf5fdf2a3e3bb864d4f9445181413e01ca6))
+
 ## [1.3.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-footer-delivery-1.3.0...ui-footer-delivery-1.3.1) (2023-12-12)
 
 ### Features

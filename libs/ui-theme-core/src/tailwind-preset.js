@@ -137,6 +137,11 @@ module.exports = {
       'agerating-18anos': {
         500: '#000000',
       },
+      breakingNews: {
+        urgent: '#4a4a4a',
+        now: '#fff',
+        live: '#ededed',
+      },
       social: {
         facebook: '#4764f2',
         twitter: '#000',
@@ -150,8 +155,9 @@ module.exports = {
     // Necessário importar o CSS com a url do google fonts no html
     fontFamily: {
       primary: ['var(--font-family-primary, sans-serif)', 'sans-serif'],
+      'primary-light': ['var(--font-family-primary-light, sans-serif)', 'sans-serif'],
       'open-sans': ['"Open Sans"', 'sans-serif'],
-      'playfair-display': ['"Playfair Display"'],
+      secondary: ['var(--font-family-secondary, sans-serif)', 'sans-serif'],
       body: ['"Open Sans"'],
     },
     fontSize: {
@@ -209,6 +215,22 @@ module.exports = {
       ...defaultTheme.screens,
     },
     extend: {
+      keyframes: {
+        'breakingNews-urgent': {
+          '0%': { background: '#d91e18', boxShadow: '0 0 3px #d91e18' },
+          '50%': { background: '#96281b', boxShadow: '0 0 40px #96281b' },
+          '100%': { background: '#d91e18', boxShadow: '0 0 3px #d91e18' },
+        },
+        'breakingNews-urgent-mobile': {
+          '0%': { background: '#d91e18', boxShadow: '0 0 3px #d91e18' },
+          '50%': { background: '#96281b', boxShadow: '0 0 20px #96281b' },
+          '100%': { background: '#d91e18', boxShadow: '0 0 3px #d91e18' },
+        },
+      },
+      animation: {
+        'breakingNews-urgent-glowing': 'breakingNews-urgent 1.5s infinite',
+        'breakingNews-urgent-glowing-mobile': 'breakingNews-urgent-mobile 1.5s infinite',
+      },
       container: theme => ({
         center: true,
         padding: {

@@ -1,4 +1,4 @@
-import { createVariants, VariantProps } from '@r7/tools'
+import { createVariants, VariantProps } from '../../utils'
 
 export const variants = createVariants({
   base: 'dark:base-text-neutral-high-400',
@@ -23,7 +23,7 @@ export const variants = createVariants({
     },
     fontFamily: {
       openSans: 'base-font-open-sans',
-      playfair: 'base-font-playfair-display',
+      secondary: 'base-font-secondary',
       primary: 'base-font-primary',
     },
     color: {
