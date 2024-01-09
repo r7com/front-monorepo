@@ -1,7 +1,7 @@
 import { VariantProps, createVariants } from '@r7/ui-base-components'
 
 export const variants = createVariants({
-  base: 'card-font-open-sans card-font-semibold',
+  base: 'card-font-primary card-font-semibold',
   variants: {
     fontStyle: {
       'heading-level-1': 'card-text-md md:card-text-xxl',
