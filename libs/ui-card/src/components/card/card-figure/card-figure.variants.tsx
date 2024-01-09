@@ -9,7 +9,7 @@ export const variants = createVariants({
       portrait: 'card-aspect-portrait',
     },
     shadow: {
-      true: 'after:card-absolute after:card-inset-0 after:card-pointer-events-none after:card-bg-gradient-to-b card-from-transparent card-to-[#000] after:card-opacity-intense',
+      true: 'after:card-absolute after:card-inset-0 after:card-pointer-events-none after:card-bg-gradient-to-b card-from-transparent card-from-50% card-to-neutral-low-600',
       false: '',
     },
   },
