@@ -1,7 +1,14 @@
 import '@r7/ui-card/css'
 import '@r7/ui-layout/css'
 import { Container, Proportional, SpecialOne } from '@r7/ui-layout'
-import { TwoCardsSquarePhoto, BreakingNews, Card, ProportionalPhoto, Guerra } from '@r7/ui-card'
+import {
+  TwoCardsSquarePhoto,
+  BreakingNews,
+  Card,
+  ProportionalPhoto,
+  Guerra,
+  TextOverPhoto,
+} from '@r7/ui-card'
 import { Bullet } from '@r7/ui-base-components'
 
 export function UiCard() {
@@ -97,8 +104,36 @@ export function UiCard() {
             <SpecialOne.Main
               rowOne={
                 <>
-                  <LargeMainBlock />
-                  <LargeMainBlock />
+                  <TextOverPhoto
+                    type="half"
+                    title="Saiba quais foram os filmes com as maiores bilheterias em 2023"
+                    renderHat={
+                      <Card.HatWrapper>
+                        <Card.HatTitle color="high">DE A PEQUENA SEREIA A MARIO</Card.HatTitle>
+                      </Card.HatWrapper>
+                    }
+                    renderImage={
+                      <img
+                        src="https://img.r7.com/images/maiores-bilheterias-de-2023-filmes-cinema-07122023155527132?dimensions=550x320&crop=646x369%2031%200"
+                        alt="Saiba quais foram os filmes com as maiores bilheterias em 2023"
+                      />
+                    }
+                  />
+                  <TextOverPhoto
+                    type="vertical"
+                    title="Saiba quais foram os filmes com as maiores bilheterias em 2023"
+                    renderHat={
+                      <Card.HatWrapper>
+                        <Card.HatTitle color="high">DE A PEQUENA SEREIA A MARIO</Card.HatTitle>
+                      </Card.HatWrapper>
+                    }
+                    renderImage={
+                      <img
+                        src="https://img.r7.com/images/maiores-bilheterias-de-2023-filmes-cinema-07122023155527132?dimensions=220x320&crop=646x369%2031%200"
+                        alt="Saiba quais foram os filmes com as maiores bilheterias em 2023"
+                      />
+                    }
+                  />
                 </>
               }
               rowTwo={
