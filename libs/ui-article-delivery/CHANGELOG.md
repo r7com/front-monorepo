@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.4](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-article-delivery-0.4.3...ui-article-delivery-0.4.4) (2024-01-10)
+
 ## [0.4.3](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-article-delivery-0.4.2...ui-article-delivery-0.4.3) (2024-01-10)
 
 ### Bug Fixes
