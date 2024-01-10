@@ -13,7 +13,7 @@ export default meta
 
 type Story = StoryObj<typeof ProportionalPhoto>
 
-export const TwoSquareCards: Story = {
+export const Primary: Story = {
   render: args => (
     <ProportionalPhoto
       renderImage={args.renderImage}
