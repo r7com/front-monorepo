@@ -1,5 +1,6 @@
 export * from './ui-footer-delivery'
 export * from './ui-section-menu'
 export * from './ui-article-delivery'
+export * from './ui-base-components'
 export * from './/ui-layout'
 export * from './ui-card'

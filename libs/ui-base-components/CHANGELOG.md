@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.4](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.3...ui-base-components-0.6.4) (2024-01-10)
+
+### Features
+
+- **ui-base-components:** ad-shell and ad-placeholder ([d414d47](https://gitlab.ir7.com.br/r7/front-monorepo/commit/d414d472e1fe1614b12509f66416fa9892b8a3e6))
+
+## [0.6.3](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.2...ui-base-components-0.6.3) (2024-01-09)
+
+### Features
+
+- **card:** new guerra card ([a0394e4](https://gitlab.ir7.com.br/r7/front-monorepo/commit/a0394e466ba88c61cf6b5feacd5ebcef7a9130f5))
+- created card cupom ([5301bc9](https://gitlab.ir7.com.br/r7/front-monorepo/commit/5301bc967ab028e7aefa5bb8a4385311c4c21bc6))
+
 # [0.7.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.2...ui-base-components-0.7.0) (2024-01-09)
 
 ### Features

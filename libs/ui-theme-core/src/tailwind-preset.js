@@ -24,6 +24,7 @@ module.exports = {
       veryHeavy: '0.75rem',
     },
     borderRadius: {
+      none: '0',
       sm: '0.125rem',
       md: '0.25rem',
       lg: '0.5rem',
@@ -67,7 +68,7 @@ module.exports = {
       'neutral-high': {
         400: '#ffffff',
         500: '#F4F4F4',
-        600: '#9B9B9B',
+        600: '#DDDDE1',
       },
       'brand-primary': {
         400: '#4da5e7',

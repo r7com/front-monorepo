@@ -66,15 +66,15 @@ describe(Card.HatWrapper.name, () => {
 
   it('should render hat with link', () => {
     cy.mount(
-      <Card.HatWrapper>
-        <ConditionalLink href="https://www.google.com" title="Google">
+      <ConditionalLink href="https://www.google.com" title="Google" width="fit">
+        <Card.HatWrapper>
           <Card.HatImage
             description="I am a hat image"
             imageSource="http://img.r7.com/images/concurso-publico-14032022123440824?dimensions=128x128"
           />
           <Card.HatTitle>I am a hat</Card.HatTitle>
-        </ConditionalLink>
-      </Card.HatWrapper>,
+        </Card.HatWrapper>
+      </ConditionalLink>,
     )
     cy.findByRole('link').should('be.visible')
     cy.matchImage()
