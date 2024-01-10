@@ -10,8 +10,16 @@ export const variants = createVariants({
       custom: '',
     },
     shadow: {
-      true: 'after:card-absolute after:card-inset-0 after:card-pointer-events-none after:card-bg-gradient-to-b card-from-transparent card-from-50% card-to-neutral-low-600',
+      true: 'card-from-transparent card-to-neutral-low-600 after:card-absolute after:card-inset-0 after:card-pointer-events-none after:card-bg-gradient-to-b',
       false: '',
+    },
+    shadowFrom: {
+      '0%': 'card-from-0%',
+      '50%': 'card-from-50%',
+    },
+    shadowTo: {
+      '50%': 'card-to-50%',
+      '100%': 'card-to-100%',
     },
   },
 })
