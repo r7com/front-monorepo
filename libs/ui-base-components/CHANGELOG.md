@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.4](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.3...ui-base-components-0.6.4) (2024-01-10)
+
+### Features
+
+- **ui-base-components:** ad-shell and ad-placeholder ([d414d47](https://gitlab.ir7.com.br/r7/front-monorepo/commit/d414d472e1fe1614b12509f66416fa9892b8a3e6))
+
 ## [0.6.3](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.2...ui-base-components-0.6.3) (2024-01-09)
 
 ### Features
