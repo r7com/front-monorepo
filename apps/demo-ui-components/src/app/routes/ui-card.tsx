@@ -105,32 +105,40 @@ export function UiCard() {
               rowOne={
                 <>
                   <TextOverPhoto
-                    type="half"
-                    title="Saiba quais foram os filmes com as maiores bilheterias em 2023"
+                    layout="half"
+                    renderTitle={({ CardTitle }) => (
+                      <CardTitle>
+                        Clientes dão Kombi para ex-galã Daniel Erthal trabalhar em Copacabana
+                      </CardTitle>
+                    )}
                     renderHat={
                       <Card.HatWrapper>
-                        <Card.HatTitle color="high">DE A PEQUENA SEREIA A MARIO</Card.HatTitle>
+                        <Card.HatTitle color="high">vendedor ambulante</Card.HatTitle>
                       </Card.HatWrapper>
                     }
                     renderImage={
                       <img
-                        src="https://img.r7.com/images/maiores-bilheterias-de-2023-filmes-cinema-07122023155527132?dimensions=550x320&crop=646x369%2031%200"
-                        alt="Saiba quais foram os filmes com as maiores bilheterias em 2023"
+                        src="//img.r7.com/images/daniel-erthal-03012024135027266?resize=536x326&crop=607x369 34 0&dimensions=536x326"
+                        alt="Clientes dão Kombi para ex-galã Daniel Erthal trabalhar em Copacabana"
                       />
                     }
                   />
                   <TextOverPhoto
-                    type="vertical"
-                    title="Saiba quais foram os filmes com as maiores bilheterias em 2023"
+                    layout="vertical"
+                    renderTitle={({ CardTitle }) => (
+                      <CardTitle>
+                        Leonardo Bricio contrai dengue e desabafa sobre estar doente e sozinho
+                      </CardTitle>
+                    )}
                     renderHat={
                       <Card.HatWrapper>
-                        <Card.HatTitle color="high">DE A PEQUENA SEREIA A MARIO</Card.HatTitle>
+                        <Card.HatTitle color="high">'Me recuperando'</Card.HatTitle>
                       </Card.HatWrapper>
                     }
                     renderImage={
                       <img
-                        src="https://img.r7.com/images/maiores-bilheterias-de-2023-filmes-cinema-07122023155527132?dimensions=220x320&crop=646x369%2031%200"
-                        alt="Saiba quais foram os filmes com as maiores bilheterias em 2023"
+                        src="//img.r7.com/images/leonardo-bricio-10012024120558929?resize=208x324&crop=542x844 454 0&dimensions=208x324"
+                        alt="Leonardo Bricio contrai dengue e desabafa sobre estar doente e sozinho"
                       />
                     }
                   />
