@@ -3,16 +3,19 @@ import { variants } from './ad-shell.variants'
 export type AdShellProps = {
   children: React.ReactNode
   layout?: 'lines' | 'background' | 'tag' | 'none'
+  minHeight?: string
 }
 
-export function AdShell({ children, layout = 'none' }: AdShellProps) {
+export function AdShell({ children, layout = 'none', minHeight = '0px' }: AdShellProps) {
   const { adContainer, text } = variants({ layout })
 
   const AdShellVariant = {
     background: (
       <div className="base-pb-sm base-bg-neutral-high-600 base-rounded-md" data-testid="ad-shell">
         <span className={text()}>Publicidade</span>
-        <div className={adContainer()}>{children}</div>
+        <div className={adContainer()} style={{ minHeight }}>
+          {children}
+        </div>
       </div>
     ),
     lines: (
@@ -27,14 +30,22 @@ export function AdShell({ children, layout = 'none' }: AdShellProps) {
           </span>
           <span className="base-bg-neutral-low-400 base-grow base-h-[1px]"></span>
         </div>
-        <div className={adContainer()}>{children}</div>
+        <div className={adContainer()} style={{ minHeight }}>
+          {children}
+        </div>
       </div>
     ),
-    none: <div data-testid="ad-shell">{children}</div>,
+    none: (
+      <div data-testid="ad-shell" className={adContainer()} style={{ minHeight }}>
+        {children}
+      </div>
+    ),
     tag: (
       <div data-testid="ad-shell">
         <span className={text()}>Publicidade</span>
-        <div className={adContainer()}>{children}</div>
+        <div className={adContainer()} style={{ minHeight }}>
+          {children}
+        </div>
       </div>
     ),
   }[layout]
