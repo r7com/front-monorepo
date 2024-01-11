@@ -5,5 +5,5 @@ type SidebarProps = {
 }
 
 export function Sidebar({ children }: SidebarProps) {
-  return <div>{children}</div>
+  return <div className="layout-h-full">{children}</div>
 }
