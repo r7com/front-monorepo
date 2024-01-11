@@ -3,5 +3,7 @@ type SectionWrapperProps = {
 }
 
 export function SectionWrapper({ children }: SectionWrapperProps) {
-  return <div className="flex flex-col gap-xxxs xl:gap-xs">{children}</div>
+  return (
+    <div className="layout-flex layout-flex-col layout-gap-xxxs xl:layout-gap-xs">{children}</div>
+  )
 }
