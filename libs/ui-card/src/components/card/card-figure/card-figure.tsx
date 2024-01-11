@@ -9,7 +9,13 @@ export function CardFigure({
   className = '',
   children,
   shadow = false,
+  shadowFrom = '50%',
+  shadowTo = '100%',
   format = 'square',
 }: CardFigureProps) {
-  return <figure className={variants({ shadow, format, className })}>{children}</figure>
+  return (
+    <figure className={variants({ shadow, shadowFrom, shadowTo, format, className })}>
+      {children}
+    </figure>
+  )
 }
