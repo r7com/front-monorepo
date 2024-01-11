@@ -27,7 +27,7 @@ export function TextOverPhoto({
   const { figureSlot, cardSlot } = variants({ layout, size, responsiveOn })
 
   return (
-    <Card className={cardSlot({ className: 'card-@container' })}>
+    <Card className={cardSlot()}>
       <ConditionalLink {...url}>
         <Card.Figure className={figureSlot()} format="custom" shadow shadowFrom="0%">
           <ConditionalLink {...urlFigure}>{renderImage}</ConditionalLink>

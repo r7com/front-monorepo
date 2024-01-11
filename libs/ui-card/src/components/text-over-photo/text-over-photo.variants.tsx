@@ -2,8 +2,8 @@ import { VariantProps, createVariants } from '@r7/ui-base-components'
 
 export const variants = createVariants({
   slots: {
+    cardSlot: 'card-@container card-relative',
     figureSlot: '[&>img]:card-w-full [&>img]:card-h-full [&>img]:card-object-cover',
-    cardSlot: 'card-relative',
   },
   variants: {
     layout: {
@@ -19,24 +19,24 @@ export const variants = createVariants({
     },
     size: {
       full: {
-        figureSlot: 'card-w-full card-h-full',
         cardSlot: 'card-w-full card-h-full',
+        figureSlot: 'card-w-full card-h-full',
       },
       fullWidth: {
-        figureSlot: 'card-w-full card-h-auto',
         cardSlot: 'card-w-full card-h-auto',
+        figureSlot: 'card-w-full card-h-auto',
       },
       fullHeight: {
-        figureSlot: 'card-w-auto card-h-full',
         cardSlot: 'card-w-auto card-h-full',
+        figureSlot: 'card-w-auto card-h-full',
       },
       auto: {
-        figureSlot: 'card-w-auto card-h-auto',
         cardSlot: 'card-w-auto card-h-auto',
+        figureSlot: 'card-w-auto card-h-auto',
       },
       fit: {
-        figureSlot: 'card-w-fit card-h-fit',
         cardSlot: 'card-w-fit card-h-fit',
+        figureSlot: 'card-w-fit card-h-fit',
       },
     },
     responsiveOn: {
