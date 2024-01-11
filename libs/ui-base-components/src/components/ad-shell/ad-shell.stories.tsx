@@ -20,6 +20,7 @@ export const Primary: Story = {
   ),
   args: {
     layout: 'none',
+    minHeight: '0px',
   },
   parameters: {
     design: {

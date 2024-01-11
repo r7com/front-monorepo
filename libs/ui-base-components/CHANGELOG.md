@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.5](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.4...ui-base-components-0.6.5) (2024-01-11)
+
+### Features
+
+- **ui-base-components:** added minHeight prop to ad-shell component ([83930bc](https://gitlab.ir7.com.br/r7/front-monorepo/commit/83930bccc2a886626064ccb20abf164992940511))
+
 ## [0.6.5](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.4...ui-base-components-0.6.5) (2024-01-10)
 
 ## [0.6.4](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.3...ui-base-components-0.6.4) (2024-01-10)
