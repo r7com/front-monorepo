@@ -1,5 +1,5 @@
 import '@r7/ui-layout/css'
-import { Container, SpecialOne, Proportional, Magazine } from '@r7/ui-layout'
+import { Container, SpecialOne, Proportional, Magazine, SectionWrapper } from '@r7/ui-layout'
 
 export function UiLayout() {
   const LargeMainBlock = () => (
@@ -22,7 +22,7 @@ export function UiLayout() {
 
   return (
     <Container>
-      <div className="flex flex-col gap-xxxs xl:gap-xs">
+      <SectionWrapper>
         <SpecialOne
           renderMain={
             <SpecialOne.Main
@@ -76,7 +76,7 @@ export function UiLayout() {
           <LargeMainBlock />
           <LargeMainBlock />
         </Magazine.Two>
-      </div>
+      </SectionWrapper>
     </Container>
   )
 }
