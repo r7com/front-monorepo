@@ -24,12 +24,12 @@ export function TextOverPhoto({
   urlTitle,
   renderTitle,
 }: TextOverPhotoProps) {
-  const { figure, card } = variants({ layout, size, responsiveOn })
+  const { figureSlot, cardSlot } = variants({ layout, size, responsiveOn })
 
   return (
-    <Card className={card({ className: 'card-@container' })}>
+    <Card className={cardSlot({ className: 'card-@container' })}>
       <ConditionalLink {...url}>
-        <Card.Figure className={figure()} format="custom" shadow shadowFrom="0%">
+        <Card.Figure className={figureSlot()} format="custom" shadow shadowFrom="0%">
           <ConditionalLink {...urlFigure}>{renderImage}</ConditionalLink>
         </Card.Figure>
 

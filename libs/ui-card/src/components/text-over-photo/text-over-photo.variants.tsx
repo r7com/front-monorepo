@@ -2,46 +2,46 @@ import { VariantProps, createVariants } from '@r7/ui-base-components'
 
 export const variants = createVariants({
   slots: {
-    figure: '[&>img]:card-w-full [&>img]:card-h-full [&>img]:card-object-cover',
-    card: 'card-relative',
+    figureSlot: '[&>img]:card-w-full [&>img]:card-h-full [&>img]:card-object-cover',
+    cardSlot: 'card-relative',
   },
   variants: {
     layout: {
       half: {
-        figure: 'card-aspect-[3/2]',
+        figureSlot: 'card-aspect-[3/2]',
       },
       vertical: {
-        figure: 'card-aspect-[2/3]',
+        figureSlot: 'card-aspect-[2/3]',
       },
       auto: {
-        figure: 'card-aspect-[auto]',
+        figureSlot: 'card-aspect-[auto]',
       },
     },
     size: {
       full: {
-        figure: 'card-w-full card-h-full',
-        card: 'card-w-full card-h-full',
+        figureSlot: 'card-w-full card-h-full',
+        cardSlot: 'card-w-full card-h-full',
       },
       fullWidth: {
-        figure: 'card-w-full card-h-auto',
-        card: 'card-w-full card-h-auto',
+        figureSlot: 'card-w-full card-h-auto',
+        cardSlot: 'card-w-full card-h-auto',
       },
       fullHeight: {
-        figure: 'card-w-auto card-h-full',
-        card: 'card-w-auto card-h-full',
+        figureSlot: 'card-w-auto card-h-full',
+        cardSlot: 'card-w-auto card-h-full',
       },
       auto: {
-        figure: 'card-w-auto card-h-auto',
-        card: 'card-w-auto card-h-auto',
+        figureSlot: 'card-w-auto card-h-auto',
+        cardSlot: 'card-w-auto card-h-auto',
       },
       fit: {
-        figure: 'card-w-fit card-h-fit',
-        card: 'card-w-fit card-h-fit',
+        figureSlot: 'card-w-fit card-h-fit',
+        cardSlot: 'card-w-fit card-h-fit',
       },
     },
     responsiveOn: {
       md: {
-        figure: 'md:card-aspect-[auto]',
+        figureSlot: 'md:card-aspect-[auto]',
       },
       none: '',
     },
