@@ -1,19 +1,12 @@
 import { Children } from 'react'
 import { Grid } from '../grid'
+import { variants, ProportionalVariants } from './proportional.variants'
 
 type ProportionalsProps = {
-  cols: 1 | 2 | 3 | 4
   children: React.ReactNode
-}
+} & ProportionalVariants
 
-function getProportionalGrids({ cols }: Pick<ProportionalsProps, 'cols'>) {
-  const colsLayout = {
-    1: 'md:layout-col-span-24',
-    2: 'md:layout-col-span-12',
-    3: 'md:layout-col-span-8',
-    4: 'md:layout-col-span-6',
-  }[cols]
-
+function getProportionalGrids({ cols = 1 }: Pick<ProportionalsProps, 'cols'>) {
   return ({ children }: Pick<ProportionalsProps, 'children'>) => {
     const blocks = Children.toArray(children)
 
@@ -21,7 +14,7 @@ function getProportionalGrids({ cols }: Pick<ProportionalsProps, 'cols'>) {
       blocks.length <= cols && (
         <Grid>
           {Children.map(blocks, block => (
-            <div className={colsLayout}>{block}</div>
+            <div className={variants({ cols })}>{block}</div>
           ))}
         </Grid>
       )
