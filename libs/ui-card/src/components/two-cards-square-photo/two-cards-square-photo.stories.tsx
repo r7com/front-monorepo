@@ -12,7 +12,7 @@ export default meta
 
 type Story = StoryObj<typeof TwoCardsSquarePhoto>
 
-export const TwoSquareCards: Story = {
+export const Primary: Story = {
   render: () => (
     <TwoCardsSquarePhoto>
       <TwoCardsSquarePhoto.Item

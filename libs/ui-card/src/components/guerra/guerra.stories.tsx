@@ -13,7 +13,7 @@ export default meta
 
 type Story = StoryObj<typeof Guerra>
 
-export const TwoSquareCards: Story = {
+export const Primary: Story = {
   render: args => (
     <Guerra
       renderImage={args.renderImage}
