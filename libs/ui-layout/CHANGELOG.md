@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.4.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.3.1...ui-layout-0.4.0) (2024-01-11)
+
+### Features
+
+- **ui-layout:** creating section wrapper to add gaps between grids ([b761fd6](https://gitlab.ir7.com.br/r7/front-monorepo/commit/b761fd6e27264192e9de85f2c08a0f9fe289f3cf))
+
 ## [0.3.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.3.0...ui-layout-0.3.1) (2024-01-11)
 
 ### Features
