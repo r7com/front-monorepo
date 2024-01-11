@@ -40,6 +40,30 @@ describe('Magazine Grids - Desktop', () => {
   })
 })
 
+describe('Magazine Grids - Tablet', () => {
+  beforeEach(() => cy.viewport('ipad-mini'))
+
+  it('should render magazine-one grids with three elements', () => {
+    cy.mount(MagazineOne)
+
+    cy.findAllByText(/Large Main Block/i)
+      .should('be.visible')
+      .and('have.length', 3)
+
+    cy.matchImage()
+  })
+
+  it('should render magazine-two grids with two elements', () => {
+    cy.mount(MagazineTwo)
+
+    cy.findAllByText(/Large Main Block/i)
+      .should('be.visible')
+      .and('have.length', 2)
+
+    cy.matchImage()
+  })
+})
+
 describe('Magazine Grids - Mobile', () => {
   beforeEach(() => cy.viewport('iphone-se2'))
 
