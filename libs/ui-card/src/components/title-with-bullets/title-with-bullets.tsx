@@ -4,7 +4,7 @@ import { Card } from '../card'
 export type TitleWithBulletsProps = {
   hat: string
   title: string
-  renderBullets: React.ReactNode
+  renderBullets?: React.ReactNode
 }
 export function TitleWithBullets({ hat, title, renderBullets }: TitleWithBulletsProps) {
   const bullets = Children.toArray(renderBullets)
