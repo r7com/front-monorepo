@@ -361,6 +361,159 @@ export function UiCard() {
         </Proportional.Three>
 
         <Separator />
+
+        <Proportional.Three>
+          <LeftPhoto>
+            <LeftPhoto.Item>
+              <LeftPhoto.Flex>
+                <LeftPhoto.Figure format="landscape">
+                  <img
+                    src="//img.r7.com/images/rei-charles-3-mensagem-de-natal-25122023151322555?resize=160x91&crop=1500x853 0 88&dimensions=160x91"
+                    alt="Rei Charles passará por cirurgia após ser diagnosticado com aumento de próstata"
+                    width={160}
+                    height="auto"
+                  />
+                </LeftPhoto.Figure>
+
+                <LeftPhoto.TextWrapper>
+                  <Card.HatWrapper>
+                    <Card.HatTitle>REINO UNIDO</Card.HatTitle>
+                  </Card.HatWrapper>
+
+                  <LeftPhoto.Title fontSize="small">
+                    Rei Charles passará por cirurgia após ser
+                  </LeftPhoto.Title>
+                </LeftPhoto.TextWrapper>
+              </LeftPhoto.Flex>
+            </LeftPhoto.Item>
+
+            <LeftPhoto.Item>
+              <LeftPhoto.Flex>
+                <LeftPhoto.Figure format="landscape">
+                  <img
+                    src="//img.r7.com/images/chuvas-arvores-arvores-caidas-porto-alegre-17012024135348739?resize=160x91&crop=791x450 84 1&dimensions=160x91"
+                    alt="Em uma hora, cidade registra metade da chuva esperada para o mês todo"
+                    width={160}
+                    height="auto"
+                  />
+                </LeftPhoto.Figure>
+
+                <LeftPhoto.TextWrapper>
+                  <Card.HatWrapper>
+                    <Card.HatTitle>PORTO ALEGRE (RS)</Card.HatTitle>
+                  </Card.HatWrapper>
+
+                  <LeftPhoto.Title fontSize="small">
+                    Em uma hora, cidade registra metade
+                  </LeftPhoto.Title>
+                </LeftPhoto.TextWrapper>
+              </LeftPhoto.Flex>
+            </LeftPhoto.Item>
+
+            <Bullet url="#">Prefeito: 'Capital está praticamente parada'</Bullet>
+          </LeftPhoto>
+
+          <LeftPhoto>
+            <LeftPhoto.Item>
+              <LeftPhoto.Flex>
+                <LeftPhoto.Figure format="landscape">
+                  <img
+                    src="https://img.r7.com/images/r7rio-012024-praia-17012024142855425?resize=160x91&crop=771x438%200%2076&dimensions=160x91"
+                    alt="Rio registra a maior temperatura do verão, e sensação chega a quase 60 °C"
+                    width={160}
+                    height="auto"
+                  />
+                </LeftPhoto.Figure>
+
+                <LeftPhoto.TextWrapper>
+                  <Card.HatWrapper>
+                    <Card.HatTitle>TERMÔMETRO NAS ALTURAS</Card.HatTitle>
+                  </Card.HatWrapper>
+
+                  <LeftPhoto.Title fontSize="small">
+                    Rio registra a maior temperatura do verão
+                  </LeftPhoto.Title>
+                </LeftPhoto.TextWrapper>
+              </LeftPhoto.Flex>
+            </LeftPhoto.Item>
+
+            <LeftPhoto.Item>
+              <LeftPhoto.Flex>
+                <LeftPhoto.Figure format="landscape">
+                  <img
+                    src="https://img.r7.com/images/morta-bela-vitoria-17012024143830665?resize=160x91&crop=489x278%200%200&dimensions=160x91"
+                    alt="'Tem que ser forte para estar aqui', afirma Lily em desabafo com Tonzão"
+                    width={160}
+                    height="auto"
+                  />
+                </LeftPhoto.Figure>
+
+                <LeftPhoto.TextWrapper>
+                  <Card.HatWrapper>
+                    <Card.HatTitle>BELO HORIZONTE (MG)</Card.HatTitle>
+                  </Card.HatWrapper>
+
+                  <LeftPhoto.Title fontSize="small">
+                    'Nunca foi usuária de qualquer substância'
+                  </LeftPhoto.Title>
+                </LeftPhoto.TextWrapper>
+              </LeftPhoto.Flex>
+            </LeftPhoto.Item>
+
+            <Bullet url="#">Vítima foi abusada sexualmente, diz familiar</Bullet>
+          </LeftPhoto>
+
+          <LeftPhoto>
+            <LeftPhoto.Item>
+              <LeftPhoto.Flex>
+                <LeftPhoto.Figure format="square">
+                  <img
+                    src="//img.r7.com/images/daniel-alves-17012024151701165?resize=113x113&crop=671x671%200%203&dimensions=113x113"
+                    alt=""
+                    width={113}
+                    height={113}
+                  />
+                </LeftPhoto.Figure>
+
+                <LeftPhoto.TextWrapper>
+                  <Card.HatWrapper>
+                    <Card.HatTitle>COSME RÍMOLI</Card.HatTitle>
+                  </Card.HatWrapper>
+
+                  <LeftPhoto.Title>
+                    Daniel Alves vai dizer que estava bêbado e apresentar
+                  </LeftPhoto.Title>
+                </LeftPhoto.TextWrapper>
+              </LeftPhoto.Flex>
+            </LeftPhoto.Item>
+
+            <LeftPhoto.Item>
+              <LeftPhoto.Flex>
+                <LeftPhoto.Figure format="square">
+                  <img
+                    src="//img.r7.com/images/voadora-assalto-rjnoar-17012024111548783?resize=113x113&crop=357x357%20361%200&dimensions=113x113"
+                    alt="Jaquelline ensina Tonzão a tirar leite da vaca Mimosa, e faz trolagem com o peão"
+                    width={113}
+                    height={113}
+                  />
+                </LeftPhoto.Figure>
+
+                <LeftPhoto.TextWrapper>
+                  <Card.HatWrapper>
+                    <Card.HatTitle>ASSALTO</Card.HatTitle>
+                  </Card.HatWrapper>
+
+                  <LeftPhoto.Title>
+                    Homem que reagiu com 'voadora' diz ter notado que os criminosos
+                  </LeftPhoto.Title>
+                </LeftPhoto.TextWrapper>
+              </LeftPhoto.Flex>
+            </LeftPhoto.Item>
+          </LeftPhoto>
+        </Proportional.Three>
+
+        <Separator />
+
         <Proportional.Four>
           <ProportionalPhoto>
             <ProportionalPhoto.Figure>
