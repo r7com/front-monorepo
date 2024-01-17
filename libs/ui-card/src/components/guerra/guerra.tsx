@@ -1,61 +1,62 @@
 import { Card } from '../card'
 import React, { Children, isValidElement } from 'react'
+import { CardTitleProps } from '../card/card-title/card-title'
 
 export type GuerraProps = {
-  renderImage: React.ReactNode
-  hat: string
-  title: string
-  renderBullets: React.ReactNode
+  children: React.ReactNode
 }
 
-export function Guerra({ renderImage, hat, title, renderBullets }: GuerraProps) {
-  const bullets = Children.toArray(renderBullets)
+export function Guerra({ children }: GuerraProps) {
+  return <Card className="card-relative card-@container">{children}</Card>
+}
+
+Guerra.Figure = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <Card.Figure
+      className="card-w-full max-md:card-rounded-none [&>img]:card-w-full md:card-from-0% md:card-to-70% lg:card-from-0% lg:card-to-90%"
+      format="landscape"
+      shadow
+    >
+      {children}
+    </Card.Figure>
+  )
+}
+
+Guerra.Overlay = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="w-full card-bg-neutral-low-600 md:card-bg-transparent md:card-absolute card-bottom-0 card-p-xxxs">
+      {children}
+    </div>
+  )
+}
+
+Guerra.Title = ({ children, ...cardTitleProps }: CardTitleProps) => {
+  return (
+    <Card.Title
+      className="card-text-md @[1000px]:card-text-xxl"
+      color="high"
+      fontStyle="none"
+      {...cardTitleProps}
+    >
+      {children}
+    </Card.Title>
+  )
+}
+
+Guerra.Bullets = ({ children }: { children: React.ReactNode }) => {
+  const bullets = Children.toArray(children)
 
   return (
-    <Card className="card-relative">
-      <Card.Figure
-        className="card-w-full max-md:card-rounded-none [&>img]:card-w-full md:card-from-0% md:card-to-70% lg:card-from-0% lg:card-to-90%"
-        format="landscape"
-        shadow
-      >
-        {renderImage}
-      </Card.Figure>
+    <div className="card-grid card-grid-cols-2 card-gap-xxxs card-mt-xxxs">
+      {Children.map(bullets, child => {
+        if (isValidElement(child)) {
+          const blocks = Children.toArray(child.props.children)
 
-      <div className="w-full card-bg-neutral-low-600 md:card-bg-transparent md:card-absolute card-bottom-0 card-p-xxxs">
-        {hat && (
-          <Card.HatWrapper type="warning">
-            <Card.HatTitle color="high">{hat}</Card.HatTitle>
-          </Card.HatWrapper>
-        )}
+          return blocks.map(block => block)
+        }
 
-        <Card.Title color="high">{title}</Card.Title>
-
-        <div className="card-grid card-grid-cols-2 card-gap-xxxs card-mt-xxxs">
-          {Children.map(bullets, child => {
-            if (isValidElement(child)) {
-              const blocks = Children.toArray(child.props.children)
-
-              return (
-                <>
-                  {blocks.length > 0 && (
-                    <div className="card-w-full card-flex card-flex-col card-gap-xxxs">
-                      {blocks.slice(0, 4).map(block => block)}
-                    </div>
-                  )}
-
-                  {blocks.length > 4 && (
-                    <div className="card-w-full card-flex card-flex-col card-gap-xxxs">
-                      {blocks.slice(4, 8).map(block => block)}
-                    </div>
-                  )}
-                </>
-              )
-            }
-
-            return null
-          })}
-        </div>
-      </div>
-    </Card>
+        return null
+      })}
+    </div>
   )
 }
