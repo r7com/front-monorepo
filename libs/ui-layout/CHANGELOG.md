@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.5.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.4.0...ui-layout-0.5.0) (2024-01-17)
+
+### Features
+
+- Created latest news chain, storybook and cypress ([90f700d](https://gitlab.ir7.com.br/r7/front-monorepo/commit/90f700d8052ec48cd3ea61dbfb57fe7328d3ec7c))
+
 # [0.4.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.3.1...ui-layout-0.4.0) (2024-01-11)
 
 ### Features
