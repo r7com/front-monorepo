@@ -1,4 +1,3 @@
-import '@r7/ui-section-heading/css'
 import { LatestNews } from './index'
 import { LargeMainBlock, SidebarBlock } from './mocks/mocks'
 
