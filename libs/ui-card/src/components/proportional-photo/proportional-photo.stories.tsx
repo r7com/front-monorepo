@@ -14,29 +14,29 @@ export default meta
 type Story = StoryObj<typeof ProportionalPhoto>
 
 export const Primary: Story = {
-  render: args => (
-    <ProportionalPhoto
-      renderImage={args.renderImage}
-      renderHat={args.renderHat}
-      title={args.title}
-    />
+  render: () => (
+    <ProportionalPhoto>
+      <ProportionalPhoto.Figure>
+        <img
+          src="//img.r7.com/images/apagao-sao-paulo-1123-19122023115816951?resize=348x199&amp;crop=1170x669 0 32&amp;dimensions=328x184"
+          alt="Ministério da Justiça abre processo contra Enel por apagões"
+          width="100%"
+          height="auto"
+        />
+      </ProportionalPhoto.Figure>
+
+      <ProportionalPhoto.TextWrapper>
+        <Card.HatWrapper>
+          <Card.HatTitle>são paulo e rio de janeiro</Card.HatTitle>
+        </Card.HatWrapper>
+
+        <ProportionalPhoto.Title>
+          Ministério da Justiça abre processo contra Enel por apagões
+        </ProportionalPhoto.Title>
+      </ProportionalPhoto.TextWrapper>
+    </ProportionalPhoto>
   ),
-  args: {
-    renderHat: (
-      <Card.HatWrapper>
-        <Card.HatTitle>são paulo e rio de janeiro</Card.HatTitle>
-      </Card.HatWrapper>
-    ),
-    title: 'Ministério da Justiça abre processo contra Enel por apagões',
-    renderImage: (
-      <img
-        src="//img.r7.com/images/apagao-sao-paulo-1123-19122023115816951?resize=348x199&amp;crop=1170x669 0 32&amp;dimensions=328x184"
-        alt="Ministério da Justiça abre processo contra Enel por apagões"
-        width="100%"
-        height="auto"
-      />
-    ),
-  },
+  args: {},
   parameters: {
     design: {
       type: 'figma',
