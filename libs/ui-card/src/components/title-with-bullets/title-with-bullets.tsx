@@ -24,13 +24,13 @@ export function TitleWithBullets({ hat, title, renderBullets }: TitleWithBullets
           return (
             <div className="card-flex card-flex-col card-gap-xxxs">
               {blocks.length > 0 && (
-                <div className="card-flex card-flex-col card-gap-xxxs md:card-flex-row md:card-flex-wrap md:[&>*]:card-flex-grow md:[&>*]:card-flex-shrink md:[&>*]:card-basis-0">
+                <div className="card-flex card-flex-col card-gap-xxxs md:card-flex-row md:card-flex-wrap md:[&>*]:card-flex-grow md:[&>*]:card-flex-shrink md:[&>*]:card-basis-0 md:[&>*]:card-max-w-[50%]">
                   {blocks.slice(0, 2).map(block => block)}
                 </div>
               )}
 
               {blocks.length > 2 && (
-                <div className="card-flex card-flex-col card-gap-xxxs md:card-flex-row md:card-flex-wrap md:[&>*]:card-flex-grow md:[&>*]:card-flex-shrink md:[&>*]:card-basis-0">
+                <div className="card-flex card-flex-col card-gap-xxxs md:card-flex-row md:card-flex-wrap md:[&>*]:card-flex-grow md:[&>*]:card-flex-shrink md:[&>*]:card-basis-0 md:[&>*]:card-max-w-[50%]">
                   {blocks.slice(2, 4).map(block => block)}
                 </div>
               )}

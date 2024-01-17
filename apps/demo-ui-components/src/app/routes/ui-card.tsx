@@ -56,9 +56,8 @@ export function UiCard() {
               <>
                 <Bullet url="#">Câmara aprova MP que adia Lei de Dados para 31 de dezembro</Bullet>
                 <Bullet url="#">Casa Verde e Amarela terá financiamento com juros de 4,25%</Bullet>
-                <Bullet url="#">Senado aprova, em segundo turno, PEC de renovação do Fundeb</Bullet>
                 <Bullet url="#">
-                  Guedes defende fim de deduções do IR para Renda Brasil chegar a R$ 300
+                  Guedes defende fim de deduções do IR para Renda Brasil chegar a R$ 300 aaaa aaaa a
                 </Bullet>
               </>
             }
