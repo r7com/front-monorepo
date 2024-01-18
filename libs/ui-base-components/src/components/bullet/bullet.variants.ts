@@ -2,7 +2,7 @@ import { createVariants, VariantProps } from '../../utils'
 
 export const variants = createVariants({
   slots: {
-    textSlot: 'base-font-light base-w-auto',
+    textSlot: 'base-font-light base-w-auto base-font-primary-light',
     iconSlot: 'base-mr-quark base-fill-brand-primary-500 base-inline',
   },
   variants: {
