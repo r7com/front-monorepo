@@ -35,39 +35,37 @@ export const Default: Story = {
         </Guerra.Title>
 
         <Guerra.Bullets>
-          <>
-            <Bullet url="#" color="neutralHigh">
-              Câmara aprova MP que adia Lei de Dados para 31 de dezembro
-            </Bullet>
+          <Bullet url="#" color="neutralHigh">
+            Câmara aprova MP que adia Lei de Dados para 31 de dezembro
+          </Bullet>
 
-            <Bullet url="#" color="neutralHigh">
-              Casa Verde e Amarela terá financiamento com juros de 4,25%
-            </Bullet>
+          <Bullet url="#" color="neutralHigh">
+            Casa Verde e Amarela terá financiamento com juros de 4,25%
+          </Bullet>
 
-            <Bullet url="#" color="neutralHigh">
-              Senado aprova, em segundo turno, PEC de renovação do Fundeb
-            </Bullet>
+          <Bullet url="#" color="neutralHigh">
+            Senado aprova, em segundo turno, PEC de renovação do Fundeb
+          </Bullet>
 
-            <Bullet url="#" color="neutralHigh">
-              Guedes defende fim de deduções do IR para Renda Brasil chegar a R$ 300
-            </Bullet>
+          <Bullet url="#" color="neutralHigh">
+            Guedes defende fim de deduções do IR para Renda Brasil chegar a R$ 300
+          </Bullet>
 
-            <Bullet url="#" color="neutralHigh">
-              Retomada de alto-forno da Usiminas terá presença de Bolsonaro e Zema
-            </Bullet>
+          <Bullet url="#" color="neutralHigh">
+            Retomada de alto-forno da Usiminas terá presença de Bolsonaro e Zema
+          </Bullet>
 
-            <Bullet url="#" color="neutralHigh">
-              Senado aprova em primeiro turno PEC que renova o Fundeb
-            </Bullet>
+          <Bullet url="#" color="neutralHigh">
+            Senado aprova em primeiro turno PEC que renova o Fundeb
+          </Bullet>
 
-            <Bullet url="#" color="neutralHigh">
-              5 pontos para o Brasil decolar de vez na economia
-            </Bullet>
+          <Bullet url="#" color="neutralHigh">
+            5 pontos para o Brasil decolar de vez na economia
+          </Bullet>
 
-            <Bullet url="#" color="neutralHigh">
-              Queda no PIB e aprovação a Bolsonaro são destaques nesta sexta (14)
-            </Bullet>
-          </>
+          <Bullet url="#" color="neutralHigh">
+            Queda no PIB e aprovação a Bolsonaro são destaques nesta sexta (14)
+          </Bullet>
         </Guerra.Bullets>
       </Guerra.Overlay>
     </Guerra>
@@ -94,23 +92,21 @@ export const WithoutPhoto: Story = {
       </Guerra.Title>
 
       <Guerra.Bullets>
-        <>
-          <Bullet url="#" color="neutralLow">
-            Câmara aprova MP que adia Lei de Dados para 31 de dezembro
-          </Bullet>
+        <Bullet url="#" color="neutralLow">
+          Câmara aprova MP que adia Lei de Dados para 31 de dezembro
+        </Bullet>
 
-          <Bullet url="#" color="neutralLow">
-            Casa Verde e Amarela terá financiamento com juros de 4,25%
-          </Bullet>
+        <Bullet url="#" color="neutralLow">
+          Casa Verde e Amarela terá financiamento com juros de 4,25%
+        </Bullet>
 
-          <Bullet url="#" color="neutralLow">
-            Senado aprova, em segundo turno, PEC de renovação do Fundeb
-          </Bullet>
+        <Bullet url="#" color="neutralLow">
+          Senado aprova, em segundo turno, PEC de renovação do Fundeb
+        </Bullet>
 
-          <Bullet url="#" color="neutralLow">
-            Guedes defende fim de deduções do IR para Renda Brasil chegar a R$ 300
-          </Bullet>
-        </>
+        <Bullet url="#" color="neutralLow">
+          Guedes defende fim de deduções do IR para Renda Brasil chegar a R$ 300
+        </Bullet>
       </Guerra.Bullets>
     </Guerra>
   ),
