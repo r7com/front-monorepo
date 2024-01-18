@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.10.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.9.0...ui-card-0.10.0) (2024-01-18)
+
+### Features
+
+- title-with-bullets card ([563367a](https://gitlab.ir7.com.br/r7/front-monorepo/commit/563367a3694d81ec952110da4eb012a2470649cb))
+
 # [0.9.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.8.0...ui-card-0.9.0) (2024-01-11)
 
 ### Features
