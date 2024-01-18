@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.5](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-article-delivery-0.4.4...ui-article-delivery-0.4.5) (2024-01-18)
+
+### Bug Fixes
+
+- check if windows exists to avoid incorrect rendering in nodejs environment ([b0c9f15](https://gitlab.ir7.com.br/r7/front-monorepo/commit/b0c9f15d8ee95347e9879aaed3ec89a7530b17f0))
+
 ## [0.4.4](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-article-delivery-0.4.3...ui-article-delivery-0.4.4) (2024-01-10)
 
 ## [0.4.3](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-article-delivery-0.4.2...ui-article-delivery-0.4.3) (2024-01-10)
