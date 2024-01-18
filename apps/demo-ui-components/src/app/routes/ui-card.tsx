@@ -8,6 +8,7 @@ import {
   ProportionalPhoto,
   Guerra,
   TextOverPhoto,
+  TitleWithBullets,
 } from '@r7/ui-card'
 import { Bullet } from '@r7/ui-base-components'
 
@@ -45,6 +46,23 @@ export function UiCard() {
           />
         </Proportional.One>
 
+        <Separator />
+
+        <Proportional.One>
+          <TitleWithBullets
+            title="Leonardo Bricio contrai dengue e desabafa sobre estar doente e sozinho"
+            hat="Economia"
+            renderBullets={
+              <>
+                <Bullet url="#">Câmara aprova MP que adia Lei de Dados para 31 de dezembro</Bullet>
+                <Bullet url="#">Casa Verde e Amarela terá financiamento com juros de 4,25%</Bullet>
+                <Bullet url="#">
+                  Guedes defende fim de deduções do IR para Renda Brasil chegar a R$ 300 aaaa aaaa a
+                </Bullet>
+              </>
+            }
+          />
+        </Proportional.One>
         <Separator />
 
         <Proportional.One>
