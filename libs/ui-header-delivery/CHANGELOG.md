@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.5.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.5.0...ui-header-delivery-2.5.1) (2024-01-18)
+
+### Bug Fixes
+
+- check if windows exists to avoid incorrect rendering in nodejs environment ([b0c9f15](https://gitlab.ir7.com.br/r7/front-monorepo/commit/b0c9f15d8ee95347e9879aaed3ec89a7530b17f0))
+
 # [2.5.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.4.2...ui-header-delivery-2.5.0) (2023-12-28)
 
 ### Features
