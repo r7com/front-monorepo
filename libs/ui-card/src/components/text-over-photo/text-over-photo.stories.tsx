@@ -14,23 +14,30 @@ export default meta
 type Story = StoryObj<typeof TextOverPhoto>
 
 export const Half: Story = {
-  render: args => <TextOverPhoto {...args} />,
+  render: args => (
+    <TextOverPhoto {...args}>
+      <TextOverPhoto.Figure {...args}>
+        <img
+          src="//img.r7.com/images/daniel-erthal-03012024135027266?resize=536x326&crop=607x369 34 0&dimensions=536x326"
+          alt="Clientes dão Kombi para ex-galã Daniel Erthal trabalhar em Copacabana"
+        />
+      </TextOverPhoto.Figure>
+
+      <TextOverPhoto.TextWrapper>
+        <Card.HatWrapper>
+          <Card.HatTitle color="high">vendedor ambulante</Card.HatTitle>
+        </Card.HatWrapper>
+
+        <TextOverPhoto.Title>
+          Clientes dão Kombi para ex-galã Daniel Erthal trabalhar em Copacabana
+        </TextOverPhoto.Title>
+      </TextOverPhoto.TextWrapper>
+    </TextOverPhoto>
+  ),
   args: {
     layout: 'half',
-    renderHat: (
-      <Card.HatWrapper>
-        <Card.HatTitle color="high">vendedor ambulante</Card.HatTitle>
-      </Card.HatWrapper>
-    ),
-    renderTitle: ({ CardTitle }) => (
-      <CardTitle>Clientes dão Kombi para ex-galã Daniel Erthal trabalhar em Copacabana</CardTitle>
-    ),
-    renderImage: (
-      <img
-        src="//img.r7.com/images/daniel-erthal-03012024135027266?resize=536x326&crop=607x369 34 0&dimensions=536x326"
-        alt="Clientes dão Kombi para ex-galã Daniel Erthal trabalhar em Copacabana"
-      />
-    ),
+    size: 'full',
+    responsiveAfter: 'none',
   },
   parameters: {
     design: {
@@ -43,56 +50,69 @@ export const Half: Story = {
 
 export const ResponsiveHalf: Story = {
   ...Half,
-  render: args => (
-    <div className="w-full sm:h-[320px]">
-      <TextOverPhoto {...args} />
-    </div>
-  ),
+  decorators: [
+    Story => (
+      <div className="w-full sm:h-[320px]">
+        <Story />
+      </div>
+    ),
+  ],
   args: {
     ...Half.args,
     layout: 'half',
-    responsiveOn: 'md',
+    responsiveAfter: 'md',
   },
 }
 
 export const Vertical: Story = {
   ...Half,
+  decorators: [
+    Story => (
+      <div className="h-[500px]">
+        <Story />
+      </div>
+    ),
+  ],
   render: args => (
-    <div className="h-[500px]">
-      <TextOverPhoto {...args} />
-    </div>
+    <TextOverPhoto {...args}>
+      <TextOverPhoto.Figure {...args}>
+        <img
+          src="//img.r7.com/images/leonardo-bricio-10012024120558929?resize=208x324&crop=542x844 454 0&dimensions=208x324"
+          alt="Leonardo Bricio contrai dengue e desabafa sobre estar doente e sozinho"
+        />
+      </TextOverPhoto.Figure>
+
+      <TextOverPhoto.TextWrapper>
+        <Card.HatWrapper>
+          <Card.HatTitle color="high">'Me recuperando'</Card.HatTitle>
+        </Card.HatWrapper>
+
+        <TextOverPhoto.Title>
+          Leonardo Bricio contrai dengue e desabafa sobre estar doente e sozinho
+        </TextOverPhoto.Title>
+      </TextOverPhoto.TextWrapper>
+    </TextOverPhoto>
   ),
   args: {
     ...Half.args,
-    renderTitle: ({ CardTitle }) => (
-      <CardTitle>Leonardo Bricio contrai dengue e desabafa sobre estar doente e sozinho</CardTitle>
-    ),
-    renderHat: (
-      <Card.HatWrapper>
-        <Card.HatTitle color="high">'Me recuperando'</Card.HatTitle>
-      </Card.HatWrapper>
-    ),
-    renderImage: (
-      <img
-        src="//img.r7.com/images/leonardo-bricio-10012024120558929?resize=208x324&crop=542x844 454 0&dimensions=208x324"
-        alt="Leonardo Bricio contrai dengue e desabafa sobre estar doente e sozinho"
-      />
-    ),
     layout: 'vertical',
     size: 'fullHeight',
+    responsiveAfter: 'none',
   },
 }
 
 export const ResponsiveVertical: Story = {
   ...Vertical,
-  render: args => (
-    <div className="w-full sm:w-[200px]">
-      <TextOverPhoto {...args} />
-    </div>
-  ),
+  decorators: [
+    Story => (
+      <div className="w-full sm:w-[200px]">
+        <Story />
+      </div>
+    ),
+  ],
   args: {
     ...Vertical.args,
     layout: 'vertical',
-    responsiveOn: 'md',
+    responsiveAfter: 'md',
   },
 }
