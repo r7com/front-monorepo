@@ -18,10 +18,6 @@ export const TwoSquare: Story = {
   render: () => (
     <LeftPhoto>
       <LeftPhoto.Item>
-        <Card.HatWrapper>
-          <Card.HatTitle>digitalização</Card.HatTitle>
-        </Card.HatWrapper>
-
         <LeftPhoto.Flex>
           <LeftPhoto.Figure format="square">
             <img
@@ -33,7 +29,11 @@ export const TwoSquare: Story = {
           </LeftPhoto.Figure>
 
           <LeftPhoto.TextWrapper>
-            <LeftPhoto.Title>
+            <Card.HatWrapper>
+              <Card.HatTitle>digitalização</Card.HatTitle>
+            </Card.HatWrapper>
+
+            <LeftPhoto.Title fontSize="small">
               FGTS vai começar a ser pago com Pix a partir de 1º de março
             </LeftPhoto.Title>
           </LeftPhoto.TextWrapper>
@@ -41,10 +41,6 @@ export const TwoSquare: Story = {
       </LeftPhoto.Item>
 
       <LeftPhoto.Item>
-        <Card.HatWrapper>
-          <Card.HatTitle>traição</Card.HatTitle>
-        </Card.HatWrapper>
-
         <LeftPhoto.Flex>
           <LeftPhoto.Figure format="square">
             <img
@@ -56,7 +52,11 @@ export const TwoSquare: Story = {
           </LeftPhoto.Figure>
 
           <LeftPhoto.TextWrapper>
-            <LeftPhoto.Title>
+            <Card.HatWrapper>
+              <Card.HatTitle>traição</Card.HatTitle>
+            </Card.HatWrapper>
+
+            <LeftPhoto.Title fontSize="small">
               'Não posso ver esse cão', diz Luísa Sonza sobre Chico Moedas
             </LeftPhoto.Title>
           </LeftPhoto.TextWrapper>
@@ -78,10 +78,6 @@ export const TwoLandscape: Story = {
   render: () => (
     <LeftPhoto>
       <LeftPhoto.Item>
-        <Card.HatWrapper>
-          <Card.HatTitle>digitalização</Card.HatTitle>
-        </Card.HatWrapper>
-
         <LeftPhoto.Flex>
           <LeftPhoto.Figure format="landscape">
             <img
@@ -93,6 +89,10 @@ export const TwoLandscape: Story = {
           </LeftPhoto.Figure>
 
           <LeftPhoto.TextWrapper>
+            <Card.HatWrapper>
+              <Card.HatTitle>digitalização</Card.HatTitle>
+            </Card.HatWrapper>
+
             <LeftPhoto.Title>
               FGTS vai começar a ser pago com Pix a partir de 1º de março
             </LeftPhoto.Title>
@@ -101,10 +101,6 @@ export const TwoLandscape: Story = {
       </LeftPhoto.Item>
 
       <LeftPhoto.Item>
-        <Card.HatWrapper>
-          <Card.HatTitle>traição</Card.HatTitle>
-        </Card.HatWrapper>
-
         <LeftPhoto.Flex>
           <LeftPhoto.Figure format="landscape">
             <img
@@ -116,6 +112,10 @@ export const TwoLandscape: Story = {
           </LeftPhoto.Figure>
 
           <LeftPhoto.TextWrapper>
+            <Card.HatWrapper>
+              <Card.HatTitle>traição</Card.HatTitle>
+            </Card.HatWrapper>
+
             <LeftPhoto.Title>
               'Não posso ver esse cão', diz Luísa Sonza sobre Chico Moedas
             </LeftPhoto.Title>
@@ -138,10 +138,6 @@ export const TwoLandscapeWithBullet: Story = {
   render: () => (
     <LeftPhoto>
       <LeftPhoto.Item>
-        <Card.HatWrapper>
-          <Card.HatTitle>digitalização</Card.HatTitle>
-        </Card.HatWrapper>
-
         <LeftPhoto.Flex>
           <LeftPhoto.Figure format="landscape">
             <img
@@ -153,6 +149,10 @@ export const TwoLandscapeWithBullet: Story = {
           </LeftPhoto.Figure>
 
           <LeftPhoto.TextWrapper>
+            <Card.HatWrapper>
+              <Card.HatTitle>digitalização</Card.HatTitle>
+            </Card.HatWrapper>
+
             <LeftPhoto.Title>
               FGTS vai começar a ser pago com Pix a partir de 1º de março
             </LeftPhoto.Title>
@@ -161,10 +161,6 @@ export const TwoLandscapeWithBullet: Story = {
       </LeftPhoto.Item>
 
       <LeftPhoto.Item>
-        <Card.HatWrapper>
-          <Card.HatTitle>traição</Card.HatTitle>
-        </Card.HatWrapper>
-
         <LeftPhoto.Flex>
           <LeftPhoto.Figure format="landscape">
             <img
@@ -176,6 +172,10 @@ export const TwoLandscapeWithBullet: Story = {
           </LeftPhoto.Figure>
 
           <LeftPhoto.TextWrapper>
+            <Card.HatWrapper>
+              <Card.HatTitle>traição</Card.HatTitle>
+            </Card.HatWrapper>
+
             <LeftPhoto.Title>
               'Não posso ver esse cão', diz Luísa Sonza sobre Chico Moedas
             </LeftPhoto.Title>
@@ -200,10 +200,6 @@ export const ThreeLandscapeSmall: Story = {
   render: () => (
     <LeftPhoto>
       <LeftPhoto.Item>
-        <Card.HatWrapper>
-          <Card.HatTitle>digitalização</Card.HatTitle>
-        </Card.HatWrapper>
-
         <LeftPhoto.Flex>
           <LeftPhoto.Figure format="landscape">
             <img
@@ -215,7 +211,11 @@ export const ThreeLandscapeSmall: Story = {
           </LeftPhoto.Figure>
 
           <LeftPhoto.TextWrapper>
-            <LeftPhoto.Title>
+            <Card.HatWrapper>
+              <Card.HatTitle>digitalização</Card.HatTitle>
+            </Card.HatWrapper>
+
+            <LeftPhoto.Title fontSize="small">
               FGTS vai começar a ser pago com Pix a partir de 1º de março
             </LeftPhoto.Title>
           </LeftPhoto.TextWrapper>
@@ -223,10 +223,6 @@ export const ThreeLandscapeSmall: Story = {
       </LeftPhoto.Item>
 
       <LeftPhoto.Item>
-        <Card.HatWrapper>
-          <Card.HatTitle>brasil</Card.HatTitle>
-        </Card.HatWrapper>
-
         <LeftPhoto.Flex>
           <LeftPhoto.Figure format="landscape">
             <img
@@ -238,7 +234,11 @@ export const ThreeLandscapeSmall: Story = {
           </LeftPhoto.Figure>
 
           <LeftPhoto.TextWrapper>
-            <LeftPhoto.Title>
+            <Card.HatWrapper>
+              <Card.HatTitle>brasil</Card.HatTitle>
+            </Card.HatWrapper>
+
+            <LeftPhoto.Title fontSize="small">
               Dilma e PT são condenados a devolver R$ 75,5 mil à Justiça
             </LeftPhoto.Title>
           </LeftPhoto.TextWrapper>
@@ -246,10 +246,6 @@ export const ThreeLandscapeSmall: Story = {
       </LeftPhoto.Item>
 
       <LeftPhoto.Item>
-        <Card.HatWrapper>
-          <Card.HatTitle>traição</Card.HatTitle>
-        </Card.HatWrapper>
-
         <LeftPhoto.Flex>
           <LeftPhoto.Figure format="landscape">
             <img
@@ -261,7 +257,11 @@ export const ThreeLandscapeSmall: Story = {
           </LeftPhoto.Figure>
 
           <LeftPhoto.TextWrapper>
-            <LeftPhoto.Title>
+            <Card.HatWrapper>
+              <Card.HatTitle>traição</Card.HatTitle>
+            </Card.HatWrapper>
+
+            <LeftPhoto.Title fontSize="small">
               'Não posso ver esse cão', diz Luísa Sonza sobre Chico Moedas
             </LeftPhoto.Title>
           </LeftPhoto.TextWrapper>
