@@ -3,47 +3,47 @@ import { TextOverPhoto } from './text-over-photo'
 
 const TextOverPhotoHalf = (
   <div className="card-p-xxxs">
-    <TextOverPhoto
-      layout="half"
-      renderTitle={({ CardTitle }) => (
-        <CardTitle>Clientes dão Kombi para ex-galã Daniel Erthal trabalhar em Copacabana</CardTitle>
-      )}
-      renderHat={
-        <Card.HatWrapper>
-          <Card.HatTitle color="high">vendedor ambulante</Card.HatTitle>
-        </Card.HatWrapper>
-      }
-      renderImage={
+    <TextOverPhoto>
+      <TextOverPhoto.Figure>
         <img
           src="//img.r7.com/images/daniel-erthal-03012024135027266?resize=536x326&crop=607x369 34 0&dimensions=536x326"
           alt="Clientes dão Kombi para ex-galã Daniel Erthal trabalhar em Copacabana"
         />
-      }
-    />
+      </TextOverPhoto.Figure>
+
+      <TextOverPhoto.TextWrapper>
+        <Card.HatWrapper>
+          <Card.HatTitle color="high">vendedor ambulante</Card.HatTitle>
+        </Card.HatWrapper>
+
+        <TextOverPhoto.Title>
+          Clientes dão Kombi para ex-galã Daniel Erthal trabalhar em Copacabana
+        </TextOverPhoto.Title>
+      </TextOverPhoto.TextWrapper>
+    </TextOverPhoto>
   </div>
 )
 
 const TextOverPhotoVertical = (
   <div className="card-p-xxxs">
-    <TextOverPhoto
-      layout="vertical"
-      renderTitle={({ CardTitle }) => (
-        <CardTitle>
-          Leonardo Bricio contrai dengue e desabafa sobre estar doente e sozinho
-        </CardTitle>
-      )}
-      renderHat={
-        <Card.HatWrapper>
-          <Card.HatTitle color="high">'Me recuperando'</Card.HatTitle>
-        </Card.HatWrapper>
-      }
-      renderImage={
+    <TextOverPhoto layout="vertical">
+      <TextOverPhoto.Figure layout="vertical">
         <img
           src="//img.r7.com/images/leonardo-bricio-10012024120558929?resize=208x324&crop=542x844 454 0&dimensions=208x324"
           alt="Leonardo Bricio contrai dengue e desabafa sobre estar doente e sozinho"
         />
-      }
-    />
+      </TextOverPhoto.Figure>
+
+      <TextOverPhoto.TextWrapper>
+        <Card.HatWrapper>
+          <Card.HatTitle color="high">'Me recuperando'</Card.HatTitle>
+        </Card.HatWrapper>
+
+        <TextOverPhoto.Title>
+          Leonardo Bricio contrai dengue e desabafa sobre estar doente e sozinho
+        </TextOverPhoto.Title>
+      </TextOverPhoto.TextWrapper>
+    </TextOverPhoto>
   </div>
 )
 
