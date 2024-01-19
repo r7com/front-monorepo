@@ -4,9 +4,9 @@ import { variants } from './contrast-control.variants'
 import { SvgIcon } from '@r7/ui-base-components'
 
 export function ContrastControl() {
-  const [contrast, saveContrast] = useState<boolean>(
-    JSON.parse(window?.localStorage?.getItem(storageName) || 'false'),
-  )
+  const getItemFromStorage =
+    globalThis.window !== undefined ? window.localStorage.getItem(storageName) || 'false' : 'false'
+  const [contrast, saveContrast] = useState<boolean>(JSON.parse(getItemFromStorage))
 
   useEffect(() => {
     contrast ? addContrast() : removeContrast()
