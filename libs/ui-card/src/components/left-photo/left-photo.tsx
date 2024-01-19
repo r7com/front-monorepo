@@ -17,7 +17,6 @@ export function LeftPhoto({
       className={variants({
         gap,
         gapMd,
-        className: 'card-flex card-flex-col',
       })}
     >
       {children}
