@@ -13,7 +13,7 @@ export const variants = createVariants({
     whatsappSlot:
       'article-w-xs sm:article-w-xxs article-h-w-xs sm:article-h-xxs dark:article-fill-neutral-high-400',
     googleNewsSlot:
-      'article-w-xs sm:article-w-xxs article-h-w-xs sm:article-h-xxs dark:article-grayscale',
+      'article-w-xs sm:article-w-xxs article-h-w-xs sm:article-h-xxs dark:article-grayscale dark:hover:article-grayscale',
   },
   variants: {
     color: {
