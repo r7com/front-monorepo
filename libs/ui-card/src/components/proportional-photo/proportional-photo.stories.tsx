@@ -13,7 +13,7 @@ export default meta
 
 type Story = StoryObj<typeof ProportionalPhoto>
 
-export const Primary: Story = {
+export const Responsive: Story = {
   render: () => (
     <ProportionalPhoto>
       <ProportionalPhoto.Figure>
@@ -44,4 +44,37 @@ export const Primary: Story = {
       accessToken: 'figd_sHs6Ap894w4C-OAFls7tuq0fMMROyue-8zQJ8hRE',
     },
   },
+}
+
+export const Big: Story = {
+  ...Responsive,
+  decorators: [
+    Story => (
+      <div className="card-w-full card-max-w-[350px]">
+        <Story />
+      </div>
+    ),
+  ],
+}
+
+export const Medium: Story = {
+  ...Responsive,
+  decorators: [
+    Story => (
+      <div className="card-w-full card-max-w-[255px]">
+        <Story />
+      </div>
+    ),
+  ],
+}
+
+export const Small: Story = {
+  ...Responsive,
+  decorators: [
+    Story => (
+      <div className="card-w-full card-max-w-[207px]">
+        <Story />
+      </div>
+    ),
+  ],
 }
