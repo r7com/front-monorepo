@@ -1,7 +1,7 @@
 import '@r7/ui-card/css'
 import '@r7/ui-layout/css'
 import '@r7/ui-section-heading/css'
-import { Container, Proportional, SpecialOne } from '@r7/ui-layout'
+import { Container, Proportional, SpecialOne, SectionWrapper } from '@r7/ui-layout'
 import { SectionHeading } from '@r7/ui-section-heading'
 import {
   LeftPhoto,
@@ -32,11 +32,9 @@ export function UiCard() {
     </div>
   )
 
-  const Separator = () => <div className="w-full h-[2px] bg-feedback-warning-600 my-md" />
-
   return (
     <Container>
-      <div className="flex flex-col gap-xxxs xl:gap-xs">
+      <SectionWrapper>
         <Proportional.One>
           <BreakingNews
             theme="live"
@@ -47,19 +45,13 @@ export function UiCard() {
           />
         </Proportional.One>
 
-        <Separator />
-
         <Proportional.One>
           <BreakingNews theme="now" title="titulo para barra" href="#" />
         </Proportional.One>
 
-        <Separator />
-
         <Proportional.One>
           <BreakingNews theme="urgent" title="titulo para barra" href="#" />
         </Proportional.One>
-
-        <Separator />
 
         <Proportional.One>
           <Guerra>
@@ -73,28 +65,24 @@ export function UiCard() {
             </Card.Title>
 
             <Guerra.Bullets>
-              <>
-                <Bullet url="#" color="neutralLow" size="large">
-                  Câmara aprova MP que adia Lei de Dados para 31
-                </Bullet>
+              <Bullet url="#" color="neutralLow" size="large">
+                Câmara aprova MP que adia Lei de Dados para 31
+              </Bullet>
 
-                <Bullet url="#" color="neutralLow" size="large">
-                  Casa Verde e Amarela terá financiamento
-                </Bullet>
+              <Bullet url="#" color="neutralLow" size="large">
+                Casa Verde e Amarela terá financiamento
+              </Bullet>
 
-                <Bullet url="#" color="neutralLow" size="large">
-                  Senado aprova, em segundo turno
-                </Bullet>
+              <Bullet url="#" color="neutralLow" size="large">
+                Senado aprova, em segundo turno
+              </Bullet>
 
-                <Bullet url="#" color="neutralLow" size="large">
-                  Guedes defende fim de deduções do IR
-                </Bullet>
-              </>
+              <Bullet url="#" color="neutralLow" size="large">
+                Guedes defende fim de deduções do IR
+              </Bullet>
             </Guerra.Bullets>
           </Guerra>
         </Proportional.One>
-
-        <Separator />
 
         <Proportional.One>
           <Guerra>
@@ -116,45 +104,41 @@ export function UiCard() {
               </Guerra.Title>
 
               <Guerra.Bullets>
-                <>
-                  <Bullet url="#" color="neutralHigh">
-                    Câmara aprova MP que adia Lei de Dados para 31 de dezembro
-                  </Bullet>
+                <Bullet url="#" color="neutralHigh">
+                  Câmara aprova MP que adia Lei de Dados para 31 de dezembro
+                </Bullet>
 
-                  <Bullet url="#" color="neutralHigh">
-                    Casa Verde e Amarela terá financiamento com juros de 4,25%
-                  </Bullet>
+                <Bullet url="#" color="neutralHigh">
+                  Casa Verde e Amarela terá financiamento com juros de 4,25%
+                </Bullet>
 
-                  <Bullet url="#" color="neutralHigh">
-                    Senado aprova, em segundo turno, PEC de renovação do Fundeb
-                  </Bullet>
+                <Bullet url="#" color="neutralHigh">
+                  Senado aprova, em segundo turno, PEC de renovação do Fundeb
+                </Bullet>
 
-                  <Bullet url="#" color="neutralHigh">
-                    Guedes defende fim de deduções do IR para Renda Brasil chegar a R$ 300
-                  </Bullet>
+                <Bullet url="#" color="neutralHigh">
+                  Guedes defende fim de deduções do IR para Renda Brasil chegar a R$ 300
+                </Bullet>
 
-                  <Bullet url="#" color="neutralHigh">
-                    Retomada de alto-forno da Usiminas terá presença de Bolsonaro e Zema
-                  </Bullet>
+                <Bullet url="#" color="neutralHigh">
+                  Retomada de alto-forno da Usiminas terá presença de Bolsonaro e Zema
+                </Bullet>
 
-                  <Bullet url="#" color="neutralHigh">
-                    Senado aprova em primeiro turno PEC que renova o Fundeb
-                  </Bullet>
+                <Bullet url="#" color="neutralHigh">
+                  Senado aprova em primeiro turno PEC que renova o Fundeb
+                </Bullet>
 
-                  <Bullet url="#" color="neutralHigh">
-                    5 pontos para o Brasil decolar de vez na economia
-                  </Bullet>
+                <Bullet url="#" color="neutralHigh">
+                  5 pontos para o Brasil decolar de vez na economia
+                </Bullet>
 
-                  <Bullet url="#" color="neutralHigh">
-                    Queda no PIB e aprovação a Bolsonaro são destaques nesta sexta (14)
-                  </Bullet>
-                </>
+                <Bullet url="#" color="neutralHigh">
+                  Queda no PIB e aprovação a Bolsonaro são destaques nesta sexta (14)
+                </Bullet>
               </Guerra.Bullets>
             </Guerra.Overlay>
           </Guerra>
         </Proportional.One>
-
-        <Separator />
 
         <SpecialOne
           renderMain={
@@ -205,8 +189,8 @@ export function UiCard() {
                   <ProportionalPhoto>
                     <ProportionalPhoto.Figure>
                       <img
-                        src="//img.r7.com/images/maiores-bilheterias-de-2023-filmes-cinema-07122023155527132?resize=254x145&crop=646x369 31 0&dimensions=254x145"
-                        alt="Saiba quais foram os filmes com as maiores bilheterias em 2023"
+                        src="https://img.r7.com/images/1madonna-22990128-19012024101502983?dimensions=254x145"
+                        alt="Fãs processam Madonna por atrasar show; entenda"
                         width="100%"
                         height="auto"
                       />
@@ -214,11 +198,11 @@ export function UiCard() {
 
                     <ProportionalPhoto.TextWrapper>
                       <Card.HatWrapper>
-                        <Card.HatTitle>DE A PEQUENA SEREIA A MARIO</Card.HatTitle>
+                        <Card.HatTitle>DEMOROU DUAS HORAS</Card.HatTitle>
                       </Card.HatWrapper>
 
                       <ProportionalPhoto.Title>
-                        Saiba quais foram os filmes com as maiores bilheterias em 2023
+                        Fãs processam Madonna por atrasar show; entenda
                       </ProportionalPhoto.Title>
                     </ProportionalPhoto.TextWrapper>
                   </ProportionalPhoto>
@@ -226,39 +210,42 @@ export function UiCard() {
                   <ProportionalPhoto>
                     <ProportionalPhoto.Figure>
                       <img
-                        src="//img.r7.com/images/maiara-quiderolly-e-jo-25032023102338463?resize=254x145&crop=736x420 17 0&dimensions=254x145"
-                        alt="Jô e Maiára Quiderolly passam o primeiro ano do filho brigando"
+                        src="https://img.r7.com/images/anyconv-commamma-759x500-1-19012024093301184?dimensions=254x145"
+                        alt="Apresentadora Mamma Bruschetta ganha alta da UTI"
                         width="100%"
                         height="auto"
                       />
                     </ProportionalPhoto.Figure>
-                  </ProportionalPhoto>
 
-                  <ProportionalPhoto.TextWrapper>
-                    <Card.HatWrapper>
-                      <Card.HatTitle>PENSÃO E EXAME DE DNA</Card.HatTitle>
-                    </Card.HatWrapper>
-
-                    <ProportionalPhoto.Title>
-                      Jô e Maiára Quiderolly passam o primeiro ano do filho brigando
-                    </ProportionalPhoto.Title>
-                  </ProportionalPhoto.TextWrapper>
-                  <ProportionalPhoto>
-                    <ProportionalPhoto.Figure>
-                      <img
-                        src="//img.r7.com/images/familia-record-70-anos-26122023163912401?resize=207x118&crop=367x209 0 211&dimensions=207x118"
-                        alt="Confira todos os presentes trocados no amigo-secreto da Família Record"
-                        width="100%"
-                        height="auto"
-                      />
-                    </ProportionalPhoto.Figure>
                     <ProportionalPhoto.TextWrapper>
                       <Card.HatWrapper>
-                        <Card.HatTitle>EDIÇÃO ESPECIAL</Card.HatTitle>
+                        <Card.HatTitle>QUADRO ESTÁVEL</Card.HatTitle>
                       </Card.HatWrapper>
 
                       <ProportionalPhoto.Title>
-                        Confira todos os presentes trocados no amigo-secreto da Família Record
+                        Apresentadora Mamma Bruschetta ganha alta da UTI
+                      </ProportionalPhoto.Title>
+                    </ProportionalPhoto.TextWrapper>
+                  </ProportionalPhoto>
+
+                  <ProportionalPhoto>
+                    <ProportionalPhoto.Figure>
+                      <img
+                        src="https://img.r7.com/images/karoline-lima-e-leo-pereira-18012024125506526?dimensions=207x118"
+                        alt="aroline Lima fala sobre vida fora das redes: 'Às vezes prefiro viver na minha'"
+                        width="100%"
+                        height="auto"
+                      />
+                    </ProportionalPhoto.Figure>
+
+                    <ProportionalPhoto.TextWrapper>
+                      <Card.HatWrapper>
+                        <Card.HatTitle>BOATOS DE AFFAIR</Card.HatTitle>
+                      </Card.HatWrapper>
+
+                      <ProportionalPhoto.Title>
+                        Karoline Lima fala sobre vida fora das redes: 'Às vezes prefiro viver na
+                        minha'
                       </ProportionalPhoto.Title>
                     </ProportionalPhoto.TextWrapper>
                   </ProportionalPhoto>
@@ -268,8 +255,6 @@ export function UiCard() {
           }
           renderSidebar={<SidebarBlock />}
         />
-
-        <Separator />
 
         <SectionHeading>
           <a href="/">
@@ -360,8 +345,6 @@ export function UiCard() {
           </ProportionalPhoto>
         </Proportional.Three>
 
-        <Separator />
-
         <Proportional.Three>
           <LeftPhoto>
             <LeftPhoto.Item>
@@ -380,7 +363,7 @@ export function UiCard() {
                     <Card.HatTitle>REINO UNIDO</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title fontSize="small">
+                  <LeftPhoto.Title fontSize="medium">
                     Rei Charles passará por cirurgia após ser
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
@@ -403,14 +386,16 @@ export function UiCard() {
                     <Card.HatTitle>PORTO ALEGRE (RS)</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title fontSize="small">
+                  <LeftPhoto.Title fontSize="medium">
                     Em uma hora, cidade registra metade
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
               </LeftPhoto.Flex>
             </LeftPhoto.Item>
 
-            <Bullet url="#">Prefeito: 'Capital está praticamente parada'</Bullet>
+            <Bullet url="#" size="small">
+              Prefeito: 'Capital está praticamente parada'
+            </Bullet>
           </LeftPhoto>
 
           <LeftPhoto>
@@ -430,7 +415,7 @@ export function UiCard() {
                     <Card.HatTitle>TERMÔMETRO NAS ALTURAS</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title fontSize="small">
+                  <LeftPhoto.Title fontSize="medium">
                     Rio registra a maior temperatura do verão
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
@@ -453,14 +438,16 @@ export function UiCard() {
                     <Card.HatTitle>BELO HORIZONTE (MG)</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title fontSize="small">
+                  <LeftPhoto.Title fontSize="medium">
                     'Nunca foi usuária de qualquer substância'
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
               </LeftPhoto.Flex>
             </LeftPhoto.Item>
 
-            <Bullet url="#">Vítima foi abusada sexualmente, diz familiar</Bullet>
+            <Bullet url="#" size="small">
+              Vítima foi abusada sexualmente, diz familiar
+            </Bullet>
           </LeftPhoto>
 
           <LeftPhoto>
@@ -480,7 +467,7 @@ export function UiCard() {
                     <Card.HatTitle>COSME RÍMOLI</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title>
+                  <LeftPhoto.Title fontSize="small">
                     Daniel Alves vai dizer que estava bêbado e apresentar
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
@@ -503,7 +490,7 @@ export function UiCard() {
                     <Card.HatTitle>ASSALTO</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title>
+                  <LeftPhoto.Title fontSize="small">
                     Homem que reagiu com 'voadora' diz ter notado que os criminosos
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
@@ -511,8 +498,6 @@ export function UiCard() {
             </LeftPhoto.Item>
           </LeftPhoto>
         </Proportional.Three>
-
-        <Separator />
 
         <Proportional.Four>
           <ProportionalPhoto>
@@ -596,11 +581,9 @@ export function UiCard() {
           </ProportionalPhoto>
         </Proportional.Four>
 
-        <Separator />
-
         {/** Aqui */}
         <Proportional.Three>
-          <LeftPhoto gapMd="none">
+          <LeftPhoto>
             <LeftPhoto.Item>
               <LeftPhoto.Flex>
                 <LeftPhoto.Figure format="landscape">
@@ -671,7 +654,7 @@ export function UiCard() {
             </LeftPhoto.Item>
           </LeftPhoto>
 
-          <LeftPhoto gapMd="none">
+          <LeftPhoto>
             <LeftPhoto.Item>
               <LeftPhoto.Flex>
                 <LeftPhoto.Figure format="landscape">
@@ -743,10 +726,8 @@ export function UiCard() {
           </LeftPhoto>
         </Proportional.Three>
 
-        <Separator />
-
         <Proportional.Three>
-          <LeftPhoto gapMd="none">
+          <LeftPhoto>
             <LeftPhoto.Item>
               <LeftPhoto.Flex>
                 <LeftPhoto.Figure format="landscape">
@@ -817,7 +798,7 @@ export function UiCard() {
             </LeftPhoto.Item>
           </LeftPhoto>
 
-          <LeftPhoto gapMd="none">
+          <LeftPhoto>
             <LeftPhoto.Item>
               <LeftPhoto.Flex>
                 <LeftPhoto.Figure format="landscape">
@@ -888,7 +869,7 @@ export function UiCard() {
             </LeftPhoto.Item>
           </LeftPhoto>
 
-          <LeftPhoto gapMd="none">
+          <LeftPhoto>
             <LeftPhoto.Item>
               <LeftPhoto.Flex>
                 <LeftPhoto.Figure format="landscape">
@@ -961,8 +942,6 @@ export function UiCard() {
           </LeftPhoto>
         </Proportional.Three>
 
-        <Separator />
-
         <Proportional.Three>
           <LeftPhoto>
             <LeftPhoto.Item>
@@ -981,7 +960,7 @@ export function UiCard() {
                     <Card.HatTitle>Lavação de roupa suja</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title>
+                  <LeftPhoto.Title fontSize="small">
                     Após reencontro com ex-peões, rolou discussão entre Jaquelline e Márcia Fu
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
@@ -1004,7 +983,7 @@ export function UiCard() {
                     <Card.HatTitle>revezamento</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title>
+                  <LeftPhoto.Title fontSize="small">
                     Tonzão pede ajuda a WL para concluir suas funções, André também se dispõe a
                     colaborar
                   </LeftPhoto.Title>
@@ -1030,7 +1009,7 @@ export function UiCard() {
                     <Card.HatTitle>entrevista</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title>
+                  <LeftPhoto.Title fontSize="small">
                     'Foi amor e eu continuo muito apaixonado', confessa Cezar Black sobre Kally
                     Fonseca
                   </LeftPhoto.Title>
@@ -1054,7 +1033,7 @@ export function UiCard() {
                     <Card.HatTitle>especulação</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title>
+                  <LeftPhoto.Title fontSize="small">
                     'Tem que ser forte para estar aqui', afirma Lily em desabafo com Tonzão
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
@@ -1079,7 +1058,7 @@ export function UiCard() {
                     <Card.HatTitle>A FAZENDA 15</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title>
+                  <LeftPhoto.Title fontSize="small">
                     Acompanhe 24 horas o cotidiano, as festas e as confusões dos peões no PlayPlus
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
@@ -1102,7 +1081,7 @@ export function UiCard() {
                     <Card.HatTitle>Atividades rurais</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title>
+                  <LeftPhoto.Title fontSize="small">
                     Jaquelline ensina Tonzão a tirar leite da vaca Mimosa, e faz trolagem com o peão
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
@@ -1110,8 +1089,6 @@ export function UiCard() {
             </LeftPhoto.Item>
           </LeftPhoto>
         </Proportional.Three>
-
-        <Separator />
 
         <Proportional.Four>
           <LeftPhoto>
@@ -1131,7 +1108,7 @@ export function UiCard() {
                     <Card.HatTitle>calote</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title>
+                  <LeftPhoto.Title fontSize="small">
                     Jojo alfineta quem pede dinheiro e não devolve: 'Não ajudo mais'
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
@@ -1154,7 +1131,7 @@ export function UiCard() {
                     <Card.HatTitle>São Paulo</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title>
+                  <LeftPhoto.Title fontSize="small">
                     Mãe e padrasto são condenados por tortura e estupro de criança de 1 ano
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
@@ -1179,7 +1156,7 @@ export function UiCard() {
                     <Card.HatTitle>digitalização</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title>
+                  <LeftPhoto.Title fontSize="small">
                     FGTS vai começar a ser pago com Pix a partir de 1º de março
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
@@ -1202,7 +1179,7 @@ export function UiCard() {
                     <Card.HatTitle>'Muito feliz'</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title>
+                  <LeftPhoto.Title fontSize="small">
                     Irmã de MC Melody rebate críticas após exibir resultado de plásticas
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
@@ -1227,7 +1204,7 @@ export function UiCard() {
                     <Card.HatTitle>assembleia legislativa</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title>
+                  <LeftPhoto.Title fontSize="small">
                     SP: relatório da CPI da Enel aponta irregularidades e negligência
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
@@ -1250,7 +1227,7 @@ export function UiCard() {
                     <Card.HatTitle>faça sua doação à abads</Card.HatTitle>
                   </Card.HatWrapper>
 
-                  <LeftPhoto.Title>
+                  <LeftPhoto.Title fontSize="small">
                     Saiba como ajudar crianças e adolescentes com deficiência intelectual
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
@@ -1260,10 +1237,6 @@ export function UiCard() {
 
           <LeftPhoto>
             <LeftPhoto.Item>
-              <Card.HatWrapper>
-                <Card.HatTitle>FOZ DO IGUAÇU (PR)</Card.HatTitle>
-              </Card.HatWrapper>
-
               <LeftPhoto.Flex>
                 <LeftPhoto.Figure format="square">
                   <img
@@ -1275,7 +1248,11 @@ export function UiCard() {
                 </LeftPhoto.Figure>
 
                 <LeftPhoto.TextWrapper>
-                  <LeftPhoto.Title>
+                  <Card.HatWrapper>
+                    <Card.HatTitle>FOZ DO IGUAÇU (PR)</Card.HatTitle>
+                  </Card.HatWrapper>
+
+                  <LeftPhoto.Title fontSize="small">
                     Construção em que laje caiu sobre duas crianças estava irregular
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
@@ -1283,10 +1260,6 @@ export function UiCard() {
             </LeftPhoto.Item>
 
             <LeftPhoto.Item>
-              <Card.HatWrapper>
-                <Card.HatTitle>AVIÃO VALIOSO</Card.HatTitle>
-              </Card.HatWrapper>
-
               <LeftPhoto.Flex>
                 <LeftPhoto.Figure format="square">
                   <img
@@ -1298,7 +1271,11 @@ export function UiCard() {
                 </LeftPhoto.Figure>
 
                 <LeftPhoto.TextWrapper>
-                  <LeftPhoto.Title>
+                  <Card.HatWrapper>
+                    <Card.HatTitle>AVIÃO VALIOSO</Card.HatTitle>
+                  </Card.HatWrapper>
+
+                  <LeftPhoto.Title fontSize="small">
                     Ucrânia afirma ter derrubado principal aeronave-radar da Rússia
                   </LeftPhoto.Title>
                 </LeftPhoto.TextWrapper>
@@ -1306,8 +1283,6 @@ export function UiCard() {
             </LeftPhoto.Item>
           </LeftPhoto>
         </Proportional.Four>
-
-        <Separator />
 
         <SpecialOne
           renderMain={
@@ -1337,7 +1312,7 @@ export function UiCard() {
                             <Card.HatTitle>'Nossa última foto juntos'</Card.HatTitle>
                           </Card.HatWrapper>
 
-                          <LeftPhoto.Title>
+                          <LeftPhoto.Title fontSize="small">
                             Carol Castro lamenta nas redes sociais a morte do pai, Luca Castro
                           </LeftPhoto.Title>
                         </LeftPhoto.TextWrapper>
@@ -1360,7 +1335,7 @@ export function UiCard() {
                             <Card.HatTitle>reflexão</Card.HatTitle>
                           </Card.HatWrapper>
 
-                          <LeftPhoto.Title>
+                          <LeftPhoto.Title fontSize="small">
                             Kelly Key diz que abandonou a carreira na música: 'Sufocante'
                           </LeftPhoto.Title>
                         </LeftPhoto.TextWrapper>
@@ -1385,7 +1360,7 @@ export function UiCard() {
                             <Card.HatTitle>CONTEÚDO PATROCINADO</Card.HatTitle>
                           </Card.HatWrapper>
 
-                          <LeftPhoto.Title>
+                          <LeftPhoto.Title fontSize="small">
                             Confira quem são os vencedores do 'Oscar' dos videogames
                           </LeftPhoto.Title>
                         </LeftPhoto.TextWrapper>
@@ -1408,7 +1383,7 @@ export function UiCard() {
                             <Card.HatTitle>em 2023</Card.HatTitle>
                           </Card.HatWrapper>
 
-                          <LeftPhoto.Title>
+                          <LeftPhoto.Title fontSize="small">
                             Shakira fez 'da geleia um sanduíche' e transformou traição em hits
                           </LeftPhoto.Title>
                         </LeftPhoto.TextWrapper>
@@ -1423,7 +1398,7 @@ export function UiCard() {
           }
           renderSidebar={<SidebarBlock />}
         />
-      </div>
+      </SectionWrapper>
     </Container>
   )
 }
