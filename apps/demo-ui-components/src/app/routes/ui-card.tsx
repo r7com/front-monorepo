@@ -61,7 +61,6 @@ export function UiCard() {
             }
           />
         </Proportional.One>
-        <Separator />
 
         <Proportional.One>
           <BreakingNews theme="now" title="titulo para barra" href="#" />
