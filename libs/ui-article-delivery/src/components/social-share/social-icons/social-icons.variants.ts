@@ -2,12 +2,18 @@ import { VariantProps, createVariants } from '@r7/ui-base-components'
 
 export const variants = createVariants({
   slots: {
-    facebookSlot: 'article-w-xs sm:article-w-xxs article-h-w-xs sm:article-h-xxs',
-    linkedinSlot: 'article-w-xs sm:article-w-xxs article-h-w-xs sm:article-h-xxs',
-    shareSlot: 'article-w-xs sm:article-w-xxs article-h-w-xs sm:article-h-xxs',
-    twitterSlot: 'article-w-xs sm:article-w-xxs article-h-w-xs sm:article-h-xxs',
-    whatsappSlot: 'article-w-xs sm:article-w-xxs article-h-w-xs sm:article-h-xxs',
-    googleNewsSlot: 'article-w-xs sm:article-w-xxs article-h-w-xs sm:article-h-xxs',
+    facebookSlot:
+      'article-w-xs sm:article-w-xxs article-h-w-xs sm:article-h-xxs dark:article-fill-neutral-high-400',
+    linkedinSlot:
+      'article-w-xs sm:article-w-xxs article-h-w-xs sm:article-h-xxs dark:article-fill-neutral-high-400',
+    shareSlot:
+      'article-w-xs sm:article-w-xxs article-h-w-xs sm:article-h-xxs dark:article-fill-neutral-high-400',
+    twitterSlot:
+      'article-w-xs sm:article-w-xxs article-h-w-xs sm:article-h-xxs dark:article-fill-neutral-high-400',
+    whatsappSlot:
+      'article-w-xs sm:article-w-xxs article-h-w-xs sm:article-h-xxs dark:article-fill-neutral-high-400',
+    googleNewsSlot:
+      'article-w-xs sm:article-w-xxs article-h-w-xs sm:article-h-xxs dark:article-grayscale dark:hover:article-grayscale',
   },
   variants: {
     color: {
