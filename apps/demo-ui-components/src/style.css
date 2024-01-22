@@ -7,3 +7,9 @@
     @apply dark:bg-agerating-18anos-500;
   }
 }
+
+:root {
+  --font-family-primary: Record Type Regular;
+  --font-family-primary-light: Record Type Light;
+  --font-family-secondary: Playfair Display;
+}
