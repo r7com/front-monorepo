@@ -3,25 +3,21 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'primary';
-  src: url(fonts/RecordType-Regular.ttf) format(truetype);
+  font-family: 'Record Type Regular';
+  src: url(./fonts/RecordType-Regular.ttf) format(truetype);
 }
 
 @font-face {
-  font-family: 'primary-light';
-  src: url(fonts/RecordType-Light.ttf) format(truetype);
+  font-family: 'Record Type Light';
+  src: url(./fonts/RecordType-Light.ttf) format(truetype);
 }
 
 @font-face {
-  font-family: 'primary-medium';
-  src: url(fonts/RecordType-Medium.ttf) format(truetype);
+  font-family: 'Record Type Medium';
+  src: url(./fonts/RecordType-Medium.ttf) format(truetype);
 }
 
 @font-face {
-  font-family: 'secondary';
-  src: url(fonts/RecordType-Bold.ttf) format(truetype);
-}
-
-body {
-  --font-family-primary: RecordType;
+  font-family: 'Record Type Bold';
+  src: url(./fonts/RecordType-Bold.ttf) format(truetype);
 }
