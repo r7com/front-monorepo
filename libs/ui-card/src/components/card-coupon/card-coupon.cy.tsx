@@ -14,14 +14,7 @@ describe(CardCoupon.name, () => {
             <CardCoupon.Item key={id}>
               <ConditionalLink target="_blank" title={anchor_text} href={url} data-partner={name}>
                 <CardCoupon.Content>
-                  <img
-                    className="card-mr-xxxs card-rounded-md"
-                    src={logo}
-                    alt={anchor_text}
-                    loading="lazy"
-                    height={58}
-                    width={58}
-                  />
+                  <CardCoupon.Image logo={logo} alt={anchor_text} />
                   <div>
                     <Typography className="uppercase" fontSize="little" color="neutralLow">
                       {name}

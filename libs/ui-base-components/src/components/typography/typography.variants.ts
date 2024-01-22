@@ -31,7 +31,7 @@ export const variants = createVariants({
       neutralHigh: 'base-text-neutral-high-400',
     },
     primaryTitle: {
-      true: 'base-font-primary-light base-uppercase base-flex base-items-center base-leading-lg base-tracking-tight	!base-text-md !base-font-light after:base-ml-nano base-text-neutral-low-500  after:base-h-[1px] after:base-flex-1 after:base-content-[""] after:base-bg-neutral-low-500',
+      true: 'base-font-primary-light base-uppercase base-flex base-items-center base-leading-lg base-tracking-tight	!base-text-md !base-font-light after:base-ml-nano base-text-neutral-low-500 dark:after:base-bg-neutral-high-400 dark:base-bg-agerating-18anos-500 after:base-h-[1px] after:base-flex-1 after:base-content-[""] after:base-bg-neutral-low-500',
     },
   },
 })
