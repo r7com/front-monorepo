@@ -5,6 +5,7 @@ const { join } = require('path')
 module.exports = {
   mode: 'jit',
   prefix: 'card-',
+  darkMode: ['class', '[class="dark"]'],
   content: [
     join(__dirname, '{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}'),
     ...createGlobPatternsForDependencies(__dirname),
