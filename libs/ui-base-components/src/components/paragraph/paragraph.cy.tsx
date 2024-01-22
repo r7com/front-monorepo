@@ -44,7 +44,7 @@ describe(Paragraph.name, () => {
     cy.mount(
       <>
         <Paragraph fontFamily="openSans">{text}</Paragraph>
-        <Paragraph fontFamily="playfair">{text}</Paragraph>
+        <Paragraph fontFamily="primary">{text}</Paragraph>
       </>,
     )
     cy.findAllByText(text).each(element => {
