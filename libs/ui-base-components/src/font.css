@@ -1,13 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  body {
-    @apply dark:bg-agerating-18anos-500;
-  }
-}
-
 @font-face {
   font-family: 'Record Type Regular';
   src: url(./fonts/RecordType-Regular.ttf) format(truetype);

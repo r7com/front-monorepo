@@ -24,6 +24,7 @@
       "@r7/ui-article-delivery/css": ["dist/libs/ui-article-delivery/style.css"],
       "@r7/ui-base-components": ["libs/ui-base-components/src/index.ts"],
       "@r7/ui-base-components/css": ["dist/libs/ui-base-components/style.css"],
+      "@r7/ui-base-components/font": ["libs/ui-base-components/src/font.css"],
       "@r7/ui-card": ["libs/ui-card/src/index.ts"],
       "@r7/ui-card/css": ["dist/libs/ui-card/style.css"],
       "@r7/ui-footer-delivery": ["libs/ui-footer-delivery/src/index.ts"],
