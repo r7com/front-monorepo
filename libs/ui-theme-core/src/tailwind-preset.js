@@ -9,7 +9,7 @@ module.exports = {
   corePlugins: {
     preflight: false,
   },
-  darkMode: 'class',
+  darkMode: ['class', '[class="dark"]'],
   theme: {
     aspectRatio: {
       portrait: '0.65',
