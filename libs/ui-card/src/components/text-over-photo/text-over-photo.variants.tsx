@@ -39,7 +39,7 @@ export const variants = createVariants({
         figureSlot: 'card-w-fit card-h-fit',
       },
     },
-    responsiveOn: {
+    responsiveAfter: {
       md: {
         figureSlot: 'md:card-aspect-[auto]',
       },
