@@ -1,4 +1,5 @@
 import '@r7/ui-base-components/css'
+import '@r7/ui-base-components/font'
 import '@r7/ui-article-delivery/css'
 import '@r7/ui-card/css'
 import '@r7/ui-footer-delivery/css'
