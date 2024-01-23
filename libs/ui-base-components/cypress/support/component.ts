@@ -19,7 +19,7 @@ import '@frsource/cypress-plugin-visual-regression-diff'
 import './commands'
 import '@testing-library/cypress/add-commands'
 import '../../src/style.css'
-import '../../src/font.css'
+import '../../src/fonts.css'
 // add component testing only related command here, such as mount
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace

@@ -13,7 +13,7 @@ export const importCypress = [
   "import '@testing-library/cypress/add-commands'",
   "import '../../src/styles.css'",
   "import '@r7/ui-base-components/css'",
-  "import '@r7/ui-base-components/font'",
+  "import '@r7/ui-base-components/fonts'",
 ]
 
 export const cypresslink = `<link

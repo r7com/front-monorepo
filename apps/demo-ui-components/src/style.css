@@ -7,29 +7,3 @@
     @apply dark:bg-agerating-18anos-500;
   }
 }
-
-@font-face {
-  font-family: 'Record Type Regular';
-  src: url(./fonts/RecordType-Regular.ttf) format(truetype);
-}
-
-@font-face {
-  font-family: 'Record Type Light';
-  src: url(./fonts/RecordType-Light.ttf) format(truetype);
-}
-
-@font-face {
-  font-family: 'Record Type Medium';
-  src: url(./fonts/RecordType-Medium.ttf) format(truetype);
-}
-
-@font-face {
-  font-family: 'Record Type Bold';
-  src: url(./fonts/RecordType-Bold.ttf) format(truetype);
-}
-
-:root {
-  --font-family-primary: Record Type Regular;
-  --font-family-primary-light: Record Type Light;
-  --font-family-secondary: Playfair Display;
-}

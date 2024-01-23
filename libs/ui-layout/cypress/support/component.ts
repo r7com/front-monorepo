@@ -20,7 +20,7 @@ import '@frsource/cypress-plugin-visual-regression-diff'
 import '@testing-library/cypress/add-commands'
 import '../../src/style.css'
 import '@r7/ui-base-components/css'
-import '@r7/ui-base-components/font'
+import '@r7/ui-base-components/fonts'
 
 // add component testing only related command here, such as mount
 declare global {
