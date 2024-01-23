@@ -1,5 +1,6 @@
 import '@r7/ui-header-delivery/css'
 import '@r7/ui-base-components/css'
+import '@r7/ui-base-components/fonts'
 import { Route, Routes } from 'react-router-dom'
 import {
   UiFooterDelivery,
