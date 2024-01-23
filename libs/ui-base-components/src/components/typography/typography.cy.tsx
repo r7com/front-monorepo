@@ -54,7 +54,7 @@ describe(Typography.name, () => {
     cy.mount(
       <>
         <Typography fontFamily="openSans">{text}</Typography>
-        <Typography fontFamily="playfair">{text}</Typography>
+        <Typography fontFamily="secondary">{text}</Typography>
       </>,
     )
     cy.findAllByText(text).each(element => {
@@ -77,6 +77,25 @@ describe(Typography.name, () => {
       expect(element.text()).to.be.equal(text)
     })
     cy.findAllByText(text).should('be.visible')
+    cy.matchImage()
+  })
+
+  it('should render fontSize dark mode', () => {
+    cy.mount(
+      <>
+        <Typography fontSize="little">{text}</Typography>
+        <Typography fontSize="xxxs">{text}</Typography>
+        <Typography fontSize="xxs">{text}</Typography>
+        <Typography fontSize="xs">{text}</Typography>
+        <Typography fontSize="sm">{text}</Typography>
+        <Typography fontSize="md">{text}</Typography>
+        <Typography fontSize="lg">{text}</Typography>
+        <Typography fontSize="xl">{text}</Typography>
+        <Typography fontSize="xxl">{text}</Typography>
+        <Typography fontSize="xxxl">{text}</Typography>
+      </>,
+    )
+    cy.addDarkMode()
     cy.matchImage()
   })
 })

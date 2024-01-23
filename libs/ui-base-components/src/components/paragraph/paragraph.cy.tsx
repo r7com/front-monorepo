@@ -44,7 +44,7 @@ describe(Paragraph.name, () => {
     cy.mount(
       <>
         <Paragraph fontFamily="openSans">{text}</Paragraph>
-        <Paragraph fontFamily="playfair">{text}</Paragraph>
+        <Paragraph fontFamily="secondary">{text}</Paragraph>
       </>,
     )
     cy.findAllByText(text).each(element => {
@@ -67,6 +67,25 @@ describe(Paragraph.name, () => {
       expect(element.text()).to.be.equal(text)
     })
     cy.findAllByText(text).should('be.visible')
+    cy.matchImage()
+  })
+
+  it('should render fontSize dark mode', () => {
+    cy.mount(
+      <>
+        <Paragraph fontSize="little">{text}</Paragraph>
+        <Paragraph fontSize="xxxs">{text}</Paragraph>
+        <Paragraph fontSize="xxs">{text}</Paragraph>
+        <Paragraph fontSize="xs">{text}</Paragraph>
+        <Paragraph fontSize="sm">{text}</Paragraph>
+        <Paragraph fontSize="md">{text}</Paragraph>
+        <Paragraph fontSize="lg">{text}</Paragraph>
+        <Paragraph fontSize="xl">{text}</Paragraph>
+        <Paragraph fontSize="xxl">{text}</Paragraph>
+        <Paragraph fontSize="xxxl">{text}</Paragraph>
+      </>,
+    )
+    cy.addDarkMode()
     cy.matchImage()
   })
 })

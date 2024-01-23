@@ -60,4 +60,35 @@ describe(CardCoupon.name, () => {
         })
       })
   })
+
+  it('should render default card coupon dark mode', () => {
+    cy.mount(
+      <CardCoupon>
+        <Typography primaryTitle as="span">
+          r7 Cupons
+        </Typography>
+        <CardCoupon.List>
+          {COUPON_DATA.map(({ id, name, url, logo, best_offer_text, anchor_text }) => (
+            <CardCoupon.Item key={id}>
+              <ConditionalLink target="_blank" title={anchor_text} href={url} data-partner={name}>
+                <CardCoupon.Content>
+                  <CardCoupon.Image logo={logo} alt={anchor_text} />
+                  <div>
+                    <Typography className="uppercase" fontSize="little" color="neutralLow">
+                      {name}
+                    </Typography>
+                    <Typography fontSize="xxxs" fontWeight="bold">
+                      {best_offer_text}
+                    </Typography>
+                  </div>
+                </CardCoupon.Content>
+              </ConditionalLink>
+            </CardCoupon.Item>
+          ))}
+        </CardCoupon.List>
+      </CardCoupon>,
+    )
+    cy.addDarkMode()
+    cy.matchImage()
+  })
 })

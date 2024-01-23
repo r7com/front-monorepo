@@ -10,13 +10,19 @@ describe('FontSizeControl', () => {
           <FontSizeControlDecrease />
         </div>
 
-        <article className="article-text-[calc(theme(fontSize.xxxs)_*_var(--font-size))]">
+        <article className="article-text-[calc(theme(fontSize.xxxs)_*_var(--font-size,_1))]">
           anderson
         </article>
       </ArticleProvider>,
     )
   })
+
   it('Should render Font size control', () => {
+    cy.matchImage()
+  })
+
+  it('Should render Font size control dark mode', () => {
+    cy.addDarkMode()
     cy.matchImage()
   })
 
