@@ -11,6 +11,7 @@ import {
   Guerra,
   TextOverPhoto,
   TitleWithBullets,
+  FiveVerticalNews,
 } from '@r7/ui-card'
 import { Bullet } from '@r7/ui-base-components'
 
@@ -270,7 +271,78 @@ export function UiCard() {
               }
             />
           }
-          renderSidebar={<SidebarBlock />}
+          renderSidebar={
+            <FiveVerticalNews>
+              <FiveVerticalNews.Title>Estrelando</FiveVerticalNews.Title>
+              <FiveVerticalNews.Cards>
+                <FiveVerticalNews.PrimaryItem>
+                  <FiveVerticalNews.ItemFigure>
+                    <img
+                      src="//img.r7.com/images/maiara-quiderolly-e-jo-25032023102338463?resize=254x145&crop=736x420 17 0&dimensions=254x145"
+                      alt="Jô e Maiára Quiderolly passam o primeiro ano do filho brigando"
+                      width="100%"
+                      height="auto"
+                    />
+                  </FiveVerticalNews.ItemFigure>
+                  <FiveVerticalNews.ItemTitle>
+                    noticia de teste principal do bloco lorem impsu
+                  </FiveVerticalNews.ItemTitle>
+                </FiveVerticalNews.PrimaryItem>
+                <FiveVerticalNews.SecondaryItem>
+                  <FiveVerticalNews.ItemFigure>
+                    <img
+                      src="//img.r7.com/images/maiara-quiderolly-e-jo-25032023102338463?resize=254x145&crop=736x420 17 0&dimensions=254x145"
+                      alt="Jô e Maiára Quiderolly passam o primeiro ano do filho brigando"
+                      width="100%"
+                      height="auto"
+                    />
+                  </FiveVerticalNews.ItemFigure>
+                  <FiveVerticalNews.ItemTitle>
+                    noticia de teste secundaria do bloco lorem impsu
+                  </FiveVerticalNews.ItemTitle>
+                </FiveVerticalNews.SecondaryItem>
+                <FiveVerticalNews.SecondaryItem>
+                  <FiveVerticalNews.ItemFigure>
+                    <img
+                      src="//img.r7.com/images/maiara-quiderolly-e-jo-25032023102338463?resize=254x145&crop=736x420 17 0&dimensions=254x145"
+                      alt="Jô e Maiára Quiderolly passam o primeiro ano do filho brigando"
+                      width="100%"
+                      height="auto"
+                    />
+                  </FiveVerticalNews.ItemFigure>
+                  <FiveVerticalNews.ItemTitle>
+                    noticia de teste secundaria do bloco lorem impsu
+                  </FiveVerticalNews.ItemTitle>
+                </FiveVerticalNews.SecondaryItem>
+                <FiveVerticalNews.SecondaryItem>
+                  <FiveVerticalNews.ItemFigure>
+                    <img
+                      src="//img.r7.com/images/maiara-quiderolly-e-jo-25032023102338463?resize=254x145&crop=736x420 17 0&dimensions=254x145"
+                      alt="Jô e Maiára Quiderolly passam o primeiro ano do filho brigando"
+                      width="100%"
+                      height="auto"
+                    />
+                  </FiveVerticalNews.ItemFigure>
+                  <FiveVerticalNews.ItemTitle>
+                    noticia de teste secundaria do bloco lorem impsu
+                  </FiveVerticalNews.ItemTitle>
+                </FiveVerticalNews.SecondaryItem>
+                <FiveVerticalNews.SecondaryItem>
+                  <FiveVerticalNews.ItemFigure>
+                    <img
+                      src="//img.r7.com/images/maiara-quiderolly-e-jo-25032023102338463?resize=254x145&crop=736x420 17 0&dimensions=254x145"
+                      alt="Jô e Maiára Quiderolly passam o primeiro ano do filho brigando"
+                      width="100%"
+                      height="auto"
+                    />
+                  </FiveVerticalNews.ItemFigure>
+                  <FiveVerticalNews.ItemTitle>
+                    noticia de teste secundaria do bloco lorem impsu
+                  </FiveVerticalNews.ItemTitle>
+                </FiveVerticalNews.SecondaryItem>
+              </FiveVerticalNews.Cards>
+            </FiveVerticalNews>
+          }
         />
 
         <SectionHeading>
