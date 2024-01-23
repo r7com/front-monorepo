@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.6](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-article-delivery-0.4.5...ui-article-delivery-0.4.6) (2024-01-22)
+
+### Bug Fixes
+
+- added contrast in all components ([9461321](https://gitlab.ir7.com.br/r7/front-monorepo/commit/9461321c9c512f5cae094ffcb9042798e69f29e3))
+
 ## [0.4.5](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-article-delivery-0.4.4...ui-article-delivery-0.4.5) (2024-01-18)
 
 ### Bug Fixes
