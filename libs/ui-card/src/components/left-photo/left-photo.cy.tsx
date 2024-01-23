@@ -216,12 +216,10 @@ describe(LeftPhoto.name, () => {
           <LeftPhoto>
             <LeftPhoto.Item>
               <LeftPhoto.Flex>
-                <LeftPhoto.Figure format="landscape">
+                <LeftPhoto.Figure imgSize="large" format="landscape">
                   <img
                     src="https://img.r7.com/images/humorista-juca-chaves-exclui-as-filhas-de-testamento-22012024182412502?dimensions=254x145"
                     alt="FGTS vai começar a ser pago com Pix a partir de 1º de março"
-                    width={238}
-                    height={149}
                   />
                 </LeftPhoto.Figure>
 
@@ -239,12 +237,10 @@ describe(LeftPhoto.name, () => {
 
             <LeftPhoto.Item>
               <LeftPhoto.Flex>
-                <LeftPhoto.Figure format="landscape">
+                <LeftPhoto.Figure imgSize="large" format="landscape">
                   <img
                     src="//img.r7.com/images/jojo-todynho-26122023134329195?resize=254x145"
                     alt="'Não posso ver esse cão', diz Luísa Sonza sobre Chico Moedas"
-                    width={238}
-                    height={149}
                   />
                 </LeftPhoto.Figure>
 
