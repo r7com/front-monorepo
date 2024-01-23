@@ -15,8 +15,8 @@ export default meta
 type Story = StoryObj<typeof LeftPhoto>
 
 export const TwoSquare: Story = {
-  render: () => (
-    <LeftPhoto>
+  render: ({ ...args }) => (
+    <LeftPhoto {...args}>
       <LeftPhoto.Item>
         <LeftPhoto.Flex>
           <LeftPhoto.Figure format="square">
@@ -64,7 +64,9 @@ export const TwoSquare: Story = {
       </LeftPhoto.Item>
     </LeftPhoto>
   ),
-  args: {},
+  args: {
+    gapMd: 'xxxs',
+  },
   parameters: {
     design: {
       type: 'figma',
