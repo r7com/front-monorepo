@@ -19,13 +19,7 @@ export default defineConfig({
     port: 4200,
     host: 'localhost',
     fs: {
-      allow: [
-        // search up for workspace root
-        searchForWorkspaceRoot(process.cwd()),
-        // your custom rules
-        '/libs/ui-base-components/src/fonts',
-        // '/path/to/custom/allow_file.demo',
-      ],
+      allow: [searchForWorkspaceRoot(process.cwd()), '/libs/ui-base-components/src/fonts'],
     },
   },
 
