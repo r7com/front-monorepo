@@ -5,7 +5,8 @@ export const variants = createVariants({
     fontSize: {
       small: 'card-text-xxxs card-leading-xs',
       medium: 'card-text-xxs card-leading-md',
-      large: 'card-text-sm card-leading-lg',
+      large:
+        'sm:card-text-xxs sm:card-leading-md md:card-text-xxs md:card-leading-md lg:card-text-sm lg:card-leading-lg',
     },
   },
 })
