@@ -209,6 +209,70 @@ describe(LeftPhoto.name, () => {
     })
   })
 
+  context('Two cards landscape photo large', () => {
+    beforeEach(() => {
+      cy.mount(
+        <div className="card-p-xxxs">
+          <LeftPhoto>
+            <LeftPhoto.Item>
+              <LeftPhoto.Flex>
+                <LeftPhoto.Figure imgSize="large" format="landscape">
+                  <img
+                    src="https://img.r7.com/images/humorista-juca-chaves-exclui-as-filhas-de-testamento-22012024182412502?dimensions=254x145"
+                    alt="FGTS vai começar a ser pago com Pix a partir de 1º de março"
+                  />
+                </LeftPhoto.Figure>
+
+                <LeftPhoto.TextWrapper>
+                  <Card.HatWrapper>
+                    <Card.HatTitle>FABÍOLA REIPERT</Card.HatTitle>
+                  </Card.HatWrapper>
+
+                  <LeftPhoto.Title fontSize="large">
+                    Humorista Juca Chaves exclui as filhas de testamento
+                  </LeftPhoto.Title>
+                </LeftPhoto.TextWrapper>
+              </LeftPhoto.Flex>
+            </LeftPhoto.Item>
+
+            <LeftPhoto.Item>
+              <LeftPhoto.Flex>
+                <LeftPhoto.Figure imgSize="large" format="landscape">
+                  <img
+                    src="//img.r7.com/images/jojo-todynho-26122023134329195?resize=254x145"
+                    alt="'Não posso ver esse cão', diz Luísa Sonza sobre Chico Moedas"
+                  />
+                </LeftPhoto.Figure>
+
+                <LeftPhoto.TextWrapper>
+                  <Card.HatWrapper>
+                    <Card.HatTitle>comentários maldosos</Card.HatTitle>
+                  </Card.HatWrapper>
+
+                  <LeftPhoto.Title fontSize="large">
+                    Jojo dispara contra críticas: 'Bonita é minha conta bancária'
+                  </LeftPhoto.Title>
+                </LeftPhoto.TextWrapper>
+              </LeftPhoto.Flex>
+            </LeftPhoto.Item>
+          </LeftPhoto>
+        </div>,
+      )
+    })
+
+    it('should render two cards - desktop', () => {
+      cy.viewport('macbook-16')
+      cy.findAllByRole('article').should('have.length', 2)
+      cy.matchImage()
+    })
+
+    it('should render two cards - mobile', () => {
+      cy.viewport('iphone-se2')
+      cy.findAllByRole('article').should('have.length', 2)
+      cy.matchImage()
+    })
+  })
+
   context('Three cards landscape small photo', () => {
     beforeEach(() => {
       cy.mount(
