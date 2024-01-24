@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.12.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.11.1...ui-card-0.12.0) (2024-01-23)
+
+### Features
+
+- **ui-card:** Five vertical news ([c153c34](https://gitlab.ir7.com.br/r7/front-monorepo/commit/c153c341d99f7a79d341c0a75138521106d78aee))
+
+## [0.11.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.11.0...ui-card-0.11.1) (2024-01-22)
+
+### Bug Fixes
+
+- added contrast in all components ([9461321](https://gitlab.ir7.com.br/r7/front-monorepo/commit/9461321c9c512f5cae094ffcb9042798e69f29e3))
+
 # [0.11.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.10.0...ui-card-0.11.0) (2024-01-19)
 
 # [0.10.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.9.0...ui-card-0.10.0) (2024-01-18)

@@ -1,6 +1,6 @@
 {
   "name": "@r7/ui-section-heading",
-  "version": "0.3.2",
+  "version": "0.3.4",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {

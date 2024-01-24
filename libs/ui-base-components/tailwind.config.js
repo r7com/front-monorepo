@@ -6,6 +6,7 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
   mode: 'jit',
   prefix: 'base-',
+  darkMode: ['class', '[class="dark"]'],
   corePlugins: {
     preflight: true,
   },
