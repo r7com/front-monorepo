@@ -72,7 +72,7 @@ describe('Breadcrumb', () => {
     })
   })
 
-  it.only('should render Breadcrumb dark mode', () => {
+  it('should render Breadcrumb dark mode', () => {
     cy.mount(
       <Breadcrumb>
         <Breadcrumb.List>
@@ -96,6 +96,32 @@ describe('Breadcrumb', () => {
 
     cy.addDarkMode()
     cy.viewport(1024, 768)
+    cy.matchImage()
+  })
+
+  it('should render Breadcrumb mobile dark mode', () => {
+    cy.mount(
+      <Breadcrumb>
+        <Breadcrumb.List>
+          {MENU_DATA.map(({ id, text, url, title }) => {
+            const lastItem = MENU_DATA[MENU_DATA.length - 1].id === id
+            return (
+              <Breadcrumb.Item key={id}>
+                <ConditionalLink
+                  href={url}
+                  title={`Ir para a página de ${title}`}
+                  aria-current={lastItem ? 'page' : 'false'}
+                >
+                  {text}
+                </ConditionalLink>
+              </Breadcrumb.Item>
+            )
+          })}
+        </Breadcrumb.List>
+      </Breadcrumb>,
+    )
+    cy.addDarkMode()
+    cy.viewport('iphone-xr')
     cy.matchImage()
   })
 })
