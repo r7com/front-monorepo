@@ -77,4 +77,16 @@ describe('Signature', () => {
     cy.viewport('iphone-se2')
     cy.matchImage()
   })
+
+  it('should render article header on desktop dark mode', () => {
+    cy.addDarkMode()
+    cy.viewport('macbook-11')
+    cy.matchImage()
+  })
+
+  it('should render article header on mobile dark mode', () => {
+    cy.addDarkMode()
+    cy.viewport('iphone-se2')
+    cy.matchImage()
+  })
 })

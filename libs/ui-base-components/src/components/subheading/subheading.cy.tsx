@@ -16,4 +16,19 @@ describe(Subheading.name, () => {
     cy.findAllByRole('heading').should('be.visible')
     cy.matchImage()
   })
+
+  it('should render subheading dark mode', () => {
+    cy.mount(
+      <>
+        <Subheading size="large" as="h2">
+          {text}
+        </Subheading>
+        <Subheading size="small" as="h4">
+          {text}
+        </Subheading>
+      </>,
+    )
+    cy.addDarkMode()
+    cy.matchImage()
+  })
 })
