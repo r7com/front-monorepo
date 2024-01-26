@@ -54,7 +54,7 @@ describe(Typography.name, () => {
     cy.mount(
       <>
         <Typography fontFamily="openSans">{text}</Typography>
-        <Typography fontFamily="playfair">{text}</Typography>
+        <Typography fontFamily="secondary">{text}</Typography>
       </>,
     )
     cy.findAllByText(text).each(element => {

@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.5.2](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.5.1...ui-header-delivery-2.5.2) (2024-01-23)
+
+### Features
+
+- changed sidebarLink color and header z-index ([db3fce0](https://gitlab.ir7.com.br/r7/front-monorepo/commit/db3fce04d3e0fb769e663065489e8daf997ef646))
+
 ## [2.5.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.5.0...ui-header-delivery-2.5.1) (2024-01-18)
 
 ### Bug Fixes

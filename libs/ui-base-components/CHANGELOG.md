@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.7](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.6...ui-base-components-0.6.7) (2024-01-22)
+
+### Bug Fixes
+
+- added contrast in all components ([9461321](https://gitlab.ir7.com.br/r7/front-monorepo/commit/9461321c9c512f5cae094ffcb9042798e69f29e3))
+
+### Reverts
+
+- reverting wrong tag ([3b2b09b](https://gitlab.ir7.com.br/r7/front-monorepo/commit/3b2b09b1db4be9c90125252b95024c22a98ca8c3))
+
 ## [0.6.6](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.5...ui-base-components-0.6.6) (2024-01-18)
 
 ### Features
