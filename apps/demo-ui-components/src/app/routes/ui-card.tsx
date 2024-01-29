@@ -2,7 +2,6 @@ import '@r7/ui-card/css'
 import '@r7/ui-layout/css'
 import '@r7/ui-section-heading/css'
 import { Container, Proportional, SpecialOne, SectionWrapper } from '@r7/ui-layout'
-import { SectionHeading } from '@r7/ui-section-heading'
 import {
   LeftPhoto,
   BreakingNews,
@@ -344,31 +343,6 @@ export function UiCard() {
             </FiveVerticalNews>
           }
         />
-
-        <SectionHeading>
-          <a href="/">
-            <SectionHeading.Image
-              src="https://img.r7.com/images/jr-24h-18112019115830166?resize=110x70&crop=200x127+0+37"
-              alt="Jornal da Record"
-            />
-          </a>
-
-          <SectionHeading.Line />
-
-          <SectionHeading.Tags>
-            <SectionHeading.Tag href="#" title="Christina Lemos">
-              Christina Lemos
-            </SectionHeading.Tag>
-
-            <SectionHeading.Tag href="#" title="Thiago Nolasco">
-              Thiago Nolasco
-            </SectionHeading.Tag>
-
-            <SectionHeading.Tag href="#" title="Luiz Fara Monteiro">
-              Luiz Fara Monteiro
-            </SectionHeading.Tag>
-          </SectionHeading.Tags>
-        </SectionHeading>
 
         <Proportional.Three>
           <ProportionalPhoto>
