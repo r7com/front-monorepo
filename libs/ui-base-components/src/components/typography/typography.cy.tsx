@@ -53,7 +53,7 @@ describe(Typography.name, () => {
   it('using fontFamily', () => {
     cy.mount(
       <>
-        <Typography fontFamily="openSans">{text}</Typography>
+        <Typography fontFamily="primary">{text}</Typography>
         <Typography fontFamily="secondary">{text}</Typography>
       </>,
     )
