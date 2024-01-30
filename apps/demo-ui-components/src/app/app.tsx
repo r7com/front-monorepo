@@ -9,6 +9,7 @@ import {
   UiBaseComponents,
   UiLayout,
   UiCard,
+  UiSection,
 } from './routes'
 import { MENU_DATA } from './mocks/MENU_DATA'
 import { SIDEBAR_DATA } from './mocks/SIDEBAR_DATA'
@@ -114,6 +115,7 @@ export function App() {
         <Route path="/ui-base-components" element={<UiBaseComponents />} />
         <Route path="/ui-layout" element={<UiLayout />} />
         <Route path="/ui-card" element={<UiCard />} />
+        <Route path="/ui-section" element={<UiSection />} />
       </Routes>
       <PrivacyBox />
       {/* END: routes */}

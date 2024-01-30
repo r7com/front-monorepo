@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.3](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-section-foot-0.2.2...ui-section-foot-0.2.3) (2024-01-29)
+
+### Bug Fixes
+
+- **section-line:** fixes the section-heading/foot-line css overwrite ([7aaea3b](https://gitlab.ir7.com.br/r7/front-monorepo/commit/7aaea3b7cf337ab510e352898854de0a49786fd1))
+
 ## [0.2.2](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-section-foot-0.2.1...ui-section-foot-0.2.2) (2023-12-12)
 
 ### Features

@@ -67,26 +67,6 @@ describe(`SectionHeading`, () => {
   })
 })
 
-describe(`SectionHeading - Title`, () => {
-  beforeEach(() => {
-    cy.mount(SectionHeadingTitle)
-  })
-
-  it('should match desktop image with text as title', () => {
-    cy.viewport('macbook-11')
-    cy.matchImage()
-  })
-
-  it('should match mobile image with text as title', () => {
-    cy.viewport('iphone-se2')
-    cy.matchImage()
-  })
-
-  it('should have a title when title is text', () => {
-    cy.findByRole('presentation').should('be.visible')
-  })
-})
-
 describe(`SectionHeading - Image`, () => {
   beforeEach(() => {
     cy.mount(SectionHeadingImage)
@@ -104,5 +84,37 @@ describe(`SectionHeading - Image`, () => {
 
   it('should have a image when title is image', () => {
     cy.findByRole('img').should('be.visible')
+  })
+})
+
+describe(`SectionHeading - Title`, () => {
+  beforeEach(() => {
+    cy.mount(SectionHeadingTitle)
+  })
+
+  it('should match desktop image with text as title', () => {
+    cy.viewport('macbook-11')
+    cy.matchImage()
+  })
+
+  it('should match mobile image with text as title', () => {
+    cy.viewport('iphone-se2')
+    cy.matchImage()
+  })
+
+  it('should match mobile image with text as title dark mode', () => {
+    cy.viewport('iphone-se2')
+    cy.addDarkMode()
+    cy.matchImage()
+  })
+
+  it('should match image with text as title dark mode', () => {
+    cy.viewport('macbook-11')
+    cy.addDarkMode()
+    cy.matchImage()
+  })
+
+  it('should have a title when title is text', () => {
+    cy.findByRole('presentation').should('be.visible')
   })
 })
