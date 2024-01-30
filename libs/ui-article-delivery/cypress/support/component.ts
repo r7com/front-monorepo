@@ -22,7 +22,6 @@ import '@testing-library/cypress/add-commands'
 import '@r7/ui-base-components/css'
 import '@r7/ui-base-components/fonts'
 import '../../src/style.css'
-// import '@r7/cypress'
 // add component testing only related command here, such as mount
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace

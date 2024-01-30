@@ -1,10 +1,12 @@
+import { clientSideVerify } from 'helpers/utils'
+
 function daysInMonth(): number {
   const date = new Date()
   return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate()
 }
 
-export function getDomain(local: { href: string } = window.location): string {
-  const hostname = new URL(local.href).hostname
+export function getDomain(href = clientSideVerify() && window.location.href) {
+  const hostname = new URL(href).hostname
   const newHost = hostname.replace(/^www\./, '').replace(/:\d+$/, '')
 
   return `.${newHost}`

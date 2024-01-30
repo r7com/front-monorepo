@@ -19,7 +19,7 @@ export const Default: Story = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/EMH8xJPwcYWJYP8DBYePpR/Desktop%3A-Votação?type=design&node-id=1108%3A74&mode=dev',
+      url: 'https://www.figma.com/file/KtCmCn0gZJFU7n5JqmnfEP/Componentes-de-Comunica%C3%A7%C3%A3o?type=design&node-id=2371-4349&mode=dev',
       accessToken: 'figd_sHs6Ap894w4C-OAFls7tuq0fMMROyue-8zQJ8hRE',
     },
   },
