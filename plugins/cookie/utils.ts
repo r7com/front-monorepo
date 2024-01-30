@@ -1,4 +1,4 @@
-import { clientSideVerify } from 'helpers/utils'
+import { clientSideVerify } from '@r7/helpers'
 
 function daysInMonth(): number {
   const date = new Date()
