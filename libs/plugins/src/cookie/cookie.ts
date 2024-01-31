@@ -1,12 +1,11 @@
-import { clientSideVerify } from '@r7/helpers'
-import { getDomain, getDuration } from './utils'
+import { getDomain, getDuration, isClientSide } from '@r7/helpers'
 
 type Unit = 'day' | 'month' | 'year'
 
 export class Cookie {
   /**
    * Set a cookie with given name, value, expiration date, and unit of expiration date
-   * @param {{ cname: string, cvalue: any, cdomain?: string, expiration?: number, unit?: Unit }}
+   * @param {{ cname: string, cvalue: string, cdomain?: string, expiration?: number, unit?: Unit }}
    */
   static set({
     cname,
@@ -27,7 +26,7 @@ export class Cookie {
 
     const cookie = `${cname}=${cvalue};expires=${date.toUTCString()};path=/;domain=${cdomain}`
 
-    clientSideVerify() && (document.cookie = cookie)
+    isClientSide() && (document.cookie = cookie)
   }
 
   /**
@@ -36,10 +35,10 @@ export class Cookie {
    * @return {string | null}
    */
   static get(cname: string): string | null {
-    const cookies = clientSideVerify() && document.cookie
+    const cookies = isClientSide() && document.cookie
     const cookieRX = new RegExp(`(?:^|; )${cname}=([^;]*)`)
 
-    const matches = cookies.match(cookieRX)
+    const matches = cookies && cookies.match(cookieRX)
 
     return matches ? decodeURIComponent(matches[1]) : null
   }

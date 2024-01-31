@@ -3,10 +3,14 @@ import { Button } from '../button'
 import { ConditionalLink } from '../conditional-link'
 import { Typography } from '../typography'
 import { variants } from './privacy-box.variants'
-import { Cookie, getDomain } from '@r7/plugins'
-import { isDevMode } from '@r7/helpers'
+import { Cookie } from '@r7/plugins'
+import { isDevMode, getDomain } from '@r7/helpers'
 
-export function PrivacyBox() {
+type PrivacyBoxProps = {
+  link: string
+}
+
+export function PrivacyBox({ link }: PrivacyBoxProps) {
   const [show, setShow] = useState<boolean>(false)
   const CNAME = 'r7_lgpd_accepted'
 
@@ -14,7 +18,7 @@ export function PrivacyBox() {
     Cookie.get(CNAME) ? setShow(false) : setShow(true)
   }, [])
 
-  function handleClick() {
+  function onClose() {
     Cookie.set({
       cname: CNAME,
       cvalue: 'true',
@@ -32,7 +36,7 @@ export function PrivacyBox() {
           Utilizamos cookies e tecnologia para aprimorar sua experiência de navegação de acordo com
           o
           <ConditionalLink
-            href="https://www.r7.com/termos-e-condicoes"
+            href={link}
             className="base-ml-quark base-underline base-text-brand-primary-500"
             target="_blank"
           >
@@ -41,7 +45,7 @@ export function PrivacyBox() {
           .
         </Typography>
         <Button
-          onClick={handleClick}
+          onClick={onClose}
           size="medium"
           className="base-mt-xxxs lg:base-mt-0 base-w-full lg:base-w-auto base-flex base-justify-center"
         >

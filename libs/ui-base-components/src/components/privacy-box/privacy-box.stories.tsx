@@ -15,7 +15,7 @@ type Story = StoryObj<typeof PrivacyBox>
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
-  render: () => <PrivacyBox />,
+  render: () => <PrivacyBox link="https://www.r7.com/termos-e-condicoes" />,
   parameters: {
     design: {
       type: 'figma',

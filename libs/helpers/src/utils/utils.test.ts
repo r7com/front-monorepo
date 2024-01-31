@@ -1,4 +1,15 @@
-import { getDomain, getDuration } from './utils'
+import { getDomain, getDuration, isDevMode } from './utils'
+
+describe('isDevMode', () => {
+  it('Shoud return if is dev mode', () => {
+    const dev2 = 'localhost'
+    const prod1 = 'r7.com'
+
+    expect(isDevMode()).toBe(true)
+    expect(isDevMode(dev2)).toBe(true)
+    expect(isDevMode(prod1)).toBe(false)
+  })
+})
 
 describe('getDomain', () => {
   it('should return the domain without www and port', () => {
