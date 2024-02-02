@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.8](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.7...ui-base-components-0.6.8) (2024-02-01)
+
+### Features
+
+- privacy-box ([1c7b1c4](https://gitlab.ir7.com.br/r7/front-monorepo/commit/1c7b1c41ed39af318344eb04f0956feaec43f5b8))
+
 ## [0.6.7](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.6...ui-base-components-0.6.7) (2024-01-22)
 
 ### Bug Fixes
