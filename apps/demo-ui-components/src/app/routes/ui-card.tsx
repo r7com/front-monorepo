@@ -11,6 +11,8 @@ import {
   TextOverPhoto,
   TitleWithBullets,
   FiveVerticalNews,
+  VerticalCarousel,
+  VERTICAL_CAROUSEL_MOCK,
 } from '@r7/ui-card'
 import { Bullet } from '@r7/ui-base-components'
 
@@ -36,6 +38,27 @@ export function UiCard() {
   return (
     <Container>
       <SectionWrapper>
+        <Proportional.One>
+          <VerticalCarousel>
+            <VerticalCarousel.ScrollContainer id="vertical-carousel-1">
+              {VERTICAL_CAROUSEL_MOCK.map(item => (
+                <VerticalCarousel.Item>
+                  <VerticalCarousel.Figure>
+                    <img src={item.img} alt={item.title} />
+                  </VerticalCarousel.Figure>
+
+                  <VerticalCarousel.TextWrapper>
+                    <VerticalCarousel.Title>{item.title}</VerticalCarousel.Title>
+                  </VerticalCarousel.TextWrapper>
+                </VerticalCarousel.Item>
+              ))}
+            </VerticalCarousel.ScrollContainer>
+
+            <VerticalCarousel.ArrowLeft aria-label="Anterior" aria-controls="vertical-carousel-1" />
+            <VerticalCarousel.ArrowRight aria-label="Próximo" aria-controls="vertical-carousel-1" />
+          </VerticalCarousel>
+        </Proportional.One>
+
         <Proportional.One>
           <BreakingNews
             theme="live"
