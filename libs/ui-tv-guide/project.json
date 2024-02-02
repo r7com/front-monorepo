@@ -5,21 +5,32 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "lint": { "executor": "@nx/eslint:lint", "outputs": ["{options.outputFile}"] },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
     "build": {
       "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
-      "options": { "outputPath": "dist/libs/ui-tv-guide" },
+      "options": {
+        "outputPath": "dist/libs/ui-tv-guide"
+      },
       "configurations": {
-        "development": { "mode": "development" },
-        "production": { "mode": "production" }
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": { "jestConfig": "libs/ui-tv-guide/jest.config.ts" }
+      "options": {
+        "jestConfig": "libs/ui-tv-guide/jest.config.ts"
+      }
     },
     "component-test": {
       "executor": "@nx/cypress:cypress",
@@ -36,19 +47,34 @@
         "ci": {
           "watch": false,
           "quiet": true,
-          "env": { "pluginVisualRegressionUpdateImages": true }
+          "env": {
+            "pluginVisualRegressionUpdateImages": true
+          }
         }
       }
     },
     "typecheck": {
       "executor": "nx:run-commands",
-      "options": { "command": "tsc --noEmit -p {projectRoot}/tsconfig.lib.json" }
+      "options": {
+        "command": "tsc --noEmit -p {projectRoot}/tsconfig.lib.json"
+      }
     },
-    "version": { "executor": "@jscutlery/semver:version", "options": { "preset": "angular" } },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular"
+      }
+    },
     "build-css-arc": {
       "executor": "nx:run-commands",
       "options": {
         "command": "node tools/add-empty-variable-css/add-empty-variable.js --inputFolder dist/{projectRoot}"
+      }
+    },
+    "watch-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx nx watch --projects={projectName} -- tailwindcss -c {projectRoot}/tailwind.config.js -i {projectRoot}/src/style.css -o ./dist/{projectRoot}/style.css --minify"
       }
     }
   }
