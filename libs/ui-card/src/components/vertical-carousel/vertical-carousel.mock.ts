@@ -27,4 +27,24 @@ export const VERTICAL_CAROUSEL_MOCK: Array<{ title: string; img: string }> = [
     title: 'Betim, na Grande BH, confirma duas mortes por dengue',
     img: 'https://img.r7.com/images/dengue-foco-mosquito-agua-parada-27012024120107586?dimensions=183x326',
   },
+  {
+    title: 'Confira sete truques para driblar o estresse e o cansaço mental',
+    img: 'https://img.r7.com/images/pessoa-estressada-precisando-aliviar-o-estresse-01022024201327527?dimensions=183x326',
+  },
+  {
+    title: 'Cidade do Nordeste é eleita a mais acolhedora do mundo; conheça',
+    img: 'https://img.r7.com/images/2015/10/27/9nepl7cxas_3s9rrgitas_file.jpg?dimensions=183x326',
+  },
+  {
+    title: 'O que fazer em Buenos Aires? Dicas para conhecer e aproveitar o destino',
+    img: 'https://img.r7.com/images/f57s47p4o4u72an0zzbeeljhf-01022024201627692?dimensions=183x326',
+  },
+  {
+    title: 'Veja quais tons de sombra você deve evitar para não parecer mais velha',
+    img: 'https://img.r7.com/images/make2-01022024190427626?dimensions=183x326',
+  },
+  {
+    title: 'Conheça o poder das fragrâncias na decoração de cada ambiente',
+    img: 'https://img.r7.com/images/bom-ar-01022024144310723?dimensions=183x326',
+  },
 ]
