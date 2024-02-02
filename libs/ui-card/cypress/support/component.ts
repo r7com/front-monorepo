@@ -17,6 +17,7 @@ import { mount } from 'cypress/react18'
 // Import commands.ts using ES2015 syntax:
 import '@frsource/cypress-plugin-visual-regression-diff'
 import './commands'
+import '@r7/global-commands'
 import '@testing-library/cypress/add-commands'
 import '@r7/ui-base-components/css'
 import '@r7/ui-base-components/fonts'
