@@ -1,6 +1,5 @@
 import { VerticalCarouselFigure } from './vertical-carousel-figure'
 import { getVerticalCarouselArrow } from './vertical-carousel-arrow'
-import { VerticalCarouselScrollContainer } from './vertical-carousel-scroll-container'
 import { VerticalCarouselTitle } from './vertical-carousel-title'
 import { VerticalCarouselTextWrapper } from './vertical-carousel-text-wrapper'
 import { VerticalCarouselItem } from './vertical-carousel-item'
@@ -18,7 +17,6 @@ export function VerticalCarousel({ children }: VerticalCarouselProps) {
 }
 
 VerticalCarousel.Item = VerticalCarouselItem
-VerticalCarousel.ScrollContainer = VerticalCarouselScrollContainer
 VerticalCarousel.Figure = VerticalCarouselFigure
 VerticalCarousel.TextWrapper = VerticalCarouselTextWrapper
 VerticalCarousel.Title = VerticalCarouselTitle

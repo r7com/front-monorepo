@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { VerticalCarousel } from './vertical-carousel'
-import { VERTICAL_CAROUSEL_MOCK } from './vertical-carousel.mock'
 
 const meta: Meta<typeof VerticalCarousel> = {
   title: 'ui-card/VerticalCarousel',
@@ -16,19 +15,19 @@ type Story = StoryObj<typeof VerticalCarousel>
 export const Default: Story = {
   render: () => (
     <VerticalCarousel>
-      <VerticalCarousel.ScrollContainer id="vertical-carousel-1">
-        {VERTICAL_CAROUSEL_MOCK.map(item => (
-          <VerticalCarousel.Item>
-            <VerticalCarousel.Figure>
-              <img src={item.img} alt={item.title} />
-            </VerticalCarousel.Figure>
-
-            <VerticalCarousel.TextWrapper>
-              <VerticalCarousel.Title>{item.title}</VerticalCarousel.Title>
-            </VerticalCarousel.TextWrapper>
-          </VerticalCarousel.Item>
-        ))}
-      </VerticalCarousel.ScrollContainer>
+      <VerticalCarousel.Item>
+        <VerticalCarousel.Figure>
+          <img
+            src="https://img.r7.com/images/dolar-03112023122719357?dimensions=183x326"
+            alt="Dólar cai em meio a receios com bancos dos Estados Unidos"
+          />
+        </VerticalCarousel.Figure>
+        <VerticalCarousel.TextWrapper>
+          <VerticalCarousel.Title>
+            Dólar cai em meio a receios com bancos dos Estados Unidos
+          </VerticalCarousel.Title>
+        </VerticalCarousel.TextWrapper>
+      </VerticalCarousel.Item>
 
       <VerticalCarousel.ArrowLeft aria-label="Anterior" aria-controls="vertical-carousel-1" />
       <VerticalCarousel.ArrowRight aria-label="Próximo" aria-controls="vertical-carousel-1" />

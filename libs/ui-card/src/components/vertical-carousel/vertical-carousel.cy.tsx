@@ -1,24 +1,23 @@
 import { VerticalCarousel } from './vertical-carousel'
-import { VERTICAL_CAROUSEL_MOCK } from './vertical-carousel.mock'
 
 describe(VerticalCarousel.name, () => {
   beforeEach(() => {
     cy.mount(
       <div className="card-max-w-[1000px] card-px-xxxs">
         <VerticalCarousel>
-          <VerticalCarousel.ScrollContainer id="vertical-carousel-1">
-            {VERTICAL_CAROUSEL_MOCK.map(item => (
-              <VerticalCarousel.Item>
-                <VerticalCarousel.Figure>
-                  <img src={item.img} alt={item.title} />
-                </VerticalCarousel.Figure>
-
-                <VerticalCarousel.TextWrapper>
-                  <VerticalCarousel.Title>{item.title}</VerticalCarousel.Title>
-                </VerticalCarousel.TextWrapper>
-              </VerticalCarousel.Item>
-            ))}
-          </VerticalCarousel.ScrollContainer>
+          <VerticalCarousel.Item>
+            <VerticalCarousel.Figure>
+              <img
+                src="https://img.r7.com/images/dolar-03112023122719357?dimensions=183x326"
+                alt="Dólar cai em meio a receios com bancos dos Estados Unidos"
+              />
+            </VerticalCarousel.Figure>
+            <VerticalCarousel.TextWrapper>
+              <VerticalCarousel.Title>
+                Dólar cai em meio a receios com bancos dos Estados Unidos
+              </VerticalCarousel.Title>
+            </VerticalCarousel.TextWrapper>
+          </VerticalCarousel.Item>
 
           <VerticalCarousel.ArrowLeft aria-label="Anterior" aria-controls="vertical-carousel-1" />
           <VerticalCarousel.ArrowRight aria-label="Próximo" aria-controls="vertical-carousel-1" />
@@ -29,13 +28,13 @@ describe(VerticalCarousel.name, () => {
 
   it('should render vertical carousel - desktop', () => {
     cy.viewport('macbook-16')
-    cy.findAllByRole('article').should('have.length', VERTICAL_CAROUSEL_MOCK.length)
+    cy.findAllByRole('article').should('have.length', 1)
     cy.matchImage()
   })
 
   it('should render vertical carousel - mobile', () => {
     cy.viewport('iphone-se2')
-    cy.findAllByRole('article').should('have.length', VERTICAL_CAROUSEL_MOCK.length)
+    cy.findAllByRole('article').should('have.length', 1)
     cy.matchImage()
   })
 
