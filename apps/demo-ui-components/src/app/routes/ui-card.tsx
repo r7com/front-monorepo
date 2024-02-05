@@ -49,7 +49,14 @@ export function UiCard() {
               <MostRead.Item key={i}>
                 <ConditionalLink href={url} title={description}>
                   <MostRead.Figure>
-                    <MostRead.Image img={img} description={description} />
+                    <img
+                      className="mb-xxxs object-contain rounded-md w-[141px] h-[141px]"
+                      src={img}
+                      loading="lazy"
+                      alt={description}
+                      height={141}
+                      width={141}
+                    />
                     <MostRead.Order order={order}>
                       <MostRead.Title>{sectioName}</MostRead.Title>
                       <MostRead.Description>{description}</MostRead.Description>

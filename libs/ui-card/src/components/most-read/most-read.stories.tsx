@@ -27,7 +27,14 @@ const MostReadBlock = () => {
             <MostRead.Item key={i}>
               <ConditionalLink href={url} title={description}>
                 <MostRead.Figure>
-                  <MostRead.Image img={img} description={description} />
+                  <img
+                    className="card-mb-xxxs card-object-contain card-rounded-md card-w-[141px] card-h-[141px]"
+                    src={img}
+                    loading="lazy"
+                    alt={description}
+                    height={141}
+                    width={141}
+                  />
                   <MostRead.Order order={order}>
                     <MostRead.Title>{sectioName}</MostRead.Title>
                     <MostRead.Description>{description}</MostRead.Description>
