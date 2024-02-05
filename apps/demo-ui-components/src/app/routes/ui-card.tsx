@@ -11,6 +11,7 @@ import {
   TextOverPhoto,
   TitleWithBullets,
   FiveVerticalNews,
+  VerticalCarousel,
 } from '@r7/ui-card'
 import { Bullet } from '@r7/ui-base-components'
 
@@ -36,6 +37,27 @@ export function UiCard() {
   return (
     <Container>
       <SectionWrapper>
+        <Proportional.One>
+          <VerticalCarousel>
+            <VerticalCarousel.Item>
+              <VerticalCarousel.Figure>
+                <img
+                  src="https://img.r7.com/images/dolar-03112023122719357?dimensions=183x326"
+                  alt="Dólar cai em meio a receios com bancos dos Estados Unidos"
+                />
+              </VerticalCarousel.Figure>
+              <VerticalCarousel.TextWrapper>
+                <VerticalCarousel.Title>
+                  Dólar cai em meio a receios com bancos dos Estados Unidos
+                </VerticalCarousel.Title>
+              </VerticalCarousel.TextWrapper>
+            </VerticalCarousel.Item>
+
+            <VerticalCarousel.ArrowLeft aria-label="Anterior" aria-controls="vertical-carousel-1" />
+            <VerticalCarousel.ArrowRight aria-label="Próximo" aria-controls="vertical-carousel-1" />
+          </VerticalCarousel>
+        </Proportional.One>
+
         <Proportional.One>
           <BreakingNews
             theme="live"

@@ -11,6 +11,7 @@ export const firstTest = `
 export const importCypress = [
   "import '@frsource/cypress-plugin-visual-regression-diff'",
   "import '@testing-library/cypress/add-commands'",
+  "import '@r7/global-commands'",
   "import '../../src/styles.css'",
   "import '@r7/ui-base-components/css'",
   "import '@r7/ui-base-components/fonts'",

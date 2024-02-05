@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.15.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.14.1...ui-card-0.15.0) (2024-02-02)
+
+### Features
+
+- privacy-box ([1c7b1c4](https://gitlab.ir7.com.br/r7/front-monorepo/commit/1c7b1c41ed39af318344eb04f0956feaec43f5b8))
+- **vertical-carousel-card:** new vertical carousel card ([9b5adfb](https://gitlab.ir7.com.br/r7/front-monorepo/commit/9b5adfbd3c761f0f28c7a0793a9e6c659270d7bf))
+
 ## [0.14.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.14.0...ui-card-0.14.1) (2024-01-29)
 
 # [0.14.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.13.0...ui-card-0.14.0) (2024-01-24)
