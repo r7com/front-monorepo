@@ -7,3 +7,9 @@
     background-color: #000;
   }
 }
+
+@layer base {
+  * {
+    @apply sheading-font-primary;
+  }
+}
