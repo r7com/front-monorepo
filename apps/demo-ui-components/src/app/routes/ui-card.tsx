@@ -12,8 +12,10 @@ import {
   TitleWithBullets,
   FiveVerticalNews,
   VerticalCarousel,
+  MostRead,
 } from '@r7/ui-card'
-import { Bullet } from '@r7/ui-base-components'
+import { Bullet, ConditionalLink, Typography } from '@r7/ui-base-components'
+import { MOST_READ_DATA } from '../mocks/MOST_READ_DATA'
 
 export function UiCard() {
   const LargeMainBlock = () => (
@@ -36,6 +38,29 @@ export function UiCard() {
 
   return (
     <Container>
+      <MostRead>
+        <Typography primaryTitle as="header">
+          Mais Lidas
+        </Typography>
+        <MostRead.List>
+          {MOST_READ_DATA.map(({ img, sectioName, description, url }, i) => {
+            const order = i + 1
+            return (
+              <MostRead.Item key={i}>
+                <ConditionalLink href={url} title={description}>
+                  <MostRead.Figure>
+                    <MostRead.Image img={img} description={description} />
+                    <MostRead.Order order={order}>
+                      <MostRead.Title>{sectioName}</MostRead.Title>
+                      <MostRead.Description>{description}</MostRead.Description>
+                    </MostRead.Order>
+                  </MostRead.Figure>
+                </ConditionalLink>
+              </MostRead.Item>
+            )
+          })}
+        </MostRead.List>
+      </MostRead>
       <SectionWrapper>
         <Proportional.One>
           <VerticalCarousel>
