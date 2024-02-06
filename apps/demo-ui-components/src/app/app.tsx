@@ -117,7 +117,7 @@ export function App() {
         <Route path="/ui-card" element={<UiCard />} />
         <Route path="/ui-section" element={<UiSection />} />
       </Routes>
-      <PrivacyBox />
+      <PrivacyBox link="https://www.google.com.br/" />
       {/* END: routes */}
     </>
   )
