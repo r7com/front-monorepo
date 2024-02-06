@@ -3,5 +3,5 @@ type MostReadListProps = {
 }
 
 export function MostReadList({ children }: MostReadListProps) {
-  return <ol className="card-flex card-overflow-x-auto">{children}</ol>
+  return <ol className="card-flex card-gap-x-xxs card-overflow-x-auto">{children}</ol>
 }

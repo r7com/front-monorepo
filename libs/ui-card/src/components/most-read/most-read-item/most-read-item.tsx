@@ -3,5 +3,5 @@ type MostReadItemProps = {
 }
 
 export function MostReadItem({ children }: MostReadItemProps) {
-  return <li className="card-mr-xxxs last:card-mr-0 card-z-20">{children}</li>
+  return <li className="card-z-20">{children}</li>
 }

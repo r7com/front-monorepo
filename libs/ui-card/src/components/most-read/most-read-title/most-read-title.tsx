@@ -3,9 +3,5 @@ type MostReadTitleProps = {
 }
 
 export function MostReadTitle({ children }: MostReadTitleProps) {
-  return (
-    <p className="card-text-little card-font-normal card-uppercase card-text-[#606060] card-mb-nano">
-      {children}
-    </p>
-  )
+  return <h4 className="card-text-neutral-low-500 card-font-semibold card-mb-xxxs">{children}</h4>
 }

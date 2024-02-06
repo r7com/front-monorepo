@@ -21,7 +21,7 @@ const MostReadBlock = () => {
         Mais Lidas
       </Typography>
       <MostRead.List>
-        {MOST_READ_DATA.map(({ img, sectioName, description, url }, i) => {
+        {MOST_READ_DATA.map(({ img, sectionName, description, url }, i) => {
           const order = i + 1
           return (
             <MostRead.Item key={i}>
@@ -36,8 +36,8 @@ const MostReadBlock = () => {
                     width={141}
                   />
                   <MostRead.Order order={order}>
-                    <MostRead.Title>{sectioName}</MostRead.Title>
-                    <MostRead.Description>{description}</MostRead.Description>
+                    <MostRead.Hat>{sectionName}</MostRead.Hat>
+                    <MostRead.Title>{description}</MostRead.Title>
                   </MostRead.Order>
                 </MostRead.Figure>
               </ConditionalLink>
