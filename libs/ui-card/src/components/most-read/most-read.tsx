@@ -4,6 +4,7 @@ import { MostReadItem } from './most-read-item'
 import { MostReadList } from './most-read-list'
 import { MostReadOrder } from './most-read-order'
 import { MostReadHat } from './most-read-hat'
+import { MostReadLink } from './most-read-link'
 
 export type MostReadProps = {
   children: React.ReactNode
@@ -21,5 +22,6 @@ MostRead.Item = MostReadItem
 MostRead.List = MostReadList
 MostRead.Title = MostReadTitle
 MostRead.Hat = MostReadHat
+MostRead.Link = MostReadLink
 MostRead.Figure = MostReadFigure
 MostRead.Order = MostReadOrder

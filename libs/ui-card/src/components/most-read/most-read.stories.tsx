@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { MostRead, MostReadProps } from '.'
-import { ConditionalLink, Typography } from '@r7/ui-base-components'
+import { Typography } from '@r7/ui-base-components'
 import { MOST_READ_DATA } from './mock/MOST_READ_DATA'
 
 const meta: Meta<MostReadProps> = {
@@ -25,22 +25,23 @@ const MostReadBlock = () => {
           const order = i + 1
           return (
             <MostRead.Item key={i}>
-              <ConditionalLink href={url} title={description}>
+              <MostRead.Link url={url} title={description}>
                 <MostRead.Figure>
                   <img
-                    className="card-mb-xxxs card-object-contain card-rounded-md card-w-[141px] card-h-[141px]"
+                    className="mb-xxxs"
                     src={img}
                     loading="lazy"
                     alt={description}
                     height={141}
                     width={141}
+                    style={{ width: '141px', height: '141px' }}
                   />
-                  <MostRead.Order order={order}>
-                    <MostRead.Hat>{sectionName}</MostRead.Hat>
-                    <MostRead.Title>{description}</MostRead.Title>
-                  </MostRead.Order>
                 </MostRead.Figure>
-              </ConditionalLink>
+                <MostRead.Order order={order}>
+                  <MostRead.Hat>{sectionName}</MostRead.Hat>
+                  <MostRead.Title>{description}</MostRead.Title>
+                </MostRead.Order>
+              </MostRead.Link>
             </MostRead.Item>
           )
         })}

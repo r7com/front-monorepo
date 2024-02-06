@@ -5,9 +5,5 @@ type MostReadFigureProps = {
 }
 
 export function MostReadFigure({ children }: MostReadFigureProps) {
-  return (
-    <Card.Figure format="custom" className="card-block card-w-[141px] card-mt-xxxs">
-      {children}
-    </Card.Figure>
-  )
+  return <Card.Figure className="card-block card-mb-xxxs">{children}</Card.Figure>
 }
