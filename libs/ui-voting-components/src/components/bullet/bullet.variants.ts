@@ -4,7 +4,7 @@ export const variants = createVariants({
   slots: {
     base: 'flex items-center gap-quark p-xxxs',
     dotVariant: 'w-nano h-nano rounded-circular',
-    textVariant: 'text-dark-high-500 font-open-sans text-xxxs',
+    textVariant: 'text-dark-high-500 font-primary text-xxxs',
   },
   variants: {
     variant: {
