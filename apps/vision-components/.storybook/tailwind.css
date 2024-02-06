@@ -6,7 +6,4 @@
   body {
     @apply dark:bg-agerating-18anos-500;
   }
-  * {
-    @apply font-primary;
-  }
 }
