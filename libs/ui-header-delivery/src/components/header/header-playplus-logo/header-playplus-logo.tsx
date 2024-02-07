@@ -16,17 +16,15 @@ export function HeaderPlayPlusLogo({
 }: HeaderPlayPlusLogoProps) {
   return (
     <div className={variants({ color })}>
-      <span className="lg:header-hidden">
-        <a href={link} title="PlayPlus">
-          <img aria-labelledby="logo-playplus" src={logoUrl} alt={alt} width={36} height={40} />
+      <a href={link} title="PlayPlus">
+        <img aria-labelledby="logo-playplus" src={logoUrl} alt={alt} width={91} height={24} />
 
-          {isHome && (
-            <h1 id="logo-playplus" className="header-sr-only">
-              playplus.com
-            </h1>
-          )}
-        </a>
-      </span>
+        {isHome && (
+          <h1 id="logo-playplus" className="header-sr-only">
+            playplus.com
+          </h1>
+        )}
+      </a>
     </div>
   )
 }
