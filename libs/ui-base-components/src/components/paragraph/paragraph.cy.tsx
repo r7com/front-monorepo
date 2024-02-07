@@ -43,7 +43,7 @@ describe(Paragraph.name, () => {
   it('using fontFamily', () => {
     cy.mount(
       <>
-        <Paragraph fontFamily="openSans">{text}</Paragraph>
+        <Paragraph fontFamily="primary">{text}</Paragraph>
         <Paragraph fontFamily="secondary">{text}</Paragraph>
       </>,
     )
