@@ -50,12 +50,42 @@ export function UiArticleDelivery() {
         </AccessibilityBar>
         <SocialShare>
           <SocialShare.List>
-            <SocialShare.Item name="facebook" link="#facebook" title="facebook" />
-            <SocialShare.Item name="linkedin" link="#linkedin" title="linkedin" />
-            <SocialShare.Item name="twitter" link="#twitter" title="twitter" />
-            <SocialShare.Item name="whatsapp" link="#whatsapp" title="whatsapp" />
-            <SocialShare.Item name="googleNews" link="#googlenews" title="google-news" />
-            <SocialShare.Item name="share" link="#share" title="share" />
+            <SocialShare.Item
+              name="facebook"
+              link="https://esportes.r7.com"
+              title="facebook"
+              position="topo"
+            />
+            <SocialShare.Item
+              name="linkedin"
+              link="https://esportes.r7.com"
+              title="linkedin"
+              position="topo"
+            />
+            <SocialShare.Item
+              name="twitter"
+              link="https://esportes.r7.com"
+              title="twitter"
+              position="topo"
+            />
+            <SocialShare.Item
+              name="whatsapp"
+              link="https://esportes.r7.com"
+              title="whatsapp"
+              position="topo"
+            />
+            <SocialShare.Item
+              name="googleNews"
+              link="https://esportes.r7.com"
+              title="google-news"
+              position="topo"
+            />
+            <SocialShare.Item
+              name="share"
+              link="https://esportes.r7.com"
+              title="share"
+              position="topo"
+            />
           </SocialShare.List>
         </SocialShare>
         <Breadcrumb>
