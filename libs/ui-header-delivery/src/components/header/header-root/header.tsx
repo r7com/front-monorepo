@@ -6,6 +6,7 @@ import { HeaderSearchToggle } from '../header-search-toggle/header-search-toggle
 import { HeaderSocialList } from '../header-social-list/header-social-list'
 import { HeaderSocialItem } from '../header-social-item/header-social-item'
 import { HeaderFixed } from '../header-fixed/header-fixed'
+import { HeaderPlayPlusLogo } from '../header-playplus-logo/header-playplus-logo'
 
 export type HeaderProps = {
   children: React.ReactNode
@@ -22,6 +23,7 @@ Header.MainSection = HeaderMainSection
 Header.Section = HeaderSection
 
 Header.Logo = HeaderLogo
+Header.PlayPlusLogo = HeaderPlayPlusLogo
 Header.Search = HeaderSearch
 Header.SearchToggle = HeaderSearchToggle
 Header.SocialList = HeaderSocialList

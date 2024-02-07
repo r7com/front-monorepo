@@ -18,6 +18,18 @@ const CompleteHeader = (
         <Sidebar.Toggle>menu</Sidebar.Toggle>
         <Sidebar>
           <Sidebar.Search />
+          <Sidebar.Category title={'Conheça também'}>
+            <Sidebar.List label={'list'}>
+              <Sidebar.Item>
+                <Header.PlayPlusLogo
+                  alt="PlayPlus"
+                  logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1707322344315.svg"
+                  link="https://www.playplus.com/home"
+                  color="colorful"
+                />
+              </Sidebar.Item>
+            </Sidebar.List>
+          </Sidebar.Category>
           {SIDEBAR_DATA.map(({ category, data, id }) => {
             return (
               <Sidebar.Category key={id} title={category}>
@@ -69,6 +81,12 @@ const CompleteHeader = (
             })}
           </Menu.List>
         </Menu>
+        <Header.PlayPlusLogo
+          alt="PlayPLus"
+          link="https://www.playplus.com/home"
+          logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1707335463663.svg"
+          color="white"
+        />
         <Header.SocialList>
           <Header.SocialItem socialName="facebook" socialUrl="https://www.facebook.com/portalr7" />
           <Header.SocialItem socialName="twitter" socialUrl="https://twitter.com/portalr7" />
