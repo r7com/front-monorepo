@@ -22,7 +22,6 @@ export const variants = createVariants({
       bold: 'base-font-bold',
     },
     fontFamily: {
-      openSans: 'base-font-open-sans',
       secondary: 'base-font-secondary',
       primary: 'base-font-primary',
     },

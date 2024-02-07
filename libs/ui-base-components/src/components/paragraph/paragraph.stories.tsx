@@ -26,7 +26,7 @@ export const Default: Story = {
     fontWeight: 'light',
     color: 'neutralLow',
     fontSize: 'xxxs',
-    fontFamily: 'openSans',
+    fontFamily: 'primary',
   },
   parameters: {
     design: {
