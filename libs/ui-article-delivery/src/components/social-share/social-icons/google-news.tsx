@@ -12,7 +12,6 @@ export function GoogleNewsIcon({ color = 'primary' }: SocialIconProps) {
 
   return (
     <ConditionalLink
-      download
       target="_blank"
       href="https://news.google.com/publications/CAAqBwgKMKqrkQswvPqlAw?ceid=BR:pt-419&oc=3&hl=pt-BR&gl=BR"
       title="Acesse o google news"
