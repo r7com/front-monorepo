@@ -34,31 +34,37 @@ const ArticleHeaderDemo = () => (
         <SocialShare>
           <SocialShare.List>
             <SocialShare.Item
+              position="topo"
               link={'https://esportes.r7.com'}
               title="Lorem ipsum dolor sit amet, consectetur adipiscing elit tortor."
               name="twitter"
             />
             <SocialShare.Item
+              position="topo"
               link={'https://esportes.r7.com'}
               title="Lorem ipsum dolor sit amet, consectetur adipiscing elit tortor."
               name="facebook"
             />
             <SocialShare.Item
+              position="topo"
               link={'https://esportes.r7.com'}
               title="Lorem ipsum dolor sit amet, consectetur adipiscing elit tortor."
               name="linkedin"
             />
             <SocialShare.Item
+              position="topo"
               link={'https://esportes.r7.com'}
               title="Lorem ipsum dolor sit amet, consectetur adipiscing elit tortor."
               name="whatsapp"
             />
             <SocialShare.Item
+              position="topo"
               link={'https://esportes.r7.com'}
               title="Lorem ipsum dolor sit amet, consectetur adipiscing elit tortor."
               name="googleNews"
             />
             <SocialShare.Item
+              position="topo"
               link={'https://esportes.r7.com'}
               title="Lorem ipsum dolor sit amet, consectetur adipiscing elit tortor."
               name="share"
