@@ -1,5 +1,6 @@
 import { SocialIconVariants } from '../social-icons/social-icons.variants'
 import { SocialItemVariants, variants } from './social-item.variants'
+import { SocialIconProps } from '../social-icons/types'
 
 import {
   FacebookIcon,
@@ -12,10 +13,9 @@ import {
 
 export type SocialItemProps = {
   name: 'facebook' | 'twitter' | 'linkedin' | 'whatsapp' | 'googleNews' | 'share'
-  link?: string
-  title?: string
 } & SocialIconVariants &
-  SocialItemVariants
+  SocialItemVariants &
+  SocialIconProps
 
 export function SocialItem({
   color = 'primary',
@@ -23,6 +23,7 @@ export function SocialItem({
   name,
   link,
   title,
+  position,
 }: SocialItemProps) {
   const IconComponent = {
     facebook: FacebookIcon,
@@ -35,7 +36,7 @@ export function SocialItem({
 
   return (
     <li className={variants({ shape })}>
-      <IconComponent color={color} link={link} title={title} />
+      <IconComponent color={color} link={link} title={title} position={position} />
     </li>
   )
 }
