@@ -5,12 +5,17 @@ describe(SocialShare.name, () => {
     cy.mount(
       <SocialShare>
         <SocialShare.List>
-          <SocialShare.Item name="facebook" link="#facebook" title="facebook" />
-          <SocialShare.Item name="linkedin" link="#linkedin" title="linkedin" />
-          <SocialShare.Item name="twitter" link="#twitter" title="twitter" />
-          <SocialShare.Item name="whatsapp" link="#whatsapp" title="whatsapp" />
-          <SocialShare.Item name="googleNews" link="#googlenews" title="google-news" />
-          <SocialShare.Item name="share" link="#share" title="share" />
+          <SocialShare.Item position="topo" name="facebook" link="#facebook" title="facebook" />
+          <SocialShare.Item position="topo" name="linkedin" link="#linkedin" title="linkedin" />
+          <SocialShare.Item position="topo" name="twitter" link="#twitter" title="twitter" />
+          <SocialShare.Item position="topo" name="whatsapp" link="#whatsapp" title="whatsapp" />
+          <SocialShare.Item
+            position="topo"
+            name="googleNews"
+            link="#googlenews"
+            title="google-news"
+          />
+          <SocialShare.Item position="topo" name="share" link="#share" title="share" />
         </SocialShare.List>
       </SocialShare>,
     )
@@ -93,12 +98,17 @@ describe(SocialShare.name, () => {
     cy.mount(
       <SocialShare>
         <SocialShare.List>
-          <SocialShare.Item name="facebook" link="#facebook" title="facebook" />
-          <SocialShare.Item name="linkedin" link="#linkedin" title="linkedin" />
-          <SocialShare.Item name="twitter" link="#twitter" title="twitter" />
-          <SocialShare.Item name="whatsapp" link="#whatsapp" title="whatsapp" />
-          <SocialShare.Item name="googleNews" link="#googlenews" title="google-news" />
-          <SocialShare.Item name="share" link="#share" title="share" />
+          <SocialShare.Item position="topo" name="facebook" link="#facebook" title="facebook" />
+          <SocialShare.Item position="topo" name="linkedin" link="#linkedin" title="linkedin" />
+          <SocialShare.Item position="topo" name="twitter" link="#twitter" title="twitter" />
+          <SocialShare.Item position="topo" name="whatsapp" link="#whatsapp" title="whatsapp" />
+          <SocialShare.Item
+            position="topo"
+            name="googleNews"
+            link="#googlenews"
+            title="google-news"
+          />
+          <SocialShare.Item position="topo" name="share" link="#share" title="share" />
         </SocialShare.List>
       </SocialShare>,
     )

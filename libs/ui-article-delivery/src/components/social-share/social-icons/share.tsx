@@ -3,15 +3,24 @@ import { useState } from 'react'
 import { variants } from './social-icons.variants'
 import { SocialIconProps } from './types'
 import { SvgIcon, IconButton } from '@r7/ui-base-components'
+import { shareParams } from '../utils/sharer'
 
-export function ShareIcon({ color, link = '' }: SocialIconProps) {
+export function ShareIcon({ color, link, position }: SocialIconProps) {
   const { shareSlot } = variants({ color })
 
   const [showTooltip, setShowTooltip] = useState(false)
   const [, setClipboardValue] = useCopyToClipboard()
 
   const copyClipboardFeedback = () => {
-    setClipboardValue(link)
+    setClipboardValue(
+      decodeURIComponent(
+        shareParams({
+          link,
+          utm_source: 'share',
+          utm_campaign: position,
+        }),
+      ),
+    )
     setShowTooltip(() => true)
 
     const timeout = setTimeout(() => {
