@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.5.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-article-delivery-0.4.6...ui-article-delivery-0.5.0) (2024-02-08)
+
+### Features
+
+- privacy-box ([1c7b1c4](https://gitlab.ir7.com.br/r7/front-monorepo/commit/1c7b1c41ed39af318344eb04f0956feaec43f5b8))
+
 ## [0.4.6](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-article-delivery-0.4.5...ui-article-delivery-0.4.6) (2024-01-22)
 
 ### Bug Fixes

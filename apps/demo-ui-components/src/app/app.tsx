@@ -15,6 +15,7 @@ import { MENU_DATA } from './mocks/MENU_DATA'
 import { SIDEBAR_DATA } from './mocks/SIDEBAR_DATA'
 import { Header, Menu, Sidebar } from '@r7/ui-header-delivery'
 import { ArticleProvider } from '@r7/ui-article-delivery'
+import { PrivacyBox } from '@r7/ui-base-components'
 export function App() {
   return (
     <>
@@ -30,6 +31,20 @@ export function App() {
             <Sidebar.Toggle>menu</Sidebar.Toggle>
             <Sidebar>
               <Sidebar.Search />
+
+              <Sidebar.Category title={'Conheça também'}>
+                <Sidebar.List label={'list'}>
+                  <Sidebar.Item>
+                    <Header.PlayPlusLogo
+                      alt="PlayPlus"
+                      logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1707322344315.svg"
+                      link="https://www.playplus.com/home"
+                      color="colorful"
+                    />
+                  </Sidebar.Item>
+                </Sidebar.List>
+              </Sidebar.Category>
+
               {SIDEBAR_DATA.map(({ category, data, id }) => {
                 return (
                   <Sidebar.Category key={id} title={category}>
@@ -81,6 +96,12 @@ export function App() {
                 })}
               </Menu.List>
             </Menu>
+            <Header.PlayPlusLogo
+              alt="PlayPLus"
+              link="https://www.playplus.com/home"
+              logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1707335463663.svg"
+              color="white"
+            />
             <Header.SocialList>
               <Header.SocialItem
                 socialName="facebook"
@@ -116,6 +137,7 @@ export function App() {
         <Route path="/ui-card" element={<UiCard />} />
         <Route path="/ui-section" element={<UiSection />} />
       </Routes>
+      <PrivacyBox link="https://www.google.com.br/" />
       {/* END: routes */}
     </>
   )

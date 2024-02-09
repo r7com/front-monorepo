@@ -11,8 +11,11 @@ import {
   TextOverPhoto,
   TitleWithBullets,
   FiveVerticalNews,
+  VerticalCarousel,
+  MostRead,
 } from '@r7/ui-card'
-import { Bullet } from '@r7/ui-base-components'
+import { Bullet, Typography } from '@r7/ui-base-components'
+import { MOST_READ_DATA } from '../mocks/MOST_READ_DATA'
 
 export function UiCard() {
   const LargeMainBlock = () => (
@@ -35,7 +38,59 @@ export function UiCard() {
 
   return (
     <Container>
+      <MostRead>
+        <Typography primaryTitle as="header">
+          Mais Lidas
+        </Typography>
+        <MostRead.List>
+          {MOST_READ_DATA.map(({ img, sectionName, description, url }, i) => {
+            const order = i + 1
+            return (
+              <MostRead.Item key={i}>
+                <MostRead.Link url={url} title={description}>
+                  <MostRead.Figure>
+                    <img
+                      className="mb-xxxs"
+                      src={img}
+                      loading="lazy"
+                      alt={description}
+                      height={141}
+                      width={141}
+                      style={{ width: '141px', height: '141px' }}
+                    />
+                  </MostRead.Figure>
+                  <MostRead.Order order={order}>
+                    <MostRead.Hat>{sectionName}</MostRead.Hat>
+                    <MostRead.Title>{description}</MostRead.Title>
+                  </MostRead.Order>
+                </MostRead.Link>
+              </MostRead.Item>
+            )
+          })}
+        </MostRead.List>
+      </MostRead>
       <SectionWrapper>
+        <Proportional.One>
+          <VerticalCarousel>
+            <VerticalCarousel.Item>
+              <VerticalCarousel.Figure>
+                <img
+                  src="https://img.r7.com/images/dolar-03112023122719357?dimensions=183x326"
+                  alt="Dólar cai em meio a receios com bancos dos Estados Unidos"
+                />
+              </VerticalCarousel.Figure>
+              <VerticalCarousel.TextWrapper>
+                <VerticalCarousel.Title>
+                  Dólar cai em meio a receios com bancos dos Estados Unidos
+                </VerticalCarousel.Title>
+              </VerticalCarousel.TextWrapper>
+            </VerticalCarousel.Item>
+
+            <VerticalCarousel.ArrowLeft aria-label="Anterior" aria-controls="vertical-carousel-1" />
+            <VerticalCarousel.ArrowRight aria-label="Próximo" aria-controls="vertical-carousel-1" />
+          </VerticalCarousel>
+        </Proportional.One>
+
         <Proportional.One>
           <BreakingNews
             theme="live"
