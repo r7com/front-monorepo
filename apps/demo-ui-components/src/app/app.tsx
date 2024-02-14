@@ -10,6 +10,7 @@ import {
   UiLayout,
   UiCard,
   UiSection,
+  UiTvGuide,
 } from './routes'
 import { MENU_DATA } from './mocks/MENU_DATA'
 import { SIDEBAR_DATA } from './mocks/SIDEBAR_DATA'
@@ -136,6 +137,7 @@ export function App() {
         <Route path="/ui-layout" element={<UiLayout />} />
         <Route path="/ui-card" element={<UiCard />} />
         <Route path="/ui-section" element={<UiSection />} />
+        <Route path="/ui-tv-guide" element={<UiTvGuide />} />
       </Routes>
       <PrivacyBox link="https://www.google.com.br/" />
       {/* END: routes */}
