@@ -1,2 +1,2 @@
-export * from './components/ui-tv-guide'
-export * from './styles/styles'
+export * from './styles/style'
+export * from './components'

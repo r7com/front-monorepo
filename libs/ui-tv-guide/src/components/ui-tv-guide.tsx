@@ -1,12 +1,17 @@
-/* eslint-disable-next-line */
-export interface UiTvGuideProps {}
+import { TvGuideButton } from './tv-guide-button'
+import { TvGuideCard } from './tv-guide-card'
+import { TvGuideFigure } from './tv-guide-figure'
+import { TvGuideTime } from './tv-guide-time'
 
-export function UiTvGuide(props: UiTvGuideProps) {
-  return (
-    <div>
-      <h1>Welcome to UiTvGuide!</h1>
-    </div>
-  )
+type TvGuideProps = {
+  children: React.ReactNode
 }
 
-export default UiTvGuide
+export function TvGuide({ children }: TvGuideProps) {
+  return <div className="tv-flex tv-flex-col tv-gap-xxxs">{children}</div>
+}
+
+TvGuide.Figure = TvGuideFigure
+TvGuide.Time = TvGuideTime
+TvGuide.Button = TvGuideButton
+TvGuide.Card = TvGuideCard
