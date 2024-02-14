@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.16.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.15.0...ui-card-0.16.0) (2024-02-09)
+
+### Features
+
+- created most read component ([eda4a56](https://gitlab.ir7.com.br/r7/front-monorepo/commit/eda4a56338fae5716afadcfd078b3156c486a0cc))
+
 # [0.15.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.14.1...ui-card-0.15.0) (2024-02-02)
 
 ### Features
