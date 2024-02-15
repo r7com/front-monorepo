@@ -1,14 +1,15 @@
-import { Grid } from '../grid'
-import { Aside } from './aside'
-import { Main } from './main'
+import { ArticleGrid } from './article-grid'
+import { ArticleAside } from './article-aside'
+import { ArticleMain } from './article-main'
 
 type ArticleProps = {
   children: React.ReactNode
 }
 
 export function Article({ children }: ArticleProps) {
-  return <Grid>{children}</Grid>
+  return <div className="layout-gap-xs layout-grid">{children}</div>
 }
 
-Article.Main = Main
-Article.Aside = Aside
+Article.Main = ArticleMain
+Article.Aside = ArticleAside
+Article.Grid = ArticleGrid

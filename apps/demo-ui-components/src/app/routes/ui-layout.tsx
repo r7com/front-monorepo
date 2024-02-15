@@ -34,13 +34,15 @@ export function UiLayout() {
     <Container>
       <SectionWrapper>
         <Article>
-          <Article.Main>
-            <LargeMainBlock />
-          </Article.Main>
-          <Article.Aside>
-            <SidebarBlock />
-            <SidebarBlock />
-          </Article.Aside>
+          <Article.Grid>
+            <Article.Main>
+              <LargeMainBlock />
+            </Article.Main>
+            <Article.Aside>
+              <SidebarBlock />
+              <SidebarBlock />
+            </Article.Aside>
+          </Article.Grid>
         </Article>
         <SpecialOne
           renderMain={

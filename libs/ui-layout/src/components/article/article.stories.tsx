@@ -4,13 +4,15 @@ import { LargeMainBlock, SidebarBlock } from './mocks/mocks'
 
 const ArticleBlock = () => (
   <Article>
-    <Article.Main>
-      <LargeMainBlock />
-    </Article.Main>
-    <Article.Aside>
-      <SidebarBlock />
-      <SidebarBlock />
-    </Article.Aside>
+    <Article.Grid>
+      <Article.Main>
+        <LargeMainBlock />
+      </Article.Main>
+      <Article.Aside>
+        <SidebarBlock />
+        <SidebarBlock />
+      </Article.Aside>
+    </Article.Grid>
   </Article>
 )
 
