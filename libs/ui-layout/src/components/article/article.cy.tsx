@@ -20,8 +20,8 @@ describe('Article', () => {
 
   it('should render Article on Desktop', () => {
     cy.viewport('macbook-11')
-    cy.findAllByText(/Large Main Block/i)
-    cy.findAllByText(/Sidebar Block/i)
+    cy.findAllByText(/Large Main Block/i).should('be.visible')
+    cy.findAllByText(/Sidebar Block/i).should('be.visible')
     cy.matchImage()
   })
 
