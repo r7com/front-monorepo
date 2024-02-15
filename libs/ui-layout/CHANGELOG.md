@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [0.6.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.5.0...ui-layout-0.6.0) (2024-02-15)
+
+### Features
+
+- created article-grid ([aea85c5](https://gitlab.ir7.com.br/r7/front-monorepo/commit/aea85c5262d414a20825f2bcaa5a8cd16fc56cb8))
+
 # [0.5.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.4.0...ui-layout-0.5.0) (2024-01-17)
 
 ### Features
