@@ -1,19 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Article } from './article'
 import { LargeMainBlock, SidebarBlock } from './mocks/mocks'
+import { Container } from '../container'
 
 const ArticleBlock = () => (
-  <Article>
-    <Article.Grid>
-      <Article.Main>
-        <LargeMainBlock />
-      </Article.Main>
-      <Article.Aside>
-        <SidebarBlock />
-        <SidebarBlock />
-      </Article.Aside>
-    </Article.Grid>
-  </Article>
+  <Container>
+    <Article>
+      <Article.Grid>
+        <Article.Main>
+          <LargeMainBlock />
+        </Article.Main>
+        <Article.Aside>
+          <SidebarBlock />
+          <SidebarBlock />
+        </Article.Aside>
+      </Article.Grid>
+    </Article>
+  </Container>
 )
 
 const meta: Meta<typeof ArticleBlock> = {

@@ -1,20 +1,23 @@
 import { Article } from './index'
 import { LargeMainBlock, SidebarBlock } from './mocks/mocks'
+import { Container } from '../container'
 
 describe('Article', () => {
   beforeEach(() => {
     cy.mount(
-      <Article>
-        <Article.Grid>
-          <Article.Main>
-            <LargeMainBlock />
-          </Article.Main>
-          <Article.Aside>
-            <SidebarBlock />
-            <SidebarBlock />
-          </Article.Aside>
-        </Article.Grid>
-      </Article>,
+      <Container>
+        <Article>
+          <Article.Grid>
+            <Article.Main>
+              <LargeMainBlock />
+            </Article.Main>
+            <Article.Aside>
+              <SidebarBlock />
+              <SidebarBlock />
+            </Article.Aside>
+          </Article.Grid>
+        </Article>
+      </Container>,
     )
   })
 
