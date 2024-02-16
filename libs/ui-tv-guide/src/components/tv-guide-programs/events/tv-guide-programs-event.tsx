@@ -1,7 +1,7 @@
 import { Children, ReactNode } from 'react'
 import { SvgIcon } from '@r7/ui-base-components'
 import { TvGuideLiveTag } from '../../tv-guide-live-tag/tv-guide-live-tag'
-import { eventVariants } from './variants'
+import { eventVariants, descriptionVariants } from './variants'
 
 type TvGuideProgramsEventProps = {
   children: ReactNode
@@ -30,7 +30,5 @@ export function TvGuideProgramsEventItem({ children, isLive = false }: TvGuidePr
 }
 
 export function TvGuideProgramsEventItemDescription({ children }: TvGuideProgramsEventProps) {
-  return (
-    <div className="tv-w-full tv-pb-xxs tv-pt-xxxs md:tv-pl-nano tv-cursor-auto">{children}</div>
-  )
+  return <div className={descriptionVariants()}>{children}</div>
 }

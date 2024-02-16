@@ -8,7 +8,7 @@ export function TvGuideCard({ children }: TvGuideCardProps) {
   const [figure, ...content] = Children.toArray(children)
   return (
     <div className="tv-flex tv-gap-x-xxs">
-      <div>{figure}</div>
+      {figure}
       <div className="tv-flex tv-flex-col tv-justify-center">{content}</div>
     </div>
   )
