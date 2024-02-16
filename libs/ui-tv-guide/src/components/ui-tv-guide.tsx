@@ -2,6 +2,12 @@ import { TvGuideButton } from './tv-guide-button'
 import { TvGuideCard } from './tv-guide-card'
 import { TvGuideFigure } from './tv-guide-figure'
 import { TvGuideTime } from './tv-guide-time'
+import {
+  TvGuideRating,
+  TvGuideAudioDesctiption,
+  TvGuideClosedCaption,
+  TvGuideHighDefinition,
+} from './tv-guide-details'
 
 type TvGuideProps = {
   children: React.ReactNode
@@ -15,3 +21,7 @@ TvGuide.Figure = TvGuideFigure
 TvGuide.Time = TvGuideTime
 TvGuide.Button = TvGuideButton
 TvGuide.Card = TvGuideCard
+TvGuide.Rating = TvGuideRating
+TvGuide.AudioDescription = TvGuideAudioDesctiption
+TvGuide.ClosedCaption = TvGuideClosedCaption
+TvGuide.HighDefinition = TvGuideHighDefinition
