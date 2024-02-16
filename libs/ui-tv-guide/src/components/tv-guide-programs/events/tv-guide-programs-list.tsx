@@ -12,5 +12,15 @@ export function TvGuideProgramsEventsList({ children, id }: TvGuideProgramsListP
 
   const isCurrentActive = getCurrentDayId(id) === activeTab
 
-  return <ol className={listVariants({ activeTab: isCurrentActive })}>{children}</ol>
+  return (
+    <ol
+      role="tabpanel"
+      id={`tabpanel-${id}`}
+      aria-labelledby={`tab-${id}`}
+      tabIndex={0}
+      className={listVariants({ activeTab: isCurrentActive })}
+    >
+      {children}
+    </ol>
+  )
 }

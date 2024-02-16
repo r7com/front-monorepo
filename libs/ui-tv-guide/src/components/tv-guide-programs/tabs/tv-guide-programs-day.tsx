@@ -23,7 +23,11 @@ export function TvGuideProgramsDay({ children, id }: TvGuideProgramsDayProps) {
     <li className={itemSlot()}>
       <Button
         color="ghost"
+        role="tab"
+        id={`tab-${id}`}
         className={buttonSlot()}
+        aria-controls={`tabpanel-${id}`}
+        aria-selected={activeTab === tabId}
         disabled={activeTab === tabId}
         onClick={() => changeTab(tabId as DAYS_US_TYPE)}
       >
