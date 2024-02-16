@@ -138,6 +138,20 @@ module.exports = {
       'agerating-18anos': {
         500: '#000000',
       },
+      rating: {
+        default: '#4565af',
+        free: '#00a651',
+        a10: '#2c83c9',
+        a12: '#facb19',
+        a14: '#ed6a13',
+        a16: '#dc061c',
+        a18: '#040405',
+        10: '#0095da',
+        12: '#ffcb05',
+        14: '#f58220',
+        16: '#ec1d25',
+        18: '#000000',
+      },
       breakingNews: {
         urgent: '#4a4a4a',
         now: '#fff',
