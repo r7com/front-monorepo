@@ -15,7 +15,7 @@ import { MENU_DATA } from './mocks/MENU_DATA'
 import { SIDEBAR_DATA } from './mocks/SIDEBAR_DATA'
 import { Header, Menu, Sidebar } from '@r7/ui-header-delivery'
 import { ArticleProvider } from '@r7/ui-article-delivery'
-import { PrivacyBox } from '@r7/ui-base-components'
+import { PrivacyBox, SvgSprites } from '@r7/ui-base-components'
 export function App() {
   return (
     <>
@@ -138,6 +138,7 @@ export function App() {
         <Route path="/ui-section" element={<UiSection />} />
       </Routes>
       <PrivacyBox link="https://www.google.com.br/" />
+      <SvgSprites />
       {/* END: routes */}
     </>
   )

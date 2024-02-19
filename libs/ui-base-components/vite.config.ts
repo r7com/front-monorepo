@@ -5,7 +5,6 @@ import svgr from 'vite-plugin-svgr'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import dts from 'vite-plugin-dts'
 import * as path from 'path'
-// import svgr from '@svgr/rollup'
 
 export default defineConfig({
   root: __dirname,
@@ -15,6 +14,7 @@ export default defineConfig({
       svgrOptions: {
         titleProp: true,
       },
+      exportAsDefault: true,
     }),
     dts({
       entryRoot: 'src',
