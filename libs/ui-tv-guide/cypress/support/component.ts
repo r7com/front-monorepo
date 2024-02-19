@@ -18,9 +18,11 @@ import { mount } from 'cypress/react18'
 import './commands'
 import '@frsource/cypress-plugin-visual-regression-diff'
 import '@testing-library/cypress/add-commands'
-import '../../src/styles.css'
+import '../../src/style.css'
 import '@r7/ui-base-components/css'
 import '@r7/ui-base-components/fonts'
+import '@r7/ui-layout/css'
+import '@r7/ui-article-delivery/css'
 
 // add component testing only related command here, such as mount
 declare global {
