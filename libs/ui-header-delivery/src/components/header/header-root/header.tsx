@@ -13,7 +13,7 @@ export type HeaderProps = {
 }
 
 export function Header({ children }: HeaderProps) {
-  return <header>{children}</header>
+  return <header className="header-grid header-gap-y-xxs">{children}</header>
 }
 
 /** Use this component to wrapp site logo, sidebar menu, navigation menu, social media, etc */
