@@ -7,6 +7,7 @@ import {
   Proportional,
   Magazine,
   SectionWrapper,
+  Article,
 } from '@r7/ui-layout'
 import { SectionHeading } from '@r7/ui-section-heading'
 
@@ -32,6 +33,17 @@ export function UiLayout() {
   return (
     <Container>
       <SectionWrapper>
+        <Article>
+          <Article.Grid>
+            <Article.Main>
+              <LargeMainBlock />
+            </Article.Main>
+            <Article.Aside>
+              <SidebarBlock />
+              <SidebarBlock />
+            </Article.Aside>
+          </Article.Grid>
+        </Article>
         <SpecialOne
           renderMain={
             <SpecialOne.Main

@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.6.0...ui-layout-0.6.1) (2024-02-16)
+
+### Bug Fixes
+
+- change grid to flex ([34cda52](https://gitlab.ir7.com.br/r7/front-monorepo/commit/34cda52ba2469277a736c5fc3d14b2030483d7ab))
+
+# [0.6.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.5.0...ui-layout-0.6.0) (2024-02-15)
+
+### Features
+
+- created article-grid ([aea85c5](https://gitlab.ir7.com.br/r7/front-monorepo/commit/aea85c5262d414a20825f2bcaa5a8cd16fc56cb8))
+
 # [0.5.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.4.0...ui-layout-0.5.0) (2024-01-17)
 
 ### Features
