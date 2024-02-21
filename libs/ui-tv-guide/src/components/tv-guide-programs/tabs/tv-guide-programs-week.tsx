@@ -17,7 +17,7 @@ export function TvGuideProgramsWeek({ children, onTabChange }: TvGuideProgramsWe
   return (
     <ol
       role="tablist"
-      className="tv-flex tv-overflow-x-auto tv-border-t-[3px] tv-border-t-neutral-high-600"
+      className="tv-flex tv-overflow-x-auto tv-border-t-[3px] tv-border-solid tv-border-t-neutral-high-600"
     >
       {children}
     </ol>
