@@ -13,7 +13,10 @@ export default defineConfig({
   plugins: [
     react(),
     nxViteTsPaths(),
-    svgr({ svgrOptions: { titleProp: true } }),
+    svgr({
+      svgrOptions: { titleProp: true },
+      exportAsDefault: true,
+    }),
     dts({
       entryRoot: 'src',
       tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),

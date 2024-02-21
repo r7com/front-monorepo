@@ -1,3 +1,8 @@
+import { Fragment } from 'react'
+import { mount } from 'cypress/react18'
+import { SvgSprites } from '@r7/ui-base-components'
+import React from 'react'
+
 /// <reference types="cypress" />
 
 // ***********************************************
@@ -10,11 +15,14 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 
-// eslint-disable-next-line @typescript-eslint/no-namespace
-declare namespace Cypress {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  interface Chainable<Subject> {
-    addDarkMode(): void
+declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
+  namespace Cypress {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    interface Chainable<Subject> {
+      mount: typeof mount
+      addDarkMode(): void
+    }
   }
 }
 
@@ -22,6 +30,15 @@ Cypress.Commands.add('addDarkMode', () => {
   document?.documentElement.classList.add('dark')
 })
 
+Cypress.Commands.add('mount', (component, options) => {
+  return mount(
+    <Fragment>
+      {component}
+      <SvgSprites />
+    </Fragment>,
+    options,
+  )
+})
 //
 // -- This is a child command --
 // Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
