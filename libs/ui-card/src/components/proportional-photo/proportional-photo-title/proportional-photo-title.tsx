@@ -8,7 +8,11 @@ export function ProportionalPhotoTitle({
   ...cardTitleProps
 }: ProportionalPhotoTitleProps) {
   return (
-    <Card.Title fontStyle="none" {...cardTitleProps}>
+    <Card.Title
+      className="card-text-xxxs card-leading-xs @[300px]:card-text-xs @[300px]:card-leading-lg  @[230px]:card-text-xxs @[230px]:card-leading-md"
+      fontStyle="none"
+      {...cardTitleProps}
+    >
       {children}
     </Card.Title>
   )
