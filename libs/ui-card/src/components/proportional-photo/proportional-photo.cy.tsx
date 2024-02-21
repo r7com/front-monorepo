@@ -39,7 +39,7 @@ const ProportionalText = (
         />
       </ProportionalPhoto.Figure>
 
-      <ProportionalPhoto.TextWrapper marginBottom="doubleCall">
+      <ProportionalPhoto.TextWrapper marginBottom>
         <Card.HatWrapper>
           <Card.HatTitle>são paulo e rio de janeiro</Card.HatTitle>
         </Card.HatWrapper>
@@ -74,7 +74,7 @@ const ProportionalBullet = (
         />
       </ProportionalPhoto.Figure>
 
-      <ProportionalPhoto.TextWrapper marginBottom="doubleCall">
+      <ProportionalPhoto.TextWrapper marginBottom>
         <Card.HatWrapper>
           <Card.HatTitle>são paulo e rio de janeiro</Card.HatTitle>
         </Card.HatWrapper>
