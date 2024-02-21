@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.5.4](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.5.3...ui-header-delivery-2.5.4) (2024-02-21)
+
+### Features
+
+- adding gap for header publicity ([4b076b6](https://gitlab.ir7.com.br/r7/front-monorepo/commit/4b076b6c32043df60971e9114c35b344d8b16447))
+
 ## [2.5.3](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.5.2...ui-header-delivery-2.5.3) (2024-02-09)
 
 ## [2.5.2](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.5.1...ui-header-delivery-2.5.2) (2024-01-23)

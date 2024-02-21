@@ -1,6 +1,6 @@
 {
   "name": "@r7/ui-header-delivery",
-  "version": "2.5.3",
+  "version": "2.5.4",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
