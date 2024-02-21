@@ -44,7 +44,7 @@ const ProportionalText = (
           <Card.HatTitle>são paulo e rio de janeiro</Card.HatTitle>
         </Card.HatWrapper>
 
-        <ProportionalPhoto.Title fontSize="doubleCall">
+        <ProportionalPhoto.Title>
           Ministério da Justiça abre processo contra Enel por apagões
         </ProportionalPhoto.Title>
       </ProportionalPhoto.TextWrapper>
@@ -54,7 +54,7 @@ const ProportionalText = (
           <Card.HatTitle>são paulo e rio de janeiro</Card.HatTitle>
         </Card.HatWrapper>
 
-        <ProportionalPhoto.Title fontSize="doubleCall">
+        <ProportionalPhoto.Title>
           Ministério da Justiça abre processo contra Enel por apagões
         </ProportionalPhoto.Title>
       </ProportionalPhoto.TextWrapper>
@@ -79,7 +79,7 @@ const ProportionalBullet = (
           <Card.HatTitle>são paulo e rio de janeiro</Card.HatTitle>
         </Card.HatWrapper>
 
-        <ProportionalPhoto.Title fontSize="doubleCall">
+        <ProportionalPhoto.Title>
           Ministério da Justiça abre processo contra Enel por apagões
         </ProportionalPhoto.Title>
       </ProportionalPhoto.TextWrapper>
