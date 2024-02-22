@@ -2,8 +2,6 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
-# [0.17.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.16.0...ui-card-0.17.0) (2024-02-22)
-
 ### Bug Fixes
 
 - **proportionalphoto:** cypress tuning and class removal ([2484a69](https://gitlab.ir7.com.br/r7/front-monorepo/commit/2484a6973a304915298e0c2285d0c4a936bb0e5e))
