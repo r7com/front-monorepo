@@ -11,7 +11,11 @@ export type CardProps = {
 }
 
 export function Card({ children, className = '' }: CardProps) {
-  return <article className={className}>{children}</article>
+  return (
+    <article className={className} data-tb-region-item>
+      {children}
+    </article>
+  )
 }
 
 Card.Title = CardTitle

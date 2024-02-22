@@ -14,5 +14,9 @@ export function CardTitle({
   color = 'low',
 }: CardTitleProps) {
   const DynamicTag = as || 'h3'
-  return <DynamicTag className={variants({ fontStyle, color, className })}>{children}</DynamicTag>
+  return (
+    <DynamicTag data-tb-title className={variants({ fontStyle, color, className })}>
+      {children}
+    </DynamicTag>
+  )
 }
