@@ -56,7 +56,7 @@ const UiTvGuide = () => (
                 Depois
               </Typography>
               <Typography>
-                <TvGuide.Rating rating={16}>16</TvGuide.Rating>
+                <TvGuide.Rating rating={'16'}>16</TvGuide.Rating>
                 <TvGuide.ClosedCaption />
                 <TvGuide.HighDefinition />
                 Programa depois
@@ -100,7 +100,7 @@ const UiTvGuide = () => (
                 />
               </TvGuide.Figure>
               <Typography>
-                <TvGuide.Rating rating={16}>16</TvGuide.Rating>
+                <TvGuide.Rating rating={'16'}>16</TvGuide.Rating>
                 <TvGuide.ClosedCaption />
                 <TvGuide.HighDefinition />
                 programa segunda 1
@@ -425,7 +425,7 @@ const UiTvGuide = () => (
                 />
               </TvGuide.Figure>
               <Typography>
-                <TvGuide.Rating rating={10}>10</TvGuide.Rating>
+                <TvGuide.Rating rating={'10'}>10</TvGuide.Rating>
                 <TvGuide.AudioDescription />
                 <TvGuide.HighDefinition />
                 programa quarta 2
@@ -471,7 +471,7 @@ const UiTvGuide = () => (
                 />
               </TvGuide.Figure>
               <Typography>
-                <TvGuide.Rating rating={12}>12</TvGuide.Rating>
+                <TvGuide.Rating rating={'12'}>12</TvGuide.Rating>
                 <TvGuide.ClosedCaption />
                 <TvGuide.HighDefinition />
                 programa quarta 3
@@ -517,7 +517,7 @@ const UiTvGuide = () => (
                 />
               </TvGuide.Figure>
               <Typography>
-                <TvGuide.Rating rating={12}>12</TvGuide.Rating>
+                <TvGuide.Rating rating={'12'}>12</TvGuide.Rating>
                 <TvGuide.ClosedCaption />
                 <TvGuide.HighDefinition />
                 programa quinta 1
@@ -564,7 +564,7 @@ const UiTvGuide = () => (
                 />
               </TvGuide.Figure>
               <Typography>
-                <TvGuide.Rating rating={14}>14</TvGuide.Rating>
+                <TvGuide.Rating rating={'14'}>14</TvGuide.Rating>
                 <TvGuide.AudioDescription />
                 <TvGuide.HighDefinition />
                 programa quinta 2
@@ -610,7 +610,7 @@ const UiTvGuide = () => (
                 />
               </TvGuide.Figure>
               <Typography>
-                <TvGuide.Rating rating={16}>18</TvGuide.Rating>
+                <TvGuide.Rating rating={'18'}>18</TvGuide.Rating>
                 <TvGuide.ClosedCaption />
                 <TvGuide.HighDefinition />
                 programa quinta 3
@@ -656,7 +656,7 @@ const UiTvGuide = () => (
                 />
               </TvGuide.Figure>
               <Typography>
-                <TvGuide.Rating rating={18}>18</TvGuide.Rating>
+                <TvGuide.Rating rating={'18'}>18</TvGuide.Rating>
                 <TvGuide.ClosedCaption />
                 <TvGuide.HighDefinition />
                 programa sexta 1
@@ -703,7 +703,7 @@ const UiTvGuide = () => (
                 />
               </TvGuide.Figure>
               <Typography>
-                <TvGuide.Rating rating={14}>14</TvGuide.Rating>
+                <TvGuide.Rating rating={'14'}>14</TvGuide.Rating>
                 <TvGuide.AudioDescription />
                 <TvGuide.HighDefinition />
                 programa sexta 2
@@ -749,7 +749,7 @@ const UiTvGuide = () => (
                 />
               </TvGuide.Figure>
               <Typography>
-                <TvGuide.Rating rating={16}>18</TvGuide.Rating>
+                <TvGuide.Rating rating={'18'}>18</TvGuide.Rating>
                 <TvGuide.ClosedCaption />
                 <TvGuide.HighDefinition />
                 programa sexta 3
@@ -795,7 +795,7 @@ const UiTvGuide = () => (
                 />
               </TvGuide.Figure>
               <Typography>
-                <TvGuide.Rating rating={18}>18</TvGuide.Rating>
+                <TvGuide.Rating rating={'18'}>18</TvGuide.Rating>
                 <TvGuide.ClosedCaption />
                 <TvGuide.HighDefinition />
                 programa sábado 1
@@ -842,7 +842,7 @@ const UiTvGuide = () => (
                 />
               </TvGuide.Figure>
               <Typography>
-                <TvGuide.Rating rating={14}>14</TvGuide.Rating>
+                <TvGuide.Rating rating={'14'}>14</TvGuide.Rating>
                 <TvGuide.AudioDescription />
                 <TvGuide.HighDefinition />
                 programa sábado 2
@@ -888,7 +888,7 @@ const UiTvGuide = () => (
                 />
               </TvGuide.Figure>
               <Typography>
-                <TvGuide.Rating rating={16}>18</TvGuide.Rating>
+                <TvGuide.Rating rating={'18'}>18</TvGuide.Rating>
                 <TvGuide.ClosedCaption />
                 <TvGuide.HighDefinition />
                 programa sábado 3
@@ -934,7 +934,7 @@ const UiTvGuide = () => (
                 />
               </TvGuide.Figure>
               <Typography>
-                <TvGuide.Rating rating={18}>18</TvGuide.Rating>
+                <TvGuide.Rating rating={'18'}>18</TvGuide.Rating>
                 <TvGuide.ClosedCaption />
                 <TvGuide.HighDefinition />
                 programa domingo 1
@@ -981,7 +981,7 @@ const UiTvGuide = () => (
                 />
               </TvGuide.Figure>
               <Typography>
-                <TvGuide.Rating rating={14}>14</TvGuide.Rating>
+                <TvGuide.Rating rating={'14'}>14</TvGuide.Rating>
                 <TvGuide.AudioDescription />
                 <TvGuide.HighDefinition />
                 programa domingo 2
@@ -1027,7 +1027,7 @@ const UiTvGuide = () => (
                 />
               </TvGuide.Figure>
               <Typography>
-                <TvGuide.Rating rating={16}>18</TvGuide.Rating>
+                <TvGuide.Rating rating={'18'}>18</TvGuide.Rating>
                 <TvGuide.ClosedCaption />
                 <TvGuide.HighDefinition />
                 programa domingo 3
