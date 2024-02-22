@@ -9,7 +9,10 @@ import '@r7/ui-section-heading/css'
 import '@r7/ui-section-menu/css'
 import '@r7/ui-layout/css'
 import './tailwind.css'
+import React from 'react'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
+import { Fragment } from 'react'
+import { SvgSprites } from '@r7/ui-base-components'
 
 const preview = {
   parameters: {
@@ -17,6 +20,14 @@ const preview = {
       viewports: INITIAL_VIEWPORTS,
     },
   },
+  decorators: [
+    Story => (
+      <Fragment>
+        <Story />
+        <SvgSprites />
+      </Fragment>
+    ),
+  ],
 }
 
 export default preview

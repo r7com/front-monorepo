@@ -4,7 +4,7 @@ export const variants = createVariants({
   base: 'header-flex header-flex-col header-w-full header-fixed -header-top-giant header-transition-all header-duration-300 lg:header-transition-none lg:header-top-0',
   variants: {
     fixed: {
-      true: 'header-z-20 !header-top-0',
+      true: 'header-z-40 !header-top-0',
     },
   },
 })
