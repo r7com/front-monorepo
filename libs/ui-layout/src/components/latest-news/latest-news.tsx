@@ -9,7 +9,7 @@ type LatestNewsProps = {
 
 export function LatestNews({ renderMain, renderSidebar }: LatestNewsProps) {
   return (
-    <Grid data-tb-shadow-region="LatestNews">
+    <Grid>
       <div className="md:layout-col-span-24 lg:layout-col-span-17 layout-order-2 lg:layout-order-1">
         {renderMain}
       </div>
