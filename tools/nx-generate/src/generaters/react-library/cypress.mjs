@@ -31,17 +31,10 @@ export async function cypress(projectName) {
   }
 
   async function insertImportToComponent() {
-    const cypressComponent = await readAndModifyFile({
-      path: `libs/${projectName}/cypress/support/component.ts`,
-      line: 18,
-      insertElements: importCypress,
-    })
-
-    await writeFile({
-      path: `libs/${projectName}/cypress/support/component.ts`,
-      content: cypressComponent,
-      type: 'typescript',
-    })
+    await copyFile(
+      `${templatesDir}/cypress/component.tsx`,
+      `libs/${projectName}/cypress/support/component.tsx`,
+    )
   }
 
   async function tsConfigManipulation() {

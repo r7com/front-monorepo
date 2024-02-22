@@ -1,8 +1,5 @@
-import { useEffect } from 'react'
 import { SvgIcons } from './svg-icon.types'
 import { variants, SvgIconVariants } from './svg-icon.variants'
-
-import { insertSvgSpriteRoot } from './insert-root'
 
 export type SvgIconProps = {
   iconName: SvgIcons
@@ -25,8 +22,6 @@ export function SvgIcon({
     medium: { width: 24, height: 24 },
     small: { width: 16, height: 16 },
   }[size]
-
-  useEffect(insertSvgSpriteRoot, [])
 
   return (
     <svg

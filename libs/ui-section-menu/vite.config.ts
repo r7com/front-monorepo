@@ -15,6 +15,7 @@ export default defineConfig({
       svgrOptions: {
         titleProp: true,
       },
+      exportAsDefault: true,
     }),
     dts({
       entryRoot: 'src',
