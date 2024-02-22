@@ -19,7 +19,7 @@ export function CardLabel({
 
   if (type === 'sponsored-by') {
     return (
-      <a href={sponsoredByUrl} title={sponsoredByTitle}>
+      <a href={sponsoredByUrl} title={sponsoredByTitle} data-tb-category>
         <span className={labelStyle()}>
           <span className="card-mr-nano">Oferecido por</span>
           <img
