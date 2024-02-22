@@ -2,16 +2,7 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
-### Bug Fixes
-
-- **proportionalphoto:** cypress tuning and class removal ([2484a69](https://gitlab.ir7.com.br/r7/front-monorepo/commit/2484a6973a304915298e0c2285d0c4a936bb0e5e))
-- **proportionalphoto:** margin adjustment ([12019e9](https://gitlab.ir7.com.br/r7/front-monorepo/commit/12019e9ca542da547d14ccfcfc6a1dc5498641d3))
-- return of class from card title ([383a84f](https://gitlab.ir7.com.br/r7/front-monorepo/commit/383a84f8496438e3afdd42e86c6f0fdc4e40474a))
-
-### Features
-
-- removing variation file ([7ff2302](https://gitlab.ir7.com.br/r7/front-monorepo/commit/7ff2302a6fa158ddb43879cf75f6418b7263e4c2))
-- two-call component development ([1fb5031](https://gitlab.ir7.com.br/r7/front-monorepo/commit/1fb50315061472c973cfdd20b74d273b88203ef7))
+# [0.17.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.16.1...ui-card-0.17.0) (2024-02-22)
 
 # [0.16.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.16.0...ui-card-0.16.1) (2024-02-22)
 
