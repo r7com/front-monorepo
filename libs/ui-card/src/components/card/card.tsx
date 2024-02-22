@@ -12,7 +12,7 @@ export type CardProps = {
 
 export function Card({ children, className = '' }: CardProps) {
   return (
-    <article className={className} data-tb-region-item>
+    <article className={className} data-tb-region-item data-tb-shadow-region-item>
       {children}
     </article>
   )
