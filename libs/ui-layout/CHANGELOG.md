@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.2](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.6.1...ui-layout-0.6.2) (2024-02-22)
+
 ## [0.6.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.6.0...ui-layout-0.6.1) (2024-02-16)
 
 ### Bug Fixes
