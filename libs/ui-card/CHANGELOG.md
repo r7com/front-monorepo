@@ -2,7 +2,7 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
-## [0.16.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.16.0...ui-card-0.16.1) (2024-02-22)
+# [0.17.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.16.0...ui-card-0.17.0) (2024-02-22)
 
 ### Bug Fixes
 
@@ -14,6 +14,12 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 - removing variation file ([7ff2302](https://gitlab.ir7.com.br/r7/front-monorepo/commit/7ff2302a6fa158ddb43879cf75f6418b7263e4c2))
 - two-call component development ([1fb5031](https://gitlab.ir7.com.br/r7/front-monorepo/commit/1fb50315061472c973cfdd20b74d273b88203ef7))
+
+# [0.16.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.16.0...ui-card-0.16.1) (2024-02-22)
+
+### Bug Fixes
+
+- **svgicon:** improve performance svg removing client side mode ([b48baf12](https://gitlab.ir7.com.br/r7/front-monorepo/-/commit/b48baf1240ac0cac83f83d83c2fe29a75176239c))
 
 # [0.16.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-card-0.15.0...ui-card-0.16.0) (2024-02-09)
 
