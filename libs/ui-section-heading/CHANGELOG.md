@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.6](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-section-heading-0.3.5...ui-section-heading-0.3.6) (2024-02-22)
+
 ## [0.3.5](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-section-heading-0.3.4...ui-section-heading-0.3.5) (2024-01-29)
 
 ### Bug Fixes
