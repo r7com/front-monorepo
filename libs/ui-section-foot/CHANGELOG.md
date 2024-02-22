@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.4](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-section-foot-0.2.3...ui-section-foot-0.2.4) (2024-02-22)
+
 ## [0.2.3](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-section-foot-0.2.2...ui-section-foot-0.2.3) (2024-01-29)
 
 ### Bug Fixes
