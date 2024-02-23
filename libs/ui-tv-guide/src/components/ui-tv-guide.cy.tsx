@@ -1062,7 +1062,7 @@ const UiTvGuide = () => (
   </Container>
 )
 
-describe.skip('TvGuide', () => {
+describe('TvGuide', () => {
   beforeEach(() => cy.mount(<UiTvGuide />))
 
   it('should render ui-tv-guide in desktop mode', () => {
@@ -1084,20 +1084,26 @@ describe.skip('TvGuide', () => {
 describe('TvGuide - Elements Interactions', () => {
   beforeEach(() => cy.mount(<UiTvGuide />))
 
-  it.skip('should change select value', () => {
+  it('should change select value', () => {
     cy.get('select').select('politica').should('have.value', 3)
     cy.get('select').select('entretenimento').should('have.value', 2)
   })
 
-  it.skip('should change active tabs', () => {
-    cy.get('#tabpanel-terca').should('not.be.visible')
-
+  it('should change active tabs', () => {
     cy.findByRole('tablist').get('#tab-terca').click()
 
+    cy.get('#tabpanel-segunda').should('not.be.visible')
     cy.get('#tabpanel-terca').should('be.visible')
+
+    cy.findByRole('tablist').get('#tab-segunda').click()
+
+    cy.get('#tabpanel-terca').should('not.be.visible')
+    cy.get('#tabpanel-segunda').should('be.visible')
   })
 
   it('should toggle program description', () => {
+    cy.findByRole('tablist').get('#tab-segunda').click()
+
     cy.get('#tabpanel-segunda').get('details').eq(0).should('not.have.attr', 'open')
 
     cy.get('#tabpanel-segunda').get('summary').eq(0).click()
