@@ -1,10 +1,10 @@
 /// <reference types='vitest' />
-import svgr from 'vite-plugin-svgr'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
+import svgr from 'vite-plugin-svgr'
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import dts from 'vite-plugin-dts'
 import * as path from 'path'
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 
 export default defineConfig({
   root: __dirname,
@@ -12,7 +12,7 @@ export default defineConfig({
 
   plugins: [
     react(),
-    svgr({ svgrOptions: { titleProp: true } }),
+    svgr({ svgrOptions: { titleProp: true }, exportAsDefault: true }),
     nxViteTsPaths(),
     dts({
       entryRoot: 'src',
