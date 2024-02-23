@@ -1,6 +1,5 @@
 import { useTvGuidePrograms } from '../../../utils/hook'
 import { DAYS_US_TYPE } from '../../../utils/days-of-week'
-import { useEffect } from 'react'
 
 type TvGuideProgramsWeekProps = {
   children: React.ReactNode
@@ -10,9 +9,7 @@ type TvGuideProgramsWeekProps = {
 export function TvGuideProgramsWeek({ children, onTabChange }: TvGuideProgramsWeekProps) {
   const { activeTab } = useTvGuidePrograms()
 
-  useEffect(() => {
-    onTabChange && onTabChange(activeTab)
-  }, [activeTab, onTabChange])
+  onTabChange && onTabChange(activeTab)
 
   return (
     <ol
