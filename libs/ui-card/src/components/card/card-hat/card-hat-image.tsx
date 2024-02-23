@@ -11,6 +11,7 @@ export function CardHatImage({ imageSource, description }: CardHatImageProps) {
       className="card-mr-nano card-aspect-square"
       width="16"
       height="16"
+      data-tb-thumbnail
     />
   )
 }
