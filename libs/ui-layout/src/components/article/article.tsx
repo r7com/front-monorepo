@@ -7,7 +7,7 @@ type ArticleProps = {
 }
 
 export function Article({ children }: ArticleProps) {
-  return <div className="layout-gap-xs layout-grid">{children}</div>
+  return <div className="lg:layout-gap-xs layout-gap-xxxs layout-grid">{children}</div>
 }
 
 Article.Main = ArticleMain
