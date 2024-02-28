@@ -9,10 +9,20 @@ export const SIDEBAR_DATA = [
         title: 'a fazenda',
         url: '#a fazenda',
         submenu: [
-          { id: 1, url: '#politica', title: 'politica', text: 'politica' },
-          { id: 2, url: '#esportes', title: 'esportes', text: 'esportes' },
-          { id: 3, url: '#moda', title: 'moda', text: 'moda' },
-          { id: 4, url: '#famosos', title: 'famosos', text: 'famosos' },
+          { id: '1', url: '#politica', title: 'politica', text: 'politica' },
+          { id: '2', url: '#esportes', title: 'esportes', text: 'esportes' },
+          { id: '3', url: '#moda', title: 'moda', text: 'moda' },
+          {
+            id: '4',
+            url: '#famosos',
+            title: 'famosos',
+            text: 'famosos',
+            submenu: [
+              { id: '6', url: '#keila', title: 'keila', text: 'keila' },
+              { id: '7', url: '#odair', title: 'odair', text: 'odair' },
+              { id: '38', url: '#lucas', title: 'lucas', text: 'lucas' },
+            ],
+          },
         ],
       },
       {
@@ -21,8 +31,8 @@ export const SIDEBAR_DATA = [
         title: 'blogs',
         url: '#blogs',
         submenu: [
-          { id: 1, url: '#moda', title: 'moda', text: 'moda' },
-          { id: 2, url: '#famosos', title: 'famosos', text: 'famosos' },
+          { id: '10', url: '#moda', title: 'moda', text: 'moda' },
+          { id: '20', url: '#famosos', title: 'famosos', text: 'famosos' },
         ],
       },
       {
@@ -49,10 +59,10 @@ export const SIDEBAR_DATA = [
         title: 'grupo record',
         url: '#grupo record',
         submenu: [
-          { id: 1, url: '#banco', title: 'banco digi+', text: 'banco digi+' },
-          { id: 2, url: '#radio', title: 'rádio sociedade', text: 'rádio sociedade' },
-          { id: 3, url: '#entretenimento', title: 'entretenimento', text: 'entretenimento' },
-          { id: 4, url: '#familia', title: 'rede familia', text: 'rede familia' },
+          { id: '16', url: '#banco', title: 'banco digi+', text: 'banco digi+' },
+          { id: '26', url: '#radio', title: 'rádio sociedade', text: 'rádio sociedade' },
+          { id: '36', url: '#entretenimento', title: 'entretenimento', text: 'entretenimento' },
+          { id: '46', url: '#familia', title: 'rede familia', text: 'rede familia' },
         ],
       },
     ],

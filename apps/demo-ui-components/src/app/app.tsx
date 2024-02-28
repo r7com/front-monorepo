@@ -57,12 +57,33 @@ export function App() {
                                 <Sidebar.Button id={id}>{text}</Sidebar.Button>
                                 <Sidebar.Submenu id={id}>
                                   <Sidebar.List label={text}>
-                                    {submenu.map(({ id, text, title, url }) => {
+                                    {submenu.map(({ id: submenuId, text, title, url, submenu }) => {
                                       return (
-                                        <Sidebar.Item key={id}>
-                                          <Sidebar.Link title={title} href={url}>
-                                            {text}
-                                          </Sidebar.Link>
+                                        <Sidebar.Item key={submenuId}>
+                                          {submenu?.length ? (
+                                            <>
+                                              <Sidebar.Button parentSubmenuId={id} id={submenuId}>
+                                                {text}
+                                              </Sidebar.Button>
+                                              <Sidebar.Submenu id={submenuId}>
+                                                <Sidebar.List label={text}>
+                                                  {submenu.map(({ id, text, title, url }) => {
+                                                    return (
+                                                      <Sidebar.Item key={id}>
+                                                        <Sidebar.Link title={title} href={url}>
+                                                          {text}
+                                                        </Sidebar.Link>
+                                                      </Sidebar.Item>
+                                                    )
+                                                  })}
+                                                </Sidebar.List>
+                                              </Sidebar.Submenu>
+                                            </>
+                                          ) : (
+                                            <Sidebar.Link title={title} href={url}>
+                                              {text}
+                                            </Sidebar.Link>
+                                          )}
                                         </Sidebar.Item>
                                       )
                                     })}
