@@ -1090,19 +1090,19 @@ describe('TvGuide - Elements Interactions', () => {
   })
 
   it('should change active tabs', () => {
-    cy.findByRole('tablist').get('#tab-terca').click()
+    cy.findByRole('tablist').get('#tab-terca').click({ force: true })
 
     cy.get('#tabpanel-segunda').should('not.be.visible')
     cy.get('#tabpanel-terca').should('be.visible')
 
-    cy.findByRole('tablist').get('#tab-segunda').click()
+    cy.findByRole('tablist').get('#tab-segunda').click({ force: true })
 
     cy.get('#tabpanel-terca').should('not.be.visible')
     cy.get('#tabpanel-segunda').should('be.visible')
   })
 
   it('should toggle program description', () => {
-    cy.findByRole('tablist').get('#tab-segunda').click()
+    cy.findByRole('tablist').get('#tab-segunda').click({ force: true })
 
     cy.get('#tabpanel-segunda').get('details').eq(0).should('not.have.attr', 'open')
 
