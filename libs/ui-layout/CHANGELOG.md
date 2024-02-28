@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.3](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.6.2...ui-layout-0.6.3) (2024-02-28)
+
+### Bug Fixes
+
+- adding gap to ui-layout ([26e37fb](https://gitlab.ir7.com.br/r7/front-monorepo/commit/26e37fb259614d79eb9fa39dcd4e62446935d404))
+
 ## [0.6.2](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.6.1...ui-layout-0.6.2) (2024-02-22)
 
 ## [0.6.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-layout-0.6.0...ui-layout-0.6.1) (2024-02-16)
