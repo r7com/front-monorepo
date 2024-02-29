@@ -12,8 +12,6 @@ export const variants = createVariants({
       'header-bg-neutral-high-400 header-w-full header-h-[2px] header-rounded-sm header-transition-all',
     thirdLineSlot:
       'header-bg-neutral-high-400 header-w-full header-h-[2px] header-rounded-sm header-transition-all',
-    verticalLineSlot:
-      'header-bg-neutral-high-400 header-w-[1px] header-h-[25px] header-ml-xxxs header-mr-xxxs sm:header-block lg:header-hidden',
   },
   variants: {
     isSidebarOpen: {

@@ -9,9 +9,12 @@ export type MenuRootProps = {
 
 export function Menu({ children }: MenuRootProps) {
   return (
-    <nav className="header-hidden lg:header-block header-flex-1" aria-label="Menu principal">
-      {children}
-    </nav>
+    <>
+      <span className="header-bg-neutral-high-400 header-w-[1px] header-h-[25px] header-ml-xxxs header-mr-quark header-opacity-intense header-hidden lg:header-block"></span>
+      <nav className="header-hidden lg:header-block header-flex-1" aria-label="Menu principal">
+        {children}
+      </nav>
+    </>
   )
 }
 

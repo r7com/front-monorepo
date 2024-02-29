@@ -10,10 +10,9 @@ export function SidebarToggle({ children }: SidebarToggleProps) {
 
   const toggleSidebar = () => sidebar.toggle(!sidebar.isOpen)
 
-  const { buttonSlot, iconSlot, firstLineSlot, secondLineSlot, thirdLineSlot, verticalLineSlot } =
-    variants({
-      isSidebarOpen: sidebar.isOpen,
-    })
+  const { buttonSlot, iconSlot, firstLineSlot, secondLineSlot, thirdLineSlot } = variants({
+    isSidebarOpen: sidebar.isOpen,
+  })
 
   return (
     <button
@@ -29,7 +28,6 @@ export function SidebarToggle({ children }: SidebarToggleProps) {
         <span className={thirdLineSlot()}></span>
       </div>
       {children}
-      <span className={verticalLineSlot()}></span>
     </button>
   )
 }
