@@ -225,4 +225,15 @@ describe('Header - Elements Interactions', () => {
 
     cy.findByLabelText('Menu para blogs').should('be.not.visible')
   })
+
+  it('click on nested submenu should expand it and keep previous opened', () => {
+    cy.viewport('macbook-11')
+
+    cy.findByRole('button', { expanded: false, name: /menu/i }).click()
+    cy.findByRole('button', { expanded: false, name: /a fazenda/i }).click()
+    cy.findByRole('button', { expanded: false, name: /famosos/i }).click()
+
+    cy.findByLabelText('Menu para a fazenda').should('be.visible')
+    cy.findByLabelText('Menu para famosos').should('be.visible')
+  })
 })
