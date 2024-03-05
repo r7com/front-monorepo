@@ -11,8 +11,8 @@ export type SidebarSubmenuProps = {
 export function SidebarSubmenu({ children, id }: SidebarSubmenuProps) {
   const { submenu } = useHeaderActions()
 
-  const backToMainMenu = () => submenu.hide()
-  const isCurrentActive = submenu.currentActive === id
+  const closeMenu = () => submenu.hide(id)
+  const isCurrentActive = submenu.currentActive.includes(id)
 
   return (
     <div className={variants({ isSubmenuOpen: isCurrentActive })}>
@@ -20,7 +20,7 @@ export function SidebarSubmenu({ children, id }: SidebarSubmenuProps) {
         color="ghost"
         size="large"
         className="header-capitalize header-font-extrabold"
-        onClick={backToMainMenu}
+        onClick={closeMenu}
         startIcon={
           <SvgIcon iconName="arrow-left" size="small" className="header-fill-brand-primary-500" />
         }

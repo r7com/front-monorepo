@@ -19,95 +19,121 @@ export const Primary: Story = {
   render: () => (
     <div className="header-h-screen">
       <Header>
-        <Header.MainSection>
-          <Header.Logo
-            link="https://www.r7.com"
-            logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1698842893138.svg"
-            alt="Logo R7"
-          />
-          <Sidebar.Toggle>menu</Sidebar.Toggle>
-          <Sidebar>
-            <Sidebar.Search />
-            <Sidebar.Category title={'Conheça também'}>
-              <Sidebar.List label={'list'}>
-                <Sidebar.Item>
-                  <Header.PlayPlusLogo
-                    alt="PlayPlus"
-                    logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1707322344315.svg"
-                    link="https://www.playplus.com/home"
-                    color="colorful"
-                  />
-                </Sidebar.Item>
-              </Sidebar.List>
-            </Sidebar.Category>
-            {SIDEBAR_DATA.map(({ category, data, id }) => {
-              return (
-                <Sidebar.Category key={id} title={category}>
-                  <Sidebar.List label={category}>
-                    {data.map(({ id, text, submenu, title, url }) => {
-                      return (
-                        <Sidebar.Item key={id}>
-                          {submenu?.length ? (
-                            <>
-                              <Sidebar.Button id={id}>{text}</Sidebar.Button>
-                              <Sidebar.Submenu id={id}>
-                                <Sidebar.List label={text}>
-                                  {submenu.map(({ id, text, title, url }) => {
-                                    return (
-                                      <Sidebar.Item key={id}>
-                                        <Sidebar.Link title={title} href={url}>
-                                          {text}
-                                        </Sidebar.Link>
-                                      </Sidebar.Item>
-                                    )
-                                  })}
-                                </Sidebar.List>
-                              </Sidebar.Submenu>
-                            </>
-                          ) : (
-                            <Sidebar.Link title={title} href={url}>
-                              {text}
-                            </Sidebar.Link>
-                          )}
-                        </Sidebar.Item>
-                      )
-                    })}
-                  </Sidebar.List>
-                </Sidebar.Category>
-              )
-            })}
-          </Sidebar>
-
-          <Menu>
-            <Menu.List>
-              {MENU_DATA.map(item => {
+        <Header.Fixed>
+          <Header.MainSection>
+            <Header.Logo
+              link="https://www.r7.com"
+              logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1698842893138.svg"
+              alt="Logo R7"
+            />
+            <Sidebar.Toggle>menu</Sidebar.Toggle>
+            <Sidebar>
+              <Sidebar.Search />
+              <Sidebar.Category title={'Conheça também'}>
+                <Sidebar.List label={'list'}>
+                  <Sidebar.Item>
+                    <Header.PlayPlusLogo
+                      alt="PlayPlus"
+                      logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1707322344315.svg"
+                      link="https://www.playplus.com/home"
+                      color="colorful"
+                    />
+                  </Sidebar.Item>
+                </Sidebar.List>
+              </Sidebar.Category>
+              {SIDEBAR_DATA.map(({ category, data, id }) => {
                 return (
-                  <Menu.Item key={item.id}>
-                    <Menu.Link href={item.url} title={item.title}>
-                      {item.text}
-                    </Menu.Link>
-                  </Menu.Item>
+                  <Sidebar.Category key={id} title={category}>
+                    <Sidebar.List label={category}>
+                      {data.map(({ id, text, submenu, title, url }) => {
+                        return (
+                          <Sidebar.Item key={id}>
+                            {submenu?.length ? (
+                              <>
+                                <Sidebar.Button id={id}>{text}</Sidebar.Button>
+                                <Sidebar.Submenu id={id}>
+                                  <Sidebar.List label={text}>
+                                    {submenu.map(({ id: submenuId, text, title, url, submenu }) => {
+                                      return (
+                                        <Sidebar.Item key={submenuId}>
+                                          {submenu?.length ? (
+                                            <>
+                                              <Sidebar.Button parentSubmenuId={id} id={submenuId}>
+                                                {text}
+                                              </Sidebar.Button>
+                                              <Sidebar.Submenu id={submenuId}>
+                                                <Sidebar.List label={text}>
+                                                  {submenu.map(({ id, text, title, url }) => {
+                                                    return (
+                                                      <Sidebar.Item key={id}>
+                                                        <Sidebar.Link title={title} href={url}>
+                                                          {text}
+                                                        </Sidebar.Link>
+                                                      </Sidebar.Item>
+                                                    )
+                                                  })}
+                                                </Sidebar.List>
+                                              </Sidebar.Submenu>
+                                            </>
+                                          ) : (
+                                            <Sidebar.Link title={title} href={url}>
+                                              {text}
+                                            </Sidebar.Link>
+                                          )}
+                                        </Sidebar.Item>
+                                      )
+                                    })}
+                                  </Sidebar.List>
+                                </Sidebar.Submenu>
+                              </>
+                            ) : (
+                              <Sidebar.Link title={title} href={url}>
+                                {text}
+                              </Sidebar.Link>
+                            )}
+                          </Sidebar.Item>
+                        )
+                      })}
+                    </Sidebar.List>
+                  </Sidebar.Category>
                 )
               })}
-            </Menu.List>
-          </Menu>
-          <Header.PlayPlusLogo
-            alt="PlayPLus"
-            link="https://www.playplus.com/home"
-            logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1707335463663.svg"
-            color="white"
-          />
-          <Header.SocialList>
-            <Header.SocialItem
-              socialName="facebook"
-              socialUrl="https://www.facebook.com/portalr7"
+            </Sidebar>
+
+            <Menu>
+              <Menu.List>
+                {MENU_DATA.map(item => {
+                  return (
+                    <Menu.Item key={item.id}>
+                      <Menu.Link href={item.url} title={item.title}>
+                        {item.text}
+                      </Menu.Link>
+                    </Menu.Item>
+                  )
+                })}
+              </Menu.List>
+            </Menu>
+            <Header.PlayPlusLogo
+              alt="PlayPLus"
+              link="https://www.playplus.com/home"
+              logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1707335463663.svg"
+              color="white"
             />
-            <Header.SocialItem socialName="twitter" socialUrl="https://twitter.com/portalr7" />
-            <Header.SocialItem socialName="instagram" socialUrl="https://instagram.com/portalr7" />
-          </Header.SocialList>
-          <Header.SearchToggle />
-          <Header.Search />
-        </Header.MainSection>
+            <Header.SocialList>
+              <Header.SocialItem
+                socialName="facebook"
+                socialUrl="https://www.facebook.com/portalr7"
+              />
+              <Header.SocialItem socialName="twitter" socialUrl="https://twitter.com/portalr7" />
+              <Header.SocialItem
+                socialName="instagram"
+                socialUrl="https://instagram.com/portalr7"
+              />
+            </Header.SocialList>
+            <Header.SearchToggle />
+            <Header.Search />
+          </Header.MainSection>
+        </Header.Fixed>
       </Header>
     </div>
   ),
@@ -124,16 +150,113 @@ export const Primary: Story = {
 export const Internals: Story = {
   render: () => (
     <div className="header-h-screen">
-      <InternalsHeader triggerElementSelector='[data-el="heading-trigger"]'>
-        <Header.Logo
-          link="https://www.r7.com"
-          logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1695891496962.png"
-          alt="Portal R7"
-        />
-        <InternalsHeader.SectionName sectionUrl="#">editoria</InternalsHeader.SectionName>
+      <Header>
+        <Header.Fixed>
+          <Header.MainSection>
+            <Header.Logo
+              link="https://www.r7.com"
+              logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1698842893138.svg"
+              alt="Portal R7"
+            />
 
-        <InternalsHeader.Title>titulo do artigo</InternalsHeader.Title>
-      </InternalsHeader>
+            <InternalsHeader triggerElementSelector='[data-el="heading-trigger"]'>
+              <Header.Logo
+                link="https://www.r7.com"
+                logoUrl="https://static.themebuilder.aws.arc.pub/newr7-sandbox/1695891496962.png"
+                alt="Portal R7"
+              />
+              <InternalsHeader.SectionName sectionUrl="#">editoria</InternalsHeader.SectionName>
+
+              <InternalsHeader.Title>titulo do artigo</InternalsHeader.Title>
+            </InternalsHeader>
+          </Header.MainSection>
+        </Header.Fixed>
+      </Header>
+      <ul>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li data-el="heading-trigger">element trigger</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+        <li>element</li>
+      </ul>
     </div>
   ),
   args: {},
