@@ -15,7 +15,7 @@ export function HeaderSocialItem({ socialName, socialUrl }: HeaderSocialItemProp
         title={`Siga o Portal R7 no ${socialName}`}
       >
         <SvgIcon
-          className="header-fill-neutral-high-400 !header-border-neutral-high-400 !header-rounded-circular header-p-quark"
+          className="header-fill-neutral-high-400 !header-border-neutral-high-400 !header-rounded-circular header-border-solid header-p-quark"
           iconName={socialName as SvgIconProps['iconName']}
           width={25}
           height={25}

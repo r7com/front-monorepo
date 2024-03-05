@@ -5,7 +5,7 @@ export type SidebarCategoryProps = {
 
 export function SidebarCategory({ children, title }: SidebarCategoryProps) {
   return (
-    <li className="header-pb-xxs header-mb-xxs header-border-b-hairline header-border-b-neutral-high-600/intense header-uppercase">
+    <li className="header-pb-xxs header-mb-xxs header-border-b-hairline header-border-solid header-border-b-neutral-high-600/intense header-uppercase">
       {title && (
         <h4 className="header-text-neutral-low-500 header-text-xs header-leading-5 header-mb-xxs header-font-bold">
           {title}
