@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [2.5.7](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.5.6...ui-header-delivery-2.5.7) (2024-03-05)
+
+### Bug Fixes
+
+- header corrections ([2678c62](https://gitlab.ir7.com.br/r7/front-monorepo/commit/2678c62242415bec1b12721becd0e861a18442a4))
+
 ## [2.5.6](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.5.5...ui-header-delivery-2.5.6) (2024-02-28)
 
 ## [2.5.5](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.5.4...ui-header-delivery-2.5.5) (2024-02-22)
