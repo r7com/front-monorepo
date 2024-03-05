@@ -10,24 +10,28 @@ export function SidebarToggle({ children }: SidebarToggleProps) {
 
   const toggleSidebar = () => sidebar.toggle(!sidebar.isOpen)
 
-  const { buttonSlot, iconSlot, firstLineSlot, secondLineSlot, thirdLineSlot } = variants({
-    isSidebarOpen: sidebar.isOpen,
-  })
+  const { buttonSlot, iconSlot, firstLineSlot, secondLineSlot, thirdLineSlot, verticalLineSlot } =
+    variants({
+      isSidebarOpen: sidebar.isOpen,
+    })
 
   return (
-    <button
-      type="button"
-      className={buttonSlot()}
-      aria-controls="sidebar"
-      aria-expanded={sidebar.isOpen}
-      onClick={toggleSidebar}
-    >
-      <div className={iconSlot()}>
-        <span className={firstLineSlot()}></span>
-        <span className={secondLineSlot()}></span>
-        <span className={thirdLineSlot()}></span>
-      </div>
-      {children}
-    </button>
+    <>
+      <button
+        type="button"
+        className={buttonSlot()}
+        aria-controls="sidebar"
+        aria-expanded={sidebar.isOpen}
+        onClick={toggleSidebar}
+      >
+        <div className={iconSlot()}>
+          <span className={firstLineSlot()}></span>
+          <span className={secondLineSlot()}></span>
+          <span className={thirdLineSlot()}></span>
+        </div>
+        {children}
+      </button>
+      <span className={verticalLineSlot()}></span>
+    </>
   )
 }
