@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [2.6.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.5.7...ui-header-delivery-2.6.0) (2024-03-05)
+
+### Features
+
+- **ui-header-delivery:** change style of links to be uppercased ([3e37118](https://gitlab.ir7.com.br/r7/front-monorepo/commit/3e371184aba53dfca5c34d3dae96f96f88edff05))
+- **ui-header-delivery:** changing to multilevel submenu ([1b463b7](https://gitlab.ir7.com.br/r7/front-monorepo/commit/1b463b7c4e19a26347cfdaae9f636c956cee1160))
+
 ## [2.5.7](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-header-delivery-2.5.6...ui-header-delivery-2.5.7) (2024-03-05)
 
 ### Bug Fixes
