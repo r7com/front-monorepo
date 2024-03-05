@@ -6,8 +6,8 @@ type HeaderContextProps = {
     isOpen: boolean
   }
   submenu: {
-    show(id: string, method: 'show'): void
-    hide(id: string, method: 'hide'): void
+    show(id: string): void
+    hide(id: string): void
     currentActive: string[]
   }
   header: {

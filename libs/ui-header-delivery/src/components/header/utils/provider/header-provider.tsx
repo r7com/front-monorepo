@@ -21,12 +21,14 @@ export function HeaderProvider({ children, headerRef }: HeaderProviderProps) {
     setState(() => ({ isSidebarOpen: open, currentActiveSubmenus: [], isSearchActive }))
   }
 
-  const toggleSubmenu = (id = '', method: string) => {
-    const updatedSubmenus = currentActiveSubmenus
-    method === 'show'
-      ? updatedSubmenus.push(id)
-      : updatedSubmenus.splice(updatedSubmenus.indexOf(id), 1)
-    setState(prev => ({ ...prev, currentActiveSubmenus: updatedSubmenus }))
+  const showSubmenu = (id: string) => {
+    currentActiveSubmenus.push(id)
+    setState(prev => ({ ...prev, currentActiveSubmenus }))
+  }
+
+  const hideSubmenu = (id: string) => {
+    currentActiveSubmenus.splice(currentActiveSubmenus.indexOf(id), 1)
+    setState(prev => ({ ...prev, currentActiveSubmenus }))
   }
 
   const toggleHeaderSearch = (open: boolean) => {
@@ -48,8 +50,8 @@ export function HeaderProvider({ children, headerRef }: HeaderProviderProps) {
         },
         submenu: {
           currentActive: currentActiveSubmenus,
-          show: toggleSubmenu,
-          hide: toggleSubmenu,
+          show: showSubmenu,
+          hide: hideSubmenu,
         },
         header: {
           isSearchActive,

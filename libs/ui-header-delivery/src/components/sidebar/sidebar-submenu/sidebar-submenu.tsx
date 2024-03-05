@@ -11,7 +11,7 @@ export type SidebarSubmenuProps = {
 export function SidebarSubmenu({ children, id }: SidebarSubmenuProps) {
   const { submenu } = useHeaderActions()
 
-  const closeMenu = () => submenu.hide(id, 'hide')
+  const closeMenu = () => submenu.hide(id)
   const isCurrentActive = submenu.currentActive.includes(id)
 
   return (

@@ -10,7 +10,7 @@ export type SidebarButtonProps = {
 
 export function SidebarButton({ children, id, parentSubmenuId }: SidebarButtonProps) {
   const { submenu } = useHeaderActions()
-  const activeSubmenu = () => submenu.show(id, 'show')
+  const activeSubmenu = () => submenu.show(id)
 
   const isMainSidebar = submenu.currentActive.length === 0
   const isOpenedSubmenu = submenu.currentActive.findIndex(item => item === parentSubmenuId) !== -1
