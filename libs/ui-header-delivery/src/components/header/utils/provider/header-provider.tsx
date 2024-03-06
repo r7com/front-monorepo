@@ -7,18 +7,28 @@ export type HeaderProviderProps = {
 }
 
 export function HeaderProvider({ children, headerRef }: HeaderProviderProps) {
-  const [{ currentActiveSubmenu, isSidebarOpen, isSearchActive }, setState] = useState({
+  const [{ currentActiveSubmenus, isSidebarOpen, isSearchActive }, setState] = useState<{
+    isSidebarOpen: boolean
+    isSearchActive: boolean
+    currentActiveSubmenus: string[]
+  }>({
     isSidebarOpen: false,
     isSearchActive: false,
-    currentActiveSubmenu: '',
+    currentActiveSubmenus: [],
   })
 
   const toggleSidebar = (open: boolean) => {
-    setState(() => ({ isSidebarOpen: open, currentActiveSubmenu: '', isSearchActive }))
+    setState(() => ({ isSidebarOpen: open, currentActiveSubmenus: [], isSearchActive }))
   }
 
-  const toggleSubmenu = (id = '') => {
-    setState(prev => ({ ...prev, currentActiveSubmenu: id }))
+  const showSubmenu = (id: string) => {
+    currentActiveSubmenus.push(id)
+    setState(prev => ({ ...prev, currentActiveSubmenus }))
+  }
+
+  const hideSubmenu = (id: string) => {
+    currentActiveSubmenus.splice(currentActiveSubmenus.indexOf(id), 1)
+    setState(prev => ({ ...prev, currentActiveSubmenus }))
   }
 
   const toggleHeaderSearch = (open: boolean) => {
@@ -39,9 +49,9 @@ export function HeaderProvider({ children, headerRef }: HeaderProviderProps) {
           toggle: toggleSidebar,
         },
         submenu: {
-          currentActive: currentActiveSubmenu,
-          show: toggleSubmenu,
-          hide: toggleSubmenu,
+          currentActive: currentActiveSubmenus,
+          show: showSubmenu,
+          hide: hideSubmenu,
         },
         header: {
           isSearchActive,

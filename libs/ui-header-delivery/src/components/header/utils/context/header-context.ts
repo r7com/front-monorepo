@@ -7,8 +7,8 @@ type HeaderContextProps = {
   }
   submenu: {
     show(id: string): void
-    hide(): void
-    currentActive: string
+    hide(id: string): void
+    currentActive: string[]
   }
   header: {
     isSearchActive: boolean
