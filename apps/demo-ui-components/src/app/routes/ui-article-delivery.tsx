@@ -8,7 +8,13 @@ import {
   Signature,
   useArticleAction,
 } from '@r7/ui-article-delivery'
-import { Breadcrumb, ConditionalLink, Paragraph, Typography } from '@r7/ui-base-components'
+import {
+  Breadcrumb,
+  ConditionalLink,
+  Informer,
+  Paragraph,
+  Typography,
+} from '@r7/ui-base-components'
 import { MENU_DATA } from '../mocks/MENU_DATA'
 import { CardCoupon } from '@r7/ui-card'
 import { COUPON_DATA } from '../mocks/COUPON_DATA'
@@ -132,6 +138,9 @@ export function UiArticleDelivery() {
           ))}
         </CardCoupon.List>
       </CardCoupon>
+      <Informer bgColor="#ac539f" color="high">
+        Sou um texto <strong>informativo</strong>
+      </Informer>
     </article>
   )
 }
