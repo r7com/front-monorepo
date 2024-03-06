@@ -1,7 +1,7 @@
 import { createVariants, VariantProps } from '../../utils'
 
 export const variants = createVariants({
-  base: `base-hidden base-text-xxxs base-text-neutral-low-400 base-font-normal base-font-primary
+  base: `base-hidden base-text-little base-text-neutral-low-400 base-font-normal base-font-primary
     last:base-flex first:base-flex md:base-flex after:base-border-t-hairline
     after:base-content-[' '] after:base-w-[6px] after:base-h-[6px] after:base-rotate-45
     after:base-cursor-pointer after:base-block base-items-center base-capitalize
