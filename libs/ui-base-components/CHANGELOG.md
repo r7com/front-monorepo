@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.2](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.7.1...ui-base-components-0.7.2) (2024-03-06)
+
+### Bug Fixes
+
+- adjusting font size of breadcrumb ([606bb05](https://gitlab.ir7.com.br/r7/front-monorepo/commit/606bb05a3fc583b07389a81d60d0ab150d6d4ab7))
+
 ## [0.7.1](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.7.0...ui-base-components-0.7.1) (2024-02-22)
 
 # [0.7.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.6.8...ui-base-components-0.7.0) (2024-02-06)
