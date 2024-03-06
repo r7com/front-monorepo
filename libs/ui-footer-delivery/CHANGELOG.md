@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.3.4](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-footer-delivery-1.3.3...ui-footer-delivery-1.3.4) (2024-03-06)
+
+### Bug Fixes
+
+- adding border-style to the footer line ([b9bbc5e](https://gitlab.ir7.com.br/r7/front-monorepo/commit/b9bbc5ec6e905f4003d7a3e535afcee64243b2af))
+
 ## [1.3.3](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-footer-delivery-1.3.2...ui-footer-delivery-1.3.3) (2024-02-22)
 
 ### Bug Fixes
