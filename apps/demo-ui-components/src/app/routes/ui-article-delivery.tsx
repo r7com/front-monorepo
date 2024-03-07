@@ -138,9 +138,14 @@ export function UiArticleDelivery() {
           ))}
         </CardCoupon.List>
       </CardCoupon>
-      <Disclaimer bgColor="#ac539f" color="high">
-        Sou um texto <strong>informativo</strong>
-      </Disclaimer>
+      <div className="flex flex-col px-xs gap-nano">
+        <Disclaimer color="high">
+          Sou um texto <strong>informativo</strong>
+        </Disclaimer>
+        <Disclaimer bgColor="#e6948e" color="low">
+          Sou um texto <strong>informativo</strong>
+        </Disclaimer>
+      </div>
     </article>
   )
 }

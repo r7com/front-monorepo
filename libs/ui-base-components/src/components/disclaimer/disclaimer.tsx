@@ -6,9 +6,9 @@ export type DisclaimerProps = {
   color?: 'high' | 'low'
 }
 
-export function Disclaimer({ children, bgColor = 'transparent', color = 'low' }: DisclaimerProps) {
+export function Disclaimer({ children, bgColor, color = 'low' }: DisclaimerProps) {
   return (
-    <div className={variants({ color })} style={{ backgroundColor: bgColor, color }}>
+    <div className={variants({ color })} style={{ backgroundColor: bgColor }}>
       <p>{children}</p>
     </div>
   )
