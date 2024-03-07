@@ -11,7 +11,7 @@ import {
 import {
   Breadcrumb,
   ConditionalLink,
-  Informer,
+  Disclaimer,
   Paragraph,
   Typography,
 } from '@r7/ui-base-components'
@@ -138,9 +138,9 @@ export function UiArticleDelivery() {
           ))}
         </CardCoupon.List>
       </CardCoupon>
-      <Informer bgColor="#ac539f" color="high">
+      <Disclaimer bgColor="#ac539f" color="high">
         Sou um texto <strong>informativo</strong>
-      </Informer>
+      </Disclaimer>
     </article>
   )
 }

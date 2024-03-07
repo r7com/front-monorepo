@@ -10,4 +10,4 @@ export const variants = createVariants({
   },
 })
 
-export type InformerVariants = VariantProps<typeof variants>
+export type DisclaimerVariants = VariantProps<typeof variants>
