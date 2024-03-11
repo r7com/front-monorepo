@@ -31,11 +31,13 @@ describe('AccessibilityBar', () => {
   })
 
   it('Should render AccessibilityBar dark mode', () => {
+    cy.wait(50)
     cy.addDarkMode()
     cy.matchImage()
   })
 
   it('Should render AccessibilityBar Desktop dark mode', () => {
+    cy.wait(50)
     cy.addDarkMode()
     cy.viewport('macbook-15')
     cy.matchImage()
