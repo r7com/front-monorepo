@@ -55,11 +55,9 @@
     "test": {
       "executor": "@nx/vite:test",
       "outputs": ["{options.reportsDirectory}"],
-      "configurations": {
-        "options": {
-          "passWithNoTests": true,
-          "reportsDirectory": "../../coverage/apps/demo-ui-components"
-        }
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/apps/demo-ui-components"
       }
     },
     "lint": {
