@@ -142,6 +142,7 @@ export function UiArticleDelivery() {
         <Disclaimer color="high">
           Sou um texto <strong>informativo</strong>
         </Disclaimer>
+
         <Disclaimer bgColor="#e6948e" color="low">
           Sou um texto <strong>informativo</strong>
         </Disclaimer>
