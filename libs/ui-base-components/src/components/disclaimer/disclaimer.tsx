@@ -1,10 +1,9 @@
-import { variants } from './disclaimer.variants'
+import { DisclaimerVariants, variants } from './disclaimer.variants'
 
 export type DisclaimerProps = {
   children: React.ReactNode
   bgColor?: string
-  color?: 'high' | 'low'
-}
+} & DisclaimerVariants
 
 export function Disclaimer({ children, bgColor, color = 'low' }: DisclaimerProps) {
   return (
