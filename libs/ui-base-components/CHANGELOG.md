@@ -14,6 +14,12 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 - **ui-base-components:** new disclaimer component ([f12159f](https://gitlab.ir7.com.br/r7/front-monorepo/commit/f12159ff98afa252a6548f996284257aa75429a5))
 
+# [0.8.0](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.7.2...ui-base-components-0.8.0) (2024-03-14)
+
+### Features
+
+- **ui-base-components:** new disclaimer component ([f12159f](https://gitlab.ir7.com.br/r7/front-monorepo/commit/f12159ff98afa252a6548f996284257aa75429a5))
+
 ## [0.7.2](https://gitlab.ir7.com.br/r7/front-monorepo/compare/ui-base-components-0.7.1...ui-base-components-0.7.2) (2024-03-06)
 
 ### Bug Fixes
