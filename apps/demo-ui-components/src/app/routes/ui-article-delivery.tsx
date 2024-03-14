@@ -8,7 +8,13 @@ import {
   Signature,
   useArticleAction,
 } from '@r7/ui-article-delivery'
-import { Breadcrumb, ConditionalLink, Paragraph, Typography } from '@r7/ui-base-components'
+import {
+  Breadcrumb,
+  ConditionalLink,
+  Disclaimer,
+  Paragraph,
+  Typography,
+} from '@r7/ui-base-components'
 import { MENU_DATA } from '../mocks/MENU_DATA'
 import { CardCoupon } from '@r7/ui-card'
 import { COUPON_DATA } from '../mocks/COUPON_DATA'
@@ -132,6 +138,15 @@ export function UiArticleDelivery() {
           ))}
         </CardCoupon.List>
       </CardCoupon>
+      <div className="flex flex-col px-xs gap-nano">
+        <Disclaimer color="high">
+          Sou um texto <strong>informativo</strong>
+        </Disclaimer>
+
+        <Disclaimer bgColor="#e6948e" color="low">
+          Sou um texto <strong>informativo</strong>
+        </Disclaimer>
+      </div>
     </article>
   )
 }
